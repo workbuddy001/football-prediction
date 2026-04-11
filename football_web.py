@@ -13,8 +13,15 @@ import sys
 from datetime import datetime
 from urllib.parse import unquote, parse_qs
 
-# 数据根目录
-DATA_ROOT = r"D:\work\workbuddy\足球预测\分析模板"
+# 数据根目录（自动检测，兼容本地和部署环境）
+if __name__ != "__main__":
+    # 作为模块导入时，基于文件位置
+    _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+else:
+    # 直接运行时，基于文件位置
+    _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DATA_ROOT = os.path.join(_BASE_DIR, "分析模板")
 SCORES_FILE = os.path.join(DATA_ROOT, "_scores.json")
 REVIEW_DIR = os.path.join(DATA_ROOT, "_reviews")
 
@@ -2251,12 +2258,14 @@ def main():
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8899
-    server = http.server.HTTPServer(('127.0.0.1', port), FootballAPIHandler)
+    # 部署环境(Render等)需绑定 0.0.0.0，本地开发用 127.0.0.1
+    host = os.environ.get("HOST", "127.0.0.1")
+    server = http.server.HTTPServer((host, port), FootballAPIHandler)
     print(f"""
 ============================================
   足球预测分析器 - 纯排除法框架
 ============================================
-  服务地址: http://127.0.0.1:{port}
+  服务地址: http://{host}:{port}
   数据目录: {DATA_ROOT}
   按 Ctrl+C 停止服务
 ============================================

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: football-prediction
+    runtime: python
+    plan: free
+
+    # 构建命令（无依赖安装）
+    buildCommand: "echo 'No build needed'"
+
+    # 启动命令
+    startCommand: "python football_web.py $PORT"
+
+    # 自动部署设置
+    autoDeploy: true
+
+    # 环境变量
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "true"
