@@ -1,0 +1,102 @@
+{
+  "match_id": "周六010",
+  "date_folder": "3.21",
+  "home_team": "海登海姆",
+  "away_team": "勒沃库森",
+  "league": "德甲",
+  "handicap": "1",
+  "home_form": "LLLDLL",
+  "away_form": "LDDDWD",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "3:3",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.40>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.45>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升主胜+5.9%+澳门不动，主胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+6.5%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-3.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+6.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升14 / 平降3升22 / 客降12升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为3:3(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「勒沃库森 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-10 00:18",
+  "macao_tip": "勒沃库森 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.88,
+    "jc_draw_chg": 6.46,
+    "jc_away_chg": -3.47,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      5.1,
+      4.18,
+      1.44
+    ],
+    "jc_real_odds": [
+      5.4,
+      4.45,
+      1.39
+    ],
+    "macao_init_odds": [
+      4.75,
+      4.35,
+      1.48
+    ],
+    "macao_real_odds": [
+      4.75,
+      4.35,
+      1.48
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "NNN"
+  }
+}

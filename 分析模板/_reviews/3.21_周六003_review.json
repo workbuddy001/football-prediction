@@ -1,0 +1,86 @@
+{
+  "match_id": "周六003",
+  "date_folder": "3.21",
+  "home_team": "福冈黄蜂",
+  "away_team": "大阪钢巴",
+  "league": "日职",
+  "handicap": "1",
+  "home_form": "DLLLLL",
+  "away_form": "DLDWDD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+15.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降0升26 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:2(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「大阪钢巴 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-10 00:13",
+  "macao_tip": "大阪钢巴 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 15.62,
+    "jc_draw_chg": 4.76,
+    "jc_away_chg": -10.45,
+    "mcao_home_chg": 20.14,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -12.45,
+    "jc_init_odds": [
+      3.2,
+      3.15,
+      2.01
+    ],
+    "jc_real_odds": [
+      3.7,
+      3.3,
+      1.8
+    ],
+    "macao_init_odds": [
+      2.83,
+      3.02,
+      2.33
+    ],
+    "macao_real_odds": [
+      3.4,
+      3.02,
+      2.04
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UND"
+  }
+}

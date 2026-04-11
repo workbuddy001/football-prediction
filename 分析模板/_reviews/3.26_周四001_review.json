@@ -1,0 +1,95 @@
+{
+  "match_id": "周四001",
+  "date_folder": "3.26",
+  "home_team": "土耳其",
+  "away_team": "罗马尼亚",
+  "league": "世预赛",
+  "handicap": "-1",
+  "home_form": "DWWWLW",
+  "away_form": "WLWWDL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.45>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.80>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.32<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升0 / 平降0升29 / 客降1升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.80>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.32<1.5，庄家高度自信",
+    "📈 关键信号「强共识推离客」有效：27/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 17:35",
+  "macao_tip": "土耳其 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -0.75,
+    "jc_draw_chg": 1.14,
+    "jc_away_chg": 2.26,
+    "mcao_home_chg": -0.71,
+    "mcao_draw_chg": 3.53,
+    "mcao_away_chg": -3.51,
+    "jc_init_odds": [
+      1.33,
+      4.4,
+      6.65
+    ],
+    "jc_real_odds": [
+      1.32,
+      4.45,
+      6.8
+    ],
+    "macao_init_odds": [
+      1.41,
+      4.25,
+      5.7
+    ],
+    "macao_real_odds": [
+      1.4,
+      4.4,
+      5.5
+    ],
+    "jc_pattern": "NNU",
+    "macao_pattern": "NUD"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "match_id": "周日009",
+  "date_folder": "4.05",
+  "home_team": "赫塔费",
+  "away_team": "毕尔巴鄂",
+  "league": "西甲",
+  "handicap": "1",
+  "home_form": "WLWWLW",
+  "away_form": "WLLLDW",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降17升9 / 客降23升5",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为2:0(主胜)",
+    "❌ 预测平局但实际是主胜，需要反思原因",
+    "📝 心水推荐为「赫塔费 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 14:27",
+  "macao_tip": "赫塔费 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.59,
+    "jc_draw_chg": 3.85,
+    "jc_away_chg": -8.8,
+    "mcao_home_chg": 12.76,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -9.02,
+    "jc_init_odds": [
+      2.9,
+      2.6,
+      2.5
+    ],
+    "jc_real_odds": [
+      3.12,
+      2.7,
+      2.28
+    ],
+    "macao_init_odds": [
+      2.9,
+      2.67,
+      2.55
+    ],
+    "macao_real_odds": [
+      3.27,
+      2.67,
+      2.32
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UND"
+  }
+}

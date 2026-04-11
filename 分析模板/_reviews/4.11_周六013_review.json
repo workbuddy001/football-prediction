@@ -1,0 +1,68 @@
+{
+  "match_id": "周六013",
+  "date_folder": "4.11",
+  "home_team": "哥德堡",
+  "away_team": "赫根",
+  "league": "瑞超",
+  "handicap": "-1",
+  "home_form": "LDWDWW",
+  "away_form": "DDWLLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升27 / 平降9升14 / 客降25升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 00:52",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 5.73,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -6.37,
+    "jc_init_odds": [
+      2.4,
+      3.3,
+      2.44
+    ],
+    "jc_real_odds": [
+      2.4,
+      3.3,
+      2.44
+    ],
+    "macao_init_odds": [
+      2.27,
+      3.23,
+      2.67
+    ],
+    "macao_real_odds": [
+      2.4,
+      3.23,
+      2.5
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UND"
+  }
+}

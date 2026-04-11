@@ -1,0 +1,73 @@
+{
+  "match_id": "周二009",
+  "date_folder": "3.31",
+  "home_team": "苏格兰",
+  "away_team": "科特迪瓦",
+  "league": "国际赛",
+  "handicap": "1",
+  "home_form": "LWLWWW",
+  "away_form": "WLWWDW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+6.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降8升22 / 平降2升26 / 客降21升5",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+6.3%>5%"
+  ],
+  "review_time": "2026-04-09 17:03",
+  "macao_tip": "科特迪瓦 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 6.35,
+    "jc_draw_chg": 2.27,
+    "jc_away_chg": -4.88,
+    "mcao_home_chg": -4.97,
+    "mcao_draw_chg": 1.64,
+    "mcao_away_chg": 2.51,
+    "jc_init_odds": [
+      3.15,
+      3.08,
+      2.05
+    ],
+    "jc_real_odds": [
+      3.35,
+      3.15,
+      1.95
+    ],
+    "macao_init_odds": [
+      3.42,
+      3.05,
+      1.99
+    ],
+    "macao_real_odds": [
+      3.25,
+      3.1,
+      2.04
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "DNU"
+  }
+}

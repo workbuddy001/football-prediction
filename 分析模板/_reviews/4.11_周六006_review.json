@@ -1,0 +1,87 @@
+{
+  "match_id": "周六006",
+  "date_folder": "4.11",
+  "home_team": "库奥皮奥",
+  "away_team": "赫尔辛基火花",
+  "league": "芬兰超级联赛",
+  "handicap": "-1",
+  "home_form": "WDWWLL",
+  "away_form": "LDWLLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在平方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.15>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.75>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.27<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降8升19 / 平降10升16 / 客降15升12",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.15>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.75>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.27<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-12 00:47",
+  "macao_tip": "库普斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.55,
+    "jc_draw_chg": 3.0,
+    "jc_away_chg": 3.85,
+    "mcao_home_chg": 3.7,
+    "mcao_draw_chg": -4.17,
+    "mcao_away_chg": -4.17,
+    "jc_init_odds": [
+      1.29,
+      5.0,
+      6.5
+    ],
+    "jc_real_odds": [
+      1.27,
+      5.15,
+      6.75
+    ],
+    "macao_init_odds": [
+      1.35,
+      4.8,
+      6.0
+    ],
+    "macao_real_odds": [
+      1.4,
+      4.6,
+      5.75
+    ],
+    "jc_pattern": "NUU",
+    "macao_pattern": "UDD"
+  }
+}

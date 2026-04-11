@@ -1,0 +1,100 @@
+{
+  "match_id": "周四005",
+  "date_folder": "3.26",
+  "home_team": "波兰",
+  "away_team": "阿尔巴尼",
+  "league": "世预赛",
+  "handicap": "-1",
+  "home_form": "WDWWWD",
+  "away_form": "LWWWWW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.10>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.48<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-7.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+17.3%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+17.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降11升15 / 平降13升9 / 客降8升16",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.10>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.48<1.5，庄家高度自信",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-7.5%+澳门不动"
+  ],
+  "review_time": "2026-04-09 17:37",
+  "macao_tip": "波兰 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -7.5,
+    "jc_draw_chg": 7.81,
+    "jc_away_chg": 17.31,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.6,
+      3.2,
+      5.2
+    ],
+    "jc_real_odds": [
+      1.48,
+      3.45,
+      6.1
+    ],
+    "macao_init_odds": [
+      1.62,
+      3.41,
+      4.65
+    ],
+    "macao_real_odds": [
+      1.62,
+      3.41,
+      4.65
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNN"
+  }
+}

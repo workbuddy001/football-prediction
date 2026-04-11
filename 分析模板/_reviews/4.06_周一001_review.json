@@ -1,0 +1,97 @@
+{
+  "match_id": "周一001",
+  "date_folder": "4.06",
+  "home_team": "海尔蒙特",
+  "away_team": "瓦尔韦克",
+  "league": "荷乙",
+  "handicap": "1",
+  "home_form": "LDLLDL",
+  "away_form": "WLDWWW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.65>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.80>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+4.1%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+10.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降2升26 / 客降28升1",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:2(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「瓦尔韦克 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-10 07:12",
+  "macao_tip": "瓦尔韦克 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 10.61,
+    "jc_draw_chg": 4.11,
+    "jc_away_chg": -6.63,
+    "mcao_home_chg": 14.29,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -8.0,
+    "jc_init_odds": [
+      3.3,
+      3.65,
+      1.81
+    ],
+    "jc_real_odds": [
+      3.65,
+      3.8,
+      1.69
+    ],
+    "macao_init_odds": [
+      2.87,
+      3.62,
+      2.0
+    ],
+    "macao_real_odds": [
+      3.28,
+      3.62,
+      1.84
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UND"
+  }
+}

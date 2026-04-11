@@ -1,0 +1,70 @@
+{
+  "match_id": "周一015",
+  "date_folder": "4.06",
+  "home_team": "赫罗纳",
+  "away_team": "比利亚雷",
+  "league": "西甲",
+  "handicap": "1",
+  "home_form": "LWDLDW",
+  "away_form": "WDWLWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升16 / 平降10升13 / 客降10升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-10 07:26",
+  "macao_tip": "比利亚雷亚尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 3.47,
+    "jc_draw_chg": -2.87,
+    "jc_away_chg": -0.5,
+    "mcao_home_chg": -5.19,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.19,
+    "jc_init_odds": [
+      2.88,
+      3.48,
+      2.02
+    ],
+    "jc_real_odds": [
+      2.98,
+      3.38,
+      2.01
+    ],
+    "macao_init_odds": [
+      2.89,
+      3.32,
+      2.15
+    ],
+    "macao_real_odds": [
+      2.74,
+      3.32,
+      2.24
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "DNU"
+  }
+}

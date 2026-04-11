@@ -1,0 +1,95 @@
+{
+  "match_id": "周二001",
+  "date_folder": "3.31",
+  "home_team": "喀麦隆",
+  "away_team": "中国",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "LLWWDW",
+  "away_form": "WWLLWL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率4.40≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.40>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.20>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.35<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+14.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降21升7 / 平降4升22 / 客降10升20",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率4.40≥3.5",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.20>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.35<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-09 16:59",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.57,
+    "jc_draw_chg": 14.29,
+    "jc_away_chg": -3.88,
+    "mcao_home_chg": -0.72,
+    "mcao_draw_chg": 2.44,
+    "mcao_away_chg": -2.36,
+    "jc_init_odds": [
+      1.4,
+      3.85,
+      6.45
+    ],
+    "jc_real_odds": [
+      1.35,
+      4.4,
+      6.2
+    ],
+    "macao_init_odds": [
+      1.39,
+      4.1,
+      6.35
+    ],
+    "macao_real_odds": [
+      1.38,
+      4.2,
+      6.2
+    ],
+    "jc_pattern": "DUD",
+    "macao_pattern": "NUD"
+  }
+}

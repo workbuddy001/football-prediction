@@ -1,0 +1,79 @@
+{
+  "match_id": "周六019",
+  "date_folder": "4.11",
+  "home_team": "埃尔切",
+  "away_team": "巴伦西亚",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "LWWLLD",
+  "away_form": "LWLWWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.6%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升23 / 平降6升16 / 客降13升8",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-2.6%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+5.1%>5%"
+  ],
+  "review_time": "2026-04-12 00:57",
+  "macao_tip": "巴伦西亚 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.49,
+    "jc_draw_chg": -2.58,
+    "jc_away_chg": 5.1,
+    "mcao_home_chg": 3.14,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -3.86,
+    "jc_init_odds": [
+      2.41,
+      3.1,
+      2.55
+    ],
+    "jc_real_odds": [
+      2.35,
+      3.02,
+      2.68
+    ],
+    "macao_init_odds": [
+      2.23,
+      3.18,
+      2.85
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.18,
+      2.74
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "UND"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "match_id": "周六009",
+  "date_folder": "3.21",
+  "home_team": "帕尔马",
+  "away_team": "克雷莫纳",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "LDDWWW",
+  "away_form": "LLLLDL",
+  "prediction": "平局",
+  "confidence": 4,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-3.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降24升3 / 客降19升7",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为0:2(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因",
+    "📝 心水推荐为「帕尔马 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-10 00:17",
+  "macao_tip": "帕尔马 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.41,
+    "jc_draw_chg": -3.28,
+    "jc_away_chg": -6.49,
+    "mcao_home_chg": 6.6,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -10.54,
+    "jc_init_odds": [
+      1.85,
+      3.05,
+      3.85
+    ],
+    "jc_real_odds": [
+      1.95,
+      2.95,
+      3.6
+    ],
+    "macao_init_odds": [
+      1.97,
+      2.98,
+      3.7
+    ],
+    "macao_real_odds": [
+      2.1,
+      2.98,
+      3.31
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UND"
+  }
+}

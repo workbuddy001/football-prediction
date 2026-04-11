@@ -1,0 +1,81 @@
+{
+  "match_id": "周二016",
+  "date_folder": "3.31",
+  "home_team": "捷克",
+  "away_team": "丹麦",
+  "league": "世预赛",
+  "handicap": "1",
+  "home_form": "DWWLDD",
+  "away_form": "WLDWWW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.65>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升主胜+4.3%+澳门不动，主胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-4.1%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升25 / 平降0升21 / 客降23升5",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「丹麦 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:12",
+  "macao_tip": "丹麦 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.29,
+    "jc_draw_chg": 3.0,
+    "jc_away_chg": -4.08,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      3.5,
+      3.0,
+      1.96
+    ],
+    "jc_real_odds": [
+      3.65,
+      3.09,
+      1.88
+    ],
+    "macao_init_odds": [
+      3.4,
+      3.0,
+      2.01
+    ],
+    "macao_real_odds": [
+      3.4,
+      3.0,
+      2.01
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "NNN"
+  }
+}

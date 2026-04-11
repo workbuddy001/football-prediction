@@ -1,0 +1,87 @@
+{
+  "match_id": "周日009",
+  "date_folder": "3.22",
+  "home_team": "巴萨",
+  "away_team": "巴列卡诺",
+  "league": "西甲",
+  "handicap": "-2",
+  "home_form": "WWDWWW",
+  "away_form": "LDWDWD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率7.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率10.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.20<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降19升4 / 平降0升26 / 客降2升20",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率7.00>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率10.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.20<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-09 17:44",
+  "macao_tip": "巴塞罗那 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -9.09,
+    "mcao_home_chg": -2.4,
+    "mcao_draw_chg": 7.14,
+    "mcao_away_chg": 5.56,
+    "jc_init_odds": [
+      1.2,
+      7.0,
+      11.0
+    ],
+    "jc_real_odds": [
+      1.2,
+      7.0,
+      10.0
+    ],
+    "macao_init_odds": [
+      1.25,
+      7.0,
+      9.0
+    ],
+    "macao_real_odds": [
+      1.22,
+      7.5,
+      9.5
+    ],
+    "jc_pattern": "NND",
+    "macao_pattern": "DUU"
+  }
+}

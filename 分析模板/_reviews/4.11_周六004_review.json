@@ -1,0 +1,88 @@
+{
+  "match_id": "周六004",
+  "date_folder": "4.11",
+  "home_team": "仁川联",
+  "away_team": "蔚山现代",
+  "league": "韩职",
+  "handicap": "1",
+  "home_form": "WWLDLL",
+  "away_form": "LDWWWD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-6.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升27 / 平降12升11 / 客降23升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为1:2(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-1.0%+澳门不动",
+    "📈 关键信号「[不跟]标签」有效：竞彩降客胜-6.0%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+7.9%>5%"
+  ],
+  "review_time": "2026-04-11 17:37",
+  "macao_tip": "仁川联合 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.87,
+    "jc_draw_chg": -1.01,
+    "jc_away_chg": -6.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.54,
+      2.98,
+      2.5
+    ],
+    "jc_real_odds": [
+      2.74,
+      2.95,
+      2.35
+    ],
+    "macao_init_odds": [
+      2.32,
+      3.12,
+      2.68
+    ],
+    "macao_real_odds": [
+      2.32,
+      3.12,
+      2.68
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

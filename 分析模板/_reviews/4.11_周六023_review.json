@@ -1,0 +1,93 @@
+{
+  "match_id": "周六023",
+  "date_folder": "4.11",
+  "home_team": "利物浦",
+  "away_team": "富勒姆",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "LLLWDL",
+  "away_form": "WDLLWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率4.10≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.10>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.50>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降27升1 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率4.10≥3.5",
+    "📈 关键信号「强共识推离主」有效：29/30家公司升主胜（>25家阈值）",
+    "📈 关键信号「强共识造热客」有效：29/30家公司降客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-12 02:34",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.34,
+    "jc_draw_chg": -0.49,
+    "jc_away_chg": -3.23,
+    "mcao_home_chg": 4.05,
+    "mcao_draw_chg": -5.62,
+    "mcao_away_chg": -6.32,
+    "jc_init_odds": [
+      1.49,
+      4.12,
+      4.65
+    ],
+    "jc_real_odds": [
+      1.51,
+      4.1,
+      4.5
+    ],
+    "macao_init_odds": [
+      1.48,
+      4.45,
+      4.75
+    ],
+    "macao_real_odds": [
+      1.54,
+      4.2,
+      4.45
+    ],
+    "jc_pattern": "NND",
+    "macao_pattern": "UDD"
+  }
+}

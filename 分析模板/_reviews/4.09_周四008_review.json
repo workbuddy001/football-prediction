@@ -1,0 +1,81 @@
+{
+  "match_id": "周四008",
+  "date_folder": "4.09",
+  "home_team": "普拉滕斯",
+  "away_team": "科林蒂安",
+  "league": "解放者杯",
+  "handicap": "-1",
+  "home_form": "DLLDDD",
+  "away_form": "LLDDDL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-5.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-3.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+10.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升17 / 平降15升8 / 客降8升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为0:2(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-10 10:00",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 10.19,
+    "jc_draw_chg": -4.96,
+    "jc_away_chg": -3.7,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.65,
+      2.62,
+      2.7
+    ],
+    "jc_real_odds": [
+      2.92,
+      2.49,
+      2.6
+    ],
+    "macao_init_odds": [
+      2.6,
+      2.85,
+      2.57
+    ],
+    "macao_real_odds": [
+      2.6,
+      2.85,
+      2.57
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "NNN"
+  }
+}

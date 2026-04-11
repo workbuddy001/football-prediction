@@ -1,0 +1,82 @@
+{
+  "match_id": "周一009",
+  "date_folder": "4.06",
+  "home_team": "布莱克本",
+  "away_team": "西布罗姆",
+  "league": "英冠",
+  "handicap": "1",
+  "home_form": "WDWLDL",
+  "away_form": "DWWDDL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降25升1 / 客降26升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "26/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为0:0(平局)",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+7.6%>5%",
+    "📈 关键信号「强共识推离主」有效：28/30家公司升主胜（>25家阈值）",
+    "📈 关键信号「强共识造热客」有效：26/30家公司降客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-10 07:20",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.63,
+    "jc_draw_chg": -6.32,
+    "jc_away_chg": -0.79,
+    "mcao_home_chg": 9.5,
+    "mcao_draw_chg": -2.64,
+    "mcao_away_chg": -6.84,
+    "jc_init_odds": [
+      2.62,
+      2.85,
+      2.52
+    ],
+    "jc_real_odds": [
+      2.82,
+      2.67,
+      2.5
+    ],
+    "macao_init_odds": [
+      2.42,
+      3.03,
+      2.63
+    ],
+    "macao_real_odds": [
+      2.65,
+      2.95,
+      2.45
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "UDD"
+  }
+}

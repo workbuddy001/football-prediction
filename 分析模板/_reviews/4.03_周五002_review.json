@@ -1,0 +1,86 @@
+{
+  "match_id": "周五002",
+  "date_folder": "4.03",
+  "home_team": "米堡",
+  "away_team": "米尔沃尔",
+  "league": "英冠",
+  "handicap": "-1",
+  "home_form": "DDLWWD",
+  "away_form": "DLWWWW",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.82>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升27 / 平降15升6 / 客降23升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为1:2(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因",
+    "📝 心水推荐为「米德尔斯堡 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:31",
+  "macao_tip": "米德尔斯堡 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.84,
+    "jc_draw_chg": -0.78,
+    "jc_away_chg": -13.19,
+    "mcao_home_chg": 1.82,
+    "mcao_draw_chg": -0.28,
+    "mcao_away_chg": -3.61,
+    "jc_init_odds": [
+      1.54,
+      3.85,
+      4.55
+    ],
+    "jc_real_odds": [
+      1.63,
+      3.82,
+      3.95
+    ],
+    "macao_init_odds": [
+      1.65,
+      3.61,
+      4.15
+    ],
+    "macao_real_odds": [
+      1.68,
+      3.6,
+      4.0
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NND"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "match_id": "周日011",
+  "date_folder": "4.04",
+  "home_team": "福伦丹",
+  "away_team": "费耶诺德",
+  "league": "荷甲",
+  "handicap": "1",
+  "home_form": "LLLWLW",
+  "away_form": "DWDLWW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率6.55>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.82>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降6升15 / 平降3升17 / 客降16升8",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为0:0(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「费耶诺德 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:23",
+  "macao_tip": "费耶诺德 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      6.55,
+      4.82,
+      1.3
+    ],
+    "jc_real_odds": [
+      6.55,
+      4.82,
+      1.3
+    ],
+    "macao_init_odds": [
+      5.35,
+      4.7,
+      1.38
+    ],
+    "macao_real_odds": [
+      5.35,
+      4.7,
+      1.38
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

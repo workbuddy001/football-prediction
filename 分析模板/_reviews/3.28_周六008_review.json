@@ -1,0 +1,81 @@
+{
+  "match_id": "周六008",
+  "date_folder": "3.28",
+  "home_team": "布莱克浦",
+  "away_team": "伯顿",
+  "league": "英甲",
+  "handicap": "-1",
+  "home_form": "DWLLDL",
+  "away_form": "WLWLDL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降7升16 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:0(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「伯顿 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:24",
+  "macao_tip": "伯顿 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.52,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -8.0,
+    "mcao_home_chg": 3.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -2.72,
+    "jc_init_odds": [
+      2.26,
+      3.1,
+      2.75
+    ],
+    "jc_real_odds": [
+      2.43,
+      3.1,
+      2.53
+    ],
+    "macao_init_odds": [
+      2.33,
+      3.28,
+      2.57
+    ],
+    "macao_real_odds": [
+      2.4,
+      3.28,
+      2.5
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UND"
+  }
+}

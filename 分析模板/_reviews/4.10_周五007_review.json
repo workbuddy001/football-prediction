@@ -1,0 +1,70 @@
+{
+  "match_id": "周五007",
+  "date_folder": "4.10",
+  "home_team": "阿纳西",
+  "away_team": "蒙彼利埃",
+  "league": "法乙",
+  "handicap": "-1",
+  "home_form": "WLLLWW",
+  "away_form": "DDWWDL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-5.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降16升8 / 平降5升9 / 客降1升24",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-11 07:52",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.04,
+    "jc_draw_chg": -5.48,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -2.83,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 3.24,
+    "jc_init_odds": [
+      2.23,
+      3.1,
+      2.8
+    ],
+    "jc_real_odds": [
+      2.32,
+      2.93,
+      2.8
+    ],
+    "macao_init_odds": [
+      2.47,
+      3.18,
+      2.47
+    ],
+    "macao_real_odds": [
+      2.4,
+      3.18,
+      2.55
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "DNU"
+  }
+}

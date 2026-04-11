@@ -1,0 +1,95 @@
+{
+  "match_id": "周五016",
+  "date_folder": "4.10",
+  "home_team": "马赛",
+  "away_team": "梅斯",
+  "league": "法甲",
+  "handicap": "-2",
+  "home_form": "LLWWDW",
+  "away_form": "DDLLLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除①",
+      "detail": "澳门推荐'和局'，方向赔率6.25≥5.0",
+      "strength": 5
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率6.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率10.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.15<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+4.2%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降19升3 / 平降0升26 / 客降1升22",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除①」有效：澳门推荐'和局'，方向赔率6.25≥5.0",
+    "📈 关键信号「绝对值排除」有效：平局赔率6.25>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率10.00>5.0"
+  ],
+  "review_time": "2026-04-11 08:28",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -0.86,
+    "jc_draw_chg": 4.17,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.16,
+      6.0,
+      10.0
+    ],
+    "jc_real_odds": [
+      1.15,
+      6.25,
+      10.0
+    ],
+    "macao_init_odds": [
+      1.21,
+      5.8,
+      9.2
+    ],
+    "macao_real_odds": [
+      1.21,
+      5.8,
+      9.2
+    ],
+    "jc_pattern": "NUN",
+    "macao_pattern": "NNN"
+  }
+}

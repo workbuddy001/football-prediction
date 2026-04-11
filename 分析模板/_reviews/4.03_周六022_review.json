@@ -1,0 +1,76 @@
+{
+  "match_id": "周六022",
+  "date_folder": "4.03",
+  "home_team": "斯图加特",
+  "away_team": "多特蒙德",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "WLWLDW",
+  "away_form": "WWWLLD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.70≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降8升11 / 平降5升12 / 客降12升12",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:50",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.09,
+      3.7,
+      2.63
+    ],
+    "jc_real_odds": [
+      2.09,
+      3.7,
+      2.63
+    ],
+    "macao_init_odds": [
+      2.22,
+      3.83,
+      2.5
+    ],
+    "macao_real_odds": [
+      2.22,
+      3.83,
+      2.5
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

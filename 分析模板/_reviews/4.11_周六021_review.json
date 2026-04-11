@@ -1,0 +1,92 @@
+{
+  "match_id": "周六021",
+  "date_folder": "4.11",
+  "home_team": "欧奈宰纳伊马",
+  "away_team": "新未来SC",
+  "league": "沙特职业联赛",
+  "handicap": "1",
+  "home_form": "LLLLLL",
+  "away_form": "WWDLLD",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "draw",
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升主胜+4.5%+澳门不动，主胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.3%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-1.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升25 / 平降6升16 / 客降25升1",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:1(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「尼奧姆 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-12 02:33",
+  "macao_tip": "尼奧姆 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.55,
+    "jc_draw_chg": 1.28,
+    "jc_away_chg": -1.94,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      4.4,
+      3.9,
+      1.55
+    ],
+    "jc_real_odds": [
+      4.6,
+      3.95,
+      1.52
+    ],
+    "macao_init_odds": [
+      4.88,
+      4.25,
+      1.46
+    ],
+    "macao_real_odds": [
+      4.88,
+      4.25,
+      1.46
+    ],
+    "jc_pattern": "UNN",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "match_id": "周日022",
+  "date_folder": "3.22",
+  "home_team": "罗马",
+  "away_team": "莱切",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "DLDLDW",
+  "away_form": "LWLLWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.25>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率8.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.30<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降27升0 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：客胜赔率8.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.30<1.5，庄家高度自信",
+    "📈 关键信号「强共识推离主」有效：28/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 17:50",
+  "macao_tip": "罗马 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 1.49,
+    "mcao_draw_chg": -0.46,
+    "mcao_away_chg": -5.66,
+    "jc_init_odds": [
+      1.3,
+      4.25,
+      8.0
+    ],
+    "jc_real_odds": [
+      1.3,
+      4.25,
+      8.0
+    ],
+    "macao_init_odds": [
+      1.34,
+      4.32,
+      7.42
+    ],
+    "macao_real_odds": [
+      1.36,
+      4.3,
+      7.0
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NND"
+  }
+}

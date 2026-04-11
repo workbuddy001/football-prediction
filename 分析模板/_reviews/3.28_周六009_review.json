@@ -1,0 +1,77 @@
+{
+  "match_id": "周六009",
+  "date_folder": "3.28",
+  "home_team": "苏格兰",
+  "away_team": "日本",
+  "league": "国际赛",
+  "handicap": "1",
+  "home_form": "WLWWWD",
+  "away_form": "WWWDLD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-11.2%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+14.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升15 / 平降3升20 / 客降15升12",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降客胜-11.2%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+14.8%>5%"
+  ],
+  "review_time": "2026-04-09 17:25",
+  "macao_tip": "日本 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 14.8,
+    "jc_draw_chg": 3.19,
+    "jc_away_chg": -11.21,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.77,
+      3.13,
+      2.23
+    ],
+    "jc_real_odds": [
+      3.18,
+      3.23,
+      1.98
+    ],
+    "macao_init_odds": [
+      2.83,
+      3.2,
+      2.18
+    ],
+    "macao_real_odds": [
+      2.83,
+      3.2,
+      2.18
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "NNN"
+  }
+}

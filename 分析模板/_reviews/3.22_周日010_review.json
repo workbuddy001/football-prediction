@@ -1,0 +1,86 @@
+{
+  "match_id": "周日010",
+  "date_folder": "3.22",
+  "home_team": "费耶诺德",
+  "away_team": "阿贾克斯",
+  "league": "荷甲",
+  "handicap": "-1",
+  "home_form": "WDLWWW",
+  "away_form": "WLDDWD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.90≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.90>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+5.4%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降8升18 / 平降9升13 / 客降14升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:1(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:45",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.32,
+    "jc_draw_chg": 5.41,
+    "jc_away_chg": 3.17,
+    "mcao_home_chg": -4.04,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 6.51,
+    "jc_init_odds": [
+      1.85,
+      3.7,
+      3.15
+    ],
+    "jc_real_odds": [
+      1.77,
+      3.9,
+      3.25
+    ],
+    "macao_init_odds": [
+      1.98,
+      3.61,
+      2.92
+    ],
+    "macao_real_odds": [
+      1.9,
+      3.61,
+      3.11
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "match_id": "周六018",
+  "date_folder": "4.03",
+  "home_team": "马洛卡",
+  "away_team": "皇马",
+  "league": "西甲",
+  "handicap": "1",
+  "home_form": "LWDLLL",
+  "away_form": "WWWWWL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.20>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升18 / 平降4升18 / 客降16升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:1(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「皇家马德里 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:48",
+  "macao_tip": "皇家马德里 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 5.68,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -1.91,
+    "jc_init_odds": [
+      5.2,
+      4.2,
+      1.43
+    ],
+    "jc_real_odds": [
+      5.2,
+      4.2,
+      1.43
+    ],
+    "macao_init_odds": [
+      4.4,
+      4.1,
+      1.57
+    ],
+    "macao_real_odds": [
+      4.65,
+      4.1,
+      1.54
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UNN"
+  }
+}

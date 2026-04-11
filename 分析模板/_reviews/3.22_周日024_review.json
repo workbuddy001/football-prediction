@@ -1,0 +1,81 @@
+{
+  "match_id": "周日024",
+  "date_folder": "3.22",
+  "home_team": "毕尔巴鄂",
+  "away_team": "贝蒂斯",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "LLLDWW",
+  "away_form": "WDLLDD",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热7.7%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-7.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降18升8 / 平降6升17 / 客降6升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为2:1(主胜)",
+    "❌ 预测平局但实际是主胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:51",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.88,
+    "jc_draw_chg": -7.69,
+    "jc_away_chg": -1.43,
+    "mcao_home_chg": -1.96,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 3.08,
+    "jc_init_odds": [
+      1.87,
+      3.25,
+      3.5
+    ],
+    "jc_real_odds": [
+      1.98,
+      3.0,
+      3.45
+    ],
+    "macao_init_odds": [
+      2.04,
+      3.2,
+      3.25
+    ],
+    "macao_real_odds": [
+      2.0,
+      3.2,
+      3.35
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "NNU"
+  }
+}

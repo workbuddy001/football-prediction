@@ -1,0 +1,88 @@
+{
+  "match_id": "周六017",
+  "date_folder": "3.21",
+  "home_team": "福图纳",
+  "away_team": "特温特",
+  "league": "荷甲",
+  "handicap": "1",
+  "home_form": "WLWWLD",
+  "away_form": "LWWWDW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率6.05>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降1升26 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为1:2(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：主胜赔率6.05>5.0",
+    "📈 关键信号「强共识推离主」有效：29/30家公司升主胜（>25家阈值）",
+    "📈 关键信号「强共识造热客」有效：28/30家公司降客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-10 00:22",
+  "macao_tip": "特温特 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.31,
+    "jc_draw_chg": 4.55,
+    "jc_away_chg": -2.19,
+    "mcao_home_chg": 13.83,
+    "mcao_draw_chg": 8.43,
+    "mcao_away_chg": -5.41,
+    "jc_init_odds": [
+      5.8,
+      4.4,
+      1.37
+    ],
+    "jc_real_odds": [
+      6.05,
+      4.6,
+      1.34
+    ],
+    "macao_init_odds": [
+      4.7,
+      4.15,
+      1.48
+    ],
+    "macao_real_odds": [
+      5.35,
+      4.5,
+      1.4
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

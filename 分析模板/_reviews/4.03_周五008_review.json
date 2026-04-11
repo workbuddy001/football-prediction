@@ -1,0 +1,82 @@
+{
+  "match_id": "周五008",
+  "date_folder": "4.03",
+  "home_team": "圣旺红星",
+  "away_team": "拉瓦勒",
+  "league": "法乙",
+  "handicap": "-1",
+  "home_form": "WWLDLW",
+  "away_form": "WLDDLD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.40>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+6.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+10.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降24升5 / 平降5升21 / 客降4升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:0(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「圣旺红星 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:40",
+  "macao_tip": "圣旺红星 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.56,
+    "jc_draw_chg": 6.15,
+    "jc_away_chg": 10.2,
+    "mcao_home_chg": -15.38,
+    "mcao_draw_chg": 5.43,
+    "mcao_away_chg": 37.57,
+    "jc_init_odds": [
+      1.62,
+      3.25,
+      4.9
+    ],
+    "jc_real_odds": [
+      1.53,
+      3.45,
+      5.4
+    ],
+    "macao_init_odds": [
+      1.95,
+      3.13,
+      3.38
+    ],
+    "macao_real_odds": [
+      1.65,
+      3.3,
+      4.65
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DUU"
+  }
+}

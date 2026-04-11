@@ -1,0 +1,90 @@
+{
+  "match_id": "周六005",
+  "date_folder": "4.04",
+  "home_team": "墨尔本城",
+  "away_team": "西悉尼",
+  "league": "澳超",
+  "handicap": "-1",
+  "home_form": "DWDDLL",
+  "away_form": "LDLWLD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升1 / 平降0升28 / 客降1升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「强共识推离客」有效：28/30家公司升客胜（>25家阈值）",
+    "📈 关键信号「强共识造热主」有效：29/30家公司降主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 15:50",
+  "macao_tip": "墨爾本城 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.16,
+    "jc_draw_chg": 1.37,
+    "jc_away_chg": -3.61,
+    "mcao_home_chg": -5.58,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 9.84,
+    "jc_init_odds": [
+      1.73,
+      3.65,
+      3.6
+    ],
+    "jc_real_odds": [
+      1.75,
+      3.7,
+      3.47
+    ],
+    "macao_init_odds": [
+      1.97,
+      3.4,
+      3.05
+    ],
+    "macao_real_odds": [
+      1.86,
+      3.4,
+      3.35
+    ],
+    "jc_pattern": "NND",
+    "macao_pattern": "DNU"
+  }
+}

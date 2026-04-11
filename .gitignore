@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# 临时文件和测试文件
+_test.py
+_check_page.py
+~$*
+
+# IDE
+.vscode/
+.idea/
+
+# WorkBuddy 内部（不上传）
+.workbuddy/
+
+# Excel 临时文件（只保留md源码）
+# 如需备份xlsx可删除下面这行
+# *.xlsx
+
+# 日志
+*.log

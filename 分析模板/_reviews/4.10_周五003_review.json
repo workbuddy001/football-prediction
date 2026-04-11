@@ -1,0 +1,75 @@
+{
+  "match_id": "周五003",
+  "date_folder": "4.10",
+  "home_team": "卡斯鲁厄",
+  "away_team": "比勒费",
+  "league": "德乙",
+  "handicap": "1",
+  "home_form": "LLWLDW",
+  "away_form": "WWLDLL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "4:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降9升17 / 平降5升19 / 客降10升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为4:1(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在主方向,客方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望",
+    "📝 心水推荐为「比勒费尔德 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-11 07:50",
+  "macao_tip": "比勒费尔德 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.26,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -3.38,
+    "mcao_home_chg": -7.53,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 6.0,
+    "jc_init_odds": [
+      2.85,
+      3.38,
+      2.07
+    ],
+    "jc_real_odds": [
+      3.0,
+      3.38,
+      2.0
+    ],
+    "macao_init_odds": [
+      2.92,
+      3.55,
+      2.0
+    ],
+    "macao_real_odds": [
+      2.7,
+      3.55,
+      2.12
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "DNU"
+  }
+}

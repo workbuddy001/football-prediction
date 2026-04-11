@@ -1,0 +1,86 @@
+{
+  "match_id": "周四003",
+  "date_folder": "3.26",
+  "home_team": "斯洛伐克",
+  "away_team": "科索沃",
+  "league": "世预赛",
+  "handicap": "-1",
+  "home_form": "LWWLWW",
+  "away_form": "DWWDWL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "3:4",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-8.2%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降27升1 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为3:4(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因",
+    "📝 心水推荐为「科索沃 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:36",
+  "macao_tip": "科索沃 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.61,
+    "jc_draw_chg": -0.69,
+    "jc_away_chg": -8.22,
+    "mcao_home_chg": 4.0,
+    "mcao_draw_chg": -5.54,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.96,
+      2.9,
+      3.65
+    ],
+    "jc_real_odds": [
+      2.07,
+      2.88,
+      3.35
+    ],
+    "macao_init_odds": [
+      2.0,
+      3.07,
+      3.35
+    ],
+    "macao_real_odds": [
+      2.08,
+      2.9,
+      3.35
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UDN"
+  }
+}

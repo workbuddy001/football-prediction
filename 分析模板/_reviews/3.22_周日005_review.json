@@ -1,0 +1,102 @@
+{
+  "match_id": "周日005",
+  "date_folder": "3.22",
+  "home_team": "奈梅亨",
+  "away_team": "海伦芬",
+  "league": "荷甲",
+  "handicap": "-1",
+  "home_form": "WWWLDD",
+  "away_form": "WWWLWW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.40>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.25>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+7.3%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+10.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降27升1 / 平降0升28 / 客降1升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "27/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:2(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「奈梅亨尼美根 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:43",
+  "macao_tip": "奈梅亨尼美根 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -6.25,
+    "jc_draw_chg": 7.32,
+    "jc_away_chg": 10.39,
+    "mcao_home_chg": -1.84,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.5,
+    "jc_init_odds": [
+      1.6,
+      4.1,
+      3.85
+    ],
+    "jc_real_odds": [
+      1.5,
+      4.4,
+      4.25
+    ],
+    "macao_init_odds": [
+      1.63,
+      4.05,
+      3.78
+    ],
+    "macao_real_odds": [
+      1.6,
+      4.05,
+      3.95
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNU"
+  }
+}

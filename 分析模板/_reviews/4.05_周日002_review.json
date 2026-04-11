@@ -1,0 +1,86 @@
+{
+  "match_id": "周日002",
+  "date_folder": "4.05",
+  "home_team": "安养FC",
+  "away_team": "首尔FC",
+  "league": "韩职",
+  "handicap": "1",
+  "home_form": "LLDWDD",
+  "away_form": "WWWLLW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.97>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升主胜+7.9%+澳门不动，主胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-5.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降6升21 / 平降11升11 / 客降14升12",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「首尔FC 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 14:23",
+  "macao_tip": "首尔FC 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.88,
+    "jc_draw_chg": 3.23,
+    "jc_away_chg": -5.35,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      3.68,
+      3.1,
+      1.87
+    ],
+    "jc_real_odds": [
+      3.97,
+      3.2,
+      1.77
+    ],
+    "macao_init_odds": [
+      3.18,
+      3.23,
+      2.0
+    ],
+    "macao_real_odds": [
+      3.18,
+      3.23,
+      2.0
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "NNN"
+  }
+}

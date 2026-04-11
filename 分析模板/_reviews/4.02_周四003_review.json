@@ -1,0 +1,70 @@
+{
+  "match_id": "周四003",
+  "date_folder": "4.02",
+  "home_team": "维冈",
+  "away_team": "莱顿东方",
+  "league": "英甲",
+  "handicap": "-1",
+  "home_form": "LWDWLD",
+  "away_form": "DWWWWL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升25 / 平降10升9 / 客降18升7",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为0:0(平局)",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+5.3%>5%"
+  ],
+  "review_time": "2026-04-09 16:57",
+  "macao_tip": "莱顿东方 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.26,
+    "jc_draw_chg": 1.67,
+    "jc_away_chg": -8.57,
+    "mcao_home_chg": -1.38,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 1.4,
+    "jc_init_odds": [
+      2.09,
+      3.0,
+      3.15
+    ],
+    "jc_real_odds": [
+      2.2,
+      3.05,
+      2.88
+    ],
+    "macao_init_odds": [
+      2.18,
+      3.15,
+      2.86
+    ],
+    "macao_real_odds": [
+      2.15,
+      3.15,
+      2.9
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

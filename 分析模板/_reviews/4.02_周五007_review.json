@@ -1,0 +1,85 @@
+{
+  "match_id": "周五007",
+  "date_folder": "4.02",
+  "home_team": "吉达联合",
+  "away_team": "拉斯决心",
+  "league": "沙特职业联赛",
+  "handicap": "-1",
+  "home_form": "DLLWDD",
+  "away_form": "WLWDLW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.55>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率9.20>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.19<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降9升7 / 平降6升11 / 客降4升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.55>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率9.20>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.19<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-09 16:52",
+  "macao_tip": "艾哈森 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.19,
+      5.55,
+      9.2
+    ],
+    "jc_real_odds": [
+      1.19,
+      5.55,
+      9.2
+    ],
+    "macao_init_odds": [
+      1.25,
+      5.3,
+      7.4
+    ],
+    "macao_real_odds": [
+      1.25,
+      5.3,
+      7.4
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

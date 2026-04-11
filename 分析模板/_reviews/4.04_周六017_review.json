@@ -1,0 +1,82 @@
+{
+  "match_id": "周六017",
+  "date_folder": "4.04",
+  "home_team": "汉堡",
+  "away_team": "奥格斯堡",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "LDWLLD",
+  "away_form": "LLLWWW",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-10.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+17.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降13升12 / 客降25升4",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为1:1(平局)",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-10.9%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+17.2%>5%",
+    "📈 关键信号「强共识推离主」有效：28/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 16:05",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 17.17,
+    "jc_draw_chg": -10.88,
+    "jc_away_chg": -10.32,
+    "mcao_home_chg": 4.67,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -5.63,
+    "jc_init_odds": [
+      1.98,
+      3.31,
+      3.1
+    ],
+    "jc_real_odds": [
+      2.32,
+      2.95,
+      2.78
+    ],
+    "macao_init_odds": [
+      2.14,
+      3.38,
+      2.84
+    ],
+    "macao_real_odds": [
+      2.24,
+      3.38,
+      2.68
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UND"
+  }
+}

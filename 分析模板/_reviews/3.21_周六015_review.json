@@ -1,0 +1,100 @@
+{
+  "match_id": "周六015",
+  "date_folder": "3.21",
+  "home_team": "南安普敦",
+  "away_team": "牛津联",
+  "league": "英冠",
+  "handicap": "-1",
+  "home_form": "WWDWWW",
+  "away_form": "DWWWLD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.80>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.42<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-1.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.3%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+3.6%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升24 / 平降25升2 / 客降20升5",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：客胜赔率5.80>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.42<1.5，庄家高度自信",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-1.4%+澳门不动"
+  ],
+  "review_time": "2026-04-10 00:21",
+  "macao_tip": "牛津联 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.39,
+    "jc_draw_chg": 1.28,
+    "jc_away_chg": 3.57,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.44,
+      3.9,
+      5.6
+    ],
+    "jc_real_odds": [
+      1.42,
+      3.95,
+      5.8
+    ],
+    "macao_init_odds": [
+      1.5,
+      4.1,
+      4.6
+    ],
+    "macao_real_odds": [
+      1.5,
+      4.1,
+      4.6
+    ],
+    "jc_pattern": "NNU",
+    "macao_pattern": "NNN"
+  }
+}

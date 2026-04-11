@@ -1,0 +1,86 @@
+{
+  "match_id": "周四004",
+  "date_folder": "3.26",
+  "home_team": "威尔士",
+  "away_team": "波黑",
+  "league": "世预赛",
+  "handicap": "-1",
+  "home_form": "WWLLLW",
+  "away_form": "DWWDLW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.85>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+12.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升0 / 平降0升27 / 客降0升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:1(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「威尔士 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:37",
+  "macao_tip": "威尔士 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -6.47,
+    "jc_draw_chg": 4.62,
+    "jc_away_chg": 12.79,
+    "mcao_home_chg": -11.11,
+    "mcao_draw_chg": 5.92,
+    "mcao_away_chg": 22.7,
+    "jc_init_odds": [
+      1.7,
+      3.25,
+      4.3
+    ],
+    "jc_real_odds": [
+      1.59,
+      3.4,
+      4.85
+    ],
+    "macao_init_odds": [
+      1.89,
+      3.21,
+      3.48
+    ],
+    "macao_real_odds": [
+      1.68,
+      3.4,
+      4.27
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DUU"
+  }
+}

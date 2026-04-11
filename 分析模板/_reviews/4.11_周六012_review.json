@@ -1,0 +1,73 @@
+{
+  "match_id": "周六012",
+  "date_folder": "4.11",
+  "home_team": "都灵",
+  "away_team": "维罗纳",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "WLWLWL",
+  "away_form": "LLLWLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.28>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升28 / 平降21升7 / 客降9升14",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 00:52",
+  "macao_tip": "都灵 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.14,
+    "jc_draw_chg": 1.61,
+    "jc_away_chg": 0.71,
+    "mcao_home_chg": 2.13,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -4.3,
+    "jc_init_odds": [
+      1.75,
+      3.1,
+      4.25
+    ],
+    "jc_real_odds": [
+      1.73,
+      3.15,
+      4.28
+    ],
+    "macao_init_odds": [
+      1.88,
+      3.07,
+      3.95
+    ],
+    "macao_real_odds": [
+      1.92,
+      3.07,
+      3.78
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UND"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "match_id": "周二010",
+  "date_folder": "3.31",
+  "home_team": "荷兰",
+  "away_team": "厄瓜多尔",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "WWDWWW",
+  "away_form": "DWDDDW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.88>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.35>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.40<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.1%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降22升3 / 平降4升21 / 客降2升26",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "26/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:1(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「荷兰 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:04",
+  "macao_tip": "荷兰 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.41,
+    "jc_draw_chg": 2.11,
+    "jc_away_chg": 2.42,
+    "mcao_home_chg": -0.65,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 2.13,
+    "jc_init_odds": [
+      1.42,
+      3.8,
+      6.2
+    ],
+    "jc_real_odds": [
+      1.4,
+      3.88,
+      6.35
+    ],
+    "macao_init_odds": [
+      1.55,
+      3.8,
+      4.7
+    ],
+    "macao_real_odds": [
+      1.54,
+      3.8,
+      4.8
+    ],
+    "jc_pattern": "NUU",
+    "macao_pattern": "NNU"
+  }
+}

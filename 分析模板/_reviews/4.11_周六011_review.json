@@ -1,0 +1,88 @@
+{
+  "match_id": "周六011",
+  "date_folder": "4.11",
+  "home_team": "卡利亚里",
+  "away_team": "克雷莫纳",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "LLLLDD",
+  "away_form": "LWLLLL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.80>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-4.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降21升0 / 平降19升3 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-4.3%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+5.6%>5%",
+    "📈 关键信号「强共识推离客」有效：29/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-12 00:50",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": -4.26,
+    "jc_away_chg": 5.56,
+    "mcao_home_chg": -4.65,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 8.63,
+    "jc_init_odds": [
+      1.91,
+      3.05,
+      3.6
+    ],
+    "jc_real_odds": [
+      1.91,
+      2.92,
+      3.8
+    ],
+    "macao_init_odds": [
+      2.15,
+      3.03,
+      3.13
+    ],
+    "macao_real_odds": [
+      2.05,
+      3.03,
+      3.4
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "DNU"
+  }
+}

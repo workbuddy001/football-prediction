@@ -1,0 +1,71 @@
+{
+  "match_id": "周一004",
+  "date_folder": "4.06",
+  "home_team": "米尔沃尔",
+  "away_team": "诺维奇",
+  "league": "英冠",
+  "handicap": "-1",
+  "home_form": "WDLWWW",
+  "away_form": "DWLWWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+12.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降16升10 / 平降14升8 / 客降1升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「米尔沃尔 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-10 07:15",
+  "macao_tip": "米尔沃尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -9.43,
+    "jc_draw_chg": 3.75,
+    "jc_away_chg": 12.07,
+    "mcao_home_chg": -2.86,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.53,
+    "jc_init_odds": [
+      2.12,
+      3.2,
+      2.9
+    ],
+    "jc_real_odds": [
+      1.92,
+      3.32,
+      3.25
+    ],
+    "macao_init_odds": [
+      2.1,
+      3.31,
+      2.87
+    ],
+    "macao_real_odds": [
+      2.04,
+      3.31,
+      3.0
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

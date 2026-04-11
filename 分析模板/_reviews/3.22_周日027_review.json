@@ -1,0 +1,102 @@
+{
+  "match_id": "周日027",
+  "date_folder": "3.22",
+  "home_team": "皇马",
+  "away_team": "马竞",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "WWWWLW",
+  "away_form": "LWWWLW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:2",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.80≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.80>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+8.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降15升11 / 客降28升1",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:2(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率3.80≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+8.7%>5%",
+    "📈 关键信号「强共识推离主」有效：28/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 17:53",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.57,
+    "jc_draw_chg": 1.33,
+    "jc_away_chg": 8.7,
+    "mcao_home_chg": 3.03,
+    "mcao_draw_chg": 3.55,
+    "mcao_away_chg": -8.1,
+    "jc_init_odds": [
+      1.75,
+      3.75,
+      3.45
+    ],
+    "jc_real_odds": [
+      1.67,
+      3.8,
+      3.75
+    ],
+    "macao_init_odds": [
+      1.98,
+      3.38,
+      3.21
+    ],
+    "macao_real_odds": [
+      2.04,
+      3.5,
+      2.95
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UUD"
+  }
+}

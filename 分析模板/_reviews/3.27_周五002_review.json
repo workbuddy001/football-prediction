@@ -1,0 +1,97 @@
+{
+  "match_id": "周五002",
+  "date_folder": "3.27",
+  "home_team": "中国",
+  "away_team": "库拉索",
+  "league": "国际赛",
+  "handicap": "1",
+  "home_form": "WLLWLL",
+  "away_form": "DWDWWD",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.42>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.65>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+54.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+15.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降0升27 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:0(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「库拉索 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:27",
+  "macao_tip": "库拉索 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 54.86,
+    "jc_draw_chg": 15.87,
+    "jc_away_chg": -21.58,
+    "mcao_home_chg": 60.41,
+    "mcao_draw_chg": 11.8,
+    "mcao_away_chg": -22.92,
+    "jc_init_odds": [
+      3.5,
+      3.15,
+      1.9
+    ],
+    "jc_real_odds": [
+      5.42,
+      3.65,
+      1.49
+    ],
+    "macao_init_odds": [
+      3.41,
+      3.22,
+      1.92
+    ],
+    "macao_real_odds": [
+      5.47,
+      3.6,
+      1.48
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "match_id": "周五003",
+  "date_folder": "3.27",
+  "home_team": "澳大利亚",
+  "away_team": "喀麦隆",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "",
+  "away_form": "",
+  "prediction": "平局",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.85>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降5升24 / 平降22升5 / 客降24升5",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为1:0(主胜)",
+    "❌ 预测平局但实际是主胜，需要反思原因"
+  ],
+  "review_time": "2026-04-09 17:30",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.88,
+    "jc_draw_chg": -0.61,
+    "jc_away_chg": -16.3,
+    "mcao_home_chg": 17.86,
+    "mcao_draw_chg": -9.09,
+    "mcao_away_chg": -19.85,
+    "jc_init_odds": [
+      1.65,
+      3.27,
+      4.6
+    ],
+    "jc_real_odds": [
+      1.78,
+      3.25,
+      3.85
+    ],
+    "macao_init_odds": [
+      1.68,
+      3.52,
+      4.08
+    ],
+    "macao_real_odds": [
+      1.98,
+      3.2,
+      3.27
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UDD"
+  }
+}

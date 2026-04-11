@@ -1,0 +1,77 @@
+{
+  "match_id": "周六004",
+  "date_folder": "4.03",
+  "home_team": "江原FC",
+  "away_team": "光州FC",
+  "league": "韩职",
+  "handicap": "-1",
+  "home_form": "LDDDLD",
+  "away_form": "LDDWDD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.47<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降18升5 / 平降2升20 / 客降2升21",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.25>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.47<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-09 16:46",
+  "macao_tip": "江原FC 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.47,
+      3.46,
+      6.25
+    ],
+    "jc_real_odds": [
+      1.47,
+      3.46,
+      6.25
+    ],
+    "macao_init_odds": [
+      1.63,
+      3.32,
+      4.75
+    ],
+    "macao_real_odds": [
+      1.63,
+      3.32,
+      4.75
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

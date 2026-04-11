@@ -1,0 +1,79 @@
+{
+  "match_id": "周二005",
+  "date_folder": "4.07",
+  "home_team": "雷克斯",
+  "away_team": "南安普敦",
+  "league": "英冠",
+  "handicap": "1",
+  "home_form": "DWLWLD",
+  "away_form": "WWWWDW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:5",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.2%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+6.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升17 / 平降25升3 / 客降6升20",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为1:5(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-2.2%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+6.7%>5%"
+  ],
+  "review_time": "2026-04-09 14:18",
+  "macao_tip": "南安普敦 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 6.72,
+    "jc_draw_chg": -2.15,
+    "jc_away_chg": -4.26,
+    "mcao_home_chg": -2.95,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 3.27,
+    "jc_init_odds": [
+      2.53,
+      3.25,
+      2.35
+    ],
+    "jc_real_odds": [
+      2.7,
+      3.18,
+      2.25
+    ],
+    "macao_init_odds": [
+      2.37,
+      3.41,
+      2.45
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.41,
+      2.53
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "DNU"
+  }
+}

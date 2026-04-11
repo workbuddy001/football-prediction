@@ -1,0 +1,87 @@
+{
+  "match_id": "周四011",
+  "date_folder": "3.26",
+  "home_team": "新喀里多尼亚",
+  "away_team": "牙买加",
+  "league": "世预赛",
+  "handicap": "4",
+  "home_form": "WLWDWW",
+  "away_form": "WDDWLW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率21.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率11.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+15.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升21 / 平降4升23 / 客降20升4",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（主胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：主胜赔率21.00>5.0",
+    "📈 关键信号「绝对值排除」有效：平局赔率11.00>5.0",
+    "📈 关键信号「推离排除」有效：竞彩平局升+15.8%>5%"
+  ],
+  "review_time": "2026-04-09 17:39",
+  "macao_tip": "牙买加 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -27.59,
+    "jc_draw_chg": 15.79,
+    "jc_away_chg": -2.78,
+    "mcao_home_chg": 40.0,
+    "mcao_draw_chg": 57.14,
+    "mcao_away_chg": -6.25,
+    "jc_init_odds": [
+      29.0,
+      9.5,
+      1.08
+    ],
+    "jc_real_odds": [
+      21.0,
+      11.0,
+      1.05
+    ],
+    "macao_init_odds": [
+      15.0,
+      7.0,
+      1.12
+    ],
+    "macao_real_odds": [
+      21.0,
+      11.0,
+      1.05
+    ],
+    "jc_pattern": "DUD",
+    "macao_pattern": "UUD"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "match_id": "周二006",
+  "date_folder": "4.07",
+  "home_team": "拉瓜伊拉",
+  "away_team": "弗鲁米嫩",
+  "league": "解放者杯",
+  "handicap": "1",
+  "home_form": "DWDDWW",
+  "away_form": "DWWLWW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率6.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+4.2%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降5升17 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为0:0(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「弗鲁米嫩塞 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 14:19",
+  "macao_tip": "弗鲁米嫩塞 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.76,
+    "jc_draw_chg": 4.23,
+    "jc_away_chg": -3.38,
+    "mcao_home_chg": 6.06,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -1.9,
+    "jc_init_odds": [
+      5.8,
+      3.55,
+      1.48
+    ],
+    "jc_real_odds": [
+      6.25,
+      3.7,
+      1.43
+    ],
+    "macao_init_odds": [
+      4.95,
+      3.48,
+      1.58
+    ],
+    "macao_real_odds": [
+      5.25,
+      3.48,
+      1.55
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UNN"
+  }
+}

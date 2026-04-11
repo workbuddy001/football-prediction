@@ -1,0 +1,73 @@
+{
+  "match_id": "周五010",
+  "date_folder": "4.10",
+  "home_team": "埃因FC",
+  "away_team": "罗达JC",
+  "league": "荷乙",
+  "handicap": "1",
+  "home_form": "LDWLWW",
+  "away_form": "LWDLDL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热5.8%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-5.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升24 / 平降3升19 / 客降24升1",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:3(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-11 07:53",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.17,
+    "jc_draw_chg": -5.8,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.4,
+      3.45,
+      2.37
+    ],
+    "jc_real_odds": [
+      2.5,
+      3.25,
+      2.37
+    ],
+    "macao_init_odds": [
+      2.41,
+      3.62,
+      2.31
+    ],
+    "macao_real_odds": [
+      2.41,
+      3.62,
+      2.31
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "match_id": "周四007",
+  "date_folder": "4.09",
+  "home_team": "美因茨",
+  "away_team": "斯特拉斯",
+  "league": "欧协联",
+  "handicap": "-1",
+  "home_form": "WWWWDD",
+  "away_form": "WWDDWD",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热4.8%",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升18 / 平降11升12 / 客降11升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-10 07:02",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.47,
+    "jc_draw_chg": -4.76,
+    "jc_away_chg": 4.45,
+    "mcao_home_chg": 1.92,
+    "mcao_draw_chg": -2.14,
+    "mcao_away_chg": -1.02,
+    "jc_init_odds": [
+      2.13,
+      3.15,
+      2.92
+    ],
+    "jc_real_odds": [
+      2.14,
+      3.0,
+      3.05
+    ],
+    "macao_init_odds": [
+      2.08,
+      3.27,
+      2.93
+    ],
+    "macao_real_odds": [
+      2.12,
+      3.2,
+      2.9
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "NDN"
+  }
+}

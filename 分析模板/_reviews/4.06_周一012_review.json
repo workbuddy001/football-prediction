@@ -1,0 +1,73 @@
+{
+  "match_id": "周一012",
+  "date_folder": "4.06",
+  "home_team": "那不勒斯",
+  "away_team": "AC米兰",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "WWWWLD",
+  "away_form": "WLWWLD",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降20升4 / 平降20升7 / 客降0升26",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "26/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-10 07:23",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": -1.72,
+    "jc_away_chg": 1.42,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.33,
+      2.9,
+      2.82
+    ],
+    "jc_real_odds": [
+      2.33,
+      2.85,
+      2.86
+    ],
+    "macao_init_odds": [
+      2.47,
+      2.85,
+      2.81
+    ],
+    "macao_real_odds": [
+      2.47,
+      2.85,
+      2.81
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

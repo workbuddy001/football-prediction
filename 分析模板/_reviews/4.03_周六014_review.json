@@ -1,0 +1,79 @@
+{
+  "match_id": "周六014",
+  "date_folder": "4.03",
+  "home_team": "弗赖堡",
+  "away_team": "拜仁",
+  "league": "德甲",
+  "handicap": "1",
+  "home_form": "WWLLDL",
+  "away_form": "WWDWWW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "2:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率6.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.15>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降22升3 / 平降9升11 / 客降1升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为2:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（主胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：主胜赔率6.25>5.0",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.15>5.0"
+  ],
+  "review_time": "2026-04-09 16:47",
+  "macao_tip": "拜仁慕尼黑 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      6.25,
+      5.15,
+      1.29
+    ],
+    "jc_real_odds": [
+      6.25,
+      5.15,
+      1.29
+    ],
+    "macao_init_odds": [
+      6.2,
+      5.15,
+      1.32
+    ],
+    "macao_real_odds": [
+      6.2,
+      5.15,
+      1.32
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

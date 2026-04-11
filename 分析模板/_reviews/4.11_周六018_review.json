@@ -1,0 +1,76 @@
+{
+  "match_id": "周六018",
+  "date_folder": "4.11",
+  "home_team": "布伦特",
+  "away_team": "埃弗顿",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "DDDDWL",
+  "away_form": "WLWWLL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-6.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+6.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降9升17 / 平降19升4 / 客降15升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为2:2(平局)",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-6.3%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+6.3%>5%"
+  ],
+  "review_time": "2026-04-12 00:54",
+  "macao_tip": "埃弗顿 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 6.25,
+    "jc_draw_chg": -6.25,
+    "jc_away_chg": -3.82,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 1.64,
+    "jc_init_odds": [
+      1.92,
+      3.2,
+      3.4
+    ],
+    "jc_real_odds": [
+      2.04,
+      3.0,
+      3.27
+    ],
+    "macao_init_odds": [
+      2.1,
+      3.25,
+      3.05
+    ],
+    "macao_real_odds": [
+      2.1,
+      3.25,
+      3.1
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "NNN"
+  }
+}

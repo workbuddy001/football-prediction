@@ -1,0 +1,107 @@
+{
+  "match_id": "周三003",
+  "date_folder": "4.08",
+  "home_team": "吉达联合",
+  "away_team": "新未来SC",
+  "league": "沙特职业联赛",
+  "handicap": "-1",
+  "home_form": "WDLLWD",
+  "away_form": "WDLLDW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:4",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.98>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.05>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.47<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-8.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+5.6%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+22.6%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+22.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降5升21 / 平降14升9 / 客降16升11",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为3:4(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「伊蒂哈德 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 14:48",
+  "macao_tip": "伊蒂哈德 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -8.7,
+    "jc_draw_chg": 5.57,
+    "jc_away_chg": 22.57,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.61,
+      3.77,
+      4.12
+    ],
+    "jc_real_odds": [
+      1.47,
+      3.98,
+      5.05
+    ],
+    "macao_init_odds": [
+      1.6,
+      3.88,
+      4.1
+    ],
+    "macao_real_odds": [
+      1.6,
+      3.88,
+      4.1
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNN"
+  }
+}

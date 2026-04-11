@@ -1,0 +1,81 @@
+{
+  "match_id": "周六007",
+  "date_folder": "3.28",
+  "home_team": "埃克塞特",
+  "away_team": "莱顿东方",
+  "league": "英甲",
+  "handicap": "-1",
+  "home_form": "LLLLLD",
+  "away_form": "WWWWLL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-6.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升26 / 平降15升9 / 客降20升5",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "26/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为0:0(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「莱顿东方 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:24",
+  "macao_tip": "莱顿东方 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.58,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -6.41,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.15,
+      3.25,
+      2.81
+    ],
+    "jc_real_odds": [
+      2.27,
+      3.25,
+      2.63
+    ],
+    "macao_init_odds": [
+      2.2,
+      3.37,
+      2.7
+    ],
+    "macao_real_odds": [
+      2.2,
+      3.37,
+      2.7
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

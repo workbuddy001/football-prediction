@@ -1,0 +1,79 @@
+{
+  "match_id": "周日005",
+  "date_folder": "4.05",
+  "home_team": "仁川联",
+  "away_team": "金泉尚武",
+  "league": "韩职",
+  "handicap": "-1",
+  "home_form": "WLDLLW",
+  "away_form": "DDDDDL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+7.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升26 / 平降21升3 / 客降16升8",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "26/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+7.3%>5%",
+    "📈 关键信号「强共识推离主」有效：26/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 14:24",
+  "macao_tip": "仁川联合 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.53,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 7.33,
+    "mcao_home_chg": 2.83,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -3.75,
+    "jc_init_odds": [
+      2.35,
+      2.96,
+      2.73
+    ],
+    "jc_real_odds": [
+      2.22,
+      2.96,
+      2.93
+    ],
+    "macao_init_odds": [
+      2.12,
+      3.22,
+      2.93
+    ],
+    "macao_real_odds": [
+      2.18,
+      3.22,
+      2.82
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UND"
+  }
+}

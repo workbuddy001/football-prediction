@@ -1,0 +1,76 @@
+{
+  "match_id": "周二003",
+  "date_folder": "3.31",
+  "home_team": "挪威",
+  "away_team": "瑞士",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "LWWDWW",
+  "away_form": "LDWDWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.50≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.1%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降21升4 / 平降1升23 / 客降3升23",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:0(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:00",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.11,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 4.13,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.9,
+      3.5,
+      3.15
+    ],
+    "jc_real_odds": [
+      1.86,
+      3.5,
+      3.28
+    ],
+    "macao_init_odds": [
+      1.99,
+      3.55,
+      2.95
+    ],
+    "macao_real_odds": [
+      1.99,
+      3.55,
+      2.95
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "match_id": "周日007",
+  "date_folder": "3.22",
+  "home_team": "纽卡斯尔",
+  "away_team": "桑德兰",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "LWDLWL",
+  "away_form": "LLWDLW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.90>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.20>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.47<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+6.8%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+6.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升1 / 平降0升27 / 客降0升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「纽卡斯尔联 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:44",
+  "macao_tip": "纽卡斯尔联 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.92,
+    "jc_draw_chg": 6.85,
+    "jc_away_chg": 4.0,
+    "mcao_home_chg": -1.96,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 7.07,
+    "jc_init_odds": [
+      1.53,
+      3.65,
+      5.0
+    ],
+    "jc_real_odds": [
+      1.47,
+      3.9,
+      5.2
+    ],
+    "macao_init_odds": [
+      1.53,
+      3.85,
+      4.95
+    ],
+    "macao_real_odds": [
+      1.5,
+      3.85,
+      5.3
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNU"
+  }
+}

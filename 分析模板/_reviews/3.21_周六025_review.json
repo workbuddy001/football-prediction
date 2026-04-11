@@ -1,0 +1,95 @@
+{
+  "match_id": "周六025",
+  "date_folder": "3.21",
+  "home_team": "本菲卡",
+  "away_team": "吉马良斯",
+  "league": "葡超",
+  "handicap": "-1",
+  "home_form": "WDWLWL",
+  "away_form": "LLDLWL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.66>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率11.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.16<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.1%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+4.8%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降25升2 / 平降0升28 / 客降2升22",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.66>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率11.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.16<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-10 00:26",
+  "macao_tip": "本菲卡 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -0.85,
+    "jc_draw_chg": 1.07,
+    "jc_away_chg": 4.76,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.17,
+      5.6,
+      10.5
+    ],
+    "jc_real_odds": [
+      1.16,
+      5.66,
+      11.0
+    ],
+    "macao_init_odds": [
+      1.23,
+      5.1,
+      8.4
+    ],
+    "macao_real_odds": [
+      1.23,
+      5.1,
+      8.4
+    ],
+    "jc_pattern": "NNU",
+    "macao_pattern": "NNN"
+  }
+}

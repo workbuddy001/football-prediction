@@ -1,0 +1,90 @@
+{
+  "match_id": "周六014",
+  "date_folder": "3.21",
+  "home_team": "富勒姆",
+  "away_team": "伯恩利",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "DLLWWW",
+  "away_form": "DLLDLW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.95≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.80>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.42<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升13 / 平降0升23 / 客降11升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率3.95≥3.5",
+    "📈 关键信号「绝对值排除」有效：客胜赔率5.80>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.42<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-10 00:20",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.42,
+      3.95,
+      5.8
+    ],
+    "jc_real_odds": [
+      1.42,
+      3.95,
+      5.8
+    ],
+    "macao_init_odds": [
+      1.43,
+      4.05,
+      5.9
+    ],
+    "macao_real_odds": [
+      1.43,
+      4.05,
+      5.9
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

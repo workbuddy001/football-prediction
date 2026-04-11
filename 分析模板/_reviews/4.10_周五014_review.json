@@ -1,0 +1,73 @@
+{
+  "match_id": "周五014",
+  "date_folder": "4.10",
+  "home_team": "西布罗姆",
+  "away_team": "米尔沃尔",
+  "league": "英冠",
+  "handicap": "-1",
+  "home_form": "DDWWDD",
+  "away_form": "LWDLWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.6%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-3.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降17升8 / 平降5升14 / 客降5升22",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-11 08:21",
+  "macao_tip": "米尔沃尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 3.79,
+    "jc_draw_chg": -1.64,
+    "jc_away_chg": -3.28,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.11,
+      3.05,
+      3.05
+    ],
+    "jc_real_odds": [
+      2.19,
+      3.0,
+      2.95
+    ],
+    "macao_init_odds": [
+      2.17,
+      3.22,
+      2.83
+    ],
+    "macao_real_odds": [
+      2.17,
+      3.22,
+      2.83
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

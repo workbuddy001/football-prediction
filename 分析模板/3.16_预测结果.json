@@ -1,0 +1,134 @@
+[
+  {
+    "date_num": "周一001",
+    "match": "海尔蒙特 vs 坎布尔",
+    "league": "荷乙",
+    "confidence": 52,
+    "win_rate_diff": -28,
+    "eight_change": "[+2-,+3-,-2-]",
+    "segment": "低于55%",
+    "prediction": "不使用",
+    "reason": "置信度低于55%"
+  },
+  {
+    "date_num": "周一002",
+    "match": "克雷莫纳 vs 佛罗伦萨",
+    "league": "意甲",
+    "confidence": 48,
+    "win_rate_diff": -24,
+    "eight_change": "[-1↑,-3-,-1-]",
+    "segment": "低于55%",
+    "prediction": "不使用",
+    "reason": "置信度低于55%"
+  },
+  {
+    "date_num": "周一003",
+    "match": "阿纳西 vs 特鲁瓦",
+    "league": "法乙",
+    "confidence": 36,
+    "win_rate_diff": -3,
+    "eight_change": "[+4↓,-1-,+1↑]",
+    "segment": "低于55%",
+    "prediction": "不使用",
+    "reason": "置信度低于55%"
+  },
+  {
+    "date_num": "周一004",
+    "match": "布伦特 vs 狼队",
+    "league": "英超",
+    "confidence": 60,
+    "win_rate_diff": 43,
+    "eight_change": "[+3-,-3↑,+4-]",
+    "segment": "60-65%",
+    "prediction": "主胜",
+    "reason": "主胜8变化(3)>=2"
+  },
+  {
+    "date_num": "周一005",
+    "match": "朴次茅斯 vs 德比郡",
+    "league": "英冠",
+    "confidence": 42,
+    "win_rate_diff": 14,
+    "eight_change": "[+0-,+1-,-2↑]",
+    "segment": "低于55%",
+    "prediction": "不使用",
+    "reason": "置信度低于55%"
+  },
+  {
+    "date_num": "周一006",
+    "match": "巴列卡诺 vs 莱万特",
+    "league": "西甲",
+    "confidence": 55,
+    "win_rate_diff": 36,
+    "eight_change": "[+2-,+8↑,+1↑]",
+    "segment": "55-60%",
+    "prediction": "主胜",
+    "reason": "胜率差(36%)>=阈值(30%)"
+  },
+  {
+    "date_num": "周二001",
+    "match": "悉尼FC vs 墨尔本城",
+    "league": "澳超",
+    "confidence": 40,
+    "win_rate_diff": 8,
+    "eight_change": "[+4-,-1↑,-2↑]",
+    "segment": "低于55%",
+    "prediction": "不使用",
+    "reason": "置信度低于55%"
+  },
+  {
+    "date_num": "周二002",
+    "match": "中国女 vs 澳大利女",
+    "league": "女足亚洲杯",
+    "confidence": 55,
+    "win_rate_diff": -36,
+    "eight_change": "[-1-,-3↓,+1-]",
+    "segment": "55-60%",
+    "prediction": "客胜",
+    "reason": "胜率差(-36%)<=-阈值(30%)"
+  },
+  {
+    "date_num": "周二004",
+    "match": "里斯本 vs 博德闪耀",
+    "league": "欧冠",
+    "confidence": 59,
+    "win_rate_diff": 39,
+    "eight_change": "[-2↑,+2↑,+1↓]",
+    "segment": "55-60%",
+    "prediction": "主胜",
+    "reason": "胜率差(39%)>=阈值(30%)"
+  },
+  {
+    "date_num": "周二006",
+    "match": "阿森纳 vs 勒沃库森",
+    "league": "欧冠",
+    "confidence": 74,
+    "win_rate_diff": 64,
+    "eight_change": "[+2-,+1↑,-1↑]",
+    "segment": "70-75%",
+    "prediction": "主胜",
+    "reason": "胜率差(64%)>=阈值(50%)"
+  },
+  {
+    "date_num": "周二007",
+    "match": "切尔西 vs 巴黎圣曼",
+    "league": "欧冠",
+    "confidence": 45,
+    "win_rate_diff": 13,
+    "eight_change": "[-1-,-6↑,-3-]",
+    "segment": "低于55%",
+    "prediction": "不使用",
+    "reason": "置信度低于55%"
+  },
+  {
+    "date_num": "周二008",
+    "match": "曼城 vs 皇马",
+    "league": "欧冠",
+    "confidence": 62,
+    "win_rate_diff": 44,
+    "eight_change": "[+0-,+1↑,-2↓]",
+    "segment": "60-65%",
+    "prediction": "主胜",
+    "reason": "默认(主胜)"
+  }
+]

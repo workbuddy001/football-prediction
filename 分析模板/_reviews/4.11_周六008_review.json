@@ -1,0 +1,81 @@
+{
+  "match_id": "周六008",
+  "date_folder": "4.11",
+  "home_team": "诺维奇",
+  "away_team": "伊普斯",
+  "league": "英冠",
+  "handicap": "1",
+  "home_form": "WDWLWW",
+  "away_form": "WDWDDW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+6.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降23升3 / 平降18升3 / 客降2升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「伊普斯维奇 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-12 00:39",
+  "macao_tip": "伊普斯维奇 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.76,
+    "jc_draw_chg": -1.54,
+    "jc_away_chg": 5.99,
+    "mcao_home_chg": -10.39,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 9.0,
+    "jc_init_odds": [
+      2.78,
+      3.25,
+      2.17
+    ],
+    "jc_real_odds": [
+      2.62,
+      3.2,
+      2.3
+    ],
+    "macao_init_odds": [
+      2.79,
+      3.42,
+      2.11
+    ],
+    "macao_real_odds": [
+      2.5,
+      3.42,
+      2.3
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

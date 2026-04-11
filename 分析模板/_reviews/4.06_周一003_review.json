@@ -1,0 +1,93 @@
+{
+  "match_id": "周一003",
+  "date_folder": "4.06",
+  "home_team": "朴次茅斯",
+  "away_team": "牛津联",
+  "league": "英冠",
+  "handicap": "-1",
+  "home_form": "DLLLDL",
+  "away_form": "DLDWWW",
+  "prediction": "平局",
+  "confidence": 4,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.92>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-7.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-7.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降25升2 / 客降23升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为2:2(平局)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-7.8%+澳门不动",
+    "📈 关键信号「[不跟]标签」有效：竞彩降客胜-7.8%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+8.7%>5%"
+  ],
+  "review_time": "2026-04-10 07:14",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.72,
+    "jc_draw_chg": -7.81,
+    "jc_away_chg": -7.76,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.72,
+      3.2,
+      4.25
+    ],
+    "jc_real_odds": [
+      1.87,
+      2.95,
+      3.92
+    ],
+    "macao_init_odds": [
+      1.89,
+      3.3,
+      3.41
+    ],
+    "macao_real_odds": [
+      1.89,
+      3.3,
+      3.41
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "NNN"
+  }
+}

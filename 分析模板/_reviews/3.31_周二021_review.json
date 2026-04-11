@@ -1,0 +1,105 @@
+{
+  "match_id": "周二021",
+  "date_folder": "3.31",
+  "home_team": "巴西",
+  "away_team": "克罗地亚",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "LDWLWL",
+  "away_form": "WWWWDW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.75≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.30>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-1.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+3.6%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升1 / 平降0升28 / 客降2升19",
+      "strength": 3
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率3.75≥3.5",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-1.9%+澳门不动",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+1.4%+澳门不动，平局赔率≥3.5"
+  ],
+  "review_time": "2026-04-09 17:18",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.85,
+    "jc_draw_chg": 1.35,
+    "jc_away_chg": 3.61,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.62,
+      3.7,
+      4.15
+    ],
+    "jc_real_odds": [
+      1.59,
+      3.75,
+      4.3
+    ],
+    "macao_init_odds": [
+      1.78,
+      3.63,
+      3.5
+    ],
+    "macao_real_odds": [
+      1.78,
+      3.63,
+      3.5
+    ],
+    "jc_pattern": "NNU",
+    "macao_pattern": "NNN"
+  }
+}

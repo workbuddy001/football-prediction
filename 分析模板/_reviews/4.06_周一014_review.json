@@ -1,0 +1,70 @@
+{
+  "match_id": "周一014",
+  "date_folder": "4.06",
+  "home_team": "赫尔城",
+  "away_team": "考文垂",
+  "league": "英冠",
+  "handicap": "1",
+  "home_form": "DWLWLL",
+  "away_form": "WWLWWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降17升11 / 平降4升17 / 客降13升11",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-10 07:25",
+  "macao_tip": "考文垂 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 3.9,
+    "jc_draw_chg": -1.47,
+    "jc_away_chg": -1.15,
+    "mcao_home_chg": -16.5,
+    "mcao_draw_chg": 16.84,
+    "mcao_away_chg": -0.53,
+    "jc_init_odds": [
+      3.85,
+      3.4,
+      1.74
+    ],
+    "jc_real_odds": [
+      4.0,
+      3.35,
+      1.72
+    ],
+    "macao_init_odds": [
+      4.0,
+      2.91,
+      1.89
+    ],
+    "macao_real_odds": [
+      3.34,
+      3.4,
+      1.88
+    ],
+    "jc_pattern": "UNN",
+    "macao_pattern": "DUN"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "match_id": "周六029",
+  "date_folder": "4.04",
+  "home_team": "波尔图",
+  "away_team": "法马利康",
+  "league": "葡超",
+  "handicap": "-1",
+  "home_form": "WWWWDL",
+  "away_form": "WWWDWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.10>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率7.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.35<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-5.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降3升20 / 平降17升6 / 客降16升5",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:2(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「波尔图 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:18",
+  "macao_tip": "波尔图 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 2.27,
+    "jc_draw_chg": -2.84,
+    "jc_away_chg": -5.41,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.32,
+      4.22,
+      7.4
+    ],
+    "jc_real_odds": [
+      1.35,
+      4.1,
+      7.0
+    ],
+    "macao_init_odds": [
+      1.35,
+      4.2,
+      6.6
+    ],
+    "macao_real_odds": [
+      1.35,
+      4.2,
+      6.6
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "NNN"
+  }
+}

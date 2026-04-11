@@ -1,0 +1,86 @@
+{
+  "match_id": "周日004",
+  "date_folder": "3.22",
+  "home_team": "珀斯",
+  "away_team": "墨尔本城",
+  "league": "澳超",
+  "handicap": "1",
+  "home_form": "LDDLLD",
+  "away_form": "WDDLLD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.65>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降1升23 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:42",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.63,
+    "jc_draw_chg": 1.47,
+    "jc_away_chg": -4.84,
+    "mcao_home_chg": 8.97,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -5.05,
+    "jc_init_odds": [
+      3.36,
+      3.4,
+      1.86
+    ],
+    "jc_real_odds": [
+      3.65,
+      3.45,
+      1.77
+    ],
+    "macao_init_odds": [
+      3.12,
+      3.35,
+      1.98
+    ],
+    "macao_real_odds": [
+      3.4,
+      3.35,
+      1.88
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UND"
+  }
+}

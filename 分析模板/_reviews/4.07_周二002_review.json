@@ -1,0 +1,85 @@
+{
+  "match_id": "周二002",
+  "date_folder": "4.07",
+  "home_team": "奥勒松",
+  "away_team": "腓特烈",
+  "league": "挪超",
+  "handicap": "-1",
+  "home_form": "DDWLWW",
+  "away_form": "WLLWWW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+9.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升4 / 平降9升15 / 客降3升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为2:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+9.1%>5%",
+    "📈 关键信号「强共识推离客」有效：27/30家公司升客胜（>25家阈值）",
+    "📈 关键信号「强共识造热主」有效：26/30家公司降主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 11:48",
+  "macao_tip": "腓特烈斯塔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 9.09,
+    "jc_draw_chg": -2.99,
+    "jc_away_chg": -7.14,
+    "mcao_home_chg": -16.23,
+    "mcao_draw_chg": -11.43,
+    "mcao_away_chg": 31.34,
+    "jc_init_odds": [
+      2.2,
+      3.35,
+      2.66
+    ],
+    "jc_real_odds": [
+      2.4,
+      3.25,
+      2.47
+    ],
+    "macao_init_odds": [
+      2.65,
+      3.5,
+      2.17
+    ],
+    "macao_real_odds": [
+      2.22,
+      3.1,
+      2.85
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "DDU"
+  }
+}

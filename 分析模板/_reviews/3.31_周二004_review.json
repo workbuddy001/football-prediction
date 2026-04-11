@@ -1,0 +1,77 @@
+{
+  "match_id": "周二004",
+  "date_folder": "3.31",
+  "home_team": "黑山",
+  "away_team": "斯洛文尼",
+  "league": "国际赛",
+  "handicap": "1",
+  "home_form": "WLWWLL",
+  "away_form": "LDLDDL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-4.1%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降3升25 / 平降18升6 / 客降16升10",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为2:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降客胜-4.1%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+5.5%>5%"
+  ],
+  "review_time": "2026-04-09 17:01",
+  "macao_tip": "黑山 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.48,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -4.07,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.92,
+      3.0,
+      2.21
+    ],
+    "jc_real_odds": [
+      3.08,
+      3.0,
+      2.12
+    ],
+    "macao_init_odds": [
+      2.8,
+      2.95,
+      2.33
+    ],
+    "macao_real_odds": [
+      2.8,
+      2.95,
+      2.33
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "match_id": "周六017",
+  "date_folder": "4.11",
+  "home_team": "沃夫斯堡",
+  "away_team": "法兰克福",
+  "league": "德甲",
+  "handicap": "1",
+  "home_form": "LLDLLL",
+  "away_form": "DLWDWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升23 / 平降17升7 / 客降13升13",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 00:54",
+  "macao_tip": "法兰克福 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.22,
+    "jc_draw_chg": -2.86,
+    "jc_away_chg": 0.87,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.45,
+      3.5,
+      2.3
+    ],
+    "jc_real_odds": [
+      2.48,
+      3.4,
+      2.32
+    ],
+    "macao_init_odds": [
+      2.38,
+      3.38,
+      2.55
+    ],
+    "macao_real_odds": [
+      2.38,
+      3.38,
+      2.55
+    ],
+    "jc_pattern": "NDN",
+    "macao_pattern": "NNN"
+  }
+}

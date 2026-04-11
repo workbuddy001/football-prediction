@@ -1,0 +1,71 @@
+{
+  "match_id": "周四010",
+  "date_folder": "3.26",
+  "home_team": "哥伦比亚",
+  "away_team": "克罗地亚",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "WWDWWW",
+  "away_form": "WWWDWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降19升3 / 平降10升9 / 客降2升20",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:38",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.38,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 5.33,
+    "mcao_home_chg": -2.86,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.38,
+    "jc_init_odds": [
+      2.07,
+      3.2,
+      3.0
+    ],
+    "jc_real_odds": [
+      2.0,
+      3.2,
+      3.16
+    ],
+    "macao_init_odds": [
+      2.1,
+      3.21,
+      2.97
+    ],
+    "macao_real_odds": [
+      2.04,
+      3.21,
+      3.1
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

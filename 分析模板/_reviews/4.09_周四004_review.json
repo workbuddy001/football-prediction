@@ -1,0 +1,73 @@
+{
+  "match_id": "周四004",
+  "date_folder": "4.09",
+  "home_team": "波尔图",
+  "away_team": "诺丁汉",
+  "league": "欧罗巴",
+  "handicap": "-1",
+  "home_form": "DWWWWD",
+  "away_form": "WWDLDL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.63>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降30升0 / 客降20升6",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-10 06:59",
+  "macao_tip": "波尔图 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.92,
+    "jc_draw_chg": -6.25,
+    "jc_away_chg": -1.89,
+    "mcao_home_chg": 8.0,
+    "mcao_draw_chg": -0.96,
+    "mcao_away_chg": -10.37,
+    "jc_init_odds": [
+      1.83,
+      3.2,
+      3.7
+    ],
+    "jc_real_odds": [
+      1.92,
+      3.0,
+      3.63
+    ],
+    "macao_init_odds": [
+      2.0,
+      3.13,
+      3.28
+    ],
+    "macao_real_odds": [
+      2.16,
+      3.1,
+      2.94
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "UND"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "match_id": "周五004",
+  "date_folder": "4.10",
+  "home_team": "杜塞多夫",
+  "away_team": "基尔",
+  "league": "德乙",
+  "handicap": "-1",
+  "home_form": "LLLWWL",
+  "away_form": "DWLLDL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升25 / 平降14升9 / 客降17升11",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-11 07:50",
+  "macao_tip": "基尔高士丁 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 3.74,
+    "jc_draw_chg": -1.45,
+    "jc_away_chg": -3.96,
+    "mcao_home_chg": 7.5,
+    "mcao_draw_chg": -6.42,
+    "mcao_away_chg": -4.51,
+    "jc_init_odds": [
+      1.87,
+      3.45,
+      3.28
+    ],
+    "jc_real_odds": [
+      1.94,
+      3.4,
+      3.15
+    ],
+    "macao_init_odds": [
+      2.0,
+      3.58,
+      2.88
+    ],
+    "macao_real_odds": [
+      2.15,
+      3.35,
+      2.75
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UDD"
+  }
+}

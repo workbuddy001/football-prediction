@@ -1,0 +1,90 @@
+{
+  "match_id": "周日017",
+  "date_folder": "3.22",
+  "home_team": "格罗宁根",
+  "away_team": "阿尔克马",
+  "league": "荷甲",
+  "handicap": "1",
+  "home_form": "DWLLLL",
+  "away_form": "WWWLWL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在平方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+11.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降9升17 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为3:0(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在平方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望",
+    "📝 心水推荐为「阿尔克马尔 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:47",
+  "macao_tip": "阿尔克马尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 11.2,
+    "jc_draw_chg": 2.9,
+    "jc_away_chg": -10.09,
+    "mcao_home_chg": 13.36,
+    "mcao_draw_chg": -5.03,
+    "mcao_away_chg": -7.88,
+    "jc_init_odds": [
+      2.5,
+      3.45,
+      2.28
+    ],
+    "jc_real_odds": [
+      2.78,
+      3.55,
+      2.05
+    ],
+    "macao_init_odds": [
+      2.32,
+      3.58,
+      2.41
+    ],
+    "macao_real_odds": [
+      2.63,
+      3.4,
+      2.22
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UDD"
+  }
+}

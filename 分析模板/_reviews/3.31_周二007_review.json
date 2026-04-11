@@ -1,0 +1,100 @@
+{
+  "match_id": "周二007",
+  "date_folder": "3.31",
+  "home_team": "摩洛哥",
+  "away_team": "巴拉圭",
+  "league": "国际赛",
+  "handicap": "-1",
+  "home_form": "DDDWWW",
+  "away_form": "WWLLDW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "规则B",
+      "detail": "澳门推平局+竞彩推离6.7%>3%",
+      "strength": 5
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+6.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+12.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升1 / 平降2升23 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「规则B」有效：澳门推平局+竞彩推离6.7%>3%",
+    "📈 关键信号「推离排除」有效：竞彩平局升+6.7%>5%",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+12.0%>5%"
+  ],
+  "review_time": "2026-04-09 17:02",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -8.47,
+    "jc_draw_chg": 6.67,
+    "jc_away_chg": 12.0,
+    "mcao_home_chg": -6.93,
+    "mcao_draw_chg": 0.95,
+    "mcao_away_chg": 12.15,
+    "jc_init_odds": [
+      1.89,
+      3.0,
+      3.75
+    ],
+    "jc_real_odds": [
+      1.73,
+      3.2,
+      4.2
+    ],
+    "macao_init_odds": [
+      2.02,
+      3.17,
+      3.21
+    ],
+    "macao_real_odds": [
+      1.88,
+      3.2,
+      3.6
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "match_id": "周六024",
+  "date_folder": "4.04",
+  "home_team": "利雅得新月",
+  "away_team": "布赖代合作",
+  "league": "沙特职业联赛",
+  "handicap": "-2",
+  "home_form": "DWWWDD",
+  "away_form": "DWDDLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.50>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率10.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.18<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升27 / 平降25升2 / 客降25升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:2(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「利雅得新月爾 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:15",
+  "macao_tip": "利雅得新月爾 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.42,
+    "jc_draw_chg": -15.38,
+    "jc_away_chg": -9.09,
+    "mcao_home_chg": 5.93,
+    "mcao_draw_chg": -11.86,
+    "mcao_away_chg": -19.27,
+    "jc_init_odds": [
+      1.13,
+      6.5,
+      11.0
+    ],
+    "jc_real_odds": [
+      1.18,
+      5.5,
+      10.0
+    ],
+    "macao_init_odds": [
+      1.18,
+      5.9,
+      9.6
+    ],
+    "macao_real_odds": [
+      1.25,
+      5.2,
+      7.75
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}

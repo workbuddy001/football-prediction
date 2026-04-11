@@ -1,0 +1,71 @@
+{
+  "match_id": "周四002",
+  "date_folder": "4.02",
+  "home_team": "布里斯班",
+  "away_team": "悉尼FC",
+  "league": "澳超",
+  "handicap": "1",
+  "home_form": "LDDLDL",
+  "away_form": "LLDWWD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+13.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降13升13 / 平降7升17 / 客降8升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:0(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「悉尼FC 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 16:57",
+  "macao_tip": "悉尼FC 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -14.81,
+    "jc_draw_chg": -0.86,
+    "jc_away_chg": 13.64,
+    "mcao_home_chg": -8.24,
+    "mcao_draw_chg": -3.36,
+    "mcao_away_chg": 10.33,
+    "jc_init_odds": [
+      2.97,
+      3.48,
+      1.98
+    ],
+    "jc_real_odds": [
+      2.53,
+      3.45,
+      2.25
+    ],
+    "macao_init_odds": [
+      2.67,
+      3.57,
+      2.13
+    ],
+    "macao_real_odds": [
+      2.45,
+      3.45,
+      2.35
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DDU"
+  }
+}

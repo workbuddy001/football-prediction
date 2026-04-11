@@ -1,0 +1,95 @@
+{
+  "match_id": "周五012",
+  "date_folder": "4.03",
+  "home_team": "巴列卡诺",
+  "away_team": "埃尔切",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "LLDWDW",
+  "away_form": "WWLLDL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.58>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+7.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升1 / 平降0升28 / 客降0升25",
+      "strength": 3
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+7.3%>5%",
+    "📈 关键信号「强共识造热主」有效：28/30家公司降主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-09 16:43",
+  "macao_tip": "巴列卡诺 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.05,
+    "jc_draw_chg": 1.43,
+    "jc_away_chg": 7.26,
+    "mcao_home_chg": -2.86,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 7.01,
+    "jc_init_odds": [
+      1.64,
+      3.5,
+      4.27
+    ],
+    "jc_real_odds": [
+      1.59,
+      3.55,
+      4.58
+    ],
+    "macao_init_odds": [
+      1.75,
+      3.5,
+      3.85
+    ],
+    "macao_real_odds": [
+      1.7,
+      3.5,
+      4.12
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "match_id": "周六025",
+  "date_folder": "4.11",
+  "home_team": "巴萨",
+  "away_team": "西班牙人",
+  "league": "西甲",
+  "handicap": "-2",
+  "home_form": "LWWWWD",
+  "away_form": "DLLDDL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "4:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.75>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率8.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.20<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降29升0 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.75>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率8.25>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.20<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-12 02:35",
+  "macao_tip": "巴塞罗那 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 4.27,
+    "mcao_draw_chg": -9.09,
+    "mcao_away_chg": -14.89,
+    "jc_init_odds": [
+      1.2,
+      5.75,
+      8.25
+    ],
+    "jc_real_odds": [
+      1.2,
+      5.75,
+      8.25
+    ],
+    "macao_init_odds": [
+      1.17,
+      6.6,
+      9.4
+    ],
+    "macao_real_odds": [
+      1.22,
+      6.0,
+      8.0
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UDD"
+  }
+}

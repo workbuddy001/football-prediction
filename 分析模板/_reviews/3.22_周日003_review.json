@@ -1,0 +1,81 @@
+{
+  "match_id": "周日003",
+  "date_folder": "3.22",
+  "home_team": "浦和红钻",
+  "away_team": "町田泽维",
+  "league": "日职",
+  "handicap": "1",
+  "home_form": "DLWLWD",
+  "away_form": "LWWDWD",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-4.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升23 / 平降16升4 / 客降9升10",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为1:2(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:41",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.31,
+    "jc_draw_chg": -4.84,
+    "jc_away_chg": 5.88,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.6,
+      3.1,
+      2.38
+    ],
+    "jc_real_odds": [
+      2.54,
+      2.95,
+      2.52
+    ],
+    "macao_init_odds": [
+      2.6,
+      3.03,
+      2.52
+    ],
+    "macao_real_odds": [
+      2.6,
+      3.03,
+      2.52
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "NNN"
+  }
+}

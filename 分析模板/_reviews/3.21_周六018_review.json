@@ -1,0 +1,88 @@
+{
+  "match_id": "周六018",
+  "date_folder": "3.21",
+  "home_team": "图卢兹",
+  "away_team": "洛里昂",
+  "league": "法甲",
+  "handicap": "-1",
+  "home_form": "WLDLDL",
+  "away_form": "WDDDDW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+9.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升1 / 平降2升25 / 客降3升26",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "26/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+9.6%>5%",
+    "📈 关键信号「强共识推离客」有效：26/30家公司升客胜（>25家阈值）",
+    "📈 关键信号「强共识造热主」有效：28/30家公司降主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-10 00:23",
+  "macao_tip": "图卢兹 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.81,
+    "jc_draw_chg": 0.96,
+    "jc_away_chg": 9.59,
+    "mcao_home_chg": -8.63,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 21.62,
+    "jc_init_odds": [
+      1.87,
+      3.12,
+      3.65
+    ],
+    "jc_real_odds": [
+      1.78,
+      3.15,
+      4.0
+    ],
+    "macao_init_odds": [
+      1.97,
+      3.01,
+      3.7
+    ],
+    "macao_real_odds": [
+      1.8,
+      3.01,
+      4.5
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

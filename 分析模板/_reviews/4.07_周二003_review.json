@@ -1,0 +1,83 @@
+{
+  "match_id": "周二003",
+  "date_folder": "4.07",
+  "home_team": "里斯本",
+  "away_team": "阿森纳",
+  "league": "欧冠",
+  "handicap": "1",
+  "home_form": "WWWLDW",
+  "away_form": "LLWWDW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.42>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降18升10 / 平降20升5 / 客降2升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:1(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-10 07:05",
+  "macao_tip": "阿森纳 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.96,
+    "jc_draw_chg": -1.39,
+    "jc_away_chg": 2.55,
+    "mcao_home_chg": -1.83,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.56,
+    "jc_init_odds": [
+      4.7,
+      3.6,
+      1.57
+    ],
+    "jc_real_odds": [
+      4.42,
+      3.55,
+      1.61
+    ],
+    "macao_init_odds": [
+      3.82,
+      3.42,
+      1.79
+    ],
+    "macao_real_odds": [
+      3.75,
+      3.42,
+      1.8
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

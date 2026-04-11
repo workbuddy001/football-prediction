@@ -1,0 +1,73 @@
+{
+  "match_id": "周六014",
+  "date_folder": "4.11",
+  "home_team": "海登海姆",
+  "away_team": "柏林联合",
+  "league": "德甲",
+  "handicap": "1",
+  "home_form": "DDLLLD",
+  "away_form": "DLWLLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降30升0 / 平降16升4 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "30/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为3:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 00:53",
+  "macao_tip": "柏林联合 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.41,
+    "jc_draw_chg": -0.31,
+    "jc_away_chg": 2.86,
+    "mcao_home_chg": -7.12,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 6.67,
+    "jc_init_odds": [
+      2.93,
+      3.21,
+      2.1
+    ],
+    "jc_real_odds": [
+      2.83,
+      3.2,
+      2.16
+    ],
+    "macao_init_odds": [
+      2.95,
+      3.38,
+      2.1
+    ],
+    "macao_real_odds": [
+      2.74,
+      3.38,
+      2.24
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

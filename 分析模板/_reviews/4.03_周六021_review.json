@@ -1,0 +1,100 @@
+{
+  "match_id": "周六021",
+  "date_folder": "4.03",
+  "home_team": "切尔西",
+  "away_team": "维尔港",
+  "league": "英足总杯",
+  "handicap": "-3",
+  "home_form": "LLLLDW",
+  "away_form": "LLWLDL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "7:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率15.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率29.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.05<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+66.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+52.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降27升0 / 平降1升27 / 客降2升25",
+      "strength": 3
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "27/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为7:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率15.00>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率29.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.05<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-09 16:49",
+  "macao_tip": "切尔西 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.41,
+    "jc_draw_chg": 66.67,
+    "jc_away_chg": 52.63,
+    "mcao_home_chg": -4.42,
+    "mcao_draw_chg": 44.44,
+    "mcao_away_chg": 35.29,
+    "jc_init_odds": [
+      1.11,
+      9.0,
+      19.0
+    ],
+    "jc_real_odds": [
+      1.05,
+      15.0,
+      29.0
+    ],
+    "macao_init_odds": [
+      1.13,
+      9.0,
+      17.0
+    ],
+    "macao_real_odds": [
+      1.08,
+      13.0,
+      23.0
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DUU"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "match_id": "周日002",
+  "date_folder": "3.22",
+  "home_team": "大阪樱花",
+  "away_team": "神户胜利",
+  "league": "日职",
+  "handicap": "1",
+  "home_form": "LWDLLW",
+  "away_form": "DWWWWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+12.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升0 / 平降18升4 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:1(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「神户胜利船 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-09 17:41",
+  "macao_tip": "神户胜利船 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -14.14,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 12.32,
+    "mcao_home_chg": -14.43,
+    "mcao_draw_chg": 4.1,
+    "mcao_away_chg": 10.6,
+    "jc_init_odds": [
+      2.97,
+      3.35,
+      2.03
+    ],
+    "jc_real_odds": [
+      2.55,
+      3.35,
+      2.28
+    ],
+    "macao_init_odds": [
+      2.98,
+      3.17,
+      2.17
+    ],
+    "macao_real_odds": [
+      2.55,
+      3.3,
+      2.4
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DUU"
+  }
+}
