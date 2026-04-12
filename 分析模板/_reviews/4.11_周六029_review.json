@@ -1,0 +1,79 @@
+{
+  "match_id": "周六029",
+  "date_folder": "4.11",
+  "home_team": "阿马多拉",
+  "away_team": "里斯本",
+  "league": "葡超",
+  "handicap": "2",
+  "home_form": "LWLDDL",
+  "away_form": "LWWWLD",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw",
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率12.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.95>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降15升4 / 平降14升5 / 客降0升23",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（平局/主胜）策略有效",
+    "📈 关键信号「绝对值排除」有效：主胜赔率12.00>5.0",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.95>5.0"
+  ],
+  "review_time": "2026-04-12 06:22",
+  "macao_tip": "里斯本竞技 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      12.0,
+      5.95,
+      1.14
+    ],
+    "jc_real_odds": [
+      12.0,
+      5.95,
+      1.14
+    ],
+    "macao_init_odds": [
+      10.0,
+      6.2,
+      1.16
+    ],
+    "macao_real_odds": [
+      10.0,
+      6.2,
+      1.16
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

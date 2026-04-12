@@ -1,0 +1,76 @@
+{
+  "match_id": "周日003",
+  "date_folder": "2026.04.12",
+  "home_team": "金泉尚武",
+  "away_team": "安养FC",
+  "league": "韩职",
+  "handicap": "-1",
+  "home_form": "LDDDDD",
+  "away_form": "DLLDWD",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升26 / 平降20升4 / 客降24升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "26/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为1:1(平局)",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+8.4%>5%",
+    "📈 关键信号「强共识推离主」有效：26/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-12 18:33",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.42,
+    "jc_draw_chg": -4.92,
+    "jc_away_chg": -6.44,
+    "mcao_home_chg": 10.33,
+    "mcao_draw_chg": -8.81,
+    "mcao_away_chg": -4.44,
+    "jc_init_odds": [
+      2.02,
+      3.05,
+      3.26
+    ],
+    "jc_real_odds": [
+      2.19,
+      2.9,
+      3.05
+    ],
+    "macao_init_odds": [
+      2.13,
+      3.18,
+      2.93
+    ],
+    "macao_real_odds": [
+      2.35,
+      2.9,
+      2.8
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}

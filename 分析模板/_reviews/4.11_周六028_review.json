@@ -1,0 +1,110 @@
+{
+  "match_id": "周六028",
+  "date_folder": "4.11",
+  "home_team": "雷恩",
+  "away_team": "昂热",
+  "league": "法甲",
+  "handicap": "-1",
+  "home_form": "WDLWWW",
+  "away_form": "DLLWLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw",
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率5.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率9.10>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.22<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-1.6%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.0%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+8.3%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+8.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升1 / 平降1升25 / 客降1升25",
+      "strength": 3
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（平局/客胜）策略有效",
+    "📈 关键信号「绝对值排除」有效：客胜赔率9.10>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.22<1.5，庄家高度自信",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-1.6%+澳门不动"
+  ],
+  "review_time": "2026-04-12 06:19",
+  "macao_tip": "雷恩 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.61,
+    "jc_draw_chg": 2.04,
+    "jc_away_chg": 8.33,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.24,
+      4.9,
+      8.4
+    ],
+    "jc_real_odds": [
+      1.22,
+      5.0,
+      9.1
+    ],
+    "macao_init_odds": [
+      1.33,
+      4.65,
+      7.0
+    ],
+    "macao_real_odds": [
+      1.33,
+      4.65,
+      7.0
+    ],
+    "jc_pattern": "NUU",
+    "macao_pattern": "NNN"
+  }
+}

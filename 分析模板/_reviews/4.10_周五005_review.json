@@ -14,8 +14,8 @@
   "result_cn": "主胜",
   "is_correct": false,
   "exclusions": [
-    "home",
-    "draw"
+    "draw",
+    "home"
   ],
   "warnings": [],
   "key_signals": [
@@ -65,7 +65,7 @@
     "❌ 预测客胜但实际是主胜，需要反思原因",
     "📝 心水推荐为「摩纳哥 贏」，可作为复盘参考"
   ],
-  "review_time": "2026-04-11 07:51",
+  "review_time": "2026-04-12 15:09",
   "macao_tip": "摩纳哥 贏",
   "odds_fingerprint": {
     "jc_change_dir": "",

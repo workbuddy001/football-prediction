@@ -1,0 +1,84 @@
+{
+  "match_id": "周六026",
+  "date_folder": "4.11",
+  "home_team": "亚特兰大",
+  "away_team": "尤文图斯",
+  "league": "意甲",
+  "handicap": "1",
+  "home_form": "WWLDLD",
+  "away_form": "WDWWDW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热6.3%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-6.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降3升24 / 平降9升10 / 客降15升8",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-6.3%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+8.3%>5%"
+  ],
+  "review_time": "2026-04-12 06:15",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.3,
+    "jc_draw_chg": -6.25,
+    "jc_away_chg": -1.82,
+    "mcao_home_chg": -2.81,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 2.33,
+    "jc_init_odds": [
+      2.77,
+      3.2,
+      2.2
+    ],
+    "jc_real_odds": [
+      3.0,
+      3.0,
+      2.16
+    ],
+    "macao_init_odds": [
+      2.85,
+      3.38,
+      2.15
+    ],
+    "macao_real_odds": [
+      2.77,
+      3.38,
+      2.2
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "DNU"
+  }
+}
