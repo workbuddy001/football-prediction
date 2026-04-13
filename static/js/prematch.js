@@ -113,6 +113,9 @@
 
             var html='', excList=ed.exclusions||[], finalPred=ed.final_pred||'', conf=ed.confidence||0;
 
+            // 赔付矩阵结论变量（函数级声明，在赔付矩阵块内赋值）
+            var bestResult='', worstResult='', isPushedAwayBest=false;
+
             // ===== 标题栏 =====
             html+='<div id="'+containerId+'" style="margin-top:14px;background:'+C.card+';border:1px solid '+C.border+';border-radius:10px;overflow:hidden">';
             html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:linear-gradient(135deg,#1e3a5f 0%,#1e293b 100%);border-bottom:1px solid '+C.border+'">';
@@ -397,10 +400,14 @@
                     var bestIsHome=(best.name.indexOf(mi.home)!==-1);
                     var bestIsDraw=(best.name.indexOf('\u5e73')!==-1);
                     var bestDir=bestIsHome?'home':(bestIsDraw?'draw':'away');
+                    // 赋值给外层变量（供综合判定使用）
+                    bestResult=bestDir;
+                    worstResult=(worst.name.indexOf(mi.home)!==-1)?'home':((worst.name.indexOf('\u5e73')!==-1)?'draw':'away');
                     var bestChgPct=(bestDir==='home'?((d.jc_home_chg||0)):(bestDir==='draw'?(d.jc_draw_chg||0):(d.jc_away_chg||0)));
                     var mcBestChg=(bestDir==='home'?((d.mcao_home_chg||0)):(bestDir==='draw'?(d.mcao_draw_chg||0):(d.mcao_away_chg||0)));
 
                     if(bestChgPct>3||mcBestChg>3){
+                        isPushedAwayBest=true;  // 标记推离最优解
                         html+=' <span style="color:#f97316;font-size:10.5px;margin-left:4px">|</span> ';
                         html+='<span style="color:#f97316;font-size:11px;font-weight:600">\u26a0\ufe0f \u63a8\u79bb\u6700\u4f18\u89e3</span>';
                         html+='<span style="color:'+C.textDim+';font-size:10.5px">(\u7ade\u5f69';
@@ -439,6 +446,9 @@
             // ========== 交叉验证 ==========
                 var refPred=finalPred||cc.basic_tendency||'';
                 var hcValidCount=(hcH>0?1:0)+(hcD>0?1:0)+(hcA>0?1:0);
+
+                // 赔付矩阵结论变量（已在上方赋值，此处只初始化isPushedAwayBest）
+                isPushedAwayBest=false;
 
                 html+='<div style="margin-bottom:6px"><span style="font-size:11.5px;color:#93c5fd;font-weight:600">\u2463 诱导 / 实盘防守检测（交叉验证）</span></div>';
 
@@ -570,9 +580,39 @@
                         html+='<div style="font-size:12px;color:'+C.text+';margin-bottom:4px">\ud83e\udde0 排除: <b style="color:'+C.good+'">'+excList.map(function(e){return dm2[e]||e;}).join('/')+'</b></div>';
                     }
 
+                    // 庄家赔付矩阵结论（核心！）
+                    if(hasHc&&bestResult){
+                        var brN={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult]||bestResult;
+                        var wrN={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[worstResult]||worstResult;
+                        html+='<div style="font-size:12px;color:'+C.text+';margin-bottom:4px">\ud83d\udcb8 庄家赔付: ';
+                        if(isPushedAwayBest){
+                            // 推离最优解：赔率被拉高 + 赔付最低 = 庄家真想看到
+                            html+='<b style="color:#22c55e">'+esc(brN)+'</b>';
+                            html+=' <span style="color:#f97316;font-size:10.5px">(推离最优解! 庄家最想看到但劝退玩家)</span>';
+                        } else {
+                            html+='<b style="color:'+C.good+'">最优='+esc(brN)+' | 最怕='+esc(wrN)+'</b>';
+                        }
+                        html+='</div>';
+
+                        // 赔付 vs 排除法 冲突检测
+                        if(finalPred && finalPred !== bestResult){
+                            html+='<div style="font-size:11px;color:#f97316;margin-bottom:4px;padding:3px 6px;background:#42200630;border-radius:3px">';
+                            html+='<span>\u26a0\ufe0f 赔付最优('+esc(brN)+') \u2260 排除法('+esc(fpN2)+') \u2192 以赔付为准</span></div>';
+                        } else if(finalPred && finalPred === bestResult && !isPushedAwayBest){
+                            html+='<div style="font-size:11px;color:#22c55e;margin-bottom:4px"><span>\u2705 赔付与排除法一致 \u2192 双重确认</span></div>';
+                        }
+                    }
+
                     // 结论
                     var reasonHtml='';
                     if(isTrap&&isAnomaly) reasonHtml='排除法\u00d7让球出口\u00d7基本面=完美共振\u2192应对反向';
+                    else if(hasHc&&bestResult){
+                        // 有赔付矩阵数据时，以赔付为第一优先级
+                        if(isPushedAwayBest) reasonHtml='推离最优解\u2192庄家拉高'+({home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult])+'(最低赔付)=真方向';
+                        else if(finalPred && finalPred===bestResult) reasonHtml='赔付最优+排除法双重确认';
+                        else if(finalPred && finalPred!==bestResult) reasonHtml='赔付最优('+({home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult])+')与排除法冲突 \u2192 以赔付为准';
+                        else reasonHtml='基于赔付压力矩阵(综合最低赔付)';
+                    }
                     else if(finalPred) reasonHtml='基于排除法引理'+(excList.length>=2?'(排除2方向)':'');
                     else if(bt2) reasonHtml=mcHasRec?'基本面+'(mcAgrees2?'澳门同向':'澳门分歧'):'基于基本面倾向';
 
