@@ -340,21 +340,74 @@
                 html+='<div style="margin-bottom:10px"><span style="font-size:11.5px;color:#93c5fd;font-weight:600">\u2462 \u8d54\u4ed8\u538b\u529b\u77e9\u9635\uff08\u6807\u51c6\u76d8 \u00d7 \u8ba9\u7403\u76d8\uff09</span></div>';
                 html+='<table style="width:100%;border-collapse:collapse;text-align:center;font-size:11px;margin-bottom:8px">';
                 html+='<tr style="color:'+C.textDim+';border-bottom:1px solid '+C.border+'">';
-                html+='<td style="padding:4px">\u8d5b\u679c</td><td>\u6807\u51c6\u76d8</td><td>\u8ba9\u7403\u76d8</td><td>\u7efc\u5408\u8d54\u4ed8</td><td>\u5e84\u5bb6\u635f\u76ca</td></tr>';
+                html+='<td style="padding:4px">\u8d5b\u679c</td><td>\u6807\u51c6\u76d8</td><td>\u8ba9\u7403\u76d8</td><td>\u7efc\u5408\u8d54\u4ed8\u5206</td><td>\u5e94\u4ed8\u538b\u529b</td></tr>';
 
-                var p1_std=stdHome, p1_hc=hcH;
-                var p2_std=stdDraw, p2_hc=hcA;
-                var p3_std=stdAway, p3_hc=hcA;
+                // 赔付矩阵：根据盘口正负决定每个赛果的让球赔付
+                // 正盘口(+1/+0.5)=主队受让，负盘口(-1/-0.5)=主队让球
+                var _hcp=parseFloat(mi.handicap||'0')||0;
+                var _posHcp=_hcp>0;  // true=受让(如+1), false=让球(如-1)
+                var p1_std=stdHome, p2_std=stdDraw, p3_std=stdAway;
+                var p1_hc, p2_hc, p3_hc;
+
+                if(_posHcp){
+                    // === 受让盘(如+1)：主队加球 ===
+                    // 实际主胜 → 加球后更大优势 → 让球后主胜=hcH
+                    // 实际平局 → 加球后主队领先 → 让球后主胜=hcH
+                    // 实际客胜(1球差) → 加球后平手 → 让球后平=hcD
+                    // 实际客胜(≥2球) → 加球后仍输 → 让球后客胜=hcA (保守取中间)
+                    p1_hc=hcH;           // 主胜→让球后主胜
+                    p2_hc=hcH;           // 平局→让球后主胜(受让变胜)
+                    p3_hc=(Math.abs(_hcp)>=1)?hcD:hcA;  // 客胜→让球后平或客胜
+                } else {
+                    // === 让球盘(如-1)：主队减球 ===
+                    // 实际主胜(大胜≥2球) → 减球后仍胜 → 让球后主胜=hcH
+                    // 实际主胜(小胜1球) → 减球后平 → 让球后平=hcD
+                    // 实际平局 → 减球后客队领先 → 让球后客胜=hcA
+                    // 实际客胜 → 减球后更惨 → 让球后客胜=hcA
+                    p1_hc=hcH;           // 主胜→让球后主胜
+                    p2_hc=hcA;           // 平局→让球后客胜
+                    p3_hc=hcA;           // 客胜→让球后客胜
+                }
 
                 function _payColor(odds){return odds<1.80?C.good:(odds<2.5?C.tip:(odds<3.5?C.warn:C.bad));}
                 function _payTag(odds){return odds<1.80?'\u4f4e\u6c34\u2705':(odds<2.5?'\u4e2d\u6c34':(odds<3.5?'\u9ad8\u6c34\u26a0\ufe0f':'\u8d85\u9ad8\u274c'));}
-                function _profitText(sOdds,hOdds){
-                    if(!hOdds||hOdds<=0)return '-';
-                    var sLow=sOdds<=1.80, hLow=hOdds<=2.00;
-                    if(sLow&&hLow)return '\u5927\u8d57<span style="color:'+C.good+'">\u2713</span>';
-                    else if(sLow||hLow)return '\u4e00\u8d54\u4e00\u8d58';
-                    else return '\u4fdd\u672c/\u5fae\u8d62';
+
+                // 动态综合赔付评估：根据两个盘口赔率的加权得分
+                function _payoutScore(sOdds,hOdds){
+                    if(!hOdds||hOdds<=0) return sOdds + 99; // 无让球数据时罚分
+                    // 加权：标准盘权重60%，让球盘权重40%
+                    // 得分越低=庄家赔付越少=庄家越想看到这个结果
+                    return sOdds * 0.6 + hOdds * 0.4;
                 }
+
+                // 动态损益描述
+                function _profitText(sOdds,hOdds,score,minScore,maxScore){
+                    if(!hOdds||hOdds<=0)return '-';
+                    var range=maxScore-minScore;
+                    if(range<=0)range=1;
+
+                    // 相对位置：得分越接近最低=庄家越想看到
+                    var pos=(score-minScore)/range;  // 0=最优解, 1=最怕
+
+                    if(pos<0.15)
+                        return '<span style="color:'+C.good+'">\u5e94\u4ed8\u538b\u529b\u6700\u5c0f \u2705</span>';
+                    else if(pos<0.35)
+                        return '<span style="color:'+C.tip+'">\u5e94\u4ed8\u8f83\u5c0f \ud83d\udcc6</span>';
+                    else if(pos<0.65)
+                        return '<span style="color:'+C.warn+'">\u4e00\u8d54\u4e00\u8d58</span>';
+                    else if(pos<0.85)
+                        return '<span style="color:#fb923c">\u5e94\u4ed8\u8f83\u5927 \u26a0\ufe0f</span>';
+                    else
+                        return '<span style="color:'+C.bad+'">\u5e94\u4ed8\u538b\u529b\u6700\u5927 \u274c</span>';
+                }
+
+                // 计算三个方向的得分
+                var sc1=_payoutScore(p1_std,p1_hc);
+                var sc2=_payoutScore(p2_std,p2_hc);
+                var sc3=_payoutScore(p3_std,p3_hc);
+                var allScores=[sc1,sc2,sc3].filter(function(x){return x<99;});
+                var minS=Math.min.apply(Math,allScores.length?allScores:[999]);
+                var maxS=Math.max.apply(Math,allScores.length?allScores:[0]);
 
                 var hasHcData=hasHc&&(hcH>0||hcD>0||hcA>0);
 
@@ -362,30 +415,30 @@
                 html+='<td style="padding:5px;color:'+C.home+';font-weight:bold">'+mi.home+'\u80dc</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p1_std)+'">'+p1_std.toFixed(2)+' '+_payTag(p1_std)+'</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p1_hc):C.textDim)+'">'+(hasHcData?p1_hc.toFixed(2):'-')+'</td>';
-                html+='<td style="padding:5px;color:'+C.textDim+'">\u4e24\u4f4e=\u5e84\u5bb6\u8d5a</td>';
-                html+='<td style="padding:5px;color:'+C.good+';font-weight:bold">'+(hasHcData?_profitText(p1_std,p1_hc):'-')+'</td></tr>';
+                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc1.toFixed(2)+'\u5206</td>';
+                html+='<td style="padding:5px;font-weight:bold">'+_profitText(p1_std,p1_hc,sc1,minS,maxS)+'</td></tr>';
 
                 html+='<tr style="border-bottom:1px solid '+C.border+'30">';
                 html+='<td style="padding:5px;color:'+C.draw+';font-weight:bold">\u5e73\u5c40</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p2_std)+'">'+p2_std.toFixed(2)+' '+_payTag(p2_std)+'</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p2_hc):C.textDim)+'">'+(hasHcData?p2_hc.toFixed(2):'-')+'</td>';
-                html+='<td style="padding:5px;color:'+C.textDim+'">\u4e00\u9ad8\u4e00\u4f4e\u4e92\u9501</td>';
-                html+='<td style="padding:5px;color:'+C.warn+';font-weight:bold">'+(hasHcData?_profitText(p2_std,p2_hc):'-')+'</td></tr>';
+                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc2.toFixed(2)+'\u5206</td>';
+                html+='<td style="padding:5px;font-weight:bold">'+_profitText(p2_std,p2_hc,sc2,minS,maxS)+'</td></tr>';
 
                 html+='<tr style="border-bottom:1px solid '+C.border+'30">';
                 html+='<td style="padding:5px;color:'+C.away+';font-weight:bold">'+mi.away+'\u80dc</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p3_std)+'">'+p3_std.toFixed(2)+' '+_payTag(p3_std)+'</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p3_hc):C.textDim)+'">'+(hasHcData?p3_hc.toFixed(2):'-')+'</td>';
-                html+='<td style="padding:5px;color:'+C.textDim+'">\u6807\u51c6\u9ad8+\u8ba9\u7403\u4f4e</td>';
-                html+='<td style="padding:5px;color:'+C.warn+';font-weight:bold">'+(hasHcData?_profitText(p3_std,p3_hc):'-')+'</td></tr>';
+                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc3.toFixed(2)+'\u5206</td>';
+                html+='<td style="padding:5px;font-weight:bold">'+_profitText(p3_std,p3_hc,sc3,minS,maxS)+'</td></tr>';
                 html+='</table>';
 
-                // 庄家最优解推演
+                // 庄家最优解推演（基于动态得分）
                 if(hasHcData){
                     var results=[];
-                    results.push({name:mi.home+'\u80dc',std:p1_std,hc:p1_hc,score:p1_std+(p1_hc||99)});
-                    results.push({name:'\u5e73\u5c40',std:p2_std,hc:p2_hc,score:p2_std+(p2_hc||99)});
-                    results.push({name:mi.away+'\u80dc',std:p3_std,hc:p3_hc,score:p3_std+(p3_hc||99)});
+                    results.push({name:mi.home+'\u80dc',std:p1_std,hc:p1_hc,score:sc1});
+                    results.push({name:'\u5e73\u5c40',std:p2_std,hc:p2_hc,score:sc2});
+                    results.push({name:mi.away+'\u80dc',std:p3_std,hc:p3_hc,score:sc3});
                     results.sort(function(a,b){return a.score-b.score;});
                     var best=results[0], worst=results[2];
 
@@ -584,9 +637,28 @@
                     if(hasHc&&bestResult){
                         var brN={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult]||bestResult;
                         var wrN={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[worstResult]||worstResult;
+
+                        // === 阻盘检测 ===
+                        // 标准盘哪个方向赔率最低？如果该方向让球盘超高(>3.5)=阻盘
+                        var stdLowest='home';
+                        if(stdDraw>0 && stdDraw<stdHome && stdDraw<stdAway) stdLowest='draw';
+                        else if(stdAway>0 && stdAway<stdHome && stdAway<=stdDraw) stdLowest='away';
+
+                        var _lowStdOdds=(stdLowest==='home')?stdHome:(stdLowest==='draw'?stdDraw:stdAway);
+                        var _lowHcOdds=(stdLowest==='home')?p1_hc:(stdLowest==='draw'?p2_hc:p3_hc);
+                        var _isBlockedDir=(_lowStdOdds<=2.1 && _lowHcOdds>3.0);  // 标准盘低赔+让球盘高=阻
+                        var _blockedName=(stdLowest==='home')?mi.home+'胜':((stdLowest==='draw')?'平局':mi.away+'胜');
+
                         html+='<div style="font-size:12px;color:'+C.text+';margin-bottom:4px">\ud83d\udcb8 庄家赔付: ';
-                        if(isPushedAwayBest){
-                            // 推离最优解：赔率被拉高 + 赔付最低 = 庄家真想看到
+                        if(_isBlockedDir){
+                            // ★★★ 阻盘模式：标准盘最低赔方向被让球盘超高阻拦
+                            html+='<b style="color:#f87171">'+esc(_blockedName)+'</b>';
+                            html+=' <span style="color:#f87171;font-size:10.5px">(标准盘'+_lowStdOdds.toFixed(2)+'低赔\u274c但让球盘'+_lowHcOdds.toFixed(2)+'=</span>';
+                            html+='<span style="color:#ef4444;font-weight:bold">\u963b\u76d8!)</span>';
+                            if(bt2===stdLowest){
+                                html+=' <span style="color:#22c55e;font-size:10px">+\u57fa\u672c\u9762\u540c\u5411=\u771f\u65b9\u5411</span>';
+                            }
+                        } else if(isPushedAwayBest){
                             html+='<b style="color:#22c55e">'+esc(brN)+'</b>';
                             html+=' <span style="color:#f97316;font-size:10.5px">(推离最优解! 庄家最想看到但劝退玩家)</span>';
                         } else {
@@ -603,17 +675,82 @@
                         }
                     }
 
-                    // 结论
+                    // 结论（五维综合：阻盘检测 > 推离最优解 > 基本面压制 > 赔付+排除法一致 > 赔付优先）
                     var reasonHtml='';
-                    if(isTrap&&isAnomaly) reasonHtml='排除法\u00d7让球出口\u00d7基本面=完美共振\u2192应对反向';
-                    else if(hasHc&&bestResult){
-                        // 有赔付矩阵数据时，以赔付为第一优先级
-                        if(isPushedAwayBest) reasonHtml='推离最优解\u2192庄家拉高'+({home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult])+'(最低赔付)=真方向';
-                        else if(finalPred && finalPred===bestResult) reasonHtml='赔付最优+排除法双重确认';
-                        else if(finalPred && finalPred!==bestResult) reasonHtml='赔付最优('+({home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult])+')与排除法冲突 \u2192 以赔付为准';
-                        else reasonHtml='基于赔付压力矩阵(综合最低赔付)';
+                    var finalVerdict='', finalColor=C.text;
+
+                    if(isTrap&&isAnomaly){
+                        reasonHtml='排除法\u00d7\u8ba9\u7403\u51fa\u53e3\u00d7\u57fa\u672c\u9762=\u5b8c\u7f8e\u5171\u632f \u2192 \u5e94\u5bf9\u53cd\u5411';
+                        finalVerdict='reverse';
+                        finalColor=C.warn;
                     }
-                    else if(finalPred) reasonHtml='基于排除法引理'+(excList.length>=2?'(排除2方向)':'');
+                    else if(hasHc&&bestResult){
+                        var brN={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bestResult]||bestResult;
+                        var btGap=(hf.net!==undefined&&af.net!==undefined)?Math.abs((hf.net||0)-(af.net||0)):0;
+                        var btFavorsBest=(bt2===bestResult);
+
+                        // === 核心判定树 ===
+                        // ① 阻盘模式（最高优先级）：标准盘低赔方向被让球盘超高水阻拦 + 基本面同向 = 真方向
+                        if(_isBlockedDir && bt2===stdLowest){
+                            reasonHtml='\u963b\u76d8\u6a21\u5f0f\uff01'+_blockedName+'\u88ab\u8ba9\u7403\u76d8\u8d85\u9ad8\u6c34\u963b\u62e6,\u57fa\u672c\u9762\u540c\u5411=\u771f\u65b9\u5411';
+                            finalVerdict=bt2; finalColor='#22c55e';
+                        }
+                        // ② 推离最优解
+                        else if(isPushedAwayBest){
+                            // ★★★ 推离最优解：庄家拉高最低赔付方向 = 真方向
+                            reasonHtml='\u63a8\u79bb\u6700\u4f18\u89e3\u2192\u5e84\u5bb6\u62c9\u9ad8'+brN+'(\u6700\u4f4e\u8d54\u4ed8)=\u771f\u65b9\u5411';
+                            finalVerdict=bestResult;
+                            finalColor='#22c55e';
+                        }
+                        else if(btGap>=6 && !btFavorsBest && bestResult){
+                            // ⚠️ 基本面一面倒(差≥6分)且与赔付最优矛盾 → 基本面优先
+                            var btN2={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bt2]||bt2;
+                            reasonHtml='\u57fa\u672c\u9762\u5de7\u5dee('+btGap+'\u5206)\u503e\u5411'+btN2+',\u8d54\u4ed8\u6700\u4f18('+brN+')\u88ab\u57fa\u672c\u9762\u538b\u5236 \u2192 \u57fa\u672c\u9762\u4f18\u5148';
+                            finalVerdict=bt2;
+                            finalColor=bt2==='home'?C.home:(bt2==='draw'?C.draw:C.away);
+                        }
+                        else if(btGap>=4 && !btFavorsBest){
+                            // ⚠️ 中等基本面差距(4-5分)，赔付最优可能被阻盘
+                            var btN2={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bt2]||bt2;
+                            // 检测阻盘：赔付最优方向在让球盘是否超高赔(>3.5)
+                            var _bestHcOdds=(bestResult==='home')?hcH:(bestResult==='draw'?hcD:hcA);
+                            var _isBlocked=_bestHcOdds>3.5;
+                            if(_isBlocked){
+                                reasonHtml='\u963b\u76d8\u68c0\u6d4b\uff1a\u8d54\u4ed8\u6700\u4f18('+brN+')\u8ba9\u7403\u76d8'+_bestHcOdds.toFixed(2)+'=\u8d85\u9ad8\u6c34\u963b\u76d8,\u57fa\u672c\u9762('+btN2+')\u66f4\u53ef\u9760';
+                                finalVerdict=bt2;
+                                finalColor=bt2==='home'?C.home:(bt2==='draw'?C.draw:C.away);
+                            } else {
+                                reasonHtml='\u57fa\u672c\u9762\u503e\u5411('+btN2+')\u4e0e\u8d58\u4ed8\u51b2\u7a81 \u2192 \u89c2\u671b/\u9632\u5e73';
+                                finalVerdict='cautious';
+                                finalColor=C.tip;
+                            }
+                        }
+                        else if(finalPred && finalPred===bestResult){
+                            reasonHtml='\u8d58\u4ed8\u6700\u4f18+\u6392\u9664\u6cd5\u53cc\u91cd\u786e\u8ba4';
+                            finalVerdict=bestResult;
+                            finalColor=C.good;
+                        }
+                        else if(finalPred && finalPred!==bestResult){
+                            var fpN2={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[finalPred]||finalPred;
+                            // 小差距(<4分)：赔付优先
+                            reasonHtml='\u8d58\u4ed8\u6700\u4f18('+brN+')\u4e0e\u6392\u9664\u6cd5('+fpN2+')\u51b2\u7a81 \u2192 \u4ee5\u8d58\u4ed8\u4e3a\u51c6';
+                            finalVerdict=bestResult;
+                            finalColor=C.good;
+                        }
+                        else {
+                            reasonHtml=\u57fa\u4e8e\u8d58\u4ed8\u538b\u529b\u77e9\u9635;
+                            finalVerdict=bestResult;
+                            finalColor=C.good;
+                        }
+
+                        // 显示冲突提示（如果有的话）
+                        if(!isPushedAwayBest && bt2 && bt2!==bestResult && btGap<6){
+                            html+='<div style="font-size:10.5px;color:'+C.textDim+';margin-bottom:4px;padding:2px 6px;background:#222220;border-radius:3px">';
+                            html+='<span>\ud83d\udcc6 \u57fa\u672c\u9762\u500e\u5411'+({home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bt2])+'('+(hf.net||0)+'/'+(af.net||0)+')</span>';
+                            html+='</div>';
+                        }
+                    }
+                    else if(finalPred) reasonHtml='\u57fa\u4e8e\u6392\u9664\u6cd5\u5f15\u7406'+(excList.length>=2?'(\u6392\u96642\u65b9\u5411)':'');
                     else if(bt2) reasonHtml=mcHasRec?'基本面+'(mcAgrees2?'澳门同向':'澳门分歧'):'基于基本面倾向';
 
                     if(reasonHtml) html+='<div style="margin-top:6px;padding:6px 8px;background:#ffffff08;border-radius:4px"><span style="font-size:11.5px;color:'+C.textDim+'">\u25b8 '+reasonHtml+'</span></div>';
