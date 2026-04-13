@@ -1,0 +1,80 @@
+{
+  "match_id": "周日026",
+  "date_folder": "2026.04.12",
+  "home_team": "美因茨",
+  "away_team": "弗赖堡",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "WWWWWD",
+  "away_form": "WLWWLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热2.6%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.6%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降17升3 / 客降24升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:1(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-13 05:39",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": -2.56,
+    "jc_away_chg": 3.12,
+    "mcao_home_chg": 4.33,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -4.62,
+    "jc_init_odds": [
+      2.01,
+      3.13,
+      3.2
+    ],
+    "jc_real_odds": [
+      2.01,
+      3.05,
+      3.3
+    ],
+    "macao_init_odds": [
+      2.08,
+      3.07,
+      3.25
+    ],
+    "macao_real_odds": [
+      2.17,
+      3.07,
+      3.1
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "UND"
+  }
+}

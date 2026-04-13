@@ -1,0 +1,73 @@
+{
+  "match_id": "周日005",
+  "date_folder": "2026.04.12",
+  "home_team": "福图纳",
+  "away_team": "布雷达",
+  "league": "荷甲",
+  "handicap": "1",
+  "home_form": "LLWLWW",
+  "away_form": "DLLDLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降20升4 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 23:14",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 8.94,
+    "mcao_draw_chg": -4.23,
+    "mcao_away_chg": -5.0,
+    "jc_init_odds": [
+      2.59,
+      3.3,
+      2.27
+    ],
+    "jc_real_odds": [
+      2.59,
+      3.3,
+      2.27
+    ],
+    "macao_init_odds": [
+      2.35,
+      3.55,
+      2.4
+    ],
+    "macao_real_odds": [
+      2.56,
+      3.4,
+      2.28
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UDD"
+  }
+}

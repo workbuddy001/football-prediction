@@ -1,0 +1,83 @@
+{
+  "match_id": "周日009",
+  "date_folder": "2026.04.12",
+  "home_team": "奥萨苏纳",
+  "away_team": "贝蒂斯",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "DWLDLW",
+  "away_form": "DDLWDL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-2.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升3 / 平降6升20 / 客降2升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-13 13:14",
+  "macao_tip": "奥萨苏纳 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 2.46,
+    "jc_draw_chg": -1.54,
+    "jc_away_chg": -2.3,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.03,
+      3.25,
+      3.05
+    ],
+    "jc_real_odds": [
+      2.08,
+      3.2,
+      2.98
+    ],
+    "macao_init_odds": [
+      2.17,
+      3.33,
+      2.85
+    ],
+    "macao_real_odds": [
+      2.17,
+      3.33,
+      2.85
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

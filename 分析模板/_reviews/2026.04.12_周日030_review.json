@@ -1,0 +1,81 @@
+{
+  "match_id": "周日030",
+  "date_folder": "2026.04.12",
+  "home_team": "哥伦布",
+  "away_team": "奥兰多",
+  "league": "美职足",
+  "handicap": "-1",
+  "home_form": "WLLDDL",
+  "away_form": "LLWLLL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.90>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.34<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降25升2 / 平降1升25 / 客降1升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:1(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「哥伦布机员 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-13 12:56",
+  "macao_tip": "哥伦布机员 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -2.1,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 8.16,
+    "jc_init_odds": [
+      1.34,
+      4.7,
+      5.9
+    ],
+    "jc_real_odds": [
+      1.34,
+      4.7,
+      5.9
+    ],
+    "macao_init_odds": [
+      1.43,
+      4.5,
+      4.9
+    ],
+    "macao_real_odds": [
+      1.4,
+      4.5,
+      5.3
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "DNU"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "match_id": "周日021",
+  "date_folder": "2026.04.12",
+  "home_team": "图卢兹",
+  "away_team": "里尔",
+  "league": "法甲",
+  "handicap": "1",
+  "home_form": "LWWLDL",
+  "away_form": "WWLWLD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:4",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+10.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升25 / 平降11升10 / 客降16升6",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:4(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+10.7%>5%"
+  ],
+  "review_time": "2026-04-13 01:10",
+  "macao_tip": "里尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 10.71,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -7.11,
+    "mcao_home_chg": 0.71,
+    "mcao_draw_chg": 5.77,
+    "mcao_away_chg": -4.35,
+    "jc_init_odds": [
+      2.8,
+      3.05,
+      2.25
+    ],
+    "jc_real_odds": [
+      3.1,
+      3.05,
+      2.09
+    ],
+    "macao_init_odds": [
+      2.81,
+      3.12,
+      2.3
+    ],
+    "macao_real_odds": [
+      2.83,
+      3.3,
+      2.2
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NUD"
+  }
+}

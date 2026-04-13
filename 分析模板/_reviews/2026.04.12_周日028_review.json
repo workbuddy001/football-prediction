@@ -1,0 +1,81 @@
+{
+  "match_id": "周日028",
+  "date_folder": "2026.04.12",
+  "home_team": "毕尔巴鄂",
+  "away_team": "比利亚雷",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "LWLLLD",
+  "away_form": "LWDWLW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降27升1 / 平降9升12 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "27/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「比利亚雷亚尔 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-13 05:41",
+  "macao_tip": "比利亚雷亚尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.76,
+    "jc_draw_chg": 1.56,
+    "jc_away_chg": 5.76,
+    "mcao_home_chg": -6.73,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 8.06,
+    "jc_init_odds": [
+      2.1,
+      3.2,
+      2.95
+    ],
+    "jc_real_odds": [
+      2.0,
+      3.25,
+      3.12
+    ],
+    "macao_init_odds": [
+      2.23,
+      3.37,
+      2.73
+    ],
+    "macao_real_odds": [
+      2.08,
+      3.37,
+      2.95
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

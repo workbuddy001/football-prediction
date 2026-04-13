@@ -1,0 +1,68 @@
+{
+  "match_id": "周日014",
+  "date_folder": "2026.04.12",
+  "home_team": "桑德兰",
+  "away_team": "热刺",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "WLLWDL",
+  "away_form": "LWDLLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-4.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升20 / 平降8升8 / 客降11升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 23:17",
+  "macao_tip": "桑德兰 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.45,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -4.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.47,
+      3.08,
+      2.5
+    ],
+    "jc_real_odds": [
+      2.58,
+      3.08,
+      2.4
+    ],
+    "macao_init_odds": [
+      2.58,
+      3.23,
+      2.41
+    ],
+    "macao_real_odds": [
+      2.58,
+      3.23,
+      2.41
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

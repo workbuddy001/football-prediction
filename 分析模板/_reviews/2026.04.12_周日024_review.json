@@ -1,0 +1,68 @@
+{
+  "match_id": "周日024",
+  "date_folder": "2026.04.12",
+  "home_team": "博洛尼亚",
+  "away_team": "莱切",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "LWLDWD",
+  "away_form": "LLLWLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率5.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升24 / 平降24升3 / 客降22升4",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-13 05:38",
+  "macao_tip": "莱切 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.57,
+      3.42,
+      5.0
+    ],
+    "jc_real_odds": [
+      1.57,
+      3.42,
+      5.0
+    ],
+    "macao_init_odds": [
+      1.8,
+      3.3,
+      3.96
+    ],
+    "macao_real_odds": [
+      1.8,
+      3.3,
+      3.96
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

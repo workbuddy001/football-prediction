@@ -1,0 +1,73 @@
+{
+  "match_id": "周日013",
+  "date_folder": "2026.04.12",
+  "home_team": "水晶宫",
+  "away_team": "纽卡斯尔",
+  "league": "英超",
+  "handicap": "1",
+  "home_form": "WDDDWL",
+  "away_form": "LLWDLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热2.1%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.1%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升23 / 平降16升6 / 客降5升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 23:16",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.51,
+    "jc_draw_chg": -2.1,
+    "jc_away_chg": 4.31,
+    "mcao_home_chg": -2.68,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 2.63,
+    "jc_init_odds": [
+      2.85,
+      3.33,
+      2.09
+    ],
+    "jc_real_odds": [
+      2.75,
+      3.26,
+      2.18
+    ],
+    "macao_init_odds": [
+      2.61,
+      3.47,
+      2.28
+    ],
+    "macao_real_odds": [
+      2.54,
+      3.47,
+      2.34
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "DNU"
+  }
+}

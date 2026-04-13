@@ -1,0 +1,81 @@
+{
+  "match_id": "周日012",
+  "date_folder": "2026.04.12",
+  "home_team": "诺丁汉",
+  "away_team": "维拉",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "DWWDLD",
+  "away_form": "WLWWLW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-7.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升27 / 平降14升10 / 客降22升7",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-12 23:16",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.02,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -7.69,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.37,
+      3.1,
+      2.6
+    ],
+    "jc_real_odds": [
+      2.56,
+      3.1,
+      2.4
+    ],
+    "macao_init_odds": [
+      2.42,
+      3.23,
+      2.58
+    ],
+    "macao_real_odds": [
+      2.42,
+      3.23,
+      2.58
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

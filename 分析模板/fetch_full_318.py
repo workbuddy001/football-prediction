@@ -1,16 +1,21 @@
 """
 fetch_full_318.py
-抓取 2026-03-18 的比赛数据
+抓取 2026-04-12 的比赛数据
 """
 import urllib.request
 import re
 import json
 import time
+import os
 
-TARGET_DATE = "2026-03-24"
+TARGET_DATE = "2026-04-12"
 PAGE_URL    = f"https://trade.500.com/jczq/?playid=312&g=2&date={TARGET_DATE}"
-RAW_HTML    = f"d:\\work\\workbuddy\\足球预测\\分析模板\\page_raw_2026-03-24.html"
-OUT_JSON    = f"d:\\work\\workbuddy\\足球预测\\分析模板\\matches_full_2026-03-24.json"
+OUT_DIR     = f"d:\\work\\workbuddy\\足球预测\\分析模板\\{TARGET_DATE.replace('-', '.')}"
+RAW_HTML    = f"{OUT_DIR}\\page_raw_{TARGET_DATE}.html"
+OUT_JSON    = f"{OUT_DIR}\\matches_full_{TARGET_DATE}.json"
+
+# 确保输出目录存在
+os.makedirs(OUT_DIR, exist_ok=True)
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -296,3 +301,162 @@ with open(OUT_JSON, 'w', encoding='utf-8') as f:
 
 print(f"\n完成！完整数据已保存到: {OUT_JSON}")
 print(f"共 {len(all_data)} 场比赛")
+
+# ════════════════════════════════════
+# 生成 .md 源数据文件
+# ════════════════════════════════════
+print(f"\n开始生成 .md 源数据文件到 {OUT_DIR} ...")
+
+def generate_md(entry):
+    """生成源数据.md文件内容"""
+    shuju = entry.get('数据分析', {})
+    ouzhi = entry.get('欧赔数据', {})
+    spf = entry.get('竞彩胜平负赔率', {})
+    match_num = entry.get('编号', '')
+    week_day = '周日' if '周日' in match_num else ('周一' if '周一' in match_num else match_num[:2])
+    home = entry.get('主队', '')
+    away = entry.get('客队', '')
+    match_date = entry.get('日期', '')
+    match_time = entry.get('时间', '')
+    league = entry.get('联赛', '')
+    rangqiu = entry.get('让球', '')
+    
+    # 文件名
+    filename = f"{week_day}{match_num[-3:]}_{home}vs{away}_源数据.md"
+    
+    # 竞彩赔率
+    spf_str = ""
+    if spf:
+        spf_str = f"| 竞彩胜 | {spf.get('胜', '-')} |\n| 竞彩平 | {spf.get('平', '-')} |\n| 竞彩负 | {spf.get('负', '-')} |"
+    
+    # 初盘赔率
+    init_odds = ouzhi.get('欧赔列表', [])
+    init_lines = []
+    for i, c in enumerate(init_odds[:30]):
+        company = c['公司']
+        h = c.get('初盘胜', '') or c.get('即时胜', '')
+        d = c.get('初盘平', '') or c.get('即时平', '')
+        a = c.get('初盘负', '') or c.get('即时负', '')
+        init_lines.append(f"    ({h}, {d}, {a}),  # {company}")
+    
+    # 即时赔率
+    real_lines = []
+    for i, c in enumerate(init_odds[:30]):
+        company = c['公司']
+        h = c.get('即时胜', '')
+        d = c.get('即时平', '')
+        a = c.get('即时负', '')
+        real_lines.append(f"    ({h}, {d}, {a}),  # {company}")
+    
+    # 近况走势
+    home_trend = shuju.get('主队近况走势', shuju.get('主队近况', ''))
+    away_trend = shuju.get('客队近况走势', shuju.get('客队近况', ''))
+    
+    # 澳门推荐
+    macao_tip = shuju.get('澳门推荐', '')
+    macao_analysis = shuju.get('澳门分析', '')
+    
+    # 历史交锋
+    history = shuju.get('历史交锋', shuju.get('交战历史摘要', ''))
+    
+    md_content = f"""# 赔率分析源数据
+
+> 数据来源：500.com 竞彩足球 | 编号：{match_num} | 采集日期：{match_date}
+
+---
+
+## 一、比赛基本信息
+
+| 字段 | 内容 |
+|------|------|
+| 主队 | {home} |
+| 客队 | {away} |
+| 比赛时间 | {match_date} {match_time} |
+| 赛事 | {league} |
+| 让球 | {rangqiu} |
+| 主队近况 | {shuju.get('主队近况', '-')} |
+| 客队近况 | {shuju.get('客队近况', '-')} |
+| 主队近况走势 | {shuju.get('主队近况走势', '-')} |
+| 主队盘路走势 | {shuju.get('主队盘路走势', '-')} |
+| 客队近况走势 | {shuju.get('客队近况走势', '-')} |
+| 客队盘路走势 | {shuju.get('客队盘路走势', '-')} |
+| 历史交锋 | {history} |
+| 澳门推荐 | {macao_tip} |
+| 澳门分析 | {macao_analysis} |
+
+---
+
+## 二、初盘赔率（共{len(init_odds)}家公司）
+
+```python
+initial_odds = [
+    # 格式: (主胜, 平局, 客胜)  # 公司名
+{chr(10).join(init_lines[:30])}
+]
+```
+
+---
+
+## 三、即{'时' if False else '时'}赔率（共{len(init_odds)}家公司）
+
+```python
+realtime_odds = [
+    # 格式: (主胜, 平局, 客胜)  # 公司名
+{chr(10).join(real_lines[:30])}
+]
+```
+
+---
+
+## 四、竞彩官方赔率
+
+```python
+# 竞彩官方赔率
+jc_odds = {{
+    '胜': {spf.get('胜', '-')},
+    '平': {spf.get('平', '-')},
+    '负': {spf.get('负', '-')}
+}}
+```
+
+---
+
+## 五、快速复制数据块
+
+```python
+# ===== 竞彩赔率 =====
+JC_WIN = {spf.get('胜', '0')}
+JC_DRAW = {spf.get('平', '0')}
+JC_AWAY = {spf.get('负', '0')}
+
+# ===== 初盘赔率（澳门，第3家）=====
+MAC_INIT = ({init_odds[2].get('初盘胜', '') or init_odds[2].get('即时胜', '')}, {init_odds[2].get('初盘平', '') or init_odds[2].get('即时平', '')}, {init_odds[2].get('初盘负', '') or init_odds[2].get('即时负', '')})
+
+# ===== 即时赔率（澳门，第3家）=====
+MAC_REAL = ({init_odds[2].get('即时胜', '')}, {init_odds[2].get('即时平', '')}, {init_odds[2].get('即时负', '')})
+
+# ===== 变动 =====
+MAC_CHG = (
+    round(float(MAC_REAL[0]) - float(MAC_INIT[0]), 2),
+    round(float(MAC_REAL[1]) - float(MAC_INIT[1]), 2),
+    round(float(MAC_REAL[2]) - float(MAC_INIT[2]), 2)
+)
+
+# ===== 澳门推荐 =====
+MACAO_TIP = "{macao_tip}"
+```
+"""
+    return filename, md_content
+
+# 生成所有 .md 文件
+for entry in all_data:
+    try:
+        filename, md_content = generate_md(entry)
+        filepath = os.path.join(OUT_DIR, filename)
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(md_content)
+        print(f"  ✓ {filename}")
+    except Exception as e:
+        print(f"  ✗ 生成失败: {entry.get('编号', '未知')} - {e}")
+
+print(f"\n.md 文件生成完成！")

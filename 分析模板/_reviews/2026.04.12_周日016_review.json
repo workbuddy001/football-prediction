@@ -1,0 +1,68 @@
+{
+  "match_id": "周日016",
+  "date_folder": "2026.04.12",
+  "home_team": "科隆",
+  "away_team": "不来梅",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "DDDLLD",
+  "away_form": "LWLWWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升14 / 平降19升2 / 客降3升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为3:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 23:35",
+  "macao_tip": "云达不莱梅 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.44,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 3.47,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.05,
+      3.4,
+      2.88
+    ],
+    "jc_real_odds": [
+      2.0,
+      3.4,
+      2.98
+    ],
+    "macao_init_odds": [
+      2.11,
+      3.35,
+      2.95
+    ],
+    "macao_real_odds": [
+      2.11,
+      3.35,
+      2.95
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

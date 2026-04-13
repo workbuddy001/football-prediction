@@ -1,0 +1,78 @@
+{
+  "match_id": "周日027",
+  "date_folder": "2026.04.12",
+  "home_team": "科莫",
+  "away_team": "国际米兰",
+  "league": "意甲",
+  "handicap": "1",
+  "home_form": "DWWWDW",
+  "away_form": "WDDLDW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "3:4",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热3.0%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-3.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升15 / 平降24升1 / 客降0升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为3:4(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-13 05:40",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.05,
+    "jc_draw_chg": -3.03,
+    "jc_away_chg": 3.38,
+    "mcao_home_chg": -2.46,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 1.83,
+    "jc_init_odds": [
+      2.92,
+      3.3,
+      2.07
+    ],
+    "jc_real_odds": [
+      2.86,
+      3.2,
+      2.14
+    ],
+    "macao_init_odds": [
+      2.85,
+      3.28,
+      2.18
+    ],
+    "macao_real_odds": [
+      2.78,
+      3.28,
+      2.22
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "DNN"
+  }
+}

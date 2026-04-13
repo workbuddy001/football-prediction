@@ -14,9 +14,9 @@
   "result_cn": "平局",
   "is_correct": false,
   "exclusions": [
-    "home",
     "away",
-    "draw"
+    "draw",
+    "home"
   ],
   "warnings": [],
   "key_signals": [
@@ -60,7 +60,7 @@
     "❌ 预测观望错误！实际比分为1:1(平局)",
     "⚠️ 当时选择了观望，实际有明确结果"
   ],
-  "review_time": "2026-04-10 06:59",
+  "review_time": "2026-04-13 01:15",
   "macao_tip": "和局",
   "odds_fingerprint": {
     "jc_change_dir": "",

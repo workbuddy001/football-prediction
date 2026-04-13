@@ -1,0 +1,73 @@
+{
+  "match_id": "周日025",
+  "date_folder": "2026.04.12",
+  "home_team": "塞尔塔",
+  "away_team": "奥维耶多",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "LWLWDD",
+  "away_form": "WLWDLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.85>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升27 / 平降20升4 / 客降17升8",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:3(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-13 05:38",
+  "macao_tip": "维戈塞尔塔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 11.11,
+    "mcao_draw_chg": -6.01,
+    "mcao_away_chg": -19.19,
+    "jc_init_odds": [
+      1.57,
+      3.5,
+      4.85
+    ],
+    "jc_real_odds": [
+      1.57,
+      3.5,
+      4.85
+    ],
+    "macao_init_odds": [
+      1.53,
+      3.83,
+      4.95
+    ],
+    "macao_real_odds": [
+      1.7,
+      3.6,
+      4.0
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UDD"
+  }
+}

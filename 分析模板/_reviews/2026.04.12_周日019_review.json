@@ -1,0 +1,81 @@
+{
+  "match_id": "周日019",
+  "date_folder": "2026.04.12",
+  "home_team": "阿尔克马",
+  "away_team": "海伦芬",
+  "league": "荷甲",
+  "handicap": "-1",
+  "home_form": "LWLWWW",
+  "away_form": "WDWWWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.95≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降9升18 / 平降16升9 / 客降18升10",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率3.95≥3.5"
+  ],
+  "review_time": "2026-04-13 00:39",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 10.13,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -18.84,
+    "jc_init_odds": [
+      1.64,
+      3.95,
+      3.75
+    ],
+    "jc_real_odds": [
+      1.64,
+      3.95,
+      3.75
+    ],
+    "macao_init_odds": [
+      1.58,
+      4.15,
+      3.98
+    ],
+    "macao_real_odds": [
+      1.74,
+      4.15,
+      3.23
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UND"
+  }
+}

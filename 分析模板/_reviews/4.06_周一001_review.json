@@ -14,8 +14,8 @@
   "result_cn": "平局",
   "is_correct": false,
   "exclusions": [
-    "home",
-    "draw"
+    "draw",
+    "home"
   ],
   "warnings": [],
   "key_signals": [
@@ -60,7 +60,7 @@
     "❌ 预测客胜但实际是平局，需要反思原因",
     "📝 心水推荐为「瓦尔韦克 贏」，可作为复盘参考"
   ],
-  "review_time": "2026-04-10 07:12",
+  "review_time": "2026-04-13 05:59",
   "macao_tip": "瓦尔韦克 贏",
   "odds_fingerprint": {
     "jc_change_dir": "",

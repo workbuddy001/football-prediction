@@ -1,0 +1,88 @@
+{
+  "match_id": "周日018",
+  "date_folder": "2026.04.12",
+  "home_team": "马尔默",
+  "away_team": "盖斯",
+  "league": "瑞超",
+  "handicap": "-1",
+  "home_form": "DWDLWW",
+  "away_form": "LWLWWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+4.7%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降25升1 / 平降5升14 / 客降0升26",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "26/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-2.8%+澳门不动",
+    "📈 关键信号「[不怕]标签」有效：竞彩升客胜+4.7%+澳门不动，客胜赔率≥3.5",
+    "📈 关键信号「强共识推离客」有效：26/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-13 00:30",
+  "macao_tip": "马尔默 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.78,
+    "jc_draw_chg": 1.47,
+    "jc_away_chg": 4.75,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.8,
+      3.4,
+      3.58
+    ],
+    "jc_real_odds": [
+      1.75,
+      3.45,
+      3.75
+    ],
+    "macao_init_odds": [
+      2.0,
+      3.38,
+      3.03
+    ],
+    "macao_real_odds": [
+      2.0,
+      3.38,
+      3.03
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

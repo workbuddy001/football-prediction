@@ -1,0 +1,63 @@
+{
+  "match_id": "周日008",
+  "date_folder": "2026.04.12",
+  "home_team": "埃沃斯堡",
+  "away_team": "沙尔克04",
+  "league": "德乙",
+  "handicap": "-1",
+  "home_form": "DWWLWD",
+  "away_form": "WLDDWD",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降15升7 / 平降5升13 / 客降1升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-12 23:15",
+  "macao_tip": "沙尔克04 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.93,
+      3.3,
+      3.25
+    ],
+    "jc_real_odds": [
+      1.93,
+      3.3,
+      3.25
+    ],
+    "macao_init_odds": [
+      1.97,
+      3.38,
+      3.12
+    ],
+    "macao_real_odds": [
+      1.97,
+      3.38,
+      3.12
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

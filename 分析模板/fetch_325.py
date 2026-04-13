@@ -9,10 +9,10 @@ import json
 import os
 import time
 
-TARGET_DATE = "2026-04-11"
+TARGET_DATE = "2026-04-12"
 PAGE_URL    = f"https://trade.500.com/jczq/?playid=312&g=2&date={TARGET_DATE}"
-COLLECT_DATE = "2026-04-11"
-OUT_DIR     = r"d:\work\workbuddy\足球预测\分析模板\4.11"
+COLLECT_DATE = "2026-04-12"
+OUT_DIR     = r"d:\work\workbuddy\足球预测\分析模板\4.12"
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',

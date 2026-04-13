@@ -889,6 +889,23 @@ def parse_source_file(filepath):
         if h: data["jc_home_odds"] = float(h.group(1))
         if d: data["jc_draw_odds"] = float(d.group(1))
         if a: data["jc_away_odds"] = float(a.group(1))
+
+    # 提取竞彩赔率（字典格式，兼容两种源数据模板）
+    if 'jc_odds' not in data or not data.get('jc_odds'):
+        jc_dict_match = re.search(r'jc_odds\s*=\s*\{([^}]+)\}', content)
+        if jc_dict_match:
+            try:
+                jcd = {}
+                for m in re.finditer(r"['\"](\S+)['\"]\s*:\s*([0-9.]+)", jc_dict_match.group(1)):
+                    jcd[m.group(1)] = float(m.group(2))
+                if jcd:
+                    data['jc_odds'] = jcd
+                    # 同时设置独立字段供其他地方使用
+                    if '胜' in jcd: data['jc_home_odds'] = jcd['胜']
+                    if '平' in jcd: data['jc_draw_odds'] = jcd['平']
+                    if '负' in jcd: data['jc_away_odds'] = jcd['负']
+            except:
+                pass
     
     # 提取30家公司赔率数据
     initial_odds = extract_odds_array(content, 'initial_odds')
@@ -1344,6 +1361,583 @@ def direction_cn(d):
     return names.get(d, d)
 
 
+# ============================================================
+# 赛前情报分析（本地数据推导利好/利空 + 心水对照）
+# ============================================================
+
+def get_pre_match_analysis(date_folder, match_id):
+    """从已有比赛数据分析赛前情报，推导两队利好/利空因素，对照澳门心水"""
+
+    # 1. 加载源数据
+    file_pattern = os.path.join(DATA_ROOT, date_folder, f"{match_id}_*_源数据.md")
+    files = glob.glob(file_pattern)
+    if not files:
+        return {"success": False, "error": f"未找到比赛: {match_id}"}
+
+    raw = parse_source_file(files[0])
+    analysis = analyze_match(raw)
+
+    home_team = raw.get("home_team", "")
+    away_team = raw.get("away_team", "")
+    league = raw.get("league", "")
+
+    # 2. 基本面数据
+    form_h_str = raw.get("form_home", "") or raw.get("home_form", "") or raw.get("form_h", "")
+    form_a_str = raw.get("form_away", "") or raw.get("away_form", "") or raw.get("form_a", "")
+    macao_tip = raw.get("macao_tip", "") or ""
+    macao_analysis = raw.get("macao_analysis", "") or ""
+    handicap = str(raw.get("handicap", ""))
+    h2h = raw.get("history", "") or raw.get("h2h", "")
+
+    # 让球赔率（传给前端展示）
+    jc_odds_hc = raw.get('jc_odds', {}) or {}
+
+    # 解析近况走势
+    def parse_form(form_str, team_name):
+        if not form_str:
+            return {"recent": [], "wins": 0, "draws": 0, "losses": 0, "rate": 0}
+        results = []
+        for ch in str(form_str)[:15]:
+            if ch == 'W' or ch == 'D' or ch == 'L':
+                results.append(ch)
+        wins = results.count('W')
+        draws = results.count('D')
+        losses = results.count('L')
+        total = max(len(results), 1)
+        return {
+            "recent": "".join(results[:6]),
+            "last5": results[:5],
+            "wins": wins,
+            "draws": draws,
+            "losses": losses,
+            "rate": round(wins / total * 100),
+        }
+
+    home_form = parse_form(form_h_str, home_team)
+    away_form = parse_form(form_a_str, away_team)
+
+    # 3. 赔率信号
+    # ⚠️ realtime_odds数组第一行是注释(# 格式...)，实际index 0=竞彩(第二行)
+    init_odds = (raw.get('initial_odds') or [])
+    real_odds = (raw.get('realtime_odds') or [])
+
+    # 竞彩标准盘(index 0=竞彩行，跳过可能的注释行)
+    jc_init = init_odds[0] if len(init_odds) > 0 else []
+    jc_real = real_odds[0] if len(real_odds) > 0 else []
+    # 如果取到的是注释行(非数字)，尝试取下一行
+    if jc_real and len(jc_real) >= 3:
+        try: float(jc_real[0])
+        except (ValueError, TypeError):
+            jc_real = real_odds[1] if len(real_odds) > 1 else []
+            jc_init = init_odds[1] if len(init_odds) > 1 else []
+
+    macao_init = init_odds[2] if len(init_odds) > 2 else []
+    macao_real = real_odds[2] if len(real_odds) > 2 else []
+
+    # 竞彩赔率变化
+    jc_h_chg = calc_pct(float(jc_init[0]), float(jc_real[0])) if len(jc_init) >= 3 and len(jc_real) >= 3 else 0
+    jc_d_chg = calc_pct(float(jc_init[1]), float(jc_real[1])) if len(jc_init) >= 3 and len(jc_real) >= 3 else 0
+    jc_a_chg = calc_pct(float(jc_init[2]), float(jc_real[2])) if len(jc_init) >= 3 and len(jc_real) >= 3 else 0
+
+    current_h = float(jc_real[0]) if jc_real else 0
+    current_d = float(jc_real[1]) if jc_real else 0
+    current_a = float(jc_real[2]) if jc_real else 0
+
+    # 4. 推导利好/利空因素
+    home_favors = []   # 主队利好
+    home_unfavors = []  # 主队利空
+    away_favors = []   # 客队利好
+    away_unfavors = []  # 客队利空
+
+    # --- 近况因素 ---
+    if home_form['rate'] >= 70:
+        home_favors.append({"type": "form", "text": f"近况火热：{home_form['recent']}(胜率{home_form['rate']}%)", "strength": "strong"})
+    elif home_form['rate'] <= 30:
+        home_unfavors.append({"type": "form", "text": f"近况低迷：{home_form['recent']}(胜率仅{home_form['rate']}%)", "strength": "strong"})
+
+    if away_form['rate'] >= 70:
+        away_favors.append({"type": "form", "text": f"近况火热：{away_form['recent']}(胜率{away_form['rate']}%)", "strength": "strong"})
+    elif away_form['rate'] <= 30:
+        away_unfavors.append({"type": "form", "text": f"近况低迷：{away_form['recent']}(胜率仅{away_form['rate']}%)", "strength": "strong"})
+
+    # --- 连胜/连败 ---
+    last5_h = home_form.get('last5', [])
+    streak_h_win = 0; streak_h_loss = 0
+    for r in reversed(last5_h):
+        if r == 'W': streak_h_win += 1
+        else: break
+    for r in reversed(last5_h):
+        if r == 'L': streak_h_loss += 1
+        else: break
+    if streak_h_win >= 3:
+        home_favors.append({"type": "streak", "text": f"当前连胜{streak_h_win}场，气势正盛", "strength": "medium"})
+    if streak_h_loss >= 3:
+        home_unfavors.append({"type": "streak", "text": f"当前连败{streak_h_loss}场，士气低落", "strength": "strong"})
+
+    last5_a = away_form.get('last5', [])
+    streak_a_win = 0; streak_a_loss = 0
+    for r in reversed(last5_a):
+        if r == 'W': streak_a_win += 1
+        else: break
+    for r in reversed(last5_a):
+        if r == 'L': streak_a_loss += 1
+        else: break
+    if streak_a_win >= 3:
+        away_favors.append({"type": "streak", "text": f"当前连胜{streak_a_win}场，气势正盛", "strength": "medium"})
+    if streak_a_loss >= 3:
+        away_unfavors.append({"type": "streak", "text": f"当前连败{streak_a_loss}场，士气低落", "strength": "strong"})
+
+    # --- 赔率位置因素 ---
+    if current_h < 1.50:
+        home_favors.append({"type": "odds_position", "text": f"主胜赔率{current_h:.2f}极低，庄家看好主队", "strength": "medium"})
+    elif current_a < 1.50:
+        away_favors.append({"type": "odds_position", "text": f"客胜赔率{current_a:.2f}极低，庄家看好客队", "strength": "medium"})
+    elif current_d < 3.00:
+        # 平赔偏低
+        pass
+
+    # --- 赔率变化信号 ---
+    if abs(jc_h_chg) > 5:
+        if jc_h_chg < 0:
+            home_favors.append({"type": "odds_move", "text": f"竞彩主胜降赔{abs(jc_h_chg):.1f}%，资金流向主胜", "strength": "medium"})
+        else:
+            home_unfavors.append({"type": "odds_move", "text": f"竞彩主胜升赔{jc_h_chg:.1f}%，资金撤离主胜", "strength": "weak"})
+    if abs(jc_a_chg) > 5:
+        if jc_a_chg < 0:
+            away_favors.append({"type": "odds_move", "text": f"竞彩客胜降赔{abs(jc_a_chg):.1f}%，资金流向客胜", "strength": "medium"})
+        else:
+            away_unfavors.append({"type": "odds_move", "text": f"竞彩客胜升赔{jc_a_chg:.1f}%，资金撤离客胜", "strength": "weak"})
+
+    # 澳门赔率变化
+    if macao_init and macao_real and len(macao_init) >= 3 and len(macao_real) >= 3:
+        mh_chg = calc_pct(float(macao_init[0]), float(macao_real[0]))
+        ma_chg = calc_pct(float(macao_init[2]), float(macao_real[2]))
+        if abs(mh_chg) > 5:
+            if mh_chg < 0:
+                home_favors.append({"type": "macao_move", "text": f"澳门主胜降赔{abs(mh_chg):.1f}%，与竞彩同向造热主队", "strength": "strong"})
+            else:
+                home_unfavors.append({"type": "macao_move", "text": f"澳门主胜升赔{mh_chg:.1f}%", "strength": "weak"})
+        if abs(ma_chg) > 5:
+            if ma_chg < 0:
+                away_favors.append({"type": "macao_move", "text": f"澳门客胜降赔{abs(ma_chg):.1f}%，与竞彩同向造热客队", "strength": "strong"})
+            else:
+                away_unfavors.append({"type": "macao_move", "text": f"澳门客胜升赔{ma_chg:.1f}%", "strength": "weak"})
+
+    # --- 主客场因素（让球盘口暗示） ---
+    if handicap:
+        h_val = 0
+        try: h_val = float(handicap)
+        except: pass
+        if h_val < -0.5:  # 主让1球以上
+            home_favors.append({"type": "handicap", "text": f"主场让{handicap}球，实力优势明显", "strength": "medium"})
+        elif h_val > 0.5:   # 客让1球以上
+            away_favors.append({"type": "handicap", "text": f"客场让{-h_val}球（受让），客队实力占优", "strength": "medium"})
+
+    # --- 历史交锋 ---
+    if h2h:
+        import re as _re
+        hw_match = _re.search(r'(\d+)胜', h2h)
+        dw_match = _re.search(r'(\d+)和|(\d+)平', h2h)
+        al_match = _re.search(r'(\d+)负', h2h)
+        if hw_match:
+            hw = int(hw_match.group(1))
+            if hw >= 3:
+                home_favors.append({"type": "h2h", "text": f"历史交锋占优({h2h})", "strength": "medium"})
+
+    # 5. 澳门心水解析
+    tip_direction = None
+    tip_text = ""
+    if macao_tip:
+        tip_direction = parse_macao_direction(macao_tip)
+        tip_dir_cn = direction_name(tip_direction) if tip_direction != "unknown" else ""
+        tip_text = f"澳门推荐「{macao_tip}」→ {tip_dir_cn}"
+
+        # 心水方向的赔率
+        tip_odds_val = 0
+        if tip_direction == "home":
+            tip_odds_val = current_h
+        elif tip_direction == "draw":
+            tip_odds_val = current_d
+        elif tip_direction == "away":
+            tip_odds_val = current_a
+
+    # 6. 综合结论：利好/利空对比 + 是否配合心水
+    home_score = sum(3 if f["strength"] == "strong" else (2 if f["strength"] == "medium" else 1) for f in home_favors)
+    home_penalty = sum(3 if u["strength"] == "strong" else (2 if u["strength"] == "medium" else 1) for u in home_unfavors)
+    away_score = sum(3 if f["strength"] == "strong" else (2 if f["strength"] == "medium" else 1) for f in away_favors)
+    away_penalty = sum(3 if u["strength"] == "strong" else (2 if u["strength"] == "medium" else 1) for u in away_unfavors)
+
+    home_net = home_score - home_penalty
+    away_net = away_score - away_penalty
+
+    # 判断基本面倾向
+    if home_net > away_net + 3:
+        basic_tendency = "home"
+        tendency_text = "基本面明显偏向主队"
+    elif away_net > home_net + 3:
+        basic_tendency = "away"
+        tendency_text = "基本面明显偏向客队"
+    elif abs(home_net - away_net) <= 3:
+        basic_tendency = "draw"
+        tendency_text = "基本面双方势均力敌，需警惕平局"
+    else:
+        basic_tendency = "neutral"
+        tendency_text = "基本面略有偏向但不够明确"
+
+    # 7. 与心水对照得出最终判断
+    conclusion_parts = []
+    verdict_level = ""  # strong_align / align / conflict / neutral / no_tip
+
+    if tip_direction and tip_direction != "unknown":
+        # 有心水推荐时做对照
+        tip_map = {"home": "主胜", "draw": "平局", "away": "客胜"}
+        tendency_map = {"home": "主胜", "draw": "平局/均衡", "away": "客胜", "neutral": "不明确"}
+
+        if tip_direction == basic_tendency:
+            verdict_level = "strong_align"
+            conclusion_parts.append(f"{tip_text} ✅")
+            conclusion_parts.append(f"与基本面倾向「{tendency_map[basic_tendency]}」完全一致")
+            conclusion_parts.append("★ 庄家意图与基本面共振，可信度较高")
+        elif (tip_direction in ("home", "away") and basic_tendency in ("home", "away") and tip_direction != basic_tendency):
+            # 方向矛盾
+            verdict_level = "conflict"
+            conclusion_parts.append(f"{tip_text}")
+            conclusion_parts.append(f"⚠️ 但基本面倾向「{tendency_map[basic_tendency]}」，与心水方向矛盾！")
+            conclusion_parts.append("庄家可能在利用基本面引导筹码，需要警惕反向结果")
+        else:
+            verdict_level = "align"
+            conclusion_parts.append(f"{tip_text}")
+            conclusion_parts.append(f"基本面倾向「{tendency_map[basic_tendency]}」")
+            conclusion_parts.append("心水与基本面无明确冲突，可参考心水方向")
+    else:
+        verdict_level = "no_tip"
+        conclusion_parts.append("本期无明确的澳门心水推荐")
+        conclusion_parts.append(f"基本面倾向：{tendency_text}")
+        conclusion_parts.append("建议以排除法为主，结合赔率变化判断")
+
+    # 8. 构建返回数据
+    result = {
+        "success": True,
+        "data": {
+            "match_info": {
+                "league": league,
+                "home": home_team,
+                "away": away_team,
+                "handicap": handicap,
+                "hc_odds": jc_odds_hc,          # 让球赔率（竞彩-1/+1球胜平负）
+                "h2h": h2h,
+            },
+            # === 标准盘赔率（不让球，用于水位分析①） ===
+            "standard_odds": {
+                "home": current_h,             # 竞彩即时主胜
+                "draw": current_d,             # 竞彩即时平局
+                "away": current_a,             # 竞彩即时客胜
+                # 变化百分比
+                "home_chg": jc_h_chg,
+                "draw_chg": jc_d_chg,
+                "away_chg": jc_a_chg,
+            },
+            # === 让球赔率变化（如果有初盘对比） ===
+            "hc_changes": {},
+            "form": {
+                "home": {
+                    "recent": home_form['recent'],
+                    "wins": home_form['wins'],
+                    "draws": home_form['draws'],
+                    "losses": home_form['losses'],
+                    "rate": home_form['rate'],
+                },
+                "away": {
+                    "recent": away_form['recent'],
+                    "wins": away_form['wins'],
+                    "draws": away_form['draws'],
+                    "losses": away_form['losses'],
+                    "rate": away_form['rate'],
+                },
+            },
+            "home_factors": {
+                "favors": home_favors,
+                "unfavors": home_unfavors,
+                "score": home_score,
+                "penalty": home_penalty,
+                "net": home_net,
+            },
+            "away_factors": {
+                "favors": away_favors,
+                "unfavors": away_unfavors,
+                "score": away_score,
+                "penalty": away_penalty,
+                "net": away_net,
+            },
+            "macao": {
+                "tip": macao_tip,
+                "analysis": macao_analysis,
+                "direction": tip_direction,
+                "tip_text": tip_text,
+            },
+            "conclusion": {
+                "basic_tendency": basic_tendency,
+                "tendency_text": tendency_text,
+                "verdict_level": verdict_level,
+                "parts": conclusion_parts,
+                "home_net": home_net,
+                "away_net": away_net,
+            },
+            # === 三大维度（来自分析引擎现有数据）===
+            "engine_data": {
+                # 维度1: 相似案例命中率
+                "review_hit_rate": _calc_review_stats(analysis),
+                # 维度2: 冷门预警
+                "cold_alerts": analysis.get("warnings", []),
+                # 维度3: 排除引擎
+                "exclusions": analysis.get("exclusions", []),
+                "final_pred": analysis.get("final_prediction", ""),
+                "confidence": analysis.get("confidence", 0),
+            }
+        }
+    }
+
+    return result
+
+
+def _calc_review_stats(analysis):
+    """从分析引擎的相似案例中提取命中率统计"""
+    reviews = load_review_history()
+    if not reviews:
+        return {"total": 0, "message": "暂无复盘数据"}
+    
+    total = len(reviews)
+    hit = sum(1 for r in reviews if r.get('is_correct', False))
+    
+    # 同预测方向命中率
+    current_pred = analysis.get('final_prediction', '')
+    same_pred = [r for r in reviews if r.get('prediction') == current_pred]
+    sp_hit = sum(1 for r in same_pred if r.get('is_correct', False))
+    
+    # 同联赛
+    league = analysis.get('league', '')
+    same_league = [r for r in reviews if r.get('league') == league]
+    sl_hit = sum(1 for r in same_league if r.get('is_correct', False))
+    
+    return {
+        "total": total,
+        "hit": hit,
+        "overall_rate": round(hit / total * 100, 1) if total > 0 else 0,
+        "same_prediction": {
+            "dir": current_pred or "未预测",
+            "count": len(same_pred),
+            "hit": sp_hit,
+            "rate": round(sp_hit / len(same_pred) * 100, 1) if same_pred else 0,
+        },
+        "same_league": {
+            "name": league or "未知",
+            "count": len(same_league),
+            "hit": sl_hit,
+            "rate": round(sl_hit / len(same_league) * 100, 1) if same_league else 0,
+        }
+    }
+
+
+def get_handicap_similar(date_folder, match_id):
+    """基于让球盘赔率查找相似历史案例（6维度匹配）"""
+    # 1. 获取当前比赛数据（与/api/analyze相同方式加载）
+    file_pattern = os.path.join(DATA_ROOT, date_folder, f"{match_id}_*_源数据.md")
+    files = glob.glob(file_pattern)
+    if not files:
+        return {"success": False, "error": f"未找到比赛: {match_id}"}
+
+    raw = parse_source_file(files[0])
+    analysis = analyze_match(raw)
+
+    # 尝试读取复盘指纹（如果有）
+    fingerprint = {}
+    review_path = os.path.join(DATA_ROOT, date_folder, '_reviews', f'{match_id}_review.json')
+    if os.path.exists(review_path):
+        try:
+            with open(review_path, 'r', encoding='utf-8') as rf:
+                fingerprint = json.load(rf).get('odds_fingerprint', {})
+        except:
+            pass
+
+    # 当前让球盘信息
+    cur_hc = str(raw.get('handicap', ''))
+    cur_jc_odds = raw.get('jc_odds') or {}
+    cur_hc_odds = fingerprint.get('hc_jc_odds') or {}
+
+    if not cur_hc and not cur_hc_odds:
+        return {"success": True, "data": {"similar": [], "summary": {"total_reviews": 0, "matched": 0, "message": "该场比赛无让球盘数据"}}}
+
+    # 当前让球后赔率（优先用hc_jc_odds，其次从jc_odds推算）
+    cur_h_win = cur_hc_odds.get('home', '') or (cur_jc_odds.get('home', '') if cur_hc else '')
+    cur_h_draw = cur_hc_odds.get('draw', '') or (cur_jc_odds.get('draw', '') if cur_hc else '')
+    cur_h_away = cur_hc_odds.get('away', '') or (cur_jc_odds.get('away', '') if cur_hc else '')
+
+    # 不让球赔率
+    init_odds = (raw.get('initial_odds') or [])
+    jc_init = init_odds[1] if len(init_odds) > 1 else []  # index 1 = 竞彩初赔
+    cur_home_init = float(jc_init[0]) if len(jc_init) > 0 else 0
+    cur_away_init = float(jc_init[2]) if len(jc_init) > 2 else 0
+
+    cur_league = raw.get('league', '')
+    cur_form_h = analysis.get('form_home', '')
+    cur_form_a = analysis.get('form_away', '')
+
+    # 2. 遍历所有历史复盘
+    all_reviews = load_review_history()
+    scored = []
+
+    for r in all_reviews:
+        rfp = r.get('odds_fingerprint', {}) or {}
+        rhc = str(rfp.get('handicap', ''))
+        rhc_odds = rfp.get('hc_jc_odds') or {}
+        
+        # 如果fingerprint没有handicap，从源数据文件补充读取
+        if not rhc:
+            r_date = str(r.get('date_folder', ''))
+            r_id = str(r.get('match_id', ''))
+            if r_date and r_id:
+                src_files = glob.glob(os.path.join(DATA_ROOT, r_date, f'{r_id}_*_源数据.md'))
+                if src_files:
+                    try:
+                        src_raw = parse_source_file(src_files[0])
+                        rhc = str(src_raw.get('handicap', ''))
+                    except: pass
+        
+        # 必须有让球盘口才能匹配
+        if not rhc: continue
+
+        # 如果没有让球赔率，从源数据补充
+        if not rhc_odds and r_date and r_id:
+            src_files2 = glob.glob(os.path.join(DATA_ROOT, r_date, f'{r_id}_*_源数据.md'))
+            if src_files2:
+                try:
+                    src_raw2 = parse_source_file(src_files2[0])
+                    rhc_odds = src_raw2.get('jc_odds') or {}
+                except: pass
+
+        score = 0
+        reasons = []
+
+        # 维度1: 盘口一致 (25分)
+        if rhc == cur_hc:
+            score += 25
+            reasons.append("盘口一致")
+        elif abs(float(rhc) - float(cur_hc)) < 0.5 if rhc.replace('-','').replace('.','').isdigit() and cur_hc.replace('-','').replace('.','').isdigit() else False:
+            score += 10
+            reasons.append(f"盘口接近({rhc}vs{cur_hc})")
+
+        # 维度2: 让球主赔接近 (20/10分)
+        rh_win = rhc_odds.get('home', '')
+        if rh_win and cur_h_win:
+            try:
+                diff = abs(float(rh_win) - float(cur_h_win))
+                if diff <= 0.30:
+                    score += 20; reasons.append(f"主赔差{diff:.2f}")
+                elif diff <= 0.60:
+                    score += 10; reasons.append(f"主赔差{diff:.2f}")
+            except: pass
+
+        # 维度3: 让球客赔接近 (20/10分)
+        rh_away = rhc_odds.get('away', '')
+        if rh_away and cur_h_away:
+            try:
+                diff = abs(float(rh_away) - float(cur_h_away))
+                if diff <= 0.30:
+                    score += 20; reasons.append(f"客赔差{diff:.2f}")
+                elif diff <= 0.60:
+                    score += 10; reasons.append(f"客赔差{diff:.2f}")
+            except: pass
+
+        # 维度4: 同联赛 (15分)
+        if cur_league and cur_league in r.get('league', ''):
+            score += 15
+            reasons.append("同联赛")
+
+        # 维度5: 让球平赔接近 (10/5分)
+        rh_draw = rhc_odds.get('draw', '')
+        if rh_draw and cur_h_draw:
+            try:
+                diff = abs(float(rh_draw) - float(cur_h_draw))
+                if diff <= 0.50:
+                    score += 10; reasons.append(f"平赔差{diff:.2f}")
+                elif diff <= 1.00:
+                    score += 5; reasons.append(f"平赔差{diff:.2f}")
+            except: pass
+
+        # 维度6: 不让球结构相似 (5分)
+        r_init = r.get('initial_odds') or []
+        if len(r_init) > 2 and cur_home_init > 0:
+            try:
+                rhi, rai = float(r_init[0]), float(r_init[2])
+                cur_ratio = cur_home_init / max(cur_away_init, 0.01)
+                r_ratio = rhi / max(rai, 0.01)
+                if abs(cur_ratio - r_ratio) < 0.5:
+                    score += 5; reasons.append("结构相似")
+            except: pass
+
+        if score >= 40:
+            r['_sim_score'] = score
+            r['_sim_reasons'] = reasons
+            scored.append(r)
+
+    # 按分数排序，取Top6
+    scored.sort(key=lambda x: x.get('_sim_score', 0), reverse=True)
+    top = scored[:6]
+
+    # 构建返回结果
+    result_list = []
+    hit_count = 0
+    pred_dist = {"主胜": 0, "平局": 0, "客胜": 0}
+    actual_dist = {"主胜": 0, "平局": 0, "客胜": 0}
+
+    for r in top:
+        item = {
+            "match_id": r.get("match_id", ""),
+            "date_folder": r.get("date_folder", ""),
+            "home_team": r.get("home_team", ""),
+            "away_team": r.get("away_team", ""),
+            "league": r.get("league", ""),
+            "score": r.get("_sim_score", 0),
+            "reasons": r.get("_sim_reasons", []),
+            "handicap": str(r.get('odds_fingerprint', {}).get('handicap', '')),
+            "hc_odds": r.get('odds_fingerprint', {}).get('hc_jc_odds', {}),
+            "prediction": r.get("prediction", ""),
+            "confidence": r.get("confidence", 0),
+            "actual_score": r.get("actual_score", ""),
+            "result_cn": r.get("result_cn", ""),
+            "is_correct": r.get("is_correct", False),
+            "form_home": r.get("form_home", ""),
+            "form_away": r.get("form_away", ""),
+            "lessons": [l for l in r.get("lessons", []) if l.startswith(('❌','⚠️'))][:2],
+        }
+        result_list.append(item)
+
+        if r.get("is_correct"): hit_count += 1
+        p = r.get("prediction", "")
+        a = r.get("result_cn", "")
+        for k in pred_dist:
+            if k in p: pred_dist[k] += 1
+        for k in actual_dist:
+            if k in a: actual_dist[k] += 1
+
+    summary = {
+        "total_reviews": len(all_reviews),
+        "has_handicap": sum(1 for x in all_reviews if str(x.get('odds_fingerprint', {}).get('handicap', ''))),
+        "matched": len(top),
+        "hit_count": hit_count,
+        "hit_rate": f"{hit_count/max(len(top),1)*100:.0f}%" if top else "N/A",
+        "pred_dist": pred_dist,
+        "actual_dist": actual_dist,
+        "current": {
+            "handicap": cur_hc,
+            "hc_odds": {"home": cur_h_win, "draw": cur_h_draw, "away": cur_h_away},
+            "league": cur_league,
+        }
+    }
+
+    return {"success": True, "data": {"similar": result_list, "summary": summary}}
+
+
 # ==================== HTTP API ====================
 
 class FootballAPIHandler(http.server.BaseHTTPRequestHandler):
@@ -1669,6 +2263,8 @@ class FootballAPIHandler(http.server.BaseHTTPRequestHandler):
                     "similar_upsets": similar_upsets,  # ★ 新增：相似冷门模式
                     "upsets_stats": upsets_lib.get("stats", {}),  # ★ 冷门库统计
                     "review_count": len(all_reviews) if all_reviews else 0,
+                    "match_id": match_id,
+                    "date_folder": date_folder,
                 }
                 self.send_json(response)
             
@@ -1772,6 +2368,42 @@ class FootballAPIHandler(http.server.BaseHTTPRequestHandler):
                     "review_time":r.get("review_time",""),"_relevance":r.get("_rel",0)
                 } for r in related[:8]],"count":len(related)})
             
+            elif parsed.startswith('/static/'):
+                # 静态文件服务（JS/CSS等外部模块）
+                file_path = os.path.join(os.path.dirname(__file__), parsed.lstrip('/'))
+                if os.path.exists(file_path) and os.path.isfile(file_path):
+                    ext = os.path.splitext(file_path)[1].lower()
+                    content_types = {
+                        '.js': 'application/javascript; charset=utf-8',
+                        '.css': 'text/css; charset=utf-8',
+                        '.png': 'image/png',
+                        '.svg': 'image/svg+xml',
+                    }
+                    ct = content_types.get(ext, 'application/octet-stream')
+                    with open(file_path, 'rb') as f:
+                        content = f.read()
+                    self.send_response(200)
+                    self.send_header('Content-Type', ct)
+                    self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+                    self.end_headers()
+                    self.wfile.write(content)
+                else:
+                    self.send_json({"success": False, "error": "File not found"}, status=404)
+
+            elif parsed == '/api/handicap-similar':
+                # 基于让球盘赔率的相似案例
+                date_folder = query.get('date', [''])[0]
+                match_id = query.get('match_id', [''])[0]
+                result = get_handicap_similar(date_folder, match_id)
+                self.send_json(result)
+
+            elif parsed == '/api/pre-match-analysis':
+                # 赛前情报分析（利好/利空推导 + 心水对照）
+                date_folder = query.get('date', [''])[0]
+                match_id = query.get('match_id', [''])[0]
+                result = get_pre_match_analysis(date_folder, match_id)
+                self.send_json(result)
+
             else:
                 # 返回HTML主页
                 self.serve_html()
@@ -3579,6 +4211,11 @@ function renderDetail(res) {
     
     document.getElementById('detailContent').innerHTML = html;
     document.getElementById('detailPanel').classList.add('show');
+
+    // 加载让球盘相似案例（独立模块）
+    if (typeof window.renderPreMatchAnalysis === 'function') {
+        window.renderPreMatchAnalysis(res);
+    }
 }
 
 function closeDetail() {
@@ -3771,6 +4408,7 @@ async function showReviewPage() {
 // ESC关闭详情面板
 document.addEventListener('keydown', e => { if (e.key==='Escape') closeDetail(); });
 </script>
+<script src="/static/js/prematch.js"></script>
 </body>
 </html>'''
     

@@ -1,0 +1,68 @@
+{
+  "match_id": "周日003",
+  "date_folder": "4.05",
+  "home_team": "东京FC",
+  "away_team": "町田泽维",
+  "league": "日职",
+  "handicap": "-1",
+  "home_form": "WDWDWL",
+  "away_form": "LDWLWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-3.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升21 / 平降17升6 / 客降13升11",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-13 06:16",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -0.88,
+    "jc_draw_chg": -3.9,
+    "jc_away_chg": 4.73,
+    "mcao_home_chg": 0.89,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -1.43,
+    "jc_init_odds": [
+      2.27,
+      3.08,
+      2.75
+    ],
+    "jc_real_odds": [
+      2.25,
+      2.96,
+      2.88
+    ],
+    "macao_init_odds": [
+      2.24,
+      3.25,
+      2.79
+    ],
+    "macao_real_odds": [
+      2.26,
+      3.25,
+      2.75
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "NNN"
+  }
+}
