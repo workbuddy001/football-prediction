@@ -3,7 +3,8 @@
  * 功能：
  *   ① 赔率水位分析（不让球/标准1X2）
  *   ② 让球盘水位分析（六档水位+出口结构）
- *   ③ 诱导/实盘防守检测（交叉验证）
+ *   ③ 赔付压力矩阵（标准盘×让球盘交叉对比）
+ *   ④ 诱导/实盘防守检测（交叉验证）
  *   ④ 综合最终建议
  * 依赖：/api/pre-match-analysis 接口
  */
@@ -215,21 +216,28 @@
             html+='<div style="background:'+vs.bg+';border:1px solid '+vs.border+'40;border-radius:8px;padding:12px 14px">';
             html+='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:'+vs.color+'">\ud83d\udccb 综合推理结论（水位分析）</div>';
 
-            // ========== Step 1: 标准盘赔率（不让球） ==========
+            // ========== Step 1: 标准盘赔率（不让球）= 竞彩官方即时赔率 ==========
+            // 数据优先级：standard_odds → realtime_odds竞彩行(index 0/1) → 遍历找有效行
             var _stdOdds=d.standard_odds||{};
             var stdHome=parseFloat(_stdOdds.home)||0, stdDraw=parseFloat(_stdOdds.draw)||0, stdAway=parseFloat(_stdOdds.away)||0;
 
-            // Fallback: realtime_odds
+            // 尝试从 realtime_odds 取竞彩官方即时赔率（更准确）
             if(stdHome===0&&stdDraw===0&&stdAway===0){
                 var _rtOdds=raw.realtime_odds;
                 if(_rtOdds&&Array.isArray(_rtOdds)){
-                    for(var _ri=1;_ri<Math.min(5,_rtOdds.length);_ri++){
-                        var _row=_rtOdds[_ri];
-                        if(_row&&Array.isArray(_row)&&_row.length>=3&&!isNaN(parseFloat(_row[0]))&&!isNaN(parseFloat(_row[1]))&&!isNaN(parseFloat(_row[2]))){
-                            stdHome=parseFloat(_row[0]); stdDraw=parseFloat(_row[1]); stdAway=parseFloat(_row[2]); break;
+                    // 竞彩通常在index 0或1（跳过注释行），格式:[主胜,平局,客胜]
+                    var _jcRow=null;
+                    for(var _jci=0;_jci<Math.min(5,_rtOdds.length);_jci++){
+                        var _jr=_rtOdds[_jci];
+                        if(_jr&&Array.isArray(_jr)&&_jr.length>=3&&!isNaN(parseFloat(_jr[0]))&&parseFloat(_jr[0])>0){
+                            _jcRow=_jr; break;
                         }
                     }
-                    if(stdHome===0&&stdDraw===0&&stdAway===0&&_rtOdds.length>0){
+                    if(_jcRow){
+                        stdHome=parseFloat(_jcRow[0]); stdDraw=parseFloat(_jcRow[1]); stdAway=parseFloat(_jcRow[2]);
+                    }
+                    // 最后兜底：取index 0
+                    if(stdHome===0&&_rtOdds.length>0){
                         var _r0=_rtOdds[0];
                         if(_r0&&Array.isArray(_r0)&&_r0.length>=3&&!isNaN(parseFloat(_r0[0]))){
                             stdHome=parseFloat(_r0[0]); stdDraw=parseFloat(_r0[1]); stdAway=parseFloat(_r0[2]);
@@ -324,7 +332,111 @@
                 html+='<span style="font-size:11.5px;color:'+C.text+'">'+interpParts.join('<br>')+'</span>';
                 html+='<div style="margin-top:6px">'+exitLabel+'</div></div>';
 
-                // ========== Step 3: 交叉验证 ==========
+            // ========== Step ③: 赔付压力矩阵 ==========
+            if(stdHome>0&&stdDraw>0&&stdAway>0){
+                html+='<div style="margin-bottom:10px"><span style="font-size:11.5px;color:#93c5fd;font-weight:600">\u2462 \u8d54\u4ed8\u538b\u529b\u77e9\u9635\uff08\u6807\u51c6\u76d8 \u00d7 \u8ba9\u7403\u76d8\uff09</span></div>';
+                html+='<table style="width:100%;border-collapse:collapse;text-align:center;font-size:11px;margin-bottom:8px">';
+                html+='<tr style="color:'+C.textDim+';border-bottom:1px solid '+C.border+'">';
+                html+='<td style="padding:4px">\u8d5b\u679c</td><td>\u6807\u51c6\u76d8</td><td>\u8ba9\u7403\u76d8</td><td>\u7efc\u5408\u8d54\u4ed8</td><td>\u5e84\u5bb6\u635f\u76ca</td></tr>';
+
+                var p1_std=stdHome, p1_hc=hcH;
+                var p2_std=stdDraw, p2_hc=hcA;
+                var p3_std=stdAway, p3_hc=hcA;
+
+                function _payColor(odds){return odds<1.80?C.good:(odds<2.5?C.tip:(odds<3.5?C.warn:C.bad));}
+                function _payTag(odds){return odds<1.80?'\u4f4e\u6c34\u2705':(odds<2.5?'\u4e2d\u6c34':(odds<3.5?'\u9ad8\u6c34\u26a0\ufe0f':'\u8d85\u9ad8\u274c'));}
+                function _profitText(sOdds,hOdds){
+                    if(!hOdds||hOdds<=0)return '-';
+                    var sLow=sOdds<=1.80, hLow=hOdds<=2.00;
+                    if(sLow&&hLow)return '\u5927\u8d57<span style="color:'+C.good+'">\u2713</span>';
+                    else if(sLow||hLow)return '\u4e00\u8d54\u4e00\u8d58';
+                    else return '\u4fdd\u672c/\u5fae\u8d62';
+                }
+
+                var hasHcData=hasHc&&(hcH>0||hcD>0||hcA>0);
+
+                html+='<tr style="border-bottom:1px solid '+C.border+'30">';
+                html+='<td style="padding:5px;color:'+C.home+';font-weight:bold">'+mi.home+'\u80dc</td>';
+                html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p1_std)+'">'+p1_std.toFixed(2)+' '+_payTag(p1_std)+'</td>';
+                html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p1_hc):C.textDim)+'">'+(hasHcData?p1_hc.toFixed(2):'-')+'</td>';
+                html+='<td style="padding:5px;color:'+C.textDim+'">\u4e24\u4f4e=\u5e84\u5bb6\u8d5a</td>';
+                html+='<td style="padding:5px;color:'+C.good+';font-weight:bold">'+(hasHcData?_profitText(p1_std,p1_hc):'-')+'</td></tr>';
+
+                html+='<tr style="border-bottom:1px solid '+C.border+'30">';
+                html+='<td style="padding:5px;color:'+C.draw+';font-weight:bold">\u5e73\u5c40</td>';
+                html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p2_std)+'">'+p2_std.toFixed(2)+' '+_payTag(p2_std)+'</td>';
+                html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p2_hc):C.textDim)+'">'+(hasHcData?p2_hc.toFixed(2):'-')+'</td>';
+                html+='<td style="padding:5px;color:'+C.textDim+'">\u4e00\u9ad8\u4e00\u4f4e\u4e92\u9501</td>';
+                html+='<td style="padding:5px;color:'+C.warn+';font-weight:bold">'+(hasHcData?_profitText(p2_std,p2_hc):'-')+'</td></tr>';
+
+                html+='<tr style="border-bottom:1px solid '+C.border+'30">';
+                html+='<td style="padding:5px;color:'+C.away+';font-weight:bold">'+mi.away+'\u80dc</td>';
+                html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p3_std)+'">'+p3_std.toFixed(2)+' '+_payTag(p3_std)+'</td>';
+                html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p3_hc):C.textDim)+'">'+(hasHcData?p3_hc.toFixed(2):'-')+'</td>';
+                html+='<td style="padding:5px;color:'+C.textDim+'">\u6807\u51c6\u9ad8+\u8ba9\u7403\u4f4e</td>';
+                html+='<td style="padding:5px;color:'+C.warn+';font-weight:bold">'+(hasHcData?_profitText(p3_std,p3_hc):'-')+'</td></tr>';
+                html+='</table>';
+
+                // 庄家最优解推演
+                if(hasHcData){
+                    var results=[];
+                    results.push({name:mi.home+'\u80dc',std:p1_std,hc:p1_hc,score:p1_std+(p1_hc||99)});
+                    results.push({name:'\u5e73\u5c40',std:p2_std,hc:p2_hc,score:p2_std+(p2_hc||99)});
+                    results.push({name:mi.away+'\u80dc',std:p3_std,hc:p3_hc,score:p3_std+(p3_hc||99)});
+                    results.sort(function(a,b){return a.score-b.score;});
+                    var best=results[0], worst=results[2];
+
+                    html+='<div style="background:#064e2025;border-radius:6px;padding:7px 10px;margin-top:6px;border-left:3px solid #4ade80">';
+                    html+='<span style="font-size:11px;color:#4ade80;font-weight:600">\ud83d\dcb0 \u5e84\u5bb6\u6700\u4f18\u89e3\uff1a</span>';
+                    html+='<span style="font-size:11.5px;color:'+C.text+'">';
+                    html+='\u7efc\u5408\u6700\u4f4e\u8d54\u4ed8 = <b style="color:#4ade80">'+best.name+'</b>(';
+                    html+='\u6807\u51c6'+best.std.toFixed(2);
+                    if(best.hc>0) html+ +'+\u8ba9\u7403'+best.hc.toFixed(2);
+                    html+=')';
+
+                    var bestIsHome=(best.name.indexOf(mi.home)!==-1);
+                    var bestIsDraw=(best.name.indexOf('\u5e73')!==-1);
+                    var bestDir=bestIsHome?'home':(bestIsDraw?'draw':'away');
+                    var bestChgPct=(bestDir==='home'?((d.jc_home_chg||0)):(bestDir==='draw'?(d.jc_draw_chg||0):(d.jc_away_chg||0)));
+                    var mcBestChg=(bestDir==='home'?((d.mcao_home_chg||0)):(bestDir==='draw'?(d.mcao_draw_chg||0):(d.mcao_away_chg||0)));
+
+                    if(bestChgPct>3||mcBestChg>3){
+                        html+=' <span style="color:#f97316;font-size:10.5px;margin-left:4px">|</span> ';
+                        html+='<span style="color:#f97316;font-size:11px;font-weight:600">\u26a0\ufe0f \u63a8\u79bb\u6700\u4f18\u89e3</span>';
+                        html+='<span style="color:'+C.textDim+';font-size:10.5px">(\u7ade\u5f69';
+                        if(bestChgPct>0) html+='+'+bestChgPct.toFixed(1)+'%'; else html+=bestChgPct.toFixed(1)+'%';
+                        if(mcBestChg>0) html+=' \u6fb3\u95e8+'+mcBestChg.toFixed(1)+'%';
+                        html+=')</span>';
+                        html+='<br><span style="color:#fca5a5;font-size:10.5px">\u2192 \u62c9\u9ad8+\u8d54\u4ed8\u6700\u4f4e=\u5e84\u5bb6\u771f\u60f3\u770b\u5230\u7684\u7ed3\u679c</span>';
+                    } else {
+                        html+=' <span style="color:#4ade80;font-size:10.5px;margin-left:4px">|</span> ';
+                        html+='<span style="color:'+C.textDim+';font-size:10.5px">\u8d54\u4ed8\u538b\u529b\u6700\u5c0f\u7684\u65b9\u5411</span>';
+                    }
+                    html+='</span></div>';
+
+                    if(worst.score>5){
+                        html+='<div style="background:#450a0a20;border-radius:6px;padding:5px 10px;margin-top:4px;border-left:3px solid #ef444480">';
+                        html+='<span style="font-size:10.5px;color:#f87171">\u2620\ufe0f \u6700\u6015\uff1a'+worst.name+'</span>';
+                        html+='<span style="color:'+C.textDim+';font-size:10px"> (\u6807\u51c6'+worst.std.toFixed(2);
+                        if(worst.hc>0) html+ +'+\u8ba9\u7403'+worst.hc.toFixed(2);
+                        html+=')</span></div>';
+                    }
+                } else {
+                    var sResults=[
+                        {name:mi.home+'\u80dc',odds:stdHome},
+                        {name:'\u5e73\u5c40',odds:stdDraw},
+                        {name:mi.away+'\u80dc',odds:stdAway}
+                    ];
+                    sResults.sort(function(a,b){return a.odds-b.odds;});
+                    html+='<div style="background:#064e2025;border-radius:6px;padding:6px 10px;margin-top:4px;border-left:3px solid #4ade80">';
+                    html+='<span style="font-size:11px;color:#4ade80;font-weight:600">\ud83d\dcb0 \u6807\u51c6\u76d8\u6700\u4f4e\u8d54\uff1a</span>';
+                    html+='<span style="color:'+C.text+';font-size:11.5px"><b style="color:#4ade80">'+sResults[0].name+'</b>('+sResults[0].odds.toFixed(2)+') ';
+                    if(sResults[2].odds>3.5) html+='<span style="color:'+C.textDim+';font-size:10px">|\u6700\u9ad8\u8d54\u4ed8='+sResults[2].name+'('+sResults[2].odds.toFixed(2)+')</span>';
+                    html+='</span></div>';
+                }
+            }
+
+            // ========== 交叉验证 ==========
                 var refPred=finalPred||cc.basic_tendency||'';
                 var hcValidCount=(hcH>0?1:0)+(hcD>0?1:0)+(hcA>0?1:0);
 
@@ -418,7 +530,7 @@
                     }
                     html+='</div>'; // 交叉验证面板end
 
-                    // ========== Step 4: 综合判定 + 最终建议 ==========
+                    // ========== Step 5: 综合判定 + 最终建议 ==========
                     html+='<div style="margin-top:10px"><span style="font-size:11.5px;color:#93c5fd;font-weight:600">\u2463 综合判定</span></div>';
                     
                     var bt2=cc.basic_tendency||'';
