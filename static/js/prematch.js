@@ -83,9 +83,9 @@
 
     function classifyHcWater(o) {
         if(!o||o<=0) return {tier:0,level:'-',intent:'无数据',color:C.textDim};
-        if(o>4.5) return {tier:6,level:'超高水',intent:'阻 拉高让你不敢买',color:'#ef4444'};
-        if(o>3.5) return {tier:5,level:'高水',intent:'诱 高倍勾你博',color:'#f97316'};
-        if(o>2.8) return {tier:4,level:'中高水',intent:'分 分流筹码',color:'#eab308'};
+        if(o>4.2) return {tier:6,level:'超高水',intent:'强阻 拉高让你不敢买',color:'#ef4444'};
+        if(o>3.5) return {tier:5,level:'高水',intent:'微阻 轻度劝退',color:'#f97316'};
+        if(o>2.8) return {tier:4,level:'中高水',intent:'博取高倍',color:'#eab308'};
         if(o>2.0) return {tier:3,level:'中低水',intent:'引 合理区间引导',color:'#22c55e'};
         if(o>1.5) return {tier:2,level:'低水',intent:'守 低赔实盘防守',color:'#3b82f6'};
         return {tier:1,level:'超低水',intent:'确 大概率方向',color:'#06b6d4'};
