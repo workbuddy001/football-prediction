@@ -401,7 +401,9 @@
                         }
                     }
 
-                    return baseScore * mcMult * btMult;
+                    var finalScore = baseScore * mcMult * btMult;
+                    console.log('[PAY_DEBUG] '+direction+' base='+baseScore.toFixed(2)+' mc='+mcMult.toFixed(2)+'(dir:'+mcDir+') bt='+btMult.toFixed(2)+'(t2:'+bt2+') → '+finalScore.toFixed(2));
+                    return finalScore;
                 }
 
                 // 动态损益描述
@@ -432,10 +434,40 @@
                 var bt2=cc.basic_tendency||'';
                 var mcHasRec=!!(mc&&mc.tip), mcDir='';
                 if(mc && mc.tip_text){
-                    if(mc.tip_text.indexOf(mi.home)!==-1) mcDir='home';
-                    else if(mc.tip_text.indexOf(mi.away)!==-1) mcDir='away';
-                    else if(mc.tip_text.indexOf('\u548c')!==-1||mc.tip_text.indexOf('\u5e73')!==-1) mcDir='draw';
+                    var tt=mc.tip_text;
+                    // 检测澳门心水方向（兼容多种写法：U+8D0F賏/U+8D01贏/U+8CD0賏/胜/赢）
+                    // 澳门格式固定为 "队名 賏" / "队名 和" / "队名 負"
+                    var winChars=['\u8d0f','\u8d01','\u8cd0','\u8d62','\u80dc'];  // 賏/贏/賏/赢/胜
+                    var loseChars=['\u8d1f','\u8d1f\u5957'];           // 負
+                    var drawChars=['\u548c','\u5e73'];                  // 和/平
+                    var isWin=winChars.some(function(c){return tt.indexOf(c)!==-1;});
+                    var isLose=loseChars.some(function(c){return tt.indexOf(c)!==-1;});
+                    var isDraw=drawChars.some(function(c){return tt.indexOf(c)!==-1;});
+
+                    if(isWin) mcDir='home';
+                    else if(isLose) mcDir='away';
+                    else if(isDraw) mcDir='draw';
+                    else{
+                        // 最终回退：双向子串匹配（处理长短名差异如 曼彻斯特联 vs 曼联）
+                        var mcTeam=(tt.split(/[\s\u8cd0\u8d01\u8d0f\u8d1f\u548c→]+/)[0]||'');
+                        if(tt.indexOf(mi.home)!==-1 || mcTeam.length>0 && mi.home.indexOf(mcTeam)!==-1) mcDir='home';
+                        else if(tt.indexOf(mi.away)!==-1 || mcTeam.length>0 && mi.away.indexOf(mcTeam)!==-1) mcDir='away';
+                    }
+                    // DEBUG: 控制台输出mcDir方便排查
+                    console.log('[MC_DEBUG] tip_text='+tt+' → mcDir='+mcDir);
                 }
+
+                // [DEBUG] 显示mcDir和Unicode码位（上线前删除此段）
+                var _debugTipText=(mc&&mc.tip_text)||'NULL';
+                var _debugChars='';
+                for(var _di=0;_di<_debugTipText.length;_di++){
+                    var _dc=_debugTipText.charCodeAt(_di);
+                    if(_dc>0x4E00){_debugChars+=_debugTipText[_di]+'=U+'+_dc.toString(16).toUpperCase()+' ';}
+                }
+                html+='<div style="font-size:10px;color:#f97306;background:#1e1e1e;padding:6px 8px;margin-bottom:4px;border-radius:4px;line-height:1.6">';
+                html+='<b>[DEBUG]</b> mcDir=<b style="color:'+(mcDir?'#4ade80':'#ef4444')+'">'+(mcDir||'EMPTY')+'</b> | bt2='+(bt2||'EMPTY');
+                html+='<br><b>\u4e2d\u6587\u5b57\u7b26\u7801\u4f4d:</b> '+_debugChars;
+                html+='</div>';
 
                 // 计算三个方向的得分（传入direction即可，内部自动取所有让球赔率）
                 var sc1=_payoutScore('home');
