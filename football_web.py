@@ -4388,6 +4388,8 @@ async function showReviewPage() {
 // ESC关闭详情面板
 document.addEventListener('keydown', e => { if (e.key==='Escape') closeDetail(); });
 </script>
+<link rel="stylesheet" href="/static/css/intelligence.css">
+<script src="/static/js/intelligence-parser.js"></script>
 <script src="/static/js/prematch.js"></script>
 </body>
 </html>'''

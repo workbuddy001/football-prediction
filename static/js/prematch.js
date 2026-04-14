@@ -122,6 +122,28 @@
             html+='<span style="font-weight:bold;font-size:15px">\ud83d\udd0d 赛前情报分析</span>';
             if(mi.handicap) html+='<span style="font-size:12px;color:#93c5fd;background:#1e3a5f;padding:3px 8px;border-radius:5px">盘口: '+mi.handicap+'</span>';
             else html+='<span style="font-size:12px;color:#94a3b8">标准盘</span>';
+             html+='</div>'; // 标题行 end
+
+            // ===== 赛前情报录入面板（顶部） =====
+            html+='<button class="intel-btn" id="intelToggleBtn" type="button">\ud83d\udcdd 录入赛前情报</button>';
+            html+='<div class="intel-panel" id="intelPanel">';
+            html+='  <div class="intel-panel-header">';
+            html+='    <h4>\ud83d\udccb 赛前情报解析器</h4>';
+            html+='    <button class="intel-panel-close" id="intelCloseBtn" type="button">&times;</button>';
+            html+='  </div>';
+            html+='  <div class="intel-panel-body">';
+            html+='    <div style="font-size:11.5px;color:#94a3b8;margin-bottom:8px">粘贴赛前分析文章，系统将自动提取伤停/战意/战术信息并回写到利好利空因素</div>';
+            html+='    <div class="intel-textarea-wrap">';
+            html+='      <textarea class="intel-textarea" id="intelTextarea" placeholder="在此粘贴赛前深度分析文章...&#10;&#10;支持格式示例：&#10;- 球员名：伤停/停赛/存疑原因&#10;包含伤停名单、战意评估、战术分析、综合结论等章节"></textarea>';
+            html+='      <span class="intel-chars-count" id="intelCharsCount">0 \u5b57</span>';
+            html+='    </div>';
+            html+='    <div class="intel-actions">';
+            html+='      <button class="intel-action-btn intel-btn-parse" id="intelParseBtn" type="button">\ud83d\udd0d \u89e3\u6790\u60c5\u62a5</button>';
+            html+='      <button class="intel-action-btn intel-btn-example" id="intelExampleBtn" type="button">\ud83d\dcc4 \u52a0\u8f7d\u793a\u4f8b</button>';
+            html+='      <button class="intel-action-btn intel-btn-clear" id="intelClearBtn" type="button">\ud83dddfe1 \u6e05\u7a7a</button>';
+            html+='    </div>';
+            html+='    <div class="intel-result" id="intelResult"></div>';
+            html+='  </div>';
             html+='</div>';
 
             // ===== 近况对比 =====
@@ -152,12 +174,18 @@
 
             // ===== 利好/利空因素 =====
             html+='<div style="padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;border-bottom:1px solid '+C.border+'">';
-            html+='<div><div style="font-size:13px;font-weight:600;margin-bottom:6px;color:'+C.home+'">\ud83c\udfe0 '+esc(mi.home)+' <span style="font-size:11px;font-weight:normal;color:'+(hf.net>=0?C.good:C.bad)+'">('+(hf.net>=0?'+':'')+hf.net+'分)</span></div>';
-            html+='<div style="margin-bottom:6px"><div style="font-size:11px;color:'+C.good+';margin-bottom:3px">利好因素</div>'+renderFactors(hf.favors,true)+'</div>';
-            html+='<div><div style="font-size:11px;color:'+C.bad+';margin-bottom:3px">利空因素</div>'+renderFactors(hf.unfavors,false)+'</div></div>';
-
-            html+='<div><div style="font-size:13px;font-weight:600;margin-bottom:6px;color:'+C.away+'">\u2708\ufe0f '+esc(mi.away)+' <span style="font-size:11px;font-weight:normal;color:'+(af.net>=0?C.good:C.bad)+'">('+(af.net>=0?'+':'')+af.net+'分)</span></div>';
-            html+='<div style="margin-bottom:6px"><div style="font-size:11px;color:'+C.good+';margin-bottom:3px">利好因素</div>'+renderFactors(af.favors,true)+'</div>';
+            // 主队因素区（加ID用于情报回写）
+            html+='<div id="home-factors-area">';
+            html+='<div style="font-size:13px;font-weight:600;margin-bottom:6px;color:'+C.home+'">\ud83c\udfe0 '+esc(mi.home)+' <span style="font-size:11px;font-weight:normal;color:'+(hf.net>=0?C.good:C.bad)+'">('+(hf.net>=0?'+':'')+hf.net+'分)</span></div>';
+            html+='<div id="home-favors-list" style="margin-bottom:6px"><div style="font-size:11px;color:'+C.good+';margin-bottom:3px">利好因素</div>'+renderFactors(hf.favors,true)+'</div>';
+            html+='<div id="home-unfavors-list"><div style="font-size:11px;color:'+C.bad+';margin-bottom:3px">利空因素</div>'+renderFactors(hf.unfavors,false)+'</div>';
+            html+='</div>'; // 主队因素区 end
+            // 客队因素区（加ID用于情报回写）
+            html+='<div id="away-factors-area">';
+            html+='<div style="font-size:13px;font-weight:600;margin-bottom:6px;color:'+C.away+'">\u2708\ufe0f '+esc(mi.away)+' <span style="font-size:11px;font-weight:normal;color:'+(af.net>=0?C.good:C.bad)+'">('+(af.net>=0?'+':'')+af.net+'分)</span></div>';
+            html+='<div id="away-favors-list" style="margin-bottom:6px"><div style="font-size:11px;color:'+C.good+';margin-bottom:3px">利好因素</div>'+renderFactors(af.favors,true)+'</div>';
+            html+='<div id="away-unfavors-list"><div style="font-size:11px;color:'+C.bad+';margin-bottom:3px">利空因素</div>'+renderFactors(af.unfavors,false)+'</div>';
+            html+='</div>'; // 客队因素区 end
             html+='<div><div style="font-size:11px;color:'+C.bad+';margin-bottom:3px">利空因素</div>'+renderFactors(af.unfavors,false)+'</div></div>';
             html+='</div>'; // 因素区域结束
 
@@ -1155,9 +1183,296 @@
             }
 
             html+='</div>'; // 第四部分 padding end
+
             html+='</div>'; // 赛前情报卡片 end
 
             detailContent.insertAdjacentHTML('beforeend', html);
+
+            // ===== 赛前情报面板事件绑定 =====
+            (function(){
+                var toggleBtn = document.getElementById('intelToggleBtn');
+                var panel = document.getElementById('intelPanel');
+                var closeBtn = document.getElementById('intelCloseBtn');
+                var textarea = document.getElementById('intelTextarea');
+                var charsCount = document.getElementById('intelCharsCount');
+                var parseBtn = document.getElementById('intelParseBtn');
+                var clearBtn = document.getElementById('intelClearBtn');
+                var exampleBtn = document.getElementById('intelExampleBtn');
+                var resultDiv = document.getElementById('intelResult');
+
+                if(!toggleBtn || !panel) return;
+
+                // 切换面板
+                toggleBtn.addEventListener('click', function() {
+                    var isOpen = panel.classList.contains('open');
+                    panel.classList.toggle('open');
+                    toggleBtn.classList.toggle('active', !isOpen);
+                    if(!isOpen) { textarea.focus(); }
+                });
+
+                closeBtn.addEventListener('click', function() {
+                    panel.classList.remove('open');
+                    toggleBtn.classList.remove('active');
+                });
+
+                // 字数统计
+                textarea.addEventListener('input', function() {
+                    charsCount.textContent = (textarea.value.length || 0) + ' 字';
+                });
+
+                // 加载示例
+                exampleBtn.addEventListener('click', function() {
+                    textarea.value = '马竞 vs 巴萨 深度前瞻：残阵巴萨客场翻盘，难度堪比登天\n\n赛事：欧冠1/4决赛次回合\n首回合：巴萨 0-2 马竞\n\n一、伤病停赛：\n马竞（整体健康）\n- 缺阵：希门尼斯、汉茨科、普比尔（停赛）\n- 存疑：奥布拉克（门将）\n- 可出战：勒诺尔芒、朗格莱、莫利纳、鲁杰里\n- 中场：科克、略伦特全部健康\n- 前锋：格列兹曼、阿尔瓦雷斯均可首发\n\n巴萨（后防灾难级残缺）\n- 库巴西：红牌停赛\n- 克里斯滕森：伤缺\n- 德容长期伤缺\n- 拉菲尼亚缺阵\n- 阿劳霍状态未达100%\n\n二、近期状态与战意\n马竞\n- 欧冠主场21场不败，魔鬼主场\n- 战意明确：死守+反击偷鸡\n- 西蒙尼擅长残阵摆大巴\n\n巴萨\n- 联赛7连胜，状态火热\n- 必须净胜2球以上才能翻盘\n- 战意：必须狂攻、全线压上\n- 问题：后防线残缺严重\n\n三、综合结论\n巴萨虽然状态火热，但后防线残缺严重，客场净胜2球以上难度极大。\n方向参考：马竞不败（平 / 小负1球）';
+                    charsCount.textContent = textarea.value.length + ' 字';
+                });
+
+                // 清空
+                clearBtn.addEventListener('click', function() {
+                    textarea.value = '';
+                    resultDiv.className = 'intel-result';
+                    resultDiv.innerHTML = '';
+                    charsCount.textContent = '0 字';
+                });
+
+                // 解析
+                parseBtn.addEventListener('click', function() {
+                    var text = textarea.value.trim();
+                    if(!text) { alert('请先输入赛前情报文本'); return; }
+
+                    resultDiv.className = 'intel-result visible';
+                    resultDiv.innerHTML = '<div class="intel-loading"><span class="intel-loading-spinner"></span>正在解析情报...</div>';
+
+                    setTimeout(function() {
+                        try {
+                            var parsed = IntelParser.parse(text, mi.home, mi.away);
+                            if(!parsed) throw new Error('解析失败');
+
+                            var factors = IntelParser.generateFactors(parsed);
+
+                            // 渲染结果
+                            renderIntelResult(resultDiv, parsed, factors);
+                            
+                            // ★ 回写利好利空因素到主面板
+                            writeBackFactors(parsed, factors);
+                        } catch(e) {
+                            resultDiv.innerHTML = '<div style="color:#ef4444;padding:15px">❌ 解析出错: ' + e.message + '</div>';
+                        }
+                    }, 300); // 短延迟让loading动画显示
+                });
+
+                // ★ 回写函数：将解析结果注入利好利空因素区
+                function writeBackFactors(data, factors) {
+                    var homeFavors = document.getElementById('home-favors-list');
+                    var homeUnfavs = document.getElementById('home-unfavors-list');
+                    var awayFavors = document.getElementById('away-favors-list');
+                    var awayUnfavs = document.getElementById('away-unfavors-list');
+
+                    if(!homeFavors || !awayFavors) return;
+
+                    // 生成单条因素的HTML（与原renderFactors风格一致）
+                    function factorHtml(text, isPositive, strength) {
+                        if(!text) return '';
+                        var sMap = {strong: '\u5f3a', medium: '\u4e2d', weak: '\u5f31'};
+                        var icon = isPositive ? '\u2705' : '\u274c';
+                        var color = isPositive ? '#4ade80' : '#ef4444';
+                        var tag = sMap[strength] || '';
+                        return '<div style="font-size:11.5px;color:'+color+';padding:2px 0;line-height:1.6">'+icon+' '+esc(text)+(tag?' <span style="color:#94a3b8;font-size:10px">('+tag+')</span>':'')+'</div>';
+                    }
+
+                    // 按球队分类伤停/战意因素
+                    var homePos = [], homeNeg = [], awayPos = [], awayNeg = [];
+                    
+                    // 1. 伤停信息
+                    var allHomeOut = (data.injuries.home.out||[]).concat(data.injuries.home.suspended||[]);
+                    for(var i=0;i<allHomeOut.length;i++) {
+                        homeNeg.push('\ud83d\udeaa [\u4f24\u505c] '+allHomeOut[i].name+'('+allHomeOut[i].reason+'\u7f3a\u9635)');
+                    }
+                    if((data.injuries.home.doubtful||[]).length > 0) {
+                        homeNeg.push('\u26a0\ufe0f [\u5b58\u7591] '+data.injuries.home.doubtful.map(function(x){return x.name;}).join(', '));
+                    }
+                    var allAwayOut = (data.injuries.away.out||[]).concat(data.injuries.away.suspended||[]);
+                    for(var j=0;j<allAwayOut.length;j++) {
+                        awayNeg.push('\ud83d\udeaa [\u4f24\u505c] '+allAwayOut[j].name+'('+allAwayOut[j].reason+'\u7f3a\u9635)');
+                    }
+                    if((data.injuries.away.doubtful||[]).length > 0) {
+                        awayNeg.push('\u26a0\ufe0f [\u5b58\u7591] '+data.injuries.away.doubtful.map(function(x){return x.name;}).join(', '));
+                    }
+                    
+                    // 对方伤停 = 我方利好
+                    if(allAwayOut.length > 0) homePos.push('[\u603b] \u5bf9\u65b9'+allAwayOut.length+'\u4eba\u7f3a\u9635/\u505c\u8d5b \u2192 \u6211\u65b9\u76f8\u5bf9\u53d7\u76ca');
+                    if(allHomeOut.length > 0) awayPos.push('[\u603b] \u5bf9\u65b9'+allHomeOut.length+'\u4eba\u7f3a\u9635/\u505c\u8d5b \u2192 \u6211\u65b9\u76f8\u5bf9\u53d7\u76ca');
+
+                    // 2. 战意信息
+                    var hm = data.motivation.home;
+                    var am = data.motivation.away;
+                    if(hm.level === 'high') { homePos.push('\ud83d\udd25 [\u6218\u610f] '+hm.reasons.join(', ') || '\u5fc5\u987b\u8d62/\u751f\u6b7b\u6218'); }
+                    else if(hm.level === 'low') { homeNeg.push('\ud83d\ufe0f [\u6218\u610f] '+hm.reasons.join(', ') || '\u65e0\u6b32\u6c42/\u53ef\u80fd\u8f6e\u6362'); }
+                    if(am.level === 'high') { awayPos.push('\ud83d\udd25 [\u6218\u610f] '+am.reasons.join(', ') || '\u5fc5\u987b\u8d62/\u751f\u6b7b\u6218'); }
+                    else if(am.level === 'low') { awayNeg.push('\ud83d\ufe0f [\u6218\u610f] '+am.reasons.join(', ') || '\u65e0\u6b32\u6c42/\u53ef\u80fd\u8f6e\u6362'); }
+
+                    // 3. 解析器生成的通用利好利空
+                    for(var pi=0;pi<factors.positives.length;pi++) {
+                        var fp = factors.positives[pi];
+                        // 根据内容判断归属队
+                        if(fp.teamTag === 'home') homePos.push(fp.text);
+                        else if(fp.teamTag === 'away') awayPos.push(fp.text);
+                        else { homePos.push(fp.text); } // 默认给主队
+                    }
+                    for(var ni=0;ni<factors.negatives.length;ni++) {
+                        var fn = factors.negatives[ni];
+                        if(fn.teamTag === 'home') homeNeg.push(fn.text);
+                        else if(fn.teamTag === 'away') awayNeg.push(fn.text);
+                        else { homeNeg.push(fn.text); }
+                    }
+
+                    // 回写主队利好
+                    if(homePos.length > 0) {
+                        homeFavors.innerHTML = '<div style="font-size:11px;color:#4ade80;margin-bottom:3px">\u5229\u597d\u56e0\u7d20</div>' + homePos.map(function(t){return factorHtml(t,true,'strong');}).join('');
+                    }
+                    // 主队利空
+                    if(homeNeg.length > 0) {
+                        homeUnfavs.innerHTML = '<div style="font-size:11px;color:#ef4444;margin-bottom:3px">\u5229\u7a7a\u56e0\u7d20</div>' + homeNeg.map(function(t){return factorHtml(t,false,'strong');}).join('');
+                    }
+                    // 客队利好
+                    if(awayPos.length > 0) {
+                        awayFavors.innerHTML = '<div style="font-size:11px;color:#4ade80;margin-bottom:3px">\u5229\u597d\u56e0\u7d20</div>' + awayPos.map(function(t){return factorHtml(t,true,'strong');}).join('');
+                    }
+                    // 客队利空
+                    if(awayNeg.length > 0) {
+                        awayUnfavs.innerHTML = '<div style="font-size:11px;color:#ef4444;margin-bottom:3px">\u5229\u7a7a\u56e0\u7d20</div>' + awayNeg.map(function(t){return factorHtml(t,false,'strong');}).join('');
+                    }
+
+                    console.log('[Intel] \u56de\u5199\u5b8c\u6210: \u4e3b\u961f\u597d'+homePos.length+'/坏'+homeNeg.length+', \u5ba2\u961f\u597d'+awayPos.length+'/坏'+awayNeg.length);
+                }
+
+                // 渲染函数
+                function renderIntelResult(container, data, factors) {
+                    var h = '';
+
+                    // 元信息
+                    if(data.meta.competition || data.meta.firstLeg || data.meta.venue) {
+                        h += '<div class="intel-meta-card">';
+                        if(data.meta.competition) h += '<div class="intel-meta-item"><span class="intel-meta-label">🏆</span><span class="intel-meta-value">' + esc(data.meta.competition) + '</span></div>';
+                        if(data.meta.firstLeg) h += '<div class="intel-meta-item"><span class="intel-meta-label">📊</span><span class="intel-meta-value">' + esc(data.meta.firstLeg) + '</span></div>';
+                        if(data.meta.situation === 'must_win') h += '<div class="intel-meta-item"><span class="intel-meta-label">⚡</span><span class="intel-meta-value">背水一战</span></div>';
+                        else if(data.meta.situation === 'safe_position') h += '<div class="intel-meta-item"><span class="intel-meta-label">🛡️</span><span class="intel-meta-value">形势有利</span></div>';
+                        else if(data.meta.situation === 'comeback') h += '<div class="intel-meta-item"><span class="intel-meta-label">🔥</span><span class="intel-meta-value">翻盘战</span></div>';
+                        h += '</div>';
+                    }
+
+                    // 伤停对比
+                    h += '<div class="intel-injury-section">';
+                    h += '<div class="intel-section-title">🩹 伤停情报</div>';
+                    h += '<div class="intel-team-row">';
+                    
+                    // 主队
+                    h += '<div class="intel-team-col home"><div class="intel-team-name">' + esc(data.homeTeam) + '</div>';
+                    if(data.injuries.home.out.length > 0 || data.injuries.home.suspended.length > 0) {
+                        h += '<div class="intel-player-list">';
+                        var allHomeOut = data.injuries.home.out.concat(data.injuries.home.suspended);
+                        for(var i=0;i<Math.min(allHomeOut.length,6);i++){
+                            var p=allHomeOut[i];
+                            h+='<div class="intel-player-item"><span class="intel-player-name">'+esc(p.name||'?')+'</span>' +
+                               '<span class="intel-player-tag intel-tag-out">'+esc(p.reason?'缺':'伤停')+'</span></div>';
+                        }
+                        h+='</div>';
+                    } else {
+                        h += '<div style="font-size:11.5px;color:#4ade80">✅ 无重要伤停</div>';
+                    }
+                    if(data.injuries.home.doubtful.length > 0){
+                        h+='<div style="font-size:11px;margin-top:4px;color:#fbbf24">⚠️ 存疑: '+data.injuries.home.doubtful.map(function(x){return x.name;}).join(', ')+'</div>';
+                    }
+                    h += '<div class="intel-impact-score">影响分 <span class="intel-impact-value '+(data.injuries.home.impactScore<=-2?'negative':(data.injuries.home.impactScore>=-0.5?'neutral':'negative'))+'">'+data.injuries.home.impactScore+'</span></div>';
+                    h += '</div>';
+
+                    // 客队
+                    h += '<div class="intel-team-col away"><div class="intel-team-name">' + esc(data.awayTeam) + '</div>';
+                    if(data.injuries.away.out.length > 0 || data.injuries.away.suspended.length > 0) {
+                        h += '<div class="intel-player-list">';
+                        var allAwayOut = data.injuries.away.out.concat(data.injuries.away.suspended);
+                        for(var j=0;j<Math.min(allAwayOut.length,6);j++){
+                            var q=allAwayOut[j];
+                            h+='<div class="intel-player-item"><span class="intel-player-name">'+esc(q.name||'?')+'</span>' +
+                               '<span class="intel-player-tag intel-tag-out">'+esc(q.reason?'缺':'伤停')+'</span></div>';
+                        }
+                        h+='</div>';
+                    } else {
+                        h += '<div style="font-size:11.5px;color:#4ade80">✅ 无重要伤停</div>';
+                    }
+                    if(data.injuries.away.doubtful.length > 0){
+                        h+='<div style="font-size:11px;margin-top:4px;color:#fbbf24">⚠️ 存疑: '+data.injuries.away.doubtful.map(function(x){return x.name;}).join(', ')+'</div>';
+                    }
+                    h += '<div class="intel-impact-score">影响分 <span class="intel-impact-value '+(data.injuries.away.impactScore<=-2?'negative':(data.injuries.away.impactScore>=-0.5?'neutral':'negative'))+'">'+data.injuries.away.impactScore+'</span></div>';
+                    h += '</div>';
+
+                    h += '</div>'; // team-row end
+
+                    // 伤停差距
+                    var gapText = data.injuryGap > 0 ? esc(data.homeTeam)+'相对受益' : (data.injuryGap < 0 ? esc(data.awayTeam)+'相对受益' : '双方持平');
+                    h += '<div class="intel-impact-gap">⚖️ 伤停差距: <b style="color:'+(data.injuryGap>0.5?'#22c55e':(data.injuryGap<-0.5?'#ef4444':'#94a3b8'))+'">'+data.injuryGap.toFixed(1)+'分</b> → '+gapText+'</div>';
+                    h += '</div>';
+
+                    // 战意
+                    h += '<div class="intel-motivation-section">';
+                    h += '<div class="intel-section-title">🎯 战意评估</div>';
+                    h += '<div class="intel-moti-grid">';
+                    
+                    var homeMotiIcon = data.motivation.home.level==='high'?'🔴':(data.motivation.home.level==='low'?'🟢':'🟡');
+                    var awayMotiIcon = data.motivation.away.level==='high'?'🔴':(data.motivation.away.level==='low'?'🟢':'🟡');
+                    var homeMtiCls = data.motivation.home.level;
+                    var awayMtiCls = data.motivation.away.level;
+
+                    h += '<div class="intel-moti-card">';
+                    h += '<div class="intel-team-name" style="border:none;margin-bottom:4px;color:'+C.home+'">'+homeMotiIcon+' '+esc(data.homeTeam)+'</div>';
+                    h += '<div class="intel-moti-level '+homeMtiCls+'">'+(levelMap[data.motivation.home.level]||'?')+'</div>';
+                    h += '<div class="intel-moti-label">'+(data.motivation.home.rawCounts?(data.motivation.home.rawCounts.high+'个强信号'):'')+'</div>';
+                    h += '<div class="intel-moti-mult '+(data.btMultData.homeMotivationMult>1?'up':'down')+'">×'+data.btMultData.homeMotivationMult.toFixed(2)+'</div>';
+                    h += '</div>';
+
+                    h += '<div class="intel-moti-card">';
+                    h += '<div class="intel-team-name" style="border:none;margin-bottom:4px;color:'+C.away+'">'+awayMotiIcon+' '+esc(data.awayTeam)+'</div>';
+                    h += '<div class="intel-moti-level '+awayMtiCls+'">'+(levelMap[data.motivation.away.level]||'?')+'</div>';
+                    h += '<div class="intel-moti-label">'+(data.motivation.away.rawCounts?(data.motivation.away.rawCounts.high+'个强信号'):'')+'</div>';
+                    h += '<div class="intel-moti-mult '+(data.btMultData.awayMotivationMult>1?'up':'down')+'">×'+data.btMultData.awayMotivationMult.toFixed(2)+'</div>';
+                    h += '</div>';
+                    h += '</div>';
+                    h += '</div>';
+
+                    // 利好利空
+                    if(factors.positives.length > 0 || factors.negatives.length > 0) {
+                        h += '<div class="intel-factors-section"><div class="intel-section-title">📋 利好利空因素</div>';
+
+                        h += '<div class="intel-factor-group positive"><div class="intel-factor-group-title">✅ 利好因素</div>';
+                        for(var pi=0;pi<factors.positives.length;pi++){
+                            var f=factors.positives[pi];
+                            h+='<div class="intel-factor-item intel-factor-strength-'+f.strength+'"><span class="intel-factor-icon">'+f.icon+'</span><span>'+f.text+'</span></div>';
+                        }
+                        if(factors.positives.length===0) h+='<div style="font-size:11.5px;color:#64748b;padding:4px 10px">暂无明显利好</div>';
+                        h+='</div>';
+
+                        h += '<div class="intel-factor-group negative"><div class="intel-factor-group-title">❌ 利空因素</div>';
+                        for(var ni=0;ni<factors.negatives.length;ni++){
+                            var fn=factors.negatives[ni];
+                            h+='<div class="intel-factor-item intel-factor-strength-'+fn.strength+'"><span class="intel-factor-icon">'+fn.icon+'</span>'+fn.text+'</div>';
+                        }
+                        if(factors.negatives.length===0) h+='<div style="font-size:11.5px;color:#64748b;padding:4px 10px">暂无明显利空</div>';
+                        h+='</div>';
+                        h += '</div>';
+                    }
+
+                    // 结论
+                    if(data.conclusion.prediction) {
+                        h += '<div class="intel-conclusion">📝 <b>原文结论:</b><br/>' + esc(data.conclusion.prediction) +
+                             (data.conclusion.scores.length ? '<br/>比分参考: ' + esc(data.conclusion.scores.join(' / ')) : '') +
+                             (data.conclusion.goals ? '<br/>总进球: ' + esc(data.conclusion.goals) : '') + '</div>';
+                    }
+
+                    container.innerHTML = h;
+                }
+
+                // 战意等级中文映射（用于渲染）
+                var levelMap = {'high':'HIGH','medium':'MEDIUM','low':'LOW'};
+            })();
 
         })["catch"](function(err) { console.error('赛前情报加载出错:', err); });
     };

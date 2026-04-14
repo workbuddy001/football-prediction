@@ -1,0 +1,473 @@
+/* ============================================================
+ * 赛前情报录入面板 + 解析结果展示
+ * intelligence-parser UI styles
+ * ============================================================ */
+
+/* ---- 情报录入按钮 ---- */
+.intel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.intel-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+}
+
+.intel-btn.active {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    border-color: #10b981;
+    color: #fff;
+}
+
+/* ---- 录入面板容器 ---- */
+.intel-panel {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    margin-top: 14px;
+    overflow: hidden;
+    display: none; /* 默认隐藏 */
+}
+
+.intel-panel.open {
+    display: block;
+    animation: intelSlideIn 0.3s ease-out;
+}
+
+@keyframes intelSlideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.intel-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 1px solid #1e293b;
+}
+
+.intel-panel-header h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.intel-panel-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.intel-panel-close:hover {
+    color: #ef4444;
+    background: rgba(239,68,68,0.1);
+}
+
+.intel-panel-body {
+    padding: 14px 16px;
+}
+
+/* ---- 文本输入区 ---- */
+.intel-textarea-wrap {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.intel-textarea {
+    width: 100%;
+    min-height: 180px;
+    max-height: 400px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-size: 13px;
+    line-height: 1.7;
+    padding: 12px 14px;
+    resize: vertical;
+    font-family: -apple-system, "Microsoft YaHei", sans-serif;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.intel-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+.intel-textarea::placeholder {
+    color: #64748b;
+}
+
+.intel-chars-count {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* ---- 操作按钮组 ---- */
+.intel-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.intel-action-btn {
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+}
+
+.intel-btn-parse {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #fff;
+    border-color: #3b82f6;
+}
+
+.intel-btn-parse:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    box-shadow: 0 2px 8px rgba(59,130,246,0.35);
+}
+
+.intel-btn-clear {
+    background: #1e293b;
+    color: #94a3b8;
+    border-color: #334155;
+}
+
+.intel-btn-clear:hover {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.intel-btn-example {
+    background: #1e293b;
+    color: #94a3b8;
+    border-color: #334155;
+}
+
+.intel-btn-example:hover {
+    color: #fbbf24;
+    border-color: #fbbf24;
+}
+
+/* ---- 解析结果区域 ---- */
+.intel-result {
+    margin-top: 14px;
+    border-top: 1px solid #1e293b;
+    padding-top: 14px;
+    display: none;
+}
+
+.intel-result.visible {
+    display: block;
+    animation: intelFadeIn 0.3s ease-out;
+}
+
+@keyframes intelFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---- 元信息卡片 ---- */
+.intel-meta-card {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.intel-meta-item {
+    background: #1e293b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.intel-meta-label {
+    color: #94a3b8;
+}
+
+.intel-meta-value {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+/* ---- 伤停对比 ---- */
+.intel-injury-section {
+    margin-bottom: 14px;
+}
+
+.intel-section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.intel-team-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.intel-team-col {
+    flex: 1;
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.intel-team-name {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #334155;
+}
+
+.intel-team-col.home .intel-team-name { color: #60a5fa; border-bottom-color: #1d4ed8; }
+.intel-team-col.away .intel-team-name { color: #f97316; border-bottom-color: #c2410c; }
+
+.intel-player-list {
+    font-size: 11.5px;
+}
+
+.intel-player-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0;
+    border-bottom: 1px dashed #33415533;
+}
+
+.intel-player-item:last-child { border-bottom: none; }
+
+.intel-player-name {
+    color: #e2e8f0;
+}
+
+.intel-player-reason {
+    color: #94a3b8;
+    font-size: 10.5px;
+}
+
+.intel-player-tag {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.intel-tag-out { background: rgba(239,68,68,0.15); color: #f87171; }
+.intel-tag-doubt { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.intel-tag-ok { background: rgba(34,197,94,0.15); color: #4ade80; }
+
+.intel-impact-score {
+    text-align: center;
+    margin-top: 8px;
+    padding: 6px;
+    background: #0f172a;
+    border-radius: 6px;
+    font-size: 11.5px;
+}
+
+.intel-impact-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.intel-impact-value.negative { color: #ef4444; }
+.intel-impact-value.neutral { color: #94a3b8; }
+.intel-impact-value.positive { color: #22c55e; }
+
+.intel-impact-gap {
+    margin-top: 10px;
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+/* ---- 战意展示 ---- */
+.intel-motivation-section {
+    margin-bottom: 14px;
+}
+
+.intel-moti-grid {
+    display: flex;
+    gap: 12px;
+}
+
+.intel-moti-card {
+    flex: 1;
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.intel-moti-level {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.intel-moti-level.high { color: #ef4444; }
+.intel-moti-level.medium { color: #fbbf24; }
+.intel-moti-level.low { color: #64748b; }
+
+.intel-moti-label {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.intel-moti-mult {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.intel-moti-mult.up { color: #22c55e; }
+.intel-moti-mult.down { color: #ef4444; }
+
+/* ---- 利好利空因素（增强版） ---- */
+.intel-factors-section {
+    margin-bottom: 14px;
+}
+
+.intel-factor-group {
+    margin-bottom: 10px;
+}
+
+.intel-factor-group-title {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.intel-factor-group.positive .intel-factor-group-title { color: #22c55e; }
+.intel-factor-group.negative .intel-factor-group-title { color: #ef4444; }
+.intel-factor-group.neutral .intel-factor-group-title { color: #94a3b8; }
+
+.intel-factor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 10px;
+    margin-bottom: 4px;
+    background: #0f172a40;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.intel-factor-icon { flex-shrink: 0; font-size: 14px; }
+
+.intel-factor-strength-strong { border-left: 3px solid #fbbf24; }
+.intel-factor-strength-medium { border-left: 3px solid #334155; }
+
+/* ---- btMult 升级信息 ---- */
+.intel-btmult-section {
+    background: linear-gradient(135deg, #064e3b20 0%, #064e3b10 100%);
+    border: 1px solid #065f4640;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 12px;
+}
+
+.intel-btmult-title {
+    font-size: 12px;
+    color: #4ade80;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.intel-btmult-detail {
+    font-size: 11.5px;
+    color: #94a3b8;
+    line-height: 1.8;
+}
+
+.intel-btmult-highlight {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+/* ---- 结论引用 ---- */
+.intel-conclusion {
+    background: #1e293b;
+    border-left: 3px solid #8b5cf6;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* ---- 加载状态 ---- */
+.intel-loading {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.intel-loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #334155;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: intelSpin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes intelSpin {
+    to { transform: rotate(360deg); }
+}
