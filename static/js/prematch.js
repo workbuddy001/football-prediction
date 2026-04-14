@@ -435,26 +435,53 @@
                 var mcHasRec=!!(mc&&mc.tip), mcDir='';
                 if(mc && mc.tip_text){
                     var tt=mc.tip_text;
-                    // 检测澳门心水方向（兼容多种写法：U+8D0F賏/U+8D01贏/U+8CD0賏/胜/赢）
-                    // 澳门格式固定为 "队名 賏" / "队名 和" / "队名 負"
-                    var winChars=['\u8d0f','\u8d01','\u8cd0','\u8d62','\u80dc'];  // 賏/贏/賏/赢/胜
-                    var loseChars=['\u8d1f','\u8d1f\u5957'];           // 負
-                    var drawChars=['\u548c','\u5e73'];                  // 和/平
-                    var isWin=winChars.some(function(c){return tt.indexOf(c)!==-1;});
-                    var isLose=loseChars.some(function(c){return tt.indexOf(c)!==-1;});
-                    var isDraw=drawChars.some(function(c){return tt.indexOf(c)!==-1;});
+                    // 澳门格式固定为 "推荐「队名 賏/和/負」→"
+                    // 正确做法：先提取队名（关键字前的文字），再判断属于主/客
+                    var winChars=['\u8d0f','\u8d01','\u8cd0','\u8d62','\u80dc'];
+                    var loseChars=['\u8d1f','\u8d1f\u5957'];  
+                    var drawChars=['\u548c','\u5e73'];
 
-                    if(isWin) mcDir='home';
-                    else if(isLose) mcDir='away';
-                    else if(isDraw) mcDir='draw';
-                    else{
-                        // 最终回退：双向子串匹配（处理长短名差异如 曼彻斯特联 vs 曼联）
-                        var mcTeam=(tt.split(/[\s\u8cd0\u8d01\u8d0f\u8d1f\u548c→]+/)[0]||'');
-                        if(tt.indexOf(mi.home)!==-1 || mcTeam.length>0 && mi.home.indexOf(mcTeam)!==-1) mcDir='home';
-                        else if(tt.indexOf(mi.away)!==-1 || mcTeam.length>0 && mi.away.indexOf(mcTeam)!==-1) mcDir='away';
+                    // 提取关键字及其位置
+                    var kwPos=-1, kwType='', foundChar='';
+                    for(var ki=0;ki<winChars.length&&kwPos===-1;ki++){kwPos=tt.indexOf(winChars[ki]);if(kwPos!==-1){foundChar=winChars[ki];kwType='win';}}
+                    for(var li=0;li<loseChars.length&&kwPos===-1;li++){kwPos=tt.indexOf(loseChars[li]);if(kwPos!==-1){foundChar=loseChars[li];kwType='lose';}}
+                    for(var di=0;di<drawChars.length&&kwPos===-1;di++){kwPos=tt.indexOf(drawChars[di]);if(kwPos!==-1){foundChar=drawChars[di];kwType='draw';}}
+
+                    if(kwPos>0){
+                        // 提取关键字前面的队名部分（去掉前缀如 澳门推荐「 等）
+                        var teamPart=tt.substring(0,kwPos).replace(/^[^\u4e00-\u9fff]*/,'').trim();
+                        teamPart=teamPart.replace(/\s+$/,'');
+
+                        if(teamPart && teamPart.length>=2){
+                            // 智能队名匹配：处理长短名差异（曼彻斯特联 vs 曼联、赫塔费 vs 赫塔菲等）
+                            function _matchTeam(mcName, pageName){
+                                // 完全包含
+                                if(mcName.indexOf(pageName)!==-1 || pageName.indexOf(mcName)!==-1) return true;
+                                // 前2字匹配（覆盖绝大多数中文队名缩写：曼联/曼城/皇马等）
+                                var mcPre2=mcName.substring(0,2), pgPre2=(pageName.length>=2?pageName.substring(0,2):pageName);
+                                if(mcPre2===pgPre2) return true;
+                                // 前1字+第2字交叉（曼彻 vs 曼联：首字相同）
+                                if(mcName[0]===pageName[0]) return true;
+                                return false;
+                            }
+
+                            if(_matchTeam(teamPart, mi.home)){
+                                mcDir=(kwType==='win'?'home':(kwType==='lose'?'away':'draw'));
+                            } else if(_matchTeam(teamPart, mi.away)){
+                                mcDir=(kwType==='win'?'away':(kwType==='lose'?'home':'draw'));
+                            } else {
+                                // fallback
+                                if(kwType==='win') mcDir='home';
+                                else if(kwType==='lose') mcDir='away';
+                                else mcDir='draw';
+                            }
+                        } else {
+                            if(kwType==='win') mcDir='home';
+                            else if(kwType==='lose') mcDir='away';
+                            else mcDir='draw';
+                        }
                     }
-                    // DEBUG: 控制台输出mcDir方便排查
-                    console.log('[MC_DEBUG] tip_text='+tt+' → mcDir='+mcDir);
+                    console.log('[MC_DEBUG] tip_text='+tt+' → teamPart="'+teamPart+'" type='+kwType+' → mcDir='+mcDir);
                 }
 
                 // [DEBUG] 显示mcDir和Unicode码位（上线前删除此段）

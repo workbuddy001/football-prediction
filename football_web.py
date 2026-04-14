@@ -1496,32 +1496,12 @@ def get_pre_match_analysis(date_folder, match_id):
         # 平赔偏低
         pass
 
-    # --- 赔率变化信号 ---
-    if abs(jc_h_chg) > 5:
-        if jc_h_chg < 0:
-            home_favors.append({"type": "odds_move", "text": f"竞彩主胜降赔{abs(jc_h_chg):.1f}%，资金流向主胜", "strength": "medium"})
-        else:
-            home_unfavors.append({"type": "odds_move", "text": f"竞彩主胜升赔{jc_h_chg:.1f}%，资金撤离主胜", "strength": "weak"})
-    if abs(jc_a_chg) > 5:
-        if jc_a_chg < 0:
-            away_favors.append({"type": "odds_move", "text": f"竞彩客胜降赔{abs(jc_a_chg):.1f}%，资金流向客胜", "strength": "medium"})
-        else:
-            away_unfavors.append({"type": "odds_move", "text": f"竞彩客胜升赔{jc_a_chg:.1f}%，资金撤离客胜", "strength": "weak"})
-
-    # 澳门赔率变化
-    if macao_init and macao_real and len(macao_init) >= 3 and len(macao_real) >= 3:
-        mh_chg = calc_pct(float(macao_init[0]), float(macao_real[0]))
-        ma_chg = calc_pct(float(macao_init[2]), float(macao_real[2]))
-        if abs(mh_chg) > 5:
-            if mh_chg < 0:
-                home_favors.append({"type": "macao_move", "text": f"澳门主胜降赔{abs(mh_chg):.1f}%，与竞彩同向造热主队", "strength": "strong"})
-            else:
-                home_unfavors.append({"type": "macao_move", "text": f"澳门主胜升赔{mh_chg:.1f}%", "strength": "weak"})
-        if abs(ma_chg) > 5:
-            if ma_chg < 0:
-                away_favors.append({"type": "macao_move", "text": f"澳门客胜降赔{abs(ma_chg):.1f}%，与竞彩同向造热客队", "strength": "strong"})
-            else:
-                away_unfavors.append({"type": "macao_move", "text": f"澳门客胜升赔{ma_chg:.1f}%", "strength": "weak"})
+    # --- [已移除] 赔率变化信号（竞彩/澳门降赔升赔）---
+    # 原因：赔率变化数据已在赔付压力矩阵+水位分析中体现，不应重复放入基本面利好/利空
+    # 基本面应只包含：近期战绩、主场/客场、历史交锋、排名等纯球队信息
+    # 以下内容移除：
+    #   - 竞彩主胜/客胜降赔X%（odds_move类型）
+    #   - 澳门主胜/客胜降赔Y% 同向造热（macao_move类型）
 
     # --- 主客场因素（让球盘口暗示） ---
     if handicap:
