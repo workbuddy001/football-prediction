@@ -2500,5 +2500,68 @@
     "score_str": "1:1",
     "result": "draw",
     "record_time": "2026-04-13 13:14"
+  },
+  "2026.04.13_周一001": {
+    "match_id": "周一001",
+    "date": "2026.04.13",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "result": "home",
+    "record_time": "2026-04-14 08:35"
+  },
+  "2026.04.13_周一002": {
+    "match_id": "周一002",
+    "date": "2026.04.13",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "result": "draw",
+    "record_time": "2026-04-14 08:35"
+  },
+  "2026.04.13_周一003": {
+    "match_id": "周一003",
+    "date": "2026.04.13",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "result": "home",
+    "record_time": "2026-04-14 08:35"
+  },
+  "2026.04.13_周一004": {
+    "match_id": "周一004",
+    "date": "2026.04.13",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "result": "home",
+    "record_time": "2026-04-14 08:36"
+  },
+  "2026.04.13_周一005": {
+    "match_id": "周一005",
+    "date": "2026.04.13",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "result": "away",
+    "record_time": "2026-04-14 08:36"
+  },
+  "2026.04.13_周一006": {
+    "match_id": "周一006",
+    "date": "2026.04.13",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "result": "home",
+    "record_time": "2026-04-14 08:36"
+  },
+  "2026.04.13_周一007": {
+    "match_id": "周一007",
+    "date": "2026.04.13",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "result": "draw",
+    "record_time": "2026-04-14 08:36"
   }
 }

@@ -1,0 +1,68 @@
+{
+  "match_id": "周一006",
+  "date_folder": "2026.04.13",
+  "home_team": "莱万特",
+  "away_team": "赫塔费",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "LWDDWL",
+  "away_form": "WWLWWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降24升4 / 平降11升9 / 客降2升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-14 08:36",
+  "macao_tip": "赫塔费 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.42,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 3.42,
+    "mcao_home_chg": -6.84,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 8.37,
+    "jc_init_odds": [
+      2.63,
+      2.72,
+      2.63
+    ],
+    "jc_real_odds": [
+      2.54,
+      2.72,
+      2.72
+    ],
+    "macao_init_odds": [
+      2.63,
+      2.85,
+      2.63
+    ],
+    "macao_real_odds": [
+      2.45,
+      2.85,
+      2.85
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

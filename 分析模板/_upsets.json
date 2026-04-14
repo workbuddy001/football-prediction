@@ -1,6 +1,185 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.13_周一007_20260414083656",
+      "match_id": "周一007",
+      "date_folder": "2026.04.13",
+      "home_team": "通德拉",
+      "away_team": "吉维森特",
+      "league": "葡超",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "客胜",
+      "predicted_dir": "away",
+      "actual_result": "draw",
+      "actual_score": "2:2",
+      "confidence": 4,
+      "was_excluded": false,
+      "exclusions": [
+        "home"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 15.94,
+        "jc_draw_chg": 2.58,
+        "jc_away_chg": -8.76,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          3.45,
+          3.1,
+          1.94
+        ],
+        "jc_real_odds": [
+          4.0,
+          3.18,
+          1.77
+        ],
+        "macao_init_odds": [
+          3.28,
+          3.17,
+          1.97
+        ],
+        "macao_real_odds": [
+          3.28,
+          3.17,
+          1.97
+        ],
+        "jc_pattern": "UUD",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 3.18,
+      "home_form": "LDLDWD",
+      "away_form": "WLDDLL",
+      "handicap": "1",
+      "macao_tip": "吉维森特 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-14 08:36"
+    },
+    {
+      "upset_id": "2026.04.13_周一005_20260414083617",
+      "match_id": "周一005",
+      "date_folder": "2026.04.13",
+      "home_team": "曼联",
+      "away_team": "利兹联",
+      "league": "英超",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "1:2",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "away",
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -6.04,
+        "jc_draw_chg": 7.69,
+        "jc_away_chg": 13.0,
+        "mcao_home_chg": -1.33,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 4.49,
+        "jc_init_odds": [
+          1.49,
+          3.9,
+          5.0
+        ],
+        "jc_real_odds": [
+          1.4,
+          4.2,
+          5.65
+        ],
+        "macao_init_odds": [
+          1.5,
+          4.15,
+          4.9
+        ],
+        "macao_real_odds": [
+          1.48,
+          4.15,
+          5.12
+        ],
+        "jc_pattern": "DUU",
+        "macao_pattern": "NNU"
+      },
+      "upset_odds": 5.65,
+      "home_form": "DWLWWD",
+      "away_form": "DDDWLL",
+      "handicap": "-1",
+      "macao_tip": "曼彻斯特联 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-14 08:36"
+    },
+    {
+      "upset_id": "2026.04.13_周一002_20260414083551",
+      "match_id": "周一002",
+      "date_folder": "2026.04.13",
+      "home_team": "布鲁马波",
+      "away_team": "索尔纳",
+      "league": "瑞超",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：平局被系统排除但实际打出",
+      "prediction": "客胜",
+      "predicted_dir": "away",
+      "actual_result": "draw",
+      "actual_score": "2:2",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "home",
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 14.49,
+        "jc_draw_chg": 5.26,
+        "jc_away_chg": -8.74,
+        "mcao_home_chg": 6.11,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": -3.59,
+        "jc_init_odds": [
+          3.45,
+          3.42,
+          1.83
+        ],
+        "jc_real_odds": [
+          3.95,
+          3.6,
+          1.67
+        ],
+        "macao_init_odds": [
+          3.11,
+          3.45,
+          1.95
+        ],
+        "macao_real_odds": [
+          3.3,
+          3.45,
+          1.88
+        ],
+        "jc_pattern": "UUD",
+        "macao_pattern": "UND"
+      },
+      "upset_odds": 3.6,
+      "home_form": "DLDLLW",
+      "away_form": "WWLLWW",
+      "handicap": "1",
+      "macao_tip": "AIK索尔纳 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-14 08:35"
+    },
+    {
       "upset_id": "2026.04.12_周日030_20260413125629",
       "match_id": "周日030",
       "date_folder": "2026.04.12",
@@ -2087,12 +2266,12 @@
     }
   ],
   "stats": {
-    "total": 35,
+    "total": 38,
     "by_type": {
-      "unknown": 10,
-      "reverse_cover": 24,
+      "unknown": 11,
+      "reverse_cover": 26,
       "silent": 1
     },
-    "last_update": "2026-04-13 12:56"
+    "last_update": "2026-04-14 08:36"
   }
 }

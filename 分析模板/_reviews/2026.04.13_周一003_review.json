@@ -1,0 +1,85 @@
+{
+  "match_id": "周一003",
+  "date_folder": "2026.04.13",
+  "home_team": "佛罗伦萨",
+  "away_team": "拉齐奥",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "LWDWWW",
+  "away_form": "DWWWDL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-3.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+6.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升27 / 平降21升5 / 客降24升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-3.3%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+6.6%>5%",
+    "📈 关键信号「强共识推离主」有效：27/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-14 08:35",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.87,
+    "jc_draw_chg": -3.33,
+    "jc_away_chg": 6.56,
+    "mcao_home_chg": 2.37,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -3.72,
+    "jc_init_odds": [
+      2.14,
+      3.0,
+      3.05
+    ],
+    "jc_real_odds": [
+      2.1,
+      2.9,
+      3.25
+    ],
+    "macao_init_odds": [
+      2.11,
+      3.05,
+      3.23
+    ],
+    "macao_real_odds": [
+      2.16,
+      3.05,
+      3.11
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "UND"
+  }
+}

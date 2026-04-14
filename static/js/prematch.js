@@ -447,21 +447,288 @@
                     for(var li=0;li<loseChars.length&&kwPos===-1;li++){kwPos=tt.indexOf(loseChars[li]);if(kwPos!==-1){foundChar=loseChars[li];kwType='lose';}}
                     for(var di=0;di<drawChars.length&&kwPos===-1;di++){kwPos=tt.indexOf(drawChars[di]);if(kwPos!==-1){foundChar=drawChars[di];kwType='draw';}}
 
+                    var teamPart='';
+
                     if(kwPos>0){
                         // 提取关键字前面的队名部分（去掉前缀如 澳门推荐「 等）
                         var teamPart=tt.substring(0,kwPos).replace(/^[^\u4e00-\u9fff]*/,'').trim();
                         teamPart=teamPart.replace(/\s+$/,'');
 
                         if(teamPart && teamPart.length>=2){
-                            // 智能队名匹配：处理长短名差异（曼彻斯特联 vs 曼联、赫塔费 vs 赫塔菲等）
+                            // ====== 智能队名匹配 v2（繁简体 + 音译名映射） ======
+                            
+                            // 繁→简映射表（足球领域常用字）
+                            var _TRAD_TO_SIMP={
+                                '\u9ea5':'\u9e9a', // 麥→麦
+                                '\u806f':'\u8054', // 聯→联
+                                '\u8cbb':'\u8d39', // 費→费
+                                '\u968a':'\u961f', // 隊→队
+                                '\u570b':'\u56fd', // 國→国
+                                '\u4f86':'\u6765', // 來→来
+                                '\u6fdf':'\u6d4e', // 濟→济
+                                '\u7fa9':'\u4e49', // 義→义
+                                '\u52dd':'\u80dc', // 勝→胜
+                                '\u6230':'\u6218', // 戰→战
+                                '\u5be6':'\u5b9e', // 實→实
+                                '\u96d9':'\u53cc', // 雙→双
+                                '\u93ae':'\u9547', // 鎮→镇
+                                '\u5834':'\u573a', // 場→场
+                                '\u70ba':'\u4e3a', // 為→为
+                                '\u8b00':'\u8c08', // 謀→谈
+                                '\u8ca0':'\u8d1f', // 負→负
+                                '\u7e3d':'\u603b', // 總→总
+                                '\u52f5':'\u52b1', // 勵→励
+                                '\u7a4e':'\u79ef', // 積→积
+                                '\u6975':'\u6781', // 極→极
+                                '\u9019':'\u8fd9'  // 這→这
+                            };
+                            // 繁体字正则（动态生成）
+                            var _tradPat=new RegExp('['+Object.keys(_TRAD_TO_SIMP).join('')+']','g');
+                            
+                            // 名字标准化函数：繁→简 + 别名展开
+                            function _normName(raw){
+                                var s=(raw||'').replace(_tradPat,function(ch){return _TRAD_TO_SIMP[ch]||ch;});
+                                return s;
+                            }
+                            // 球队音译/别名映射表（key=页面用名或澳门用名，value=标准名数组）
+                            var _TEAM_ALIASES=[
+                                ['曼联',['曼联','曼彻斯特联','曼聯','曼彻斯特聯']],
+                                ['曼城',['曼城','曼彻斯特城','曼彻斯特城FC']],
+                                ['切尔西',['切尔西','车路士','車路士']],
+                                ['阿森纳',['阿森纳','阿仙奴','阿仙納','Arsenal']],
+                                ['利物浦',['利物浦','利物浦FC','利物浦']],
+                                ['热刺',['热刺','托特纳姆','托特纳姆热刺','熱刺','托特纳姆']],
+                                ['西汉姆',['西汉姆','西汉姆联','韓咸','West Ham']],
+                                ['莱斯特',['莱斯特','莱斯特城','李斯特城','萊斯特','李斯特']],
+                                ['维拉',['维拉','阿斯顿维拉','阿斯頓維拉','Aston Villa']],
+                                ['纽卡斯尔',['纽卡斯尔','纽卡素','紐卡素','Newcastle']],
+                                ['埃弗顿',['埃弗顿','愛華頓','Everton']],
+                                ['布伦特福德',['布伦特福德','賓福特','Brentford']],
+                                ['狼队',['狼队','伍尔弗汉普顿','狼','Wolves']],
+                                ['水晶宫',['水晶宫','水晶宮','Crystal Palace']],
+                                ['伯恩利',['伯恩利','般尼','Burnley']],
+                                ['诺维奇',['诺维奇','諾域治','Norwich']],
+                                ['南安普顿',['南安普顿','修咸頓',' Southampton']],
+                                ['布莱顿',['布莱顿','白禮顿','Brighton']],
+                                ['富勒姆',['富勒姆','富咸','Fulham']],
+                                ['伯恩茅斯',['伯恩茅斯','般尼茅夫','Bournemouth']],
+                                ['谢菲尔德联',['谢菲尔德联','錫菲聯','Sheffield Utd']],
+                                ['利兹联',['利兹联','利斯联','列斯聯','Leeds']],
+                                ['德比郡',['德比郡','打比郡','Derby']],
+                                ['米堡',['米堡','米德尔斯堡','Middlesbrough']],
+                                ['米尔沃尔',['米尔沃尔','Millwall']],
+                                ['考文垂',['考文垂','高雲地利','Coventry']],
+                                ['斯托克城',['斯托克城','史篤城','Stoke']],
+                                ['普雷斯顿',['普雷斯顿','普雷斯頓','Preston']],
+                                ['罗瑟汉姆',['罗瑟漢姆','Rotherham']],
+                                ['桑德兰',['桑德兰','新特蘭','Sunderland']],
+                                ['西布朗',['西布朗','西布朗维奇','西布朗維奇','West Brom']],
+                                ['伯明翰',['伯明翰','伯明翰城','Birmingham']],
+                                ['雷克斯',['雷克斯','雷丁','Reading']],
+                                ['布莱克本',['布莱克本','布力般流浪','Blackburn']],
+                                ['朴次茅斯',['朴次茅斯','樸茨茅夫','Portsmouth']],
+                                ['诺维奇城',['诺维奇城','Norwich City']],
+                                ['卢顿',['卢顿','Luton']],
+                                ['伊普斯维奇',['伊普斯维奇','葉士域治','Ipswich']],
+                                ['麦克阿瑟',['麦克阿瑟','麥克阿瑟','麦克阿瑟FC','麥克阿瑟FC','Macarthur FC']],
+                                ['珀斯光荣',['珀斯光荣','珀斯','Perth Glory']],
+                                ['悉尼FC',['悉尼FC','悉尼','Sydney FC']],
+                                ['墨尔本城',['墨尔本城','Melbourne City']],
+                                ['墨尔本胜利',['墨尔本胜利','Melbourne Victory']],
+                                ['中央海岸',['中央海岸','Central Coast']],
+                                ['惠灵顿凤凰',['惠灵顿凤凰','Wellington Phoenix']],
+                                ['奥克兰FC',['奥克兰FC','Auckland FC']],
+                                ['赫塔菲',['赫塔菲','赫塔费','Getafe']],
+                                ['西班牙人',['西班牙人','愛斯賓奴','Espanyol']],
+                                ['皇家贝蒂斯',['皇家贝蒂斯','貝迪斯','Real Betis']],
+                                ['皇家社会',['皇家社会','皇家蘇斯達','Real Sociedad']],
+                                ['巴列卡诺',['巴列卡诺','巴列卡诺','Rayo Vallecano']],
+                                ['阿尔梅里亚',['阿尔梅里亚','艾美利亞','Almeria']],
+                                ['拉斯帕尔马斯',['拉斯帕尔马斯','拉斯帕爾馬斯','Las Palmas']],
+                                ['马洛卡',['马洛卡','馬略卡','Mallorca']],
+                                ['吉达联合',['吉达联合','伊蒂法克','Ittihad']],
+                                ['吉达国民',['吉达国民','阿希利','Ahli']],
+                                ['利雅得新月',['利雅得新月','希拉爾','Hilal']],
+                                ['利雅得胜利',['利雅得胜利','Nassr']],
+                                ['多特蒙德',['多特蒙德','多蒙特','Dortmund']],
+                                ['拜仁慕尼黑',['拜仁慕尼黑','拜仁','Bayern']],
+                                ['门兴格拉德巴赫',['门兴格拉德巴赫','門興','Monchengladbach']],
+                                ['法兰克福',['法兰克福','法蘭克福','Frankfurt']],
+                                ['弗赖堡',['弗赖堡','弗萊堡','Freiburg']],
+                                ['霍芬海姆',['霍芬海姆','賀芬咸','Hoffenheim']],
+                                ['美因茨',['美因茨','緬因斯','Mainz']],
+                                ['奥格斯堡',['奥格斯堡','奧格斯堡','Augsburg']],
+                                ['波鸿',['波鸿','波琴','Bochum']],
+                                ['柏林联合',['柏林联合','柏林聯','Union Berlin']],
+                                ['圣保利',['圣保利','聖保利','St Pauli']],
+                                ['海登海姆',['海登海姆','海登咸','Heidenheim']],
+                                ['巴黎圣日耳曼',['巴黎圣日耳曼','巴黎PSG','PSG']],
+                                ['马赛',['马赛','馬賽','Marseille']],
+                                ['里昂',['里昂','里昂','Lyon']],
+                                ['摩纳哥',['摩纳哥','摩纳哥','Monaco']],
+                                ['尼斯',['尼斯','尼斯','Nice']],
+                                ['兰斯',['兰斯','蘭斯','Reims']],
+                                ['图卢兹',['图卢兹','圖盧茲','Toulouse']],
+                                ['欧塞尔',['欧塞尔','歐塞爾','Auxerre']],
+                                ['布雷斯特',['布雷斯特','布雷斯特','Brest']],
+                                ['蒙彼利埃',['蒙彼利埃','Montpellier']],
+                                ['斯特拉斯堡',['斯特拉斯堡','斯特拉斯堡','Strasbourg']],
+                                ['朗斯',['朗斯','Lens']],
+                                ['洛里昂',['洛里昂','Lorient']],
+                                ['克莱蒙',['克莱蒙','克莱蒙','Clermont']],
+                                ['梅斯',['梅斯','Metz']],
+                                ['特鲁瓦',['特鲁瓦','特魯瓦','Troyes']],
+                                ['罗德兹',['罗德兹','羅德茲','Rodez']],
+                                ['波尔多',['波尔多','波爾多','Bordeaux']],
+                                ['圣旺红星',['圣旺红星','Red Star']],
+                                ['拉瓦勒',['拉瓦勒','Laval']],
+                                ['格勒诺布尔',['格勒诺布尔','Grenoble']],
+                                ['甘冈',['甘岡','Guingamp']],
+                                ['瓦朗谢讷',['瓦朗謝訥','Valenciennes']],
+                                ['阿雅克肖',['阿雅克肖','Ajaccio']],
+                                ['巴黎FC',['巴黎FC','Paris FC']],
+                                ['索肖',['索肖','Sochaux']],
+                                ['欧赛尔',['欧赛尔','歐塞爾','Auxerre']],
+                                ['奎维利',['奎维利','Quevilly']],
+                                ['罗阿讷',['罗阿讷','Roanne']],
+                                ['巴斯蒂亚',['巴斯蒂亚','Bastia']],
+                                ['尼姆',['尼姆','Nimes']],
+                                ['尼奥特',['尼奥特','Niort']],
+                                ['敦刻尔克',['敦刻尔克','敦克爾克','Dunkerque']],
+                                ['波城FC',['波城FC','Pau FC']],
+                                ['尚布利',['尚布利','Chambly']],
+                                ['瓦朗谢讷',['瓦朗谢讷','Valenciennes']],
+                                ['费内巴切',['费内巴切','費倫巴治','Fenerbahce']],
+                                ['加拉塔萨雷',['加拉塔萨雷','加拉塔沙雷','Galatasaray']],
+                                ['贝西克塔斯',['贝西克塔斯','比锡達斯','Besiktas']],
+                                ['特拉布宗体育',['特拉布宗体育','Trabzonspor']],
+                                ['阿贾克斯',['阿贾克斯','阿積士','Ajax']],
+                                ['埃因霍温',['埃因霍温','燕豪芬','Eindhoven']],
+                                ['费耶诺德',['费耶诺德','飛燕諾','Feyenoord']],
+                                ['阿尔克马尔',['阿尔克马尔','阿爾克馬爾','AZ Alkmaar']],
+                                ['格罗宁根',['格罗宁根','高寧根','Groningen']],
+                                ['乌德勒支',['乌德勒支','烏德勒支','Utrecht']],
+                                ['特温特',['特温特','川迪','Twente']],
+                                ['鹿特丹斯巴达',['鹿特丹斯巴达','鹿斯巴達','Sparta Rotterdam']],
+                                ['前进之鹰',['前进之鹰','Go Ahead Eagles']],
+                                ['兹沃勒',['兹沃勒','Zwolle']],
+                                ['坎布尔',['坎布尔','Cambuur']],
+                                ['芬洛',['芬洛','Venlo']],
+                                ['瓦尔韦克',['瓦尔韦克','Waasburg']],
+                                ['福图纳',['福图纳','Fortuna Sittard']],
+                                ['威廉二世',['威廉二世','Willem II']],
+                                ['格拉夫夏普',['格拉夫夏普','Graafschap']],
+                                ['海牙',['海牙','ADO Den Haag']],
+                                ['布雷达',['布雷达','Breda']],
+                                ['马斯特里赫特',['马斯特里赫特','Maastricht']],
+                                ['埃门',['埃门','Emmen']],
+                                ['赫拉克勒斯',['赫拉克勒斯','Heracles']],
+                                ['斯巴达肯',['斯巴达肯','Spartaken']],
+                                ['乌得勒支',['乌得勒支','Utrecht']],
+                                ['罗达JC',['罗达JC','Roda JC']],
+                                ['精英SBV',['精英SBV','Excelsior']],
+                                ['多德勒支',['多德勒支','Dordrecht']],
+                                ['奥斯',['奥斯','Oss']],
+                                ['阿尔梅勒城',['阿尔梅勒城','Almere City']],
+                                ['登博思',['登博思','Den Bosch']],
+                                ['特尔斯达',['特尔斯达','Telstar']],
+                                ['埃因霍温FC',['埃因霍温FC','Eindhoven FC']],
+                                ['海尔蒙特',['海尔蒙特','Helmond']],
+                                ['TOP Oss',['TOP Oss','Oss']],
+                                ['尤文图斯',['尤文图斯','祖雲達斯','Juventus']],
+                                ['国际米兰',['国际米兰','國際米蘭','Inter Milan']],
+                                ['AC米兰',['AC米兰','AC米兰','AC Milan']],
+                                ['那不勒斯',['那不勒斯','拿玻里','Napoli']],
+                                ['罗马',['罗马','羅馬','Roma']],
+                                ['拉齐奥',['拉齐奥','拉素','Lazio']],
+                                ['佛罗伦萨',['佛罗伦萨斯','費倫天那','Fiorentina']],
+                                ['亚特兰大',['亚特兰大','亞特蘭大','Atalanta']],
+                                ['都灵',['都灵','都靈','Torino']],
+                                ['桑普多利亚',['桑普多利亚','辛普多利亚','Sampdoria']],
+                                ['博洛尼亚',['博洛尼亚','博洛尼亞','Bologna']],
+                                ['乌迪内斯',['乌迪内斯','烏甸尼斯','Udinesse']],
+                                ['维罗纳',['维罗纳','维羅納','Verona']],
+                                ['萨勒尼塔纳',['萨勒尼塔纳','薩勒尼塔納','Salernitana']],
+                                ['恩波利',['恩波利','Empoli']],
+                                ['卡利亚里',['卡利亚里','卡利亚里','Cagliari']],
+                                ['热那亚',['热那亚','熱拿亞','Genoa']],
+                                ['克雷莫纳',['克雷莫纳','Cremonese']],
+                                ['蒙扎',['蒙扎','Monza']],
+                                ['莱切',['莱切','Lecce']],
+                                ['弗罗西诺内',['弗罗西诺内','Frosinone']],
+                                ['威尼斯',['威尼斯','Venezia']],
+                                ['帕尔马',['帕尔马','Parma']],
+                                ['贝内文托',['贝内文托','Benevento']],
+                                ['克罗托内',['克罗托内','Crotone']],
+                                ['斯佩齐亚',['斯佩齐亚','Spezia']],
+                                ['萨索洛',['萨索洛','Sassuolo']],
+                                ['卡坦扎罗',['卡坦扎罗','Catanzaro']],
+                                ['科莫',['科莫','Como']],
+                                ['巴勒莫',['巴勒莫','Palermo']],
+                                ['布雷西亚',['布雷西亚','Brescia']],
+                                ['帕尔马1913',['帕尔马1913','Parma 1913']],
+                                ['比萨',['比萨','Pisa']],
+                                ['巴里',['巴里','Bari']],
+                                ['摩德纳',['摩德纳','Modena']],
+                                ['雷吉纳',['雷吉纳','Reggina']],
+                                ['威尼斯1897',['威尼斯1897','Venezia 1897']],
+                                ['特尔纳纳',['特尔纳纳','Ternana']],
+                                ['佩斯卡拉',['佩斯卡拉','Pescara']],
+                                ['弗洛西诺内',['弗洛西诺内','Frosinone']],
+                                ['切沃',['切沃','Chievo']],
+                                ['卡尔皮',['卡尔皮','Carpi']],
+                                ['特拉帕尼',['特拉帕尼','Trapani']],
+                                ['利沃诺',['利沃诺','Livorno']],
+                                ['维琴察',['维琴察','Vicenza']],
+                                ['库内奥',['库内奥','Cuneo']],
+                                ['克雷莫内塞',['克雷莫内塞','Cremonese']],
+                                ['亚历山德里亚',['亚历山德里亚','Alessandria']],
+                                ['奇塔代拉',['奇塔代拉','Cittadella']],
+                                ['恩泰拉',['恩泰拉','Entella']],
+                                ['佩鲁贾',['佩鲁贾','Perugia']],
+                                ['阿斯科利',['阿斯科利','Ascoli']],
+                                ['弗罗西诺内',['弗罗西诺内','Frosinone']],
+                                ['萨勒尼塔纳',['萨勒尼塔纳','Salernitana']],
+                                ['贝内文托',['贝内文托','Benevento']],
+                                ['帕多瓦',['帕多瓦','Padova']],
+                                ['波代诺内',['波代诺内','Pordenone']],
+                                ['尤维斯塔比亚',['尤维斯塔比亚','Juve Stabia']],
+                                ['比萨1909',['比萨1909','Pisa 1909']],
+                                ['雷焦艾米利亚',['雷焦艾米利亚','Reggio Emilia']],
+                                ['的里雅斯特',['的里雅斯特','Trieste']],
+                                ['南蒂罗尔',['南蒂罗尔','Sudtirol']],
+                                ['特尔纳纳',['特尔纳纳','Ternana']],
+                                ['威尼斯Lagoon',['威尼斯Lagoon','Venezia Lagoon']]
+                            ];
+                            // 构建快速查找字典：任意名字 → 标准名
+                            var _aliasMap={};
+                            for(var ai=0;ai<_TEAM_ALIASES.length;ai++){
+                                var stdName=_TEAM_ALIASES[ai][0], aliases=_TEAM_ALIASES[ai][1];
+                                for(var aj=0;aj<aliases.length;aj++){
+                                    _aliasMap[_normName(aliases[aj])]=_normName(stdName);
+                                    _aliasMap[aliases[aj]]=_normName(stdName); // 也存原始形式
+                                }
+                            }
+
                             function _matchTeam(mcName, pageName){
-                                // 完全包含
-                                if(mcName.indexOf(pageName)!==-1 || pageName.indexOf(mcName)!==-1) return true;
-                                // 前2字匹配（覆盖绝大多数中文队名缩写：曼联/曼城/皇马等）
-                                var mcPre2=mcName.substring(0,2), pgPre2=(pageName.length>=2?pageName.substring(0,2):pageName);
-                                if(mcPre2===pgPre2) return true;
-                                // 前1字+第2字交叉（曼彻 vs 曼联：首字相同）
-                                if(mcName[0]===pageName[0]) return true;
+                                var mcN=_normName(mcName), pgN=_normName(pageName);
+                                // 详细追踪日志（上线前删除）
+                                var _mtLog='match('+mcName+','+pageName+') mcN='+mcN+' pgN='+pgN;
+                                // 1. 直接包含
+                                if(mcName.indexOf(pageName)!==-1 || pageName.indexOf(mcName)!==-1){_mtLog+=' → step1-direct'; console.log(_mtLog); return true;}
+                                // 标准化后包含
+                                if(mcN.indexOf(pgN)!==-1 || pgN.indexOf(mcN)!==-1){_mtLog+=' → step1-norm'; console.log(_mtLog); return true;}
+                                // 2. 前2字匹配
+                                var mcPre2=mcN.substring(0,2), pgPre2=(pgN.length>=2?pgN.substring(0,2):pgN);
+                                if(mcPre2===pgPre2){_mtLog+=' → step2-pre2('+mcPre2+')'; console.log(_mtLog); return true;}
+                                // 3. 别名映射：看是否指向同一个标准名
+                                var mcStd=_aliasMap[mcN]||_aliasMap[mcName]||mcN;
+                                var pgStd=_aliasMap[pgN]||_aliasMap[pageName]||pgN;
+                                if(mcStd && pgStd && mcStd===pgStd){_mtLog+=' → step3-alias('+mcStd+')'; console.log(_mtLog); return true;}
+                                // 4. 首字匹配（兜底）
+                                if(mcN[0]===pgN[0]){_mtLog+=' → step4-first('+mcN[0]+')'; console.log(_mtLog); return true;}
+                                _mtLog+' → FAIL';
+                                console.log(_mtLog);
                                 return false;
                             }
 
@@ -493,6 +760,7 @@
                 }
                 html+='<div style="font-size:10px;color:#f97306;background:#1e1e1e;padding:6px 8px;margin-bottom:4px;border-radius:4px;line-height:1.6">';
                 html+='<b>[DEBUG]</b> mcDir=<b style="color:'+(mcDir?'#4ade80':'#ef4444')+'">'+(mcDir||'EMPTY')+'</b> | bt2='+(bt2||'EMPTY');
+                html+='<br><b>teamPart:</b> '+(typeof teamPart!=='undefined'?teamPart:'N/A')+' | <b>home:</b> '+mi.home+' | <b>away:</b> '+mi.away;
                 html+='<br><b>\u4e2d\u6587\u5b57\u7b26\u7801\u4f4d:</b> '+_debugChars;
                 html+='</div>';
 

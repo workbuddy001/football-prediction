@@ -1,0 +1,63 @@
+{
+  "match_id": "周一001",
+  "date_folder": "2026.04.13",
+  "home_team": "天狼星",
+  "away_team": "哈马比",
+  "league": "瑞超",
+  "handicap": "1",
+  "home_form": "WLDDWW",
+  "away_form": "WDDWWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升17 / 平降16升4 / 客降7升12",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:0(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-14 08:35",
+  "macao_tip": "哈马比 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      3.0,
+      3.4,
+      2.0
+    ],
+    "jc_real_odds": [
+      3.0,
+      3.4,
+      2.0
+    ],
+    "macao_init_odds": [
+      2.62,
+      3.5,
+      2.18
+    ],
+    "macao_real_odds": [
+      2.62,
+      3.5,
+      2.18
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

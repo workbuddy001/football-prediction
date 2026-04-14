@@ -1,0 +1,67 @@
+689:                         var btGap=(hf.net!==undefined&&af.net!==undefined)?Math.abs((hf.net||0)-(af.net||0)):0;
+690:                         var btFavorsBest=(bt2===bestResult);
+691: 
+692:                         // === 核心判定树 ===
+693:                         if(isPushedAwayBest){
+694:                             // ★★★ 推离最优解：庄家拉高最低赔付方向 = 真方向
+695:                             reasonHtml='\u63a8\u79bb\u6700\u4f18\u89e3\u2192\u5e84\u5bb6\u62c9\u9ad8'+brN+'(\u6700\u4f4e\u8d54\u4ed8)=\u771f\u65b9\u5411';
+696:                             finalVerdict=bestResult;
+697:                             finalColor='#22c55e';
+698:                         }
+699:                         else if(btGap>=6 && !btFavorsBest && bestResult){
+700:                             // ⚠️ 基本面一面倒(差≥6分)且与赔付最优矛盾 → 基本面优先
+701:                             var btN2={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bt2]||bt2;
+702:                             reasonHtml='\u57fa\u672c\u9762\u5de7\u5dee('+btGap+'\u5206)\u503e\u5411'+btN2+',\u8d54\u4ed8\u6700\u4f18('+brN+')\u88ab\u57fa\u672c\u9762\u538b\u5236 \u2192 \u57fa\u672c\u9762\u4f18\u5148';
+703:                             finalVerdict=bt2;
+704:                             finalColor=bt2==='home'?C.home:(bt2==='draw'?C.draw:C.away);
+705:                         }
+706:                         else if(btGap>=4 && !btFavorsBest){
+707:                             // ⚠️ 中等基本面差距(4-5分)，赔付最优可能被阻盘
+708:                             var btN2={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bt2]||bt2;
+709:                             // 检测阻盘：赔付最优方向在让球盘是否超高赔(>3.5)
+710:                             var _bestHcOdds=(bestResult==='home')?hcH:(bestResult==='draw'?hcD:hcA);
+711:                             var _isBlocked=_bestHcOdds>3.5;
+712:                             if(_isBlocked){
+713:                                 reasonHtml='\u963b\u76d8\u68c0\u6d4b\uff1a\u8d54\u4ed8\u6700\u4f18('+brN+')\u8ba9\u7403\u76d8'+_bestHcOdds.toFixed(2)+'=\u8d85\u9ad8\u6c34\u963b\u76d8,\u57fa\u672c\u9762('+btN2+')\u66f4\u53ef\u9760';
+714:                                 finalVerdict=bt2;
+715:                                 finalColor=bt2==='home'?C.home:(bt2==='draw'?C.draw:C.away);
+716:                             } else {
+717:                                 reasonHtml='\u57fa\u672c\u9762\u503e\u5411('+btN2+')\u4e0e\u8d58\u4ed8\u51b2\u7a81 \u2192 \u89c2\u671b/\u9632\u5e73';
+718:                                 finalVerdict='cautious';
+719:                                 finalColor=C.tip;
+720:                             }
+721:                         }
+722:                         else if(finalPred && finalPred===bestResult){
+723:                             reasonHtml='\u8d58\u4ed8\u6700\u4f18+\u6392\u9664\u6cd5\u53cc\u91cd\u786e\u8ba4';
+724:                             finalVerdict=bestResult;
+725:                             finalColor=C.good;
+726:                         }
+727:                         else if(finalPred && finalPred!==bestResult){
+728:                             var fpN2={home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[finalPred]||finalPred;
+729:                             // 小差距(<4分)：赔付优先
+730:                             reasonHtml='\u8d58\u4ed8\u6700\u4f18('+brN+')\u4e0e\u6392\u9664\u6cd5('+fpN2+')\u51b2\u7a81 \u2192 \u4ee5\u8d58\u4ed8\u4e3a\u51c6';
+731:                             finalVerdict=bestResult;
+732:                             finalColor=C.good;
+733:                         }
+734:                         else {
+735:                             reasonHtml=\u57fa\u4e8e\u8d58\u4ed8\u538b\u529b\u77e9\u9635;
+736:                             finalVerdict=bestResult;
+737:                             finalColor=C.good;
+738:                         }
+739: 
+740:                         // 显示冲突提示（如果有的话）
+741:                         if(!isPushedAwayBest && bt2 && bt2!==bestResult && btGap<6){
+742:                             html+='<div style="font-size:10.5px;color:'+C.textDim+';margin-bottom:4px;padding:2px 6px;background:#222220;border-radius:3px">';
+743:                             html+='<span>\ud83d\udcc6 \u57fa\u672c\u9762\u500e\u5411'+({home:mi.home+'胜',draw:'平局',away:mi.away+'胜'}[bt2])+'('+(hf.net||0)+'/'+(af.net||0)+')</span>';
+744:                             html+='</div>';
+745:                         }
+746:                     }
+747:                     else if(finalPred) reasonHtml='\u57fa\u4e8e\u6392\u9664\u6cd5\u5f15\u7406'+(excList.length>=2?'(\u6392\u96642\u65b9\u5411)':'');
+748:                     else if(bt2) reasonHtml=mcHasRec?'基本面+'(mcAgrees2?'澳门同向':'澳门分歧'):'基于基本面倾向';
+749: 
+750:                     if(reasonHtml) html+='<div style="margin-top:6px;padding:6px 8px;background:#ffffff08;border-radius:4px"><span style="font-size:11.5px;color:'+C.textDim+'">\u25b8 '+reasonHtml+'</span></div>';
+751:                     html+='</div>'; // 综合判定容器 end
+752: 
+753:                 } else {
+754:                     // 无让球数据的简洁模式
+755:                     html+='<div style="margin-bottom:6px"><span style="font-size:11.5px;color:#93c5fd;font-weight:600">\u2461 让球盘</span></div>';

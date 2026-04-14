@@ -1,0 +1,97 @@
+{
+  "match_id": "周一005",
+  "date_folder": "2026.04.13",
+  "home_team": "曼联",
+  "away_team": "利兹联",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "DWLWWD",
+  "away_form": "DDDWLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.65>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.40<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+7.7%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+13.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降21升3 / 平降1升19 / 客降2升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「曼彻斯特联 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-14 08:36",
+  "macao_tip": "曼彻斯特联 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -6.04,
+    "jc_draw_chg": 7.69,
+    "jc_away_chg": 13.0,
+    "mcao_home_chg": -1.33,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.49,
+    "jc_init_odds": [
+      1.49,
+      3.9,
+      5.0
+    ],
+    "jc_real_odds": [
+      1.4,
+      4.2,
+      5.65
+    ],
+    "macao_init_odds": [
+      1.5,
+      4.15,
+      4.9
+    ],
+    "macao_real_odds": [
+      1.48,
+      4.15,
+      5.12
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNU"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "match_id": "周一007",
+  "date_folder": "2026.04.13",
+  "home_team": "通德拉",
+  "away_team": "吉维森特",
+  "league": "葡超",
+  "handicap": "1",
+  "home_form": "LDLDWD",
+  "away_form": "WLDDLL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升主胜+15.9%+澳门不动，主胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-8.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+15.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降5升20 / 平降16升5 / 客降6升13",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:2(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「吉维森特 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-14 08:36",
+  "macao_tip": "吉维森特 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 15.94,
+    "jc_draw_chg": 2.58,
+    "jc_away_chg": -8.76,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      3.45,
+      3.1,
+      1.94
+    ],
+    "jc_real_odds": [
+      4.0,
+      3.18,
+      1.77
+    ],
+    "macao_init_odds": [
+      3.28,
+      3.17,
+      1.97
+    ],
+    "macao_real_odds": [
+      3.28,
+      3.17,
+      1.97
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "NNN"
+  }
+}

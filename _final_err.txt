@@ -1,0 +1,16 @@
+﻿node : D:\work\workbuddy\足球预测\_test_syntax.js:819
+所在位置 行:1 字符: 242
++ ... am Files\nodejs;$env:PATH"; node --check _test_syntax.js 2>&1 | Out-F ...
++                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\work\workbud...t_syntax.js:819:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                    var hcSimRes = await api('/api/handicap-similar?match_id=' + encodeURIComponent(_hcMatchId) + '&dat
+e=' + encodeURIComponent(_hcDateFolder));
+                                   ^^^^^
+
+SyntaxError: await is only valid in async functions and the top level bodies of modules
+    at wrapSafe (node:internal/modules/cjs/loader:1743:18)
+    at checkSyntax (node:internal/main/check_syntax:76:3)
+
+Node.js v24.14.1

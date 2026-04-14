@@ -1,0 +1,506 @@
+Line 404: depth=6
+  if (mc.analysis && mc.analysis.length > 0) {
+Line 405: depth=6
+  html += '<div style="font-size:11px;color:' + C.textDim + ';line-height:1.5">' + esc(mc.analysis.sub
+Line 425: depth=6
+  if (_rtOdds && Array.isArray(_rtOdds)) {
+Line 426: depth=6
+  // 尝试 index=1（竞彩行，index=0可能是注释）
+Line 427: depth=7
+  for (var _ri=1; _ri<Math.min(5, _rtOdds.length); _ri++) {
+Line 428: depth=7
+  var _row = _rtOdds[_ri];
+Line 429: depth=7
+  if (_row && Array.isArray(_row) && _row.length >= 3 &&
+Line 430: depth=8
+  !isNaN(parseFloat(_row[0])) && !isNaN(parseFloat(_row[1])) && !isNaN(parseFloat(_row[2]))) {
+Line 431: depth=8
+  jcHomeOdds = parseFloat(_row[0]);
+Line 432: depth=8
+  jcDrawOdds = parseFloat(_row[1]);
+Line 433: depth=8
+  jcAwayOdds = parseFloat(_row[2]);
+Line 434: depth=8
+  break;
+Line 435: depth=7
+  }
+Line 436: depth=6
+  }
+Line 439: depth=6
+  if (jcHomeOdds===0 && jcDrawOdds===0 && jcAwayOdds===0 && _rtOdds && _rtOdds.length>0) {
+Line 440: depth=6
+  var _r0=_rtOdds[0];
+Line 441: depth=7
+  if (_r0&&Array.isArray(_r0)&&_r0.length>=3&&!isNaN(parseFloat(_r0[0]))){
+Line 442: depth=7
+  jcHomeOdds=parseFloat(_r0[0]);
+Line 443: depth=7
+  jcDrawOdds=parseFloat(_r0[1]);
+Line 444: depth=7
+  jcAwayOdds=parseFloat(_r0[2]);
+Line 445: depth=6
+  }
+Line 455: depth=6
+  var C = {
+Line 456: depth=6
+  bg: '#0f172a',
+Line 457: depth=6
+  card: '#1e293b',
+Line 458: depth=6
+  border: '#334155',
+Line 459: depth=6
+  text: '#e2e8f0',
+Line 460: depth=6
+  textDim: '#94a3b8',
+Line 461: depth=6
+  home: '#3b82f6',      // 主队蓝
+Line 462: depth=6
+  away: '#f97316',      // 客队橙
+Line 463: depth=6
+  good: '#22c55e',       // 利好绿
+Line 464: depth=6
+  bad: '#ef4444',        // 利空红
+Line 465: depth=6
+  tip: '#f59e0b',        // 心水金
+Line 466: depth=6
+  strong: '#dc2626',     // 强信号
+Line 467: depth=6
+  medium: '#eab308',     // 中等
+Line 468: depth=6
+  weak: '#9ca3af',       // 弱信号
+Line 469: depth=6
+  alignGood: '#16a34a',  // 一致-可信
+Line 470: depth=6
+  conflictBad: '#ea580c',// 矛盾-警惕
+Line 471: depth=6
+  draw: '#a855f7',       // 平局紫
+Line 479: depth=6
+  function strengthBadge(strength) {
+Line 480: depth=7
+  var map = {
+Line 481: depth=7
+  'strong': '<span style="background:#7f1d1d;color:#fca5a5;padding:1px 6px;border-radius:4px;font-size
+Line 482: depth=7
+  'medium': '<span style="background:#854d0e;color:#fde047;padding:1px 6px;border-radius:4px;font-size
+Line 483: depth=7
+  'weak': '<span style="background:#374151;color:#9ca3b7;padding:1px 6px;border-radius:4px;font-size:1
+Line 484: depth=6
+  };
+Line 485: depth=6
+  return map[strength] || '';
+Line 491: depth=6
+  function typeIcon(typeStr) {
+Line 492: depth=7
+  var icons = {
+Line 493: depth=7
+  'form': '📊',
+Line 494: depth=7
+  'streak': '🔥',
+Line 495: depth=7
+  'odds_position': '🎯',
+Line 496: depth=7
+  'odds_move': '📈',
+Line 497: depth=7
+  'macao_move': '🏛️',
+Line 498: depth=7
+  'handicap': '⚖️',
+Line 499: depth=7
+  'h2h': '⚔'
+Line 500: depth=6
+  };
+Line 501: depth=6
+  return icons[typeStr] || '•';
+Line 507: depth=6
+  function renderFactors(factors, isFavor, teamColor) {
+Line 508: depth=7
+  if (!factors || factors.length === 0) {
+Line 509: depth=7
+  return '<div style="color:' + C.textDim + ';font-size:12px;padding:8px 0;text-align:center">暂无明显因素</
+Line 510: depth=6
+  }
+Line 511: depth=6
+  var html = '';
+Line 512: depth=7
+  for (var i = 0; i < factors.length; i++) {
+Line 513: depth=7
+  var f = factors[i];
+Line 514: depth=7
+  var iconColor = isFavor ? C.good : C.bad;
+Line 515: depth=7
+  var icon = isFavor ? '✅' : '❌';
+Line 516: depth=7
+  html += '<div style="padding:6px 10px;margin-bottom:4px;background:' + (isFavor ? '#064e20' : '#450a
+Line 517: depth=7
+  html += '<span style="margin-right:6px">' + icon + '</span>';
+Line 518: depth=7
+  html += '<span style="color:' + C.text + '">' + esc(f.text) + '</span> ';
+Line 519: depth=7
+  html += strengthBadge(f.strength);
+Line 520: depth=7
+  html += '</div>';
+Line 521: depth=6
+  }
+Line 522: depth=6
+  return html;
+Line 528: depth=6
+  function renderFormBar(form) {
+Line 529: depth=6
+  if (!form || !form.recent) return '';
+Line 530: depth=6
+  var recent = form.recent;
+Line 531: depth=6
+  var dots = '';
+Line 532: depth=7
+  for (var j = 0; j < recent.length && j < 6; j++) {
+Line 533: depth=7
+  var ch = recent[j];
+Line 534: depth=7
+  var color = ch === 'W' ? C.good : (ch === 'D' ? '#9ca3b7' : C.bad);
+Line 535: depth=7
+  dots += '<span style="display:inline-block;width:18px;height:18px;line-height:18px;text-align:center
+Line 536: depth=6
+  }
+Line 537: depth=6
+  var stats = form.wins + '胜' + form.draws + '平' + form.losses + '负';
+Line 538: depth=6
+  return '<div>' + dots + '</div><div style="font-size:11px;color:' + C.textDim + ';margin-top:4px">' 
+Line 544: depth=6
+  function verdictStyle(level) {
+Line 545: depth=7
+  switch (level) {
+Line 546: depth=7
+  case 'strong_align':
+Line 547: depth=7
+  return { bg: '#14532d', border: '#22c55e', text: '✅ 高度一致 — 庄家意图与基本面共振，可信度较高', color: C.alignGood };
+Line 548: depth=7
+  case 'align':
+Line 549: depth=7
+  return { bg: '#1e3a28', border: '#86efac', text: '✓ 基本一致 — 心水与基本面无冲突，可作正向参考', color: '#86efac' };
+Line 550: depth=7
+  case 'conflict':
+Line 551: depth=7
+  return { bg: '#451a03', border: '#fb923c', text: '⚠️ 方向矛盾！基本面与心水方向相反，庄家可能在利用基本面引导筹码', color: C.confl
+Line 552: depth=7
+  case 'neutral':
+Line 553: depth=7
+  return { bg: '#1e293b', border: '#94a3b8', text: '— 中立：双方势均力敌，需结合排除法综合判断', color: C.textDim };
+Line 554: depth=7
+  case 'no_tip':
+Line 555: depth=7
+  return { bg: '#172554', border: '#60a5fa', text: 'ℹ 无明确心水推荐，以排除法为主', color: '#93c5fd' };
+Line 556: depth=7
+  default:
+Line 557: depth=7
+  return { bg: C.card, border: C.border, text: '', color: C.text };
+Line 558: depth=6
+  }
+Line 564: depth=6
+  window.renderPreMatchAnalysis = function (res) {
+Line 565: depth=6
+  var raw = res.raw_data || {};
+Line 566: depth=6
+  var matchId = res.match_id || raw.match_id || '';
+Line 567: depth=6
+  var dateFolder = res.date_folder || raw.date_folder || '';
+Line 568: depth=6
+  
+Line 569: depth=6
+  // 检查是否有基本数据
+Line 570: depth=7
+  if (!matchId || !dateFolder) {
+Line 571: depth=7
+  return Promise.resolve(null);
+Line 572: depth=6
+  }
+Line 573: depth=6
+  
+Line 574: depth=6
+  var containerId = 'preMatchSection';
+Line 575: depth=6
+  var existing = document.getElementById(containerId);
+Line 576: depth=6
+  if (existing) existing.remove();
+Line 577: depth=6
+  
+Line 578: depth=6
+  return api('/api/pre-match-analysis?match_id=' + encodeURIComponent(matchId) + '&date=' + encodeURIC
+Line 579: depth=7
+  .then(function (pmRes) {
+Line 580: depth=8
+  if (!pmRes.success || !pmRes.data) {
+Line 581: depth=8
+  console.warn('赛前情报数据异常:', pmRes.error);
+Line 582: depth=8
+  return null;
+Line 583: depth=7
+  }
+Line 584: depth=7
+  
+Line 585: depth=7
+  var d = pmRes.data;
+Line 586: depth=7
+  var mi = d.match_info;
+Line 587: depth=7
+  var hf = d.home_factors;
+Line 588: depth=7
+  var af = d.away_factors;
+Line 589: depth=7
+  var mc = d.macao;
+Line 590: depth=7
+  var cc = d.conclusion;
+Line 591: depth=7
+  var ed = d.engine_data || {};  // 分析引擎数据
+Line 592: depth=7
+  
+Line 593: depth=7
+  var detailContent = document.getElementById('detailContent');
+Line 594: depth=7
+  if (!detailContent) return null;
+Line 595: depth=7
+  
+Line 596: depth=7
+  // ===== 构建HTML =====
+Line 597: depth=7
+  var html = '';
+Line 598: depth=7
+  
+Line 599: depth=7
+  // --- 标题栏 ---
+Line 600: depth=7
+  html += '<div id="' + containerId + '" style="margin-top:14px;background:' + C.card + ';border:1px s
+Line 601: depth=7
+  html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px
+Line 602: depth=7
+  html += '<span style="font-weight:bold;font-size:15px">🔍 赛前情报分析</span>';
+Line 603: depth=8
+  if (mi.handicap) {
+Line 604: depth=8
+  html += '<span style="font-size:12px;color:#93c5fd;background:#1e3a5f;padding:3px 8px;border-radius:
+Line 605: depth=8
+  } else {
+Line 606: depth=8
+  html += '<span style="font-size:12px;color:#94a3b8">标准盘</span>';
+Line 607: depth=7
+  }
+Line 608: depth=7
+  html += '</div>';
+Line 609: depth=7
+  
+Line 610: depth=7
+  // === 第一部分：近况对比 ===
+Line 611: depth=7
+  html += '<div style="padding:12px 14px;border-bottom:1px solid ' + C.border + '">';
+Line 612: depth=7
+  html += '<div style="font-size:12px;color:' + C.tip + ';font-weight:600;margin-bottom:8px">📊 近期状态对比<
+Line 613: depth=7
+  
+Line 614: depth=7
+  html += '<div style="display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center">';
+Line 615: depth=7
+  
+Line 616: depth=7
+  // 主队
+Line 617: depth=7
+  html += '<div style="text-align:center">';
+Line 618: depth=7
+  html += '<div style="color:' + C.home + ';font-weight:bold;margin-bottom:4px">' + esc(mi.home) + '</
+Line 619: depth=7
+  html += renderFormBar(d.form.home);
+Line 620: depth=7
+  html += '</div>';
+Line 621: depth=7
+  
+Line 622: depth=7
+  // VS
+Line 623: depth=7
+  html += '<div style="color:' + C.textDim + ';font-weight:bold;font-size:13px;padding:0 4px">VS</div>
+Line 624: depth=7
+  
+Line 625: depth=7
+  // 客队
+Line 626: depth=7
+  html += '<div style="text-align:center">';
+Line 627: depth=7
+  html += '<div style="color:' + C.away + ';font-weight:bold;margin-bottom:4px">' + esc(mi.away) + '</
+Line 628: depth=7
+  html += renderFormBar(d.form.away);
+Line 629: depth=7
+  html += '</div>';
+Line 630: depth=7
+  
+Line 631: depth=7
+  html += '</div>'; // grid end
+Line 632: depth=7
+  
+Line 633: depth=7
+  // === 让球赔率（如果有） ===
+Line 634: depth=8
+  if (mi.hc_odds && Object.keys(mi.hc_odds).length > 0) {
+Line 635: depth=8
+  var hcOdds = mi.hc_odds;
+Line 636: depth=8
+  html += '<div style="margin-top:8px;padding:8px 10px;background:#1e3a5f30;border-radius:6px;border:1
+Line 637: depth=8
+  html += '<div style="font-size:11px;color:#93c5fd;margin-bottom:4px">⚖️ 竞彩让球赔率（' + mi.handicap + '球）
+Line 638: depth=8
+  html += '<table style="width:100%;text-align:center;font-size:12px">';
+Line 639: depth=8
+  html += '<tr style="color:' + C.textDim + '"><td>主胜</td><td>平局</td><td>客胜</td></tr>';
+Line 640: depth=8
+  var hVal = (hcOdds['胜'] || hcOdds.home || '-');
+Line 641: depth=8
+  var dVal = (hcOdds['平'] || hcOdds.draw || '-');
+Line 642: depth=8
+  var aVal = (hcOdds['负'] || hcOdds.away || '-');
+Line 643: depth=8
+  html += '<tr><td style="color:' + C.good + ';font-weight:bold">' + esc(String(hVal)) + '</td><td sty
+Line 644: depth=8
+  html += '</table></div>';
+Line 645: depth=7
+  }
+Line 646: depth=7
+  
+Line 647: depth=7
+  // === 历史交锋（如果有） ===
+Line 648: depth=8
+  if (mi.h2h && mi.h2h.trim() !== '') {
+Line 649: depth=8
+  html += '<div style="margin-top:8px;padding:7px 10px;background:rgba(168,85,247,0.08);border-radius:
+Line 650: depth=8
+  html += '<span style="font-size:11px;color:' + C.draw + ';font-weight:600">⚔ 历史交锋：</span>';
+Line 651: depth=8
+  html += '<span style="font-size:12px;color:' + C.text + '">' + esc(mi.h2h) + '</span>';
+Line 652: depth=8
+  html += '</div>';
+Line 653: depth=7
+  }
+Line 654: depth=7
+  
+Line 655: depth=7
+  html += '</div>'; // 近况区域结束
+Line 656: depth=7
+  
+Line 657: depth=7
+  // === 第二部分：利好/利空因素 ===
+Line 658: depth=7
+  html += '<div style="padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;border-bo
+Line 659: depth=7
+  
+Line 660: depth=7
+  // 主队列
+Line 661: depth=7
+  html += '<div>';
+Line 662: depth=7
+  html += '<div style="font-size:13px;font-weight:600;margin-bottom:6px;color:' + C.home + '">🏠 ' + es
+Line 663: depth=7
+  html += ' <span style="font-size:11px;font-weight:normal;color:' + (hf.net >= 0 ? C.good : C.bad) + 
+Line 664: depth=7
+  
+Line 665: depth=7
+  // 利好
+Line 666: depth=7
+  html += '<div style="margin-bottom:6px"><div style="font-size:11px;color:' + C.good + ';margin-botto
+Line 667: depth=7
+  html += renderFactors(hf.favors, true, C.home);
+Line 668: depth=7
+  html += '</div>';
+Line 669: depth=7
+  
+Line 670: depth=7
+  // 利空
+Line 671: depth=7
+  html += '<div><div style="font-size:11px;color:' + C.bad + ';margin-bottom:3px">利空因素</div>';
+Line 672: depth=7
+  html += renderFactors(hf.unfavors, false, C.home);
+Line 673: depth=7
+  html += '</div>';
+Line 674: depth=7
+  
+Line 675: depth=7
+  html += '</div>'; // 主队列end
+Line 676: depth=7
+  
+Line 677: depth=7
+  // 客队列
+Line 678: depth=7
+  html += '<div>';
+Line 679: depth=7
+  html += '<div style="font-size:13px;font-weight:600;margin-bottom:6px;color:' + C.away + '">✈️ ' + e
+Line 680: depth=7
+  html += ' <span style="font-size:11px;font-weight:normal;color:' + (af.net >= 0 ? C.good : C.bad) + 
+Line 681: depth=7
+  
+Line 682: depth=7
+  html += '<div style="margin-bottom:6px"><div style="font-size:11px;color:' + C.good + ';margin-botto
+Line 683: depth=7
+  html += renderFactors(af.favors, true, C.away);
+Line 684: depth=7
+  html += '</div>';
+Line 685: depth=7
+  
+Line 686: depth=7
+  html += '<div><div style="font-size:11px;color:' + C.bad + ';margin-bottom:3px">利空因素</div>';
+Line 687: depth=7
+  html += renderFactors(af.unfavors, false, C.away);
+Line 688: depth=7
+  html += '</div>';
+Line 689: depth=7
+  
+Line 690: depth=7
+  html += '</div>'; // 客队列end
+Line 691: depth=7
+  
+Line 692: depth=7
+  html += '</div>'; // 因素对比区域结束
+Line 693: depth=7
+  
+Line 694: depth=7
+  // === 第三部分：分析引擎三大维度 ===
+Line 695: depth=7
+  var hasEngineData = ed.review_stats || (ed.cold_alerts && ed.cold_alerts.length > 0) || (ed.exclusio
+Line 696: depth=8
+  if (hasEngineData) {
+Line 697: depth=8
+  html += '<div style="padding:12px 14px;border-bottom:1px solid ' + C.border + '">';
+Line 698: depth=8
+  html += '<div style="font-size:12px;color:#f59e0b;font-weight:600;margin-bottom:8px">🤖 分析引擎参考</div>'
+Line 699: depth=8
+  
+Line 700: depth=8
+  // --- 维度1: 复盘命中率 ---
+Line 701: depth=8
+  var rs = ed.review_stats;
+Line 702: depth=9
+  if (rs && rs.total > 0) {
+Line 703: depth=9
+  var rsRateColor = rs.overall_rate >= 60 ? C.good : (rs.overall_rate >= 40 ? '#eab308' : C.bad);
+Line 704: depth=9
+  var spDir = rs.same_prediction ? rs.same_prediction.dir : '-';
+Line 705: depth=9
+  var spRate = rs.same_prediction ? rs.same_prediction.rate : 0;
+Line 706: depth=9
+  var spColor = spRate >= 70 ? C.good : (spRate >= 40 ? '#eab308' : C.bad);
+Line 707: depth=9
+  
+Line 708: depth=9
+  html += '<div style="background:' + (spRate >= 50 ? '#064e2025' : '#450a0a25') + ';border-radius:6px
+Line 709: depth=9
+  html += '<span style="font-size:11px;font-weight:600;margin-right:4px">' + (spRate >= 50 ? '✅' : '❌'
+Line 710: depth=9
+  html += '<span style="font-size:12px;color:' + C.text + '">';
+Line 711: depth=9
+  html += '历史复盘：总体命中率 <b>' + esc(rs.overall_rate + '%') + '</b>';
+Line 712: depth=10
+  if (spDir && spDir !== '未预测') {
+Line 713: depth=10
+  html += ' | 同预测「<b style="color:' + spColor + '">' + esc(spDir) + '</b>」命中 <b>' + esc(spRate + '%') 
+Line 714: depth=9
+  }
+Line 715: depth=9
+  html += '</span></div>';
+Line 716: depth=8
+  }
+Line 717: depth=8
+  
+
+Max depth=19 at char 84901 line 1479
