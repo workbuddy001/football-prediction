@@ -372,12 +372,36 @@
                 function _payColor(odds){return odds<1.80?C.good:(odds<2.5?C.tip:(odds<3.5?C.warn:C.bad));}
                 function _payTag(odds){return odds<1.80?'\u4f4e\u6c34\u2705':(odds<2.5?'\u4e2d\u6c34':(odds<3.5?'\u9ad8\u6c34\u26a0\ufe0f':'\u8d85\u9ad8\u274c'));}
 
-                // 动态综合赔付评估：根据两个盘口赔率的加权得分
-                function _payoutScore(sOdds,hOdds){
-                    if(!hOdds||hOdds<=0) return sOdds + 99; // 无让球数据时罚分
-                    // 加权：标准盘权重60%，让球盘权重40%
-                    // 得分越低=庄家赔付越少=庄家越想看到这个结果
-                    return sOdds * 0.6 + hOdds * 0.4;
+                // 动态综合风险分：标准盘赔率 + 该赛果对应的竞彩让球赔率(p1_hc/p2_hc/p3_hc)
+                // p1_hc/p2_hc/p3_hc 已通过赔付矩阵根据盘口正负映射完成
+                function _payoutScore(direction){
+                    var sOdds=(direction==='home'?p1_std:(direction==='draw'?p2_std:p3_std));
+                    var hOdds=(direction==='home'?p1_hc:(direction==='draw'?p2_hc:p3_hc));
+
+                    if(!hasHcData||!hOdds||hOdds<=0) return sOdds + 99;
+
+                    // 标准盘60% + 让球盘40%
+                    var baseScore=sOdds*0.6 + hOdds*0.4;
+
+                    // 系数1：澳门心水系数（心水推的方向筹码多1.35倍）
+                    var mcMult=1.0;
+                    if(mcDir && mcDir===direction) mcMult=1.35;
+                    else if(mcDir==='draw' && direction==='draw') mcMult=1.35;
+                    else if(!mcDir || mcDir==='no_tip') mcMult=1.0;
+                    else mcMult=1.0;
+
+                    // 系数2：基本面倾斜系数（基本面倾向+每25分+10%上限30%，反向-每40分-20%下限80%）
+                    var btMult=1.0;
+                    var btGap=(hf.net!==undefined&&af.net!==undefined)?(af.net||0)-(hf.net||0):0;
+                    if(bt2){
+                        if(bt2===direction){
+                            btMult=Math.min(1.3, 1+Math.abs(btGap)/25);
+                        } else {
+                            btMult=Math.max(0.8, 1-Math.abs(btGap)/40);
+                        }
+                    }
+
+                    return baseScore * mcMult * btMult;
                 }
 
                 // 动态损益描述
@@ -401,35 +425,45 @@
                         return '<span style="color:'+C.bad+'">\u5e94\u4ed8\u538b\u529b\u6700\u5927 \u274c</span>';
                 }
 
-                // 计算三个方向的得分
-                var sc1=_payoutScore(p1_std,p1_hc);
-                var sc2=_payoutScore(p2_std,p2_hc);
-                var sc3=_payoutScore(p3_std,p3_hc);
+                // hasHcData 必须在 _payoutScore 调用之前定义（函数内部依赖此变量）
+                var hasHcData=hasHc&&(hcH>0||hcD>0||hcA>0);
+
+                // mcDir 和 bt2 也必须在 _payoutScore 调用之前定义（函数内部依赖这两个系数）
+                var bt2=cc.basic_tendency||'';
+                var mcHasRec=!!(mc&&mc.tip), mcDir='';
+                if(mc && mc.tip_text){
+                    if(mc.tip_text.indexOf(mi.home)!==-1) mcDir='home';
+                    else if(mc.tip_text.indexOf(mi.away)!==-1) mcDir='away';
+                    else if(mc.tip_text.indexOf('\u548c')!==-1||mc.tip_text.indexOf('\u5e73')!==-1) mcDir='draw';
+                }
+
+                // 计算三个方向的得分（传入direction即可，内部自动取所有让球赔率）
+                var sc1=_payoutScore('home');
+                var sc2=_payoutScore('draw');
+                var sc3=_payoutScore('away');
                 var allScores=[sc1,sc2,sc3].filter(function(x){return x<99;});
                 var minS=Math.min.apply(Math,allScores.length?allScores:[999]);
                 var maxS=Math.max.apply(Math,allScores.length?allScores:[0]);
-
-                var hasHcData=hasHc&&(hcH>0||hcD>0||hcA>0);
 
                 html+='<tr style="border-bottom:1px solid '+C.border+'30">';
                 html+='<td style="padding:5px;color:'+C.home+';font-weight:bold">'+mi.home+'\u80dc</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p1_std)+'">'+p1_std.toFixed(2)+' '+_payTag(p1_std)+'</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p1_hc):C.textDim)+'">'+(hasHcData?p1_hc.toFixed(2):'-')+'</td>';
-                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc1.toFixed(2)+'\u5206</td>';
+                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc1.toFixed(2)+'\u5206'+(bt2==='home'?'<span style="color:#22c55e;margin-left:2px">\ud83d\udcc6</span>':(bt2==='away'?'<span style="color:#ef4444;margin-left:2px">\u2193</span>':''))+'</td>';
                 html+='<td style="padding:5px;font-weight:bold">'+_profitText(p1_std,p1_hc,sc1,minS,maxS)+'</td></tr>';
 
                 html+='<tr style="border-bottom:1px solid '+C.border+'30">';
                 html+='<td style="padding:5px;color:'+C.draw+';font-weight:bold">\u5e73\u5c40</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p2_std)+'">'+p2_std.toFixed(2)+' '+_payTag(p2_std)+'</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p2_hc):C.textDim)+'">'+(hasHcData?p2_hc.toFixed(2):'-')+'</td>';
-                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc2.toFixed(2)+'\u5206</td>';
+                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc2.toFixed(2)+'\u5206'+(mcDir==='draw'?'<span style="color:#f97316;margin-left:2px">\ud83d\udcc6\u5fc3\u6c34</span>':(bt2==='draw'?'<span style="color:#22c55e;margin-left:2px">\ud83d\udcc6</span>':''))+'</td>';
                 html+='<td style="padding:5px;font-weight:bold">'+_profitText(p2_std,p2_hc,sc2,minS,maxS)+'</td></tr>';
 
                 html+='<tr style="border-bottom:1px solid '+C.border+'30">';
                 html+='<td style="padding:5px;color:'+C.away+';font-weight:bold">'+mi.away+'\u80dc</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+_payColor(p3_std)+'">'+p3_std.toFixed(2)+' '+_payTag(p3_std)+'</td>';
                 html+='<td style="padding:5px;font-weight:bold;color:'+(hasHcData?_payColor(p3_hc):C.textDim)+'">'+(hasHcData?p3_hc.toFixed(2):'-')+'</td>';
-                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc3.toFixed(2)+'\u5206</td>';
+                html+='<td style="padding:5px;color:'+C.textDim+';font-size:10.5px">'+sc3.toFixed(2)+'\u5206'+(bt2==='away'?'<span style="color:#22c55e;margin-left:2px">\ud83d\udcc6</span>':'')+'</td>';
                 html+='<td style="padding:5px;font-weight:bold">'+_profitText(p3_std,p3_hc,sc3,minS,maxS)+'</td></tr>';
                 html+='</table>';
 
@@ -596,13 +630,6 @@
                     // ========== Step 5: 综合判定 + 最终建议 ==========
                     html+='<div style="margin-top:10px"><span style="font-size:11.5px;color:#93c5fd;font-weight:600">\u2463 综合判定</span></div>';
                     
-                    var bt2=cc.basic_tendency||'';
-                    var mcHasRec=!!mc.tip, mcDir='';
-                    if(mc.tip_text){
-                        if(mc.tip_text.indexOf(mi.home)!==-1) mcDir='home';
-                        else if(mc.tip_text.indexOf(mi.away)!==-1) mcDir='away';
-                        else if(mc.tip_text.indexOf('和')!==-1||mc.tip_text.indexOf('平')!==-1) mcDir='draw';
-                    }
                     var mcAgrees2=(mcDir&&mcDir===bt2);
 
                     html+='<div style="background:#0f172a45;border-radius:8px;padding:10px 12px;border-left:3px solid '+vs.border+'">';
