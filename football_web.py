@@ -26,6 +26,70 @@ SCORES_FILE = os.path.join(DATA_ROOT, "_scores.json")
 REVIEW_DIR = os.path.join(DATA_ROOT, "_reviews")
 UPSETS_FILE = os.path.join(DATA_ROOT, "_upsets.json")
 
+# 赛前情报存储目录
+INTEL_DIR = os.path.join(_BASE_DIR, "data", "intelligence")
+os.makedirs(INTEL_DIR, exist_ok=True)
+
+
+def get_intel_path(match_key):
+    """获取情报存储路径（安全文件名）"""
+    safe = re.sub(r'[^\w\u4e00-\u9fff\-]', '_', match_key)
+    return os.path.join(INTEL_DIR, f"{safe}.json")
+
+
+def save_intelligence(match_key, raw_text, parsed_data):
+    """保存赛前情报到JSON文件"""
+    path = get_intel_path(match_key)
+    record = {
+        "match_key": match_key,
+        "raw_text": raw_text,
+        "parsed": parsed_data,
+        "saved_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    }
+    # 如果已有记录，保留原始录入时间
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                old = json.load(f)
+            record["saved_at"] = old.get("saved_time", record["saved_at"])
+        except Exception:
+            pass
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
+    return record
+
+
+def load_intelligence(match_key):
+    """加载某场比赛的情报"""
+    path = get_intel_path(match_key)
+    if not os.path.exists(path):
+        return None
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def list_intelligence():
+    """列出所有已保存的情报"""
+    results = []
+    for fname in sorted(os.listdir(INTEL_DIR), reverse=True):
+        if not fname.endswith('.json'):
+            continue
+        try:
+            with open(os.path.join(INTEL_DIR, fname), 'r', encoding='utf-8') as f:
+                rec = json.load(f)
+            results.append({
+                "match_key": rec.get("match_key", ""),
+                "saved_at": rec.get("saved_at", ""),
+                "updated_at": rec.get("updated_at", ""),
+                "has_injuries": bool(rec.get("parsed", {}).get("injuries")),
+                "has_motivation": bool(rec.get("parsed", {}).get("motivation")),
+                "file": fname,
+            })
+        except Exception:
+            continue
+    return results
+
 
 def load_scores():
     """加载比分记录"""
@@ -2082,6 +2146,19 @@ class FootballAPIHandler(http.server.BaseHTTPRequestHandler):
                     "review_time":r.get("review_time",""),"_relevance":r.get("_rel",0)
                 } for r in related[:8]],"count":len(related)})
             
+            elif parsed == '/api/intelligence':
+                # 保存赛前情报
+                match_key = data.get('match_key', '')
+                raw_text = data.get('raw_text', '')
+                parsed_data = data.get('parsed', {})
+                
+                if not match_key or not raw_text:
+                    self.send_json({"success": False, "error": "缺少match_key或raw_text"})
+                    return
+                
+                record = save_intelligence(match_key, raw_text, parsed_data)
+                self.send_json({"success": True, "message": "情报已保存", "data": record})
+            
             else:
                 self.send_json({"success": False, "error": "未知接口"}, status=404)
         
@@ -2347,6 +2424,23 @@ class FootballAPIHandler(http.server.BaseHTTPRequestHandler):
                     "lessons":[l for l in r.get("lessons",[]) if l.startswith(('❌','⚠️'))][:2],
                     "review_time":r.get("review_time",""),"_relevance":r.get("_rel",0)
                 } for r in related[:8]],"count":len(related)})
+            
+            elif parsed == '/api/intelligence':
+                # 加载某场比赛的情报
+                match_key = query.get('match_key', [''])[0]
+                if not match_key:
+                    self.send_json({"success": False, "error": "缺少match_key"})
+                    return
+                intel = load_intelligence(match_key)
+                if intel:
+                    self.send_json({"success": True, "data": intel})
+                else:
+                    self.send_json({"success": True, "data": None, "message": "暂无情报记录"})
+            
+            elif parsed == '/api/intelligence/list':
+                # 列出所有已保存的情报
+                items = list_intelligence()
+                self.send_json({"success": True, "data": items, "count": len(items)})
             
             elif parsed.startswith('/static/'):
                 # 静态文件服务（JS/CSS等外部模块）

@@ -125,7 +125,7 @@
              html+='</div>'; // 标题行 end
 
             // ===== 赛前情报录入面板（顶部） =====
-            html+='<button class="intel-btn" id="intelToggleBtn" type="button">\ud83d\udcdd 录入赛前情报</button>';
+            html+='<button class="intel-btn" id="intelToggleBtn" type="button"><span id="intelBtnText">\ud83d\udcdd 录入赛前情报</span></button>';
             html+='<div class="intel-panel" id="intelPanel">';
             html+='  <div class="intel-panel-header">';
             html+='    <h4>\ud83d\udccb 赛前情报解析器</h4>';
@@ -142,6 +142,7 @@
             html+='      <button class="intel-action-btn intel-btn-example" id="intelExampleBtn" type="button">\ud83d\dcc4 \u52a0\u8f7d\u793a\u4f8b</button>';
             html+='      <button class="intel-action-btn intel-btn-clear" id="intelClearBtn" type="button">\ud83dddfe1 \u6e05\u7a7a</button>';
             html+='    </div>';
+            html+='    <div id="intelSaveStatus" style="font-size:11px;color:#94a3b8;margin-top:4px;min-height:16px"></div>';
             html+='    <div class="intel-result" id="intelResult"></div>';
             html+='  </div>';
             html+='</div>';
@@ -1207,12 +1208,52 @@
                     var isOpen = panel.classList.contains('open');
                     panel.classList.toggle('open');
                     toggleBtn.classList.toggle('active', !isOpen);
-                    if(!isOpen) { textarea.focus(); }
+                    if(!isOpen) { 
+                        textarea.focus();
+                        // ★ 自动加载已有情报
+                        var matchKey = mi.home + ' vs ' + mi.away;
+                        loadIntelligenceFromServer(matchKey).then(function(data) {
+                            if(data && data.raw_text) {
+                                textarea.value = data.raw_text;
+                                charsCount.textContent = textarea.value.length + ' 字';
+                                // 显示已保存标记
+                                var saveMark = document.getElementById('intelSaveStatus');
+                                if(!saveMark) {
+                                    saveMark = document.createElement('div');
+                                    saveMark.id = 'intelSaveStatus';
+                                    saveMark.style.cssText = 'font-size:11px;color:#94a3b8;margin-top:4px';
+                                    textarea.parentNode.insertBefore(saveMark, textarea.nextSibling);
+                                }
+                                saveMark.innerHTML = '<span style="color:#60a5fa">📂 已加载 '+data.saved_at+'</span>';
+                            }
+                        });
+                    }
                 });
 
                 closeBtn.addEventListener('click', function() {
                     panel.classList.remove('open');
                     toggleBtn.classList.remove('active');
+                });
+
+                // ★ 如果已有情报，页面加载时自动展开面板
+                var matchKey = mi.home + ' vs ' + mi.away;
+                loadIntelligenceFromServer(matchKey).then(function(data) {
+                    if(data && data.raw_text && data.raw_text.length > 0) {
+                        // 自动展开面板
+                        panel.classList.add('open');
+                        toggleBtn.classList.add('active');
+                        // 按钮文字改为"已录入"
+                        var btnText = document.getElementById('intelBtnText');
+                        if(btnText) btnText.innerHTML = '\ud83d\udccc \u5df2\u5f55\u5165';
+                        // 填入文本
+                        textarea.value = data.raw_text;
+                        charsCount.textContent = textarea.value.length + ' 字';
+                        // 显示已保存标记
+                        var saveMark = document.getElementById('intelSaveStatus');
+                        if(saveMark) {
+                            saveMark.innerHTML = '<span style="color:#60a5fa">📂 已加载 '+data.saved_at+'</span>';
+                        }
+                    }
                 });
 
                 // 字数统计
@@ -1254,6 +1295,9 @@
                             
                             // ★ 回写利好利空因素到主面板
                             writeBackFactors(parsed, factors);
+                            
+                            // ★ 自动保存情报到后端
+                            saveIntelligenceToServer(mi.home + ' vs ' + mi.away, text, parsed);
                         } catch(e) {
                             resultDiv.innerHTML = '<div style="color:#ef4444;padding:15px">❌ 解析出错: ' + e.message + '</div>';
                         }
@@ -1343,6 +1387,32 @@
                     }
 
                     console.log('[Intel] \u56de\u5199\u5b8c\u6210: \u4e3b\u961f\u597d'+homePos.length+'/坏'+homeNeg.length+', \u5ba2\u961f\u597d'+awayPos.length+'/坏'+awayNeg.length);
+                }
+
+                // ★ 情报保存到后端
+                function saveIntelligenceToServer(matchKey, rawText, parsedData) {
+                    fetch('/api/intelligence', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({match_key: matchKey, raw_text: rawText, parsed: parsedData})
+                    }).then(function(r){return r.json();}).then(function(res){
+                        if(res.success){
+                            console.log('[Intel] 已保存:', res.data.saved_at);
+                            var btn=document.getElementById('intelSaveStatus');
+                            if(btn) btn.innerHTML='<span style="color:#4ade80">💾 已保存 '+res.data.saved_at+'</span>';
+                        }
+                    }).catch(function(err){console.warn('[Intel] 保存失败:',err);});
+                }
+
+                // ★ 从后端加载已有情报
+                function loadIntelligenceFromServer(matchKey) {
+                    return fetch('/api/intelligence?match_key='+encodeURIComponent(matchKey))
+                        .then(function(r){return r.json();})
+                        .then(function(res){
+                            if(res.success && res.data){console.log('[Intel] 加载已有:',res.data.saved_at); return res.data;}
+                            return null;
+                        })
+                        .catch(function(){return null;});
                 }
 
                 // 渲染函数
