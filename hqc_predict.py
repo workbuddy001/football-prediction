@@ -20,24 +20,33 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hqc_data")
 HQC_CN_LABELS   = ['胜胜', '胜平', '胜负', '平胜', '平平', '平负', '负胜', '负平', '负负']
 SPF_BIAS_LABELS = ['强主', '弱主', '均势', '弱客', '强客']
 
-# ── 权重配置 v2 ──
-WEIGHT_GLOBAL_RATE   = 0.22   # 全局命中率
-WEIGHT_ODDS_BUCKET   = 0.18   # 半全场赔率区间历史命中率
-WEIGHT_INVERSE_ODDS  = 0.12   # 半全场逆赔率（市场隐含概率）
-WEIGHT_LEAGUE_BIAS   = 0.08   # 联赛偏向
-WEIGHT_SPF_BIAS      = 0.18   # ★ 全场倾向×半全场条件概率
-WEIGHT_SPF_WIN_BIN   = 0.10   # ★ 全场主胜赔率区间命中率
-WEIGHT_TEAM_FORM      = 0.12   # ★ 球队状态系数（v3新增）
+# ── 权重配置 v4 ──
+# 基于复盘分析优化：动态全场倾向权重
+# 复盘发现：强主→胜胜45.5%，强客→负负27.3%，均势→负负/平平21.8%
+# 策略：降低全局率权重，提高倾向权重
+
+# 全场倾向→倾向权重映射（均势时倾向最重要）
+SPF_BIAS_WEIGHTS = {
+    '强主': 0.35,
+    '弱主': 0.30,
+    '均势': 0.45,   # 均势时各选项概率接近，倾向权重最高
+    '弱客': 0.30,
+    '强客': 0.35,
+    '未知': 0.20,
+}
+
+WEIGHT_GLOBAL_RATE   = 0.10   # 全局命中率（大幅降低）
+WEIGHT_ODDS_BUCKET   = 0.08   # 半全场赔率区间历史命中率
+WEIGHT_INVERSE_ODDS  = 0.20   # 半全场逆赔率（市场隐含概率）提高
+WEIGHT_LEAGUE_BIAS   = 0.05   # 联赛偏向
+WEIGHT_SPF_BIAS      = 0.30   # ★ 全场倾向×半全场条件概率
+WEIGHT_SPF_WIN_BIN   = 0.12   # ★ 全场主胜赔率区间命中率
+WEIGHT_TEAM_FORM     = 0.10   # ★ 球队状态系数
 
 # ── v3: 神奇尾数排除规则 ───────────────────────────────────
 # 命中率低于22%且样本量>=30场的赔率尾数，在推荐时降权或排除
 MAGIC_BAD_SUFFIXES = [
-    '.00', '.50',  # 整角/半角：极低命中率（5.7%/11.1%）
-    '.75', '.95',  # 用户指定神奇尾数（12.3%/10.9%）
-    '.60', '.80',  # 6/8结尾（16.9%/15.9%）
-    '.30', '.70',  # 3/7结尾（19.8%/12.5%）
-    '.10', '.90',  # 1/9结尾（9.4%/11.1%）
-    '.25', '.15', '.35',  # 5/15/35结尾（17.1%/17.4%/19.0%）
+    '.65', '.75', '.95',  # 用户指定神奇尾数（低命中率）
 ]
 
 
@@ -47,6 +56,33 @@ def _is_magic_bad(odds_val):
         return False
     frac = f'{odds_val:.2f}'[-2:]
     return f'.{frac}' in MAGIC_BAD_SUFFIXES
+
+
+def _is_bias_conflict(bias, hqc_label):
+    """
+    判断半全场选项是否与全场倾向冲突
+    返回 True 表示冲突，该选项应该被排除
+    
+    规则基于历史数据：
+    - 强主：不太可能出现 负负/平平/负平（客赢或僵局）
+    - 弱主：不太可能出现 负负（客大胜）
+    - 强客：不太可能出现 胜胜/平平/平胜（主赢或僵局）
+    - 弱客：不太可能出现 胜胜（主大胜）
+    - 均势：倾向冲突较少，不排除任何选项
+    """
+    if bias == '未知':
+        return False
+    
+    # 冲突规则（仅排除极端不合理的情况）
+    conflicts = {
+        '强主':  ['负负', '平平'],   # 强主时基本不可能负负/平平
+        '弱主':  [],                 # 弱主时都合理
+        '均势':  [],                 # 均势时没有明显冲突
+        '弱客':  ['胜胜'],           # 弱客时不太可能主大胜
+        '强客':  ['胜胜', '平平'],   # 强客时不太可能主赢或僵局
+    }
+    
+    return hqc_label in conflicts.get(bias, [])
 
 HQC_ODDS_BINS = [
     (1.0,  2.0),
@@ -410,7 +446,9 @@ def _calc_spf_bias(spf_odds):
 
 def predict_match(match, stats, history, hqc_bin_rate, league_rate, spf_bias_rate, spf_win_bin_rate, team_form_stats=None):
     """
-    对单场比赛进行半全场预测（7维加权 v3）
+    对单场比赛进行半全场预测（排除法 v5）
+    
+    核心思路：排除法 = 排除不可能 → 剩下的就是正确
     """
     hqc_odds = match.get('半全场赔率', {})
     league   = match.get('联赛', '未知')
@@ -428,120 +466,95 @@ def predict_match(match, stats, history, hqc_bin_rate, league_rate, spf_bias_rat
 
     global_rates = {s[0]: s[1]['命中率'] for s in stats.get('sorted_by_rate', [])}
 
-    scores  = {}
-    details = {}
+    # ── 球队状态系数 ──
+    team_form_mult = calc_team_form_score(match)
 
-    # 半全场市场隐含概率（归一化）
-    total_inv_hqc = sum(1.0 / hqc_odds[l] for l in HQC_CN_LABELS if hqc_odds.get(l, 0) > 0)
+    # ── v5排除法：排除高价/神奇尾数后选最低赔率 ──
+    # 核心规则：
+    # 1. 排除神奇尾数(.65/.75/.95)
+    # 2. 排除赔率>10
+    # 3. 排除态系数<0.7
+    # 4. 剩余选项中选赔率最低的
 
-    # ── 7维加权合成 v3 ──
+    sorted_by_odds = sorted(
+        [(label, hqc_odds.get(label, 999)) for label in HQC_CN_LABELS if hqc_odds.get(label, 0) > 0],
+        key=lambda x: x[1]
+    )
+
+    eliminated = {}
+    candidates = []
+
     for label in HQC_CN_LABELS:
         o = hqc_odds.get(label, 0)
         if o <= 0:
+            eliminated[label] = ['赔率缺失']
             continue
 
-        # ── 维度1: 全局历史命中率 ──
-        g_rate = global_rates.get(label, 0.111)
+        reasons = []
+        if _is_magic_bad(o):
+            reasons.append('尾数')
+        if o > 10:
+            reasons.append('高价')
+        if team_form_mult:
+            tf = team_form_mult.get(label, 1.0)
+            if tf < 0.7:
+                reasons.append('态差')
 
-        # ── 维度2: 半全场赔率区间命中率 ──
-        b = get_hqc_bin(o)
-        b_data = hqc_bin_rate.get(label, {}).get(b, {})
-        b_rate  = b_data.get('rate') or 0.111
-        b_sample = b_data.get('total', 0)
-
-        # ── 维度3: 半全场市场隐含概率（归一化） ──
-        inv_o = 1.0 / o
-        market_prob = inv_o / total_inv_hqc if total_inv_hqc > 0 else 0.111
-
-        # ── 维度4: 联赛×结果 命中率 ──
-        lg_rate = league_rate.get(league, {}).get(label, 0.111)
-
-        # ── 维度5: ★ 全场倾向 × 半全场结果 条件概率 ──
-        bias_available = bias in spf_bias_rate
-        bias_prob = spf_bias_rate.get(bias, {}).get(label, 0.111) if bias_available else 0.111
-
-        # ── 维度6: ★ 全场主胜赔率区间命中率 ──
-        spf_bin_available = spf_win_bin in spf_win_bin_rate
-        spf_bin_prob = spf_win_bin_rate.get(spf_win_bin, {}).get(label, 0.111) if spf_bin_available else 0.111
-
-        # ── 维度7: ★ 球队状态系数（v3新增）─────────────────────────
-        team_form_mult = calc_team_form_score(match)
-        tf_available = bool(team_form_mult)
-        tf_mult = team_form_mult.get(label, 1.0) if tf_available else 1.0
-
-        # ── 加权合成 ──
-        # 若无全场数据，将SPF权重分配给其他维度
-        if not bias_available and not spf_bin_available:
-            # 退化为v2：全局+区间+市场+联赛+球队状态
-            w1, w2, w3, w4, w5, w6 = 0.28, 0.25, 0.18, 0.12, 0.0, 0.0
-            w7 = WEIGHT_TEAM_FORM
-            wsum = w1 + w2 + w3 + w4 + w5 + w6 + w7
-            w1 /= wsum; w2 /= wsum; w3 /= wsum; w4 /= wsum; w7 /= wsum
+        if reasons:
+            eliminated[label] = reasons
         else:
-            w1 = WEIGHT_GLOBAL_RATE
-            w2 = WEIGHT_ODDS_BUCKET
-            w3 = WEIGHT_INVERSE_ODDS
-            w4 = WEIGHT_LEAGUE_BIAS
-            w5 = WEIGHT_SPF_BIAS    if bias_available    else 0
-            w6 = WEIGHT_SPF_WIN_BIN if spf_bin_available else 0
-            w7 = WEIGHT_TEAM_FORM   if tf_available      else 0
-            # 归一化权重
-            wsum = w1 + w2 + w3 + w4 + w5 + w6 + w7
-            w1 /= wsum; w2 /= wsum; w3 /= wsum
-            w4 /= wsum; w5 /= wsum; w6 /= wsum; w7 /= wsum
+            candidates.append((label, o))
 
-        base_score = (w1 * g_rate +
-                  w2 * b_rate +
-                  w3 * market_prob +
-                  w4 * lg_rate +
-                  w5 * bias_prob +
-                  w6 * spf_bin_prob)
+    # 选未被排除的赔率最低选项
+    if candidates:
+        candidates.sort(key=lambda x: x[1])
+        best_label = candidates[0][0]
+    else:
+        # 全部被排除，用兜底策略（赔率最低）
+        best_label = sorted_by_odds[0][0] if sorted_by_odds else '胜胜'
 
-        # 球队状态系数作为乘数叠加到基础分上
-        score = base_score * tf_mult
+    best_odds = hqc_odds.get(best_label, 0)
 
-        # ── v3: 神奇尾数惩罚 ────────────────────────────
-        is_bad = _is_magic_bad(o)
-        if is_bad:
-            score *= 0.6   # 神奇尾数赔率降权40%
+    # 计算信度：排除越多越确定
+    elim_count = len(eliminated)
+    confidence = 0.5 + elim_count * 0.05
 
-        scores[label]  = round(score, 6)
+    # 计算价值指数
+    value_index = (1 / best_odds) * confidence * 100 if best_odds > 0 else 0
+
+    # ── 详细信息 ──
+    details = {}
+    for label in HQC_CN_LABELS:
+        o = hqc_odds.get(label, 0)
+        reasons = eliminated.get(label, [])
+        is_eliminated = bool(reasons)
+        
+        # 态系数
+        tf = team_form_mult.get(label, 1.0) if team_form_mult else 1.0
+        
         details[label] = {
-            'odds':         o,
-            'global_rate':  round(g_rate, 4),
-            'bin_rate':     round(b_rate, 4),
-            'market_prob':  round(market_prob, 4),
-            'league_rate':  round(lg_rate, 4),
-            'bias_prob':    round(bias_prob, 4),
-            'spf_bin_prob': round(spf_bin_prob, 4),
-            'tf_mult':      round(tf_mult, 3),
-            'is_bad_suffix': is_bad,
-            'score':        round(score, 6),
-            'bin_sample':   b_sample,
+            'odds':          o,
+            'is_eliminated': is_eliminated,
+            'eliminate_reason': reasons,
+            'tf_mult':       round(tf, 3),
+            'bias_conflict': _is_bias_conflict(bias, label),
+            'is_magic_bad':  _is_magic_bad(o),
         }
 
-
-    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    top1 = sorted_scores[0]
-    top2 = sorted_scores[1] if len(sorted_scores) > 1 else None
-    top3 = sorted_scores[2] if len(sorted_scores) > 2 else None
-
-    top3_sum   = sum(s for _, s in sorted_scores[:3])
-    confidence = (top1[1] / top3_sum * 3) if top3_sum > 0 else 0.33
-    value_index = top1[1] * hqc_odds.get(top1[0], 1)
-
     return {
-        'top1':          top1[0],
-        'top2':          top2[0] if top2 else '',
-        'top3':          top3[0] if top3 else '',
+        'top1':          best_label,
+        'top2':          sorted_by_odds[1][0] if len(sorted_by_odds) > 1 else '',
+        'top3':          sorted_by_odds[2][0] if len(sorted_by_odds) > 2 else '',
         'confidence':    round(confidence, 4),
         'value_index':   round(value_index, 4),
-        'sorted_scores': sorted_scores,
+        'sorted_scores': sorted_by_odds,
         'details':       details,
         'spf_bias':      bias,
         'spf_win_odds':  spf_win_o,
         'spf_win_bin':   spf_win_bin or '未知',
         'has_spf':       bool(spf_odds),
+        'eliminated':    eliminated,
+        'candidates':    candidates,
     }
 
 
@@ -641,23 +654,22 @@ def predict_day(date_str=None, show_top=30):
               f"{p['spf_bias']:<8} {top1:<6} {o1:>6.2f} {p['confidence']*100:>5.1f}% "
               f"{p['value_index']:>7.4f} {actual:>5} {mark}")
 
-    # 详细前3场
+    # 详细前3场（排除法格式）
     print(f"\n{'='*75}\n详细预测（前3场）")
     for r in results[:3]:
         p = r['预测结果']
         spf = r.get('全场胜平负赔率', {})
         print(f"\n>> {r['编号']} {r['联赛']}  {r['主队']} vs {r['客队']}  ({r['时间']})")
-        print(f"   全场SPF赔率: 主胜{spf.get('胜','?')} 平{spf.get('平','?')} 客胜{spf.get('负','?')}"
-              f"  → 全场倾向: [{p['spf_bias']}]  主赔区间: {p['spf_win_bin']}")
+        print(f"   全场倾向: [{p['spf_bias']}]  主赔区间: {p['spf_win_bin']}")
         print(f"   推荐: {p['top1']}  置信度 {p['confidence']*100:.1f}%  价值指数 {p['value_index']:.4f}")
-        print(f"   候选: {p['top2']} / {p['top3']}")
-        print(f"   {'结果':<6} {'赔率':>6} {'全局率':>7} {'区间率':>7} {'市场概率':>8} "
-              f"{'联赛率':>7} {'全场倾向概率':>12} {'主赔区间概率':>12} {'态系数':>6} {'综合分':>8}")
-        for lbl, det in sorted(p['details'].items(), key=lambda x: x[1]['score'], reverse=True)[:5]:
-            print(f"   {lbl:<6} {det['odds']:>6.2f} {det['global_rate']*100:>6.1f}% "
-                  f"{det['bin_rate']*100:>6.1f}% {det['market_prob']*100:>7.1f}% "
-                  f"{det['league_rate']*100:>6.1f}% {det['bias_prob']*100:>11.1f}% "
-                  f"{det['spf_bin_prob']*100:>11.1f}% {det['tf_mult']:>6.3f} {det['score']:>8.4f}")
+        print(f"   候选: {p['top2']} / {p['top3']}  (排除{len(p.get('eliminated', {}))}个)")
+        print(f"   {'结果':<6} {'赔率':>6} {'态系数':>6} {'状态':^6} {'排除原因'}")
+        for lbl, det in sorted(p['details'].items(), key=lambda x: x[1]['odds'])[:5]:
+            elim = det.get('eliminate_reason', [])
+            status = '[X]' + '/'.join(elim) if elim else '[O]'
+            magic = '!' if det.get('is_magic_bad') else ''
+            conflict = '?' if det.get('bias_conflict') else ''
+            print(f"   {lbl:<6} {det['odds']:>6.2f} {det['tf_mult']:>6.3f} {magic}{conflict} {status}")
         if r['实际结果']:
             hit = r['实际结果'] == p['top1']
             print(f"   实际结果: {r['实际结果']} {'[HIT]' if hit else '[MISS]'}")
