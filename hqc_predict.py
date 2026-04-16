@@ -46,16 +46,47 @@ WEIGHT_TEAM_FORM     = 0.10   # ★ 球队状态系数
 # ── v3: 神奇尾数排除规则 ───────────────────────────────────
 # 命中率低于22%且样本量>=30场的赔率尾数，在推荐时降权或排除
 MAGIC_BAD_SUFFIXES = [
-    '.65', '.75', '.95',  # 用户指定神奇尾数（低命中率）
+    # 低命中率尾数（<20%，建议排除）- 基于754场历史数据
+    '.00',  # 5.7%
+    '.50',  # 11.1%
+    '.10',  # 9.4%
+    '.90',  # 11.1%
+    '.95',  # 10.9%
+    '.25',  # 17.1%
+    '.75',  # 12.3%
+    '.60',  # 16.9%
+    '.80',  # 15.9%
+    '.30',  # 19.8%
 ]
 
 
 def _is_magic_bad(odds_val):
-    """判断赔率尾数是否属于低命中率神奇尾数"""
+    """
+    v7版：根据赔率区间排除低命中率尾数组合
+    基于754场历史数据统计
+    """
     if odds_val <= 0:
         return False
+    # 排除赔率>17（概率<6%）
+    if odds_val > 17:
+        return True
+    
+    # 按区间排除低命中率尾数
     frac = f'{odds_val:.2f}'[-2:]
-    return f'.{frac}' in MAGIC_BAD_SUFFIXES
+    s = f'.{frac}'
+    
+    if odds_val < 2:
+        return s in ['.95']                    # 0%
+    elif odds_val < 3:
+        return s in ['.95', '.00', '.70', '.40', '.85']  # 0-14%
+    elif odds_val < 4:
+        return s in ['.90', '.70', '.75']     # 0-13%
+    elif odds_val < 5:
+        return s in ['.10', '.75', '.90', '.80', '.60', '.70', '.00', '.50', '.35', '.65', '.45']  # 0-20%
+    elif odds_val < 8:
+        return s in ['.50', '.10', '.80', '.05', '.95', '.25', '.60', '.70', '.90', '.45']  # 0-13%
+    else:
+        return s in ['.00', '.50', '.25', '.75', '.20', '.30', '.70', '.60', '.15']  # 0-7%
 
 
 def _is_bias_conflict(bias, hqc_label):
@@ -469,10 +500,10 @@ def predict_match(match, stats, history, hqc_bin_rate, league_rate, spf_bias_rat
     # ── 球队状态系数 ──
     team_form_mult = calc_team_form_score(match)
 
-    # ── v5排除法：排除高价/神奇尾数后选最低赔率 ──
+    # ── v5排除法：扩展神奇尾数版
     # 核心规则：
-    # 1. 排除神奇尾数(.65/.75/.95)
-    # 2. 排除赔率>10
+    # 1. 排除赔率>17
+    # 2. 排除低命中率尾数(.00/.50/.10/.90/.95/.25/.75/.60/.80/.30)
     # 3. 排除态系数<0.7
     # 4. 剩余选项中选赔率最低的
 
@@ -491,10 +522,10 @@ def predict_match(match, stats, history, hqc_bin_rate, league_rate, spf_bias_rat
             continue
 
         reasons = []
+        if o > 17:
+            reasons.append('高价')
         if _is_magic_bad(o):
             reasons.append('尾数')
-        if o > 10:
-            reasons.append('高价')
         if team_form_mult:
             tf = team_form_mult.get(label, 1.0)
             if tf < 0.7:
