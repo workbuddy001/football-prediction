@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-竞彩网API数据抓取器 v2
-API: https://webapi.sporttery.cn/gateway/uniform/football/getFixedBonusV1.qry
+竞彩网API数据抓取器 v3 - 包含前瞻数据
 """
 import requests
 import json
@@ -11,7 +10,6 @@ from datetime import datetime
 
 class SportteryAPI:
     def __init__(self):
-        self.base_url = 'https://webapi.sporttery.cn/gateway/uniform/football/getFixedBonusV1.qry'
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15',
             'Referer': 'https://m.sporttery.cn/',
@@ -19,266 +17,220 @@ class SportteryAPI:
             'Origin': 'https://m.sporttery.cn',
         }
         self.client_code = '3001'
+        self.base_api = 'https://webapi.sporttery.cn/gateway/uniform/football'
 
-    def get_match_data(self, match_id):
-        """获取比赛数据"""
+    def _call_api(self, api_name, match_id):
+        """通用API调用"""
+        url = f"{self.base_api}/{api_name}.qry"
         params = {
             'clientCode': self.client_code,
-            'matchId': str(match_id)
+            'sportteryMatchId': str(match_id)
         }
-        
-        r = requests.get(self.base_url, params=params, headers=self.headers, timeout=15)
+        try:
+            r = requests.get(url, params=params, headers=self.headers, timeout=15)
+            r.encoding = 'utf-8'
+            if r.status_code == 200:
+                data = r.json()
+                if data.get('success'):
+                    return data.get('value', {})
+        except:
+            pass
+        return None
+
+    # ==================== 原始赔率数据 ====================
+    def get_match_data(self, match_id):
+        """获取比赛赔率数据"""
+        url = f"{self.base_api}/getFixedBonusV1.qry"
+        params = {'clientCode': self.client_code, 'matchId': str(match_id)}
+        r = requests.get(url, params=params, headers=self.headers, timeout=15)
         r.encoding = 'utf-8'
-        
         if r.status_code == 200 and 'json' in r.headers.get('Content-Type', ''):
             data = r.json()
             if data.get('success'):
                 return data.get('value', {})
-        
         return None
 
     def parse_score_odds(self, crs_list):
-        """解析比分赔率 - 从最新的数据中提取"""
+        """解析比分赔率"""
         import re
         score_odds = {}
-        
-        if not crs_list or len(crs_list) == 0:
+        if not crs_list:
             return score_odds
-        
-        # 使用最新的数据（最后一个元素）
         latest = crs_list[-1]
-        
-        # 比分格式: s01s00 = 主队1球:客队0球, s05s02 = 主5:客2
-        # 正则: s(\d+)s(\d+) 匹配比分
-        pattern = re.compile(r'^s(\d+)s(\d+)$')
-        
-        for key, value in latest.items():
-            if not key.startswith('s'):
-                continue
-            
-            # 跳过让球标记和变化标记
-            if key.startswith('s-'):
-                continue
-            if 'f' in key:  # 包含f的是变化标记
-                continue
-            
-            match = pattern.match(key)
-            if match:
-                try:
-                    home_goals = str(int(match.group(1)))
-                    away_goals = str(int(match.group(2)))
-                    odds = float(value)
-                    score_odds[f"{home_goals}:{away_goals}"] = odds
-                except:
-                    pass
-        
+        for item in latest.get('hhadList', []):
+            if item.get('v') and float(item.get('v', 0)) > 0:
+                score_odds[item['h'] + '-' + item['a']] = item['v']
         return score_odds
 
-    def parse_total_goals(self, ttg_list):
-        """解析总进球赔率"""
-        total_goals = {}
-        
-        if not ttg_list or len(ttg_list) == 0:
-            return total_goals
-        
-        # 使用最新的数据
-        latest = ttg_list[-1]
-        
-        for key, value in latest.items():
-            if not key.startswith('s'):
-                continue
-            
-            # 解析总进球
-            # s0=0球, s1=1球, s2=2球, s3+=3球或以上
-            parts = key[1:]
-            
-            # 跳过变化标记
-            if 'f' in parts:
-                continue
-            
-            try:
-                if parts.startswith('0'):
-                    goals = '0'
-                elif parts.startswith('1'):
-                    goals = '1'
-                elif parts.startswith('2'):
-                    goals = '2'
-                elif parts.startswith('3'):
-                    goals = '3+'
-                elif parts.startswith('4'):
-                    goals = '4+'
-                elif parts.startswith('5'):
-                    goals = '5+'
-                elif parts.startswith('6'):
-                    goals = '6+'
-                elif parts.startswith('7'):
-                    goals = '7+'
-                else:
-                    continue
-                
-                odds = float(value)
-                total_goals[f"{goals}球"] = odds
-            except:
-                pass
-        
-        return total_goals
-
-    def parse_had(self, had_list):
-        """解析胜平负赔率"""
-        had = {}
-        
-        if not had_list or len(had_list) == 0:
-            return had
-        
-        latest = had_list[-1]
-        
-        # had = 胜平负: h=主胜, d=平, a=客胜
-        if isinstance(latest, dict):
-            had = {
-                '主胜': latest.get('h', 0),
-                '平局': latest.get('d', 0),
-                '主负': latest.get('a', 0),
-                '更新时间': f"{latest.get('updateDate', '')} {latest.get('updateTime', '')}"
-            }
-        
-        return had
-
-    def parse_hhad(self, hhad_list):
-        """解析让球胜平负"""
-        hhad = {}
-        
-        if not hhad_list or len(hhad_list) == 0:
-            return hhad
-        
-        latest = hhad_list[-1]
-        
-        # hhad: h=让胜, d=让平, a=让负, goalLine=让球数
-        if isinstance(latest, dict):
-            hhad = {
-                '让胜': latest.get('h', 0),
-                '让平': latest.get('d', 0),
-                '让负': latest.get('a', 0),
-                '让球数': latest.get('goalLine', ''),
-                '更新时间': f"{latest.get('updateDate', '')} {latest.get('updateTime', '')}"
-            }
-        
-        return hhad
-
-    def parse_hafu(self, hafu_list):
-        """解析半全场赔率"""
-        hafu = {}
-        
-        if not hafu_list or len(hafu_list) == 0:
-            return hafu
-        
-        latest = hafu_list[-1]
-        
-        if isinstance(latest, dict):
-            # 半全场: 胜胜/胜平/胜负, 平胜/平平/平负, 负胜/负平/负负
-            hafu = {
-                '胜胜': latest.get('v0', 0),
-                '胜平': latest.get('v1', 0),
-                '胜负': latest.get('v3', 0),
-                '平胜': latest.get('v4', 0),
-                '平平': latest.get('v5', 0),
-                '平负': latest.get('v7', 0),
-                '负胜': latest.get('v8', 0),
-                '负平': latest.get('v9', 0),
-                '负负': latest.get('v10', 0),
-                '更新时间': f"{latest.get('updateDate', '')} {latest.get('updateTime', '')}"
-            }
-        
-        return hafu
-
-    def format_match_data(self, data):
-        """格式化比赛数据"""
+    # ==================== 前瞻数据API ====================
+    def get_preview_data(self, match_id):
+        """获取前瞻数据（特征分析、历史交锋、伤停等）"""
         result = {
-            'match_info': {},
-            'score_odds': {},
-            'total_goals': {},
-            'had': {},
-            'hhad': {},
-            'hafu': {}
+            'feature': {},
+            'history': {},
+            'injury': {},
+            'recent': {},
+            'tables': {},
+            'player': {}
         }
         
-        odds_history = data.get('oddsHistory', {})
+        # 特征分析
+        data = self._call_api('getMatchFeatureV1', match_id)
+        if data:
+            result['feature'] = data
         
-        # 比赛信息
-        result['match_info'] = {
-            'home_team': odds_history.get('homeTeamAllName', ''),
-            'away_team': odds_history.get('awayTeamAllName', ''),
-            'home_abb': odds_history.get('homeTeamAbbName', ''),
-            'away_abb': odds_history.get('awayTeamAbbName', ''),
-            'isCancel': data.get('isCancel', 0)
-        }
+        # 历史交锋
+        data = self._call_api('getResultHistoryV1', match_id)
+        if data:
+            result['history'] = data
         
-        # 各玩法赔率
-        result['score_odds'] = self.parse_score_odds(odds_history.get('crsList', []))
-        result['total_goals'] = self.parse_total_goals(odds_history.get('ttgList', []))
-        result['had'] = self.parse_had(odds_history.get('hadList', []))
-        result['hhad'] = self.parse_hhad(odds_history.get('hhadList', []))
-        result['hafu'] = self.parse_hafu(odds_history.get('hafuList', []))
+        # 伤停一览
+        data = self._call_api('getInjurySuspensionV1', match_id)
+        if data:
+            result['injury'] = data
+        
+        # 比赛近况
+        data = self._call_api('getMatchResultV1', match_id)
+        if data:
+            result['recent'] = data
+        
+        # 积分榜
+        data = self._call_api('getMatchTablesV1', match_id)
+        if data:
+            result['tables'] = data
+        
+        # 射手信息
+        data = self._call_api('getMatchPlayerV1', match_id)
+        if data:
+            result['player'] = data
         
         return result
 
-    def fetch_and_save(self, match_id, output_dir='sporttery_data'):
-        """抓取并保存数据"""
-        print(f'正在获取比赛 {match_id} 的数据...')
-        
+    # ==================== 数据保存 ====================
+    def fetch_and_save(self, match_id):
+        """抓取并保存完整数据"""
         data = self.get_match_data(match_id)
         if not data:
-            print('获取数据失败')
             return None
         
-        formatted = self.format_match_data(data)
+        # 获取赔率数据（在 oddsHistory 里）
+        odds_data = data.get('oddsHistory', {})
+        match_data = data.get('match', odds_data)  # 兼容两种格式
+        
+        # 解析赔率数据
+        match_info = self._parse_match_info(match_data)
+        score_odds = self._parse_score_odds(odds_data)
+        total_goals = self._parse_total_goals(odds_data)
+        had = self._parse_had(odds_data)
+        ttg = self._parse_ttg(odds_data)
+        hafu = self._parse_hafu(odds_data)
+        hhad = self._parse_hhad(odds_data)
+        
+        # 获取前瞻数据
+        preview = self.get_preview_data(match_id)
+        
+        result = {
+            'match_id': match_id,
+            'fetch_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'match_info': match_info,
+            'score_odds': score_odds,
+            'total_goals': total_goals,
+            'had': had,
+            'ttg': ttg,
+            'hafu': hafu,
+            'hhad': hhad,
+            'preview': preview
+        }
         
         # 保存
-        os.makedirs(output_dir, exist_ok=True)
-        filename = f"{formatted['match_info']['home_abb']}vs{formatted['match_info']['away_abb']}_{match_id}.json"
-        filepath = os.path.join(output_dir, filename)
-        
+        os.makedirs('sporttery_data', exist_ok=True)
+        filepath = os.path.join('sporttery_data', f'{match_id}.json')
         with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump({
-                'match_id': match_id,
-                'fetch_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                **formatted
-            }, f, ensure_ascii=False, indent=2)
+            json.dump(result, f, ensure_ascii=False, indent=2)
         
-        print(f'已保存到: {filepath}')
-        return formatted
+        return result
 
+    def _parse_match_info(self, data):
+        """解析比赛基本信息"""
+        return {
+            'home_team': data.get('homeTeamAllName', '') or data.get('homeTeamName', ''),
+            'away_team': data.get('awayTeamAllName', '') or data.get('awayTeamName', ''),
+            'league': data.get('leagueAllName', '') or data.get('leagueName', ''),
+            'time': data.get('matchTime', '')[:16] if data.get('matchTime') else ''
+        }
 
-def main():
-    api = SportteryAPI()
-    
-    # 测试
-    match_id = '2039135'
-    
-    print('='*60)
-    print(f'竞彩网数据抓取 - 比赛 {match_id}')
-    print('='*60)
-    
-    result = api.fetch_and_save(match_id)
-    
-    if result:
-        print('\n比赛信息:')
-        print(f"  主队: {result['match_info']['home_team']}")
-        print(f"  客队: {result['match_info']['away_team']}")
-        
-        print('\n比分赔率(部分):')
-        for k, v in sorted(result['score_odds'].items(), key=lambda x: x[1])[:10]:
-            print(f"  {k}: {v}")
-        
-        print('\n总进球:')
-        for k, v in sorted(result['total_goals'].items(), key=lambda x: float(x[1] or 0))[:5]:
-            print(f"  {k}: {v}")
-        
-        print('\n胜平负:')
-        print(f"  {result['had']}")
-        
-        print('\n让球胜平负:')
-        print(f"  {result['hhad']}")
+    def _parse_score_odds(self, data):
+        """解析比分赔率 - 格式: s主队进球s客队进球"""
+        score_odds = {}
+        for item in data.get('crsList', []):
+            if isinstance(item, dict):
+                for key, val in item.items():
+                    # 匹配格式: s02s01 (主2球-客1球)
+                    import re
+                    m = re.match(r'^s(\d+)s(\d+)$', key)
+                    if m and val and float(val) > 0:
+                        home_goals = m.group(1)
+                        away_goals = m.group(2)
+                        score_odds[f"{home_goals}:{away_goals}"] = val
+        return score_odds
 
+    def _parse_total_goals(self, data):
+        """解析总进球 - 格式: [{"s0":"30.00","s1":"9.00","s2":"4.85",...}]"""
+        total_goals = {}
+        for item in data.get('ttgList', []):
+            if isinstance(item, dict):
+                for key, val in item.items():
+                    # 匹配格式: s0, s1, s2, ... (总进球数)
+                    if key.startswith('s') and key[1:].isdigit() and val and float(val) > 0:
+                        goals = key[1:]
+                        total_goals[f"{goals}球"] = val
+        return total_goals
 
-if __name__ == '__main__':
-    main()
+    def _parse_had(self, data):
+        """解析胜平负 - 格式: [{"h":"胜","d":"3.90","a":"3.06"}]"""
+        had = {}
+        for item in data.get('hadList', []):
+            if isinstance(item, dict):
+                if item.get('h') and float(item['h']) > 0:
+                    had['胜'] = item['h']
+                if item.get('d') and float(item['d']) > 0:
+                    had['平'] = item['d']
+                if item.get('a') and float(item['a']) > 0:
+                    had['负'] = item['a']
+        return had
+
+    def _parse_ttg(self, data):
+        """解析总进球"""
+        return self._parse_total_goals(data)
+
+    def _parse_hafu(self, data):
+        """解析半全场 - 格式: [{"hh":"2.85","dh":"5.40","ah":"18.00","hd":"13.00","dd":"7.25","ad":"13.00","ha":"24.00","da":"8.00","aa":"4.90"}]"""
+        # hh=胜胜, dh=平胜, ah=负胜, hd=胜平, dd=平平, ad=负平, ha=胜负, da=平负, aa=负负
+        hafu_names = {
+            'hh': '胜胜', 'dh': '平胜', 'ah': '负胜',
+            'hd': '胜平', 'dd': '平平', 'ad': '负平',
+            'ha': '胜负', 'da': '平负', 'aa': '负负'
+        }
+        hafu = {}
+        for item in data.get('hafuList', []):
+            if isinstance(item, dict):
+                for key, val in item.items():
+                    if key in hafu_names and val and float(val) > 0:
+                        hafu[hafu_names[key]] = val
+        return hafu
+
+    def _parse_hhad(self, data):
+        """解析让球胜平负 - 格式: [{"goalLine":"-1","h":"3.25","d":"4.00","a":"1.75"}]"""
+        hhad = {}
+        for item in data.get('hhadList', []):
+            if isinstance(item, dict):
+                goal_line = item.get('goalLine', '')
+                if goal_line:
+                    hhad['让球'] = goal_line
+                if item.get('h') and float(item['h']) > 0:
+                    hhad['让胜'] = item['h']
+                if item.get('d') and float(item['d']) > 0:
+                    hhad['让平'] = item['d']
+                if item.get('a') and float(item['a']) > 0:
+                    hhad['让负'] = item['a']
+        return hhad

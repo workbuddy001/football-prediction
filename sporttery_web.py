@@ -128,6 +128,61 @@ HTML_TEMPLATE = '''
         .instructions { background: #16213e; border-radius: 10px; padding: 20px; margin-bottom: 30px; text-align: center; }
         .instructions p { color: #888; margin: 5px 0; }
         .instructions .tip { color: #00d4ff; }
+        
+        /* 前瞻数据标签页 */
+        .preview-tabs { display: flex; gap: 5px; margin-top: 15px; border-bottom: 2px solid #0f3460; }
+        .preview-tab { padding: 8px 12px; background: #0f3460; border: none; border-radius: 6px 6px 0 0; color: #888; cursor: pointer; font-size: 12px; transition: all 0.2s; }
+        .preview-tab:hover { background: #1a4a7a; }
+        .preview-tab.active { background: #00d4ff; color: #1a1a2e; font-weight: bold; }
+        .preview-content { display: none; padding: 15px 0; }
+        .preview-content.active { display: block; }
+        
+        /* 前瞻数据样式 */
+        .preview-section { margin-bottom: 15px; }
+        .preview-section-title { color: #00d4ff; font-size: 14px; font-weight: bold; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #0f3460; }
+        .team-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .team-stats { background: #0f3460; padding: 12px; border-radius: 8px; }
+        .team-stats h4 { color: #00d4ff; margin-bottom: 8px; font-size: 14px; }
+        .form-list { display: flex; gap: 4px; margin-bottom: 8px; }
+        .form-item { width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; }
+        .form-win { background: #1e5631; color: #4ade80; }
+        .form-draw { background: #4a4a00; color: #facc15; }
+        .form-loss { background: #563a3a; color: #f87171; }
+        .stat-row { display: flex; justify-content: space-between; color: #aaa; font-size: 12px; margin: 4px 0; }
+        .stat-row span:last-child { color: #fff; }
+        
+        /* 历史交锋 */
+        .history-list { display: flex; flex-direction: column; gap: 10px; }
+        .history-item { background: #0f3460; padding: 12px; border-radius: 8px; }
+        .history-item .match-info { display: flex; justify-content: space-between; color: #888; font-size: 12px; margin-bottom: 8px; }
+        .history-item .score { font-size: 18px; font-weight: bold; text-align: center; margin: 5px 0; }
+        .history-item .teams { display: flex; justify-content: space-between; color: #aaa; font-size: 13px; }
+        
+        /* 伤停列表 */
+        .injury-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .injury-team { background: #0f3460; padding: 12px; border-radius: 8px; }
+        .injury-team h4 { color: #00d4ff; margin-bottom: 10px; }
+        .player-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #16213e; font-size: 12px; }
+        .player-item:last-child { border-bottom: none; }
+        .player-name { color: #fff; }
+        .player-pos { color: #888; }
+        .player-status { padding: 2px 6px; border-radius: 4px; font-size: 10px; }
+        .status-injury { background: #563a3a; color: #f87171; }
+        .status-suspend { background: #4a4a00; color: #facc15; }
+        
+        /* 射手榜 */
+        .scorer-list { display: flex; flex-direction: column; gap: 8px; }
+        .scorer-item { display: flex; align-items: center; gap: 10px; background: #0f3460; padding: 8px 12px; border-radius: 6px; }
+        .scorer-rank { width: 20px; height: 20px; background: #00d4ff; color: #1a1a2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; }
+        .scorer-name { flex: 1; color: #fff; font-size: 13px; }
+        .scorer-goals { color: #4ade80; font-weight: bold; font-size: 14px; }
+        .scorer-ratio { color: #888; font-size: 11px; }
+        
+        /* 积分榜 */
+        .standing-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        .standing-table th { background: #0f3460; color: #00d4ff; padding: 8px 4px; text-align: center; }
+        .standing-table td { padding: 8px 4px; text-align: center; color: #aaa; border-bottom: 1px solid #16213e; }
+        .standing-table tr:first-child td { color: #4ade80; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -212,9 +267,9 @@ HTML_TEMPLATE = '''
                     ` : ''}
                     
                     <!-- 让球胜平负 -->
-                    ${m.hhad && m.hhad.让球数 ? `
+                    ${m.hhad && m.hhad.让球 ? `
                     <div class="odds-section">
-                        <div class="odds-title">让球(${m.hhad.让球数})胜平负</div>
+                        <div class="odds-title">让球(${m.hhad.让球})胜平负</div>
                         <div class="odds-grid">
                             <div class="odds-item ${getOddsClass(m.hhad.让胜)}"><div class="label">让胜</div><div class="value">${m.hhad.让胜 || '-'}</div></div>
                             <div class="odds-item ${getOddsClass(m.hhad.让平)}"><div class="label">让平</div><div class="value">${m.hhad.让平 || '-'}</div></div>
@@ -232,6 +287,40 @@ HTML_TEMPLATE = '''
                         </div>
                     </div>
                     ` : ''}
+                    
+                    <!-- 前瞻数据标签页 -->
+                    <div class="preview-tabs">
+                        <button class="preview-tab active" onclick="switchPreviewTab(this, 'tab-feature-${m.match_id}')">特征</button>
+                        <button class="preview-tab" onclick="switchPreviewTab(this, 'tab-history-${m.match_id}')">交锋</button>
+                        <button class="preview-tab" onclick="switchPreviewTab(this, 'tab-injury-${m.match_id}')">伤停</button>
+                        <button class="preview-tab" onclick="switchPreviewTab(this, 'tab-player-${m.match_id}')">射手</button>
+                        <button class="preview-tab" onclick="switchPreviewTab(this, 'tab-standing-${m.match_id}')">积分</button>
+                    </div>
+                    
+                    <!-- 特征分析 -->
+                    <div id="tab-feature-${m.match_id}" class="preview-content active">
+                        ${renderFeature(m.preview)}
+                    </div>
+                    
+                    <!-- 历史交锋 -->
+                    <div id="tab-history-${m.match_id}" class="preview-content">
+                        ${renderHistory(m.preview)}
+                    </div>
+                    
+                    <!-- 伤停一览 -->
+                    <div id="tab-injury-${m.match_id}" class="preview-content">
+                        ${renderInjury(m.preview)}
+                    </div>
+                    
+                    <!-- 射手信息 -->
+                    <div id="tab-player-${m.match_id}" class="preview-content">
+                        ${renderPlayer(m.preview)}
+                    </div>
+                    
+                    <!-- 积分榜 -->
+                    <div id="tab-standing-${m.match_id}" class="preview-content">
+                        ${renderStanding(m.preview)}
+                    </div>
                 </div>
                 `}).join('');
         }
@@ -308,6 +397,175 @@ HTML_TEMPLATE = '''
                 const cls = i === 0 ? 'odds-item top' : getOddsClass(v);
                 return `<div class="${cls}"><div class="label">${k}</div><div class="value">${v}</div></div>`;
             }).join('');
+        }
+        
+        function switchPreviewTab(btn, tabId) {
+            // 隐藏所有tab content
+            btn.parentElement.parentElement.querySelectorAll('.preview-content').forEach(el => el.classList.remove('active'));
+            // 取消所有tab激活状态
+            btn.parentElement.querySelectorAll('.preview-tab').forEach(el => el.classList.remove('active'));
+            // 激活当前tab
+            btn.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+        
+        // 前瞻数据渲染函数
+        function renderFeature(preview) {
+            if (!preview || !preview.feature) return '<div class="no-data"><p>暂无特征数据</p></div>';
+            const f = preview.feature;
+            
+            // 使用 last (近况) 数据
+            const last = f.last || {};
+            const home = f.homeTeamShortName || '主队';
+            const away = f.awayTeamShortName || '客队';
+            
+            let html = '<div class="team-form">';
+            
+            // 主队
+            html += '<div class="team-stats">';
+            html += '<h4>🟢 ' + home + '</h4>';
+            html += '<div class="stat-row"><span>近' + (last.totalLegCnt||0) + '场</span><span>' + (last.homeWinMatchCnt||0) + '胜 ' + (last.homeDrawMatchCnt||0) + '平 ' + (last.homeLossMatchCnt||0) + '负</span></div>';
+            html += '<div class="stat-row"><span>场均进球</span><span>' + (f.goalAvg?.homeGoalAvgCnt||'0') + '</span></div>';
+            html += '<div class="stat-row"><span>场均失球</span><span>' + (f.lossGoalAvg?.homeLossGoalAvgCnt||'0') + '</span></div>';
+            html += '<div class="stat-row"><span>主场胜率</span><span>' + (f.eachHomeAway?.homeScoreRatio||'0') + '%</span></div>';
+            html += '</div>';
+            
+            // 客队
+            html += '<div class="team-stats">';
+            html += '<h4>🔴 ' + away + '</h4>';
+            html += '<div class="stat-row"><span>近' + (last.totalLegCnt||0) + '场</span><span>' + (last.awayWinMatchCnt||0) + '胜 ' + (last.awayDrawMatchCnt||0) + '平 ' + (last.awayLossMatchCnt||0) + '负</span></div>';
+            html += '<div class="stat-row"><span>场均进球</span><span>' + (f.goalAvg?.awayGoalAvgCnt||'0') + '</span></div>';
+            html += '<div class="stat-row"><span>场均失球</span><span>' + (f.lossGoalAvg?.awayLossGoalAvgCnt||'0') + '</span></div>';
+            html += '<div class="stat-row"><span>客场胜率</span><span>' + (f.eachHomeAway?.awayScoreRatio||'0') + '%</span></div>';
+            html += '</div>';
+            
+            html += '</div>';
+            return html;
+        }
+        
+        function renderHistory(preview) {
+            if (!preview || !preview.history) return '<div class="no-data"><p>暂无交锋数据</p></div>';
+            const list = preview.history.matchList || [];
+            
+            if (!list || list.length === 0) return '<div class="no-data"><p>暂无交锋数据</p></div>';
+            
+            let html = '<div class="history-list">';
+            list.slice(0, 5).forEach(m => {
+                html += '<div class="history-item">';
+                html += '<div class="match-info"><span>' + (m.matchDate||'') + '</span><span>' + (m.tournamentShortName||'') + '</span></div>';
+                html += '<div class="score">' + (m.homeTeamFullCourtGoalCnt||'') + ' - ' + (m.awayTeamFullCourtGoalCnt||'') + '</div>';
+                html += '<div class="teams"><span>' + (m.homeTeamShortName||'') + '</span><span>' + (m.awayTeamShortName||'') + '</span></div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            return html;
+        }
+        
+        function renderInjury(preview) {
+            if (!preview || !preview.injury) return '<div class="no-data"><p>暂无伤停数据</p></div>';
+            const home = preview.injury.home || {};
+            const away = preview.injury.away || {};
+            const homeList = home.injuriesAndSuspensionsList || [];
+            const awayList = away.injuriesAndSuspensionsList || [];
+            
+            let html = '<div class="injury-grid">';
+            
+            // 主队
+            html += '<div class="injury-team">';
+            html += '<h4>🟢 ' + (home.teamShortName||'主队') + ' 伤停</h4>';
+            if (homeList.length === 0) {
+                html += '<p style="color:#888;font-size:12px">无伤停</p>';
+            } else {
+                homeList.forEach(p => {
+                    const statusCls = 'status-injury';
+                    html += '<div class="player-item"><span class="player-name">' + (p.personName||'') + '</span><span class="player-pos">' + (p.playerPositionDesc||'') + '</span><span class="player-status ' + statusCls + '">伤停</span></div>';
+                });
+            }
+            html += '</div>';
+            
+            // 客队
+            html += '<div class="injury-team">';
+            html += '<h4>🔴 ' + (away.teamShortName||'客队') + ' 伤停</h4>';
+            if (awayList.length === 0) {
+                html += '<p style="color:#888;font-size:12px">无伤停</p>';
+            } else {
+                awayList.forEach(p => {
+                    const statusCls = 'status-injury';
+                    html += '<div class="player-item"><span class="player-name">' + (p.personName||'') + '</span><span class="player-pos">' + (p.playerPositionDesc||'') + '</span><span class="player-status ' + statusCls + '">伤停</span></div>';
+                });
+            }
+            html += '</div>';
+            
+            html += '</div>';
+            return html;
+        }
+        
+        function renderPlayer(preview) {
+            if (!preview || !preview.player) return '<div class="no-data"><p>暂无射手数据</p></div>';
+            const home = preview.player.home || {};
+            const away = preview.player.away || {};
+            const homeList = home.playerList || [];
+            const awayList = away.playerList || [];
+            
+            let html = '<div class="team-form">';
+            
+            // 主队射手
+            html += '<div class="team-stats">';
+            html += '<h4>🟢 ' + (home.teamShortName||'主队') + '</h4>';
+            if (homeList.length === 0) {
+                html += '<p style="color:#888;font-size:12px">暂无数据</p>';
+            } else {
+                html += '<div class="scorer-list">';
+                homeList.slice(0, 5).forEach((p, i) => {
+                    html += '<div class="scorer-item"><span class="scorer-rank">' + (i+1) + '</span><span class="scorer-name">' + (p.personName||'') + '</span><span class="scorer-goals">' + (p.goalCnt||0) + '球</span><span class="scorer-ratio">' + (p.goalAvgCnt||'') + '</span></div>';
+                });
+                html += '</div>';
+            }
+            html += '</div>';
+            
+            // 客队射手
+            html += '<div class="team-stats">';
+            html += '<h4>🔴 ' + (away.teamShortName||'客队') + '</h4>';
+            if (awayList.length === 0) {
+                html += '<p style="color:#888;font-size:12px">暂无数据</p>';
+            } else {
+                html += '<div class="scorer-list">';
+                awayList.slice(0, 5).forEach((p, i) => {
+                    html += '<div class="scorer-item"><span class="scorer-rank">' + (i+1) + '</span><span class="scorer-name">' + (p.personName||'') + '</span><span class="scorer-goals">' + (p.goalCnt||0) + '球</span><span class="scorer-ratio">' + (p.goalAvgCnt||'') + '</span></div>';
+                });
+                html += '</div>';
+            }
+            html += '</div>';
+            
+            html += '</div>';
+            return html;
+        }
+        
+        function renderStanding(preview) {
+            if (!preview || !preview.tables) return '<div class="no-data"><p>暂无积分榜数据</p></div>';
+            const tables = preview.tables;
+            const tableList = tables.tables || [];
+            
+            if (!tableList || tableList.length === 0) {
+                return '<div class="no-data"><p>暂无积分榜数据</p></div>';
+            }
+            
+            let html = '<div class="preview-section"><div class="preview-section-title">' + (tables.tournamentShortName||'') + ' 积分榜</div>';
+            html += '<table class="standing-table"><tr><th>排名</th><th>球队</th><th>场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th></tr>';
+            
+            // 找到主客队
+            const homeTeam = tables.tables?.find(t => t.sportteryTeamId === tables.sportteryHomeTeamId);
+            const awayTeam = tables.tables?.find(t => t.sportteryTeamId === tables.sportteryAwayTeamId);
+            
+            tableList.forEach(t => {
+                const isHome = homeTeam && t.ranking === homeTeam.ranking;
+                const isAway = awayTeam && t.ranking === awayTeam.ranking;
+                const rowStyle = isHome || isAway ? 'style="color:#00d4ff;font-weight:bold"' : '';
+                html += '<tr ' + rowStyle + '><td>' + (t.ranking||'') + '</td><td>' + (t.teamShortName||'') + '</td><td>' + (t.totalLegCnt||'') + '</td><td>' + (t.winGoalMatchCnt||'') + '</td><td>' + (t.drawMatchCnt||'') + '</td><td>' + (t.lossGoalMatchCnt||'') + '</td><td>' + (t.points||'') + '</td></tr>';
+            });
+            html += '</table></div>';
+            
+            return html;
         }
         
         async function fetchMatch() {
