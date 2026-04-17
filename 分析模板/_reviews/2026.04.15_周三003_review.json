@@ -1,0 +1,97 @@
+{
+  "match_id": "周三003",
+  "date_folder": "2026.04.15",
+  "home_team": "特罗姆瑟",
+  "away_team": "利勒斯特",
+  "league": "挪超",
+  "handicap": "-1",
+  "home_form": "WWWWWL",
+  "away_form": "WWLLWW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "draw",
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.02>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-4.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.7%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+8.6%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+8.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降15升10 / 平降6升19 / 客降2升21",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:0(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「特羅素 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-17 14:42",
+  "macao_tip": "特羅素 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.68,
+    "jc_draw_chg": 2.74,
+    "jc_away_chg": 8.65,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.71,
+      3.65,
+      3.7
+    ],
+    "jc_real_odds": [
+      1.63,
+      3.75,
+      4.02
+    ],
+    "macao_init_odds": [
+      1.78,
+      3.6,
+      3.5
+    ],
+    "macao_real_odds": [
+      1.78,
+      3.6,
+      3.5
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNN"
+  }
+}

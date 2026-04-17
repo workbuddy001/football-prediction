@@ -1,0 +1,112 @@
+{
+  "match_id": "周二001",
+  "date_folder": "2026.04.14",
+  "home_team": "胡巴尔卡德西亚",
+  "away_team": "利雅得青年",
+  "league": "沙特职业联赛",
+  "handicap": "-1",
+  "home_form": "DLWWDW",
+  "away_form": "DWDLWW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率4.48≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.48>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.42<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-7.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+9.3%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+16.5%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+9.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+16.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降13升8 / 平降1升26 / 客降11升11",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:2(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-15 11:13",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -7.79,
+    "jc_draw_chg": 9.27,
+    "jc_away_chg": 16.47,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.54,
+      4.1,
+      4.25
+    ],
+    "jc_real_odds": [
+      1.42,
+      4.48,
+      4.95
+    ],
+    "macao_init_odds": [
+      1.48,
+      4.35,
+      4.6
+    ],
+    "macao_real_odds": [
+      1.48,
+      4.35,
+      4.6
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNN"
+  }
+}

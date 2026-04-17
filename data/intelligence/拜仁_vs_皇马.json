@@ -1,0 +1,75 @@
+{
+  "match_key": "拜仁 vs 皇马",
+  "raw_text": "1",
+  "parsed": {
+    "rawText": "1",
+    "homeTeam": "拜仁",
+    "awayTeam": "皇马",
+    "meta": {},
+    "injuries": {
+      "home": {
+        "team": "拜仁",
+        "out": [],
+        "doubtful": [],
+        "available": [],
+        "suspended": [],
+        "summary": "",
+        "impactScore": 0
+      },
+      "away": {
+        "team": "皇马",
+        "out": [],
+        "doubtful": [],
+        "available": [],
+        "suspended": [],
+        "summary": "",
+        "impactScore": 0
+      }
+    },
+    "motivation": {
+      "home": {
+        "level": "medium",
+        "reasons": [],
+        "confidence": 0.3,
+        "mult": 1
+      },
+      "away": {
+        "level": "medium",
+        "reasons": [],
+        "confidence": 0.3,
+        "mult": 1
+      }
+    },
+    "tactics": {
+      "home": {
+        "style": "balanced",
+        "keywords": []
+      },
+      "away": {
+        "style": "balanced",
+        "keywords": []
+      }
+    },
+    "conclusion": {
+      "prediction": "",
+      "confidence": "",
+      "reasoning": [],
+      "goals": "",
+      "scores": []
+    },
+    "btMultData": {
+      "injuryGap": 0,
+      "homeInjuryScore": 0,
+      "awayInjuryScore": 0,
+      "homeMotivationLevel": "medium",
+      "awayMotivationLevel": "medium",
+      "homeMotivationMult": 1,
+      "awayMotivationMult": 1,
+      "motivationGap": 0
+    },
+    "injuryGap": 0,
+    "motivationGap": 0
+  },
+  "saved_at": "2026-04-15 20:49",
+  "updated_at": "2026-04-15 20:49"
+}

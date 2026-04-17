@@ -1,0 +1,50 @@
+{
+  "dataFrom": "",
+  "emptyFlag": false,
+  "errorCode": "0",
+  "errorMessage": "处理成功",
+  "success": true,
+  "value": {
+    "phaseId": 48081,
+    "seasonId": 13971,
+    "seasonName": "2025/2026",
+    "tables": [
+      {
+        "drawMatchCnt": 6,
+        "groupId": 0,
+        "groupName": "",
+        "lossGoalMatchCnt": 8,
+        "phaseName": "",
+        "points": "36",
+        "ranking": "5",
+        "sportteryTeamId": 1077,
+        "teamId": 0,
+        "teamShortName": "墨胜利",
+        "totalLegCnt": 24,
+        "uniformTeamId": 454,
+        "winGoalMatchCnt": 10,
+        "winProbability": "42%"
+      },
+      {
+        "drawMatchCnt": 2,
+        "groupId": 0,
+        "groupName": "",
+        "lossGoalMatchCnt": 8,
+        "phaseName": "",
+        "points": "44",
+        "ranking": "1",
+        "sportteryTeamId": 1136,
+        "teamId": 0,
+        "teamShortName": "纽喷气机",
+        "totalLegCnt": 24,
+        "uniformTeamId": 210,
+        "winGoalMatchCnt": 14,
+        "winProbability": "58%"
+      }
+    ],
+    "tournamentId": 39,
+    "tournamentShortName": "澳超",
+    "uniformLeagueId": 70,
+    "uniformMatchId": 2386894
+  }
+}

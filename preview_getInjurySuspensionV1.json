@@ -1,0 +1,145 @@
+{
+  "dataFrom": "",
+  "emptyFlag": false,
+  "errorCode": "0",
+  "errorMessage": "处理成功",
+  "success": true,
+  "value": {
+    "away": {
+      "injuriesAndSuspensionsList": [
+        {
+          "appearanceCnt": 19,
+          "injuryFlag": 1,
+          "personId": 143801,
+          "personName": "绍内西",
+          "playerPositionCode": "Defender",
+          "playerPositionDesc": "后卫",
+          "startedMatchCnt": 15,
+          "substituteMatchCnt": 4,
+          "suspensionFlag": 0,
+          "uniformNo": "5"
+        },
+        {
+          "appearanceCnt": 10,
+          "injuryFlag": 1,
+          "personId": 522668,
+          "personName": "T. Aquilina",
+          "playerPositionCode": "Defender",
+          "playerPositionDesc": "后卫",
+          "startedMatchCnt": 6,
+          "substituteMatchCnt": 4,
+          "suspensionFlag": 0,
+          "uniformNo": "39"
+        },
+        {
+          "appearanceCnt": 0,
+          "injuryFlag": 1,
+          "personId": 560316,
+          "personName": "N·詹姆斯",
+          "playerPositionCode": "Goalkeeper",
+          "playerPositionDesc": "守门员",
+          "startedMatchCnt": 0,
+          "substituteMatchCnt": 0,
+          "suspensionFlag": 0,
+          "uniformNo": "21"
+        },
+        {
+          "appearanceCnt": 11,
+          "injuryFlag": 1,
+          "personId": 680794,
+          "personName": "A. Badolate",
+          "playerPositionCode": "Midfielder",
+          "playerPositionDesc": "中场",
+          "startedMatchCnt": 11,
+          "substituteMatchCnt": 0,
+          "suspensionFlag": 0,
+          "uniformNo": "19"
+        },
+        {
+          "appearanceCnt": 3,
+          "injuryFlag": 1,
+          "personId": 795730,
+          "personName": "O. Fryer",
+          "playerPositionCode": "Forward",
+          "playerPositionDesc": "前锋",
+          "startedMatchCnt": 1,
+          "substituteMatchCnt": 2,
+          "suspensionFlag": 0,
+          "uniformNo": "25"
+        },
+        {
+          "appearanceCnt": 5,
+          "injuryFlag": 1,
+          "personId": 863440,
+          "personName": "C. Bracco",
+          "playerPositionCode": "Midfielder",
+          "playerPositionDesc": "中场",
+          "startedMatchCnt": 0,
+          "substituteMatchCnt": 5,
+          "suspensionFlag": 0,
+          "uniformNo": "45"
+        }
+      ],
+      "sportteryTeamId": 1136,
+      "teamId": 4320,
+      "teamShortName": "纽喷气机",
+      "uniformTeamId": 210
+    },
+    "home": {
+      "injuriesAndSuspensionsList": [
+        {
+          "appearanceCnt": 23,
+          "injuryFlag": 1,
+          "personId": 19106,
+          "personName": "Mata",
+          "playerPositionCode": "Midfielder",
+          "playerPositionDesc": "中场",
+          "startedMatchCnt": 20,
+          "substituteMatchCnt": 3,
+          "suspensionFlag": 0,
+          "uniformNo": "64"
+        },
+        {
+          "appearanceCnt": 16,
+          "injuryFlag": 1,
+          "personId": 674322,
+          "personName": "J. Reec",
+          "playerPositionCode": "Forward",
+          "playerPositionDesc": "前锋",
+          "startedMatchCnt": 3,
+          "substituteMatchCnt": 13,
+          "suspensionFlag": 0,
+          "uniformNo": "19"
+        },
+        {
+          "appearanceCnt": 22,
+          "injuryFlag": 1,
+          "personId": 693851,
+          "personName": "S. Esposito",
+          "playerPositionCode": "Defender",
+          "playerPositionDesc": "后卫",
+          "startedMatchCnt": 20,
+          "substituteMatchCnt": 2,
+          "suspensionFlag": 0,
+          "uniformNo": "15"
+        },
+        {
+          "appearanceCnt": 11,
+          "injuryFlag": 1,
+          "personId": 789515,
+          "personName": "J. Inserra",
+          "playerPositionCode": "Defender",
+          "playerPositionDesc": "后卫",
+          "startedMatchCnt": 9,
+          "substituteMatchCnt": 2,
+          "suspensionFlag": 0,
+          "uniformNo": "16"
+        }
+      ],
+      "sportteryTeamId": 1077,
+      "teamId": 4318,
+      "teamShortName": "墨胜利",
+      "uniformTeamId": 454
+    }
+  }
+}

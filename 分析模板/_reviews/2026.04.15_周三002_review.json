@@ -1,0 +1,100 @@
+{
+  "match_id": "周三002",
+  "date_folder": "2026.04.15",
+  "home_team": "曼谷联",
+  "away_team": "大阪钢巴",
+  "league": "亚洲冠军乙级联赛",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "0:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.45>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.8%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+17.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降7升21 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（主胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：主胜赔率5.45>5.0",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+2.8%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+17.2%>5%"
+  ],
+  "review_time": "2026-04-17 14:42",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 17.2,
+    "jc_draw_chg": 2.78,
+    "jc_away_chg": -5.73,
+    "mcao_home_chg": 12.13,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -3.85,
+    "jc_init_odds": [
+      4.65,
+      3.6,
+      1.57
+    ],
+    "jc_real_odds": [
+      5.45,
+      3.7,
+      1.48
+    ],
+    "macao_init_odds": [
+      4.37,
+      3.2,
+      1.56
+    ],
+    "macao_real_odds": [
+      4.9,
+      3.2,
+      1.5
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UND"
+  }
+}

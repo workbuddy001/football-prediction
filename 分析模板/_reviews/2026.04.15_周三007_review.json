@@ -1,0 +1,101 @@
+{
+  "match_id": "周三007",
+  "date_folder": "2026.04.15",
+  "home_team": "弗鲁米嫩",
+  "away_team": "里瓦达维亚独立",
+  "league": "解放者杯",
+  "handicap": "-1",
+  "home_form": "LDDWWL",
+  "away_form": "WWWWWL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "draw",
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.72≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.72>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.40>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.42<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降29升1 / 客降28升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在客方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-17 14:42",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.39,
+    "jc_draw_chg": 0.54,
+    "jc_away_chg": 4.92,
+    "mcao_home_chg": 8.39,
+    "mcao_draw_chg": -9.09,
+    "mcao_away_chg": -14.75,
+    "jc_init_odds": [
+      1.44,
+      3.7,
+      6.1
+    ],
+    "jc_real_odds": [
+      1.42,
+      3.72,
+      6.4
+    ],
+    "macao_init_odds": [
+      1.43,
+      3.85,
+      6.1
+    ],
+    "macao_real_odds": [
+      1.55,
+      3.5,
+      5.2
+    ],
+    "jc_pattern": "NNU",
+    "macao_pattern": "UDD"
+  }
+}

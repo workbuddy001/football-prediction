@@ -1,0 +1,98 @@
+{
+  "match_id": "周三006",
+  "date_folder": "2026.04.15",
+  "home_team": "拜仁",
+  "away_team": "皇马",
+  "league": "欧冠",
+  "handicap": "-1",
+  "home_form": "WWWWWD",
+  "away_form": "DLLWWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "4:3",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率5.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.35>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.43<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-1.1%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升0 / 平降0升29 / 客降3升22",
+      "strength": 3
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:3(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.43<1.5，庄家高度自信",
+    "📈 关键信号「[不跟]标签」有效：竞彩降客胜-1.1%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩平局升+5.3%>5%"
+  ],
+  "review_time": "2026-04-17 14:42",
+  "macao_tip": "拜仁慕尼黑 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.38,
+    "jc_draw_chg": 5.26,
+    "jc_away_chg": -1.14,
+    "mcao_home_chg": -1.33,
+    "mcao_draw_chg": 4.26,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.45,
+      4.75,
+      4.4
+    ],
+    "jc_real_odds": [
+      1.43,
+      5.0,
+      4.35
+    ],
+    "macao_init_odds": [
+      1.5,
+      4.7,
+      4.35
+    ],
+    "macao_real_odds": [
+      1.48,
+      4.9,
+      4.35
+    ],
+    "jc_pattern": "NUN",
+    "macao_pattern": "NUN"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "dataFrom": "",
+  "emptyFlag": false,
+  "errorCode": "0",
+  "errorMessage": "处理成功",
+  "success": true,
+  "value": {
+    "away": {
+      "matchList": [
+        {
+          "awayTeamId": 4317,
+          "awayTeamShortName": "中央海岸",
+          "gameweek": "26",
+          "groupId": 0,
+          "groupName": "",
+          "homeTeamId": 4320,
+          "homeTeamShortName": "纽喷气机",
+          "matchDateTime": "2026-04-25 15:00:00",
+          "matchId": 2445044,
+          "phaseId": 48081,
+          "phaseName": "Regular Season",
+          "seasonId": 13971,
+          "sportteryAwayTeamId": 1135,
+          "sportteryHomeTeamId": 1136,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 453,
+          "uniformHomeTeamId": 210
+        }
+      ],
+      "sportteryTeamId": 1136,
+      "teamId": 4320,
+      "teamShortName": "纽喷气机",
+      "uniformTeamId": 210
+    },
+    "home": {
+      "matchList": [
+        {
+          "awayTeamId": 4318,
+          "awayTeamShortName": "墨胜利",
+          "gameweek": "26",
+          "groupId": 0,
+          "groupName": "",
+          "homeTeamId": 21585,
+          "homeTeamShortName": "西悉尼",
+          "matchDateTime": "2026-04-25 17:35:00",
+          "matchId": 2445043,
+          "phaseId": 48081,
+          "phaseName": "Regular Season",
+          "seasonId": 13971,
+          "sportteryAwayTeamId": 1077,
+          "sportteryHomeTeamId": 1686,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 454,
+          "uniformHomeTeamId": 329
+        }
+      ],
+      "sportteryTeamId": 1077,
+      "teamId": 4318,
+      "teamShortName": "墨胜利",
+      "uniformTeamId": 454
+    }
+  }
+}

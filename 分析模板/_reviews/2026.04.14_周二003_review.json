@@ -1,0 +1,85 @@
+{
+  "match_id": "周二003",
+  "date_folder": "2026.04.14",
+  "home_team": "利物浦",
+  "away_team": "巴黎圣曼",
+  "league": "欧冠",
+  "handicap": "-1",
+  "home_form": "WLLLWD",
+  "away_form": "WWWWWL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在平方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率4.06≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.06>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降10升20 / 平降10升13 / 客降13升16",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为0:2(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在平方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-15 11:14",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.19,
+    "jc_draw_chg": 5.45,
+    "jc_away_chg": -7.29,
+    "mcao_home_chg": 5.38,
+    "mcao_draw_chg": -3.39,
+    "mcao_away_chg": -3.23,
+    "jc_init_odds": [
+      2.15,
+      3.85,
+      2.47
+    ],
+    "jc_real_odds": [
+      2.24,
+      4.06,
+      2.29
+    ],
+    "macao_init_odds": [
+      2.23,
+      3.83,
+      2.48
+    ],
+    "macao_real_odds": [
+      2.35,
+      3.7,
+      2.4
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UDD"
+  }
+}

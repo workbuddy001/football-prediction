@@ -1,0 +1,82 @@
+{
+  "match_id": "周三004",
+  "date_folder": "2026.04.15",
+  "home_team": "萨普斯堡",
+  "away_team": "博德闪耀",
+  "league": "挪超",
+  "handicap": "1",
+  "home_form": "LDDWWL",
+  "away_form": "LWWWLW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除①",
+      "detail": "澳门推荐'和局'，方向赔率5.25≥5.0",
+      "strength": 5
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.70>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降22升5 / 平降11升13 / 客降5升21",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-17 14:42",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -3.51,
+    "mcao_draw_chg": -4.76,
+    "mcao_away_chg": 2.27,
+    "jc_init_odds": [
+      5.7,
+      5.25,
+      1.31
+    ],
+    "jc_real_odds": [
+      5.7,
+      5.25,
+      1.31
+    ],
+    "macao_init_odds": [
+      5.7,
+      5.25,
+      1.32
+    ],
+    "macao_real_odds": [
+      5.5,
+      5.0,
+      1.35
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "DDU"
+  }
+}

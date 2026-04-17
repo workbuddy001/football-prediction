@@ -1,0 +1,86 @@
+{
+  "match_id": "周四003",
+  "date_folder": "2026.04.16",
+  "home_team": "贝蒂斯",
+  "away_team": "布拉加",
+  "league": "欧罗巴",
+  "handicap": "-1",
+  "home_form": "DDDLWD",
+  "away_form": "WDWLWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:4",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+7.0%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+7.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降9升16 / 平降19升2 / 客降4升18",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:4(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-17 14:44",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.41,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 6.98,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.66,
+      3.4,
+      4.3
+    ],
+    "jc_real_odds": [
+      1.62,
+      3.4,
+      4.6
+    ],
+    "macao_init_odds": [
+      1.84,
+      3.23,
+      3.68
+    ],
+    "macao_real_odds": [
+      1.84,
+      3.23,
+      3.68
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

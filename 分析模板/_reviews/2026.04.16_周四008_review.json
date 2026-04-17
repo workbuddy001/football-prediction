@@ -1,0 +1,97 @@
+{
+  "match_id": "周四008",
+  "date_folder": "2026.04.16",
+  "home_team": "帕梅拉斯",
+  "away_team": "水晶体育",
+  "league": "解放者杯",
+  "handicap": "-2",
+  "home_form": "DDWWWW",
+  "away_form": "WLLWLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw",
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率6.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率13.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.20<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-20.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降21升2 / 客降18升5",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-17 14:44",
+  "macao_tip": "帕尔梅拉斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.26,
+    "jc_draw_chg": -20.0,
+    "jc_away_chg": -23.53,
+    "mcao_home_chg": 0.85,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -9.09,
+    "jc_init_odds": [
+      1.14,
+      7.5,
+      17.0
+    ],
+    "jc_real_odds": [
+      1.2,
+      6.0,
+      13.0
+    ],
+    "macao_init_odds": [
+      1.17,
+      6.0,
+      11.0
+    ],
+    "macao_real_odds": [
+      1.18,
+      6.0,
+      10.0
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "NND"
+  }
+}

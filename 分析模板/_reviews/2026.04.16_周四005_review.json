@@ -1,0 +1,81 @@
+{
+  "match_id": "周四005",
+  "date_folder": "2026.04.16",
+  "home_team": "佛罗伦萨",
+  "away_team": "水晶宫",
+  "league": "欧协联",
+  "handicap": "-1",
+  "home_form": "WLWDWW",
+  "away_form": "WWDDDW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+20.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降4升17 / 客降27升3",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "27/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:1(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「水晶宫 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-17 14:44",
+  "macao_tip": "水晶宫 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 20.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -15.2,
+    "mcao_home_chg": 26.29,
+    "mcao_draw_chg": -1.59,
+    "mcao_away_chg": -18.35,
+    "jc_init_odds": [
+      2.35,
+      3.3,
+      2.5
+    ],
+    "jc_real_odds": [
+      2.82,
+      3.3,
+      2.12
+    ],
+    "macao_init_odds": [
+      2.32,
+      3.15,
+      2.67
+    ],
+    "macao_real_odds": [
+      2.93,
+      3.1,
+      2.18
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UND"
+  }
+}

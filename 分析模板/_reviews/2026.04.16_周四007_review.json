@@ -1,0 +1,105 @@
+{
+  "match_id": "周四007",
+  "date_folder": "2026.04.16",
+  "home_team": "斯特拉斯",
+  "away_team": "美因茨",
+  "league": "欧协联",
+  "handicap": "-1",
+  "home_form": "LWWDDW",
+  "away_form": "LWWWWW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "4:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw",
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.85>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.40>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+5.5%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+6.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升0 / 平降0升29 / 客降1升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（平局/客胜）策略有效",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+5.5%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩平局升+5.5%>5%",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+6.0%>5%"
+  ],
+  "review_time": "2026-04-17 14:44",
+  "macao_tip": "美因茨 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.29,
+    "jc_draw_chg": 5.48,
+    "jc_away_chg": 6.02,
+    "mcao_home_chg": -7.61,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 18.78,
+    "jc_init_odds": [
+      1.63,
+      3.65,
+      4.15
+    ],
+    "jc_real_odds": [
+      1.56,
+      3.85,
+      4.4
+    ],
+    "macao_init_odds": [
+      1.84,
+      3.3,
+      3.62
+    ],
+    "macao_real_odds": [
+      1.7,
+      3.3,
+      4.3
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

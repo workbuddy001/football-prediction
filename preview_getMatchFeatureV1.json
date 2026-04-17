@@ -1,0 +1,77 @@
+{
+  "dataFrom": "",
+  "emptyFlag": false,
+  "errorCode": "0",
+  "errorMessage": "处理成功",
+  "success": true,
+  "value": {
+    "awayTeamId": 0,
+    "awayTeamShortName": "纽喷气机",
+    "eachHomeAway": {
+      "awayDrawMatchCnt": 2,
+      "awayLossGoalMatchCnt": 2,
+      "awayScoreRatio": "67",
+      "awayWinGoalMatchCnt": 6,
+      "homeDrawMatchCnt": 4,
+      "homeLossGoalMatchCnt": 2,
+      "homeScoreRatio": "53",
+      "homeWinGoalMatchCnt": 4,
+      "totalLegCnt": 10
+    },
+    "eachSameHomeAway": {
+      "awayDrawMatchCnt": 1,
+      "awayLossGoalMatchCnt": 1,
+      "awayScoreRatio": "83",
+      "awayWinGoalMatchCnt": 8,
+      "homeDrawMatchCnt": 2,
+      "homeLossGoalMatchCnt": 2,
+      "homeScoreRatio": "67",
+      "homeWinGoalMatchCnt": 6,
+      "totalLegCnt": 10
+    },
+    "goalAvg": {
+      "awayGoalAvgCnt": "1.9",
+      "awayGoalAvgCntRatio": "48.7",
+      "homeGoalAvgCnt": "2.0",
+      "homeGoalAvgCntRatio": "51.3",
+      "totalLegCnt": 10
+    },
+    "homeTeamId": 0,
+    "homeTeamShortName": "墨胜利",
+    "last": {
+      "awayDrawMatchCnt": 3,
+      "awayLossGoalMatchCnt": 3,
+      "awayScoreRatio": "50",
+      "awayWinGoalMatchCnt": 4,
+      "homeDrawMatchCnt": 3,
+      "homeLossGoalMatchCnt": 4,
+      "homeScoreRatio": "40",
+      "homeWinGoalMatchCnt": 3,
+      "totalLegCnt": 10
+    },
+    "lossGoalAvg": {
+      "awayLossGoalAvgCnt": "1.2",
+      "awayLossGoalAvgCntRatio": "48.0",
+      "homeLossGoalAvgCnt": "1.3",
+      "homeLossGoalAvgCntRatio": "52.0",
+      "totalLegCnt": 10
+    },
+    "matchId": 2445051,
+    "sameHomeAway": {
+      "awayDrawMatchCnt": 2,
+      "awayLossGoalMatchCnt": 5,
+      "awayScoreRatio": "37",
+      "awayWinGoalMatchCnt": 3,
+      "homeDrawMatchCnt": 2,
+      "homeLossGoalMatchCnt": 3,
+      "homeScoreRatio": "57",
+      "homeWinGoalMatchCnt": 5,
+      "totalLegCnt": 10
+    },
+    "sportteryAwayTeamId": 1136,
+    "sportteryHomeTeamId": 1077,
+    "sportteryMatchId": 2039135,
+    "uniformAwayTeamId": 210,
+    "uniformHomeTeamId": 454
+  }
+}

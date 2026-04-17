@@ -1,0 +1,75 @@
+{
+  "match_key": "基多体大 vs 米拉索尔",
+  "raw_text": "1",
+  "parsed": {
+    "rawText": "1",
+    "homeTeam": "基多体大",
+    "awayTeam": "米拉索尔",
+    "meta": {},
+    "injuries": {
+      "home": {
+        "team": "基多体大",
+        "out": [],
+        "doubtful": [],
+        "available": [],
+        "suspended": [],
+        "summary": "",
+        "impactScore": 0
+      },
+      "away": {
+        "team": "米拉索尔",
+        "out": [],
+        "doubtful": [],
+        "available": [],
+        "suspended": [],
+        "summary": "",
+        "impactScore": 0
+      }
+    },
+    "motivation": {
+      "home": {
+        "level": "medium",
+        "reasons": [],
+        "confidence": 0.3,
+        "mult": 1
+      },
+      "away": {
+        "level": "medium",
+        "reasons": [],
+        "confidence": 0.3,
+        "mult": 1
+      }
+    },
+    "tactics": {
+      "home": {
+        "style": "balanced",
+        "keywords": []
+      },
+      "away": {
+        "style": "balanced",
+        "keywords": []
+      }
+    },
+    "conclusion": {
+      "prediction": "",
+      "confidence": "",
+      "reasoning": [],
+      "goals": "",
+      "scores": []
+    },
+    "btMultData": {
+      "injuryGap": 0,
+      "homeInjuryScore": 0,
+      "awayInjuryScore": 0,
+      "homeMotivationLevel": "medium",
+      "awayMotivationLevel": "medium",
+      "homeMotivationMult": 1,
+      "awayMotivationMult": 1,
+      "motivationGap": 0
+    },
+    "injuryGap": 0,
+    "motivationGap": 0
+  },
+  "saved_at": "2026-04-15 10:17",
+  "updated_at": "2026-04-15 10:17"
+}

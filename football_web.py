@@ -4500,8 +4500,8 @@ def main():
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8899
-    # 部署环境(Render等)需绑定 0.0.0.0，本地开发用 127.0.0.1
-    host = os.environ.get("HOST", "127.0.0.1")
+    # 默认绑定 0.0.0.0 以支持外部访问
+    host = os.environ.get("HOST", "0.0.0.0")
     server = http.server.HTTPServer((host, port), FootballAPIHandler)
     print(f"""
 ============================================

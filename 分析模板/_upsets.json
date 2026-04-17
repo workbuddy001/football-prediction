@@ -1,6 +1,725 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.16_周四005_20260417144413",
+      "match_id": "周四005",
+      "date_folder": "2026.04.16",
+      "home_team": "佛罗伦萨",
+      "away_team": "水晶宫",
+      "league": "欧协联",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：主胜被系统排除但实际打出",
+      "prediction": "客胜",
+      "predicted_dir": "away",
+      "actual_result": "home",
+      "actual_score": "2:1",
+      "confidence": 4,
+      "was_excluded": true,
+      "exclusions": [
+        "home"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 20.0,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": -15.2,
+        "mcao_home_chg": 26.29,
+        "mcao_draw_chg": -1.59,
+        "mcao_away_chg": -18.35,
+        "jc_init_odds": [
+          2.35,
+          3.3,
+          2.5
+        ],
+        "jc_real_odds": [
+          2.82,
+          3.3,
+          2.12
+        ],
+        "macao_init_odds": [
+          2.32,
+          3.15,
+          2.67
+        ],
+        "macao_real_odds": [
+          2.93,
+          3.1,
+          2.18
+        ],
+        "jc_pattern": "UND",
+        "macao_pattern": "UND"
+      },
+      "upset_odds": 2.82,
+      "home_form": "WLWDWW",
+      "away_form": "WWDDDW",
+      "handicap": "-1",
+      "macao_tip": "水晶宫 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:44"
+    },
+    {
+      "upset_id": "2026.04.16_周四004_20260417144407",
+      "match_id": "周四004",
+      "date_folder": "2026.04.16",
+      "home_team": "维拉",
+      "away_team": "博洛尼亚",
+      "league": "欧罗巴",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：主胜被系统排除但实际打出",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "home",
+      "actual_score": "4:0",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "home",
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 5.0,
+        "jc_draw_chg": -4.76,
+        "jc_away_chg": -10.62,
+        "mcao_home_chg": -6.45,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 24.44,
+        "jc_init_odds": [
+          1.4,
+          4.2,
+          5.65
+        ],
+        "jc_real_odds": [
+          1.47,
+          4.0,
+          5.05
+        ],
+        "macao_init_odds": [
+          1.55,
+          3.95,
+          4.5
+        ],
+        "macao_real_odds": [
+          1.45,
+          3.95,
+          5.6
+        ],
+        "jc_pattern": "UDD",
+        "macao_pattern": "DNU"
+      },
+      "upset_odds": 1.47,
+      "home_form": "DWLWWL",
+      "away_form": "WLWLDW",
+      "handicap": "-1",
+      "macao_tip": "阿斯顿维拉 贏",
+      "had_cold_warning": false,
+      "warnings": [
+        "竞彩×澳门在主方向,客方向方向分歧"
+      ],
+      "record_time": "2026-04-17 14:44"
+    },
+    {
+      "upset_id": "2026.04.16_周四003_20260417144400",
+      "match_id": "周四003",
+      "date_folder": "2026.04.16",
+      "home_team": "贝蒂斯",
+      "away_team": "布拉加",
+      "league": "欧罗巴",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "2:4",
+      "confidence": 4,
+      "was_excluded": true,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -2.41,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": 6.98,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          1.66,
+          3.4,
+          4.3
+        ],
+        "jc_real_odds": [
+          1.62,
+          3.4,
+          4.6
+        ],
+        "macao_init_odds": [
+          1.84,
+          3.23,
+          3.68
+        ],
+        "macao_real_odds": [
+          1.84,
+          3.23,
+          3.68
+        ],
+        "jc_pattern": "DNU",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 4.6,
+      "home_form": "DDDLWD",
+      "away_form": "WDWLWL",
+      "handicap": "-1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:44"
+    },
+    {
+      "upset_id": "2026.04.16_周四002_20260417144352",
+      "match_id": "周四002",
+      "date_folder": "2026.04.16",
+      "home_team": "诺丁汉",
+      "away_team": "波尔图",
+      "league": "欧罗巴",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：主胜被系统排除但实际打出",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "home",
+      "actual_score": "1:0",
+      "confidence": 3,
+      "was_excluded": true,
+      "exclusions": [
+        "home"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 13.64,
+        "jc_draw_chg": -1.67,
+        "jc_away_chg": -15.94,
+        "mcao_home_chg": 4.81,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": -6.25,
+        "jc_init_odds": [
+          1.98,
+          3.0,
+          3.45
+        ],
+        "jc_real_odds": [
+          2.25,
+          2.95,
+          2.9
+        ],
+        "macao_init_odds": [
+          2.08,
+          3.02,
+          3.2
+        ],
+        "macao_real_odds": [
+          2.18,
+          3.02,
+          3.0
+        ],
+        "jc_pattern": "UND",
+        "macao_pattern": "UND"
+      },
+      "upset_odds": 2.25,
+      "home_form": "DDWWDL",
+      "away_form": "WDDWWW",
+      "handicap": "-1",
+      "macao_tip": "波尔图 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:43"
+    },
+    {
+      "upset_id": "2026.04.15_周三007_20260417144259",
+      "match_id": "周三007",
+      "date_folder": "2026.04.15",
+      "home_team": "弗鲁米嫩",
+      "away_team": "里瓦达维亚独立",
+      "league": "解放者杯",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "1:2",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "draw",
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -1.39,
+        "jc_draw_chg": 0.54,
+        "jc_away_chg": 4.92,
+        "mcao_home_chg": 8.39,
+        "mcao_draw_chg": -9.09,
+        "mcao_away_chg": -14.75,
+        "jc_init_odds": [
+          1.44,
+          3.7,
+          6.1
+        ],
+        "jc_real_odds": [
+          1.42,
+          3.72,
+          6.4
+        ],
+        "macao_init_odds": [
+          1.43,
+          3.85,
+          6.1
+        ],
+        "macao_real_odds": [
+          1.55,
+          3.5,
+          5.2
+        ],
+        "jc_pattern": "NNU",
+        "macao_pattern": "UDD"
+      },
+      "upset_odds": 6.4,
+      "home_form": "LDDWWL",
+      "away_form": "WWWWWL",
+      "handicap": "-1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [
+        "竞彩×澳门在客方向方向分歧"
+      ],
+      "record_time": "2026-04-17 14:42"
+    },
+    {
+      "upset_id": "2026.04.15_周三005_20260417144244",
+      "match_id": "周三005",
+      "date_folder": "2026.04.15",
+      "home_team": "阿森纳",
+      "away_team": "里斯本",
+      "league": "欧冠",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "draw",
+      "actual_score": "0:0",
+      "confidence": 4,
+      "was_excluded": false,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 3.7,
+        "jc_draw_chg": -5.81,
+        "jc_away_chg": -7.75,
+        "mcao_home_chg": 6.06,
+        "mcao_draw_chg": -5.38,
+        "mcao_away_chg": -18.06,
+        "jc_init_odds": [
+          1.35,
+          4.3,
+          6.45
+        ],
+        "jc_real_odds": [
+          1.4,
+          4.05,
+          5.95
+        ],
+        "macao_init_odds": [
+          1.32,
+          4.65,
+          7.2
+        ],
+        "macao_real_odds": [
+          1.4,
+          4.4,
+          5.9
+        ],
+        "jc_pattern": "UDD",
+        "macao_pattern": "UDD"
+      },
+      "upset_odds": 4.05,
+      "home_form": "LWLLWW",
+      "away_form": "WLWWWL",
+      "handicap": "-1",
+      "macao_tip": "阿森纳 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:42"
+    },
+    {
+      "upset_id": "2026.04.15_周三004_20260417144237",
+      "match_id": "周三004",
+      "date_folder": "2026.04.15",
+      "home_team": "萨普斯堡",
+      "away_team": "博德闪耀",
+      "league": "挪超",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：平局被系统排除但实际打出",
+      "prediction": "客胜",
+      "predicted_dir": "away",
+      "actual_result": "draw",
+      "actual_score": "1:1",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "home",
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 0.0,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": 0.0,
+        "mcao_home_chg": -3.51,
+        "mcao_draw_chg": -4.76,
+        "mcao_away_chg": 2.27,
+        "jc_init_odds": [
+          5.7,
+          5.25,
+          1.31
+        ],
+        "jc_real_odds": [
+          5.7,
+          5.25,
+          1.31
+        ],
+        "macao_init_odds": [
+          5.7,
+          5.25,
+          1.32
+        ],
+        "macao_real_odds": [
+          5.5,
+          5.0,
+          1.35
+        ],
+        "jc_pattern": "NNN",
+        "macao_pattern": "DDU"
+      },
+      "upset_odds": 5.25,
+      "home_form": "LDDWWL",
+      "away_form": "LWWWLW",
+      "handicap": "1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:42"
+    },
+    {
+      "upset_id": "2026.04.15_周三003_20260417144230",
+      "match_id": "周三003",
+      "date_folder": "2026.04.15",
+      "home_team": "特罗姆瑟",
+      "away_team": "利勒斯特",
+      "league": "挪超",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：平局被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "draw",
+      "actual_score": "0:0",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "draw",
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -4.68,
+        "jc_draw_chg": 2.74,
+        "jc_away_chg": 8.65,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          1.71,
+          3.65,
+          3.7
+        ],
+        "jc_real_odds": [
+          1.63,
+          3.75,
+          4.02
+        ],
+        "macao_init_odds": [
+          1.78,
+          3.6,
+          3.5
+        ],
+        "macao_real_odds": [
+          1.78,
+          3.6,
+          3.5
+        ],
+        "jc_pattern": "DUU",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 3.75,
+      "home_form": "WWWWWL",
+      "away_form": "WWLLWW",
+      "handicap": "-1",
+      "macao_tip": "特羅素 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:42"
+    },
+    {
+      "upset_id": "2026.04.15_周三001_20260417144201",
+      "match_id": "周三001",
+      "date_folder": "2026.04.15",
+      "home_team": "蔚山现代",
+      "away_team": "首尔FC",
+      "league": "韩职",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "away",
+      "actual_score": "1:4",
+      "confidence": 3,
+      "was_excluded": true,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -3.54,
+        "jc_draw_chg": -3.28,
+        "jc_away_chg": 6.94,
+        "mcao_home_chg": -12.08,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 13.73,
+        "jc_init_odds": [
+          2.54,
+          3.05,
+          2.45
+        ],
+        "jc_real_odds": [
+          2.45,
+          2.95,
+          2.62
+        ],
+        "macao_init_odds": [
+          2.65,
+          3.15,
+          2.33
+        ],
+        "macao_real_odds": [
+          2.33,
+          3.15,
+          2.65
+        ],
+        "jc_pattern": "DDU",
+        "macao_pattern": "DNU"
+      },
+      "upset_odds": 2.62,
+      "home_form": "WLDWWW",
+      "away_form": "WDWWWL",
+      "handicap": "1",
+      "macao_tip": "首尔FC 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-17 14:42"
+    },
+    {
+      "upset_id": "2026.04.14_周二005_20260415111701",
+      "match_id": "周二005",
+      "date_folder": "2026.04.14",
+      "home_team": "朴次茅斯",
+      "away_team": "伊普斯",
+      "league": "英冠",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "home",
+      "actual_score": "2:0",
+      "confidence": 4,
+      "was_excluded": false,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -26.61,
+        "jc_draw_chg": -9.46,
+        "jc_away_chg": 16.22,
+        "mcao_home_chg": -22.35,
+        "mcao_draw_chg": -7.04,
+        "mcao_away_chg": 17.58,
+        "jc_init_odds": [
+          5.45,
+          3.7,
+          1.48
+        ],
+        "jc_real_odds": [
+          4.0,
+          3.35,
+          1.72
+        ],
+        "macao_init_odds": [
+          4.25,
+          3.55,
+          1.65
+        ],
+        "macao_real_odds": [
+          3.3,
+          3.3,
+          1.94
+        ],
+        "jc_pattern": "DDU",
+        "macao_pattern": "DDU"
+      },
+      "upset_odds": 4.0,
+      "home_form": "WDDLLL",
+      "away_form": "WWDWDD",
+      "handicap": "1",
+      "macao_tip": "伊普斯维奇 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-15 11:17"
+    },
+    {
+      "upset_id": "2026.04.14_周二003_20260415111450",
+      "match_id": "周二003",
+      "date_folder": "2026.04.14",
+      "home_team": "利物浦",
+      "away_team": "巴黎圣曼",
+      "league": "欧冠",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "away",
+      "actual_score": "0:2",
+      "confidence": 3,
+      "was_excluded": false,
+      "exclusions": [
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 4.19,
+        "jc_draw_chg": 5.45,
+        "jc_away_chg": -7.29,
+        "mcao_home_chg": 5.38,
+        "mcao_draw_chg": -3.39,
+        "mcao_away_chg": -3.23,
+        "jc_init_odds": [
+          2.15,
+          3.85,
+          2.47
+        ],
+        "jc_real_odds": [
+          2.24,
+          4.06,
+          2.29
+        ],
+        "macao_init_odds": [
+          2.23,
+          3.83,
+          2.48
+        ],
+        "macao_real_odds": [
+          2.35,
+          3.7,
+          2.4
+        ],
+        "jc_pattern": "UUD",
+        "macao_pattern": "UDD"
+      },
+      "upset_odds": 2.29,
+      "home_form": "WLLLWD",
+      "away_form": "WWWWWL",
+      "handicap": "-1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [
+        "竞彩×澳门在平方向方向分歧"
+      ],
+      "record_time": "2026-04-15 11:14"
+    },
+    {
+      "upset_id": "2026.04.14_周二001_20260415111345",
+      "match_id": "周二001",
+      "date_folder": "2026.04.14",
+      "home_team": "胡巴尔卡德西亚",
+      "away_team": "利雅得青年",
+      "league": "沙特职业联赛",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：平局被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "draw",
+      "actual_score": "2:2",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "away",
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -7.79,
+        "jc_draw_chg": 9.27,
+        "jc_away_chg": 16.47,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          1.54,
+          4.1,
+          4.25
+        ],
+        "jc_real_odds": [
+          1.42,
+          4.48,
+          4.95
+        ],
+        "macao_init_odds": [
+          1.48,
+          4.35,
+          4.6
+        ],
+        "macao_real_odds": [
+          1.48,
+          4.35,
+          4.6
+        ],
+        "jc_pattern": "DUU",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 4.48,
+      "home_form": "DLWWDW",
+      "away_form": "DWDLWW",
+      "handicap": "-1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-15 11:13"
+    },
+    {
       "upset_id": "2026.04.13_周一007_20260414083656",
       "match_id": "周一007",
       "date_folder": "2026.04.13",
@@ -2266,12 +2985,12 @@
     }
   ],
   "stats": {
-    "total": 38,
+    "total": 50,
     "by_type": {
-      "unknown": 11,
-      "reverse_cover": 26,
+      "reverse_cover": 35,
+      "unknown": 14,
       "silent": 1
     },
-    "last_update": "2026-04-14 08:36"
+    "last_update": "2026-04-17 14:44"
   }
 }

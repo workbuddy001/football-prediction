@@ -1,0 +1,83 @@
+{
+  "match_id": "周四006",
+  "date_folder": "2026.04.16",
+  "home_team": "雅典AEK",
+  "away_team": "巴列卡诺",
+  "league": "欧协联",
+  "handicap": "-1",
+  "home_form": "LWWLDW",
+  "away_form": "LWWLLD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.9%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升1 / 平降2升21 / 客降1升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+2.9%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「强共识推离客」有效：29/30家公司升客胜（>25家阈值）",
+    "📈 关键信号「强共识造热主」有效：28/30家公司降主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-17 14:44",
+  "macao_tip": "巴列卡诺 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.21,
+    "jc_draw_chg": 2.94,
+    "jc_away_chg": 4.62,
+    "mcao_home_chg": -6.4,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 11.29,
+    "jc_init_odds": [
+      1.9,
+      3.4,
+      3.25
+    ],
+    "jc_real_odds": [
+      1.82,
+      3.5,
+      3.4
+    ],
+    "macao_init_odds": [
+      2.03,
+      3.25,
+      3.1
+    ],
+    "macao_real_odds": [
+      1.9,
+      3.25,
+      3.45
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

@@ -2563,5 +2563,212 @@
     "score_str": "2:2",
     "result": "draw",
     "record_time": "2026-04-14 08:36"
+  },
+  "2026.04.14_周二001": {
+    "match_id": "周二001",
+    "date": "2026.04.14",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "result": "draw",
+    "record_time": "2026-04-15 11:13"
+  },
+  "2026.04.14_周二002": {
+    "match_id": "周二002",
+    "date": "2026.04.14",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "result": "away",
+    "record_time": "2026-04-15 11:14"
+  },
+  "2026.04.14_周二003": {
+    "match_id": "周二003",
+    "date": "2026.04.14",
+    "home_score": 0,
+    "away_score": 2,
+    "score_str": "0:2",
+    "result": "away",
+    "record_time": "2026-04-15 11:14"
+  },
+  "2026.04.14_周二004": {
+    "match_id": "周二004",
+    "date": "2026.04.14",
+    "home_score": 3,
+    "away_score": 0,
+    "score_str": "3:0",
+    "result": "home",
+    "record_time": "2026-04-15 11:15"
+  },
+  "2026.04.14_周二005": {
+    "match_id": "周二005",
+    "date": "2026.04.14",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "result": "home",
+    "record_time": "2026-04-15 11:17"
+  },
+  "2026.04.14_周二006": {
+    "match_id": "周二006",
+    "date": "2026.04.14",
+    "home_score": 3,
+    "away_score": 0,
+    "score_str": "3:0",
+    "result": "home",
+    "record_time": "2026-04-15 11:19"
+  },
+  "2026.04.15_周三001": {
+    "match_id": "周三001",
+    "date": "2026.04.15",
+    "home_score": 1,
+    "away_score": 4,
+    "score_str": "1:4",
+    "result": "away",
+    "record_time": "2026-04-17 14:41"
+  },
+  "2026.04.15_周三002": {
+    "match_id": "周三002",
+    "date": "2026.04.15",
+    "home_score": 0,
+    "away_score": 3,
+    "score_str": "0:3",
+    "result": "away",
+    "record_time": "2026-04-17 14:42"
+  },
+  "2026.04.15_周三003": {
+    "match_id": "周三003",
+    "date": "2026.04.15",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "result": "draw",
+    "record_time": "2026-04-17 14:42"
+  },
+  "2026.04.15_周三004": {
+    "match_id": "周三004",
+    "date": "2026.04.15",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "result": "draw",
+    "record_time": "2026-04-17 14:42"
+  },
+  "2026.04.15_周三005": {
+    "match_id": "周三005",
+    "date": "2026.04.15",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "result": "draw",
+    "record_time": "2026-04-17 14:42"
+  },
+  "2026.04.15_周三006": {
+    "match_id": "周三006",
+    "date": "2026.04.15",
+    "home_score": 4,
+    "away_score": 3,
+    "score_str": "4:3",
+    "result": "home",
+    "record_time": "2026-04-17 14:42"
+  },
+  "2026.04.15_周三007": {
+    "match_id": "周三007",
+    "date": "2026.04.15",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "result": "away",
+    "record_time": "2026-04-17 14:42"
+  },
+  "2026.04.15_周三008": {
+    "match_id": "周三008",
+    "date": "2026.04.15",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "result": "home",
+    "record_time": "2026-04-17 14:43"
+  },
+  "2026.04.16_周四001": {
+    "match_id": "周四001",
+    "date": "2026.04.16",
+    "home_score": 1,
+    "away_score": 3,
+    "score_str": "1:3",
+    "result": "away",
+    "record_time": "2026-04-17 14:43"
+  },
+  "2026.04.16_周四002": {
+    "match_id": "周四002",
+    "date": "2026.04.16",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "result": "home",
+    "record_time": "2026-04-17 14:43"
+  },
+  "2026.04.16_周四003": {
+    "match_id": "周四003",
+    "date": "2026.04.16",
+    "home_score": 2,
+    "away_score": 4,
+    "score_str": "2:4",
+    "result": "away",
+    "record_time": "2026-04-17 14:43"
+  },
+  "2026.04.16_周四004": {
+    "match_id": "周四004",
+    "date": "2026.04.16",
+    "home_score": 4,
+    "away_score": 0,
+    "score_str": "4:0",
+    "result": "home",
+    "record_time": "2026-04-17 14:44"
+  },
+  "2026.04.16_周四005": {
+    "match_id": "周四005",
+    "date": "2026.04.16",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "result": "home",
+    "record_time": "2026-04-17 14:44"
+  },
+  "2026.04.16_周四006": {
+    "match_id": "周四006",
+    "date": "2026.04.16",
+    "home_score": 3,
+    "away_score": 1,
+    "score_str": "3:1",
+    "result": "home",
+    "record_time": "2026-04-17 14:44"
+  },
+  "2026.04.16_周四007": {
+    "match_id": "周四007",
+    "date": "2026.04.16",
+    "home_score": 4,
+    "away_score": 0,
+    "score_str": "4:0",
+    "result": "home",
+    "record_time": "2026-04-17 14:44"
+  },
+  "2026.04.16_周四008": {
+    "match_id": "周四008",
+    "date": "2026.04.16",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "result": "home",
+    "record_time": "2026-04-17 14:44"
+  },
+  "2026.04.16_周四009": {
+    "match_id": "周四009",
+    "date": "2026.04.16",
+    "home_score": 4,
+    "away_score": 1,
+    "score_str": "4:1",
+    "result": "home",
+    "record_time": "2026-04-17 14:44"
   }
 }

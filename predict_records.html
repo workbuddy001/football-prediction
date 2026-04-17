@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>预测记录模板 - 足球分析</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+
+.header { background: linear-gradient(135deg, #1e293b, #334155); padding: 20px 30px; border-bottom: 1px solid #475569; }
+.header h1 { font-size: 22px; background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header p { color: #94a3b8; font-size: 13px; margin-top: 5px; }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+.toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; padding: 16px; background: #1e293b; border-radius: 12px; border: 1px solid #334155; }
+.toolbar select { padding: 8px 16px; font-size: 14px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #e2e8f0; cursor: pointer; }
+.toolbar select:hover { border-color: #60a5fa; }
+.toolbar .info { color: #94a3b8; font-size: 13px; margin-left: auto; }
+
+/* 比赛卡片列表 */
+.match-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+
+.match-card { background: #1e293b; border-radius: 12px; border: 1px solid #334155; padding: 16px; cursor: pointer; transition: all 0.2s; }
+.match-card:hover { border-color: #60a5fa; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59,130,246,0.15); }
+
+.match-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.match-num { font-size: 12px; color: #64748b; }
+.league-badge { font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(59,130,246,0.15); color: #60a5fa; }
+
+.match-teams { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.team { font-size: 15px; font-weight: 600; color: #f1f5f9; }
+.vs { color: #64748b; font-size: 12px; margin: 0 8px; }
+
+.match-time { font-size: 12px; color: #94a3b8; }
+
+.odds-summary { display: flex; gap: 8px; flex-wrap: wrap; }
+.odds-chip { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: #0f172a; border: 1px solid #334155; color: #94a3b8; }
+.odds-chip.home { color: #4ade80; border-color: rgba(34,197,94,0.3); }
+.odds-chip.draw { color: #facc15; border-color: rgba(234,179,8,0.3); }
+.odds-chip.away { color: #fca5a5; border-color: rgba(248,113,113,0.3); }
+
+/* 详情面板 */
+.detail-panel { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1000; backdrop-filter: blur(4px); animation: fadeIn 0.2s; }
+.detail-panel.show { display: flex; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto; }
+.detail-box { background: #1e293b; border-radius: 16px; border: 1px solid #475569; width: 95%; max-width: 900px; max-height: 92vh; overflow-y: auto; position: relative; }
+
+.detail-header { position: sticky; top: 0; background: #1e293b; padding: 20px 24px; border-bottom: 1px solid #334155; z-index: 10; }
+.detail-close { position: absolute; top: 16px; right: 18px; background: none; border: none; color: #94a3b8; font-size: 24px; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.detail-close:hover { background: #334155; color: #fff; }
+.detail-header h2 { font-size: 18px; color: #f1f5f9; margin-bottom: 6px; }
+.detail-header .meta { color: #94a3b8; font-size: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.detail-content { padding: 20px 24px; }
+
+/* 区块样式 */
+.section { margin-bottom: 20px; }
+.section-title { font-size: 14px; font-weight: 600; color: #cbd5e1; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 8px; }
+.section-title .icon { width: 18px; height: 18px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; }
+.icon-blue { background: rgba(59,130,246,0.2); color: #60a5fa; }
+.icon-purple { background: rgba(168,85,247,0.2); color: #a855f7; }
+.icon-green { background: rgba(34,197,94,0.2); color: #4ade80; }
+.icon-yellow { background: rgba(234,179,8,0.2); color: #facc15; }
+.icon-red { background: rgba(239,68,68,0.2); color: #f87171; }
+.icon-orange { background: rgba(249,115,22,0.2); color: #f97316; }
+
+/* 数据表格 */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table th { background: #0f172a; color: #94a3b8; padding: 8px 10px; text-align: left; font-weight: 500; border-bottom: 1px solid #334155; }
+.data-table td { padding: 7px 10px; border-bottom: 1px solid #334155; }
+.data-table tr:hover td { background: rgba(59,130,246,0.04); }
+.odds-value { font-weight: 600; font-family: monospace; }
+.odds-value.high { color: #f87171; }
+.odds-value.mid { color: #facc15; }
+.odds-value.low { color: #4ade80; }
+
+/* 赔率矩阵 - 参考8899端口 */
+.matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.matrix-card { background: #0f172a; border-radius: 10px; padding: 12px; }
+.matrix-title { font-size: 13px; font-weight: 600; color: #e2e8f0; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #334155; }
+.matrix-row { display: flex; align-items: center; padding: 6px 0; font-size: 12px; }
+.matrix-label { width: 45px; color: #94a3b8; }
+.matrix-value { flex: 1; font-family: monospace; font-weight: 600; color: #f1f5f9; }
+.matrix-chg { width: 60px; text-align: right; font-size: 11px; }
+
+/* 赔率矩阵旧样式保留兼容 */
+.odds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+.odds-cell { background: #0f172a; border-radius: 8px; padding: 10px; text-align: center; }
+.odds-cell .label { font-size: 11px; color: #64748b; margin-bottom: 4px; }
+.odds-cell .value { font-size: 15px; font-weight: 600; }
+.odds-cell.home .value { color: #4ade80; }
+.odds-cell.draw .value { color: #facc15; }
+.odds-cell.away .value { color: #fca5a5; }
+.odds-cell .change { font-size: 10px; margin-top: 3px; }
+.change.up { color: #f87171; }
+.change.down { color: #4ade80; }
+
+/* 附属赔率 */
+.sub-odds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; }
+.sub-odds-chip { background: #0f172a; border-radius: 6px; padding: 8px; text-align: center; font-size: 11px; }
+.sub-odds-chip .label { color: #64748b; margin-bottom: 3px; }
+.sub-odds-chip .value { font-weight: 600; font-size: 13px; color: #e2e8f0; }
+.sub-odds-chip .sub-label { color: #475569; font-size: 10px; margin-top: 2px; }
+
+/* 亚洲盘口 */
+.asia-table { width: 100%; font-size: 12px; }
+.asia-table th { background: #0f172a; color: #94a3b8; padding: 8px; text-align: center; border-bottom: 1px solid #334155; }
+.asia-table td { padding: 8px; text-align: center; border-bottom: 1px solid #334155; }
+
+/* 心水区域 */
+.xinshui-box { background: #0f172a; border-radius: 8px; padding: 12px; border: 1px solid #334155; }
+.xinshui-box .main { font-size: 14px; color: #f1f5f9; margin-bottom: 8px; }
+.xinshui-box .sub { font-size: 12px; color: #94a3b8; }
+
+/* 排除信号 */
+.exclusion-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.exclusion-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+
+/* 标签 */
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.tag-green { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+.tag-yellow { background: rgba(234,179,8,0.15); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
+.tag-red { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+.tag-blue { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+.tag-purple { background: rgba(168,85,247,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); }
+
+/* 赛果倾向 */
+.result-prediction { display: flex; gap: 16px; justify-content: center; padding: 16px; background: #0f172a; border-radius: 10px; }
+.result-item { text-align: center; flex: 1; }
+.result-item .odds { font-size: 18px; font-weight: 700; }
+.result-item .label { font-size: 12px; color: #64748b; margin-top: 4px; }
+.result-item.home .odds { color: #4ade80; }
+.result-item.draw .odds { color: #facc15; }
+.result-item.away .odds { color: #fca5a5; }
+.result-item.selected { background: rgba(59,130,246,0.1); border-radius: 8px; border: 1px solid rgba(59,130,246,0.3); }
+
+/* 比分预测 */
+.score-prediction { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px; }
+.score-chip { background: #0f172a; border-radius: 6px; padding: 8px; text-align: center; }
+.score-chip .score { font-size: 14px; font-weight: 600; color: #f1f5f9; }
+.score-chip .odds { font-size: 11px; color: #64748b; margin-top: 3px; }
+
+/* 历史交锋 */
+.history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+.history-cell { background: #0f172a; border-radius: 6px; padding: 8px; text-align: center; }
+.history-cell .value { font-size: 14px; font-weight: 600; }
+.history-cell .label { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+/* 按钮 */
+.btn { padding: 8px 16px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #e2e8f0; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+.btn:hover { border-color: #60a5fa; background: #1e3a5f; }
+.btn-primary { background: linear-gradient(135deg, #3b82f6, #6366f1); border: none; color: white; font-weight: 600; }
+.btn-primary:hover { box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+
+/* 加载状态 */
+.loading { text-align: center; padding: 40px; color: #64748b; }
+.loading::after { content: '...'; animation: dots 1.5s infinite; }
+@keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60%, 100% { content: '...'; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.loading-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15,23,42,0.9); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+.loading-overlay .spinner { width: 40px; height: 40px; border: 3px solid #334155; border-top-color: #60a5fa; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 空状态 */
+.empty-state { text-align: center; padding: 60px 20px; color: #64748b; }
+.empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state p { font-size: 14px; }
+
+@media (max-width: 768px) {
+    .match-list { grid-template-columns: 1fr; }
+    .detail-panel { padding: 10px; }
+    .detail-box { width: 100%; max-height: 95vh; }
+    .odds-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>📋 预测记录模板</h1>
+    <p>基于竞彩数据源的完整比赛分析模板</p>
+</div>
+
+<div class="container">
+    <div class="toolbar">
+        <select id="dateSelect">
+            <option value="">选择日期</option>
+        </select>
+        <select id="leagueSelect">
+            <option value="">全部赛事</option>
+        </select>
+        <select id="oddsFilter">
+            <option value="">全部比赛</option>
+            <option value="has_odds">有赔率数据</option>
+            <option value="has_hf">有半全场</option>
+            <option value="has_bf">有比分</option>
+        </select>
+        <div class="info" id="matchCount">加载中...</div>
+    </div>
+
+    <div id="matchList" class="match-list">
+        <div class="loading">正在加载数据</div>
+    </div>
+</div>
+
+<!-- 详情面板 -->
+<div class="detail-panel" id="detailPanel">
+    <div class="detail-box">
+        <div class="detail-header">
+            <button class="detail-close" onclick="closeDetail()">×</button>
+            <h2 id="detailTitle">比赛详情</h2>
+            <div class="meta" id="detailMeta"></div>
+        </div>
+        <div class="detail-content" id="detailContent">
+            <div class="loading">正在加载</div>
+        </div>
+    </div>
+</div>
+
+<!-- 加载遮罩 -->
+<div class="loading-overlay" id="loadingOverlay" style="display:none;">
+    <div class="spinner"></div>
+</div>
+
+<script>
+// 全局数据
+let allMatches = [];
+let currentDate = '';
+
+// 初始化
+document.addEventListener('DOMContentLoaded', () => {
+    loadData();
+});
+
+async function loadData() {
+    showLoading();
+    try {
+        const dates = await getAvailableDates();
+        
+        if (dates.length > 0) {
+            currentDate = dates[0];
+            
+            // 1. 优先加载完整版 matches_full（包含30家公司初盘+即时盘）
+            let response = await fetch(`分析模板/matches_full_${currentDate}.json`);
+            if (response.ok) {
+                let rawData = await response.json();
+                // 转换为统一格式
+                allMatches = rawData.map(m => {
+                    // 从欧赔列表中提取竞彩和澳门赔率
+                    const epList = m.欧赔数据?.欧赔列表 || [];
+                    let jcOdds = null, macauOdds = null;
+                    for (const ep of epList) {
+                        const company = ep.公司 || '';
+                        if (company.includes('竞') && company.includes('官')) {
+                            jcOdds = ep;
+                        }
+                        if (company.includes('门') && !jcOdds) {
+                            macauOdds = ep;
+                        }
+                    }
+                    // 如果没找到澳门，用皇冠或第一个
+                    if (!macauOdds && epList.length > 1) {
+                        for (const ep of epList) {
+                            const company = ep.公司 || '';
+                            if (company.includes('冠')) {
+                                macauOdds = ep;
+                                break;
+                            }
+                        }
+                    }
+                    if (!macauOdds && epList.length > 2) {
+                        macauOdds = epList[2];
+                    }
+                    
+                    return {
+                        match_num: m.编号,
+                        league: m.联赛,
+                        date: m.日期,
+                        time: m.时间,
+                        home: m.主队,
+                        away: m.客队,
+                        rangqiu: m.让球,
+                        赔率: {
+                            '竞彩_胜初': jcOdds ? parseFloat(jcOdds.初盘胜) : null,
+                            '竞彩_胜': jcOdds ? parseFloat(jcOdds.即时胜) : null,
+                            '竞彩_平初': jcOdds ? parseFloat(jcOdds.初盘平) : null,
+                            '竞彩_平': jcOdds ? parseFloat(jcOdds.即时平) : null,
+                            '竞彩_负初': jcOdds ? parseFloat(jcOdds.初盘负) : null,
+                            '竞彩_负': jcOdds ? parseFloat(jcOdds.即时负) : null,
+                            '澳门_胜初': macauOdds ? parseFloat(macauOdds.初盘胜) : null,
+                            '澳门_胜': macauOdds ? parseFloat(macauOdds.即时胜) : null,
+                            '澳门_平初': macauOdds ? parseFloat(macauOdds.初盘平) : null,
+                            '澳门_平': macauOdds ? parseFloat(macauOdds.即时平) : null,
+                            '澳门_负初': macauOdds ? parseFloat(macauOdds.初盘负) : null,
+                            '澳门_负': macauOdds ? parseFloat(macauOdds.即时负) : null,
+                        },
+                        数据分析: m.数据分析 || {}
+                    };
+                });
+            }
+            
+            // 2. 如果没有完整版，尝试增强版
+            if (allMatches.length === 0) {
+                response = await fetch(`分析模板/${formatDateDir(currentDate)}/matches_enhanced_${currentDate}.json`);
+                if (response.ok) {
+                    allMatches = await response.json();
+                }
+            }
+        }
+        
+        if (allMatches.length === 0) {
+            // 备用：尝试加载其他数据
+            const response = await fetch('data/matches.json');
+            if (response.ok) {
+                allMatches = await response.json();
+            }
+        }
+        
+        populateFilters();
+        renderMatches();
+    } catch (error) {
+        console.error('加载失败:', error);
+        document.getElementById('matchList').innerHTML = `
+            <div class="empty-state">
+                <div class="icon">📂</div>
+                <p>暂无数据</p>
+                <p style="margin-top:8px;font-size:12px;">请先运行抓取脚本获取数据</p>
+            </div>
+        `;
+    }
+    hideLoading();
+}
+
+async function getAvailableDates() {
+    // 从URL列表推断可用日期
+    const today = new Date();
+    const dates = [];
+    for (let i = 0; i < 7; i++) {
+        const d = new Date(today);
+        d.setDate(d.getDate() - i);
+        dates.push(d.toISOString().split('T')[0]);
+    }
+    return dates;
+}
+
+function formatDateDir(date) {
+    return date.replace(/-/g, '.');
+}
+
+function populateFilters() {
+    // 日期选择（兼容两种格式）
+    const dateSelect = document.getElementById('dateSelect');
+    const uniqueDates = [...new Set(allMatches.map(m => m.date || m.日期 || ''))].filter(d => d).sort().reverse();
+    
+    // 清空并重建选项
+    dateSelect.options.length = 0;
+    dateSelect.add(new Option('全部日期', ''));
+    uniqueDates.forEach(d => {
+        dateSelect.add(new Option(d, d));
+    });
+    dateSelect.value = currentDate || '';
+
+    // 赛事选择
+    const leagueSelect = document.getElementById('leagueSelect');
+    const uniqueLeagues = [...new Set(allMatches.map(m => m.league || m.联赛 || ''))].filter(l => l).sort();
+    leagueSelect.options.length = 0;
+    leagueSelect.add(new Option('全部赛事', ''));
+    uniqueLeagues.forEach(l => {
+        leagueSelect.add(new Option(l, l));
+    });
+}
+
+function renderMatches() {
+    const leagueFilter = document.getElementById('leagueSelect').value;
+    const oddsFilter = document.getElementById('oddsFilter').value;
+    
+    let filtered = allMatches.filter(m => {
+        if (currentDate && (m.date || m.日期) !== currentDate) return false;
+        if (leagueFilter && (m.league || m.联赛) !== leagueFilter) return false;
+        if (oddsFilter) {
+            const odds = m.赔率 || {};
+            if (oddsFilter === 'has_odds' && !(odds.竞彩_胜 || odds.竞彩_胜初)) return false;
+            if (oddsFilter === 'has_hf' && !odds.半全_胜胜) return false;
+            if (oddsFilter === 'has_bf' && !odds['比分_1:0']) return false;
+        }
+        return true;
+    });
+
+    document.getElementById('matchCount').textContent = `共 ${filtered.length} 场比赛`;
+
+    if (filtered.length === 0) {
+        document.getElementById('matchList').innerHTML = `
+            <div class="empty-state">
+                <div class="icon">🔍</div>
+                <p>没有找到匹配的比赛</p>
+            </div>
+        `;
+        return;
+    }
+
+    document.getElementById('matchList').innerHTML = filtered.map(m => {
+        const odds = m.赔率 || {};
+        const rangqiu = m.rangqiu || m.让球 || '';
+        const num = m.match_num || m.编号 || m.fixture_id || '';
+        
+        return `
+        <div class="match-card" onclick="showDetail('${num}')">
+            <div class="match-card-header">
+                <span class="match-num">${num}</span>
+                <span class="league-badge">${m.league || m.联赛 || '赛事'}</span>
+            </div>
+            <div class="match-teams">
+                <span class="team">${m.home || m.主队 || '主队'}</span>
+                <span class="vs">VS</span>
+                <span class="team">${m.away || m.客队 || '客队'}</span>
+            </div>
+            <div class="match-time">${m.time || m.时间 || ''} ${rangqiu ? '| ' + rangqiu : ''}</div>
+            <div class="odds-summary">
+                ${odds.竞彩_胜 || odds.竞彩_胜初 ? `<span class="odds-chip home">主 ${(odds.竞彩_胜 || odds.竞彩_胜初)?.toFixed(2)}</span>` : ''}
+                ${odds.竞彩_平 || odds.竞彩_平初 ? `<span class="odds-chip draw">平 ${(odds.竞彩_平 || odds.竞彩_平初)?.toFixed(2)}</span>` : ''}
+                ${odds.竞彩_负 || odds.竞彩_负初 ? `<span class="odds-chip away">客 ${(odds.竞彩_负 || odds.竞彩_负初)?.toFixed(2)}</span>` : ''}
+            </div>
+        </div>
+        `;
+    }).join('');
+}
+
+function showDetail(fixtureId) {
+    const match = allMatches.find(m => m.fixture_id == fixtureId || m.match_num == fixtureId);
+    if (!match) return;
+    
+    document.getElementById('detailTitle').textContent = `${match.home || match.主队} VS ${match.away || match.客队}`;
+    document.getElementById('detailMeta').innerHTML = `
+        <span>${match.league || match.联赛}</span>
+        <span>${match.date || match.日期} ${match.time || match.时间}</span>
+        ${match.rangqiu || match.让球 ? `<span>${match.rangqiu || match.让球}</span>` : ''}
+        <span>编号: ${match.match_num || match.编号 || match.fixture_id}</span>
+    `;
+    
+    const content = renderDetailContent(match);
+    document.getElementById('detailContent').innerHTML = content;
+    document.getElementById('detailPanel').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDetail() {
+    document.getElementById('detailPanel').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+function renderDetailContent(m) {
+    const odds = m.赔率 || {};
+    const data = m.数据分析 || {};
+    const asia = m.亚洲盘口 || {};
+    
+    let html = '';
+    
+    // 1. 赔率矩阵 - 参考8899端口格式
+    const jcInit = odds.竞彩_胜初 || odds.竞彩_胜 || null;
+    const jcReal = odds.竞彩_胜 || null;
+    const jcChg = (jcInit && jcReal && jcInit !== 0) ? ((jcReal - jcInit) / jcInit * 100) : 0;
+    
+    const jcInitD = odds.竞彩_平初 || odds.竞彩_平 || null;
+    const jcRealD = odds.竞彩_平 || null;
+    const jcChgD = (jcInitD && jcRealD && jcInitD !== 0) ? ((jcRealD - jcInitD) / jcInitD * 100) : 0;
+    
+    const jcInitA = odds.竞彩_负初 || odds.竞彩_负 || null;
+    const jcRealA = odds.竞彩_负 || null;
+    const jcChgA = (jcInitA && jcRealA && jcInitA !== 0) ? ((jcRealA - jcInitA) / jcInitA * 100) : 0;
+    
+    const mcInit = odds.澳门_胜初 || odds.澳门_胜 || null;
+    const mcReal = odds.澳门_胜 || null;
+    const mcChg = (mcInit && mcReal && mcInit !== 0) ? ((mcReal - mcInit) / mcInit * 100) : 0;
+    
+    const mcInitD = odds.澳门_平初 || odds.澳门_平 || null;
+    const mcRealD = odds.澳门_平 || null;
+    const mcChgD = (mcInitD && mcRealD && mcInitD !== 0) ? ((mcRealD - mcInitD) / mcInitD * 100) : 0;
+    
+    const mcInitA = odds.澳门_负初 || odds.澳门_负 || null;
+    const mcRealA = odds.澳门_负 || null;
+    const mcChgA = (mcInitA && mcRealA && mcInitA !== 0) ? ((mcRealA - mcInitA) / mcInitA * 100) : 0;
+    
+    const fmtVal = (v) => v !== null && v !== undefined ? v.toFixed(2) : '-';
+    const fmtChg = (v) => Math.abs(v) > 0.1 ? (v > 0 ? `<span style="color:#4ade80">+${v.toFixed(1)}%</span>` : `<span style="color:#f87171">${v.toFixed(1)}%</span>`) : `<span style="color:#64748b">—</span>`;
+    const fmtArrow = (init, real) => (init && real && init !== real) ? ` → ` : ``;
+    
+    html += `
+    <div class="section">
+        <div class="section-title"><span class="icon icon-green">💰</span> 赔率矩阵（标准1X2）</div>
+        <div class="matrix-grid">
+            <div class="matrix-card">
+                <div class="matrix-title">🇨🇳 竞彩官方</div>
+                <div class="matrix-row">
+                    <span class="matrix-label">主胜</span>
+                    <span class="matrix-value">${fmtVal(jcInit)}${fmtArrow(jcInit, jcReal)}${fmtVal(jcReal)}</span>
+                    <span class="matrix-chg">${fmtChg(jcChg)}</span>
+                </div>
+                <div class="matrix-row">
+                    <span class="matrix-label">平局</span>
+                    <span class="matrix-value">${fmtVal(jcInitD)}${fmtArrow(jcInitD, jcRealD)}${fmtVal(jcRealD)}</span>
+                    <span class="matrix-chg">${fmtChg(jcChgD)}</span>
+                </div>
+                <div class="matrix-row">
+                    <span class="matrix-label">客胜</span>
+                    <span class="matrix-value">${fmtVal(jcInitA)}${fmtArrow(jcInitA, jcRealA)}${fmtVal(jcRealA)}</span>
+                    <span class="matrix-chg">${fmtChg(jcChgA)}</span>
+                </div>
+            </div>
+            <div class="matrix-card">
+                <div class="matrix-title">🇲🇴 澳门</div>
+                <div class="matrix-row">
+                    <span class="matrix-label">主胜</span>
+                    <span class="matrix-value">${fmtVal(mcInit)}${fmtArrow(mcInit, mcReal)}${fmtVal(mcReal)}</span>
+                    <span class="matrix-chg">${fmtChg(mcChg)}</span>
+                </div>
+                <div class="matrix-row">
+                    <span class="matrix-label">平局</span>
+                    <span class="matrix-value">${fmtVal(mcInitD)}${fmtArrow(mcInitD, mcRealD)}${fmtVal(mcRealD)}</span>
+                    <span class="matrix-chg">${fmtChg(mcChgD)}</span>
+                </div>
+                <div class="matrix-row">
+                    <span class="matrix-label">客胜</span>
+                    <span class="matrix-value">${fmtVal(mcInitA)}${fmtArrow(mcInitA, mcRealA)}${fmtVal(mcRealA)}</span>
+                    <span class="matrix-chg">${fmtChg(mcChgA)}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    
+    // 2. 澳门心水
+    if (data.心水推荐 || odds.心水) {
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-purple">💡</span>澳门心水推荐</div>
+            <div class="xinshui-box">
+                <div class="main">${data.心水推荐 || odds.心水 || '-'}</div>
+                ${data.心水理由 ? `<div class="sub">${data.心水理由}</div>` : ''}
+            </div>
+        </div>
+        `;
+    }
+    
+    // 3. 排除法信号
+    if (data.排除信号 || data.exclusion_signals) {
+        const signals = data.排除信号 || data.exclusion_signals || [];
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-red">🚫</span>排除法信号</div>
+            <div class="exclusion-list">
+                ${signals.map(s => `<span class="exclusion-badge">${s}</span>`).join('')}
+            </div>
+        </div>
+        `;
+    }
+    
+    // 4. 赛果倾向
+    if (data.预测结果 || data.prediction) {
+        const pred = data.预测结果 || data.prediction;
+        const predOdds = {
+            '主胜': odds.竞彩_胜 || odds.竞彩主,
+            '平局': odds.竞彩_平 || odds.竞彩平,
+            '客胜': odds.竞彩_负 || odds.竞彩客
+        };
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-green">🎯</span>赛果倾向</div>
+            <div class="result-prediction">
+                ${['主胜', '平局', '客胜'].map(r => {
+                    const cls = r === '主胜' ? 'home' : r === '平局' ? 'draw' : 'away';
+                    const selected = pred === r ? 'selected' : '';
+                    return `
+                    <div class="result-item ${cls} ${selected}">
+                        <div class="odds">${predOdds[r] || '-'}</div>
+                        <div class="label">${r}</div>
+                        ${selected ? '<span class="tag tag-green" style="margin-top:4px;">推荐</span>' : ''}
+                    </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+        `;
+    }
+    
+    // 5. 半全场
+    const hfOdds = Object.entries(odds).filter(([k]) => k.startsWith('半全_'));
+    if (hfOdds.length > 0) {
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-orange">⏱️</span>半全场赔率</div>
+            <div class="sub-odds-grid">
+                ${hfOdds.map(([k, v]) => {
+                    const label = k.replace('半全_', '');
+                    const idx = ['胜胜','胜平','胜负','平胜','平平','平负','负胜','负平','负负'].indexOf(label);
+                    return `<div class="sub-odds-chip">
+                        <div class="label">${label}</div>
+                        <div class="value">${v}</div>
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>
+        `;
+    }
+    
+    // 6. 进球数
+    const jqsOdds = Object.entries(odds).filter(([k]) => k.startsWith('进球_'));
+    if (jqsOdds.length > 0) {
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-yellow">⚽</span>进球数赔率</div>
+            <div class="sub-odds-grid">
+                ${jqsOdds.map(([k, v]) => {
+                    const num = k.replace('进球_', '');
+                    return `<div class="sub-odds-chip">
+                        <div class="label">${num}球</div>
+                        <div class="value">${v}</div>
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>
+        `;
+    }
+    
+    // 7. 比分赔率
+    const bfOdds = Object.entries(odds).filter(([k]) => k.startsWith('比分_'));
+    if (bfOdds.length > 0) {
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-blue">📋</span>比分赔率</div>
+            <div class="score-prediction">
+                ${bfOdds.map(([k, v]) => {
+                    const score = k.replace('比分_', '').replace('_', ':');
+                    return `<div class="score-chip">
+                        <div class="score">${score}</div>
+                        <div class="odds">${v}</div>
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>
+        `;
+    }
+    
+    // 8. 亚洲盘口
+    if (asia.crown || asia.澳门) {
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-purple">🌏</span>亚洲盘口</div>
+            <table class="asia-table">
+                <thead>
+                    <tr>
+                        <th>盘口</th>
+                        <th>皇冠</th>
+                        <th>澳门</th>
+                        <th>威尼斯人</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${asia.盘口 || '-'}</td>
+                        <td>${asia.crown || '-'}</td>
+                        <td>${asia.澳门 || '-'}</td>
+                        <td>${asia.威尼斯人 || '-'}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        `;
+    }
+    
+    // 9. 历史交锋
+    if (data.历史交锋 || m.交锋) {
+        const hist = data.历史交锋 || m.交锋 || {};
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-blue">📜</span>历史交锋</div>
+            <div class="history-grid">
+                <div class="history-cell">
+                    <div class="value" style="color:#4ade80;">${hist.主胜 || 0}</div>
+                    <div class="label">主胜</div>
+                </div>
+                <div class="history-cell">
+                    <div class="value" style="color:#facc15;">${hist.平局 || 0}</div>
+                    <div class="label">平局</div>
+                </div>
+                <div class="history-cell">
+                    <div class="value" style="color:#fca5a5;">${hist.客胜 || 0}</div>
+                    <div class="label">客胜</div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    
+    // 10. 近况走势
+    if (data.近况 || m.近况) {
+        const form = data.近况 || m.近况 || {};
+        html += `
+        <div class="section">
+            <div class="section-title"><span class="icon icon-green">📈</span>近况走势</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="background:#0f172a;padding:10px;border-radius:8px;">
+                    <div style="font-size:12px;color:#64748b;margin-bottom:4px;">${m.home} 近况</div>
+                    <div style="color:#4ade80;font-weight:600;">${form.主队近况 || '-'}</div>
+                </div>
+                <div style="background:#0f172a;padding:10px;border-radius:8px;">
+                    <div style="font-size:12px;color:#64748b;margin-bottom:4px;">${m.away} 近况</div>
+                    <div style="color:#fca5a5;font-weight:600;">${form.客队近况 || '-'}</div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    
+    return html || '<div class="empty-state"><p>暂无详细数据</p></div>';
+}
+
+function showLoading() { document.getElementById('loadingOverlay').style.display = 'flex'; }
+function hideLoading() { document.getElementById('loadingOverlay').style.display = 'none'; }
+
+// 点击遮罩关闭
+document.getElementById('detailPanel').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('detailPanel')) closeDetail();
+});
+
+// ESC 关闭
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDetail();
+});
+</script>
+</body>
+</html>

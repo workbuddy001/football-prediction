@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩足球分析系统 - 完整版</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f23; color: #fff; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; color: #00d4ff; margin-bottom: 20px; font-size: 24px; }
+        
+        .controls { display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; flex-wrap: wrap; }
+        input { padding: 12px 20px; border-radius: 8px; border: 1px solid #333; background: #1a1a2e; color: #fff; font-size: 16px; min-width: 200px; }
+        button { padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+        .btn-fetch { background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%); color: #000; font-weight: bold; }
+        .btn-fetch:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4); }
+        .btn-refresh { background: #333; color: #fff; }
+        .btn-refresh:hover { background: #444; }
+        
+        .match-card { background: #16213e; border-radius: 16px; padding: 24px; margin-bottom: 24px; border: 1px solid #0f3460; }
+        
+        .match-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #0f3460; }
+        .match-id { background: #e94560; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .league { color: #00d4ff; font-size: 14px; }
+        .time { color: #888; font-size: 12px; }
+        
+        .teams { display: flex; justify-content: center; align-items: center; gap: 30px; font-size: 24px; font-weight: bold; margin: 20px 0; }
+        .vs { color: #666; font-size: 16px; }
+        
+        .section { background: #0f3460; border-radius: 12px; padding: 16px; margin: 16px 0; }
+        .section-title { color: #00d4ff; font-size: 14px; font-weight: bold; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .section-title::before { content: '📊'; }
+        
+        .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .feature-item { background: #16213e; padding: 12px; border-radius: 8px; }
+        .feature-label { color: #888; font-size: 12px; margin-bottom: 4px; }
+        .feature-value { font-size: 14px; font-weight: bold; }
+        
+        .odds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .odds-item { background: #1a1a2e; padding: 12px; border-radius: 8px; text-align: center; }
+        .odds-item .label { color: #888; font-size: 12px; }
+        .odds-item .value { font-size: 18px; font-weight: bold; margin-top: 4px; }
+        .odds-item.low { background: #1e5631; }
+        .odds-item.medium { background: #4a4a00; }
+        
+        .history-list { display: flex; flex-direction: column; gap: 8px; }
+        .history-item { background: #1a1a2e; padding: 10px 14px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+        .history-item .score { font-weight: bold; color: #00d4ff; }
+        
+        .injury-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .team-injury { background: #1a1a2e; border-radius: 10px; padding: 12px; }
+        .team-name { font-weight: bold; margin-bottom: 8px; color: #00d4ff; font-size: 14px; }
+        .player-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #333; font-size: 13px; }
+        .player-item:last-child { border-bottom: none; }
+        .player-name { color: #fff; }
+        .player-pos { color: #888; font-size: 12px; }
+        
+        .player-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .team-player { background: #1a1a2e; border-radius: 10px; padding: 12px; }
+        .player-goal { color: #e94560; font-weight: bold; }
+        
+        .tables-section { overflow-x: auto; }
+        .tables-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tables-table th, .tables-table td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #333; }
+        .tables-table th { background: #0f3460; color: #00d4ff; }
+        .tables-table tr:hover { background: #1a1a2e; }
+        
+        .score-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .score-item { background: #1a1a2e; padding: 10px; border-radius: 8px; text-align: center; }
+        .score-item .label { color: #888; font-size: 12px; }
+        .score-item .value { font-size: 16px; font-weight: bold; margin-top: 4px; }
+        .score-item.low { background: #1e5631; }
+        
+        .tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .tab { padding: 8px 16px; background: #333; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all 0.3s; }
+        .tab.active { background: #00d4ff; color: #000; font-weight: bold; }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .loading { text-align: center; padding: 40px; color: #888; }
+        .loading::after { content: '...'; animation: dots 1.5s infinite; }
+        @keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60%, 100% { content: '...'; } }
+        
+        .no-data { text-align: center; padding: 40px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚽ 竞彩足球分析系统 - 完整版</h1>
+        
+        <div class="controls">
+            <input type="text" id="matchInput" placeholder="输入比赛ID (如: 2039135)">
+            <button class="btn-fetch" onclick="fetchMatch()">🔍 分析比赛</button>
+            <button class="btn-refresh" onclick="loadMatches()">📋 已分析列表</button>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        // 使用当前页面的域名+端口
+        const API_BASE = window.location.origin;
+        
+        async function fetchMatch() {
+            const matchId = document.getElementById('matchInput').value.trim();
+            if (!matchId) { alert('请输入比赛ID'); return; }
+            
+            document.getElementById('result').innerHTML = '<div class="loading">正在获取数据</div>';
+            
+            try {
+                const res = await fetch(`${API_BASE}/analyze/${matchId}`);
+                const data = await res.json();
+                renderMatch(data);
+            } catch (e) {
+                document.getElementById('result').innerHTML = `<div class="no-data">获取失败: ${e}</div>`;
+            }
+        }
+        
+        function renderMatch(data) {
+            const info = data.match_info || {};
+            const preview = data.preview || {};
+            
+            let html = `
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-id">#${data.match_id}</span>
+                    <span class="league">${info.league || ''}</span>
+                    <span class="time">${info.time || ''}</span>
+                </div>
+                
+                <div class="teams">
+                    ${info.home_team || '未知'}
+                    <span class="vs">VS</span>
+                    ${info.away_team || '未知'}
+                </div>
+            `;
+            
+            // 标签页
+            html += `
+                <div class="tabs">
+                    <div class="tab active" onclick="switchTab(this, 'tab-odds')">赔率数据</div>
+                    <div class="tab" onclick="switchTab(this, 'tab-feature')">特征分析</div>
+                    <div class="tab" onclick="switchTab(this, 'tab-history')">历史交锋</div>
+                    <div class="tab" onclick="switchTab(this, 'tab-injury')">伤停一览</div>
+                    <div class="tab" onclick="switchTab(this, 'tab-player')">射手信息</div>
+                    <div class="tab" onclick="switchTab(this, 'tab-tables')">积分榜</div>
+                </div>
+            `;
+            
+            // 赔率数据
+            html += `<div id="tab-odds" class="tab-content active">`;
+            
+            // 胜平负
+            if (data.had && Object.keys(data.had).length > 0) {
+                html += `
+                <div class="section">
+                    <div class="section-title">胜平负</div>
+                    <div class="odds-grid">
+                        <div class="odds-item ${getOddsClass(data.had['主胜'])}">
+                            <div class="label">主胜</div>
+                            <div class="value">${data.had['主胜'] || '-'}</div>
+                        </div>
+                        <div class="odds-item ${getOddsClass(data.had['平局'])}">
+                            <div class="label">平局</div>
+                            <div class="value">${data.had['平局'] || '-'}</div>
+                        </div>
+                        <div class="odds-item ${getOddsClass(data.had['主负'])}">
+                            <div class="label">主负</div>
+                            <div class="value">${data.had['主负'] || '-'}</div>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            
+            // 总进球
+            if (data.total_goals && Object.keys(data.total_goals).length > 0) {
+                html += `
+                <div class="section">
+                    <div class="section-title">总进球</div>
+                    <div class="odds-grid">
+                        ${Object.entries(data.total_goals).map(([k, v]) => 
+                            `<div class="odds-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v || '-'}</div></div>`
+                        ).join('')}
+                    </div>
+                </div>`;
+            }
+            
+            // 比分
+            if (data.score_odds && Object.keys(data.score_odds).length > 0) {
+                const sorted = Object.entries(data.score_odds).sort((a, b) => a[1] - b[1]).slice(0, 10);
+                html += `
+                <div class="section">
+                    <div class="section-title">比分 (最低赔率)</div>
+                    <div class="score-grid">
+                        ${sorted.map(([k, v]) => 
+                            `<div class="score-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v}</div></div>`
+                        ).join('')}
+                    </div>
+                </div>`;
+            }
+            
+            html += `</div>`; // end tab-odds
+            
+            // 特征分析
+            const feature = preview.feature || {};
+            html += `<div id="tab-feature" class="tab-content">`;
+            if (feature && Object.keys(feature).length > 0) {
+                const home = info.home_team || '主队';
+                const away = info.away_team || '客队';
+                
+                const last = feature.last || {};
+                const homeWin = last.homeWinGoalMatchCnt || 0;
+                const homeDraw = last.homeDrawMatchCnt || 0;
+                const homeLoss = last.homeLossGoalMatchCnt || 0;
+                const awayWin = last.awayWinGoalMatchCnt || 0;
+                const awayDraw = last.awayDrawMatchCnt || 0;
+                const awayLoss = last.awayLossGoalMatchCnt || 0;
+                
+                html += `
+                <div class="section">
+                    <div class="section-title">近10场交锋</div>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-label">${home}</div>
+                            <div class="feature-value">${homeWin}胜 ${homeDraw}平 ${homeLoss}负</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-label">${away}</div>
+                            <div class="feature-value">${awayWin}胜 ${awayDraw}平 ${awayLoss}负</div>
+                        </div>
+                    </div>
+                </div>`;
+                
+                // 场均进球
+                const goalAvg = feature.goalAvg || {};
+                if (goalAvg.homeGoalAvgCnt) {
+                    html += `
+                    <div class="section">
+                        <div class="section-title">场均进球</div>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <div class="feature-label">${home}</div>
+                                <div class="feature-value">${goalAvg.homeGoalAvgCnt} 球</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-label">${away}</div>
+                                <div class="feature-value">${goalAvg.awayGoalAvgCnt} 球</div>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+            } else {
+                html += `<div class="no-data">暂无数据</div>`;
+            }
+            html += `</div>`; // end tab-feature
+            
+            // 历史交锋
+            const history = preview.history || {};
+            html += `<div id="tab-history" class="tab-content">`;
+            const matches = history.matchList || [];
+            if (matches.length > 0) {
+                html += `<div class="history-list">`;
+                matches.forEach(m => {
+                    html += `
+                    <div class="history-item">
+                        <span>${m.matchDate ? m.matchDate.slice(0, 10) : ''}</span>
+                        <span>${m.homeTeamShortName || ''}</span>
+                        <span class="score">${m.fullCourtGoal || ''}</span>
+                        <span>${m.awayTeamShortName || ''}</span>
+                    </div>`;
+                });
+                html += `</div>`;
+            } else {
+                html += `<div class="no-data">暂无数据</div>`;
+            }
+            html += `</div>`; // end tab-history
+            
+            // 伤停一览
+            const injury = preview.injury || {};
+            html += `<div id="tab-injury" class="tab-content">`;
+            if (injury.home || injury.away) {
+                html += `<div class="injury-list">`;
+                
+                ['home', 'away'].forEach(side => {
+                    const team = injury[side];
+                    if (team && team.teamShortName) {
+                        const players = team.injuriesAndSuspensionsList || [];
+                        html += `
+                        <div class="team-injury">
+                            <div class="team-name">${team.teamShortName} (${players.length}人伤停)</div>
+                            ${players.map(p => `
+                                <div class="player-item">
+                                    <span class="player-name">${p.personName || ''}</span>
+                                    <span class="player-pos">${p.playerPositionDesc || ''}</span>
+                                    <span>出场${p.appearanceCnt || 0}次</span>
+                                </div>
+                            `).join('')}
+                        </div>`;
+                    }
+                });
+                html += `</div>`;
+            } else {
+                html += `<div class="no-data">暂无数据</div>`;
+            }
+            html += `</div>`; // end tab-injury
+            
+            // 射手信息
+            const player = preview.player || {};
+            html += `<div id="tab-player" class="tab-content">`;
+            if (player.home || player.away) {
+                html += `<div class="player-list">`;
+                
+                ['home', 'away'].forEach(side => {
+                    const team = player[side];
+                    if (team && team.teamShortName) {
+                        const players = team.playerList || [];
+                        html += `
+                        <div class="team-player">
+                            <div class="team-name">${team.teamShortName}</div>
+                            ${players.slice(0, 5).map(p => `
+                                <div class="player-item">
+                                    <span class="player-name">${p.personName || ''}</span>
+                                    <span class="player-goal">${p.goalCnt || 0}球</span>
+                                </div>
+                            `).join('')}
+                        </div>`;
+                    }
+                });
+                html += `</div>`;
+            } else {
+                html += `<div class="no-data">暂无数据</div>`;
+            }
+            html += `</div>`; // end tab-player
+            
+            // 积分榜
+            const tables = preview.tables || {};
+            html += `<div id="tab-tables" class="tab-content">`;
+            if (tables.tables) {
+                const tableData = tables.tables;
+                if (Array.isArray(tableData) && tableData.length > 0) {
+                    html += `
+                    <div class="tables-section">
+                        <div style="color:#888;font-size:12px;margin-bottom:8px">${tables.tournamentShortName || ''} - ${tables.seasonName || ''}</div>
+                        <table class="tables-table">
+                            <thead>
+                                <tr>
+                                    <th>排名</th><th>球队</th><th>场次</th><th>胜</th><th>平</th><th>负</th><th>进球</th><th>失球</th><th>积分</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableData.map(t => `
+                                    <tr>
+                                        <td>${t.rank || ''}</td>
+                                        <td style="text-align:left">${t.teamShortName || ''}</td>
+                                        <td>${t.totalMatchCnt || ''}</td>
+                                        <td>${t.winMatchCnt || ''}</td>
+                                        <td>${t.drawMatchCnt || ''}</td>
+                                        <td>${t.lossMatchCnt || ''}</td>
+                                        <td>${t.goalCnt || ''}</td>
+                                        <td>${t.lossGoalCnt || ''}</td>
+                                        <td style="color:#00d4ff;font-weight:bold">${t.integral || ''}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>`;
+                } else {
+                    html += `<div class="no-data">暂无积分榜数据</div>`;
+                }
+            } else {
+                html += `<div class="no-data">暂无积分榜数据</div>`;
+            }
+            html += `</div>`; // end tab-tables
+            
+            html += `</div>`; // end match-card
+            
+            document.getElementById('result').innerHTML = html;
+        }
+        
+        function switchTab(el, tabId) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+        
+        function getOddsClass(odds) {
+            if (!odds || odds === 0) return '';
+            const v = parseFloat(odds);
+            if (v < 3) return 'low';
+            if (v < 5) return 'medium';
+            return '';
+        }
+        
+        async function loadMatches() {
+            document.getElementById('result').innerHTML = '<div class="loading">加载中</div>';
+            try {
+                const res = await fetch(`${API_BASE}/matches`);
+                const matches = await res.json();
+                
+                if (matches.length === 0) {
+                    document.getElementById('result').innerHTML = '<div class="no-data">暂无已分析的比赛<br>输入比赛ID开始分析</div>';
+                    return;
+                }
+                
+                let html = '<div class="match-card"><h3 style="margin-bottom:16px">已分析的比赛</h3>';
+                matches.forEach(m => {
+                    html += `
+                    <div class="history-item" style="cursor:pointer" onclick="document.getElementById('matchInput').value='${m.match_id}';fetchMatch()">
+                        <span class="match-id">#${m.match_id}</span>
+                        <span>${m.league || ''}</span>
+                        <span>${m.home || ''} VS ${m.away || ''}</span>
+                        <span style="color:#888;font-size:12px">${m.fetch_time || ''}</span>
+                    </div>`;
+                });
+                html += '</div>';
+                document.getElementById('result').innerHTML = html;
+            } catch (e) {
+                document.getElementById('result').innerHTML = `<div class="no-data">加载失败: ${e}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

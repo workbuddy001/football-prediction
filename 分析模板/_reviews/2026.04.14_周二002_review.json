@@ -1,0 +1,95 @@
+{
+  "match_id": "周二002",
+  "date_folder": "2026.04.14",
+  "home_team": "马竞",
+  "away_team": "巴萨",
+  "league": "欧冠",
+  "handicap": "1",
+  "home_form": "LWLLLW",
+  "away_form": "WLWWWW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw",
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率4.58≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.58>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+16.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降6升23 / 平降9升19 / 客降20升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为1:2(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（平局/主胜）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率4.58≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+16.2%>5%",
+    "📈 关键信号「推离排除」有效：竞彩平局升+7.8%>5%"
+  ],
+  "review_time": "2026-04-15 11:14",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 16.18,
+    "jc_draw_chg": 7.76,
+    "jc_away_chg": -8.98,
+    "mcao_home_chg": 4.79,
+    "mcao_draw_chg": 3.09,
+    "mcao_away_chg": -3.33,
+    "jc_init_odds": [
+      3.4,
+      4.25,
+      1.67
+    ],
+    "jc_real_odds": [
+      3.95,
+      4.58,
+      1.52
+    ],
+    "macao_init_odds": [
+      3.34,
+      3.88,
+      1.8
+    ],
+    "macao_real_odds": [
+      3.5,
+      4.0,
+      1.74
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

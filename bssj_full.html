@@ -1,0 +1,465 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="keywords" content="" />
+    <meta http-equiv="description" content="" />
+    <meta name="format-detection" content="telephone=no">
+    <title>足球对阵数据</title>
+    <meta name="applicable-device" content="mobile">
+    <link rel="stylesheet" href="//static.sporttery.cn/res_1_0/jcwm/default/common/vant4/index.css">
+    <link rel="stylesheet" href="//static.sporttery.cn/res_1_0/jcwm/css/reset.css">
+    <link rel="stylesheet" href="//static.sporttery.cn/res_1_0/jcwm/css/top.css">
+    <link rel="stylesheet" href="//static.sporttery.cn/res_1_0/jcwm/css/jc_schedule/common.css" />
+    <link rel="stylesheet" href="//static.sporttery.cn/res_1_0/jcwm/css/dtc/bssj_top.css">
+    <link rel="stylesheet" href="//static.sporttery.cn/res_1_0/jcwm/css/dtc/bssj_fb.css">
+    <script src="//static.sporttery.cn/res_1_0/common/jquery-3.4.1.min.js"></script>
+    <script src="//static.sporttery.cn/res_1_0/common/js/commonV1.js"></script>
+    <script src="//static.sporttery.cn/res_1_0/jcwm/default/jc/dzxx/dz_commonV1.js" type="text/javascript"></script>
+    <script src="//static.sporttery.cn/res_1_0/common/js/axios.min.js"></script>
+    <script src="//static.sporttery.cn/res_1_0/jcwm/default/common/vant4/vue@3.js"></script>
+    <script src="//static.sporttery.cn/res_1_0/jcwm/default/common/vant4/vant.min.js"></script>
+<script>
+  function domainPreV1(tid){try{var temDomain=document.domain.split(".");if(tid==1){if(temDomain&&temDomain[0]&&temDomain[0]!="m"){return 'gray'}else{return"www"}}else{if(temDomain&&temDomain[0]&&temDomain[0]!="m"){return temDomain[0]}else{return"m"}}}catch(e){if(tid==1){return"www"}else{return"m"}}};
+    var jsCommonDataV1={
+            advUrl:"/htmlfrag",
+            webApi: "//webapi.sporttery.cn",
+            resDomain: "//static.sporttery.cn",
+            res: "//static.sporttery.cn/res_1_0/jcwm/default",
+            env: "prd",
+            domain1:"www.lottery.gov.cn"
+            ,domain2:"www.sporttery.cn"
+            ,domain3:"m.lottery.gov.cn"
+            ,domain4:"m.sporttery.cn"
+            ,domain5:domainPreV1(1)+".lottery.gov.cn"
+            ,domain6:domainPreV1(1)+".sporttery.cn"
+            ,domain7:domainPreV1(2)+".lottery.gov.cn"
+            ,domain8:domainPreV1(2)+".sporttery.cn"
+            ,liveVideo:'//'+domainPreV1(2)+'.lottery.gov.cn/tckj/index.html'
+    
+        };
+</script>
+<script src="//static.sporttery.cn/res_1_0/jcwm/default/common/bdtj.js"></script>    <script src="//static.sporttery.cn/res_1_0/jcwm/default/zqlszl/guidancepopV1.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="warpper">
+    <div class="g-header" id="sy_780"></div>
+    <div class="g-more-mask" id="sy_702"></div>
+    <div class="g-matchData g-cont g-cont-1">
+        <script type="text/javascript" src="//static.sporttery.cn/res_1_0/jcwm/mianze.js" charset="UTF-8"></script>
+        <div class="g-top" id="lszl_1220">
+        </div>
+<div class="m-matchData-nav" id="matchDataNav"></div>        <div class="topContainer"  id="bssj" v-cloak >
+            <van-tabs v-model:active="active" :class="isFixed?'owner-tabs':''"  scrollspy sticky  :offset-top="tabOffsetTop" @scroll="scrollData" @click-tab="clickTabSecond" :style="isFixed?'padding-top:.88rem':''">
+                <!--特征分析-->
+                <van-tab title="特征分析" :name="tabName[0]">
+                    <div class="m-block">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">特征分析</div>
+                        </div>
+                        <div class="m-line"></div>
+                        <template v-if="matchFeature !=undefined && Object.keys(matchFeature).length >0">
+                            <div class="tzfx">
+                                <div class="team-name">
+                                    <div>{{matchFeature.homeTeamShortName}}</div><div>{{matchFeature.awayTeamShortName}}</div>
+                                </div>
+                                <div v-for="(content, kk) in featureSort">
+                                    <template v-for="(item, key) in matchFeature">
+                                        <template v-if="getFeatureStatus(key) > -1 && key == content && (key == 'last' || key =='sameHomeAway' || key=='eachSameHomeAway' || key =='eachHomeAway')">
+                                            <div class="tzfx-name">
+                                                <div>{{item.homeWinGoalMatchCnt}}胜/{{item.homeDrawMatchCnt}}平/{{item.homeLossGoalMatchCnt}}负</div>
+                                                <div class="tzfz-center">{{setMatchFeatureTitle(featureTxt[kk], item.totalLegCnt)}}</div>
+                                                <div>{{item.awayWinGoalMatchCnt}}胜/{{item.awayDrawMatchCnt}}平/{{item.awayLossGoalMatchCnt}}负</div>
+                                            </div>
+                                            <div class="tzfx-line-div" v-if="getFeatureStatus(key) > -1">
+                                                <div class="tzfx-line"><div class="tzfx-linein" :class="item.homeScoreRatio>item.awayScoreRatio?'':'gray'" :style="{ 'width': setPercentage(item.homeScoreRatio) }"></div></div>
+
+                                                <div class="tzfx-line"><div class="tzfx-linein-right" :class="item.awayScoreRatio >item.homeScoreRatio?'':'gray'" :style="{ 'width': setPercentage(item.awayScoreRatio) }"></div></div>
+                                            </div>
+                                        </template>
+                                        <template v-else-if="getFeatureStatus(content) > -1 && key == content && (key == 'goalAvg' || key =='lossGoalAvg')" >
+                                            <div class="tzfx-name">
+                                                <div v-if="key== 'goalAvg'">{{setNullFormat(item.homeGoalAvgCnt)}}个</div>
+                                                <div v-if="key== 'lossGoalAvg'">{{setNullFormat(item.homeLossGoalAvgCnt)}}个</div>
+                                                <div class="tzfz-center">{{setMatchFeatureTitle(featureTxt[kk], item.totalLegCnt)}}</div>
+                                                <div v-if="key== 'goalAvg'">{{setNullFormat(item.awayGoalAvgCnt)}}个</div>
+                                                <div v-if="key== 'lossGoalAvg'">{{setNullFormat(item.awayLossGoalAvgCnt)}}个</div>
+                                            </div>
+                                            <div class="tzfx-line-div" v-if="key=='goalAvg'">
+                                                <div class="tzfx-line"><div class="tzfx-linein" :class="item.homeGoalAvgCntRatio>item.awayGoalAvgCntRatio?'':'gray'" :style="{ 'width': setPercentage(item.homeGoalAvgCntRatio) }" ></div></div>
+                                                <div class="tzfx-line"><div class="tzfx-linein-right" :class="item.awayGoalAvgCntRatio >item.homeGoalAvgCntRatio?'':'gray'" :style="{ 'width': setPercentage(item.awayGoalAvgCntRatio) }"></div></div>
+                                            </div>
+                                            <div class="tzfx-line-div" v-else>
+                                                <div class="tzfx-line"><div class="tzfx-linein" :class="item.homeLossGoalAvgCntRatio>item.awayLossGoalAvgCntRatio?'':'gray'" :style="{ 'width': setPercentage(item.homeLossGoalAvgCntRatio) }" ></div></div>
+                                                <div class="tzfx-line"><div class="tzfx-linein-right" :class="item.awayLossGoalAvgCntRatio>item.homeLossGoalAvgCntRatio?'':'gray'" :style="{ 'width': setPercentage(item.awayLossGoalAvgCntRatio) }"></div></div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                        <div class="no-result" v-else>暂无数据</div>
+                    </div>
+                </van-tab>
+                <!--历史交锋-->
+                <van-tab title="历史交锋" :name="tabName[1]">
+                    <div class="m-block m-pos">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">历史交锋</div>
+                        </div>
+                        <div class="m-line"></div>
+
+                        <div class="m-filters">
+                            <div class="m-filter" :class="homeAwayFlag==1?'m-active':!btnDisabled?'m-unactive':''" @click="btnDisabled?clickBtn('homeAwayFlag','his'):'return false'">同主客</div>
+                            <div class="m-filter" :class="tournamentFlag==1?'m-active':!btnDisabled?'m-unactive':''" @click="btnDisabled?clickBtn('tournamentFlag','his'):'return false'">同赛制</div>
+                            <div class="m-matchs">
+                                <div class="m-match-5"   :class="limit==5?'match-active':!btnDisabled?'m-unactive':''" @click="btnDisabled?clickMatchNums('limit', 'his', 5):'return false'">5场</div>
+                                <div class="m-match-10" :class="limit==10?'match-active':!btnDisabled?'m-unactive':''" @click="btnDisabled?clickMatchNums('limit', 'his', 10):'return false'">10场</div>
+                            </div>
+                        </div>
+                        <div class="m-nearly" v-if="Object.keys(resultHistory).length>0 && resultHistory.statistics && Object.keys(resultHistory.statistics).length>0">
+                            <div class="m-black181">近{{resultHistory.statistics.totalLegCnt}}场</div>
+                            <div class="m-team"><div>{{resultHistory.statistics.teamShortName}}</div></div>
+                            <div class="m-percent">
+                                <div class="m-red">{{resultHistory.statistics.winGoalMatchCnt}}胜({{setNullFormat(resultHistory.statistics.winProbability)}}) <span>|</span></div>
+                                <div class="m-green">{{resultHistory.statistics.drawMatchCnt}}平({{setNullFormat(resultHistory.statistics.drawProbability)}}) <span>|</span></div>
+                                <div class="m-blue">{{resultHistory.statistics.lossGoalMatchCnt}}负({{setNullFormat(resultHistory.statistics.lossProbability)}})</div>
+                            </div>
+                        </div>
+                        <template v-if="resultHistory.matchList !=undefined && resultHistory.matchList.length >0">
+                            <div class="m-history-list">
+                                <div class="m-history-title">
+                                    <div class="m-date-title m-left">赛制/日期</div>
+                                    <div class="m-a-title m-right">主队</div>
+                                    <div class="m-vs-title m-center">VS</div>
+                                    <div class="m-h-title m-left">客队</div>
+                                    <div class="m-num-title m-right">总进球数</div>
+                                </div>
+                                <template  v-if="resultHistory.matchList !=undefined && resultHistory.matchList.length >0">
+                                    <div v-for="(item, index) in resultHistory.matchList" :key="index" class="m-history-content">
+
+                                            <div class="m-date m-left"><p><a :href="linkToLeague(item)">{{item.tournamentShortName}}</a></p>
+                                                <p>{{dealCharacters(item.matchDate,2)}}</p></div>
+                                            <div @click="setBssjLink(item)" class="m-a m-right" :class="item.homeTeamShortName==resultHistory.statistics.teamShortName && item.homeMatchResult=='home'?'m-red':item.homeTeamShortName==resultHistory.statistics.teamShortName && item.homeMatchResult=='draw'?'m-green': item.homeTeamShortName ==resultHistory.statistics.teamShortName && item.homeMatchResult=='away'?'m-blue':''">{{item.homeTeamShortName}}</div>
+                                            <div @click="setBssjLink(item)" class="m-vs m-center"><p v-html="setScoreStyleLittle(item.fullCourtGoal)"></p>
+                                                <p class="m-half" v-if="item.halfTimeGoal !=''">半({{item.halfTimeGoal}})</p>
+                                                <p class="m-half" v-else>半(-:-)</p>
+                                            </div>
+                                            <div @click="setBssjLink(item)" class="m-h m-left" :class="item.awayTeamShortName==resultHistory.statistics.teamShortName && item.homeMatchResult=='home'?'m-red':item.awayTeamShortName==resultHistory.statistics.teamShortName && item.homeMatchResult=='draw'?'m-green': item.awayTeamShortName ==resultHistory.statistics.teamShortName && item.homeMatchResult=='away'?'m-blue':''">{{item.awayTeamShortName}}</div>
+                                            <div class="m-num m-right">{{item.totalTeamFullCourtGoalCnt}}</div>
+                                    </div>
+
+                                </template>
+                            </div>
+                        </template>
+                        <div class="no-result" v-else>暂无数据</div>
+                    </div>
+                </van-tab>
+                <!--积分榜-->
+                <van-tab title="积分榜" :name="tabName[2]">
+                    <div class="m-block m-pos">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">积分榜</div>
+                        </div>
+                        <div :class="matchTables.tables && matchTables.tables.length >0 ?'m-line1':'m-line'"></div>
+                        <div class="m-filters-points" v-if="matchTables.tables">
+                            <div class="m-padding-top">{{matchTables.tournamentShortName}} {{matchTables.seasonName}}</div>
+                            <div class="m-link">
+
+                                <a @click="clickLink('leagueTable_seemore', '/zqlszl/?tab=jfb&tournamentId='+matchTables.tournamentId, '')">查看更多></a>
+                            </div>
+                        </div>
+                        <div class="m-points-list" v-if="matchTables.tables && matchTables.tables.length >0">
+                            <div class="m-points-title">
+                                <div class="m-sort-title m-left">排名</div>
+                                <div class="m-team-title">球队</div>
+                                <div class="m-times-title">场次</div>
+                                <div class="m-result-title">胜/平/负</div>
+                                <div class="m-wins-title">胜率</div>
+                                <div class="m-point-title">积分</div>
+                            </div>
+                            <div class="m-points-content" v-for="(item,index) in matchTables.tables">
+                                <div class="m-sort m-left">{{item.groupName}}{{item.ranking}}</div>
+                                <div class="m-team-con"><a :href="setQdLink(item.uniformTeamId)">{{item.teamShortName}}</a></div>
+                                <div class="m-times m-gray666">{{item.totalLegCnt}}</div>
+                                <div class="m-result m-gray666">{{item.winGoalMatchCnt}}/{{item.drawMatchCnt}}/{{item.lossGoalMatchCnt}}</div>
+                                <div class="m-wins m-gray666">{{item.winProbability}}</div>
+                                <div class="m-point">{{item.points}}</div>
+                            </div>
+                        </div>
+                        <div class="no-result" v-else>暂无数据</div>
+                    </div>
+                </van-tab>
+                <!--比赛近况-->
+                <van-tab title="比赛近况" :name="tabName[3]">
+                    <div class="m-block m-pos">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">比赛近况</div>
+                        </div>
+                        <div class="m-line"></div>
+                        <div class="m-filters">
+                            <div class="m-filter" :class="homeAwayFlagR==1?'m-active':!btnDisabledR?'m-unactive':''" @click="btnDisabledR?clickBtn('homeAwayFlagR','rec'):'return false'">同主客</div>
+                            <div class="m-filter" :class="tournamentFlagR==1?'m-active':!btnDisabledR?'m-unactive':''" @click="btnDisabledR?clickBtn('tournamentFlagR','rec'):'return false'">同赛制</div>
+                            <div class="m-matchs">
+                                <div class="m-match-5" :class="limitR==5?'match-active':!btnDisabledR?'m-unactive':''" @click="btnDisabledR?clickMatchNums('limitR', 'rec', 5):'return false'">5场</div>
+                                <div class="m-match-10" :class="limitR==10?'match-active':!btnDisabledR?'m-unactive':''" @click="btnDisabledR?clickMatchNums('limitR', 'rec', 10):'return false'">10场</div>
+                            </div>
+                        </div>
+                        <template v-if="matchResult && Object.keys(matchResult).length>0">
+                            <template v-for="(cont,key) in matchSort">
+                                <div v-if="matchResult[cont] && Object.keys(matchResult[cont]).length >0" :class="cont =='away'?'m-margintop40':''" :key="key">
+                                    <div class="m-nearly">
+                                        <div class="m-team"><div>{{matchResult[cont].statistics.teamShortName}}</div></div>
+                                        <template v-if="matchResult[cont].matchList && matchResult[cont].matchList.length >0">
+                                            <div class="m-black181">近{{matchResult[cont].statistics.totalLegCnt}}场</div>
+                                            <div class="m-percent">
+                                                <div class="m-red">{{matchResult[cont].statistics.winGoalMatchCnt}}胜({{matchResult[cont].statistics.winProbability}}) <span>|</span></div>
+                                                <div class="m-green">{{matchResult[cont].statistics.drawMatchCnt}}平({{matchResult[cont].statistics.drawProbability}}) <span>|</span></div>
+                                                <div class="m-blue">{{matchResult[cont].statistics.lossGoalMatchCnt}}负({{matchResult[cont].statistics.lossProbability}})</div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="m-enter-num m-gray999" v-if="matchResult[cont].matchList && matchResult[cont].matchList.length >0">进{{matchResult[cont].statistics.goalCnt}}球， 失{{matchResult[cont].statistics.lossGoalCnt}}球， 净进{{matchResult[cont].statistics.netGoal}}球</div>
+                                    <div class="m-history-list"  v-if="matchResult[cont].matchList && matchResult[cont].matchList.length >0">
+                                        <div class="m-history-title">
+                                            <div class="m-date-title m-left">赛制/日期</div>
+                                            <div class="m-a-title m-right">主队</div>
+                                            <div class="m-vs-title m-center">VS</div>
+                                            <div class="m-h-title m-left">客队</div>
+                                            <div class="m-num-title m-right">本队赛果</div>
+                                        </div>
+                                        <template v-for="(item,index) in matchResult[cont].matchList">
+
+                                                <div class="m-history-content">
+                                                    <div class="m-date m-left"><p><a :href="linkToLeague(item)">{{item.tournamentShortName}}</a></p>
+                                                        <p>{{dealCharacters(item.matchDate)}}</p></div>
+                                                    <div @click="setBssjLink(item)" class="m-a m-right" :class="setTeamColor(matchResult[cont].statistics.teamShortName, item.homeTeamShortName, item.teamMatchResult)">{{item.homeTeamShortName}}</div>
+                                                    <div @click="setBssjLink(item)" class="m-vs m-center"><p v-html="setScoreStyleLittle(item.fullCourtGoal)"></p>
+                                                        <p class="m-half" v-if="item.halfTimeGoal !=''">半({{item.halfTimeGoal}})</p>
+                                                        <p class="m-half" v-else>半(-:-)</p>
+                                                    </div>
+                                                    <div @click="setBssjLink(item)" class="m-h m-left" :class="setTeamColor(matchResult[cont].statistics.teamShortName, item.awayTeamShortName, item.teamMatchResult)">{{item.awayTeamShortName}}</div>
+                                                    <div class="m-result-bg">
+                                                        <div class="m-bg-red" v-if="item.teamMatchResult == 'home'">胜</div>
+                                                        <div class="m-bg-green" v-if="item.teamMatchResult == 'draw'">平</div>
+                                                        <div class="m-bg-blue" v-if="item.teamMatchResult == 'away'">负</div>
+                                                    </div>
+
+                                                </div>
+
+                                        </template>
+                                    </div>
+                                    <div class="no-result" v-else>暂无数据</div>
+                                </div>
+                            </template>
+                        </template>
+                        <div class="no-result" v-else>暂无数据</div>
+                    </div>
+                </van-tab>
+                <!--未来赛事-->
+                <van-tab title="未来赛事" :name="tabName[4]">
+                    <div class="m-block m-pos">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">未来赛事</div>
+                        </div>
+                        <div class="m-line"></div>
+                        <template v-if="futureMatches && Object.keys(futureMatches).length>0">
+                            <template v-for="(cont,key) in matchSort">
+                                <div v-if="futureMatches[cont] && Object.keys(futureMatches[cont]).length >0" :class="cont =='away'?'m-margintop40':''" :key="key">
+                                    <div class="m-nearly">
+                                        <div class="m-team m-team-padding"><div>{{futureMatches[cont].teamShortName}}</div></div>
+<!--                                        <div class="m-link">-->
+<!--                                            <a @click="clickLinkQd('futureMatch_seemore', futureMatches[cont])">查看更多></a>-->
+<!--                                        </div>-->
+                                    </div>
+
+                                    <div class="m-future-list"  v-if="futureMatches[cont] && Object.keys(futureMatches[cont]).length >0 && futureMatches[cont].matchList.length>0">
+                                        <div class="m-future-title">
+                                            <div class="m-future-date-title m-left">时间/赛事轮次</div>
+                                            <div class="m-future-a-title m-right">主队</div>
+                                            <div class="m-future-vs-title m-center"></div>
+                                            <div class="m-future-h-title m-left">客队</div>
+                                        </div>
+                                        <template v-for="(item,index) in futureMatches[cont].matchList">
+                                            <div class="m-future-content">
+                                                <div class="m-future-date m-left"><p class="m-future-time"><img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_hb.png">{{setDateToYY(item.matchDateTime)}}</p>
+                                                    <p class="m-future-zu"><a :href="linkToLeague(item)">{{item.tournamentShortName}}</a> {{item.phaseName}} {{item.groupName}} <span v-if="item.gameweek !=''">第{{item.gameweek}}轮</span></p></div>
+                                                <div class="m-future-a m-right" :class="futureMatches[cont].teamShortName == item.homeTeamShortName ?'m-black181':''"><a :href="setQdLink(item.uniformHomeTeamId)">{{item.homeTeamShortName}}</a></div>
+                                                <div class="m-future-vs m-center">VS</div>
+                                                <div class="m-future-h m-left" :class="futureMatches[cont].teamShortName == item.awayTeamShortName ?'m-black181':''"><a :href="setQdLink(item.uniformAwayTeamId)">{{item.awayTeamShortName}}</a></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="no-result" v-else>暂无数据</div>
+                                </div>
+                            </template>
+                        </template>
+                        <div class="no-result" v-else>暂无数据</div>
+                    </div>
+                </van-tab>
+                <!--射手信息-->
+                <van-tab title="射手信息" :name="tabName[5]">
+                    <div class="m-block m-pos">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">射手信息</div>
+                        </div>
+                        <div class="m-line"></div>
+                        <div class="m-filters-players">
+                            <div class="m-padding-top">{{matchPlayer.tournamentShortName}} {{matchPlayer.seasonName}}</div>
+                        </div>
+                        <template v-if="matchPlayer && Object.keys(matchPlayer).length>0">
+                            <template v-for="(cont,key) in matchSort">
+                                <div v-if="matchPlayer[cont] && Object.keys(matchPlayer[cont]).length >0" :class="cont =='away'?'m-margintop40 m-paddingbottom48':''" :key="key" class="m-player-width">
+                                    <div class="m-nearly">
+                                        <div class="m-team"><div>{{matchPlayer[cont].teamShortName}}</div></div>
+                                    </div>
+
+                                    <div class="m-players-list" v-if="matchPlayer[cont] && Object.keys(matchPlayer[cont]).length >0 && matchPlayer[cont].playerList.length>0">
+                                        <div class="m-player" v-for="(item,index) in matchPlayer[cont].playerList">
+                                            <div class="m-player-desc">
+                                                <div class="m-player-number">
+                                                    <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_qd.png">
+                                                    <div class="m-player-n" v-if="item.uniformNo !='' && item.uniformNo !='0'">{{item.uniformNo}}</div>
+                                                    <img class ="m-player-st" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_st.png" v-if="item.injuryFlag ==1">
+                                                    <img class ="m-player-st" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_t.png" v-if="item.suspensionFlag ==1">
+                                                </div>
+                                                <div class="m-player-name">{{item.personName}} <p class="m-position">{{item.playerPositionDesc}}</p></div>
+                                            </div>
+                                            <div class="m-player-many">
+                                                <div class="m-player-one">
+                                                    <p class="m-player-1">总场</p>
+                                                    <p class="m-player-2">{{item.appearanceCnt}}</p>
+                                                </div>
+                                                <div class="m-player-one m-right-border">
+                                                    <p class="m-player-1">首发</p>
+                                                    <p class="m-player-2">{{item.startedMatchCnt}}</p>
+                                                </div>
+                                                <div class="m-player-one">
+                                                    <p class="m-player-1">替补</p>
+                                                    <p class="m-player-2">{{item.substituteMatchCnt}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="m-player-line">
+                                                <div class="m-player-title">进球/占本队</div>
+                                                <div class="m-player-txt">{{item.goalCnt}}/{{item.goalProbability}}</div>
+                                            </div>
+                                            <div class="m-player-line">
+                                                <div class="m-player-title">助攻/占本队</div>
+                                                <div class="m-player-txt">{{item.assistCnt}}/{{item.assistProbability}}</div>
+                                            </div>
+                                            <div class="m-player-line">
+                                                <div class="m-player-title">场均进球</div>
+                                                <div class="m-player-txt">{{item.goalAvgCnt}}</div>
+                                            </div>
+                                            <div  class="m-player-line">
+                                                <div class="m-player-title">场均助攻</div>
+                                                <div class="m-player-txt">{{item.assistAvgCnt}}</div>
+                                            </div>
+                                            <img class="m-player-sort1" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_no.1.png" v-if="index ==0">
+                                            <img class="m-player-sort1" v-if="index ==1" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_no.2.png">
+                                            <img class="m-player-sort1" v-if="index ==2" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_no.3.png">
+                                        </div>
+                                    </div>
+                                    <div class="no-result" v-else>暂无数据</div>
+                                </div>
+                            </template>
+                        </template>
+                        <div v-else class="no-result">暂无数据</div>
+                    </div>
+                </van-tab>
+                <!--伤停一览-->
+                <van-tab title="伤停一览" :name="tabName[6]">
+                    <div class="m-block m-pos m-pos1">
+                        <div class="m-head">
+                            <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/title_left.png">
+                            <div class="txt">伤停一览</div>
+                        </div>
+                        <div class="m-line"></div>
+                        <template v-if="injurySuspensioneature && Object.keys(injurySuspensioneature).length>0">
+                            <template v-for="(cont,key) in matchSort">
+                                <div v-if="injurySuspensioneature[cont] && Object.keys(injurySuspensioneature[cont]).length >0" :class="cont =='away'?'m-margintop40':''" :key="key">
+                                    <div class="m-nearly">
+                                        <div class="m-team"><div>{{injurySuspensioneature[cont].teamShortName}}</div></div>
+                                    </div>
+
+                                    <div class="m-injuries-list" v-if="injurySuspensioneature[cont] && Object.keys(injurySuspensioneature[cont]).length >0 && injurySuspensioneature[cont].injuriesAndSuspensionsList.length>0">
+                                        <div class="m-injuries" v-for="(item,index) in injurySuspensioneature[cont].injuriesAndSuspensionsList">
+                                            <div class="m-player-desc">
+                                                <div class="m-player-number">
+                                                    <img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_qd.png">
+                                                    <div class="m-player-n" v-if="item.uniformNo !='' && item.uniformNo !='0'">{{item.uniformNo}}</div>
+                                                    <div v-else class="m-player-n">&nbsp;</div>
+                                                    <img class ="m-player-st" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_st.png" v-if="item.injuryFlag ==1">
+                                                    <img class ="m-player-st" src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/icon_t.png" v-if="item.suspensionFlag ==1">
+                                                </div>
+                                                <div class="m-player-name">{{item.personName}} <p class="m-position">{{item.playerPositionDesc}}</p></div>
+
+                                            </div>
+                                            <div class="m-player-many">
+                                                <div class="m-player-one">
+                                                    <p class="m-player-1">总场</p>
+                                                    <p class="m-player-2">{{item.appearanceCnt}}</p>
+                                                </div>
+                                                <div class="m-player-one m-right-border">
+                                                    <p class="m-player-1">首发</p>
+                                                    <p class="m-player-2">{{item.startedMatchCnt}}</p>
+                                                </div>
+                                                <div class="m-player-one">
+                                                    <p class="m-player-1">替补</p>
+                                                    <p class="m-player-2">{{item.substituteMatchCnt}}</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div v-else class="no-result">暂无数据</div>
+                                </div>
+                            </template>
+                        </template>
+                        <div class="no-result" v-else>暂无数据</div>
+
+                    </div>
+                    <div class="m-comment">注：赛事数据统计进行至全场90分钟（含伤停补时阶段）的比赛结果。数据仅供参考，实际结果以赛果开奖公布内容为准。</div>
+                </van-tab>
+            </van-tabs>
+            <div @click="isScrollOver?clickTop():''" class="back-top" v-if="isShowBackTop" :class="isShowBackTop?'back-fade-in':'back-fade-out'"><img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/topImg.png"></div>
+            <!-- <van-back-top @click="isScrollOver?clickTop:''" target=".g-cont" bottom="5vh" right="1vh" class="m-top" immediate z-index="999"><img src="https://static.sporttery.cn/res_1_0/jcwm/images/dtc/topImg.png"></van-back-top> -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    try {
+        if (commonV1Fun.getPara('SHA') == "false") {
+            $(".g-header").css("display", "none");
+            $(".g-more-mask").css("display", "none");
+            $(".g-cont").addClass("g-cont-2").removeClass("g-cont-1");
+        }
+    } catch (e) {}
+    //var mid = commonV1Fun.getPara('mid');
+    var kjCommonData = {
+        top: {
+            title: "对阵数据",
+            backUrl: ""
+        }
+    }
+    var idList = 'sy_780,sy_702,lszl_1220';
+    var adList = '780_domain7,702,1220';
+    var funList = '';
+    commonV1Fun.loadHtml(idList, adList, funList);
+    //mjcDzxxCommon.getMatchTopData('football', mid);
+</script>
+<script src="//static.sporttery.cn/res_1_0/jcwm/default/jc/dzxx/jc_fbnavV1.js" type="text/javascript"></script>
+<script src="//static.sporttery.cn/res_1_0/jcwm/default/zqlszl/bssj.js" type="module" type="text/javascript"></script>
+
+</body>
+</html>
