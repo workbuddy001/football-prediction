@@ -21,21 +21,24 @@ cd football-prediction
 pip install -r requirements.txt
 
 # 3. 启动两个服务
-# 服务1：竞彩数据查看（必开）
-python sporttery_web.py
+# 注意：两个服务不能同时使用默认端口（都是8899），需要错开
+python sporttery_web.py      # 竞彩数据服务（默认8899）
+python football_web.py 8890   # 分析主站（指定8890端口）
 
-# 服务2：分析主站（可选）
-python football_web.py 8890
+# 如果先启动 football_web.py，后启动 sporttery_web.py
+python football_web.py        # 分析主站（默认8899）
+python sporttery_web.py 8898  # 竞彩数据（指定8898端口）
 ```
 
 ### 浏览器访问
 
-| 服务 | 地址 | 说明 |
-|------|------|------|
-| **竞彩数据** | http://localhost:8899 | 查看竞彩网赔率、赔率变化统计、前瞻数据 |
-| **分析主站** | http://localhost:8890 | 赛前情报分析、让球盘解读、投注建议 |
+| 服务 | 默认端口 | 说明 |
+|------|----------|------|
+| **竞彩数据** | 8899 | 查看竞彩网赔率、赔率变化统计、前瞻数据 |
+| **分析主站** | 8899 | 赛前情报分析、让球盘解读、投注建议 |
 
-> 指定端口：`python xxx_web.py [端口号]`（不传参数则默认 8899）
+> ⚠️ 两个服务默认端口相同，启动第二个时必须指定不同端口！
+> 指定端口：`python xxx_web.py [端口号]`
 
 ### 一键同步脚本
 
@@ -47,8 +50,8 @@ python football_web.py 8890
 
 ```
 football-prediction/
-├── football_web.py              # 分析主站服务（默认8899）
-├── sporttery_web.py             # 竞彩数据服务（默认8899）
+├── football_web.py              # 分析主站服务（默认8899，需指定端口避免冲突）
+├── sporttery_web.py             # 竞彩数据服务（默认8899，需指定端口避免冲突）
 ├── requirements.txt             # Python依赖（实际为零依赖）
 ├── render.yaml                  # Render云部署配置
 ├── sync_to_github.bat           # Windows一键同步脚本
@@ -224,13 +227,11 @@ apt update && apt install -y git python3
 git clone https://github.com/workbuddy001/football-prediction.git
 cd football-prediction
 
-# 启动竞彩数据服务
+# 启动竞彩数据服务（默认8899）
 nohup python3 sporttery_web.py > sporttery.log 2>&1 &
-# 端口：8899
 
-# 启动分析主站
+# 启动分析主站（指定8890避免冲突）
 nohup python3 football_web.py 8890 > football.log 2>&1 &
-# 端口：8890
 
 # 验证服务运行
 netstat -tlnp | grep -E '8899|8890'
@@ -326,19 +327,17 @@ docker run -d -p 8899:8899 -p 8890:8890 football-prediction
 
 ## ⚙️ 配置项
 
-### 竞彩数据服务
+### 通用配置
 
 | 配置 | 默认值 | 说明 |
 |------|--------|------|
-| `PORT` | 8899 | 服务端口（通过命令行参数指定）|
-| `HOST` | 127.0.0.1 | 绑定地址 |
-
-### 分析主站
-
-| 配置 | 默认值 | 说明 |
-|------|--------|------|
-| `PORT` | 8899 | 服务端口（通过命令行参数指定）|
+| `PORT` | 8899 | 服务端口（通过命令行参数指定，如 `python xxx_web.py 9000`）|
 | `HOST` | 127.0.0.1 | 绑定地址（设为 `0.0.0.0` 用于云端部署）|
+
+### 分析主站专用
+
+| 配置 | 默认值 | 说明 |
+|------|--------|------|
 | `DATA_ROOT` | ./分析模板 | 数据文件根目录 |
 
 > `HOST` 通过环境变量设置：`export HOST=0.0.0.0`
@@ -350,13 +349,16 @@ docker run -d -p 8899:8899 -p 8890:8890 football-prediction
 ### 本地开发
 
 ```bash
-# 竞彩数据服务
-python sporttery_web.py       # 默认 8899 端口
-python sporttery_web.py 9000 # 指定端口
+# 注意：两个服务默认端口都是 8899，不能同时运行
+# 需要分别指定不同端口，或先启动一个再启动另一个
 
-# 分析主站
-python football_web.py       # 默认 8899 端口
-python football_web.py 8890 # 指定端口（避免与竞彩服务冲突）
+# 方案1：竞彩服务用默认8899，分析主站用8890
+python sporttery_web.py      # 竞彩数据，默认 8899
+python football_web.py 8890 # 分析主站，指定 8890
+
+# 方案2：分析主站用默认8899，竞彩服务用8898
+python football_web.py       # 分析主站，默认 8899
+python sporttery_web.py 8898 # 竞彩数据，指定 8898
 ```
 
 修改 JS 文件后重启 Python 服务生效。前端 JS 语法检查：
