@@ -2,7 +2,7 @@
 
 基于赔率变化分析的足球比赛预测系统，使用**纯排除法**（不预测"什么会出"，而是排除"什么不会出"）进行方向判断。
 
-> 📊 **当前版本：V4.0** | 赛前情报分析 + 让球盘深度解读 + 赔付压力矩阵 + 阻盘模式检测
+> 📊 **当前版本：V4.1** | 赛前情报分析 + 让球盘深度解读 + 赔付压力矩阵 + 阻盘模式检测 + 赔率变化统计
 
 ---
 
@@ -10,22 +10,32 @@
 
 ### 本地运行
 
+本项目包含**两个独立服务**：
+
 ```bash
 # 1. 克隆仓库
 git clone https://github.com/workbuddy001/football-prediction.git
 cd football-prediction
 
-# 2. 安装依赖
-pip install -r requirements.txt  # 实际上本项目零依赖，仅 Python 标准库
+# 2. 安装依赖（实际为零依赖，仅 Python 标准库）
+pip install -r requirements.txt
 
-# 3. 启动服务
-python football_web.py
+# 3. 启动两个服务
+# 服务1：竞彩数据查看（必开）
+python sporttery_web.py
 
-# 4. 打开浏览器
-# http://localhost:8899
+# 服务2：分析主站（可选）
+python football_web.py 8890
 ```
 
-> 指定端口：`python football_web.py 9000`（默认 8899）
+### 浏览器访问
+
+| 服务 | 地址 | 说明 |
+|------|------|------|
+| **竞彩数据** | http://localhost:8899 | 查看竞彩网赔率、赔率变化统计、前瞻数据 |
+| **分析主站** | http://localhost:8890 | 赛前情报分析、让球盘解读、投注建议 |
+
+> 指定端口：`python xxx_web.py [端口号]`（不传参数则默认 8899）
 
 ### 一键同步脚本
 
@@ -37,36 +47,55 @@ python football_web.py
 
 ```
 football-prediction/
-├── football_web.py          # 主程序（Web服务器 + 后端API）
-├── requirements.txt         # Python依赖（实际为零依赖）
-├── render.yaml              # Render云部署配置
-├── sync_to_github.bat       # Windows一键同步脚本
-├── .gitignore               # Git忽略规则
+├── football_web.py              # 分析主站服务（默认8899）
+├── sporttery_web.py             # 竞彩数据服务（默认8899）
+├── requirements.txt             # Python依赖（实际为零依赖）
+├── render.yaml                  # Render云部署配置
+├── sync_to_github.bat           # Windows一键同步脚本
+├── CHANGELOG.md                 # 更新日志
+├── .gitignore                   # Git忽略规则
 │
 ├── static/js/
-│   ├── prematch.js          # ⭐ 赛前情报分析模块（V4，四步推理链）
-│   └── handicap.js          # ⭐ 让球盘深度解读模块
+│   ├── prematch.js             # ⭐ 赛前情报分析模块（V4，四步推理链）
+│   └── handicap.js             # ⭐ 让球盘深度解读模块
 │
-└── 分析模板/                 # 数据目录
-    ├── 日期目录/              #   └── 编号_主队vs客队_源数据.md
-    ├── _reviews/             #   └── 复盘记录 JSON
-    ├── _upsets.json          # 冷门模式库
-    ├── _scores.json          # 近况评分缓存
-    └── OUTPUT_TEMPLATE.md    # 分析输出模板
+├── sporttery_data/              # 竞彩API缓存数据
+│
+└── 分析模板/                     # 分析主站数据目录
+    ├── 日期目录/                 #   └── 编号_主队vs客队_源数据.md
+    ├── _reviews/                #   └── 复盘记录 JSON
+    ├── _upsets.json             # 冷门模式库
+    ├── _scores.json             # 近况评分缓存
+    └── OUTPUT_TEMPLATE.md        # 分析输出模板
 ```
 
 **核心文件说明：**
-- **`football_web.py`** — 后端 API 服务器（~4000行），数据读取+分析接口
+- **`sporttery_web.py`** — 竞彩数据查看服务，数据来自竞彩网API
+- **`football_web.py`** — 分析主站服务，支持赛前情报分析+赔付矩阵
 - **`static/js/prematch.js`** — 赛前情报前端模块（~650行），四步推理链+赔付矩阵+综合判定
 - **`static/js/handicap.js`** — 让球盘独立模块（~344行），六档水位+出口结构
-- **无数据库** — 使用 JSON 文件存储复盘记录和冷门库
+- **无数据库** — 使用 JSON 文件存储数据
 - **无需前端构建** — HTML/CSS/JS 独立文件，浏览器直接加载
 
 ---
 
 ## 🧠 核心功能
 
-### 1. ⭐ 赛前情报分析（prematch.js V4）
+### 1. ⭐ 竞彩数据服务（sporttery_web.py）
+
+竞彩网赔率数据查看与变化追踪：
+
+- **胜平负** — 标准盘口完整赔率
+- **总进球** — 0-7+球各选项赔率 + 变化次数统计
+- **半全场** — 9种半全场选项赔率 + 变化次数统计
+- **让球胜平负** — 让球盘口赔率
+- **比分赔率** — 最低赔率比分推荐
+- **赔率变化统计** — 实时追踪每个选项的变化次数和幅度
+  - 红色↑ = 赔率上升（庄家造热方向）
+  - 绿色↓ = 赔率下降（庄家推离方向）
+- **前瞻数据** — 特征分析、历史交锋、伤停、射手、积分榜
+
+### 2. ⭐ 赛前情报分析（prematch.js V4）
 
 点击比赛详情后自动展示完整的赛前情报，采用**四步推理链**：
 
@@ -78,7 +107,7 @@ football-prediction/
 ⑤ 综合判定                      → 五维优先级(阻盘>推离最优解>基本面>双重确认>赔付为准)
 ```
 
-### 2. ⭐ 赔付压力矩阵
+### 3. ⭐ 赔付压力矩阵
 
 每个赛果在**标准盘和让球盘两个维度**的赔付压力对比：
 
@@ -94,7 +123,7 @@ football-prediction/
 - **🔥 推离最优解警报** → 赔率拉高 + 最低赔付 = 庄家真方向
 - **🧱 阻盘模式检测** → 标准低赔 + 让球超高水(>3.0) + 基本面同向 = 阻拦真方向
 
-### 3. ⭐ 让球盘六档水位分类（handicap.js）
+### 4. ⭐ 让球盘六档水位分类（handicap.js）
 
 | 区间 | 档位 | 庄家意图 | 含义 |
 |------|------|---------|------|
@@ -107,7 +136,7 @@ football-prediction/
 
 **出口结构分析**：单出口 / 双出口 / 分散 / 封锁 — 判断筹码流向集中度。
 
-### 4. 综合判定五维优先级
+### 5. 综合判定五维优先级
 
 ```
 优先级从高到低：
@@ -120,7 +149,7 @@ football-prediction/
 ⑥ 观望             多信号冲突或无法判断
 ```
 
-### 5. 三方向排除引擎（R1~R8）
+### 6. 三方向排除引擎（R1~R8）
 
 | 规则 | 名称 | 说明 |
 |------|------|------|
@@ -129,7 +158,7 @@ football-prediction/
 | **R7** | 近况对比 | 主队 vs 客队近况评分差 |
 | **R8** | 🔥冷门检测器 | 检测"造热陷阱"：高赔+竞彩巨降+多公司同向 |
 
-### 6. 冷门模式库 🧊
+### 7. 冷门模式库 🧊
 
 - 复盘时**自动检测爆冷**并分类入库
 - 支持4种冷门类型识别：
@@ -139,7 +168,7 @@ football-prediction/
   - ❓ **未知**
 - 分析时**自动匹配历史相似冷门**（满分78分制），按危险等级提示
 
-### 7. 投注建议系统
+### 8. 投注建议系统
 
 | 星级 | 含义 | 建议 |
 |------|------|------|
@@ -149,7 +178,7 @@ football-prediction/
 | ★★☆☆☆ | 有极端冷门信号 | 🚨 谨慎/观望 |
 | ☆☆☆☆☆ | 无法判断或矛盾 | ⚪ 观望 |
 
-### 8. 历史复盘
+### 9. 历史复盘
 
 - 每场比赛可录入比分进行复盘验证
 - 自动统计命中率
@@ -159,20 +188,33 @@ football-prediction/
 
 ## ☁️ 云端部署
 
-### 方式一：Render（推荐免费）
+### 竞彩数据服务（sporttery_web.py）
+
+由于竞彩数据来自竞彩网API，建议**本地部署**以便数据抓取。
+
+```bash
+# 本地部署
+python sporttery_web.py 8899
+# 访问 http://localhost:8899
+```
+
+### 分析主站服务（football_web.py）
+
+推荐部署到云端：
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/new?type=web&repo=https://github.com/workbuddy001/football-prediction)
 
-**步骤：**
+**Render 部署步骤：**
 1. 点击上方按钮 → 选择 `workbuddy001/football-prediction` 仓库
 2. 设置环境变量：
    - `HOST` = `0.0.0.0`（绑定公网IP，必须！）
+   - `PORT` = `8890`（或其他端口）
 3. 点击 **Create Web Service**
 4. 等待 ~2 分钟自动部署完成
 
 > ⚠️ 必须设置 `HOST=0.0.0.0` 环境变量，否则无法从外部访问！
 
-### 方式二：手动 VPS 部署
+### VPS 部署（同时运行两个服务）
 
 ```bash
 # 安装 Git + Python3
@@ -182,20 +224,32 @@ apt update && apt install -y git python3
 git clone https://github.com/workbuddy001/football-prediction.git
 cd football-prediction
 
-# 后台运行
-nohup python3 football_web.py &
+# 启动竞彩数据服务
+nohup python3 sporttery_web.py > sporttery.log 2>&1 &
+# 端口：8899
 
-# 或用 systemd 管理（推荐）
-cat > /etc/systemd/system/football.service << 'EOF'
+# 启动分析主站
+nohup python3 football_web.py 8890 > football.log 2>&1 &
+# 端口：8890
+
+# 验证服务运行
+netstat -tlnp | grep -E '8899|8890'
+```
+
+### systemd 服务管理（推荐）
+
+```bash
+# 创建竞彩数据服务
+cat > /etc/systemd/system/football-sporttery.service << 'EOF'
 [Unit]
-Description=Football Prediction Service
+Description=Football Sporttery Service
 After=network.target
 
 [Service]
 Type=simple
 User=root
 WorkingDirectory=/root/football-prediction
-ExecStart=python3 football_web.py 8899
+ExecStart=python3 sporttery_web.py
 Restart=always
 RestartSec=5
 
@@ -203,28 +257,60 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-systemctl enable football
-systemctl start football
+# 创建分析主站服务
+cat > /etc/systemd/system/football-analysis.service << 'EOF'
+[Unit]
+Description=Football Analysis Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/football-prediction
+ExecStart=python3 football_web.py 8890
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# 启用并启动
+systemctl enable football-sporttery
+systemctl enable football-analysis
+systemctl start football-sporttery
+systemctl start football-analysis
 ```
 
-### 方式三：Docker
+### Docker 部署
 
 ```dockerfile
 FROM python:3.11-slim
 WORKDIR /app
 COPY . .
-EXPOSE 8899
-CMD ["python", "football_web.py"]
+EXPOSE 8899 8890
+CMD ["sh", "-c", "python sporttery_web.py & python football_web.py 8890"]
 ```
 
 ```bash
 docker build -t football-prediction .
-docker run -d -p 8899:8899 football-prediction
+docker run -d -p 8899:8899 -p 8890:8890 football-prediction
 ```
 
 ---
 
 ## 📊 API 接口
+
+### 竞彩数据服务（端口 8899）
+
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/` | 竞彩数据查看页面 |
+| GET | `/api/matches` | 获取已缓存的比赛列表 |
+| GET | `/api/match/:id` | 获取指定比赛数据 |
+| POST | `/api/fetch/:id` | 抓取指定比赛数据 |
+
+### 分析主站服务（端口 8890）
 
 | 方法 | 路径 | 说明 |
 |------|------|------|
@@ -239,6 +325,15 @@ docker run -d -p 8899:8899 football-prediction
 ---
 
 ## ⚙️ 配置项
+
+### 竞彩数据服务
+
+| 配置 | 默认值 | 说明 |
+|------|--------|------|
+| `PORT` | 8899 | 服务端口（通过命令行参数指定）|
+| `HOST` | 127.0.0.1 | 绑定地址 |
+
+### 分析主站
 
 | 配置 | 默认值 | 说明 |
 |------|--------|------|
@@ -255,8 +350,13 @@ docker run -d -p 8899:8899 football-prediction
 ### 本地开发
 
 ```bash
-python football_web.py       # 启动（默认8899端口）
-python football_web.py 9000  # 指定端口
+# 竞彩数据服务
+python sporttery_web.py       # 默认 8899 端口
+python sporttery_web.py 9000 # 指定端口
+
+# 分析主站
+python football_web.py       # 默认 8899 端口
+python football_web.py 8890 # 指定端口（避免与竞彩服务冲突）
 ```
 
 修改 JS 文件后重启 Python 服务生效。前端 JS 语法检查：
@@ -275,38 +375,14 @@ node --check static/js/handicap.js
 | "XXX is not defined" | var 声明作用域问题，移到函数开头 |
 | 端口占用 | `netstat -ano \| findstr :8899` → 杀进程 |
 | 中文乱码 | 确保 UTF-8 编码（默认已处理）|
-| 数据加载失败 | 检查 `分析模板/` 目录下是否有对应日期的源数据文件 |
+| 竞彩数据为空 | 检查网络连接，确保能访问竞彩网API |
+| 分析数据缺失 | 检查 `分析模板/` 目录下是否有对应日期的源数据文件 |
 
 ---
 
 ## 📝 更新日志
 
-### V4.0 (2026-04-14)
-- ✨ **新增赛前情报分析模块**（prematch.js）：四步推理链完整实现
-- ✨ **新增让球盘模块**（handicap.js）：六档水位 + 出口结构 + 庄家意图
-- ✨ **新增赔付压力矩阵**：三方向×双盘口动态加权对比 + 庄家最优解推演
-- ✨ **新增阻盘模式检测**：标准低赔 + 让球超高水 + 基本面同向 = 真方向
-- ✨ **综合判定升级**：五维优先级体系（阻盘>推离最优解>基本面>双重确认>赔付为准）
-- 🔧 **修复**：标准盘赔率数据源（realtime_odds 正确遍历竞彩行）
-- 🔧 **修复**：让球盘赔率映射（受让/让球动态匹配）
-- 🔧 **修复**：var 作用域覆盖 bug
-- 🔧 **修正**：让球盘六档水位阈值（>4.2强阻, >3.5微阻, >2.8博取高倍）
-
-### V3.4 (2026-04-12)
-- ✨ 新增 **冷门模式库**（Upset Pattern Library）：复盘自动检测爆冷入库
-- ✨ 新增 **相似匹配算法**：78分制5维匹配（赔率+基本面+联赛）
-- ✨ 新增 **冷门模式浏览页面** + **历史复盘页面**
-- 🔥 **R8 冷门检测器增强**：⚡极端信号降星级+红色预警横幅+观望建议
-
-### V3.3 (2026-04-12)
-- 🔥 R8 极端冷门信号影响结论：降星+橙色标记
-- 🔥 投注建议强化：极端冷门→🚨观望建议
-- 🔥 冷门预警横幅覆盖所有三方向
-
-### V3.2 (2026-04-12)
-- 🔧 修复 JSON.parse 双重解析陷阱
-- 🔧 修复 30家赔率遍历索引（ri=0 开始）
-- ✅ 排除引擎完整实现（R1/R4/R7/R8）
+详见 [CHANGELOG.md](./CHANGELOG.md)
 
 ---
 
