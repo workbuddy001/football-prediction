@@ -132,6 +132,9 @@ class SportteryAPI:
         # 计算赔率变化统计
         ttg_change_stats = self._calc_ttg_change_stats(odds_data)
         hafu_change_stats = self._calc_hafu_change_stats(odds_data)
+
+        # 计算进球数-比分联动排除列表
+        exclusion_list = self._calc_exclusion_list(score_odds, total_goals)
         
         result = {
             'match_id': match_id,
@@ -145,7 +148,8 @@ class SportteryAPI:
             'hhad': hhad,
             'preview': preview,
             'ttg_change': ttg_change_stats,
-            'hafu_change': hafu_change_stats
+            'hafu_change': hafu_change_stats,
+            'exclusion_list': exclusion_list
         }
         
         # 保存
@@ -348,3 +352,100 @@ class SportteryAPI:
                 }
 
         return stats
+
+    def _is_special_tail(self, val_str):
+        """判断赔率是否含特殊尾数（.25 / .75 / .15）"""
+        try:
+            v = float(val_str)
+            # 取小数部分，保留2位精度
+            frac = round(v % 1, 2)
+            return frac in (0.25, 0.75, 0.15)
+        except (ValueError, TypeError):
+            return False
+
+    def _calc_exclusion_list(self, score_odds, total_goals):
+        """
+        进球数-比分联动排除定律
+        规则：
+          A. 比分赔率尾数为 .25/.75/.15 → 该比分优先排除
+          B. 进球数赔率尾数为 .25/.75/.15 → 该进球数优先排除
+          C. 联动：若进球数被排除 + 对应比分也有特殊尾数 → 强排除
+             若进球数被排除 + 对应比分尾数普通 → 普通排除
+             若进球数未被排除 + 仅比分特殊尾数 → 比分单独排除
+
+        返回:
+          [
+            {
+              "goal": "3球",
+              "ttg_odds": "3.90",
+              "ttg_special": True/False,    # 进球数赔率含特殊尾数
+              "scores": [
+                { "score": "1:2", "odds": "10.50", "special": True/False }
+              ],
+              "level": "强排除" / "普通排除" / "仅比分排除",
+              "reason": "说明文字"
+            }
+          ]
+        """
+        import re
+
+        # 按进球总数分组比分
+        # score_odds 格式: {"01:02": "10.50", ...}
+        goals_to_scores = {}
+        for score_key, odds_val in score_odds.items():
+            # 解析 home:away 格式（可能是 01:02 或 1:2）
+            m = re.match(r'^(\d+):(\d+)$', score_key)
+            if not m:
+                continue
+            home = int(m.group(1))
+            away = int(m.group(2))
+            total = home + away
+            if total not in goals_to_scores:
+                goals_to_scores[total] = []
+            goals_to_scores[total].append({
+                'score': score_key,
+                'odds': odds_val,
+                'special': self._is_special_tail(odds_val)
+            })
+
+        result = []
+
+        for total, scores in sorted(goals_to_scores.items()):
+            ttg_key = f"{total}球"
+            ttg_odds = total_goals.get(ttg_key, None)
+            ttg_special = self._is_special_tail(ttg_odds) if ttg_odds else False
+
+            # 检查该进球数下是否有比分含特殊尾数
+            has_special_score = any(s['special'] for s in scores)
+
+            # 只有至少一个方向（进球数或比分）命中特殊尾数才加入排除列表
+            if not ttg_special and not has_special_score:
+                continue
+
+            # 判断级别
+            if ttg_special and has_special_score:
+                level = "强排除"
+                reason = f"进球数赔率({ttg_odds})含特殊尾数，且对应比分中有特殊尾数赔率，联动双重排除信号"
+            elif ttg_special and not has_special_score:
+                level = "普通排除"
+                reason = f"进球数赔率({ttg_odds})含特殊尾数，排除该进球数及其所有比分"
+            else:
+                # 仅比分含特殊尾数
+                level = "仅比分排除"
+                ttg_info = f"{ttg_odds}（普通）" if ttg_odds else "无数据"
+                reason = f"进球数赔率{ttg_info}，但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+
+            result.append({
+                'goal': ttg_key,
+                'ttg_odds': ttg_odds or '-',
+                'ttg_special': ttg_special,
+                'scores': scores,
+                'level': level,
+                'reason': reason
+            })
+
+        # 按级别排序：强排除 > 普通排除 > 仅比分排除
+        level_order = {'强排除': 0, '普通排除': 1, '仅比分排除': 2}
+        result.sort(key=lambda x: level_order.get(x['level'], 9))
+
+        return result

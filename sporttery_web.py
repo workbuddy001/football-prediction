@@ -140,6 +140,28 @@ HTML_TEMPLATE = '''
         .change-neutral { border-left: 3px solid #888; }
         .change-neutral .change-value { color: #888; }
 
+        /* 进球数-比分联动排除列表 */
+        .exclusion-section { margin-top: 12px; }
+        .exclusion-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .exclusion-hint { font-size: 11px; color: #888; font-weight: normal; margin-left: 4px; }
+        .exclusion-list { display: flex; flex-direction: column; gap: 8px; }
+        .excl-item { border-radius: 8px; overflow: hidden; border: 1px solid transparent; }
+        .excl-strong { border-color: #ef4444; background: rgba(239,68,68,0.08); }
+        .excl-normal  { border-color: #f97316; background: rgba(249,115,22,0.08); }
+        .excl-weak    { border-color: #eab308; background: rgba(234,179,8,0.08); }
+        .excl-header { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: rgba(0,0,0,0.2); flex-wrap: wrap; }
+        .excl-level-badge { font-size: 12px; font-weight: bold; color: #fff; }
+        .excl-goal { font-size: 15px; font-weight: bold; color: #ffd700; }
+        .excl-goal-special { text-decoration: underline wavy #ef4444; }
+        .excl-ttg-odds { font-size: 12px; color: #aaa; margin-left: auto; }
+        .excl-body { padding: 8px 12px; }
+        .excl-scores-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+        .excl-scores-label { font-size: 11px; color: #888; flex-shrink: 0; }
+        .excl-score-badge { padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .excl-score-badge.special { background: #7f1d1d; color: #fca5a5; border: 1px solid #ef4444; }
+        .excl-score-badge.normal  { background: #1e3a5f; color: #93c5fd; border: 1px solid #3b82f6; }
+        .excl-reason { font-size: 11px; color: #888; line-height: 1.5; margin-top: 4px; }
+
         .no-data { text-align: center; color: #888; padding: 60px 20px; }
         .no-data h2 { margin-bottom: 20px; }
         .instructions { background: #16213e; border-radius: 10px; padding: 20px; margin-bottom: 30px; text-align: center; }
@@ -359,7 +381,53 @@ HTML_TEMPLATE = '''
                         </div>
                     </div>
                     ` : ''}
-                    
+
+                    <!-- 进球数-比分联动排除列表 -->
+                    ${m.exclusion_list && m.exclusion_list.length > 0 ? `
+                    <div class="odds-section exclusion-section">
+                        <div class="odds-title exclusion-title">
+                            ⚡ 优先排除列表
+                            <span class="exclusion-hint">赔率尾数含 .25 / .75 / .15 的进球数或比分</span>
+                        </div>
+                        <div class="exclusion-list">
+                            ${m.exclusion_list.map(item => {
+                                const levelCls = item.level === '强排除' ? 'excl-strong'
+                                               : item.level === '普通排除' ? 'excl-normal'
+                                               : 'excl-weak';
+                                const levelIcon = item.level === '强排除' ? '🔴'
+                                                : item.level === '普通排除' ? '🟠'
+                                                : '🟡';
+                                const specialScores = item.scores.filter(s => s.special);
+                                const normalScores = item.scores.filter(s => !s.special);
+                                return `<div class="excl-item ${levelCls}">
+                                    <div class="excl-header">
+                                        <span class="excl-level-badge">${levelIcon} ${item.level}</span>
+                                        <span class="excl-goal ${item.ttg_special ? 'excl-goal-special' : ''}">${item.goal}</span>
+                                        <span class="excl-ttg-odds">进球数赔率: ${item.ttg_odds}${item.ttg_special ? ' ★' : ''}</span>
+                                    </div>
+                                    <div class="excl-body">
+                                        ${specialScores.length > 0 ? `
+                                        <div class="excl-scores-row">
+                                            <span class="excl-scores-label">★ 特殊尾数比分:</span>
+                                            ${specialScores.map(s => `
+                                                <span class="excl-score-badge special">${s.score} (${s.odds})</span>
+                                            `).join('')}
+                                        </div>` : ''}
+                                        ${normalScores.length > 0 && item.level !== '仅比分排除' ? `
+                                        <div class="excl-scores-row">
+                                            <span class="excl-scores-label">普通比分:</span>
+                                            ${normalScores.map(s => `
+                                                <span class="excl-score-badge normal">${s.score} (${s.odds})</span>
+                                            `).join('')}
+                                        </div>` : ''}
+                                        <div class="excl-reason">${item.reason}</div>
+                                    </div>
+                                </div>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
                     <!-- 前瞻数据标签页 -->
                     <div class="preview-tabs">
                         <button class="preview-tab active" onclick="switchPreviewTab(this, 'tab-feature-${m.match_id}')">特征</button>
@@ -673,6 +741,7 @@ def index():
 def get_matches():
     """获取所有比赛数据"""
     matches = []
+    api = SportteryAPI()
     
     for filepath in glob.glob(os.path.join(DATA_DIR, '*.json')):
         try:
@@ -680,6 +749,12 @@ def get_matches():
                 data = json.load(f)
                 # 跳过原始数据
                 if 'raw_' not in os.path.basename(filepath):
+                    # 动态补充 exclusion_list（兼容旧缓存文件）
+                    if 'exclusion_list' not in data:
+                        data['exclusion_list'] = api._calc_exclusion_list(
+                            data.get('score_odds', {}),
+                            data.get('total_goals', {})
+                        )
                     matches.append(data)
         except:
             pass
