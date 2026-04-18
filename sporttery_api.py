@@ -128,6 +128,10 @@ class SportteryAPI:
         
         # 获取前瞻数据
         preview = self.get_preview_data(match_id)
+
+        # 计算赔率变化统计
+        ttg_change_stats = self._calc_ttg_change_stats(odds_data)
+        hafu_change_stats = self._calc_hafu_change_stats(odds_data)
         
         result = {
             'match_id': match_id,
@@ -139,7 +143,9 @@ class SportteryAPI:
             'ttg': ttg,
             'hafu': hafu,
             'hhad': hhad,
-            'preview': preview
+            'preview': preview,
+            'ttg_change': ttg_change_stats,
+            'hafu_change': hafu_change_stats
         }
         
         # 保存
@@ -234,3 +240,111 @@ class SportteryAPI:
                 if item.get('a') and float(item['a']) > 0:
                     hhad['让负'] = item['a']
         return hhad
+
+    def _calc_ttg_change_stats(self, data):
+        """计算总进球赔率变化统计
+        返回格式: {赔率项: {"count": 变化次数, "change_pct": 变化百分比}}
+        """
+        ttg_list = data.get('ttgList', [])
+        if len(ttg_list) < 2:
+            return {}
+
+        # 提取所有可能的赔率键 (s0, s1, s2, ...)
+        all_keys = set()
+        for item in ttg_list:
+            if isinstance(item, dict):
+                for key in item.keys():
+                    if key.startswith('s') and key[1:].isdigit():
+                        all_keys.add(key)
+
+        stats = {}
+        for key in all_keys:
+            values = []
+            for item in ttg_list:
+                if isinstance(item, dict) and key in item:
+                    try:
+                        v = float(item[key])
+                        if v > 0:
+                            values.append(v)
+                    except (ValueError, TypeError):
+                        pass
+
+            if len(values) < 2:
+                continue
+
+            # 计算变化次数（非连续相同值）
+            changes = 0
+            for i in range(1, len(values)):
+                if abs(values[i] - values[i-1]) > 0.001:
+                    changes += 1
+
+            # 计算变化幅度：从第一个到最后一个
+            first_val = values[0]
+            last_val = values[-1]
+            if first_val > 0:
+                change_pct = ((last_val - first_val) / first_val) * 100
+            else:
+                change_pct = 0
+
+            # 转换为显示名称
+            goal_num = key[1:]
+            display_name = f"{goal_num}球"
+            stats[display_name] = {
+                'count': changes,
+                'change_pct': round(change_pct, 1)
+            }
+
+        return stats
+
+    def _calc_hafu_change_stats(self, data):
+        """计算半全场赔率变化统计
+        返回格式: {赔率项: {"count": 变化次数, "change_pct": 变化百分比}}
+        """
+        hafu_list = data.get('hafuList', [])
+        if len(hafu_list) < 2:
+            return {}
+
+        hafu_names = {
+            'hh': '胜胜', 'dh': '平胜', 'ah': '负胜',
+            'hd': '胜平', 'dd': '平平', 'ad': '负平',
+            'ha': '胜负', 'da': '平负', 'aa': '负负'
+        }
+
+        all_keys = set(hafu_names.keys())
+
+        stats = {}
+        for key in all_keys:
+            values = []
+            for item in hafu_list:
+                if isinstance(item, dict) and key in item:
+                    try:
+                        v = float(item[key])
+                        if v > 0:
+                            values.append(v)
+                    except (ValueError, TypeError):
+                        pass
+
+            if len(values) < 2:
+                continue
+
+            # 计算变化次数（非连续相同值）
+            changes = 0
+            for i in range(1, len(values)):
+                if abs(values[i] - values[i-1]) > 0.001:
+                    changes += 1
+
+            # 计算变化幅度：从第一个到最后一个
+            first_val = values[0]
+            last_val = values[-1]
+            if first_val > 0:
+                change_pct = ((last_val - first_val) / first_val) * 100
+            else:
+                change_pct = 0
+
+            if key in hafu_names:
+                stats[hafu_names[key]] = {
+                    'count': changes,
+                    'change_pct': round(change_pct, 1)
+                }
+
+        return stats

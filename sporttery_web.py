@@ -123,6 +123,23 @@ HTML_TEMPLATE = '''
         .odds-item.top { background: #006666; border: 2px solid #00d4ff; }
         .score-odds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .score-odds .odds-item { padding: 8px 4px; }
+
+        /* 赔率变化统计 */
+        .change-stats { background: #0a1929; border-radius: 8px; padding: 12px; }
+        .change-category { margin-bottom: 12px; }
+        .change-category:last-child { margin-bottom: 0; }
+        .change-subtitle { color: #ffd700; font-size: 12px; margin-bottom: 8px; font-weight: bold; }
+        .change-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 6px; }
+        .change-item { background: #0f3460; padding: 8px 6px; border-radius: 6px; text-align: center; }
+        .change-item .change-label { color: #888; font-size: 11px; margin-bottom: 4px; }
+        .change-item .change-value { font-size: 12px; font-weight: bold; }
+        .change-up { border-left: 3px solid #ef4444; }
+        .change-up .change-value { color: #ef4444; }
+        .change-down { border-left: 3px solid #22c55e; }
+        .change-down .change-value { color: #22c55e; }
+        .change-neutral { border-left: 3px solid #888; }
+        .change-neutral .change-value { color: #888; }
+
         .no-data { text-align: center; color: #888; padding: 60px 20px; }
         .no-data h2 { margin-bottom: 20px; }
         .instructions { background: #16213e; border-radius: 10px; padding: 20px; margin-bottom: 30px; text-align: center; }
@@ -277,6 +294,18 @@ HTML_TEMPLATE = '''
                         </div>
                     </div>
                     ` : ''}
+
+                    <!-- 半全场 -->
+                    ${Object.keys(m.hafu || {}).length > 0 ? `
+                    <div class="odds-section">
+                        <div class="odds-title">半全场</div>
+                        <div class="odds-grid">
+                            ${Object.entries(m.hafu || {}).map(([k, v]) =>
+                                `<div class="odds-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v}</div></div>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
                     
                     <!-- 比分(最低赔率) -->
                     ${Object.keys(m.score_odds || {}).length > 0 ? `
@@ -284,6 +313,49 @@ HTML_TEMPLATE = '''
                         <div class="odds-title">比分赔率 (最低)</div>
                         <div class="score-odds">
                             ${getLowestScores(m.score_odds)}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <!-- 赔率变化统计 -->
+                    ${(m.ttg_change && Object.keys(m.ttg_change).length > 0) || (m.hafu_change && Object.keys(m.hafu_change).length > 0) ? `
+                    <div class="odds-section">
+                        <div class="odds-title">赔率变化统计</div>
+                        <div class="change-stats">
+                            ${m.ttg_change && Object.keys(m.ttg_change).length > 0 ? `
+                            <div class="change-category">
+                                <div class="change-subtitle">总进球变化</div>
+                                <div class="change-grid">
+                                    ${Object.entries(m.ttg_change || {}).map(([k, v]) => {
+                                        const up = v.change_pct > 0;
+                                        const down = v.change_pct < 0;
+                                        const cls = up ? 'change-up' : (down ? 'change-down' : 'change-neutral');
+                                        const arrow = up ? '↑' : (down ? '↓' : '→');
+                                        return `<div class="change-item ${cls}">
+                                            <div class="change-label">${k}</div>
+                                            <div class="change-value">${v.count}次 ${arrow}${Math.abs(v.change_pct)}%</div>
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>
+                            ` : ''}
+                            ${m.hafu_change && Object.keys(m.hafu_change).length > 0 ? `
+                            <div class="change-category">
+                                <div class="change-subtitle">半全场变化</div>
+                                <div class="change-grid">
+                                    ${Object.entries(m.hafu_change || {}).map(([k, v]) => {
+                                        const up = v.change_pct > 0;
+                                        const down = v.change_pct < 0;
+                                        const cls = up ? 'change-up' : (down ? 'change-down' : 'change-neutral');
+                                        const arrow = up ? '↑' : (down ? '↓' : '→');
+                                        return `<div class="change-item ${cls}">
+                                            <div class="change-label">${k}</div>
+                                            <div class="change-value">${v.count}次 ${arrow}${Math.abs(v.change_pct)}%</div>
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>
+                            ` : ''}
                         </div>
                     </div>
                     ` : ''}
