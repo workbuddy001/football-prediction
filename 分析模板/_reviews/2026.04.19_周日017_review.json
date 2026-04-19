@@ -1,0 +1,77 @@
+{
+  "match_id": "周日017",
+  "date_folder": "2026.04.19",
+  "home_team": "萨普斯堡",
+  "away_team": "特罗姆瑟",
+  "league": "挪超",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-4.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+6.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升20 / 平降9升14 / 客降12升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降客胜-4.9%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+6.3%>5%"
+  ],
+  "review_time": "2026-04-20 07:10",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 6.25,
+    "jc_draw_chg": 1.47,
+    "jc_away_chg": -4.88,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.88,
+      3.4,
+      2.05
+    ],
+    "jc_real_odds": [
+      3.06,
+      3.45,
+      1.95
+    ],
+    "macao_init_odds": [
+      3.05,
+      3.37,
+      2.02
+    ],
+    "macao_real_odds": [
+      3.05,
+      3.37,
+      2.02
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

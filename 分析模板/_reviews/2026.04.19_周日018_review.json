@@ -1,0 +1,83 @@
+{
+  "match_id": "周日018",
+  "date_folder": "2026.04.19",
+  "home_team": "斯特拉斯",
+  "away_team": "雷恩",
+  "league": "法甲",
+  "handicap": "-1",
+  "home_form": "LWWDDW",
+  "away_form": "WWDLWW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降11升8 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+8.5%>5%",
+    "📈 关键信号「强共识推离主」有效：28/30家公司升主胜（>25家阈值）",
+    "📈 关键信号「强共识造热客」有效：28/30家公司降客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-20 07:11",
+  "macao_tip": "雷恩 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.51,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -7.76,
+    "mcao_home_chg": 10.64,
+    "mcao_draw_chg": -6.34,
+    "mcao_away_chg": -5.35,
+    "jc_init_odds": [
+      2.35,
+      3.4,
+      2.45
+    ],
+    "jc_real_odds": [
+      2.55,
+      3.4,
+      2.26
+    ],
+    "macao_init_odds": [
+      2.35,
+      3.63,
+      2.43
+    ],
+    "macao_real_odds": [
+      2.6,
+      3.4,
+      2.3
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UDD"
+  }
+}

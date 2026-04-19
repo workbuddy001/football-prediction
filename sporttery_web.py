@@ -9,8 +9,19 @@ import json
 import glob
 from sporttery_api import SportteryAPI
 from predict_3goals import extract_features, predict_3goals
+from _3goals_stats import StatsEngine
 
 app = Flask(__name__)
+
+# 3球历史统计引擎（延迟加载）
+_stats_engine = None
+
+def get_stats_engine():
+    global _stats_engine
+    if _stats_engine is None:
+        _stats_engine = StatsEngine()
+        _stats_engine.load()
+    return _stats_engine
 DATA_DIR = 'sporttery_data'
 SCORES_FILE = '分析模板/_scores.json'
 
@@ -395,6 +406,27 @@ HTML_TEMPLATE = '''
         .signal-neutral .g3-signal-score { color: #94a3b8; }
         .g3-signal-reason { color: #888; }
 
+        /* 历史相似比赛统计 */
+        .g3-hist-stats { margin-top: 8px; padding: 8px 10px; background: rgba(99,102,241,0.06); border-radius: 8px; border: 1px solid rgba(99,102,241,0.15); }
+        .hist-stats-header { display: flex; align-items: center; gap: 8px; font-size: 12px; margin-bottom: 4px; }
+        .hist-level { color: #6366f1; font-weight: bold; }
+        .hist-count { color: #888; }
+        .hist-rate { font-weight: bold; }
+        .hist-rate.rate-high { color: #22c55e; }
+        .hist-rate.rate-mid { color: #f59e0b; }
+        .hist-rate.rate-low { color: #ef4444; }
+        .hist-hits { color: #888; font-size: 11px; }
+        .hist-matches { display: flex; flex-direction: column; gap: 2px; }
+        .hist-match-item { display: flex; align-items: center; gap: 6px; font-size: 11px; padding: 2px 6px; border-radius: 4px; }
+        .hist-match-item.hit { background: rgba(34,197,94,0.08); }
+        .hist-match-item.miss { background: rgba(239,68,68,0.06); }
+        .hist-match-tag { font-weight: bold; min-width: 14px; }
+        .hist-match-item.hit .hist-match-tag { color: #22c55e; }
+        .hist-match-item.miss .hist-match-tag { color: #ef4444; }
+        .hist-match-info { color: #64748b; flex: 1; }
+        .hist-match-g3 { color: #888; }
+        .hist-match-actual { color: #94a3b8; }
+
         /* 比分记录 & 相似比赛 */
         .score-review-section { padding: 10px 0 5px; border-top: 1px dashed #1e3a5f; margin-top: 8px; }
         .score-input-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -544,6 +576,36 @@ HTML_TEMPLATE = '''
                                     <span class="g3-signal-reason">${s[2]}</span>
                                 </div>
                             `).join('')}
+                        </div>
+                        ` : ''}
+                        ${m.g3_prediction.hist_stats && m.g3_prediction.hist_stats.matched_count >= 2 ? `
+                        <div class="g3-hist-stats">
+                            <div class="hist-stats-header">
+                                <span class="hist-level">${m.g3_prediction.hist_stats.level === 'L1' ? '[精确]' : m.g3_prediction.hist_stats.level === 'L2' ? '[模糊]' : m.g3_prediction.hist_stats.level === 'L3' ? '[指纹]' : '[宽松]'}历史</span>
+                                <span class="hist-count">${m.g3_prediction.hist_stats.matched_count}场</span>
+                                <span class="hist-rate ${m.g3_prediction.hist_stats.g3_hit_rate >= 50 ? 'rate-high' : m.g3_prediction.hist_stats.g3_hit_rate >= 30 ? 'rate-mid' : 'rate-low'}">3球${m.g3_prediction.hist_stats.g3_hit_rate.toFixed(1)}%</span>
+                                <span class="hist-hits">(${m.g3_prediction.hist_stats.g3_hit_count}打${m.g3_prediction.hist_stats.matched_count})</span>
+                            </div>
+                            ${m.g3_prediction.hist_stats.similar_matches && m.g3_prediction.hist_stats.similar_matches.length > 0 ? `
+                            <div class="hist-matches">
+                                ${m.g3_prediction.hist_stats.similar_matches.slice(0, 3).map(sm => `
+                                    <div class="hist-match-item ${sm.is_3 ? 'hit' : 'miss'}">
+                                        <span class="hist-match-tag">${sm.is_3 ? 'O' : 'X'}</span>
+                                        <span class="hist-match-info">${sm.date} ${sm.match}</span>
+                                        <span class="hist-match-g3">3球=${sm.g3}</span>
+                                        <span class="hist-match-actual">${sm.actual}(${sm.total}球)</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ` : ''}
+                        </div>
+                        ` : m.g3_prediction.hist_stats && m.g3_prediction.hist_stats.total_historical > 0 ? `
+                        <div class="g3-hist-stats">
+                            <div class="hist-stats-header">
+                                <span class="hist-level">[无匹配]</span>
+                                <span class="hist-rate rate-mid">历史3球${m.g3_prediction.hist_stats.g3_hit_rate.toFixed(1)}%</span>
+                                <span class="hist-hits">(${m.g3_prediction.hist_stats.total_historical}场参考)</span>
+                            </div>
                         </div>
                         ` : ''}
                     </div>
@@ -1200,7 +1262,8 @@ def _build_match_card(data, api):
                     '1球': g3_pred.get('features', {}).get('1球'),
                     '2球': g3_pred.get('features', {}).get('2球'),
                     '区间': g3_pred.get('features', {}).get('区间'),
-                }
+                },
+                'hist_stats': g3_pred.get('hist_stats'),
             },
             # 让球：只保留数值
             'hhad': {
@@ -1241,6 +1304,19 @@ def get_matches():
                     try:
                         features = extract_features(data)
                         g3_pred = predict_3goals(features)
+                        # 历史相似比赛3球打出率
+                        se = get_stats_engine()
+                        g3_hist = se.query_similar(
+                            g3=features.get('3球'),
+                            g0=features.get('0球'),
+                            g0_is_int=features.get('0球_是整数', False),
+                            g1=features.get('1球'),
+                            g2=features.get('2球'),
+                            league_type=features.get('赛事类型', '联赛正赛'),
+                            jc_pattern=features.get('jc_pattern', ''),
+                            macao_pattern=features.get('macao_pattern', ''),
+                            min_records=2,
+                        )
                         data['g3_prediction'] = {
                             'recommendation': g3_pred.get('recommendation', '观望'),
                             'score': g3_pred.get('signal_score', 0),
@@ -1255,9 +1331,11 @@ def get_matches():
                                 '0球_整数高赔': features.get('0球_整数高赔'),
                                 '3球_降赔': features.get('3球_降赔'),
                                 '3球_升赔': features.get('3球_升赔'),
-                            }
+                            },
+                            # 历史相似比赛统计
+                            'hist_stats': g3_hist,
                         }
-                    except:
+                    except Exception as ex:
                         pass
                     matches.append(_build_match_card(data, api))
         except:
@@ -1291,7 +1369,15 @@ def fetch_match(match_id):
                     '0球_整数高赔': features.get('0球_整数高赔'),
                     '3球_降赔': features.get('3球_降赔'),
                     '3球_升赔': features.get('3球_升赔'),
-                }
+                },
+                # 历史相似比赛统计
+                'hist_stats': get_stats_engine().query_similar(
+                    g3=features.get('3球'),
+                    g0=features.get('0球'),
+                    g0_is_int=features.get('0球_是整数', False),
+                    league_type=features.get('赛事类型', '联赛正赛'),
+                    min_records=2,
+                ) if features.get('3球') else None,
             }
             return jsonify({'success': True, 'data': result})
         else:
@@ -1416,4 +1502,4 @@ if __name__ == '__main__':
     print('访问地址: http://192.168.0.101:8899')
     print('='*60)
     
-    app.run(host='0.0.0.0', port=8899, debug=False, threaded=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8899)), debug=False, threaded=True)

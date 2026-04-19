@@ -1,0 +1,68 @@
+{
+  "match_id": "周日006",
+  "date_folder": "2026.04.19",
+  "home_team": "克雷莫纳",
+  "away_team": "都灵",
+  "league": "意甲",
+  "handicap": "1",
+  "home_form": "LLWLLL",
+  "away_form": "WWLWLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-2.1%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降11升10 / 平降13升7 / 客降3升24",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-20 00:14",
+  "macao_tip": "都灵 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 2.61,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -2.06,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.68,
+      2.9,
+      2.43
+    ],
+    "jc_real_odds": [
+      2.75,
+      2.9,
+      2.38
+    ],
+    "macao_init_odds": [
+      2.73,
+      2.98,
+      2.43
+    ],
+    "macao_real_odds": [
+      2.73,
+      2.98,
+      2.43
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "match_id": "周日014",
+  "date_folder": "2026.04.19",
+  "home_team": "维罗纳",
+  "away_team": "AC米兰",
+  "league": "意甲",
+  "handicap": "1",
+  "home_form": "LLLLWL",
+  "away_form": "LLWLWW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw",
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率6.70>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.10>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+6.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升27 / 平降0升26 / 客降27升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "27/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（平局/主胜）策略有效",
+    "📈 关键信号「绝对值排除」有效：主胜赔率6.70>5.0",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+6.3%>5%",
+    "📈 关键信号「推离排除」有效：竞彩平局升+5.1%>5%"
+  ],
+  "review_time": "2026-04-20 00:15",
+  "macao_tip": "AC米兰 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 6.35,
+    "jc_draw_chg": 5.13,
+    "jc_away_chg": -2.86,
+    "mcao_home_chg": 16.5,
+    "mcao_draw_chg": 4.86,
+    "mcao_away_chg": -5.81,
+    "jc_init_odds": [
+      6.3,
+      3.9,
+      1.4
+    ],
+    "jc_real_odds": [
+      6.7,
+      4.1,
+      1.36
+    ],
+    "macao_init_odds": [
+      5.15,
+      3.7,
+      1.55
+    ],
+    "macao_real_odds": [
+      6.0,
+      3.88,
+      1.46
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "match_id": "周日010",
+  "date_folder": "2026.04.19",
+  "home_team": "瓦勒伦加",
+  "away_team": "利勒斯特",
+  "league": "挪超",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降21升7 / 客降7升10",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:1(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-20 00:15",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 3.32,
+    "jc_draw_chg": -2.74,
+    "jc_away_chg": -1.91,
+    "mcao_home_chg": 3.14,
+    "mcao_draw_chg": -2.12,
+    "mcao_away_chg": -2.06,
+    "jc_init_odds": [
+      2.11,
+      3.65,
+      2.62
+    ],
+    "jc_real_odds": [
+      2.18,
+      3.55,
+      2.57
+    ],
+    "macao_init_odds": [
+      2.23,
+      3.78,
+      2.43
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.7,
+      2.38
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "UDD"
+  }
+}

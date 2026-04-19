@@ -218,6 +218,30 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             signals.append(('2球<1球×0.85', '+5', f'{g2}/{g1}={ratio:.2f}'));
             reasons.append(f'2球({g2})<1球({g1})，市场不排斥2球以上')
 
+    # Step 3.5: 3球 vs 4球赔率梯度（筹码流向判断）
+    g4 = features.get('4球')
+    if g3 is not None and g4 is not None:
+        gap = g4 - g3  # 正=4球更贵，负=4球更便宜
+        gap_pct = gap / g3 * 100
+        # 0球赔率极高时，额外惩罚更重（球多可能溢出到4球）
+        g0 = features.get('0球')
+        g0_extreme = g0 is not None and g0 > 30
+        if gap < -0.1:  # 4球比3球便宜 → 筹码流向4球，3球减分
+            base_penalty = min(12, max(5, int(abs(gap_pct) * 0.8)))
+            if g0_extreme:
+                penalty = min(15, base_penalty + 5)
+                signals.append(('4球<3球', f'-{penalty}', f'3={g3} 4={g4} 0球={g0}'));
+                reasons.append(f'4球({g4})<3球({g3})，0球{g0}极高，额外溢出风险')
+            else:
+                penalty = base_penalty
+                signals.append(('4球<3球', f'-{penalty}', f'3={g3} 4={g4} 差{gap:.2f}'));
+                reasons.append(f'4球({g4})<3球({g3})，筹码流向4球，抵消3球加分')
+        elif gap > 0.1:  # 3球比4球便宜 → 3球有吸引力，加分
+            bonus = min(8, max(2, int(gap_pct * 0.6)))
+            signals.append(('3球<4球', f'+{bonus}', f'3={g3} 4={g4} 差+{gap:.2f}'));
+            reasons.append(f'3球({g3})<4球({g4})，3球相对便宜，有吸引力')
+        # 差距<=0.3 → 无信号
+
     # Step 4: 诱导比分
     if features.get('诱导比分_数量', 0) >= 3:
         signals.append(('多诱导比分', '+3', f'{features["诱导比分_数量"]}个'));

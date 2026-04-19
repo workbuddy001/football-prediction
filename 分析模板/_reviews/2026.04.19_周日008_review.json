@@ -1,0 +1,71 @@
+{
+  "match_id": "周日008",
+  "date_folder": "2026.04.19",
+  "home_team": "菲尔特",
+  "away_team": "达姆施塔",
+  "league": "德乙",
+  "handicap": "1",
+  "home_form": "DLLWWD",
+  "away_form": "LLDDWL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "3:2",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.50≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升17 / 平降9升9 / 客降9升14",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为3:2(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-20 00:14",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      3.1,
+      3.5,
+      1.92
+    ],
+    "jc_real_odds": [
+      3.1,
+      3.5,
+      1.92
+    ],
+    "macao_init_odds": [
+      2.72,
+      3.7,
+      2.06
+    ],
+    "macao_real_odds": [
+      2.72,
+      3.7,
+      2.06
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}
