@@ -1,6 +1,124 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.19_周日013_20260420001529",
+      "match_id": "周日013",
+      "date_folder": "2026.04.19",
+      "home_team": "埃弗顿",
+      "away_team": "利物浦",
+      "league": "英超",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "home",
+      "actual_score": "2:1",
+      "confidence": 3,
+      "was_excluded": false,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -5.4,
+        "jc_draw_chg": -1.84,
+        "jc_away_chg": 5.05,
+        "mcao_home_chg": -4.84,
+        "mcao_draw_chg": -7.51,
+        "mcao_away_chg": 9.0,
+        "jc_init_odds": [
+          3.15,
+          3.26,
+          1.98
+        ],
+        "jc_real_odds": [
+          2.98,
+          3.2,
+          2.08
+        ],
+        "macao_init_odds": [
+          3.1,
+          3.46,
+          2.0
+        ],
+        "macao_real_odds": [
+          2.95,
+          3.2,
+          2.18
+        ],
+        "jc_pattern": "DNU",
+        "macao_pattern": "DDU"
+      },
+      "upset_odds": 2.98,
+      "home_form": "DWLWWL",
+      "away_form": "WLLLWD",
+      "handicap": "1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-20 00:15"
+    },
+    {
+      "upset_id": "2026.04.19_周日008_20260420001451",
+      "match_id": "周日008",
+      "date_folder": "2026.04.19",
+      "home_team": "菲尔特",
+      "away_team": "达姆施塔",
+      "league": "德乙",
+      "upset_type": "silent",
+      "upset_type_cn": "静默型：赔率完全不动，无任何变化信号",
+      "prediction": "客胜",
+      "predicted_dir": "away",
+      "actual_result": "home",
+      "actual_score": "3:2",
+      "confidence": 4,
+      "was_excluded": false,
+      "exclusions": [
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 0.0,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": 0.0,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          3.1,
+          3.5,
+          1.92
+        ],
+        "jc_real_odds": [
+          3.1,
+          3.5,
+          1.92
+        ],
+        "macao_init_odds": [
+          2.72,
+          3.7,
+          2.06
+        ],
+        "macao_real_odds": [
+          2.72,
+          3.7,
+          2.06
+        ],
+        "jc_pattern": "NNN",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 3.1,
+      "home_form": "DLLWWD",
+      "away_form": "LLDDWL",
+      "handicap": "1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-20 00:14"
+    },
+    {
       "upset_id": "2026.04.19_周日005_20260419182048",
       "match_id": "周日005",
       "date_folder": "2026.04.19",
@@ -3878,12 +3996,12 @@
     }
   ],
   "stats": {
-    "total": 65,
+    "total": 67,
     "by_type": {
-      "unknown": 21,
-      "reverse_cover": 43,
-      "silent": 1
+      "unknown": 22,
+      "silent": 2,
+      "reverse_cover": 43
     },
-    "last_update": "2026-04-19 18:20"
+    "last_update": "2026-04-20 00:15"
   }
 }

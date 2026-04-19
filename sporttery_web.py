@@ -3,7 +3,7 @@
 """
 竞彩比分预测系统 - 完整版
 """
-from flask import Flask, jsonify, render_template_string
+from flask import Flask, jsonify, render_template_string, request
 import os
 import json
 import glob
@@ -430,6 +430,14 @@ HTML_TEMPLATE = '''
         .similar-empty { color: #555; padding: 10px; text-align: center; font-size: 12px; }
         .score-badge { display: inline-block; background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); border-radius: 4px; padding: 1px 6px; font-size: 11px; margin-left: 4px; }
         .saved-score-display { font-weight: bold; color: #4ade80; font-size: 14px; }
+        /* ── 分页 ── */
+        .pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 20px 0 10px; flex-wrap: wrap; }
+        .pagination button { background: #0f3460; color: #a78bfa; border: 1px solid #1e3a5f; border-radius: 6px; padding: 6px 14px; font-size: 13px; cursor: pointer; }
+        .pagination button:hover:not([disabled]) { background: #2a1a4a; }
+        .pagination button[disabled] { opacity: 0.4; cursor: not-allowed; }
+        .pagination button.active { background: #4c1d95; color: #fff; border-color: #7c3aed; font-weight: bold; }
+        .pagination .page-ellipsis { color: #555; padding: 0 4px; }
+        .pagination .page-info { color: #666; font-size: 12px; margin-left: 12px; }
     </style>
 </head>
 <body>
@@ -448,6 +456,7 @@ HTML_TEMPLATE = '''
         </div>
         
         <div id="matchList" class="match-grid"></div>
+        <div id="pagination"></div>
     </div>
 
     <script>
@@ -456,32 +465,33 @@ HTML_TEMPLATE = '''
         // 全局已保存比分缓存 { match_id: {home_score, away_score, total_goals, ...} }
         window._savedScores = {};
 
-        async function loadMatches() {
-            // 并行加载：比赛列表 + 已保存比分
-            const [matchesRes, scoresRes] = await Promise.all([
-                fetch('/api/matches'),
-                fetch('/api/saved-scores')
-            ]);
-            const matches = await matchesRes.json();
-            const scoresData = scoresRes.ok ? (await scoresRes.json()) : {};
-            window._savedScores = (scoresData && scoresData.success && scoresData.scores) ? scoresData.scores : {};
-            window._savedScores = scoresData.scores || {};
+        // ── 分页配置 ──────────────────────────────────────
+        window._PAGE_SIZE = 6;
+        window._currentPage = 1;
+        window._allMatches = [];
 
-            // 缓存数据，供复盘时取 g3_prediction
-            window._matchData = {};
-            matches.forEach(m => { window._matchData[m.match_id] = m; });
+        function renderPage(page) {
+            const matches = window._allMatches;
+            const PAGE_SIZE = window._PAGE_SIZE;
+            const total = matches.length;
+            const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+            window._currentPage = page;
+
+            const start = (page - 1) * PAGE_SIZE;
+            const pageMatches = matches.slice(start, start + PAGE_SIZE);
+
             const container = document.getElementById('matchList');
-            
             if (matches.length === 0) {
                 container.innerHTML = '<div class="no-data"><h2>暂无数据</h2><p>输入比赛ID，点击"抓取分析"按钮获取数据</p></div>';
+                document.getElementById('pagination').innerHTML = '';
                 return;
             }
-            
-            container.innerHTML = matches.map(m => {
-                // 分析推荐
+
+            container.innerHTML = pageMatches.map(m => {
                 const analysis = analyzeMatch(m);
                 const confClass = analysis.confidence >= 3 ? 'conf-high' : analysis.confidence >= 2 ? 'conf-medium' : 'conf-low';
-                
                 return `
                 <div class="match-card">
                     <div class="match-header">
@@ -736,58 +746,62 @@ HTML_TEMPLATE = '''
                     </div>
                 </div>
                 `}).join('');
+
+            // ── 分页导航 ───────────────────────────────
+            let pageHtml = '<div class="pagination">';
+            if (totalPages > 1) {
+                pageHtml += `<button ${page <= 1 ? 'disabled' : ''} onclick="goPage(${page - 1})">‹ 上一页</button>`;
+                for (let p = 1; p <= totalPages; p++) {
+                    if (p === 1 || p === totalPages || (p >= page - 1 && p <= page + 1)) {
+                        pageHtml += `<button class="${p === page ? 'active' : ''}" onclick="goPage(${p})">${p}</button>`;
+                    } else if (p === page - 2 || p === page + 2) {
+                        pageHtml += '<span class="page-ellipsis">…</span>';
+                    }
+                }
+                pageHtml += `<button ${page >= totalPages ? 'disabled' : ''} onclick="goPage(${page + 1})">下一页 ›</button>`;
+            }
+            pageHtml += `<span class="page-info">第${page}/${totalPages}页，共${total}场</span>`;
+            pageHtml += '</div>';
+            document.getElementById('pagination').innerHTML = pageHtml;
+        }
+
+        function goPage(p) { renderPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        async function loadMatches() {
+            // 并行加载：精简比赛列表 + 已保存比分
+            const [matchesRes, scoresRes] = await Promise.all([
+                fetch('/api/matches?light=1'),
+                fetch('/api/saved-scores')
+            ]);
+            window._allMatches = await matchesRes.json();
+            const scoresData = scoresRes.ok ? (await scoresRes.json()) : {};
+            window._savedScores = (scoresData && scoresData.success && scoresData.scores) ? scoresData.scores : {};
+            // 缓存数据，供复盘时取 g3_prediction
+            window._matchData = {};
+            window._allMatches.forEach(m => { window._matchData[m.match_id] = m; });
+            renderPage(1);
         }
         
         function analyzeMatch(m) {
-            const scoreOdds = m.score_odds || {};
-            const had = m.had || {};
-            const totalGoals = m.total_goals || {};
-            
-            // 过滤有效数据
-            const validScores = Object.entries(scoreOdds)
-                .filter(([k, v]) => v && v > 0 && k.includes(':'));
-            
-            if (validScores.length === 0) {
-                return { prediction: '未知', confidence: 0, reason: [] };
-            }
-            
-            // 按赔率排序
-            const sorted = validScores.sort((a, b) => parseFloat(a[1]) - parseFloat(b[1]));
-            const lowest = sorted[0];
-            const lowOdds = parseFloat(lowest[1]);
-            
-            // 胜平负
-            const validHad = Object.entries(had)
-                .filter(([k, v]) => k !== '更新时间' && v && parseFloat(v) > 0);
-            const sortedHad = validHad.sort((a, b) => parseFloat(a[1]) - parseFloat(b[1]));
-            
-            // 总进球
-            const validGoals = Object.entries(totalGoals)
-                .filter(([k, v]) => v && parseFloat(v) > 0);
-            const sortedGoals = validGoals.sort((a, b) => parseFloat(a[1]) - parseFloat(b[1]));
-            
-            // 构建预测
-            let prediction = '未知';
+            // 轻量API使用 g3_prediction 作为预测和置信度来源
+            const g3 = m.g3_prediction || {};
+            const rec = g3.recommendation || '观望';
+            const score = g3.score || 0;
+
+            // 置信度基于 g3 评分
             let confidence = 0;
-            
-            if (lowOdds < 5) confidence = 3;
-            else if (lowOdds < 8) confidence = 2;
-            else confidence = 1;
-            
+            if (score >= 15) confidence = 3;      // 高置信：强烈推荐/排除3球
+            else if (score >= 5) confidence = 2;  // 中置信
+            else confidence = 1;                  // 低置信
+
             const parts = [];
-            if (sortedHad.length > 0) {
-                parts.push(sortedHad[0][0]);
+            const features = g3.features || {};
+            if (rec !== '观望') {
+                parts.push(rec);
+                if (features['3球']) parts.push(`3球赔率: ${features['3球']}`);
             }
-            if (sorted.length > 0) {
-                parts.push(`比分: ${lowest[0]}`);
-            }
-            if (sortedGoals.length > 0) {
-                parts.push(`总进球: ${sortedGoals[0][0]}`);
-            }
-            
-            prediction = parts.join(' | ');
-            
-            return { prediction, confidence, reason: parts };
+
+            return { prediction: parts.join(' | ') || '未知', confidence, reason: parts };
         }
         
         function getOddsClass(val) {
@@ -1021,6 +1035,9 @@ HTML_TEMPLATE = '''
                 if (data.success) {
                     const r = data.record;
                     const tg = r.total_goals;
+                    // 立即更新本地缓存，避免切换分页后丢失显示
+                    if (!window._savedScores) window._savedScores = {};
+                    window._savedScores[matchId] = r;
                     // 比分保留在输入框，下方消息区醒目展示保存结果
                     msgEl.className = 'score-msg saved';
                     const teamLabel = `${r.home_team || '主队'} vs ${r.away_team || '客队'}`;
@@ -1146,17 +1163,73 @@ HTML_TEMPLATE = '''
 def index():
     return render_template_string(HTML_TEMPLATE)
 
+def _build_match_card(data, api):
+    """
+    提取比赛数据中卡片展示所需的字段，构建轻量化对象。
+    完整版返回全部字段（兼容旧逻辑），精简版只返回卡片需要的内容。
+    """
+    is_light = request.args.get('light') == '1'
+
+    if is_light:
+        # ── 精简版：只包含卡片和分页需要的数据 ──
+        match_info = data.get('match_info', {})
+        g3_pred = data.get('g3_prediction', {})
+        hhad = data.get('hhad', {})
+        ttg_change = data.get('ttg_change', {})
+        hafu_change = data.get('hafu_change', {})
+        exclusion_list = data.get('exclusion_list', [])
+
+        return {
+            'match_id': data.get('match_id'),
+            'fetch_time': data.get('fetch_time'),
+            'match_info': {
+                'home_team': match_info.get('home_team', '未知'),
+                'away_team': match_info.get('away_team', '未知'),
+                'league': match_info.get('league', ''),
+                'time': match_info.get('time', ''),
+            },
+            # 进球数赔率（列表展示用）
+            'total_goals': data.get('total_goals', {}),
+            'g3_prediction': {
+                'recommendation': g3_pred.get('recommendation', '观望'),
+                'score': g3_pred.get('score', 0),
+                'signals': g3_pred.get('signals', []),
+                'features': {
+                    '3球': g3_pred.get('features', {}).get('3球'),
+                    '0球': g3_pred.get('features', {}).get('0球'),
+                    '1球': g3_pred.get('features', {}).get('1球'),
+                    '2球': g3_pred.get('features', {}).get('2球'),
+                    '区间': g3_pred.get('features', {}).get('区间'),
+                }
+            },
+            # 让球：只保留数值
+            'hhad': {
+                '让球': hhad.get('让球'),
+                '让胜': hhad.get('让胜'),
+                '让平': hhad.get('让平'),
+                '让负': hhad.get('让负'),
+            } if hhad else {},
+            # 变化数据：只保留数值
+            'ttg_change': {k: v for k, v in ttg_change.items() if isinstance(v, (int, float))},
+            'hafu_change': {k: v for k, v in hafu_change.items() if isinstance(v, (int, float))},
+            'exclusion_list': exclusion_list,
+        }
+    else:
+        # ── 完整版：返回全部字段 ──
+        return data
+
+
 @app.route('/api/matches')
 def get_matches():
-    """获取所有比赛数据"""
+    """获取所有比赛数据，?light=1 返回精简版（用于卡片列表）"""
     matches = []
     api = SportteryAPI()
+    is_light = api is not None  # always True, just for readability
 
     for filepath in glob.glob(os.path.join(DATA_DIR, '*.json')):
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                # 跳过原始数据
                 if 'raw_' not in os.path.basename(filepath):
                     # 动态补充 exclusion_list（兼容旧缓存文件）
                     if 'exclusion_list' not in data:
@@ -1164,30 +1237,29 @@ def get_matches():
                             data.get('score_odds', {}),
                             data.get('total_goals', {})
                         )
-                    # 动态补充3球预测（兼容旧缓存）
-                    if 'g3_prediction' not in data:
-                        try:
-                            features = extract_features(data)
-                            g3_pred = predict_3goals(features)
-                            data['g3_prediction'] = {
-                                'recommendation': g3_pred.get('recommendation', '观望'),
-                                'score': g3_pred.get('score', 0),
-                                'signals': g3_pred.get('signals', []),
-                                'warnings': g3_pred.get('warnings', []),
-                                'features': {
-                                    '3球': features.get('3球'),
-                                    '0球': features.get('0球'),
-                                    '1球': features.get('1球'),
-                                    '2球': features.get('2球'),
-                                    '区间': features.get('区间'),
-                                    '0球_整数高赔': features.get('0球_整数高赔'),
-                                    '3球_降赔': features.get('3球_降赔'),
-                                    '3球_升赔': features.get('3球_升赔'),
-                                }
+                    # 动态补充/更新3球预测（强制重新计算，确保 signal_score 最新）
+                    try:
+                        features = extract_features(data)
+                        g3_pred = predict_3goals(features)
+                        data['g3_prediction'] = {
+                            'recommendation': g3_pred.get('recommendation', '观望'),
+                            'score': g3_pred.get('signal_score', 0),
+                            'signals': g3_pred.get('signals', []),
+                            'warnings': g3_pred.get('warnings', []),
+                            'features': {
+                                '3球': features.get('3球'),
+                                '0球': features.get('0球'),
+                                '1球': features.get('1球'),
+                                '2球': features.get('2球'),
+                                '区间': features.get('区间'),
+                                '0球_整数高赔': features.get('0球_整数高赔'),
+                                '3球_降赔': features.get('3球_降赔'),
+                                '3球_升赔': features.get('3球_升赔'),
                             }
-                        except:
-                            pass
-                    matches.append(data)
+                        }
+                    except:
+                        pass
+                    matches.append(_build_match_card(data, api))
         except:
             pass
 
@@ -1206,12 +1278,12 @@ def fetch_match(match_id):
             features = extract_features(result)
             g3_pred = predict_3goals(features)
             result['g3_prediction'] = {
-                'recommendation': g3_pred.get('recommendation', '观望'),
-                'score': g3_pred.get('score', 0),
-                'signals': g3_pred.get('signals', []),
-                'warnings': g3_pred.get('warnings', []),
-                'features': {
-                    '3球': features.get('3球'),
+                                'recommendation': g3_pred.get('recommendation', '观望'),
+                                'score': g3_pred.get('signal_score', 0),
+                                'signals': g3_pred.get('signals', []),
+                                'warnings': g3_pred.get('warnings', []),
+                                'features': {
+                                    '3球': features.get('3球'),
                     '0球': features.get('0球'),
                     '1球': features.get('1球'),
                     '2球': features.get('2球'),
