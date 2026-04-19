@@ -6,7 +6,17 @@ __pycache__/
 
 # 临时文件和测试文件
 _test.py
+_test_excl.py
 _check_page.py
+_check*.py
+_debug*
+_analyze_3goals*
+_3goal*
+_better_extract.py
+_bisect.py
+_acorn_check.mjs
+test_preview_api.py
+test_preview*.py
 ~$*
 
 # IDE
@@ -22,3 +32,6 @@ _check_page.py
 
 # 日志
 *.log
+
+# 临时HTML报告（调试产物）
+3*.html

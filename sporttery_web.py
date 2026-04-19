@@ -12,6 +12,154 @@ from predict_3goals import extract_features, predict_3goals
 
 app = Flask(__name__)
 DATA_DIR = 'sporttery_data'
+SCORES_FILE = '分析模板/_scores.json'
+
+# ─────────────────────────────────────────────────────────────
+#  比分记录文件读写
+# ─────────────────────────────────────────────────────────────
+def load_scores():
+    """加载所有已记录比分"""
+    try:
+        with open(SCORES_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return {}
+
+def save_score_record(record):
+    """保存一条比分记录"""
+    scores = load_scores()
+    key = record.get('match_id', record.get('key'))
+    scores[key] = record
+    with open(SCORES_FILE, 'w', encoding='utf-8') as f:
+        json.dump(scores, f, ensure_ascii=False, indent=2)
+
+def get_score_record(match_id):
+    """获取某比赛的比分记录"""
+    scores = load_scores()
+    return scores.get(match_id)
+
+# ─────────────────────────────────────────────────────────────
+#  相似比赛算法
+# ─────────────────────────────────────────────────────────────
+def compute_similarity(current_data, past_record, past_data):
+    """
+    比较两场比赛的相似度：
+    - 3球赔率（精确匹配）：必须完全相等才算同维度
+    - 让球赔率差异（权重50%）：让球线必须相同，再比较让胜/让平/让负三方向平均
+    优先用 past_record 中已存储的赔率（复盘附带），次选用 past_data（从文件加载）
+    返回 0-100 的相似度分数，和各维度明细
+    """
+    score = 0
+    details = {}
+
+    # ── 1. 3球赔率（精确匹配）───────────────────────────
+    tg_cur = current_data.get('total_goals', {})
+    tg_pst = past_record.get('total_goals_odds') or past_data.get('total_goals', {})
+
+    g3_cur = tg_cur.get('3球')
+    g3_pst = tg_pst.get('3球')
+    details['g3_cur'] = g3_cur
+    details['g3_pst'] = g3_pst
+
+    if g3_cur and g3_pst:
+        try:
+            if float(g3_cur) == float(g3_pst):
+                details['g3_exact'] = True
+                details['g3_score'] = 100   # 精确相等 → 满分
+                score += 100 * 0.5
+            else:
+                details['g3_exact'] = False
+                details['g3_score'] = 0      # 不相等 → 0分，该候选不展示
+        except:
+            pass
+
+    # ── 2. 让球赔率相似度 ────────────────────────────
+    hhad_cur = current_data.get('hhad', {})
+    hhad_pst = past_record.get('hhad_odds') or past_data.get('hhad', {})
+
+    # 先比较让球线，必须相同才算可比
+    line_cur = str(hhad_cur.get('让球', '')).strip()
+    line_pst = str(hhad_pst.get('让球', '')).strip()
+    details['line_cur'] = line_cur
+    details['line_pst'] = line_pst
+    details['line_match'] = (line_cur != '' and line_cur == line_pst)
+
+    if not details['line_match']:
+        # 让球线不同，不可比，该维度不记分
+        details['hhad_score'] = 0
+        details['hhad_diff'] = None
+    else:
+        # 让球线相同，比较让胜/让平/让负三方向
+        hhad_keys = ['让胜', '让平', '让负']
+        hhad_valid = [k for k in hhad_keys if hhad_cur.get(k) and hhad_pst.get(k)]
+        if hhad_valid:
+            diffs = []
+            for k in hhad_valid:
+                try:
+                    diffs.append(abs(float(hhad_cur[k]) - float(hhad_pst[k])) / float(hhad_pst[k]))
+                except:
+                    pass
+            if diffs:
+                avg_diff = sum(diffs) / len(diffs)
+                details['hhad_diff'] = round(avg_diff * 100, 1)
+                if avg_diff < 0.05:    hhad_score = 100
+                elif avg_diff < 0.10:  hhad_score = 80
+                elif avg_diff < 0.15:  hhad_score = 60
+                elif avg_diff < 0.20:  hhad_score = 40
+                else:                  hhad_score = 20
+                details['hhad_score'] = hhad_score
+                score += hhad_score * 0.5
+
+    return round(score, 1), details
+
+def find_similar_matches(current_data, top_n=5):
+    """
+    在已记录比分的比赛中找相似场次
+    只处理有赔率数据的记录（复盘附带 or 有源文件），避免全量遍历。
+    """
+    scores = load_scores()
+    results = []
+
+    # 第一步：预过滤，只保留有赔率数据的记录（无需逐文件I/O）
+    candidates = []
+    for key, record in scores.items():
+        if record.get('match_id') == current_data.get('match_id'):
+            continue  # 跳过当前比赛
+        if record.get('total_goals_odds') or record.get('hhad_odds'):
+            # 已有赔率（复盘附带），无需读文件
+            candidates.append((record, None))
+        else:
+            mid = record.get('match_id', key)
+            if not str(mid).isdigit():
+                continue  # 旧格式key无赔率文件，跳过
+            filepath = os.path.join(DATA_DIR, f'{mid}.json')
+            if os.path.exists(filepath):
+                try:
+                    with open(filepath, 'r', encoding='utf-8') as f:
+                        past_data = json.load(f)
+                    candidates.append((record, past_data))
+                except:
+                    pass
+
+    # 第二步：计算相似度（只处理有数据的候选）
+    for record, past_data in candidates:
+        sim, details = compute_similarity(current_data, record, past_data or {})
+        # 3球必须精确相等（得分=100），否则 g3_score=0 → sim<50，直接过滤
+        if sim >= 50:   # 3球精确匹配贡献50，让球贡献0-50
+            mid = record.get('match_id', '')
+            pd = past_data or {}
+            results.append({
+                'record': record,
+                'similarity': sim,
+                'details': details,
+                'match_id': mid,
+                'home_team': (pd.get('match_info') or {}).get('home_team') or record.get('home_team', '未知'),
+                'away_team': (pd.get('match_info') or {}).get('away_team') or record.get('away_team', '未知'),
+                'total_goals': record.get('total_goals', record.get('home_score', 0) + record.get('away_score', 0)),
+            })
+
+    results.sort(key=lambda x: x['similarity'], reverse=True)
+    return results[:top_n]
 
 # 比分预测分析函数
 def analyze_match(data):
@@ -246,6 +394,42 @@ HTML_TEMPLATE = '''
         .signal-minus .g3-signal-score { color: #f87171; }
         .signal-neutral .g3-signal-score { color: #94a3b8; }
         .g3-signal-reason { color: #888; }
+
+        /* 比分记录 & 相似比赛 */
+        .score-review-section { padding: 10px 0 5px; border-top: 1px dashed #1e3a5f; margin-top: 8px; }
+        .score-input-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .score-label { font-size: 13px; color: #888; font-weight: bold; }
+        .score-input { width: 52px; padding: 4px 6px; border: 1px solid #1e3a5f; border-radius: 6px; background: #0d1b2a; color: #fff; font-size: 14px; text-align: center; }
+        .score-input:focus { border-color: #00d4ff; outline: none; }
+        .score-sep { font-size: 16px; font-weight: bold; color: #888; }
+        .btn-save-score { background: #0f3460; color: #4ade80; border: 1px solid #22c55e; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+        .btn-save-score:hover { background: #1a4a2e; }
+        .btn-review { background: #0f3460; color: #fbbf24; border: 1px solid #f59e0b; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+        .btn-review:hover { background: #3a2a0a; }
+        .btn-similar { background: #0f3460; color: #a78bfa; border: 1px solid #8b5cf6; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+        .btn-similar:hover { background: #2a1a4a; }
+        .score-msg { font-size: 12px; margin-top: 6px; min-height: 18px; }
+        .score-msg.saved { color: #4ade80; }
+        .score-msg.error { color: #f87171; }
+        .score-msg.review-hit { color: #fbbf24; font-weight: bold; }
+        .score-msg.review-miss { color: #f87171; }
+        /* 相似比赛面板 */
+        .similar-panel { margin-top: 10px; background: #0d1b2a; border-radius: 8px; border: 1px solid #1e3a5f; overflow: hidden; }
+        .similar-header { background: #0f3460; color: #a78bfa; font-size: 12px; font-weight: bold; padding: 8px 12px; }
+        .similar-item { display: flex; align-items: center; padding: 8px 12px; border-bottom: 1px solid #1e3a5f; gap: 10px; font-size: 12px; }
+        .similar-item:last-child { border-bottom: none; }
+        .similar-rank { font-weight: bold; color: #a78bfa; min-width: 20px; }
+        .similar-teams { flex: 1; color: #ccc; }
+        .similar-score { font-weight: bold; min-width: 50px; text-align: center; }
+        .similar-score.tg-3 { color: #4ade80; }
+        .similar-score.tg-other { color: #f87171; }
+        .similar-score.tg-0 { color: #888; }
+        .similar-similarity { font-size: 11px; background: #1e3a5f; color: #a78bfa; padding: 2px 6px; border-radius: 10px; white-space: nowrap; }
+        .similar-tg-label { font-size: 11px; color: #666; min-width: 40px; text-align: right; }
+        .similar-detail { font-size: 11px; color: #555; }
+        .similar-empty { color: #555; padding: 10px; text-align: center; font-size: 12px; }
+        .score-badge { display: inline-block; background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); border-radius: 4px; padding: 1px 6px; font-size: 11px; margin-left: 4px; }
+        .saved-score-display { font-weight: bold; color: #4ade80; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -267,9 +451,25 @@ HTML_TEMPLATE = '''
     </div>
 
     <script>
+        // 全局比赛数据缓存（供 doReview 获取 g3_prediction 用）
+        window._matchData = {};
+        // 全局已保存比分缓存 { match_id: {home_score, away_score, total_goals, ...} }
+        window._savedScores = {};
+
         async function loadMatches() {
-            const res = await fetch('/api/matches');
-            const matches = await res.json();
+            // 并行加载：比赛列表 + 已保存比分
+            const [matchesRes, scoresRes] = await Promise.all([
+                fetch('/api/matches'),
+                fetch('/api/saved-scores')
+            ]);
+            const matches = await matchesRes.json();
+            const scoresData = scoresRes.ok ? (await scoresRes.json()) : {};
+            window._savedScores = (scoresData && scoresData.success && scoresData.scores) ? scoresData.scores : {};
+            window._savedScores = scoresData.scores || {};
+
+            // 缓存数据，供复盘时取 g3_prediction
+            window._matchData = {};
+            matches.forEach(m => { window._matchData[m.match_id] = m; });
             const container = document.getElementById('matchList');
             
             if (matches.length === 0) {
@@ -338,6 +538,21 @@ HTML_TEMPLATE = '''
                         ` : ''}
                     </div>
                     ` : ''}
+
+                    <!-- 比分记录 & 相似比赛 -->
+                    <div class="score-review-section">
+                        <div class="score-input-row">
+                            <span class="score-label">比分:</span>
+                            <input type="number" class="score-input" id="home-${m.match_id}" min="0" max="15" placeholder="主" value="${window._savedScores && window._savedScores[m.match_id] ? window._savedScores[m.match_id].home_score : ''}">
+                            <span class="score-sep">:</span>
+                            <input type="number" class="score-input" id="away-${m.match_id}" min="0" max="15" placeholder="客" value="${window._savedScores && window._savedScores[m.match_id] ? window._savedScores[m.match_id].away_score : ''}">
+                            <button class="btn-save-score" onclick="saveScore('${m.match_id}')">💾 保存</button>
+                            <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
+                            <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
+                        </div>
+                        <div id="score-msg-${m.match_id}" class="score-msg"></div>
+                        <div id="similar-panel-${m.match_id}" class="similar-panel" style="display:none"></div>
+                    </div>
                     
                     <!-- 胜平负 -->
                     ${Object.keys(m.had || {}).filter(k => k !== '更新时间').length > 0 ? `
@@ -783,7 +998,143 @@ HTML_TEMPLATE = '''
                 alert('抓取失败: ' + (data.error || '未知错误'));
             }
         }
-        
+
+        // ── 比分保存 ──────────────────────────────────────────
+        async function saveScore(matchId) {
+            const homeInput = document.getElementById('home-' + matchId);
+            const awayInput = document.getElementById('away-' + matchId);
+            const msgEl = document.getElementById('score-msg-' + matchId);
+            const home = parseInt(homeInput.value);
+            const away = parseInt(awayInput.value);
+            if (isNaN(home) || isNaN(away) || home < 0 || away < 0) {
+                msgEl.className = 'score-msg error';
+                msgEl.textContent = '请输入有效的比分（0-15）';
+                return;
+            }
+            try {
+                const res = await fetch('/api/score/' + matchId, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({home_score: home, away_score: away})
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const r = data.record;
+                    const tg = r.total_goals;
+                    // 比分保留在输入框，下方消息区醒目展示保存结果
+                    msgEl.className = 'score-msg saved';
+                    const teamLabel = `${r.home_team || '主队'} vs ${r.away_team || '客队'}`;
+                    const badge = tg === 3 ? '<span class="score-badge">🎯3球!</span>' : tg === 0 ? '<span class="score-badge">0球!</span>' : '';
+                    msgEl.innerHTML = `<span class="saved-score-display">已保存: <b>${home}:${away}</b></span> <span style="color:#888">${teamLabel}</span>，总进球 <b>${tg}球</b> ${badge}`;
+                } else {
+                    msgEl.className = 'score-msg error';
+                    msgEl.textContent = '保存失败: ' + (data.error || '');
+                }
+            } catch(e) {
+                msgEl.className = 'score-msg error';
+                msgEl.textContent = '请求失败: ' + e.message;
+            }
+        }
+
+        // ── 复盘：检验3球预测 ──────────────────────────────────
+        async function doReview(matchId) {
+            const homeInput = document.getElementById('home-' + matchId);
+            const awayInput = document.getElementById('away-' + matchId);
+            const msgEl = document.getElementById('score-msg-' + matchId);
+            const home = parseInt(homeInput.value);
+            const away = parseInt(awayInput.value);
+            if (isNaN(home) || isNaN(away) || home < 0 || away < 0) {
+                msgEl.className = 'score-msg error';
+                msgEl.textContent = '请先输入比分再点击复盘';
+                return;
+            }
+            const total = home + away;
+            const tgLabel = total === 3 ? '3球' : total + '球';
+            const matchData = window._matchData && window._matchData[matchId];
+            const g3rec = matchData ? (matchData.g3_prediction || {}).recommendation : null;
+            const g3score = matchData ? (matchData.g3_prediction || {}).score : null;
+            // 保存比分（同时附带赔率数据，供后续相似比赛匹配）
+            try {
+                await fetch('/api/score/' + matchId, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        home_score: home,
+                        away_score: away,
+                        // 复盘时附带赔率，确保相似比赛匹配有效
+                        total_goals: matchData ? matchData.total_goals : null,
+                        hhad: matchData ? matchData.hhad : null,
+                    })
+                });
+            } catch(e) {}
+            // 显示复盘结果
+            let reviewText = `📋 复盘结果: 实际 ${home}:${away}，总进球 ${tgLabel}`;
+            if (g3rec) {
+                reviewText += ` | 赛前预测: ${g3rec} (评分${g3score > 0 ? '+' : ''}${g3score || 0})`;
+                const hit = (tgLabel === '3球' && (g3rec === '关注3球' || g3rec === '关注3球机会'))
+                         || (tgLabel !== '3球' && g3rec === '排除3球');
+                const partial = (tgLabel === '3球' && g3rec === '观望') || (tgLabel !== '3球' && g3rec === '观望');
+                if (hit) {
+                    reviewText += ` <span style="color:#4ade80;font-weight:bold">✅ 预测正确!</span>`;
+                    msgEl.className = 'score-msg review-hit';
+                } else if (partial) {
+                    reviewText += ` <span style="color:#fbbf24">⚠️ 预测观望，${tgLabel}</span>`;
+                    msgEl.className = 'score-msg';
+                } else {
+                    reviewText += ` <span style="color:#f87171">❌ 预测错误</span>`;
+                    msgEl.className = 'score-msg review-miss';
+                }
+            } else {
+                reviewText += ` (无3球预测数据)`;
+                msgEl.className = 'score-msg';
+            }
+            msgEl.innerHTML = reviewText;
+        }
+
+        // ── 相似比赛查找 ───────────────────────────────────────
+        async function showSimilar(matchId) {
+            const panelEl = document.getElementById('similar-panel-' + matchId);
+            if (panelEl.style.display === 'none') {
+                panelEl.style.display = 'block';
+                panelEl.innerHTML = '<div class="similar-header">🔍 查找相似比赛...</div>';
+                try {
+                    const res = await fetch('/api/similar/' + matchId);
+                    const data = await res.json();
+                    if (!data.success || !data.similar || data.similar.length === 0) {
+                        panelEl.innerHTML = '<div class="similar-header">🔍 相似比赛</div><div class="similar-empty">暂无已记录比分的相似比赛<br><small>（需先保存比分才能匹配）</small></div>';
+                        return;
+                    }
+                    let html = '<div class="similar-header">🔍 相似比赛（3球赔率相同，最多5场）</div>';
+                    data.similar.forEach((item, idx) => {
+                        const tg = item.record.total_goals;
+                        const tgClass = tg === 3 ? 'tg-3' : tg === 0 ? 'tg-0' : 'tg-other';
+                        const tgDisplay = tg + '球';
+                        const det = item.details || {};
+                        html += `<div class="similar-item">
+                            <span class="similar-rank">#${idx + 1}</span>
+                            <div class="similar-teams">${item.record.home_team || item.home_team} vs ${item.record.away_team || item.away_team}</div>
+                            <div class="similar-score ${tgClass}">${item.record.score_str || (item.record.home_score + ':' + item.record.away_score)}</div>
+                            <div class="similar-tg-label">${tgDisplay}</div>
+                            <div class="similar-similarity">相似 ${item.similarity}%</div>
+                        </div>`;
+                        // 明细
+                        if (det.g3_exact !== undefined || det.hhad_score) {
+                            let detailParts = [];
+                            if (det.g3_exact !== undefined) detailParts.push(`3球赔率${det.g3_exact ? '✓相同' : '✗不同'} (${det.g3_pst})`);
+                            if (det.line_match && det.hhad_diff !== undefined) detailParts.push(`让球(${det.line_cur})差异${det.hhad_diff}%`);
+                            if (!det.line_match && det.line_pst) detailParts.push(`让球线不同(${det.line_cur} vs ${det.line_pst})`);
+                            html += `<div class="similar-detail" style="padding:2px 12px 8px 42px;color:#555;font-size:11px">${detailParts.join(' | ')}</div>`;
+                        }
+                    });
+                    panelEl.innerHTML = html;
+                } catch(e) {
+                    panelEl.innerHTML = '<div class="similar-header">🔍 相似比赛</div><div class="similar-empty">查询失败: ' + e.message + '</div>';
+                }
+            } else {
+                panelEl.style.display = 'none';
+            }
+        }
+
         // 初始加载
         loadMatches();
     </script>
@@ -800,7 +1151,7 @@ def get_matches():
     """获取所有比赛数据"""
     matches = []
     api = SportteryAPI()
-    
+
     for filepath in glob.glob(os.path.join(DATA_DIR, '*.json')):
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
@@ -839,7 +1190,7 @@ def get_matches():
                     matches.append(data)
         except:
             pass
-    
+
     matches.sort(key=lambda x: x.get('fetch_time', ''), reverse=True)
     return jsonify(matches)
 
@@ -876,6 +1227,114 @@ def fetch_match(match_id):
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
+# ─────────────────────────────────────────────────────────────
+#  比分保存 & 复盘
+# ─────────────────────────────────────────────────────────────
+@app.route('/api/score/<match_id>', methods=['POST'])
+def save_score(match_id):
+    """保存比赛比分 / 复盘
+    Body: { "home_score": 2, "away_score": 1, "total_goals": {...}, "hhad": {...} }
+    """
+    try:
+        from flask import request
+        body = request.get_json() or {}
+        home = int(body.get('home_score', -1))
+        away = int(body.get('away_score', -1))
+        if home < 0 or away < 0:
+            return jsonify({'success': False, 'error': '比分格式错误'}), 400
+
+        total = home + away
+        # 判断总进球区间
+        if total == 0:    tg_result = '0球'
+        elif total == 1:  tg_result = '1球'
+        elif total == 2:  tg_result = '2球'
+        elif total == 3:  tg_result = '3球'
+        elif total == 4:  tg_result = '4球'
+        elif total >= 5:  tg_result = '5+球'
+        else:             tg_result = f'{total}球'
+
+        record = {
+            'match_id': match_id,
+            'home_score': home,
+            'away_score': away,
+            'score_str': f'{home}:{away}',
+            'total_goals': total,
+            'tg_result': tg_result,
+            'record_time': __import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M'),
+        }
+
+        # 优先使用前端传入的赔率数据（复盘时附带）
+        if body.get('total_goals'):
+            record['total_goals_odds'] = body['total_goals']
+        if body.get('hhad'):
+            record['hhad_odds'] = body['hhad']
+
+        # 加载文件补全基本信息（球队名、联赛）
+        filepath = os.path.join(DATA_DIR, f'{match_id}.json')
+        if os.path.exists(filepath):
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                record['home_team'] = data.get('match_info', {}).get('home_team', '')
+                record['away_team'] = data.get('match_info', {}).get('away_team', '')
+                record['league'] = data.get('match_info', {}).get('league', '')
+                # 文件没有赔率时才从文件补充
+                if not record.get('total_goals_odds') and data.get('total_goals'):
+                    record['total_goals_odds'] = data['total_goals']
+                if not record.get('hhad_odds') and data.get('hhad'):
+                    record['hhad_odds'] = data['hhad']
+            except:
+                pass
+
+        save_score_record(record)
+        return jsonify({'success': True, 'record': record})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/saved-scores')
+def get_all_saved_scores():
+    """返回所有已保存的比分，格式 {match_id: record}"""
+    try:
+        scores = load_scores()
+        # 只保留有 home_score 的记录（过滤空数据）
+        filtered = {k: v for k, v in scores.items() if v.get('home_score', -1) >= 0}
+        return jsonify({'success': True, 'scores': filtered})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/similar/<match_id>')
+def get_similar(match_id):
+    """查找与指定比赛赔率相似的历史已记录比分"""
+    try:
+        filepath = os.path.join(DATA_DIR, f'{match_id}.json')
+        if not os.path.exists(filepath):
+            return jsonify({'success': False, 'error': '比赛数据不存在，请先抓取'}), 404
+        with open(filepath, 'r', encoding='utf-8') as f:
+            current_data = json.load(f)
+        similar = find_similar_matches(current_data, top_n=5)
+        return jsonify({'success': True, 'match_id': match_id, 'similar': similar})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/similar-odds', methods=['POST'])
+def get_similar_by_odds():
+    """
+    根据传入的赔率数据找相似比赛（用于抓取前预览）
+    Body: { "total_goals": {...}, "hhad": {...} }
+    """
+    try:
+        from flask import request
+        body = request.get_json() or {}
+        current_data = {
+            'match_id': 'preview',
+            'total_goals': body.get('total_goals', {}),
+            'hhad': body.get('hhad', {}),
+        }
+        similar = find_similar_matches(current_data, top_n=5)
+        return jsonify({'success': True, 'similar': similar})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
 if __name__ == '__main__':
     os.makedirs(DATA_DIR, exist_ok=True)
     
@@ -885,4 +1344,4 @@ if __name__ == '__main__':
     print('访问地址: http://192.168.0.101:8899')
     print('='*60)
     
-    app.run(host='0.0.0.0', port=8899, debug=False)
+    app.run(host='0.0.0.0', port=8899, debug=False, threaded=True)
