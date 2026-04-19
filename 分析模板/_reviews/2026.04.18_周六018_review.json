@@ -1,0 +1,83 @@
+{
+  "match_id": "周六018",
+  "date_folder": "2026.04.18",
+  "home_team": "纽卡斯尔",
+  "away_team": "伯恩茅斯",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "LLLWDL",
+  "away_form": "WDDDDD",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升29 / 平降24升1 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:43",
+  "macao_tip": "伯恩茅斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 4.35,
+    "jc_draw_chg": -2.74,
+    "jc_away_chg": -4.97,
+    "mcao_home_chg": 11.11,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -14.2,
+    "jc_init_odds": [
+      1.84,
+      3.65,
+      3.22
+    ],
+    "jc_real_odds": [
+      1.92,
+      3.55,
+      3.06
+    ],
+    "macao_init_odds": [
+      1.89,
+      3.72,
+      3.17
+    ],
+    "macao_real_odds": [
+      2.1,
+      3.72,
+      2.72
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UND"
+  }
+}

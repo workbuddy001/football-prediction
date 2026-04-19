@@ -1,0 +1,110 @@
+{
+  "match_id": "周日002",
+  "date_folder": "2026.04.19",
+  "home_team": "阿德莱德",
+  "away_team": "麦克阿瑟FC",
+  "league": "澳超",
+  "handicap": "-1",
+  "home_form": "DDWDDD",
+  "away_form": "LWWLLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率4.20≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+9.1%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+9.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+19.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降30升0 / 平降0升28 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "30/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率4.20≥3.5",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+9.1%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩平局升+9.1%>5%"
+  ],
+  "review_time": "2026-04-19 18:20",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -12.77,
+    "jc_draw_chg": 9.09,
+    "jc_away_chg": 19.93,
+    "mcao_home_chg": -18.89,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 34.69,
+    "jc_init_odds": [
+      1.88,
+      3.85,
+      2.96
+    ],
+    "jc_real_odds": [
+      1.64,
+      4.2,
+      3.55
+    ],
+    "macao_init_odds": [
+      2.17,
+      3.9,
+      2.45
+    ],
+    "macao_real_odds": [
+      1.76,
+      3.9,
+      3.3
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

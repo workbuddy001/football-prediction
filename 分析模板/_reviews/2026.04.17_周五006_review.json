@@ -1,0 +1,86 @@
+{
+  "match_id": "周五006",
+  "date_folder": "2026.04.17",
+  "home_team": "阿尔梅勒",
+  "away_team": "多德勒支",
+  "league": "荷乙",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "4:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+6.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降3升25 / 平降20升5 / 客降23升3",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+1.4%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+6.2%>5%"
+  ],
+  "review_time": "2026-04-18 14:58",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.85,
+    "jc_draw_chg": 1.35,
+    "jc_away_chg": 6.15,
+    "mcao_home_chg": 16.4,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -18.3,
+    "jc_init_odds": [
+      1.82,
+      3.7,
+      3.25
+    ],
+    "jc_real_odds": [
+      1.75,
+      3.75,
+      3.45
+    ],
+    "macao_init_odds": [
+      1.89,
+      3.73,
+      3.06
+    ],
+    "macao_real_odds": [
+      2.2,
+      3.73,
+      2.5
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UND"
+  }
+}

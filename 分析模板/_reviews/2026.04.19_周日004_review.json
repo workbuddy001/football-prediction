@@ -1,0 +1,86 @@
+{
+  "match_id": "周日004",
+  "date_folder": "2026.04.19",
+  "home_team": "名古屋鲸",
+  "away_team": "福冈黄蜂",
+  "league": "日职",
+  "handicap": "-1",
+  "home_form": "LWDWLW",
+  "away_form": "WWDDLL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率5.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+22.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升0 / 平降0升22 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:2(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「福冈黄蜂 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-19 18:20",
+  "macao_tip": "福冈黄蜂 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -8.19,
+    "jc_draw_chg": 2.4,
+    "jc_away_chg": 22.85,
+    "mcao_home_chg": -11.56,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 6.51,
+    "jc_init_odds": [
+      1.71,
+      3.34,
+      4.07
+    ],
+    "jc_real_odds": [
+      1.57,
+      3.42,
+      5.0
+    ],
+    "macao_init_odds": [
+      1.99,
+      3.18,
+      3.38
+    ],
+    "macao_real_odds": [
+      1.76,
+      3.18,
+      3.6
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

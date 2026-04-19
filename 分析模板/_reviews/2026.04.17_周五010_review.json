@@ -1,0 +1,85 @@
+{
+  "match_id": "周五010",
+  "date_folder": "2026.04.17",
+  "home_team": "布莱克本",
+  "away_team": "考文垂",
+  "league": "英冠",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.52>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+10.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降13升10 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因"
+  ],
+  "review_time": "2026-04-18 14:59",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 10.69,
+    "jc_draw_chg": 2.15,
+    "jc_away_chg": -6.6,
+    "mcao_home_chg": 9.54,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -5.13,
+    "jc_init_odds": [
+      3.18,
+      3.25,
+      1.97
+    ],
+    "jc_real_odds": [
+      3.52,
+      3.32,
+      1.84
+    ],
+    "macao_init_odds": [
+      3.25,
+      3.3,
+      1.95
+    ],
+    "macao_real_odds": [
+      3.56,
+      3.3,
+      1.85
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UND"
+  }
+}

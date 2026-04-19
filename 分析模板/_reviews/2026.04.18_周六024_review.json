@@ -1,0 +1,86 @@
+{
+  "match_id": "周六024",
+  "date_folder": "2026.04.18",
+  "home_team": "切尔西",
+  "away_team": "曼联",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "LWLLLL",
+  "away_form": "LDWLWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.55≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降22升2 / 平降5升16 / 客降2升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:1(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-19 16:45",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.97,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 2.84,
+    "mcao_home_chg": 0.48,
+    "mcao_draw_chg": 0.84,
+    "mcao_away_chg": -1.06,
+    "jc_init_odds": [
+      2.03,
+      3.55,
+      2.82
+    ],
+    "jc_real_odds": [
+      1.99,
+      3.55,
+      2.9
+    ],
+    "macao_init_odds": [
+      2.09,
+      3.57,
+      2.83
+    ],
+    "macao_real_odds": [
+      2.1,
+      3.6,
+      2.8
+    ],
+    "jc_pattern": "NNU",
+    "macao_pattern": "NNN"
+  }
+}

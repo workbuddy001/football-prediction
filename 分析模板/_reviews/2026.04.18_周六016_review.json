@@ -1,0 +1,92 @@
+{
+  "match_id": "周六016",
+  "date_folder": "2026.04.18",
+  "home_team": "勒沃库森",
+  "away_team": "奥格斯堡",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "WWDLDD",
+  "away_form": "DDLLLW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率7.15>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.27<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+18.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降20升2 / 平降0升27 / 客降3升17",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「勒沃库森 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-19 16:43",
+  "macao_tip": "勒沃库森 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.22,
+    "jc_draw_chg": 7.61,
+    "jc_away_chg": 18.18,
+    "mcao_home_chg": -5.11,
+    "mcao_draw_chg": 8.79,
+    "mcao_away_chg": 14.75,
+    "jc_init_odds": [
+      1.34,
+      4.6,
+      6.05
+    ],
+    "jc_real_odds": [
+      1.27,
+      4.95,
+      7.15
+    ],
+    "macao_init_odds": [
+      1.37,
+      4.55,
+      6.1
+    ],
+    "macao_real_odds": [
+      1.3,
+      4.95,
+      7.0
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DUU"
+  }
+}

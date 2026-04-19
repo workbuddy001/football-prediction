@@ -1,0 +1,87 @@
+{
+  "match_id": "周六014",
+  "date_folder": "2026.04.18",
+  "home_team": "不来梅",
+  "away_team": "汉堡",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "LLWLWW",
+  "away_form": "LDLDWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热2.9%",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.65>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+2.8%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降21升1 / 平降7升13 / 客降0升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-2.9%+澳门不动",
+    "📈 关键信号「[不怕]标签」有效：竞彩升客胜+2.8%+澳门不动，客胜赔率≥3.5"
+  ],
+  "review_time": "2026-04-19 16:42",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": -2.86,
+    "jc_away_chg": 2.82,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.78,
+      3.5,
+      3.55
+    ],
+    "jc_real_odds": [
+      1.78,
+      3.4,
+      3.65
+    ],
+    "macao_init_odds": [
+      1.98,
+      3.35,
+      3.21
+    ],
+    "macao_real_odds": [
+      1.98,
+      3.35,
+      3.21
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "NNN"
+  }
+}

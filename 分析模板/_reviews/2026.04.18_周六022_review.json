@@ -1,0 +1,65 @@
+{
+  "match_id": "周六022",
+  "date_folder": "2026.04.18",
+  "home_team": "卡萨皮亚",
+  "away_team": "圣克拉拉",
+  "league": "葡超",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降17升7 / 平降16升7 / 客降2升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:44",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 2.45,
+    "jc_draw_chg": -2.07,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -5.12,
+    "mcao_draw_chg": -2.6,
+    "mcao_away_chg": 5.47,
+    "jc_init_odds": [
+      3.27,
+      2.9,
+      2.09
+    ],
+    "jc_real_odds": [
+      3.35,
+      2.84,
+      2.09
+    ],
+    "macao_init_odds": [
+      3.32,
+      3.08,
+      2.01
+    ],
+    "macao_real_odds": [
+      3.15,
+      3.0,
+      2.12
+    ],
+    "jc_pattern": "UDN",
+    "macao_pattern": "DDU"
+  }
+}

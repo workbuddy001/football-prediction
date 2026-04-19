@@ -1,0 +1,68 @@
+{
+  "match_id": "周六010",
+  "date_folder": "2026.04.18",
+  "home_team": "乌迪内斯",
+  "away_team": "帕尔马",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "WDWLDW",
+  "away_form": "DDLLDD",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升11 / 平降14升11 / 客降7升18",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:1(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:33",
+  "macao_tip": "乌迪内斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 4.88,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -7.41,
+    "jc_init_odds": [
+      1.93,
+      3.0,
+      3.6
+    ],
+    "jc_real_odds": [
+      1.93,
+      3.0,
+      3.6
+    ],
+    "macao_init_odds": [
+      2.05,
+      2.93,
+      3.51
+    ],
+    "macao_real_odds": [
+      2.15,
+      2.93,
+      3.25
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UND"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "match_id": "周六020",
+  "date_folder": "2026.04.18",
+  "home_team": "那不勒斯",
+  "away_team": "拉齐奥",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "DWWWWW",
+  "away_form": "LDWWWD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.30>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.42<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升0 / 平降0升26 / 客降0升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「那不勒斯 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-19 16:43",
+  "macao_tip": "那不勒斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.39,
+    "jc_draw_chg": 2.74,
+    "jc_away_chg": 1.61,
+    "mcao_home_chg": -5.81,
+    "mcao_draw_chg": 3.69,
+    "mcao_away_chg": 20.0,
+    "jc_init_odds": [
+      1.44,
+      3.65,
+      6.2
+    ],
+    "jc_real_odds": [
+      1.42,
+      3.75,
+      6.3
+    ],
+    "macao_init_odds": [
+      1.55,
+      3.52,
+      5.5
+    ],
+    "macao_real_odds": [
+      1.46,
+      3.65,
+      6.6
+    ],
+    "jc_pattern": "NUN",
+    "macao_pattern": "DUU"
+  }
+}

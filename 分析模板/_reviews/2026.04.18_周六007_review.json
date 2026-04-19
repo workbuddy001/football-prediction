@@ -1,0 +1,63 @@
+{
+  "match_id": "周六007",
+  "date_folder": "2026.04.18",
+  "home_team": "布伦特",
+  "away_team": "富勒姆",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "DDDDDW",
+  "away_form": "LWDLLW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降3升13 / 平降6升17 / 客降9升15",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:33",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 2.11,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -3.13,
+    "mcao_home_chg": 3.45,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -4.36,
+    "jc_init_odds": [
+      1.9,
+      3.45,
+      3.2
+    ],
+    "jc_real_odds": [
+      1.94,
+      3.45,
+      3.1
+    ],
+    "macao_init_odds": [
+      2.03,
+      3.52,
+      2.98
+    ],
+    "macao_real_odds": [
+      2.1,
+      3.52,
+      2.85
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UND"
+  }
+}

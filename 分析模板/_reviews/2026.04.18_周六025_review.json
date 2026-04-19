@@ -1,0 +1,96 @@
+{
+  "match_id": "周六025",
+  "date_folder": "2026.04.18",
+  "home_team": "马竞",
+  "away_team": "皇家社会",
+  "league": "国王杯",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.56>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.00>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-3.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.3%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升客胜+5.3%+澳门不动，客胜赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降3升22 / 平降4升22 / 客降23升4",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:2(平局)",
+    "❌ 预测主胜但实际是平局，需要反思原因"
+  ],
+  "review_time": "2026-04-19 16:45",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.47,
+    "jc_draw_chg": 2.3,
+    "jc_away_chg": 5.26,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.73,
+      3.48,
+      3.8
+    ],
+    "jc_real_odds": [
+      1.67,
+      3.56,
+      4.0
+    ],
+    "macao_init_odds": [
+      1.82,
+      3.18,
+      3.83
+    ],
+    "macao_real_odds": [
+      1.82,
+      3.18,
+      3.83
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNN"
+  }
+}

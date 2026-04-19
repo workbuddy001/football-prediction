@@ -1,0 +1,102 @@
+{
+  "match_id": "周六006",
+  "date_folder": "2026.04.18",
+  "home_team": "马格德堡",
+  "away_team": "杜塞多夫",
+  "league": "德乙",
+  "handicap": "-1",
+  "home_form": "LWWDLL",
+  "away_form": "LLLLWW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在平方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.75≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.70>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+17.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升0 / 平降2升24 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除②」有效：澳门推荐'和局'，方向赔率3.75≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+17.5%>5%",
+    "📈 关键信号「强共识推离客」有效：29/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-19 16:32",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -9.14,
+    "jc_draw_chg": 2.74,
+    "jc_away_chg": 17.46,
+    "mcao_home_chg": -10.45,
+    "mcao_draw_chg": -2.7,
+    "mcao_away_chg": 22.34,
+    "jc_init_odds": [
+      1.86,
+      3.65,
+      3.15
+    ],
+    "jc_real_odds": [
+      1.69,
+      3.75,
+      3.7
+    ],
+    "macao_init_odds": [
+      2.01,
+      3.7,
+      2.82
+    ],
+    "macao_real_odds": [
+      1.8,
+      3.6,
+      3.45
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DDU"
+  }
+}

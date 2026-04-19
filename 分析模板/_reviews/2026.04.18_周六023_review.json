@@ -1,0 +1,73 @@
+{
+  "match_id": "周六023",
+  "date_folder": "2026.04.18",
+  "home_team": "罗马",
+  "away_team": "亚特兰大",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "WLWDLD",
+  "away_form": "LWWLDL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升27 / 平降15升8 / 客降27升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "27/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "27/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:44",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.82,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -2.08,
+    "mcao_home_chg": 6.48,
+    "mcao_draw_chg": 5.0,
+    "mcao_away_chg": -12.06,
+    "jc_init_odds": [
+      2.2,
+      3.05,
+      2.88
+    ],
+    "jc_real_odds": [
+      2.24,
+      3.05,
+      2.82
+    ],
+    "macao_init_odds": [
+      2.16,
+      3.0,
+      3.15
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.15,
+      2.77
+    ],
+    "jc_pattern": "NND",
+    "macao_pattern": "UUD"
+  }
+}

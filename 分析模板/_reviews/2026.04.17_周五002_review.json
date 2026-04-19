@@ -1,0 +1,100 @@
+{
+  "match_id": "周五002",
+  "date_folder": "2026.04.17",
+  "home_team": "埃沃斯堡",
+  "away_team": "卡斯鲁厄",
+  "league": "德乙",
+  "handicap": "-1",
+  "home_form": "LDWWLW",
+  "away_form": "WLLWLD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除①",
+      "detail": "澳门推荐'和局'，方向赔率5.15≥5.0",
+      "strength": 5
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.15>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.25>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.29<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+13.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降24升2 / 平降0升28 / 客降3升24",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「心水排除①」有效：澳门推荐'和局'，方向赔率5.15≥5.0",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.15>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.25>5.0"
+  ],
+  "review_time": "2026-04-18 14:55",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.44,
+    "jc_draw_chg": 13.19,
+    "jc_away_chg": 5.04,
+    "mcao_home_chg": -7.04,
+    "mcao_draw_chg": 14.61,
+    "mcao_away_chg": 15.38,
+    "jc_init_odds": [
+      1.35,
+      4.55,
+      5.95
+    ],
+    "jc_real_odds": [
+      1.29,
+      5.15,
+      6.25
+    ],
+    "macao_init_odds": [
+      1.42,
+      4.45,
+      5.2
+    ],
+    "macao_real_odds": [
+      1.32,
+      5.1,
+      6.0
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DUU"
+  }
+}

@@ -8,6 +8,7 @@ import os
 import json
 import glob
 from sporttery_api import SportteryAPI
+from predict_3goals import extract_features, predict_3goals
 
 app = Flask(__name__)
 DATA_DIR = 'sporttery_data'
@@ -222,6 +223,29 @@ HTML_TEMPLATE = '''
         .standing-table th { background: #0f3460; color: #00d4ff; padding: 8px 4px; text-align: center; }
         .standing-table td { padding: 8px 4px; text-align: center; color: #aaa; border-bottom: 1px solid #16213e; }
         .standing-table tr:first-child td { color: #4ade80; font-weight: bold; }
+
+        /* 3球预测 */
+        .g3-prediction-box { background: linear-gradient(135deg, #1a1a3e 0%, #16213e 100%); border-radius: 10px; padding: 15px; margin: 10px 0; border: 1px solid #0f3460; }
+        .g3-prediction-title { font-size: 13px; color: #ffd700; font-weight: bold; margin-bottom: 8px; }
+        .g3-prediction-value { font-size: 20px; font-weight: bold; padding: 8px 12px; border-radius: 8px; text-align: center; margin-bottom: 8px; }
+        .g3-prediction-value.rec-focus { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+        .g3-prediction-value.rec-exclude { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+        .g3-prediction-value.rec-watch { background: rgba(148,163,184,0.1); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+        .g3-score { font-size: 12px; font-weight: normal; margin-left: 10px; background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 10px; }
+        .g3-odds-info { font-size: 12px; color: #888; text-align: center; margin-bottom: 6px; }
+        .g3-odds-info strong { color: #ffd700; font-size: 14px; }
+        .g3-tier { background: #0f3460; color: #00d4ff; padding: 1px 6px; border-radius: 4px; font-size: 11px; margin-left: 4px; }
+        .g3-signals { display: flex; flex-direction: column; gap: 4px; }
+        .g3-signal-item { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border-radius: 6px; font-size: 12px; }
+        .g3-signal-item.signal-plus { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; }
+        .g3-signal-item.signal-minus { background: rgba(239,68,68,0.08); border-left: 3px solid #ef4444; }
+        .g3-signal-item.signal-neutral { background: rgba(148,163,184,0.06); border-left: 3px solid #888; }
+        .g3-signal-tag { font-weight: bold; color: #fff; min-width: 90px; }
+        .g3-signal-score { font-weight: bold; min-width: 30px; }
+        .signal-plus .g3-signal-score { color: #4ade80; }
+        .signal-minus .g3-signal-score { color: #f87171; }
+        .signal-neutral .g3-signal-score { color: #94a3b8; }
+        .g3-signal-reason { color: #888; }
     </style>
 </head>
 <body>
@@ -278,6 +302,40 @@ HTML_TEMPLATE = '''
                             ${analysis.prediction}
                             <span class="confidence ${confClass}">${analysis.confidence === 3 ? '高' : analysis.confidence === 2 ? '中' : '低'}置信</span>
                         </div>
+                    </div>
+                    ` : ''}
+
+                    <!-- 3球预测 -->
+                    ${m.g3_prediction ? `
+                    <div class="g3-prediction-box">
+                        <div class="g3-prediction-title">⚽ 总进球预测</div>
+                        <div class="g3-prediction-value ${m.g3_prediction.recommendation === '关注3球' ? 'rec-focus' : m.g3_prediction.recommendation === '排除3球' ? 'rec-exclude' : 'rec-watch'}">
+                            ${m.g3_prediction.recommendation}
+                            <span class="g3-score">评分: ${m.g3_prediction.score > 0 ? '+' : ''}${m.g3_prediction.score}</span>
+                        </div>
+                        ${m.g3_prediction.features['3球'] ? `
+                        <div class="g3-odds-info">
+                            3球赔率: <strong>${m.g3_prediction.features['3球']}</strong>
+                            ${m.g3_prediction.features['区间'] ? `<span class="g3-tier">区间${m.g3_prediction.features['区间']}</span>` : ''}
+                            &nbsp;|&nbsp;
+                            0球: ${m.g3_prediction.features['0球'] || '-'}
+                            &nbsp;|&nbsp;
+                            1球: ${m.g3_prediction.features['1球'] || '-'}
+                            &nbsp;|&nbsp;
+                            2球: ${m.g3_prediction.features['2球'] || '-'}
+                        </div>
+                        ` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.length > 0 ? `
+                        <div class="g3-signals">
+                            ${m.g3_prediction.signals.map(s => `
+                                <div class="g3-signal-item ${s[1].startsWith('+') ? 'signal-plus' : s[1].startsWith('-') ? 'signal-minus' : 'signal-neutral'}">
+                                    <span class="g3-signal-tag">${s[0]}</span>
+                                    <span class="g3-signal-score">${s[1]}</span>
+                                    <span class="g3-signal-reason">${s[2]}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ` : ''}
                     </div>
                     ` : ''}
                     
@@ -755,6 +813,29 @@ def get_matches():
                             data.get('score_odds', {}),
                             data.get('total_goals', {})
                         )
+                    # 动态补充3球预测（兼容旧缓存）
+                    if 'g3_prediction' not in data:
+                        try:
+                            features = extract_features(data)
+                            g3_pred = predict_3goals(features)
+                            data['g3_prediction'] = {
+                                'recommendation': g3_pred.get('recommendation', '观望'),
+                                'score': g3_pred.get('score', 0),
+                                'signals': g3_pred.get('signals', []),
+                                'warnings': g3_pred.get('warnings', []),
+                                'features': {
+                                    '3球': features.get('3球'),
+                                    '0球': features.get('0球'),
+                                    '1球': features.get('1球'),
+                                    '2球': features.get('2球'),
+                                    '区间': features.get('区间'),
+                                    '0球_整数高赔': features.get('0球_整数高赔'),
+                                    '3球_降赔': features.get('3球_降赔'),
+                                    '3球_升赔': features.get('3球_升赔'),
+                                }
+                            }
+                        except:
+                            pass
                     matches.append(data)
         except:
             pass
@@ -770,6 +851,25 @@ def fetch_match(match_id):
         result = api.fetch_and_save(match_id)
         
         if result:
+            # ── 3球预测 ──
+            features = extract_features(result)
+            g3_pred = predict_3goals(features)
+            result['g3_prediction'] = {
+                'recommendation': g3_pred.get('recommendation', '观望'),
+                'score': g3_pred.get('score', 0),
+                'signals': g3_pred.get('signals', []),
+                'warnings': g3_pred.get('warnings', []),
+                'features': {
+                    '3球': features.get('3球'),
+                    '0球': features.get('0球'),
+                    '1球': features.get('1球'),
+                    '2球': features.get('2球'),
+                    '区间': features.get('区间'),
+                    '0球_整数高赔': features.get('0球_整数高赔'),
+                    '3球_降赔': features.get('3球_降赔'),
+                    '3球_升赔': features.get('3球_升赔'),
+                }
+            }
             return jsonify({'success': True, 'data': result})
         else:
             return jsonify({'success': False, 'error': '获取数据失败'})

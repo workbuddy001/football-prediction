@@ -1,0 +1,97 @@
+{
+  "match_id": "周五003",
+  "date_folder": "2026.04.17",
+  "home_team": "萨索洛",
+  "away_team": "科莫",
+  "league": "意甲",
+  "handicap": "1",
+  "home_form": "LWDLLW",
+  "away_form": "LDWWWD",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+10.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+12.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降1升26 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:1(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「科莫 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-18 14:56",
+  "macao_tip": "科莫 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 10.0,
+    "jc_draw_chg": 12.0,
+    "jc_away_chg": -7.05,
+    "mcao_home_chg": 29.17,
+    "mcao_draw_chg": 5.41,
+    "mcao_away_chg": -8.86,
+    "jc_init_odds": [
+      4.5,
+      3.75,
+      1.56
+    ],
+    "jc_real_odds": [
+      4.95,
+      4.2,
+      1.45
+    ],
+    "macao_init_odds": [
+      4.8,
+      3.7,
+      1.58
+    ],
+    "macao_real_odds": [
+      6.2,
+      3.9,
+      1.44
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

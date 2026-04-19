@@ -1,0 +1,88 @@
+{
+  "match_id": "周六002",
+  "date_folder": "2026.04.18",
+  "home_team": "东京绿茵",
+  "away_team": "千叶市原",
+  "league": "日职",
+  "handicap": "-1",
+  "home_form": "DLDLWL",
+  "away_form": "DWLLLW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-4.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+6.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升2 / 平降4升13 / 客降0升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-4.8%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+6.8%>5%",
+    "📈 关键信号「强共识推离客」有效：27/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-18 16:20",
+  "macao_tip": "千叶市原 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.83,
+    "jc_draw_chg": 1.69,
+    "jc_away_chg": 6.77,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.07,
+      2.95,
+      3.25
+    ],
+    "jc_real_odds": [
+      1.97,
+      3.0,
+      3.47
+    ],
+    "macao_init_odds": [
+      2.17,
+      3.13,
+      3.03
+    ],
+    "macao_real_odds": [
+      2.17,
+      3.13,
+      3.03
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

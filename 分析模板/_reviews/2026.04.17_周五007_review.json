@@ -1,0 +1,81 @@
+{
+  "match_id": "周五007",
+  "date_folder": "2026.04.17",
+  "home_team": "圣保利",
+  "away_team": "科隆",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "LDLLDW",
+  "away_form": "WDDDLL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+14.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降5升19 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「科隆 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-18 14:59",
+  "macao_tip": "科隆 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 14.63,
+    "jc_draw_chg": 0.67,
+    "jc_away_chg": -12.02,
+    "mcao_home_chg": 16.59,
+    "mcao_draw_chg": 3.28,
+    "mcao_away_chg": -16.95,
+    "jc_init_odds": [
+      2.46,
+      2.98,
+      2.58
+    ],
+    "jc_real_odds": [
+      2.82,
+      3.0,
+      2.27
+    ],
+    "macao_init_odds": [
+      2.23,
+      3.05,
+      2.95
+    ],
+    "macao_real_odds": [
+      2.6,
+      3.15,
+      2.45
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UUD"
+  }
+}

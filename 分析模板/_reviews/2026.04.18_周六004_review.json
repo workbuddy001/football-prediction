@@ -1,0 +1,63 @@
+{
+  "match_id": "周六004",
+  "date_folder": "2026.04.18",
+  "home_team": "济州SK",
+  "away_team": "金泉尚武",
+  "league": "韩职",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升20 / 平降12升12 / 客降5升17",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-18 17:29",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.74,
+      2.92,
+      2.37
+    ],
+    "jc_real_odds": [
+      2.74,
+      2.92,
+      2.37
+    ],
+    "macao_init_odds": [
+      2.71,
+      3.22,
+      2.25
+    ],
+    "macao_real_odds": [
+      2.71,
+      3.22,
+      2.25
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

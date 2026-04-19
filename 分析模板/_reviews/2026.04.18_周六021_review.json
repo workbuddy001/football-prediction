@@ -1,0 +1,70 @@
+{
+  "match_id": "周六021",
+  "date_folder": "2026.04.18",
+  "home_team": "法兰克福",
+  "away_team": "莱红牛",
+  "league": "德甲",
+  "handicap": "1",
+  "home_form": "WDLWDW",
+  "away_form": "WWWLWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.80>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升22 / 平降6升19 / 客降21升3",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:3(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:44",
+  "macao_tip": "莱比锡红牛 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.94,
+    "jc_draw_chg": -0.78,
+    "jc_away_chg": 2.3,
+    "mcao_home_chg": 7.64,
+    "mcao_draw_chg": -3.23,
+    "mcao_away_chg": -2.97,
+    "jc_init_odds": [
+      3.4,
+      3.83,
+      1.74
+    ],
+    "jc_real_odds": [
+      3.3,
+      3.8,
+      1.78
+    ],
+    "macao_init_odds": [
+      2.88,
+      3.72,
+      2.02
+    ],
+    "macao_real_odds": [
+      3.1,
+      3.6,
+      1.96
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UDD"
+  }
+}

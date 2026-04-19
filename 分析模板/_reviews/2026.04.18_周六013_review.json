@@ -1,0 +1,80 @@
+{
+  "match_id": "周六013",
+  "date_folder": "2026.04.18",
+  "home_team": "霍芬海姆",
+  "away_team": "多特蒙德",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "DLLLDW",
+  "away_form": "LWWWWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.67>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升1 / 平降9升14 / 客降1升26",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "26/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为2:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:42",
+  "macao_tip": "多特蒙德 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -5.22,
+    "mcao_home_chg": -8.0,
+    "mcao_draw_chg": -6.01,
+    "mcao_away_chg": 12.61,
+    "jc_init_odds": [
+      2.2,
+      3.67,
+      2.49
+    ],
+    "jc_real_odds": [
+      2.31,
+      3.67,
+      2.36
+    ],
+    "macao_init_odds": [
+      2.5,
+      3.83,
+      2.22
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.6,
+      2.5
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "DDU"
+  }
+}

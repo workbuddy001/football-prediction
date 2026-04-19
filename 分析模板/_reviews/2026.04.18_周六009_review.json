@@ -1,0 +1,90 @@
+{
+  "match_id": "周六009",
+  "date_folder": "2026.04.18",
+  "home_team": "博德闪耀",
+  "away_team": "奥勒松",
+  "league": "挪超",
+  "handicap": "-2",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率9.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率15.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.13<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+28.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降19升5 / 平降1升25 / 客降3升22",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率9.00>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率15.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.13<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-19 16:33",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -1.74,
+    "jc_draw_chg": 28.57,
+    "jc_away_chg": -11.76,
+    "mcao_home_chg": -3.42,
+    "mcao_draw_chg": 25.0,
+    "mcao_away_chg": -8.33,
+    "jc_init_odds": [
+      1.15,
+      7.0,
+      17.0
+    ],
+    "jc_real_odds": [
+      1.13,
+      9.0,
+      15.0
+    ],
+    "macao_init_odds": [
+      1.17,
+      6.0,
+      12.0
+    ],
+    "macao_real_odds": [
+      1.13,
+      7.5,
+      11.0
+    ],
+    "jc_pattern": "NUD",
+    "macao_pattern": "DUD"
+  }
+}

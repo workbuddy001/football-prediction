@@ -1,0 +1,83 @@
+{
+  "match_id": "周六027",
+  "date_folder": "2026.04.18",
+  "home_team": "纽约城",
+  "away_team": "夏洛特FC",
+  "league": "美职足",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-1.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-6.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降8升18 / 平降8升12 / 客降16升10",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:46",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 3.23,
+    "jc_draw_chg": -1.83,
+    "jc_away_chg": -6.67,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.55,
+      3.82,
+      4.5
+    ],
+    "jc_real_odds": [
+      1.6,
+      3.75,
+      4.2
+    ],
+    "macao_init_odds": [
+      1.84,
+      3.45,
+      3.45
+    ],
+    "macao_real_odds": [
+      1.84,
+      3.45,
+      3.45
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "NNN"
+  }
+}

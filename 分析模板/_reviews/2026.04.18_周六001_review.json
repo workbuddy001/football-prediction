@@ -1,0 +1,95 @@
+{
+  "match_id": "周六001",
+  "date_folder": "2026.04.18",
+  "home_team": "惠灵顿",
+  "away_team": "西悉尼",
+  "league": "澳超",
+  "handicap": "-1",
+  "home_form": "LWWWDL",
+  "away_form": "LLLDLW",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.88>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+3.5%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+7.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降30升0 / 平降1升25 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "30/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+3.5%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+7.0%>5%",
+    "📈 关键信号「强共识推离客」有效：30/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-18 15:00",
+  "macao_tip": "惠灵顿凤凰 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -6.64,
+    "jc_draw_chg": 3.47,
+    "jc_away_chg": 7.0,
+    "mcao_home_chg": -9.25,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 13.36,
+    "jc_init_odds": [
+      2.11,
+      3.75,
+      2.57
+    ],
+    "jc_real_odds": [
+      1.97,
+      3.88,
+      2.75
+    ],
+    "macao_init_odds": [
+      2.27,
+      3.6,
+      2.47
+    ],
+    "macao_real_odds": [
+      2.06,
+      3.6,
+      2.8
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

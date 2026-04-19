@@ -1,0 +1,63 @@
+{
+  "match_id": "周六015",
+  "date_folder": "2026.04.18",
+  "home_team": "柏林联合",
+  "away_team": "沃夫斯堡",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "LDLWLL",
+  "away_form": "LLLDLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降9升10 / 平降8升10 / 客降1升23",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-19 16:43",
+  "macao_tip": "柏林联合 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.0,
+      3.32,
+      3.05
+    ],
+    "jc_real_odds": [
+      2.0,
+      3.32,
+      3.05
+    ],
+    "macao_init_odds": [
+      2.12,
+      3.5,
+      2.85
+    ],
+    "macao_real_odds": [
+      2.12,
+      3.5,
+      2.85
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "match_id": "周五004",
+  "date_folder": "2026.04.17",
+  "home_team": "佐加顿斯",
+  "away_team": "马尔默",
+  "league": "瑞超",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-3.8%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降6升18 / 平降1升23 / 客降19升8",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:1(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-18 14:58",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.8,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 4.4,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.37,
+      3.25,
+      2.5
+    ],
+    "jc_real_odds": [
+      2.28,
+      3.25,
+      2.61
+    ],
+    "macao_init_odds": [
+      2.25,
+      3.35,
+      2.61
+    ],
+    "macao_real_odds": [
+      2.25,
+      3.35,
+      2.61
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

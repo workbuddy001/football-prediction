@@ -1,0 +1,91 @@
+{
+  "match_id": "周六019",
+  "date_folder": "2026.04.18",
+  "home_team": "洛里昂",
+  "away_team": "马赛",
+  "league": "法甲",
+  "handicap": "1",
+  "home_form": "LDLWDD",
+  "away_form": "WLLWWD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.45>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.92>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.2%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降0升29 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:0(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「马赛 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-19 16:43",
+  "macao_tip": "马赛 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.23,
+    "jc_draw_chg": 4.53,
+    "jc_away_chg": -4.35,
+    "mcao_home_chg": 5.53,
+    "mcao_draw_chg": 7.04,
+    "mcao_away_chg": -5.2,
+    "jc_init_odds": [
+      4.15,
+      3.75,
+      1.61
+    ],
+    "jc_real_odds": [
+      4.45,
+      3.92,
+      1.54
+    ],
+    "macao_init_odds": [
+      3.98,
+      3.55,
+      1.73
+    ],
+    "macao_real_odds": [
+      4.2,
+      3.8,
+      1.64
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}
