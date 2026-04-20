@@ -1,0 +1,83 @@
+{
+  "match_id": "周日028",
+  "date_folder": "2026.04.19",
+  "home_team": "洛杉矶FC",
+  "away_team": "圣何塞",
+  "league": "美职足",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:4",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.15>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.50>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降28升1 / 客降27升1",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "27/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:4(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-20 14:15",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.35,
+    "jc_draw_chg": -1.19,
+    "jc_away_chg": -3.23,
+    "mcao_home_chg": 8.84,
+    "mcao_draw_chg": -8.24,
+    "mcao_away_chg": -14.58,
+    "jc_init_odds": [
+      1.48,
+      4.2,
+      4.65
+    ],
+    "jc_real_odds": [
+      1.5,
+      4.15,
+      4.5
+    ],
+    "macao_init_odds": [
+      1.47,
+      4.25,
+      4.8
+    ],
+    "macao_real_odds": [
+      1.6,
+      3.9,
+      4.1
+    ],
+    "jc_pattern": "NND",
+    "macao_pattern": "UDD"
+  }
+}

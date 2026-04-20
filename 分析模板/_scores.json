@@ -5968,5 +5968,14 @@
     "score_str": "2:2",
     "result": "draw",
     "record_time": "2026-04-20 08:06"
+  },
+  "2026.04.19_周日028": {
+    "match_id": "周日028",
+    "date": "2026.04.19",
+    "home_score": 1,
+    "away_score": 4,
+    "score_str": "1:4",
+    "result": "away",
+    "record_time": "2026-04-20 14:15"
   }
 }

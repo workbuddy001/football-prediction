@@ -413,6 +413,9 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             f'④梯度:2球{g2}>3球{g3}<4球{g4_val}',
         ]
         signals.append(('⭐黄金3球', '+0', ' | '.join(golden_reason)))
+        # 4球预警：黄金3球 + 4球赔率在4.95~6之间
+        if g4_val is not None and 4.95 <= g4_val <= 6.0:
+            warnings.append(f'⚠️ 4球预警：4球赔率{g4_val}在4.95~6区间，需预防4球打出')
 
     # 推荐
     if score >= 15:
@@ -703,6 +706,13 @@ tr:hover{{background:#f8f9fa}}
   <td style="color:#f1c40f;font-weight:bold">标记</td>
   <td style="padding:8px;color:#f1c40f">
     同时满足4条定律：①评分≥15 ②近况均值2.5~3.5 ③3球C级(3.00~3.50) ④2球&gt;3球&lt;4球梯度
+  </td>
+</tr>
+<tr style="background:#3d2000">
+  <td style="padding:8px;color:#e67e22;font-weight:bold">⚠️4球预警</td>
+  <td style="color:#e67e22;font-weight:bold">提醒</td>
+  <td style="padding:8px;color:#e67e22">
+    黄金3球+4球赔率在4.95~6区间时，需预防4球打出（4球赔率适中，有一定打出概率）
   </td>
 </tr>
 </table>

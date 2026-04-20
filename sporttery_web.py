@@ -391,6 +391,8 @@ HTML_TEMPLATE = '''
         .g3-signal-item.signal-golden { background: rgba(241,196,15,0.1); border-left: 3px solid #f1c40f; }
         .signal-golden .g3-signal-tag { color: #f1c40f; }
         .signal-golden .g3-signal-score { color: #f1c40f; }
+        .g3-warnings { margin-top: 8px; }
+        .g3-warning-item { font-size: 12px; color: #e67e22; background: rgba(230,126,34,0.1); border-left: 3px solid #e67e22; padding: 5px 10px; border-radius: 0 6px 6px 0; margin-bottom: 4px; }
         .g3-prediction-title { font-size: 13px; color: #ffd700; font-weight: bold; margin-bottom: 8px; }
         .g3-prediction-value { font-size: 20px; font-weight: bold; padding: 8px 12px; border-radius: 8px; text-align: center; margin-bottom: 8px; }
         .g3-prediction-value.rec-focus { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
@@ -564,6 +566,12 @@ HTML_TEMPLATE = '''
                         ${m.g3_prediction.golden_3goals && m.g3_prediction.golden_reason ? `
                         <div class="golden-reason">
                             ${m.g3_prediction.golden_reason.join(' &nbsp;·&nbsp; ')}
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.length > 0 ? `
+                        <div class="g3-warnings">
+                            ${m.g3_prediction.warnings.map(w => `
+                                <div class="g3-warning-item">${w}</div>
+                            `).join('')}
                         </div>` : ''}
                         ${m.g3_prediction.features['3球'] ? `
                         <div class="g3-odds-info">
