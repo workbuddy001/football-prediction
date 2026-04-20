@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-3球预测算法 v2 - 兼容所有 sporttery_data 格式
+3球预测算法 v3 - 竞彩网 preview.recent 近况 + 赔率信号
 数据来源: sporttery_data/*.json
 
 核心规律:
+  - Step 0: 竞彩网 preview.recent（双方近3场均值偏离3球区间则减分）
   - 规律⑨: 3球赔率<3.50关注，>3.50降低预期
   - 规律⑩: 0球赔率整数(X.0)+高赔(>15) = 3球加分信号(历史92.9%)
 
@@ -16,134 +17,6 @@
 
 import glob, json, os, re, math
 from typing import Optional, Dict, Any, List, Tuple
-
-# ============================================================
-# 历史比分数据库（用于查询队伍近况）
-# ============================================================
-
-_scores_db: Dict[str, Dict] = {}
-_scores_loaded = False
-
-def _load_scores_db():
-    """延迟加载比分数据库"""
-    global _scores_db, _scores_loaded
-    if _scores_loaded:
-        return
-    try:
-        raw = json.load(open('分析模板/_scores.json', encoding='utf-8'))
-        _scores_db = {k: v for k, v in raw.items() if not k.startswith('_')}
-    except:
-        _scores_db = {}
-    _scores_loaded = True
-
-def get_team_recent(team_name: str, limit: int = 3) -> List[Dict]:
-    """获取某队最近N场比赛的比分列表（前N字模糊匹配）"""
-    _load_scores_db()
-    matches = []
-    if not team_name:
-        return matches
-
-    # 清理名字：去掉 _源数据 等后缀，取前6字（避免"斯特拉斯堡"vs"斯特拉斯"问题）
-    clean_name = re.sub(r'[_\-源数据].*$', '', team_name).strip()
-    # 取前4字作为匹配key（兼顾短名和长名）
-    key_chars = clean_name[:4]
-    if len(key_chars) < 2:
-        return matches
-
-    for v in _scores_db.values():
-        ht = (v.get('home_team') or '').strip()
-        at = (v.get('away_team') or '').strip()
-        if not ht or not at:
-            continue
-
-        ht_clean = re.sub(r'[_\-源数据].*$', '', ht).strip()
-        at_clean = re.sub(r'[_\-源数据].*$', '', at).strip()
-
-        # 匹配：精确 or 前4字相同
-        ht_key = ht_clean[:4]
-        at_key = at_clean[:4]
-
-        if ht_key == key_chars:
-            is_home = True
-            matched = True
-        elif at_key == key_chars:
-            is_home = False
-            matched = True
-        elif clean_name == ht_clean:
-            is_home = True
-            matched = True
-        elif clean_name == at_clean:
-            is_home = False
-            matched = True
-        else:
-            matched = False
-            is_home = True
-
-        if not matched:
-            continue
-
-        hs = v.get('home_score', 0) or 0
-        aw = v.get('away_score', 0) or 0
-        matches.append({
-            'date': v.get('date', ''),
-            'home': ht_clean,
-            'away': at_clean,
-            'home_score': hs,
-            'away_score': aw,
-            'total': hs + aw,
-            'is_home': is_home,
-        })
-
-    # 去重（同一天同一比赛只保留一条）
-    seen = set()
-    unique = []
-    for m in matches:
-        key = (m['date'], m['home'], m['away'])
-        if key not in seen:
-            seen.add(key)
-            unique.append(m)
-
-    # 按日期降序
-    unique.sort(key=lambda x: x['date'], reverse=True)
-    return unique[:limit]
-
-def calc_recent_form(features: Dict[str, Any]) -> Optional[Dict]:
-    """
-    计算两队近况评分
-    返回: {
-        'home_avg': float,  # 主队近3场平均总进球
-        'away_avg': float,  # 客队近3场平均总进球
-        'combined_avg': float,
-        'extreme': bool,    # 是否极端（过大多开）
-        'signal': str,      # 'large'/'small'/'neutral'
-    }
-    """
-    home = features.get('主队', '')
-    away = features.get('客队', '')
-
-    h_matches = get_team_recent(home, 3)
-    a_matches = get_team_recent(away, 3)
-
-    # 至少需要各2场才计算
-    if len(h_matches) < 2 or len(a_matches) < 2:
-        return None
-
-    h_avgs = [m['total'] for m in h_matches]
-    a_avgs = [m['total'] for m in a_matches]
-
-    h_avg = sum(h_avgs) / len(h_avgs)
-    a_avg = sum(a_avgs) / len(a_avgs)
-    combined = (h_avg + a_avg) / 2
-
-    return {
-        'home_avg': round(h_avg, 2),
-        'away_avg': round(a_avg, 2),
-        'combined_avg': round(combined, 2),
-        'home_matches': h_matches,
-        'away_matches': a_matches,
-        'home_games': len(h_matches),
-        'away_games': len(a_matches),
-    }
 
 # ============================================================
 # 第一部分: 通用赔率解析
@@ -202,7 +75,95 @@ def parse_score_odds(data: dict) -> dict:
 
 
 # ============================================================
-# 第二部分: 特征提取
+# 第二部分: 近况数据提取（从 sporttery_data 的 preview.recent）
+# ============================================================
+
+def _extract_recent_matches(data: dict) -> dict:
+    """
+    从 sporttery_data 的 preview.recent 提取两队近况
+    返回: {
+        'home': [{'date', 'opponent', 'total', 'result'}, ...],
+        'away': [{'date', 'opponent', 'total', 'result'}, ...],
+    }
+    使用 homeTeamFullCourtGoalCnt / awayTeamFullCourtGoalCnt 精确获取两队得分
+    """
+    preview = data.get('preview', {}) or {}
+    recent = preview.get('recent', {}) or {}
+
+    result = {'home': [], 'away': []}
+
+    for side in ['home', 'away']:
+        match_list = recent.get(side, {}).get('matchList', [])
+        matches = []
+        for m in match_list[:5]:
+            hg = m.get('homeTeamFullCourtGoalCnt')
+            ag = m.get('awayTeamFullCourtGoalCnt')
+            if hg is None or ag is None:
+                continue
+            total = int(hg) + int(ag)
+
+            # 判断该队在这场是主队还是客队
+            team_short = m.get('teamShortName', '')  # 查询队伍的简称
+            home_short = m.get('homeTeamShortName', '')
+            away_short = m.get('awayTeamShortName', '')
+            is_home = (home_short == team_short)
+
+            opponent = away_short if is_home else home_short
+            team_score = hg if is_home else ag
+            opp_score = ag if is_home else hg
+
+            matches.append({
+                'date': m.get('matchDate', ''),
+                'opponent': opponent or '',
+                'score': f'{team_score}:{opp_score}',
+                'half': m.get('halfTimeGoal', ''),
+                'total': total,
+                'result': m.get('teamMatchResult', ''),  # W/D/L
+            })
+        result[side] = matches
+
+    return result
+
+
+def calc_recent_form(recent_data: dict) -> Optional[dict]:
+    """
+    根据 preview.recent 数据计算两队近况均值
+    recent_data: _extract_recent_matches() 的返回值
+    返回: {
+        'home_avg': float, 'away_avg': float,
+        'combined_avg': float,
+        'home_matches': [...], 'away_matches': [...],
+        'home_games': int, 'away_games': int,
+    }
+    或 None（数据不足时）
+    """
+    home_list = recent_data.get('home', [])
+    away_list = recent_data.get('away', [])
+
+    # 至少各2场才计算
+    if len(home_list) < 2 or len(away_list) < 2:
+        return None
+
+    h_totals = [m['total'] for m in home_list]
+    a_totals = [m['total'] for m in away_list]
+
+    h_avg = sum(h_totals) / len(h_totals)
+    a_avg = sum(a_totals) / len(a_totals)
+    combined = (h_avg + a_avg) / 2
+
+    return {
+        'home_avg': round(h_avg, 2),
+        'away_avg': round(a_avg, 2),
+        'combined_avg': round(combined, 2),
+        'home_matches': home_list,
+        'away_matches': away_list,
+        'home_games': len(home_list),
+        'away_games': len(away_list),
+    }
+
+
+# ============================================================
+# 第三部分: 特征提取
 # ============================================================
 
 def extract_features(data: dict) -> Dict[str, Any]:
@@ -274,8 +235,9 @@ def extract_features(data: dict) -> Dict[str, Any]:
     f['联赛'] = mi.get('league', '')
     f['赛事类型'] = _detect_league_type(f['联赛'])
 
-    # ── Step 0.5: 近况评分（从 _scores.json 查询） ──
-    form = calc_recent_form(f)
+    # ── Step 0.5: 近况评分（从 preview.recent 提取） ──
+    recent = _extract_recent_matches(data)
+    form = calc_recent_form(recent)
     f['近况'] = form
 
     return f
@@ -706,7 +668,15 @@ tr:hover{{background:#f8f9fa}}
 <tr><td style="padding:8px">3球降赔(&lt;-3%)</td><td style="color:#27ae60;font-weight:bold">+8</td><td style="padding:8px">引导筹码流向</td></tr>
 <tr><td style="padding:8px">3球升赔(&gt;5%)</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">庄家推离</td></tr>
 <tr><td style="padding:8px">友谊赛</td><td style="color:#f39c12;font-weight:bold">×0.5</td><td style="padding:8px">所有分数减半，观望为主</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值&lt;2.0</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">双方近3场均值过小，偏离3球</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值2.0~2.5</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏低，不支持3球</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值3.5~4.0</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏高，大开大合，3球不稳</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值&gt;4.0</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">双方近况过大，小比分概率高</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值2.5~3.5</td><td style="color:#888;font-weight:bold">0</td><td style="padding:8px">正常区间，接近3球，无惩罚</td></tr>
 </table>
+<p style="color:#888;font-size:.85em;margin-top:8px">
+  数据来源: preview.recent（竞彩网，每场比赛自带主客队近5场历史）
+</p>
 <p style="color:#666;margin-top:16px;font-size:.85em">
   评分 ≥ 15 → 关注3球 | 评分 ≤ -10 → 排除3球 | 中间 → 观望
 </p>
