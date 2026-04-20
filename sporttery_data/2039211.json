@@ -1,6 +1,6 @@
 {
   "match_id": "2039211",
-  "fetch_time": "2026-04-18 13:31:33",
+  "fetch_time": "2026-04-20 19:05:08",
   "match_info": {
     "home_team": "东京绿茵",
     "away_team": "千叶市原",
@@ -64,13 +64,13 @@
   },
   "hafu": {
     "负负": "6.50",
-    "平平": "4.05",
+    "平平": "4.20",
     "胜胜": "3.45",
-    "负平": "15.00",
+    "负平": "14.00",
     "平胜": "4.55",
     "负胜": "23.00",
     "胜负": "29.00",
-    "胜平": "15.00",
+    "胜平": "14.00",
     "平负": "7.60"
   },
   "hhad": {
@@ -633,31 +633,31 @@
           "groupName": "East",
           "lossGoalMatchCnt": 4,
           "phaseName": "",
-          "points": "15",
+          "points": "18",
           "ranking": "4",
           "sportteryTeamId": 559,
           "teamId": 0,
           "teamShortName": "东京绿茵",
-          "totalLegCnt": 10,
+          "totalLegCnt": 11,
           "uniformTeamId": 343,
-          "winGoalMatchCnt": 3,
-          "winProbability": "30%"
+          "winGoalMatchCnt": 4,
+          "winProbability": "36%"
         },
         {
           "drawMatchCnt": 3,
           "groupId": 13676,
           "groupName": "East",
-          "lossGoalMatchCnt": 5,
+          "lossGoalMatchCnt": 6,
           "phaseName": "",
           "points": "9",
           "ranking": "10",
           "sportteryTeamId": 886,
           "teamId": 0,
           "teamShortName": "千叶市原",
-          "totalLegCnt": 10,
+          "totalLegCnt": 11,
           "uniformTeamId": 383,
           "winGoalMatchCnt": 2,
-          "winProbability": "20%"
+          "winProbability": "18%"
         }
       ],
       "tournamentId": 2271,
@@ -669,7 +669,7 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 10,
+            "appearanceCnt": 11,
             "assistAvgCnt": "0.1",
             "assistCnt": 1,
             "assistProbability": "20%",
@@ -681,17 +681,17 @@
             "personName": "H. Goya",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 5,
+            "startedMatchCnt": 6,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 5,
+            "appearanceCnt": 6,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "0.4",
+            "goalAvgCnt": "0.3",
             "goalCnt": 2,
             "goalProbability": "20%",
             "injuryFlag": 0,
@@ -699,13 +699,13 @@
             "personName": "安井拓也",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 1,
+            "startedMatchCnt": 2,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "41"
           },
           {
-            "appearanceCnt": 10,
+            "appearanceCnt": 11,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -718,7 +718,7 @@
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 9,
-            "substituteMatchCnt": 1,
+            "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "8"
           }
@@ -737,7 +737,7 @@
             "assistProbability": "13%",
             "goalAvgCnt": "0.4",
             "goalCnt": 4,
-            "goalProbability": "33%",
+            "goalProbability": "31%",
             "injuryFlag": 0,
             "personId": 649721,
             "personName": "染野唯月",
@@ -749,37 +749,37 @@
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.3",
             "goalCnt": 3,
-            "goalProbability": "25%",
+            "goalProbability": "23%",
             "injuryFlag": 0,
             "personId": 695538,
             "personName": "T. Yoshida",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 7,
             "suspensionFlag": 0,
             "uniformNo": "55"
           },
           {
-            "appearanceCnt": 6,
+            "appearanceCnt": 7,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.3",
             "goalCnt": 2,
-            "goalProbability": "17%",
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 532951,
             "personName": "Y. Fukuda",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "14"
@@ -799,21 +799,25 @@
     }
   },
   "ttg_change": {
+    "2球": {
+      "count": 1,
+      "change_pct": 3.3
+    },
     "3球": {
       "count": 0,
       "change_pct": 0.0
-    },
-    "7球": {
-      "count": 2,
-      "change_pct": -16.7
     },
     "1球": {
       "count": 2,
       "change_pct": 8.6
     },
-    "4球": {
+    "5球": {
       "count": 2,
-      "change_pct": -6.7
+      "change_pct": -12.5
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": -16.7
     },
     "6球": {
       "count": 2,
@@ -823,40 +827,12 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "5球": {
+    "4球": {
       "count": 2,
-      "change_pct": -12.5
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": 3.3
+      "change_pct": -6.7
     }
   },
   "hafu_change": {
-    "胜胜": {
-      "count": 1,
-      "change_pct": -4.2
-    },
-    "平平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平胜": {
-      "count": 1,
-      "change_pct": -5.2
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "平负": {
       "count": 1,
       "change_pct": 7.0
@@ -865,7 +841,31 @@
       "count": 1,
       "change_pct": 10.2
     },
+    "胜平": {
+      "count": 1,
+      "change_pct": -6.7
+    },
     "负平": {
+      "count": 1,
+      "change_pct": -6.7
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": -5.2
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 3.7
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": -4.2
+    },
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     }

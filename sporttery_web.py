@@ -159,6 +159,17 @@ def find_similar_matches(current_data, top_n=5):
         if sim >= 50:   # 3球精确匹配贡献50，让球贡献0-50
             mid = record.get('match_id', '')
             pd = past_data or {}
+            # 赔率来源：复盘附带 > 历史文件
+            odds_source = record.get('total_goals_odds') or (pd.get('ttg') or pd.get('total_goals') or {})
+            # 统一格式为 {0: 13.0, 1: 5.2, ...} 方便前端直接用
+            odds_normalized = {}
+            if isinstance(odds_source, dict):
+                for k, v in odds_source.items():
+                    try:
+                        odds_normalized[int(k.replace('球', ''))] = float(v)
+                    except:
+                        pass
+
             results.append({
                 'record': record,
                 'similarity': sim,
@@ -167,6 +178,7 @@ def find_similar_matches(current_data, top_n=5):
                 'home_team': (pd.get('match_info') or {}).get('home_team') or record.get('home_team', '未知'),
                 'away_team': (pd.get('match_info') or {}).get('away_team') or record.get('away_team', '未知'),
                 'total_goals': record.get('total_goals', record.get('home_score', 0) + record.get('away_score', 0)),
+                'goal_odds': odds_normalized,   # {0:13.0, 1:5.2, 2:3.4, 3:3.3, 4:5.1, ...}
             })
 
     results.sort(key=lambda x: x['similarity'], reverse=True)
@@ -1214,6 +1226,23 @@ HTML_TEMPLATE = '''
                             <div class="similar-tg-label">${tgDisplay}</div>
                             <div class="similar-similarity">相似 ${item.similarity}%</div>
                         </div>`;
+                        // 0-7球赔率表格
+                        const odds = item.goal_odds || {};
+                        const goalLabels = [0,1,2,3,4,5,6,7];
+                        if (Object.keys(odds).length > 0) {
+                            let oddsCells = goalLabels.map(g => {
+                                const val = odds[g];
+                                const isTg = g === tg;
+                                const cls = isTg ? 'background:#1a4a2e;color:#4ade80;font-weight:bold' : 'color:#ccc';
+                                return `<td style="padding:3px 6px;text-align:center;font-size:11px;${cls}">${g}球<br/><b>${val !== undefined ? val.toFixed(2) : '-'}</b></td>`;
+                            }).join('');
+                            html += `<div style="padding:4px 12px 6px 42px">
+                                <table style="border-collapse:collapse;width:auto;background:#0a1628;border-radius:6px;" cellpadding="0">
+                                    <tr style="color:#888;font-size:10px;text-align:center">${goalLabels.map(g => `<td style="padding:2px 6px;text-align:center">${g}球</td>`).join('')}</tr>
+                                    <tr>${oddsCells}</tr>
+                                </table>
+                            </div>`;
+                        }
                         // 明细
                         if (det.g3_exact !== undefined || det.hhad_score) {
                             let detailParts = [];

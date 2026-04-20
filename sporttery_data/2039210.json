@@ -1,6 +1,6 @@
 {
   "match_id": "2039210",
-  "fetch_time": "2026-04-18 13:23:13",
+  "fetch_time": "2026-04-20 19:04:40",
   "match_info": {
     "home_team": "摩雷伦斯",
     "away_team": "埃斯托里尔",
@@ -9,16 +9,16 @@
   },
   "score_odds": {
     "05:00": "400.0",
-    "01:00": "8.50",
+    "01:00": "9.00",
     "05:02": "400.0",
     "05:01": "250.0",
     "02:04": "80.00",
     "02:05": "350.0",
-    "02:02": "12.50",
+    "02:02": "11.00",
     "02:03": "25.00",
-    "02:00": "13.00",
-    "02:01": "8.00",
-    "03:03": "60.00",
+    "02:00": "14.50",
+    "02:01": "8.25",
+    "03:03": "45.00",
     "03:01": "20.00",
     "03:02": "27.00",
     "03:00": "30.00",
@@ -38,46 +38,46 @@
     "01:05": "200.0"
   },
   "total_goals": {
-    "3球": "3.55",
-    "4球": "5.50",
+    "3球": "3.45",
+    "4球": "5.10",
     "5球": "9.50",
-    "6球": "18.00",
-    "7球": "28.00",
+    "6球": "17.00",
+    "7球": "25.00",
     "0球": "12.00",
-    "1球": "4.70",
-    "2球": "3.35"
+    "1球": "4.95",
+    "2球": "3.60"
   },
   "had": {
-    "胜": "2.66",
-    "平": "3.20",
-    "负": "2.27"
+    "胜": "2.85",
+    "平": "3.00",
+    "负": "2.25"
   },
   "ttg": {
-    "3球": "3.55",
-    "4球": "5.50",
+    "3球": "3.45",
+    "4球": "5.10",
     "5球": "9.50",
-    "6球": "18.00",
-    "7球": "28.00",
+    "6球": "17.00",
+    "7球": "25.00",
     "0球": "12.00",
-    "1球": "4.70",
-    "2球": "3.35"
+    "1球": "4.95",
+    "2球": "3.60"
   },
   "hafu": {
     "负负": "3.85",
-    "平平": "5.00",
-    "胜胜": "4.30",
-    "负平": "14.00",
-    "平胜": "6.00",
-    "负胜": "27.00",
+    "平平": "4.80",
+    "胜胜": "4.55",
+    "负平": "13.00",
+    "平胜": "6.20",
+    "负胜": "28.00",
     "胜负": "25.00",
-    "胜平": "14.00",
+    "胜平": "13.00",
     "平负": "5.70"
   },
   "hhad": {
     "让球": "+1",
-    "让胜": "1.48",
-    "让平": "3.90",
-    "让负": "5.10"
+    "让胜": "1.50",
+    "让平": "3.85",
+    "让负": "4.92"
   },
   "preview": {
     "feature": {
@@ -306,7 +306,32 @@
     },
     "injury": {
       "away": {
-        "injuriesAndSuspensionsList": [],
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 7,
+            "injuryFlag": 1,
+            "personId": 306990,
+            "personName": "谢卡",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 19,
+            "injuryFlag": 1,
+            "personId": 562057,
+            "personName": "A.汤吉",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          }
+        ],
         "sportteryTeamId": 273,
         "teamId": 1695,
         "teamShortName": "埃斯托里",
@@ -634,7 +659,7 @@
           "lossGoalMatchCnt": 13,
           "phaseName": "",
           "points": "36",
-          "ranking": "8",
+          "ranking": "9",
           "sportteryTeamId": 874,
           "teamId": 0,
           "teamShortName": "摩雷伦斯",
@@ -650,7 +675,7 @@
           "lossGoalMatchCnt": 12,
           "phaseName": "",
           "points": "37",
-          "ranking": "7",
+          "ranking": "8",
           "sportteryTeamId": 273,
           "teamId": 0,
           "teamShortName": "埃斯托里",
@@ -798,7 +823,107 @@
       "uniformMatchId": 2386992
     }
   },
-  "ttg_change": {},
-  "hafu_change": {},
-  "exclusion_list": []
+  "ttg_change": {
+    "2球": {
+      "count": 3,
+      "change_pct": 7.5
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -2.8
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 5.3
+    },
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": -10.7
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -5.6
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -7.3
+    }
+  },
+  "hafu_change": {
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 2,
+      "change_pct": -7.1
+    },
+    "负平": {
+      "count": 2,
+      "change_pct": -7.1
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 3.3
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 3.7
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": -4.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 5.8
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "3球",
+      "ttg_odds": "3.45",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "8.25",
+          "special": true
+        },
+        {
+          "score": "03:00",
+          "odds": "30.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "23.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "7.50",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.45（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
 }
