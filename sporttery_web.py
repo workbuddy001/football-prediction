@@ -1274,6 +1274,9 @@ def _build_match_card(data, api):
                 'recommendation': g3_pred.get('recommendation', '观望'),
                 'score': g3_pred.get('score', 0),
                 'signals': g3_pred.get('signals', []),
+                'warnings': g3_pred.get('warnings', []),
+                'golden_3goals': g3_pred.get('golden_3goals', False),
+                'golden_reason': g3_pred.get('golden_reason', []),
                 'features': {
                     '3球': g3_pred.get('features', {}).get('3球'),
                     '0球': g3_pred.get('features', {}).get('0球'),
