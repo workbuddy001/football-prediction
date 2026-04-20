@@ -1,0 +1,68 @@
+{
+  "match_id": "周日022",
+  "date_folder": "2026.04.19",
+  "home_team": "阿尔克马",
+  "away_team": "奈梅亨",
+  "league": "荷兰杯",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "5:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-3.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降11升18 / 平降14升11 / 客降12升17",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为5:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-20 08:02",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.4,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 3.64,
+    "mcao_home_chg": 0.43,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -0.81,
+    "jc_init_odds": [
+      2.35,
+      3.35,
+      2.47
+    ],
+    "jc_real_odds": [
+      2.27,
+      3.35,
+      2.56
+    ],
+    "macao_init_odds": [
+      2.31,
+      3.45,
+      2.48
+    ],
+    "macao_real_odds": [
+      2.32,
+      3.45,
+      2.46
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

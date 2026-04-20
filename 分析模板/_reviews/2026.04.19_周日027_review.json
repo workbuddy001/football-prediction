@@ -1,0 +1,92 @@
+{
+  "match_id": "周日027",
+  "date_folder": "2026.04.19",
+  "home_team": "布拉加",
+  "away_team": "法马利康",
+  "league": "葡超",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.55>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-5.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降23升2 / 客降28升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为2:2(平局)",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-5.0%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+8.1%>5%",
+    "📈 关键信号「强共识推离主」有效：28/30家公司升主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-20 08:06",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.14,
+    "jc_draw_chg": -4.97,
+    "jc_away_chg": -9.44,
+    "mcao_home_chg": 7.82,
+    "mcao_draw_chg": -0.29,
+    "mcao_away_chg": -12.33,
+    "jc_init_odds": [
+      1.72,
+      3.42,
+      3.92
+    ],
+    "jc_real_odds": [
+      1.86,
+      3.25,
+      3.55
+    ],
+    "macao_init_odds": [
+      1.79,
+      3.41,
+      3.65
+    ],
+    "macao_real_odds": [
+      1.93,
+      3.4,
+      3.2
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UND"
+  }
+}

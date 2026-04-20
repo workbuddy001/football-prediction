@@ -1,6 +1,125 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.19_周日026_20260420080335",
+      "match_id": "周日026",
+      "date_folder": "2026.04.19",
+      "home_team": "巴黎圣曼",
+      "away_team": "里昂",
+      "league": "法甲",
+      "upset_type": "silent",
+      "upset_type_cn": "静默型：赔率完全不动，无任何变化信号",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "1:2",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "away",
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 0.0,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": 0.0,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          1.21,
+          5.4,
+          8.5
+        ],
+        "jc_real_odds": [
+          1.21,
+          5.4,
+          8.5
+        ],
+        "macao_init_odds": [
+          1.25,
+          5.5,
+          7.8
+        ],
+        "macao_real_odds": [
+          1.25,
+          5.5,
+          7.8
+        ],
+        "jc_pattern": "NNN",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 8.5,
+      "home_form": "WWWWWL",
+      "away_form": "WDLLDD",
+      "handicap": "-1",
+      "macao_tip": "巴黎圣日耳曼 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-20 08:03"
+    },
+    {
+      "upset_id": "2026.04.19_周日023_20260420080310",
+      "match_id": "周日023",
+      "date_folder": "2026.04.19",
+      "home_team": "里斯本",
+      "away_team": "本菲卡",
+      "league": "葡超",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "1:2",
+      "confidence": 4,
+      "was_excluded": true,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 0.0,
+        "jc_draw_chg": -6.06,
+        "jc_away_chg": 5.86,
+        "mcao_home_chg": 0.0,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 0.0,
+        "jc_init_odds": [
+          2.08,
+          3.3,
+          2.9
+        ],
+        "jc_real_odds": [
+          2.08,
+          3.1,
+          3.07
+        ],
+        "macao_init_odds": [
+          2.02,
+          3.55,
+          2.85
+        ],
+        "macao_real_odds": [
+          2.02,
+          3.55,
+          2.85
+        ],
+        "jc_pattern": "NDU",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 3.07,
+      "home_form": "-",
+      "away_form": "-",
+      "handicap": "-1",
+      "macao_tip": "",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-20 08:03"
+    },
+    {
       "upset_id": "2026.04.19_周日013_20260420001529",
       "match_id": "周日013",
       "date_folder": "2026.04.19",
@@ -3996,12 +4115,12 @@
     }
   ],
   "stats": {
-    "total": 67,
+    "total": 69,
     "by_type": {
-      "unknown": 22,
-      "silent": 2,
-      "reverse_cover": 43
+      "silent": 3,
+      "reverse_cover": 44,
+      "unknown": 22
     },
-    "last_update": "2026-04-20 00:15"
+    "last_update": "2026-04-20 08:03"
   }
 }

@@ -1,0 +1,85 @@
+{
+  "match_id": "周日020",
+  "date_folder": "2026.04.19",
+  "home_team": "拜仁",
+  "away_team": "斯图加特",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "WWWWWD",
+  "away_form": "WLWLWL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "4:2",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.28>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.65>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.31<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降2升21 / 平降4升18 / 客降21升2",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:2(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率5.28>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率5.65>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.31<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-20 08:02",
+  "macao_tip": "拜仁慕尼黑 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.31,
+      5.28,
+      5.65
+    ],
+    "jc_real_odds": [
+      1.31,
+      5.28,
+      5.65
+    ],
+    "macao_init_odds": [
+      1.35,
+      4.7,
+      6.4
+    ],
+    "macao_real_odds": [
+      1.35,
+      4.7,
+      6.4
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "match_id": "周日021",
+  "date_folder": "2026.04.19",
+  "home_team": "比萨",
+  "away_team": "热那亚",
+  "league": "意甲",
+  "handicap": "1",
+  "home_form": "LLLWLL",
+  "away_form": "WLLWWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降27升1 / 平降25升1 / 客降0升27",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "27/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "27/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-20 08:02",
+  "macao_tip": "热那亚 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 2.05,
+    "jc_draw_chg": -1.75,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -5.66,
+    "mcao_draw_chg": -3.23,
+    "mcao_away_chg": 6.67,
+    "jc_init_odds": [
+      2.92,
+      2.85,
+      2.3
+    ],
+    "jc_real_odds": [
+      2.98,
+      2.8,
+      2.3
+    ],
+    "macao_init_odds": [
+      3.18,
+      3.1,
+      2.1
+    ],
+    "macao_real_odds": [
+      3.0,
+      3.0,
+      2.24
+    ],
+    "jc_pattern": "UNN",
+    "macao_pattern": "DDU"
+  }
+}

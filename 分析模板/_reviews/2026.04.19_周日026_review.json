@@ -1,0 +1,82 @@
+{
+  "match_id": "周日026",
+  "date_folder": "2026.04.19",
+  "home_team": "巴黎圣曼",
+  "away_team": "里昂",
+  "league": "法甲",
+  "handicap": "-1",
+  "home_form": "WWWWWL",
+  "away_form": "WDLLDD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率5.40>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率8.50>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.21<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降5升10 / 平降2升18 / 客降7升11",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「巴黎圣日耳曼 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-20 08:03",
+  "macao_tip": "巴黎圣日耳曼 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.21,
+      5.4,
+      8.5
+    ],
+    "jc_real_odds": [
+      1.21,
+      5.4,
+      8.5
+    ],
+    "macao_init_odds": [
+      1.25,
+      5.5,
+      7.8
+    ],
+    "macao_real_odds": [
+      1.25,
+      5.5,
+      7.8
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "NNN"
+  }
+}

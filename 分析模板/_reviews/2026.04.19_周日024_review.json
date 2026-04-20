@@ -1,0 +1,63 @@
+{
+  "match_id": "周日024",
+  "date_folder": "2026.04.19",
+  "home_team": "门兴",
+  "away_team": "美因茨",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "LDDDWL",
+  "away_form": "LWWWWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降23升2 / 平降10升10 / 客降1升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-20 08:03",
+  "macao_tip": "美因茨 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -3.08,
+    "mcao_draw_chg": -4.9,
+    "mcao_away_chg": 7.63,
+    "jc_init_odds": [
+      2.12,
+      3.25,
+      2.86
+    ],
+    "jc_real_odds": [
+      2.12,
+      3.25,
+      2.86
+    ],
+    "macao_init_odds": [
+      2.27,
+      3.47,
+      2.62
+    ],
+    "macao_real_odds": [
+      2.2,
+      3.3,
+      2.82
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "DDU"
+  }
+}
