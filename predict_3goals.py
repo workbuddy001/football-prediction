@@ -391,6 +391,29 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     score = max(-30, min(100, sum(ps(s[1]) for s in signals if s[1][0] in '+-')))
     if is_friendly: score = int(score * 0.5)
 
+    # ── 黄金3球筛选器（4条定律同时满足） ──
+    # 定律①: 评分达标（≥15）
+    # 定律②: 近况正常（合并均值2.5~3.5）
+    # 定律③: 3球C级（3.00~3.50）
+    # 定律④: 2球>3球<4球（完美梯度）
+    golden = False
+    golden_reason = []
+    g4_val = features.get('4球')
+    cond1 = score >= 15                                             # ①评分达标
+    cond2 = (form is not None and 2.5 <= form['combined_avg'] <= 3.5)  # ②近况正常
+    cond3 = (g3 is not None and 3.00 <= g3 < 3.50)                # ③3球C级
+    cond4 = (g2 is not None and g3 is not None and g4_val is not None
+             and g2 > g3 and g3 < g4_val)                         # ④2球>3球<4球
+    if cond1 and cond2 and cond3 and cond4:
+        golden = True
+        golden_reason = [
+            f'①评分{score}≥15',
+            f'②近况均值{form["combined_avg"]}在[2.5,3.5]',
+            f'③3球{g3}(C级)',
+            f'④梯度:2球{g2}>3球{g3}<4球{g4_val}',
+        ]
+        signals.append(('⭐黄金3球', '+0', ' | '.join(golden_reason)))
+
     # 推荐
     if score >= 15:
         rec, conf = '关注3球', min(85, 55 + score)
@@ -407,6 +430,8 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         'warnings': warnings,
         'reasoning': reasons,
         'features': features,
+        'golden_3goals': golden,
+        'golden_reason': golden_reason,
     }
 
 
@@ -672,6 +697,14 @@ tr:hover{{background:#f8f9fa}}
 <tr><td style="padding:8px">Step0: 近况均值3.5~4.0</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏高，大开大合，3球不稳</td></tr>
 <tr><td style="padding:8px">Step0: 近况均值&gt;4.0</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">双方近况过大，小比分概率高</td></tr>
 <tr><td style="padding:8px">Step0: 近况均值2.5~3.5</td><td style="color:#27ae60;font-weight:bold">+3</td><td style="padding:8px">符合3球特征，加分（均值≈3说明该队近期总进球接近3球/场）</td></tr>
+</table>
+<tr style="background:#2d1f00">
+  <td style="padding:8px;color:#f1c40f;font-weight:bold">⭐黄金3球</td>
+  <td style="color:#f1c40f;font-weight:bold">标记</td>
+  <td style="padding:8px;color:#f1c40f">
+    同时满足4条定律：①评分≥15 ②近况均值2.5~3.5 ③3球C级(3.00~3.50) ④2球&gt;3球&lt;4球梯度
+  </td>
+</tr>
 </table>
 <p style="color:#888;font-size:.85em;margin-top:8px">
   数据来源: preview.recent（竞彩网，每场比赛自带主客队近5场历史）

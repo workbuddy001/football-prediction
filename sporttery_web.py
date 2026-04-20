@@ -385,6 +385,12 @@ HTML_TEMPLATE = '''
 
         /* 3球预测 */
         .g3-prediction-box { background: linear-gradient(135deg, #1a1a3e 0%, #16213e 100%); border-radius: 10px; padding: 15px; margin: 10px 0; border: 1px solid #0f3460; }
+        .g3-prediction-box.golden-box { background: linear-gradient(135deg, #2d1f00 0%, #1a1200 100%); border: 1px solid #b8860b; box-shadow: 0 0 12px rgba(255,215,0,0.15); }
+        .golden-badge { background: linear-gradient(90deg, #b8860b, #ffd700); color: #000; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+        .golden-reason { font-size: 11px; color: #f1c40f; background: rgba(241,196,15,0.08); border-left: 3px solid #f1c40f; padding: 6px 10px; border-radius: 0 6px 6px 0; margin: 4px 0 8px; }
+        .g3-signal-item.signal-golden { background: rgba(241,196,15,0.1); border-left: 3px solid #f1c40f; }
+        .signal-golden .g3-signal-tag { color: #f1c40f; }
+        .signal-golden .g3-signal-score { color: #f1c40f; }
         .g3-prediction-title { font-size: 13px; color: #ffd700; font-weight: bold; margin-bottom: 8px; }
         .g3-prediction-value { font-size: 20px; font-weight: bold; padding: 8px 12px; border-radius: 8px; text-align: center; margin-bottom: 8px; }
         .g3-prediction-value.rec-focus { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
@@ -549,12 +555,16 @@ HTML_TEMPLATE = '''
 
                     <!-- 3球预测 -->
                     ${m.g3_prediction ? `
-                    <div class="g3-prediction-box">
-                        <div class="g3-prediction-title">⚽ 总进球预测</div>
+                    <div class="g3-prediction-box${m.g3_prediction.golden_3goals ? ' golden-box' : ''}">
+                        <div class="g3-prediction-title">⚽ 总进球预测${m.g3_prediction.golden_3goals ? ' <span class="golden-badge">⭐ 黄金3球</span>' : ''}</div>
                         <div class="g3-prediction-value ${m.g3_prediction.recommendation === '关注3球' ? 'rec-focus' : m.g3_prediction.recommendation === '排除3球' ? 'rec-exclude' : 'rec-watch'}">
                             ${m.g3_prediction.recommendation}
                             <span class="g3-score">评分: ${m.g3_prediction.score > 0 ? '+' : ''}${m.g3_prediction.score}</span>
                         </div>
+                        ${m.g3_prediction.golden_3goals && m.g3_prediction.golden_reason ? `
+                        <div class="golden-reason">
+                            ${m.g3_prediction.golden_reason.join(' &nbsp;·&nbsp; ')}
+                        </div>` : ''}
                         ${m.g3_prediction.features['3球'] ? `
                         <div class="g3-odds-info">
                             3球赔率: <strong>${m.g3_prediction.features['3球']}</strong>
@@ -570,7 +580,7 @@ HTML_TEMPLATE = '''
                         ${m.g3_prediction.signals && m.g3_prediction.signals.length > 0 ? `
                         <div class="g3-signals">
                             ${m.g3_prediction.signals.map(s => `
-                                <div class="g3-signal-item ${s[1].startsWith('+') ? 'signal-plus' : s[1].startsWith('-') ? 'signal-minus' : 'signal-neutral'}">
+                                <div class="g3-signal-item ${s[0].includes('黄金') ? 'signal-golden' : s[1].startsWith('+') ? 'signal-plus' : s[1].startsWith('-') ? 'signal-minus' : 'signal-neutral'}">
                                     <span class="g3-signal-tag">${s[0]}</span>
                                     <span class="g3-signal-score">${s[1]}</span>
                                     <span class="g3-signal-reason">${s[2]}</span>
@@ -1322,6 +1332,8 @@ def get_matches():
                             'score': g3_pred.get('signal_score', 0),
                             'signals': g3_pred.get('signals', []),
                             'warnings': g3_pred.get('warnings', []),
+                            'golden_3goals': g3_pred.get('golden_3goals', False),
+                            'golden_reason': g3_pred.get('golden_reason', []),
                             'features': {
                                 '3球': features.get('3球'),
                                 '0球': features.get('0球'),
@@ -1360,6 +1372,8 @@ def fetch_match(match_id):
                                 'score': g3_pred.get('signal_score', 0),
                                 'signals': g3_pred.get('signals', []),
                                 'warnings': g3_pred.get('warnings', []),
+                                'golden_3goals': g3_pred.get('golden_3goals', False),
+                                'golden_reason': g3_pred.get('golden_reason', []),
                                 'features': {
                                     '3球': features.get('3球'),
                     '0球': features.get('0球'),
