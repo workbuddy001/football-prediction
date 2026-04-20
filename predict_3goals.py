@@ -289,15 +289,14 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         elif combined > 3.5:
             penalty = -3; label = '近况偏高'
         else:
-            penalty = 0  # 2.5~3.5 = 正常，接近3球，无惩罚
+            penalty = +3; label = '近况正常'  # 2.5~3.5 = 符合3球特征，加分
 
-        if penalty != 0:
-            sign = '+' if penalty > 0 else ''
-            signals.append((label, f'{sign}{penalty}', detail))
-            if penalty < 0:
-                reasons.append(f'近况均值{combined}，偏离3球区间({label})')
-            else:
-                reasons.append(f'近况均值{combined}，3球机会({label})')
+        sign = '+' if penalty > 0 else ''
+        signals.append((label, f'{sign}{penalty}', detail))
+        if penalty > 0:
+            reasons.append(f'近况均值{combined}，符合3球特征({label})')
+        else:
+            reasons.append(f'近况均值{combined}，偏离3球区间({label})')
 
     # Step 1: 3球赔率值（A/B/C/D/E级）
     if g3 is not None:
@@ -672,7 +671,7 @@ tr:hover{{background:#f8f9fa}}
 <tr><td style="padding:8px">Step0: 近况均值2.0~2.5</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏低，不支持3球</td></tr>
 <tr><td style="padding:8px">Step0: 近况均值3.5~4.0</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏高，大开大合，3球不稳</td></tr>
 <tr><td style="padding:8px">Step0: 近况均值&gt;4.0</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">双方近况过大，小比分概率高</td></tr>
-<tr><td style="padding:8px">Step0: 近况均值2.5~3.5</td><td style="color:#888;font-weight:bold">0</td><td style="padding:8px">正常区间，接近3球，无惩罚</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值2.5~3.5</td><td style="color:#27ae60;font-weight:bold">+3</td><td style="padding:8px">符合3球特征，加分（均值≈3说明该队近期总进球接近3球/场）</td></tr>
 </table>
 <p style="color:#888;font-size:.85em;margin-top:8px">
   数据来源: preview.recent（竞彩网，每场比赛自带主客队近5场历史）
