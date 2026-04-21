@@ -4,6 +4,7 @@
 竞彩比分预测系统 - 完整版
 """
 from flask import Flask, jsonify, render_template_string, request
+from markupsafe import Markup
 import os
 import json
 import glob
@@ -695,7 +696,7 @@ HTML_TEMPLATE = '''
         // 全局已保存比分缓存 { match_id: {home_score, away_score, total_goals, ...} }
         window._savedScores = {};
         // 进球数赔率命中率统计
-        const _ODDS_HITRATE = {{ odds_stats | safe }};
+        const _ODDS_HITRATE = __ODDS_STATS_JSON__;
         const _HITRATE_COLORS = {green:'#4ade80', yellow:'#facc15', red:'#f87171', gray:'#888'};
         function _getHitRateLabel(goalNum, oddsVal) {
             const bk = _ODDS_HITRATE.bucket || {};
@@ -1491,10 +1492,10 @@ HTML_TEMPLATE = '''
 def index():
     # 注入命中率统计到 JS 全局变量
     stats = _build_odds_hitrate()
-    # 序列化成 JS 字面量嵌入页面
-    import html
-    stats_js = html.escape(json.dumps(stats, ensure_ascii=False))
-    return render_template_string(HTML_TEMPLATE, odds_stats=stats_js)
+    # 序列化成 JS 字面量嵌入页面（用字符串替换避免 Jinja2 转义）
+    stats_js = json.dumps(stats, ensure_ascii=False)
+    html = HTML_TEMPLATE.replace('__ODDS_STATS_JSON__', stats_js)
+    return html
 
 def _build_match_card(data, api):
     """
