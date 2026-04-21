@@ -439,6 +439,326 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
 
 
 # ============================================================
+# 第三部分: 双选推荐系统（近况 × 0球赔率 × 3球等级）
+# ============================================================
+
+# 双选命中率统计数据（基于214场回测结果）
+DOUBLE_PICK_STATS = {
+    # (近况分类, 0球分类, 3球等级) -> (第二选项, 命中率, 样本数)
+    ('高进攻', '高', 'C级'): ('2球', 85.7, 7),
+    ('中进攻', '中', 'C级'): ('4球', 71.4, 21),
+    ('高进攻', '中', 'C级'): ('4球', 60.0, 5),
+    ('弱进攻', '高', 'D级'): ('1球', 60.0, 5),
+    ('中进攻', '高', 'C级'): ('2球', 60.0, 20),
+    ('弱进攻', '中', 'C级'): ('1球', 55.6, 9),
+    ('高进攻', '高', 'D级'): ('4球', 53.8, 13),
+    ('中进攻', '低', 'D级'): ('4球', 50.0, 30),
+    ('弱进攻', '中', 'D级'): ('4球', 37.5, 8),
+    ('中进攻', '中', 'D级'): ('4球', 31.2, 16),
+    ('弱进攻', '低', 'D级'): ('4球', 25.8, 31),
+    ('中进攻', '高', 'D级'): ('4球', 25.0, 16),
+    ('弱进攻', '高', 'C级'): ('1球', 14.3, 7),
+    ('高进攻', '中', 'D级'): ('4球', 0.0, 4),
+}
+
+def classify_near_form(avg):
+    """近况分类"""
+    if avg is None:
+        return None
+    if avg < 2.5:
+        return '弱进攻'
+    elif avg < 3.5:
+        return '中进攻'
+    else:
+        return '高进攻'
+
+def classify_zero_odds(odds):
+    """0球赔率分类"""
+    if odds is None:
+        return None
+    if odds < 12:
+        return '低'
+    elif odds < 16:
+        return '中'
+    else:
+        return '高'
+
+def classify_three_odds(odds):
+    """3球赔率等级"""
+    if odds is None:
+        return None
+    if odds < 2.5:
+        return 'A级'
+    elif odds < 3.0:
+        return 'B级'
+    elif odds < 3.5:
+        return 'C级'
+    elif odds < 4.0:
+        return 'D级'
+    else:
+        return 'E级'
+
+def recommend_double_pick(features):
+    """
+    双选推荐函数
+    
+    【新规律】基于221场回测的高命中率规律（2026-04-21）:
+    - 规律A: 1+2组合 + 最低赔率<3.5 + 近况<2.5 -> 100% (6场)
+    - 规律B: 近况<2.0 + 2+3组合 -> 81.8% (11场)
+    - 规律C: 1+2组合 + 最低赔率<3.5 -> 76.5% (17场)
+    
+    【旧规律】基于「近况 × 0球赔率 × 3球等级」查表
+    
+    返回: {
+        'recommendation': '3+2球' / '1+2球' / '2+3球' / '单选3球' / None,
+        'second_pick': '2球' / '1球' / '4球' / None,
+        'confidence': 0-100,  # 信心指数
+        'hit_rate': 实际历史命中率,
+        'sample_size': 样本数,
+        'reason': 理由,
+        'signal': 信号描述,
+    }
+    """
+    result = {
+        'recommendation': None,
+        'second_pick': None,
+        'confidence': None,
+        'hit_rate': None,
+        'sample_size': None,
+        'reason': None,
+        'signal': None,
+    }
+    
+    # === 新规律：基于赔率最低的两个进球数 ===
+    g1 = features.get('1球')
+    g2 = features.get('2球')
+    g3 = features.get('3球')
+    g4 = features.get('4球')
+    form = features.get('近况')
+    
+    if form is None:
+        return _recommend_double_pick_legacy(features)
+    
+    combined_avg = form.get('combined_avg')
+    if combined_avg is None:
+        return _recommend_double_pick_legacy(features)
+    
+    # 收集所有赔率
+    all_odds = []
+    for g in range(8):
+        od = features.get(f'{g}球')
+        if od is not None and od > 0:
+            all_odds.append((g, od))
+    
+    if len(all_odds) < 2:
+        return _recommend_double_pick_legacy(features)
+    
+    # 排序找最低赔率两个
+    all_odds.sort(key=lambda x: x[1])
+    min1_g, min1_od = all_odds[0]
+    min2_g, min2_od = all_odds[1]
+    min_odds = min1_od
+    odds_ratio = min2_od / min1_od if min1_od > 0 else 0
+    
+    # === 新规律A: 1+2组合 + 最低赔率<3.5 + 近况<2.5 ===
+    if min1_g == 1 and min2_g == 2 and min_odds < 3.5 and combined_avg < 2.5:
+        result['recommendation'] = '1+2球'
+        result['second_pick'] = '2球'
+        result['hit_rate'] = 100
+        result['sample_size'] = 6
+        result['confidence'] = 95
+        result['reason'] = '规律A: 1+2组合+低价赔+近况弱，100%命中率'
+        result['signal'] = '新规律A'
+        return result
+    
+    # === 新规律B: 近况<2.0 + 2+3组合 ===
+    if min1_g == 2 and min2_g == 3 and combined_avg < 2.0:
+        result['recommendation'] = '2+3球'
+        result['second_pick'] = '3球'
+        result['hit_rate'] = 81.8
+        result['sample_size'] = 11
+        result['confidence'] = 90
+        result['reason'] = '规律B: 近况<2.0+2+3组合，81.8%命中率'
+        result['signal'] = '新规律B'
+        return result
+    
+    # === 新规律C: 1+2组合 + 最低赔率<3.5 + 赔率接近 ===
+    if min1_g == 1 and min2_g == 2 and min_odds < 3.5:
+        if odds_ratio <= 1.3:
+            result['recommendation'] = '1+2球'
+            result['second_pick'] = '2球'
+            result['hit_rate'] = 76.5
+            result['sample_size'] = 17
+            result['confidence'] = 85
+            result['reason'] = '规律C: 1+2组合+低价赔+赔率接近，76.5%命中率'
+            result['signal'] = '新规律C'
+            return result
+        elif odds_ratio > 1.3:
+            # 赔率差距大，谨慎
+            result['recommendation'] = '1+2球'
+            result['second_pick'] = '2球'
+            result['hit_rate'] = 25
+            result['sample_size'] = 4
+            result['confidence'] = 30
+            result['reason'] = '1+2组合+低价但赔率差距大，谨慎！'
+            result['signal'] = '新规律C(危险)'
+            return result
+    
+    # === 新规律D: 1+2组合全局 ===
+    if min1_g == 1 and min2_g == 2:
+        result['recommendation'] = '1+2球'
+        result['second_pick'] = '2球'
+        result['hit_rate'] = 68.2
+        result['sample_size'] = 22
+        result['confidence'] = 70
+        result['reason'] = '规律D: 1+2组合全局，68.2%命中率'
+        result['signal'] = '新规律D'
+        return result
+    
+    # === 新规律E: 近况弱时的2+3组合 ===
+    if min1_g == 2 and min2_g == 3 and combined_avg < 2.5:
+        result['recommendation'] = '2+3球'
+        result['second_pick'] = '3球'
+        result['hit_rate'] = 50
+        result['sample_size'] = 20
+        result['confidence'] = 55
+        result['reason'] = '近况弱+2+3组合'
+        result['signal'] = '新规律E'
+        return result
+    
+    # === 使用旧规律兜底 ===
+    return _recommend_double_pick_legacy(features)
+
+
+def _recommend_double_pick_legacy(features):
+    """
+    旧版双选推荐：基于「近况 × 0球赔率 × 3球等级」查表
+    """
+    result = {
+        'recommendation': None,
+        'second_pick': None,
+        'confidence': None,
+        'hit_rate': None,
+        'sample_size': None,
+        'reason': None,
+        'signal': None,
+    }
+    
+    g3 = features.get('3球')
+    g0 = features.get('0球')
+    form = features.get('近况')
+    
+    if g3 is None or g0 is None or form is None:
+        return result
+    
+    combined_avg = form.get('combined_avg')
+    near_key = classify_near_form(combined_avg)
+    zero_key = classify_zero_odds(g0)
+    three_key = classify_three_odds(g3)
+    
+    if near_key is None or zero_key is None or three_key is None:
+        return result
+    
+    # 查表获取命中率
+    key = (near_key, zero_key, three_key)
+    if key in DOUBLE_PICK_STATS:
+        second_pick, hit_rate, sample = DOUBLE_PICK_STATS[key]
+        
+        result['second_pick'] = second_pick
+        result['hit_rate'] = hit_rate
+        result['sample_size'] = sample
+        
+        # 信心指数计算
+        sample_weight = min(1.0, max(0.5, sample / 20))
+        base_confidence = hit_rate * 0.7
+        sample_bonus = (hit_rate - 45) * 0.3 if hit_rate > 45 else 0
+        result['confidence'] = min(95, max(25, int((base_confidence + sample_bonus) * sample_weight)))
+        
+        # 推荐选项
+        if three_key in ['A级', 'B级']:
+            result['recommendation'] = '单选3球'
+            result['signal'] = f'3球{three_key}赔率极低，无需双选'
+            result['reason'] = f'3球{g3}({three_key})，庄家明显支持'
+        else:
+            result['recommendation'] = f'3+{second_pick}'
+            result['signal'] = f'{near_key} + 0球{zero_key} + 3球{three_key}'
+            
+            if near_key == '高进攻' and zero_key == '高' and three_key == 'C级':
+                result['reason'] = '近况好但庄家不想要0球 -> 实际2-3球'
+            elif near_key == '中进攻' and zero_key == '中':
+                result['reason'] = '均衡比赛，进球分布均匀'
+            elif near_key == '中进攻' and zero_key == '高':
+                result['reason'] = '庄家认为0球概率低，实际2-3球'
+            elif near_key == '弱进攻' and zero_key in ['中', '高']:
+                result['reason'] = '弱进攻，进球数偏少'
+            else:
+                result['reason'] = '根据近况×赔率组合判断'
+    else:
+        # 无历史数据，使用逻辑推断
+        g1 = features.get('1球')
+        g2 = features.get('2球')
+        g4 = features.get('4球')
+
+        if three_key in ['A级', 'B级']:
+            result['recommendation'] = '单选3球'
+            result['second_pick'] = None
+            result['confidence'] = 55
+            result['hit_rate'] = None
+            result['sample_size'] = 0
+            result['reason'] = f'3球{three_key}赔率偏低，单选'
+            result['signal'] = '3球赔率支持'
+        elif three_key == 'C级':
+            if g2 and g3 and g2 / g3 < 0.85:
+                result['recommendation'] = '3+2球'
+                result['second_pick'] = '2球'
+                result['reason'] = '2球赔率接近3球，庄家分流'
+            else:
+                result['recommendation'] = '3+4球'
+                result['second_pick'] = '4球'
+                result['reason'] = '大球比赛，选3+4球'
+            result['confidence'] = 40
+            result['hit_rate'] = None
+            result['sample_size'] = 0
+            result['signal'] = f'{near_key} + 0球{zero_key} + 3球{three_key}(无样本)'
+        elif three_key == 'D级':
+            if near_key == '弱进攻':
+                result['recommendation'] = '3+1球'
+                result['second_pick'] = '1球'
+                result['reason'] = '弱进攻，低比分'
+            elif near_key == '中进攻':
+                result['recommendation'] = '3+2球'
+                result['second_pick'] = '2球'
+                result['reason'] = '中进攻，均衡比赛'
+            else:
+                result['recommendation'] = '3+4球'
+                result['second_pick'] = '4球'
+                result['reason'] = '高进攻，大球'
+            result['confidence'] = 35
+            result['hit_rate'] = None
+            result['sample_size'] = 0
+            result['signal'] = f'{near_key} + 0球{zero_key} + 3球{three_key}(无样本)'
+        else:
+            if near_key == '弱进攻':
+                result['recommendation'] = '3+1球'
+                result['second_pick'] = '1球'
+                result['reason'] = '弱进攻+高赔率，低比分'
+            elif near_key == '中进攻':
+                result['recommendation'] = '3+1球'
+                result['second_pick'] = '1球'
+                result['reason'] = '中进攻但3球赔率高，关注低比分'
+            else:
+                result['recommendation'] = '3+2球'
+                result['second_pick'] = '2球'
+                result['reason'] = '高进攻但3球赔率高，实际2-3球'
+            result['confidence'] = 30
+            result['hit_rate'] = None
+            result['sample_size'] = 0
+            result['signal'] = f'{near_key} + 0球{zero_key} + 3球{three_key}(无样本，E级高赔率)'
+
+    return result
+
+
+# ============================================================
 # 第四部分: 比分缓存（模板+scores关联）
 # ============================================================
 
