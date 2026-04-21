@@ -1374,6 +1374,12 @@ HTML_TEMPLATE = '''
                         hhad: matchData ? matchData.hhad : null,
                     })
                 });
+                // 复盘后刷新赔率命中率统计
+                try {
+                    const r2 = await fetch('/api/odds_hitrate');
+                    const data = await r2.json();
+                    window._ODDS_HITRATE = data;
+                } catch(e2) {}
             } catch(e) {}
             // 显示复盘结果
             let reviewText = `📋 复盘结果: 实际 ${home}:${away}，总进球 ${tgLabel}`;
@@ -1434,11 +1440,10 @@ HTML_TEMPLATE = '''
                                 const isTg = g === tg;
                                 const rateLabel = val !== undefined ? _getHitRateLabel(g, val) : '';
                                 const cls = isTg ? 'background:#1a4a2e;color:#4ade80;font-weight:bold' : 'color:#ccc';
-                                return `<td style="padding:3px 6px;text-align:center;font-size:11px;${cls}">${g}球<br/><b>${val !== undefined ? val.toFixed(2) : '-'}</b>${rateLabel}</td>`;
+                                return `<td style="padding:3px 4px;text-align:center;font-size:11px;${cls}"><div>${g}球</div><b>${val !== undefined ? val.toFixed(2) : '-'}</b><div>${rateLabel}</div></td>`;
                             }).join('');
                             html += `<div style="padding:4px 12px 4px 42px">
                                 <table style="border-collapse:collapse;width:auto;background:#0a1628;border-radius:6px;" cellpadding="0">
-                                    <tr style="color:#888;font-size:10px;text-align:center">${goalLabels.map(g => `<td style="padding:2px 6px;text-align:center">${g}球</td>`).join('')}</tr>
                                     <tr>${oddsCells}</tr>
                                 </table>
                             </div>`;
@@ -1738,6 +1743,14 @@ def get_all_saved_scores():
         return jsonify({'success': True, 'scores': filtered})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/odds_hitrate')
+def get_odds_hitrate():
+    """返回赔率命中率统计（供复盘后动态刷新）"""
+    global _odds_hitrate_cache
+    _odds_hitrate_cache = None  # 清除缓存，强制重新计算
+    stats = _build_odds_hitrate()
+    return jsonify(stats)
 
 @app.route('/api/similar/<match_id>')
 def get_similar(match_id):
