@@ -139,6 +139,143 @@ def compute_similarity(current_data, past_record, past_data):
 
     return round(score, 1), details
 
+# ─────────────────────────────────────────────────────────────────
+# 进球数赔率命中率统计（带缓存）
+# ─────────────────────────────────────────────────────────────────
+_odds_hitrate_cache = None
+
+def _build_odds_hitrate():
+    """
+    遍历所有有比分的历史记录，计算各进球数在各赔率区间的历史命中率。
+    返回格式:
+      overall[goal] = (total, hits)   # 该进球数全场命中率
+      bucket[goal][bucket_key] = (total, hits)  # bucket_key 如 "3.0~3.5"
+    """
+    global _odds_hitrate_cache
+    if _odds_hitrate_cache is not None:
+        return _odds_hitrate_cache
+
+    scores = load_scores()
+    sporttery_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), DATA_DIR)
+
+    overall = {}   # overall[goal] = [total, hits]
+    buckets = {}  # buckets[goal][bucket_key] = [total, hits]
+
+    def bucket_key(val, step=0.5):
+        """0.5步长区间"""
+        center = round(val / step) * step
+        lo = round(center - step / 2, 2)
+        hi = round(center + step / 2, 2)
+        return '%.2f~%.2f' % (lo, hi)
+
+    for key, record in scores.items():
+        tg = record.get('total_goals')
+        mid = record.get('match_id', key)
+        if tg is None or not str(mid).isdigit():
+            continue
+        tg = int(tg)
+        fp = os.path.join(sporttery_dir, '%s.json' % mid)
+        if not os.path.exists(fp):
+            continue
+        try:
+            d = json.load(open(fp, encoding='utf-8'))
+            tg_odds = d.get('total_goals', {})
+        except:
+            continue
+
+        for goal in range(0, 8):
+            od_val = tg_odds.get('%d球' % goal)
+            if not od_val:
+                continue
+            try:
+                val = float(od_val)
+            except:
+                continue
+
+            # overall
+            if goal not in overall:
+                overall[goal] = [0, 0]
+            overall[goal][0] += 1
+            if tg == goal:
+                overall[goal][1] += 1
+
+            # bucket
+            bk = bucket_key(val)
+            if goal not in buckets:
+                buckets[goal] = {}
+            if bk not in buckets[goal]:
+                buckets[goal][bk] = [0, 0]
+            buckets[goal][bk][0] += 1
+            if tg == goal:
+                buckets[goal][bk][1] += 1
+
+    # 计算命中率
+    def rate(total, hits):
+        return round(hits / total * 100, 1) if total > 0 else None
+
+    overall_stats = {g: {'total': v[0], 'hits': v[1], 'rate': rate(v[0], v[1])}
+                     for g, v in overall.items() if v[0] > 0}
+    bucket_stats = {}
+    for g, bk_data in buckets.items():
+        bucket_stats[g] = {
+            bk: {'total': v[0], 'hits': v[1], 'rate': rate(v[0], v[1])}
+            for bk, v in bk_data.items() if v[0] > 0
+        }
+
+    _odds_hitrate_cache = {'overall': overall_stats, 'bucket': bucket_stats}
+    return _odds_hitrate_cache
+
+def get_hitrate_for_odds(goal, odds_val):
+    """
+    返回指定进球数和赔率对应的命中率信息。
+    返回: {'overall_rate': 31.2, 'bucket_rate': 45.0, 'bucket_total': 13, 'color': 'green'}
+    """
+    stats = _build_odds_hitrate()
+    ov = stats['overall'].get(goal, {})
+    overall_rate = ov.get('rate')
+
+    bucket_rate = None
+    bucket_total = 0
+    if odds_val is not None:
+        try:
+            val = float(odds_val)
+            # 找精确匹配bucket
+            bk_key = '%.2f~%.2f' % (round(val - 0.25, 2), round(val + 0.25, 2))
+            bk_data = stats['bucket'].get(goal, {}).get(bk_key)
+            if bk_data:
+                bucket_rate = bk_data['rate']
+                bucket_total = bk_data['total']
+            else:
+                # 找最近的bucket
+                bk = stats['bucket'].get(goal, {})
+                for bk_str, d in bk.items():
+                    lo, hi = bk_str.split('~')
+                    if float(lo) <= val <= float(hi):
+                        bucket_rate = d['rate']
+                        bucket_total = d['total']
+                        break
+        except:
+            pass
+
+    # 颜色：bucket_rate > 0 时使用bucket，否则用overall
+    ref_rate = bucket_rate if bucket_rate is not None else overall_rate
+    if ref_rate is None:
+        color = 'gray'
+    elif ref_rate >= 35:
+        color = 'green'
+    elif ref_rate >= 20:
+        color = 'yellow'
+    else:
+        color = 'red'
+
+    return {
+        'overall_rate': overall_rate,
+        'bucket_rate': bucket_rate,
+        'bucket_total': bucket_total,
+        'color': color,
+    }
+
+
 def find_similar_matches(current_data, top_n=5):
     """
     在已记录比分的比赛中找相似场次
@@ -557,6 +694,24 @@ HTML_TEMPLATE = '''
         window._matchData = {};
         // 全局已保存比分缓存 { match_id: {home_score, away_score, total_goals, ...} }
         window._savedScores = {};
+        // 进球数赔率命中率统计
+        const _ODDS_HITRATE = {{ odds_stats | safe }};
+        const _HITRATE_COLORS = {green:'#4ade80', yellow:'#facc15', red:'#f87171', gray:'#888'};
+        function _getHitRateLabel(goalNum, oddsVal) {
+            const bk = _ODDS_HITRATE.bucket || {};
+            const goalBuckets = bk[goalNum] || {};
+            // 找精确bucket
+            let found = null;
+            for (const [bkStr, d] of Object.entries(goalBuckets)) {
+                const [lo, hi] = bkStr.split('~').map(Number);
+                if (oddsVal >= lo && oddsVal <= hi) { found = d; break; }
+            }
+            const rate = found ? found.rate : null;
+            const total = found ? found.total : 0;
+            const color = rate === null ? 'gray' : rate >= 35 ? 'green' : rate >= 20 ? 'yellow' : 'red';
+            if (rate === null) return '';
+            return `<span class="hitrate-badge" style="font-size:10px;padding:1px 5px;border-radius:4px;margin-left:3px;background:${_HITRATE_COLORS[color]}22;color:${_HITRATE_COLORS[color]};border:1px solid ${_HITRATE_COLORS[color]}55" title="${goalNum}球赔率${oddsVal}区间历史命中率">${rate}%</span>`;
+        }
 
         // ── 分页配置 ──────────────────────────────────────
         window._PAGE_SIZE = 6;
@@ -714,9 +869,11 @@ HTML_TEMPLATE = '''
                     <div class="odds-section">
                         <div class="odds-title">总进球</div>
                         <div class="odds-grid">
-                            ${Object.entries(m.total_goals || {}).map(([k, v]) => 
-                                `<div class="odds-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v}</div></div>`
-                            ).join('')}
+                            ${Object.entries(m.total_goals || {}).map(([k, v]) => {
+                                const goalNum = parseInt(k.replace('球',''));
+                                const rateLabel = _getHitRateLabel(goalNum, parseFloat(v));
+                                return `<div class="odds-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v}${rateLabel}</div></div>`;
+                            }).join('')}
                         </div>
                     </div>
                     ` : ''}
@@ -1274,8 +1431,9 @@ HTML_TEMPLATE = '''
                             let oddsCells = goalLabels.map(g => {
                                 const val = odds[g];
                                 const isTg = g === tg;
+                                const rateLabel = val !== undefined ? _getHitRateLabel(g, val) : '';
                                 const cls = isTg ? 'background:#1a4a2e;color:#4ade80;font-weight:bold' : 'color:#ccc';
-                                return `<td style="padding:3px 6px;text-align:center;font-size:11px;${cls}">${g}球<br/><b>${val !== undefined ? val.toFixed(2) : '-'}</b></td>`;
+                                return `<td style="padding:3px 6px;text-align:center;font-size:11px;${cls}">${g}球<br/><b>${val !== undefined ? val.toFixed(2) : '-'}</b>${rateLabel}</td>`;
                             }).join('');
                             html += `<div style="padding:4px 12px 4px 42px">
                                 <table style="border-collapse:collapse;width:auto;background:#0a1628;border-radius:6px;" cellpadding="0">
@@ -1331,7 +1489,12 @@ HTML_TEMPLATE = '''
 
 @app.route('/')
 def index():
-    return render_template_string(HTML_TEMPLATE)
+    # 注入命中率统计到 JS 全局变量
+    stats = _build_odds_hitrate()
+    # 序列化成 JS 字面量嵌入页面
+    import html
+    stats_js = html.escape(json.dumps(stats, ensure_ascii=False))
+    return render_template_string(HTML_TEMPLATE, odds_stats=stats_js)
 
 def _build_match_card(data, api):
     """
