@@ -1,0 +1,81 @@
+{
+  "match_id": "周一003",
+  "date_folder": "2026.04.20",
+  "home_team": "水晶宫",
+  "away_team": "西汉姆联",
+  "league": "英超",
+  "handicap": "-1",
+  "home_form": "WWDDDW",
+  "away_form": "WDLDDW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+15.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降12升10 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为0:0(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-21 08:05",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 15.64,
+    "jc_draw_chg": -1.27,
+    "jc_away_chg": -15.15,
+    "mcao_home_chg": 13.21,
+    "mcao_draw_chg": -2.14,
+    "mcao_away_chg": -12.67,
+    "jc_init_odds": [
+      2.11,
+      3.14,
+      2.97
+    ],
+    "jc_real_odds": [
+      2.44,
+      3.1,
+      2.52
+    ],
+    "macao_init_odds": [
+      2.12,
+      3.27,
+      3.0
+    ],
+    "macao_real_odds": [
+      2.4,
+      3.2,
+      2.62
+    ],
+    "jc_pattern": "UND",
+    "macao_pattern": "UDD"
+  }
+}

@@ -8,7 +8,7 @@ import os
 import json
 import glob
 from sporttery_api import SportteryAPI
-from predict_3goals import extract_features, predict_3goals
+from predict_3goals import extract_features, predict_3goals, calc_recent_form, _extract_recent_matches
 from _3goals_stats import StatsEngine
 
 app = Flask(__name__)
@@ -158,9 +158,22 @@ def find_similar_matches(current_data, top_n=5):
         # 3球必须精确相等（得分=100），否则 g3_score=0 → sim<50，直接过滤
         if sim >= 50:   # 3球精确匹配贡献50，让球贡献0-50
             mid = record.get('match_id', '')
-            pd = past_data or {}
+            pd = past_data  # 已有历史源文件数据
+
+            # 若复盘附带但无源文件，尝试读源文件（为获取近况数据）
+            if not pd:
+                mid = record.get('match_id', key)
+                if str(mid).isdigit():
+                    fp = os.path.join(DATA_DIR, f'{mid}.json')
+                    if os.path.exists(fp):
+                        try:
+                            with open(fp, 'r', encoding='utf-8') as f:
+                                pd = json.load(f)
+                        except:
+                            pass
+
             # 赔率来源：复盘附带 > 历史文件
-            odds_source = record.get('total_goals_odds') or (pd.get('ttg') or pd.get('total_goals') or {})
+            odds_source = record.get('total_goals_odds') or (pd.get('ttg') or pd.get('total_goals') or {}) if pd else record.get('total_goals_odds', {})
             # 统一格式为 {0: 13.0, 1: 5.2, ...} 方便前端直接用
             odds_normalized = {}
             if isinstance(odds_source, dict):
@@ -170,6 +183,15 @@ def find_similar_matches(current_data, top_n=5):
                     except:
                         pass
 
+            # 近况数据：从历史源文件提取
+            recent_form = None
+            if pd:
+                try:
+                    rd = _extract_recent_matches(pd)
+                    recent_form = calc_recent_form(rd)
+                except Exception:
+                    pass
+
             results.append({
                 'record': record,
                 'similarity': sim,
@@ -178,7 +200,8 @@ def find_similar_matches(current_data, top_n=5):
                 'home_team': (pd.get('match_info') or {}).get('home_team') or record.get('home_team', '未知'),
                 'away_team': (pd.get('match_info') or {}).get('away_team') or record.get('away_team', '未知'),
                 'total_goals': record.get('total_goals', record.get('home_score', 0) + record.get('away_score', 0)),
-                'goal_odds': odds_normalized,   # {0:13.0, 1:5.2, 2:3.4, 3:3.3, 4:5.1, ...}
+                'goal_odds': odds_normalized,
+                'recent_form': recent_form,
             })
 
     results.sort(key=lambda x: x['similarity'], reverse=True)
@@ -1236,11 +1259,31 @@ HTML_TEMPLATE = '''
                                 const cls = isTg ? 'background:#1a4a2e;color:#4ade80;font-weight:bold' : 'color:#ccc';
                                 return `<td style="padding:3px 6px;text-align:center;font-size:11px;${cls}">${g}球<br/><b>${val !== undefined ? val.toFixed(2) : '-'}</b></td>`;
                             }).join('');
-                            html += `<div style="padding:4px 12px 6px 42px">
+                            html += `<div style="padding:4px 12px 4px 42px">
                                 <table style="border-collapse:collapse;width:auto;background:#0a1628;border-radius:6px;" cellpadding="0">
                                     <tr style="color:#888;font-size:10px;text-align:center">${goalLabels.map(g => `<td style="padding:2px 6px;text-align:center">${g}球</td>`).join('')}</tr>
                                     <tr>${oddsCells}</tr>
                                 </table>
+                            </div>`;
+                        }
+                        // 近况展示
+                        const rf = item.recent_form;
+                        if (rf && rf.home_avg !== undefined) {
+                            // 计算近况评分（与 predict_3goals.py 规则一致）
+                            const comb = rf.combined_avg;
+                            let bonus = 0, label = '';
+                            if      (comb < 2.0)  { bonus = -8; label = '近况偏小'; }
+                            else if (comb < 2.5)  { bonus = -3; label = '近况偏低'; }
+                            else if (comb < 3.5)  { bonus = +3; label = '近况正常'; }
+                            else if (comb < 4.0)  { bonus = -3; label = '近况偏高'; }
+                            else                  { bonus = -8; label = '近况偏大'; }
+                            const bonusColor = bonus > 0 ? '#4ade80' : bonus < 0 ? '#f87171' : '#888';
+                            html += `<div style="padding:2px 12px 6px 42px;font-size:11px;color:#555">
+                                <span style="color:#888">近况:</span> 主${rf.home_avg.toFixed(1)}/客${rf.away_avg.toFixed(1)}
+                                <span style="color:#888">(${rf.home_games}/${rf.away_games}场)</span>
+                                &nbsp;
+                                <span style="color:${bonusColor};font-weight:bold">${bonus > 0 ? '+' : ''}${bonus}</span>
+                                <span style="color:#888;font-size:10px">(${label})</span>
                             </div>`;
                         }
                         // 明细

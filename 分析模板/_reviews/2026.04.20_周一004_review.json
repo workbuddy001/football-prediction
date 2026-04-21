@@ -1,0 +1,79 @@
+{
+  "match_id": "周一004",
+  "date_folder": "2026.04.20",
+  "home_team": "摩雷伦斯",
+  "away_team": "埃斯托里",
+  "league": "葡超",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [
+    "竞彩×澳门在客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+14.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降23升6 / 平降4升24 / 客降2升26",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "26/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:0(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在客方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望"
+  ],
+  "review_time": "2026-04-21 08:11",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 14.66,
+    "jc_draw_chg": -6.25,
+    "jc_away_chg": -5.73,
+    "mcao_home_chg": 1.14,
+    "mcao_draw_chg": -4.48,
+    "mcao_away_chg": 3.14,
+    "jc_init_odds": [
+      2.66,
+      3.2,
+      2.27
+    ],
+    "jc_real_odds": [
+      3.05,
+      3.0,
+      2.14
+    ],
+    "macao_init_odds": [
+      2.63,
+      3.35,
+      2.23
+    ],
+    "macao_real_odds": [
+      2.66,
+      3.2,
+      2.3
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "NDU"
+  }
+}

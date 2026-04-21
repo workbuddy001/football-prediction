@@ -1,6 +1,6 @@
 {
   "match_id": "2039207",
-  "fetch_time": "2026-04-20 19:01:25",
+  "fetch_time": "2026-04-20 22:52:28",
   "match_info": {
     "home_team": "莱切",
     "away_team": "佛罗伦萨",
@@ -65,19 +65,19 @@
   "hafu": {
     "负负": "3.40",
     "平平": "4.60",
-    "胜胜": "5.70",
+    "胜胜": "5.85",
     "负平": "14.00",
-    "平胜": "7.50",
+    "平胜": "7.75",
     "负胜": "30.00",
     "胜负": "25.00",
     "胜平": "14.00",
-    "平负": "4.60"
+    "平负": "4.40"
   },
   "hhad": {
     "让球": "+1",
-    "让胜": "1.67",
+    "让胜": "1.65",
     "让平": "3.40",
-    "让负": "4.25"
+    "让负": "4.36"
   },
   "preview": {
     "feature": {
@@ -933,27 +933,7 @@
     }
   },
   "ttg_change": {
-    "2球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "1球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "5球": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "7球": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "6球": {
       "count": 2,
       "change_pct": 0.0
     },
@@ -961,43 +941,63 @@
       "count": 0,
       "change_pct": 0.0
     },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "4球": {
       "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 2,
       "change_pct": 0.0
     }
   },
   "hafu_change": {
-    "平负": {
-      "count": 2,
-      "change_pct": -6.1
-    },
     "负负": {
       "count": 1,
       "change_pct": 1.5
     },
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平胜": {
-      "count": 2,
-      "change_pct": 7.1
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
+    "平负": {
+      "count": 3,
+      "change_pct": -10.2
     },
     "平平": {
       "count": 2,
       "change_pct": -6.1
     },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "胜胜": {
-      "count": 2,
-      "change_pct": 7.5
+      "count": 3,
+      "change_pct": 10.4
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": 10.7
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "胜负": {
       "count": 0,

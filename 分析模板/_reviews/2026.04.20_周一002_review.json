@@ -1,0 +1,90 @@
+{
+  "match_id": "周一002",
+  "date_folder": "2026.04.20",
+  "home_team": "敦刻尔克",
+  "away_team": "拉瓦勒",
+  "league": "法乙",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "平局",
+  "confidence": 4,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率3.56>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-6.2%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+7.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降5升14 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为0:2(客胜)",
+    "❌ 预测平局但实际是客胜，需要反思原因"
+  ],
+  "review_time": "2026-04-21 08:02",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 7.26,
+    "jc_draw_chg": -6.15,
+    "jc_away_chg": -6.32,
+    "mcao_home_chg": 6.12,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -8.41,
+    "jc_init_odds": [
+      1.79,
+      3.25,
+      3.8
+    ],
+    "jc_real_odds": [
+      1.92,
+      3.05,
+      3.56
+    ],
+    "macao_init_odds": [
+      1.96,
+      3.13,
+      3.33
+    ],
+    "macao_real_odds": [
+      2.08,
+      3.13,
+      3.05
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UND"
+  }
+}
