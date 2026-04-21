@@ -89,6 +89,17 @@ def compute_similarity(current_data, past_record, past_data):
         details['g3_exact'] = None
         return 0, details
 
+    # ── 1.5 0球赔率差异（辅助排序用，不影响相似度过滤）────────
+    g0_cur = tg_cur.get('0球')
+    g0_pst = tg_pst.get('0球')
+    if g0_cur and g0_pst:
+        try:
+            details['g0_diff'] = round(abs(float(g0_cur) - float(g0_pst)), 2)
+        except:
+            details['g0_diff'] = None
+    else:
+        details['g0_diff'] = None
+
     # ── 2. 让球赔率相似度 ────────────────────────────
     hhad_cur = current_data.get('hhad', {})
     hhad_pst = past_record.get('hhad_odds') or past_data.get('hhad', {})
@@ -207,9 +218,11 @@ def find_similar_matches(current_data, top_n=5):
                 'total_goals': record.get('total_goals', record.get('home_score', 0) + record.get('away_score', 0)),
                 'goal_odds': odds_normalized,
                 'recent_form': recent_form,
+                'g0_diff': details.get('g0_diff'),   # 0球赔率与历史的差值，排序用
             })
 
-    results.sort(key=lambda x: x['similarity'], reverse=True)
+    # 排序：相似度高的排前；相似度相同时，0球赔率差值小的排前
+    results.sort(key=lambda x: (-x['similarity'], x['g0_diff'] if x['g0_diff'] is not None else 9999))
     return results[:top_n]
 
 # 比分预测分析函数
@@ -1241,7 +1254,7 @@ HTML_TEMPLATE = '''
                         panelEl.innerHTML = '<div class="similar-header">🔍 相似比赛</div><div class="similar-empty">暂无已记录比分的相似比赛<br><small>（需先保存比分才能匹配）</small></div>';
                         return;
                     }
-                    let html = '<div class="similar-header">🔍 相似比赛（3球赔率相同，最多5场）</div>';
+                    let html = '<div class="similar-header">🔍 相似比赛（3球赔率相同，0球赔率相近优先，最多5场）</div>';
                     data.similar.forEach((item, idx) => {
                         const tg = item.record.total_goals;
                         const tgClass = tg === 3 ? 'tg-3' : tg === 0 ? 'tg-0' : 'tg-other';
@@ -1252,7 +1265,7 @@ HTML_TEMPLATE = '''
                             <div class="similar-teams">${item.record.home_team || item.home_team} vs ${item.record.away_team || item.away_team}</div>
                             <div class="similar-score ${tgClass}">${item.record.score_str || (item.record.home_score + ':' + item.record.away_score)}</div>
                             <div class="similar-tg-label">${tgDisplay}</div>
-                            <div class="similar-similarity">相似 ${item.similarity}%</div>
+                            <div class="similar-similarity">相似 ${item.similarity}%${item.g0_diff != null ? ' | 0球差' + item.g0_diff : ''}</div>
                         </div>`;
                         // 0-7球赔率表格
                         const odds = item.goal_odds || {};
