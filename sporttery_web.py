@@ -1362,25 +1362,30 @@ HTML_TEMPLATE = '''
             const g3rec = matchData ? (matchData.g3_prediction || {}).recommendation : null;
             const g3score = matchData ? (matchData.g3_prediction || {}).score : null;
             // 保存比分（同时附带赔率数据，供后续相似比赛匹配）
+            await fetch('/api/score/' + matchId, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    home_score: home,
+                    away_score: away,
+                    // 复盘时附带赔率，确保相似比赛匹配有效
+                    total_goals: matchData ? matchData.total_goals : null,
+                    hhad: matchData ? matchData.hhad : null,
+                })
+            });
+            // 复盘后刷新赔率命中率统计（独立，不影响比分保存）
             try {
-                await fetch('/api/score/' + matchId, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        home_score: home,
-                        away_score: away,
-                        // 复盘时附带赔率，确保相似比赛匹配有效
-                        total_goals: matchData ? matchData.total_goals : null,
-                        hhad: matchData ? matchData.hhad : null,
-                    })
-                });
-                // 复盘后刷新赔率命中率统计
-                try {
-                    const r2 = await fetch('/api/odds_hitrate');
-                    const data = await r2.json();
-                    window._ODDS_HITRATE = data;
-                } catch(e2) {}
-            } catch(e) {}
+                const r2 = await fetch('/api/odds_hitrate');
+                const data = await r2.json();
+                window._ODDS_HITRATE = data;
+                // 如果相似面板已打开，自动刷新赔率显示
+                const panelEl = document.getElementById('similar-panel-' + matchId);
+                if (panelEl && panelEl.style.display !== 'none') {
+                    showSimilar(matchId);
+                }
+            } catch(e2) {
+                console.warn('命中率刷新失败:', e2);
+            }
             // 显示复盘结果
             let reviewText = `📋 复盘结果: 实际 ${home}:${away}，总进球 ${tgLabel}`;
             if (g3rec) {
