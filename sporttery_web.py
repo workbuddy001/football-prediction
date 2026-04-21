@@ -80,9 +80,14 @@ def compute_similarity(current_data, past_record, past_data):
                 score += 100 * 0.5
             else:
                 details['g3_exact'] = False
-                details['g3_score'] = 0      # 不相等 → 0分，该候选不展示
+                details['g3_score'] = 0      # 不相等 → 直接返回0，不显示
+                return 0, details
         except:
             pass
+    elif not g3_cur or not g3_pst:
+        # 任一方缺少3球赔率，无法匹配，直接排除
+        details['g3_exact'] = None
+        return 0, details
 
     # ── 2. 让球赔率相似度 ────────────────────────────
     hhad_cur = current_data.get('hhad', {})
