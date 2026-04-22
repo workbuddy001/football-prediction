@@ -471,6 +471,7 @@ HTML_TEMPLATE = '''
         .odds-tag.exclude { background: #dc2626; color: #fff; }
         .odds-tag.focus { background: #16a34a; color: #fff; }
         .odds-tag.gold { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #000; font-weight: bold; box-shadow: 0 0 8px rgba(251, 191, 36, 0.6); }
+        .odds-tag.alert { background: #f97316; color: #fff; font-weight: bold; }
         .odds-item.exclude { border: 2px solid #dc2626; }
         .odds-item.focus { border: 2px solid #16a34a; box-shadow: 0 0 8px rgba(22, 163, 74, 0.5); }
         .odds-item.gold-highlight { border: 2px solid #f59e0b; box-shadow: 0 0 12px rgba(251, 191, 36, 0.7); background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), transparent); }
@@ -1020,9 +1021,11 @@ HTML_TEMPLATE = '''
                                     changeTag = `<span class="odds-change-tag" style="color:${color}">${arrow}${Math.abs(pct)}%</span>`;
                                 }
                                 // 排除/关注判断
-                                // 排除：赔率>3.5 且 升赔>=5%（纯高赔无变化不排除）
-                                const isExclude = odds > 3.5 && change && change.change_pct >= 5;
+                                // 排除：赔率>3.5 且 升赔>=5%（0球不排除，升赔显示警惕）
+                                const isExclude = goalNum !== 0 && odds > 3.5 && change && change.change_pct >= 5;
                                 const isFocus = odds >= 2.5 && odds <= 3.5 && change && change.change_pct < 0;
+                                // 0球升赔警惕：显示"警惕"而不是排除
+                                const isAlert0 = goalNum === 0 && change && change.change_pct > 0;
                                 // 黄金信号：命中率>=50%
                                 if (hitRate !== null && hitRate >= 50) {
                                     goldTag = '<span class="odds-tag gold">&#9733;黄金</span>';
@@ -1031,6 +1034,8 @@ HTML_TEMPLATE = '''
                                     excludeTag = '<span class="odds-tag exclude">&#10005;排除</span>';
                                 } else if (isFocus) {
                                     focusTag = '<span class="odds-tag focus">&#9733;关注</span>';
+                                } else if (isAlert0) {
+                                    excludeTag = '<span class="odds-tag alert">&#9888;警惕</span>';
                                 }
                                 const tagClass = isExclude ? 'exclude' : (isFocus ? 'focus' : '') + (goldTag ? ' gold-highlight' : '');
                                 return `<div class="odds-item ${getOddsClass(v)} ${tagClass}"><div class="label">${k}</div><div class="value">${v}${rateLabel}${changeTag}</div><div class="odds-tags">${goldTag}${excludeTag}${focusTag}</div></div>`;
