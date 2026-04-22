@@ -1,6 +1,6 @@
 {
   "match_id": "2039104",
-  "fetch_time": "2026-04-21 10:43:02",
+  "fetch_time": "2026-04-22 23:47:22",
   "match_info": {
     "home_team": "南安普敦",
     "away_team": "布莱克本",
@@ -867,6 +867,14 @@
     }
   },
   "ttg_change": {
+    "5球": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -4.3
+    },
     "2球": {
       "count": 1,
       "change_pct": 2.9
@@ -875,15 +883,11 @@
       "count": 2,
       "change_pct": 0.0
     },
-    "3球": {
-      "count": 1,
-      "change_pct": -4.3
-    },
-    "0球": {
+    "4球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "4球": {
+    "0球": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -891,17 +895,17 @@
       "count": 3,
       "change_pct": 6.2
     },
-    "5球": {
-      "count": 3,
-      "change_pct": 0.0
-    },
     "7球": {
       "count": 3,
       "change_pct": 4.0
     }
   },
   "hafu_change": {
-    "负胜": {
+    "平平": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -909,33 +913,29 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "负负": {
-      "count": 2,
-      "change_pct": 11.1
-    },
     "平负": {
       "count": 1,
       "change_pct": 13.0
     },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
+    "胜胜": {
+      "count": 3,
+      "change_pct": -1.9
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 11.1
     },
     "负平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平平": {
-      "count": 3,
+    "负胜": {
+      "count": 0,
       "change_pct": 0.0
     },
     "平胜": {
       "count": 2,
       "change_pct": -4.8
-    },
-    "胜胜": {
-      "count": 3,
-      "change_pct": -1.9
     }
   },
   "exclusion_list": []
