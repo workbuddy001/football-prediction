@@ -868,9 +868,13 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner">
                             <div class="g3-exclude-banner-text">🚫 排除3球 - 三条件全满足</div>
                         </div>` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球')) ? `
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('初始4球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#f59e0b;background:linear-gradient(135deg,rgba(245,158,11,0.25),rgba(234,88,12,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🚫 排除2球 - 黄金2球+初始4球≥6.5</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('87.5%')) ? `
                         <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
-                            <div class="g3-exclude-banner-text" style="color:#86efac;">🚫 排除2球 - 三条件全满足</div>
+                            <div class="g3-exclude-banner-text" style="color:#86efac;">🚫 排除2球 - 近况2.0~2.5+0球13~18</div>
                         </div>` : ''}
                         ${m.g3_prediction.features['3球'] ? `
                         <div class="g3-odds-info">

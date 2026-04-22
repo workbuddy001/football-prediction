@@ -457,13 +457,30 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         combined_avg = form.get('combined_avg', 0)
         g0 = features.get('0球')
         g2 = features.get('2球')
+        g2_ch = features.get('2球变化')
+        g4 = features.get('4球')
+        g4_ch = features.get('4球变化')
         
+        # 规则A: 近况2.0~2.5 + 0球13~18 + 2球3.5~4.0
         if (2.0 <= combined_avg < 2.5 and 
             g0 is not None and 13 <= g0 < 18 and
             g2 is not None and 3.5 <= g2 < 4.0):
             signals.append(('🚫排除2球', '-10', f'近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率'));
             warnings.append(f'🚫 排除2球！近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率');
             reasons.append(f'排除2球：近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率')
+        
+        # 规则B: 近况<2.5 + 0球<10 + 初始2球<3.3 + 初始4球>=6.5 → 排除2球
+        if g0 is not None and g0 < 10 and g2 is not None and g4 is not None:
+            # 计算初始2球和初始4球
+            g2_ini = g2 / (1 + g2_ch / 100) if g2_ch else g2
+            g4_ini = g4 / (1 + g4_ch / 100) if g4_ch else g4
+            
+            if (combined_avg < 2.5 and 
+                g2_ini < 3.3 and 
+                g4_ini >= 6.5):
+                signals.append(('🚫排除2球', '-10', f'黄金2球+初始4球{g4_ini:.1f}≥6.5，近况{combined_avg:.1f}+0球{g0:.0f}+初始2球{g2_ini:.2f}，历史75%准确率'));
+                warnings.append(f'🚫 排除2球！黄金2球+初始4球{g4_ini:.1f}≥6.5，历史75%准确率');
+                reasons.append(f'排除2球：黄金2球+初始4球{g4_ini:.1f}≥6.5，历史75%准确率')
 
     # 综合评分
     def ps(s):
