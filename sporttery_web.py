@@ -864,7 +864,11 @@ HTML_TEMPLATE = '''
                                 <div class="g3-warning-item">${w}</div>
                             `).join('')}
                         </div>` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球')) ? `
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球') && s[2].includes('历史3球率9.1%')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#a855f7;background:linear-gradient(135deg,rgba(168,85,247,0.25),rgba(147,51,234,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#d8b4fe;">🚫 排除3球 - 近况正常+0球<10+3球<3.7</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球') && !s[2].includes('历史3球率9.1%')) ? `
                         <div class="g3-exclude-banner">
                             <div class="g3-exclude-banner-text">🚫 排除3球 - 三条件全满足</div>
                         </div>` : ''}
