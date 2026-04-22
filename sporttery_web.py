@@ -9,7 +9,7 @@ import os
 import json
 import glob
 from sporttery_api import SportteryAPI
-from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, calc_recent_form, _extract_recent_matches, recommend_double_pick
+from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, calc_recent_form, _extract_recent_matches, recommend_double_pick, recommend_exclude_double_pick
 from _3goals_stats import StatsEngine
 
 app = Flask(__name__)
@@ -591,6 +591,16 @@ HTML_TEMPLATE = '''
         .double-pick-info { font-size: 12px; color: #aaa; margin-bottom: 4px; }
         .double-pick-stats { font-size: 11px; color: #888; }
         .double-pick-stats .hit-rate { color: #2ecc71; font-weight: bold; }
+        
+        /* 排除法双选样式 */
+        .exclude-pick-box { background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%); border: 1px solid #a78bfa; border-radius: 8px; padding: 12px; margin: 8px 0; }
+        .exclude-pick-title { font-size: 14px; color: #a78bfa; margin-bottom: 8px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+        .exclude-pick-content { padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px; }
+        .exclude-pick-main { font-size: 16px; color: #fff; margin-bottom: 6px; }
+        .exclude-pick-main strong { color: #a78bfa; font-size: 18px; }
+        .exclude-pick-excluded { font-size: 11px; color: #ef4444; margin-bottom: 4px; }
+        .exclude-pick-reason { font-size: 12px; color: #aaa; margin-bottom: 4px; }
+        .exclude-pick-stats { font-size: 11px; color: #888; }
 
         /* 黄金2球/4球样式 */
         .golden-2-box { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); border: 1px solid #22c55e; border-radius: 8px; padding: 10px; margin: 6px 0; }
@@ -930,6 +940,37 @@ HTML_TEMPLATE = '''
                             <div class="double-pick-stats">
                                 历史命中率: <span class="hit-rate">${m.g3_prediction.double_pick.hit_rate}%</span>
                                 ${m.g3_prediction.double_pick.sample_size ? `(样本${m.g3_prediction.double_pick.sample_size}场)` : ''}
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <!-- 排除法双选 -->
+                    ${m.g3_prediction && m.g3_prediction.exclude_pick && m.g3_prediction.exclude_pick.recommendation ? `
+                    <div class="exclude-pick-box">
+                        <div class="exclude-pick-title">
+                            🚫 排除法双选
+                            ${m.g3_prediction.exclude_pick.confidence ? `<span class="confidence-badge confidence-${m.g3_prediction.exclude_pick.confidence >= 60 ? 'high' : m.g3_prediction.exclude_pick.confidence >= 45 ? 'mid' : 'low'}">${m.g3_prediction.exclude_pick.confidence}%</span>` : ''}
+                        </div>
+                        <div class="exclude-pick-content">
+                            <div class="exclude-pick-main">
+                                ${m.g3_prediction.exclude_pick.recommendation.includes('单选') 
+                                    ? '单选 <strong>' + m.g3_prediction.exclude_pick.recommendation.replace('单选', '') + '</strong>' 
+                                    : '双选 <strong>' + m.g3_prediction.exclude_pick.recommendation.replace('球', '球 或 ') + '</strong>'}
+                            </div>
+                            ${m.g3_prediction.exclude_pick.excluded && m.g3_prediction.exclude_pick.excluded.length > 0 ? `
+                            <div class="exclude-pick-excluded">
+                                已排除: <span style="color:#ef4444">${m.g3_prediction.exclude_pick.excluded.join(', ')}</span>
+                            </div>
+                            ` : ''}
+                            <div class="exclude-pick-reason">
+                                ${m.g3_prediction.exclude_pick.reason || ''}
+                            </div>
+                            ${m.g3_prediction.exclude_pick.hit_rate !== null ? `
+                            <div class="exclude-pick-stats">
+                                <span style="color:#a78bfa">单选命中率: ${m.g3_prediction.exclude_pick.hit_rate}%</span>
+                                ${m.g3_prediction.exclude_pick.double_hit_rate !== null ? ` | <span style="color:#2ecc71">双选命中率: ${m.g3_prediction.exclude_pick.double_hit_rate}%</span>` : ''}
                             </div>
                             ` : ''}
                         </div>
@@ -1729,6 +1770,7 @@ def _build_match_card(data, api):
                 },
                 'hist_stats': g3_pred.get('hist_stats'),
                 'double_pick': g3_pred.get('double_pick'),
+                'exclude_pick': g3_pred.get('exclude_pick'),
                 'golden_2goals': g3_pred.get('golden_2goals'),
                 'golden_4goals': g3_pred.get('golden_4goals'),
             },
@@ -1773,6 +1815,8 @@ def get_matches():
                         g3_pred = predict_3goals(features)
                         # 双选推荐
                         double_pick = recommend_double_pick(features)
+                        # 排除法双选
+                        exclude_pick = recommend_exclude_double_pick(features, data)
                         # 历史相似比赛3球打出率
                         se = get_stats_engine()
                         g3_hist = se.query_similar(
@@ -1812,6 +1856,8 @@ def get_matches():
                             'hist_stats': g3_hist,
                             # 双选推荐
                             'double_pick': double_pick,
+                            # 排除法双选
+                            'exclude_pick': exclude_pick,
                             # 黄金2球/4球
                             'golden_2goals': g2_pred,
                             'golden_4goals': g4_pred,
@@ -1838,6 +1884,8 @@ def fetch_match(match_id):
             g3_pred = predict_3goals(features)
             # 双选推荐
             double_pick = recommend_double_pick(features)
+            # 排除法双选
+            exclude_pick = recommend_exclude_double_pick(features, result)
             # 黄金2球预测
             g2_pred = predict_2goals(features)
             # 黄金4球预测
@@ -1870,6 +1918,8 @@ def fetch_match(match_id):
                 ) if features.get('3球') else None,
                 # 双选推荐
                 'double_pick': double_pick,
+                # 排除法双选
+                'exclude_pick': exclude_pick,
                 # 黄金2球/4球
                 'golden_2goals': g2_pred,
                 'golden_4goals': g4_pred,

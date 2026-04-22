@@ -298,6 +298,31 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         else:
             reasons.append(f'近况均值{combined}，偏离3球区间({label})')
 
+    # Step 0.5: 近况均衡度分析（2026-04-21 新规律）
+    # 基于261场回测数据
+    if form and form.get('home_avg') is not None and form.get('away_avg') is not None:
+        home_avg = form['home_avg']
+        away_avg = form['away_avg']
+        diff = abs(home_avg - away_avg)
+
+        # 规律1: 主强客弱 → 4+球概率高(39.1%)，降低3球预期
+        if home_avg >= 3.5 and away_avg <= 2.0:
+            signals.append(('主强客弱', '-3', f'主{home_avg}≥3.5且客{away_avg}≤2.0'));
+            warnings.append(f'主强客弱({home_avg}/{away_avg})，4+球概率高');
+            reasons.append(f'主强客弱，4+球概率39.1%，降低3球预期')
+
+        # 规律2: 均衡偏弱 → 0-2球概率高，3球偏低(18.2%)
+        elif diff < 0.5 and combined < 2.5:
+            signals.append(('均衡偏弱', '-2', f'差{diff:.1f}<0.5且均{combined}<2.5'));
+            warnings.append(f'均衡偏弱，双方偏弱倾向小比分');
+            reasons.append(f'均衡偏弱，3球率18.2%，偏小比分')
+
+        # 规律3: 客强主弱 → 4+球概率高
+        elif away_avg >= 3.5 and home_avg <= 2.0:
+            signals.append(('客强主弱', '-3', f'客{away_avg}≥3.5且主{home_avg}≤2.0'));
+            warnings.append(f'客强主弱({away_avg}/{home_avg})，4+球概率高');
+            reasons.append(f'客强主弱，4+球概率高，降低3球预期')
+
     # Step 1: 3球赔率值（A/B/C/D/E级）
     if g3 is not None:
         if g3 < 2.50:
@@ -404,6 +429,9 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     cond3 = (g3 is not None and 3.00 <= g3 < 3.50)                # ③3球C级
     cond4 = (g2 is not None and g3 is not None and g4_val is not None
              and g2 > g3 and g3 < g4_val)                         # ④2球>3球<4球
+    super_golden = False    # 超级3球：黄金3球 + 0球=13
+    super_golden_reason = []
+
     if cond1 and cond2 and cond3 and cond4:
         golden = True
         golden_reason = [
@@ -413,6 +441,21 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             f'④梯度:2球{g2}>3球{g3}<4球{g4_val}',
         ]
         signals.append(('⭐黄金3球', '+0', ' | '.join(golden_reason)))
+
+        # 超级3球检测：黄金3球 + 0球=13（历史75%命中率）
+        g0 = features.get('0球')
+        if g0 is not None and g0 == 13:
+            super_golden = True
+            super_golden_reason = [
+                f'黄金3球 ✓',
+                f'0球=13 ✓ ({g0})',
+            ]
+            # 进一步判断3球是否在3.25-3.5（历史83.3%命中率）
+            if g3 is not None and 3.25 <= g3 <= 3.5:
+                super_golden_reason.append(f'3球{g3}在3.25-3.5 ✓ (83.3%命中)')
+            signals.append(('🌟超级3球', '+5', ' | '.join(super_golden_reason)))
+            warnings.append('🌟超级3球信号！历史75%命中率')
+
         # 4球预警：黄金3球 + 4球赔率在4.95~6之间
         if g4_val is not None and 4.95 <= g4_val <= 6.0:
             warnings.append(f'⚠️ 4球预警：4球赔率{g4_val}在4.95~6区间，需预防4球打出')
@@ -435,6 +478,8 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         'features': features,
         'golden_3goals': golden,
         'golden_reason': golden_reason,
+        'super_golden': super_golden,              # 超级3球：黄金3球+0球=13
+        'super_golden_reason': super_golden_reason,
     }
 
 
@@ -442,7 +487,124 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
 # 第三部分: 双选推荐系统（近况 × 0球赔率 × 3球等级）
 # ============================================================
 
+# ============================================================
+# 历史赔率命中率统计（基于 _scores.json 回测）
+# ============================================================
+
+# 每个进球数的整体命中率
+ODDS_OVERALL_STATS = {
+    0: (6.3, 221),  # 命中率14/221
+    1: (14.5, 221),  # 命中率32/221
+    2: (22.6, 221),  # 命中率50/221
+    3: (26.4, 216),  # 命中率57/216
+    4: (16.7, 216),  # 命中率36/216
+    5: (8.8, 216),   # 命中率19/216
+    6: (2.8, 216),   # 命中率6/216
+    7: (1.9, 215),   # 命中率4/215
+}
+
+# 赔率区间统计（用于精确匹配）
+# 格式: (进球数, 赔率区间) -> (命中率%, 样本数)
+ODDS_BIN_STATS = {
+    # 1球高命中率区间
+    (1, 3.6): (100.0, 3),
+    (1, 3.65): (33.3, 3),
+    (1, 3.75): (50.0, 6),
+    (1, 4.2): (33.3, 6),
+    (1, 4.25): (33.3, 3),
+    (1, 4.3): (20.0, 5),
+    (1, 4.7): (33.3, 3),
+    (1, 5.0): (30.0, 10),
+    (1, 5.25): (37.5, 8),
+    (1, 5.75): (33.3, 3),
+    (1, 6.0): (28.6, 7),
+    (1, 6.5): (33.3, 3),
+    (1, 8.0): (33.3, 3),
+    (1, 8.5): (33.3, 3),
+    # 2球高命中率区间
+    (2, 3.0): (33.3, 3),
+    (2, 3.05): (50.0, 6),
+    (2, 3.1): (23.1, 13),
+    (2, 3.15): (26.3, 19),
+    (2, 3.2): (40.0, 5),
+    (2, 3.25): (22.2, 9),
+    (2, 3.35): (36.4, 11),
+    (2, 3.4): (23.1, 13),
+    (2, 3.45): (28.6, 7),
+    (2, 3.75): (50.0, 4),
+    (2, 3.8): (40.0, 5),
+    (2, 4.0): (50.0, 6),
+    (2, 4.1): (50.0, 4),
+    (2, 4.25): (33.3, 3),
+    (2, 4.3): (62.5, 8),
+    (2, 4.5): (20.0, 5),
+    (2, 5.0): (50.0, 4),
+    # 3球高命中率区间
+    (3, 3.25): (44.4, 9),
+    (3, 3.3): (30.0, 10),
+    (3, 3.35): (25.0, 12),
+    (3, 3.4): (40.0, 20),
+    (3, 3.45): (39.1, 23),
+    (3, 3.55): (23.1, 26),
+    (3, 3.6): (28.6, 21),
+    (3, 3.65): (20.0, 10),
+    (3, 3.7): (27.3, 11),
+    (3, 3.75): (33.3, 6),
+    (3, 3.8): (28.6, 7),
+    (3, 3.85): (25.0, 8),
+    (3, 4.1): (33.3, 3),
+    # 4球高命中率区间
+    (4, 4.0): (25.0, 4),
+    (4, 4.15): (25.0, 8),
+    (4, 4.2): (36.4, 11),
+    (4, 4.3): (25.0, 4),
+    (4, 4.75): (33.3, 3),
+    (4, 5.1): (50.0, 4),
+    (4, 5.2): (25.0, 8),
+    (4, 5.4): (50.0, 4),
+    (4, 5.7): (40.0, 5),
+    (4, 5.9): (33.3, 3),
+    (4, 6.0): (23.1, 13),
+    (4, 6.15): (33.3, 3),
+    # 5球高命中率区间
+    (5, 6.0): (25.0, 4),
+    (5, 6.25): (20.0, 5),
+    (5, 6.8): (75.0, 4),
+    (5, 7.0): (28.6, 7),
+    (5, 7.75): (75.0, 4),
+    (5, 9.25): (25.0, 4),
+}
+
+# 命中率阈值：低于此值的赔率会被排除
+ODDS_HIT_RATE_THRESHOLD = 20.0  # 20%
+
+def get_odds_hit_rate(goals, odds):
+    """
+    获取某个赔率的历史命中率
+
+    参数:
+        goals: 进球数 (0-7)
+        odds: 赔率值
+
+    返回:
+        (命中率%, 样本数) 或 None
+    """
+    # 尝试精确匹配
+    bin_key = round(odds * 20) / 20  # 四舍五入到0.05
+    key = (goals, bin_key)
+    if key in ODDS_BIN_STATS:
+        return ODDS_BIN_STATS[key]
+
+    # 回退到整体统计
+    if goals in ODDS_OVERALL_STATS:
+        return ODDS_OVERALL_STATS[goals]
+    return None
+
+
+# ============================================================
 # 双选命中率统计数据（基于214场回测结果）
+# ============================================================
+
 DOUBLE_PICK_STATS = {
     # (近况分类, 0球分类, 3球等级) -> (第二选项, 命中率, 样本数)
     ('高进攻', '高', 'C级'): ('2球', 85.7, 7),
@@ -501,14 +663,18 @@ def classify_three_odds(odds):
 def recommend_double_pick(features):
     """
     双选推荐函数
-    
+
     【新规律】基于221场回测的高命中率规律（2026-04-21）:
     - 规律A: 1+2组合 + 最低赔率<3.5 + 近况<2.5 -> 100% (6场)
     - 规律B: 近况<2.0 + 2+3组合 -> 81.8% (11场)
     - 规律C: 1+2组合 + 最低赔率<3.5 -> 76.5% (17场)
-    
+
+    【历史赔率命中率过滤】(2026-04-21 新增):
+    - 检查最低赔率的历史命中率
+    - 如果命中率<20%，排除该选项，选择下一个
+
     【旧规律】基于「近况 × 0球赔率 × 3球等级」查表
-    
+
     返回: {
         'recommendation': '3+2球' / '1+2球' / '2+3球' / '单选3球' / None,
         'second_pick': '2球' / '1球' / '4球' / None,
@@ -528,38 +694,38 @@ def recommend_double_pick(features):
         'reason': None,
         'signal': None,
     }
-    
+
     # === 新规律：基于赔率最低的两个进球数 ===
     g1 = features.get('1球')
     g2 = features.get('2球')
     g3 = features.get('3球')
     g4 = features.get('4球')
     form = features.get('近况')
-    
+
     if form is None:
         return _recommend_double_pick_legacy(features)
-    
+
     combined_avg = form.get('combined_avg')
     if combined_avg is None:
         return _recommend_double_pick_legacy(features)
-    
+
     # 收集所有赔率
     all_odds = []
     for g in range(8):
         od = features.get(f'{g}球')
         if od is not None and od > 0:
             all_odds.append((g, od))
-    
+
     if len(all_odds) < 2:
         return _recommend_double_pick_legacy(features)
-    
+
     # 排序找最低赔率两个
     all_odds.sort(key=lambda x: x[1])
     min1_g, min1_od = all_odds[0]
     min2_g, min2_od = all_odds[1]
     min_odds = min1_od
     odds_ratio = min2_od / min1_od if min1_od > 0 else 0
-    
+
     # === 新规律A: 1+2组合 + 最低赔率<3.5 + 近况<2.5 ===
     if min1_g == 1 and min2_g == 2 and min_odds < 3.5 and combined_avg < 2.5:
         result['recommendation'] = '1+2球'
@@ -570,7 +736,7 @@ def recommend_double_pick(features):
         result['reason'] = '规律A: 1+2组合+低价赔+近况弱，100%命中率'
         result['signal'] = '新规律A'
         return result
-    
+
     # === 新规律B: 近况<2.0 + 2+3组合 ===
     if min1_g == 2 and min2_g == 3 and combined_avg < 2.0:
         result['recommendation'] = '2+3球'
@@ -581,7 +747,7 @@ def recommend_double_pick(features):
         result['reason'] = '规律B: 近况<2.0+2+3组合，81.8%命中率'
         result['signal'] = '新规律B'
         return result
-    
+
     # === 新规律C: 1+2组合 + 最低赔率<3.5 + 赔率接近 ===
     if min1_g == 1 and min2_g == 2 and min_odds < 3.5:
         if odds_ratio <= 1.3:
@@ -603,7 +769,7 @@ def recommend_double_pick(features):
             result['reason'] = '1+2组合+低价但赔率差距大，谨慎！'
             result['signal'] = '新规律C(危险)'
             return result
-    
+
     # === 新规律D: 1+2组合全局 ===
     if min1_g == 1 and min2_g == 2:
         result['recommendation'] = '1+2球'
@@ -614,7 +780,7 @@ def recommend_double_pick(features):
         result['reason'] = '规律D: 1+2组合全局，68.2%命中率'
         result['signal'] = '新规律D'
         return result
-    
+
     # === 新规律E: 近况弱时的2+3组合 ===
     if min1_g == 2 and min2_g == 3 and combined_avg < 2.5:
         result['recommendation'] = '2+3球'
@@ -625,9 +791,67 @@ def recommend_double_pick(features):
         result['reason'] = '近况弱+2+3组合'
         result['signal'] = '新规律E'
         return result
-    
-    # === 使用旧规律兜底 ===
-    return _recommend_double_pick_legacy(features)
+
+    # === 历史赔率命中率过滤（新增，2026-04-21）===
+    # 检查最低赔率的历史命中率
+    min1_hit = get_odds_hit_rate(min1_g, min1_od)
+    min2_hit = get_odds_hit_rate(min2_g, min2_od)
+
+    # 如果最低赔率命中率太低，检查是否需要换选项
+    if min1_hit is not None:
+        min1_hit_rate = min1_hit[0]
+        min1_sample = min1_hit[1]
+
+        # 如果最低赔率命中率<20%且有足够样本(>=3)
+        if min1_hit_rate < ODDS_HIT_RATE_THRESHOLD and min1_sample >= 3:
+            # 尝试使用下一个赔率
+            if len(all_odds) >= 3:
+                next_g, next_od = all_odds[2]
+                next_hit = get_odds_hit_rate(next_g, next_od)
+
+                if next_hit is not None:
+                    next_hit_rate = next_hit[0]
+
+                    # 如果第二个赔率命中率更高，选择第二个
+                    if next_hit_rate >= min1_hit_rate + 10:  # 至少高10%才换
+                        min2_g, min2_od = next_g, next_od
+                        min2_hit = next_hit
+
+    # === 使用过滤后的选项生成推荐 ===
+    # 构建推荐理由
+    if min1_hit is not None and min1_sample >= 3:
+        min1_info = f'{min1_g}球={min1_od}(历史{min1_hit_rate:.0f}%)'
+    else:
+        min1_info = f'{min1_g}球={min1_od}'
+
+    if min2_hit is not None and min2_hit[1] >= 3:
+        min2_info = f'{min2_g}球={min2_od}(历史{min2_hit[0]:.0f}%)'
+    else:
+        min2_info = f'{min2_g}球={min2_od}'
+
+    # 检查是否满足新规律E的条件（但上面没有返回）
+    if min1_g == 2 and min2_g == 3:
+        # 2+3组合但不满足新规律B/E的近况条件
+        avg_hit = (min1_hit[0] + min2_hit[0]) / 2 if min1_hit and min2_hit else 50
+        result['recommendation'] = '2+3球'
+        result['second_pick'] = '3球'
+        result['hit_rate'] = min(avg_hit, 60)
+        result['sample_size'] = 0  # 无特定样本
+        result['confidence'] = int(min(60, avg_hit * 0.8))
+        result['reason'] = f'2+3组合，{min1_info} + {min2_info}'
+        result['signal'] = f'2+3组合(赔率过滤)'
+        return result
+
+    # 默认：使用赔率最低的两个
+    result['recommendation'] = f'{min1_g}+{min2_g}球'
+    result['second_pick'] = f'{min2_g}球'
+    avg_hit = (min1_hit[0] + min2_hit[0]) / 2 if min1_hit and min2_hit else 50
+    result['hit_rate'] = min(avg_hit, 65)
+    result['sample_size'] = 0
+    result['confidence'] = int(min(65, avg_hit * 0.9))
+    result['reason'] = f'赔率最低两个，{min1_info} + {min2_info}'
+    result['signal'] = f'赔率组合({min1_g}+{min2_g})'
+    return result
 
 
 def _recommend_double_pick_legacy(features):
@@ -755,6 +979,380 @@ def _recommend_double_pick_legacy(features):
             result['sample_size'] = 0
             result['signal'] = f'{near_key} + 0球{zero_key} + 3球{three_key}(无样本，E级高赔率)'
 
+    return result
+
+
+def recommend_exclude_double_pick(features, match_data=None):
+    """
+    排除法双选推荐函数
+
+    【逻辑】:
+    1. 收集所有进球数赔率和变化率
+    2. 排除：赔率>3.5 且 升赔>=5% 的选项（0球不排除）
+    3. 在剩余选项中，选择历史命中率最高的两个
+    4. 如果只有一个选项，单选；否则双选命中率最高的两个
+
+    【返回】: {
+        'recommendation': '3+2球' / '单选X球' / None,
+        'second_pick': '2球' / None,
+        'hit_rate': 38.1,  # 单选命中率
+        'double_hit_rate': 59.2,  # 双选命中率
+        'excluded': ['1球', '4球'],  # 被排除的选项
+        'remaining': ['2球', '3球'],  # 剩余可选项
+        'reason': 理由,
+        'signal': '排除法',
+    }
+    """
+    result = {
+        'recommendation': None,
+        'second_pick': None,
+        'hit_rate': None,
+        'double_hit_rate': None,
+        'excluded': [],
+        'remaining': [],
+        'reason': None,
+        'signal': '排除法',
+    }
+
+    # 收集所有进球数赔率
+    all_goals = []
+    for g in range(8):
+        od = features.get(f'{g}球')
+        if od is not None and od > 0:
+            all_goals.append({
+                'goal': g,
+                'name': f'{g}球',
+                'odds': float(od)
+            })
+
+    if len(all_goals) < 2:
+        return result
+
+    # 如果有match_data，检查赔率变化
+    if match_data:
+        ttg_change = match_data.get('ttg_change') or {}
+        for goal_info in all_goals:
+            change = ttg_change.get(goal_info['name']) or {}
+            if change:
+                goal_info['change_pct'] = change.get('change_pct', 0)
+            else:
+                goal_info['change_pct'] = 0
+    else:
+        for goal_info in all_goals:
+            goal_info['change_pct'] = 0
+
+    # 排除逻辑：赔率>3.5 且 升赔>=5%（0球不排除）
+    excluded = []
+    remaining = []
+    for goal_info in all_goals:
+        g = goal_info['goal']
+        odds = goal_info['odds']
+        change_pct = goal_info.get('change_pct', 0)
+
+        # 排除条件：0球不排除；其他球 赔率>3.5 且 升赔>=5%
+        if g == 0:
+            # 0球不排除
+            remaining.append(goal_info)
+        elif odds > 3.5 and change_pct >= 5:
+            excluded.append(goal_info)
+        else:
+            remaining.append(goal_info)
+
+    result['excluded'] = [g['name'] for g in excluded]
+    result['remaining'] = [g['name'] for g in remaining]
+
+    if len(remaining) == 0:
+        result['reason'] = '所有选项都被排除'
+        return result
+
+    if len(remaining) == 1:
+        # 只有一个选项，单选
+        goal_info = remaining[0]
+        hit = get_odds_hit_rate(goal_info['goal'], goal_info['odds'])
+        if hit:
+            result['hit_rate'] = hit[0]
+            result['double_hit_rate'] = hit[0]
+            result['confidence'] = min(80, int(hit[0] * 0.9))
+            result['reason'] = f"只剩{goal_info['name']}，单选 {goal_info['name']}={goal_info['odds']}(历史{hit[0]}%)"
+        else:
+            result['hit_rate'] = None
+            result['double_hit_rate'] = None
+            result['confidence'] = 30
+            result['reason'] = f"只剩{goal_info['name']}，单选 {goal_info['name']}={goal_info['odds']}"
+        result['recommendation'] = f"单选{goal_info['name']}"
+        result['second_pick'] = None
+        return result
+
+    # 剩余>=2个选项，按历史命中率排序
+    scored = []
+    for goal_info in remaining:
+        hit = get_odds_hit_rate(goal_info['goal'], goal_info['odds'])
+        if hit:
+            scored.append((goal_info, hit[0], hit[1]))
+        else:
+            # 无历史数据，使用赔率估算（赔率越低概率越高）
+            # 赔率3.0 ≈ 33%，2.5 ≈ 40%，2.0 ≈ 50%
+            est = max(10, min(40, 100 / (goal_info['odds'] * 3)))
+            scored.append((goal_info, est, 0))
+
+    # 按命中率降序排序
+    scored.sort(key=lambda x: -x[1])
+
+    top1, top1_rate, top1_sample = scored[0]
+    top2, top2_rate, top2_sample = scored[1]
+
+    # 单选命中率
+    result['hit_rate'] = round(top1_rate, 1)
+    # 双选命中率
+    result['double_hit_rate'] = round((top1_rate + top2_rate) / 2, 1)
+    result['confidence'] = min(80, int(result['double_hit_rate'] * 0.9))
+
+    # 构建推荐
+    excluded_names = [g['name'] for g in excluded]
+    if top1_rate - top2_rate > 15:
+        # 第一名比第二名高15%以上，单选
+        result['recommendation'] = f"单选{top1['name']}"
+        result['second_pick'] = None
+        sample_hint = f"(样本{top1_sample}场)" if top1_sample >= 3 else "(无样本)"
+        excl_str = '、'.join(excluded_names) if excluded_names else '无'
+        result['reason'] = f"排除{excl_str}后，单选 {top1['name']}={top1['odds']} {sample_hint}(历史{top1_rate}%)"
+    else:
+        # 差距不大，双选
+        result['recommendation'] = f"{top1['name']}+{top2['name']}"
+        result['second_pick'] = top2['name']
+        hint1 = f"(历史{top1_rate}%)" if top1_sample >= 3 else "(无样本)"
+        hint2 = f"(历史{top2_rate}%)" if top2_sample >= 3 else "(无样本)"
+        excl_str = '、'.join(excluded_names) if excluded_names else '无'
+        result['reason'] = f"排除{excl_str}，选命中率最高两个：{top1['name']}={top1['odds']}{hint1} + {top2['name']}={top2['odds']}{hint2}"
+
+    return result
+
+
+# ============================================================
+# 黄金2球预测函数（基于0=10规律）
+# 条件：0球=10 + 2球赔率区间 + 近况特征
+# ============================================================
+
+GOLDEN_2GOAL_STATS = {
+    # 0球赔率 -> {2球区间: (命中率%, 样本数)}
+    10: {
+        (2.9, 3.3): (42.9, 21),  # 0=10 + 2球2.9-3.3 → 2球率43%
+        (3.1, 3.3): (43.0, 9),    # 0=10 + 2球3.1-3.3 → 2球率43%
+    },
+    11: {
+        (3.3, 3.5): (33.3, 12),   # 0=11 + 2球3.3-3.5 → 2球率33%（但3球率42%更高）
+    },
+    23: {
+        (4.0, 4.4): (50.0, 4),    # 0=23 + 2球4.0-4.4 → 2球率50%
+    },
+}
+
+def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    黄金2球预测函数
+    
+    核心规律（基于262场回测）:
+    - 0=10 + 2球3.1-3.3 → 2球率 43%（21场验证）
+    - 0=23 + 2球4.0-4.4 → 2球率 50%（4场验证）
+    
+    近况特征:
+    - 合并均值<1.5时2球命中率更高（67%）
+    - 合并均值1.5-2.5时2球命中率中等（33%）
+    - 近况>=2.5时2球命中率极低（0%）
+    
+    返回:
+    {
+        'is_golden_2': bool,
+        'recommendation': '关注2球' / '观望' / '排除2球',
+        'reason': 理由,
+        'features': {0球, 2球, 近况},
+        'hit_rate': 命中率%,
+        'sample_size': 样本数,
+    }
+    """
+    g0 = features.get('0球')
+    g2 = features.get('2球')
+    form = features.get('近况')
+    
+    result = {
+        'is_golden_2': False,
+        'recommendation': '观望',
+        'reason': None,
+        'features': {
+            '0球': g0,
+            '2球': g2,
+            '近况': form.get('combined_avg') if form else None,
+        },
+        'hit_rate': None,
+        'sample_size': None,
+        'warnings': [],
+        'signals': [],
+    }
+    
+    # 近况分析
+    combined_avg = form.get('combined_avg') if form else None
+    
+    # ── 黄金2球判断 ──
+    golden_2 = False
+    golden_reason = []
+    
+    # 条件1: 0球=10 或 0球=23
+    if g0 == 10:
+        # 0=10 + 2球3.1-3.3
+        if g2 is not None and 3.1 <= g2 <= 3.3:
+            golden_2 = True
+            golden_reason.append(f'0球={g0} + 2球={g2}(3.1-3.3区间)')
+            result['hit_rate'] = 43.0
+            result['sample_size'] = 9
+        elif g2 is not None and 2.9 <= g2 < 3.1:
+            # 稍宽区间
+            golden_2 = True
+            golden_reason.append(f'0球={g0} + 2球={g2}(2.9-3.1区间)')
+            result['hit_rate'] = 42.9
+            result['sample_size'] = 21
+    elif g0 == 23:
+        # 0=23 + 2球4.0-4.4
+        if g2 is not None and 4.0 <= g2 <= 4.4:
+            golden_2 = True
+            golden_reason.append(f'0球={g0} + 2球={g2}(4.0-4.4区间)')
+            result['hit_rate'] = 50.0
+            result['sample_size'] = 4
+    
+    # 条件2: 近况判断
+    if combined_avg is not None:
+        if combined_avg < 1.5:
+            result['signals'].append(f'近况均值={combined_avg}<1.5，支持2球（历史67%命中）')
+            golden_reason.append(f'近况{combined_avg}<1.5，加分')
+        elif combined_avg < 2.5:
+            result['signals'].append(f'近况均值={combined_avg}，2球中性')
+        elif combined_avg >= 2.5:
+            result['warnings'].append(f'近况均值={combined_avg}≥2.5，2球概率降低')
+            golden_reason.append(f'近况{combined_avg}≥2.5，减分')
+    
+    if golden_2:
+        result['is_golden_2'] = True
+        result['recommendation'] = '关注2球'
+        result['reason'] = ' | '.join(golden_reason)
+        if combined_avg is not None and combined_avg >= 2.5:
+            result['recommendation'] = '观望'
+            result['warnings'].append('近况偏高，2球不可靠')
+    else:
+        # 非黄金2球，检查是否应排除
+        if combined_avg is not None and combined_avg >= 2.5:
+            result['recommendation'] = '排除2球'
+            result['reason'] = f'近况均值{combined_avg}≥2.5，2球概率低'
+    
+    return result
+
+
+# ============================================================
+# 黄金4球预测函数（基于0=30规律）
+# 条件：0球=30 + 4球赔率区间 + 近况特征
+# ============================================================
+
+GOLDEN_4GOAL_STATS = {
+    # 0球赔率 -> {4球区间: (命中率%, 样本数)}
+    30: {
+        (3.4, 3.6): (100.0, 1),  # 0=30 + 4球3.4-3.6 → 100%（样本极小）
+        (4.1, 4.5): (66.7, 3),    # 0=30 + 4球4.1-4.5 → 67%
+        (3.7, 4.0): (50.0, 2),   # 0=30 + 4球3.7-4.0 → 50%
+    },
+}
+
+def predict_4goals(features: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    黄金4球预测函数
+    
+    核心规律（基于262场回测）:
+    - 0=30 + 4球4.1-4.5 → 4球率 67%（3场验证）
+    - 0=30 + 4球3.4-3.6 → 4球率 100%（1场验证）
+    
+    近况特征:
+    - 合并均值1.5-2.5区间 → 4球命中概率高（75%）
+    - 近况<1.5 → 4球率25%
+    - 近况>=2.5 → 4球率0%
+    
+    返回:
+    {
+        'is_golden_4': bool,
+        'recommendation': '关注4球' / '观望' / '排除4球',
+        'reason': 理由,
+        'features': {0球, 4球, 近况},
+        'hit_rate': 命中率%,
+        'sample_size': 样本数,
+    }
+    """
+    g0 = features.get('0球')
+    g4 = features.get('4球')
+    form = features.get('近况')
+    
+    result = {
+        'is_golden_4': False,
+        'recommendation': '观望',
+        'reason': None,
+        'features': {
+            '0球': g0,
+            '4球': g4,
+            '近况': form.get('combined_avg') if form else None,
+        },
+        'hit_rate': None,
+        'sample_size': None,
+        'warnings': [],
+        'signals': [],
+    }
+    
+    # 近况分析
+    combined_avg = form.get('combined_avg') if form else None
+    
+    # ── 黄金4球判断 ──
+    golden_4 = False
+    golden_reason = []
+    
+    # 条件1: 0球=30
+    if g0 == 30:
+        # 0=30 + 4球各区间
+        if g4 is not None and 4.1 <= g4 <= 4.5:
+            golden_4 = True
+            golden_reason.append(f'0球={g0} + 4球={g4}(4.1-4.5区间)')
+            result['hit_rate'] = 66.7
+            result['sample_size'] = 3
+        elif g4 is not None and 3.4 <= g4 < 4.1:
+            golden_4 = True
+            golden_reason.append(f'0球={g0} + 4球={g4}(3.4-4.1区间)')
+            result['hit_rate'] = 66.7 if g4 >= 3.7 else 100.0
+            result['sample_size'] = 1 if g4 < 3.7 else 3
+        elif g4 is not None and 4.5 < g4 <= 5.0:
+            golden_4 = True
+            golden_reason.append(f'0球={g0} + 4球={g4}(4.5-5.0区间)')
+            result['hit_rate'] = 50.0
+            result['sample_size'] = 2
+    
+    # 条件2: 近况判断（关键！）
+    if combined_avg is not None:
+        if 1.5 <= combined_avg <= 2.5:
+            result['signals'].append(f'近况均值={combined_avg}在[1.5,2.5]，支持4球（历史75%命中）')
+            golden_reason.append(f'近况{combined_avg}在[1.5,2.5]，加分')
+        elif combined_avg < 1.5:
+            result['signals'].append(f'近况均值={combined_avg}<1.5，4球中性')
+        elif combined_avg > 2.5:
+            result['warnings'].append(f'近况均值={combined_avg}>2.5，4球概率降低')
+            golden_reason.append(f'近况{combined_avg}>2.5，减分')
+    
+    if golden_4:
+        result['is_golden_4'] = True
+        result['recommendation'] = '关注4球'
+        result['reason'] = ' | '.join(golden_reason)
+        if combined_avg is not None and combined_avg > 2.5:
+            result['recommendation'] = '观望'
+            result['warnings'].append('近况偏高，4球不可靠')
+    else:
+        # 非黄金4球，检查是否应排除
+        if combined_avg is not None and combined_avg > 2.5:
+            result['recommendation'] = '排除4球'
+            result['reason'] = f'近况均值{combined_avg}>2.5，4球概率低'
+        elif g0 == 30:
+            result['reason'] = f'0球=30但4球赔率不在合适区间'
+    
     return result
 
 
