@@ -9,7 +9,7 @@ import os
 import json
 import glob
 from sporttery_api import SportteryAPI
-from predict_3goals import extract_features, predict_3goals, calc_recent_form, _extract_recent_matches
+from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, calc_recent_form, _extract_recent_matches, recommend_double_pick
 from _3goals_stats import StatsEngine
 
 app = Flask(__name__)
@@ -148,40 +148,33 @@ _odds_hitrate_cache = None
 def _build_odds_hitrate():
     """
     遍历所有有比分的历史记录，计算各进球数在各赔率区间的历史命中率。
+    
+    统计方法：
+    1. 直接从 _scores.json 的 total_goals_odds 读取赔率（无需读sporttery_data）
+    2. 按精确赔率值统计：有多少场比赛该进球数赔率=X，其中打出该进球数的比例
+    
     返回格式:
-      overall[goal] = (total, hits)   # 该进球数全场命中率
-      bucket[goal][bucket_key] = (total, hits)  # bucket_key 如 "3.0~3.5"
+      overall[goal] = {total, hits, rate}          # 该进球数全场命中率
+      exact[goal][赔率值] = {total, hits, rate}     # 该赔率值的历史命中率
     """
     global _odds_hitrate_cache
     if _odds_hitrate_cache is not None:
         return _odds_hitrate_cache
 
     scores = load_scores()
-    sporttery_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), DATA_DIR)
 
     overall = {}   # overall[goal] = [total, hits]
-    buckets = {}  # buckets[goal][bucket_key] = [total, hits]
-
-    def bucket_key(val, step=0.5):
-        """0.5步长区间"""
-        center = round(val / step) * step
-        lo = round(center - step / 2, 2)
-        hi = round(center + step / 2, 2)
-        return '%.2f~%.2f' % (lo, hi)
+    exact = {}     # exact[goal] = {赔率值: [total, hits]}
 
     for key, record in scores.items():
         tg = record.get('total_goals')
-        mid = record.get('match_id', key)
-        if tg is None or not str(mid).isdigit():
+        if tg is None:
             continue
         tg = int(tg)
-        fp = os.path.join(sporttery_dir, '%s.json' % mid)
-        if not os.path.exists(fp):
-            continue
-        try:
-            d = json.load(open(fp, encoding='utf-8'))
-            tg_odds = d.get('total_goals', {})
-        except:
+        
+        # 直接从 _scores.json 读取赔率（已有保存的赔率数据）
+        tg_odds = record.get('total_goals_odds', {})
+        if not tg_odds:
             continue
 
         for goal in range(0, 8):
@@ -189,7 +182,7 @@ def _build_odds_hitrate():
             if not od_val:
                 continue
             try:
-                val = float(od_val)
+                val = round(float(od_val), 2)
             except:
                 continue
 
@@ -200,15 +193,14 @@ def _build_odds_hitrate():
             if tg == goal:
                 overall[goal][1] += 1
 
-            # bucket
-            bk = bucket_key(val)
-            if goal not in buckets:
-                buckets[goal] = {}
-            if bk not in buckets[goal]:
-                buckets[goal][bk] = [0, 0]
-            buckets[goal][bk][0] += 1
+            # exact: 按精确赔率值统计
+            if goal not in exact:
+                exact[goal] = {}
+            if val not in exact[goal]:
+                exact[goal][val] = [0, 0]
+            exact[goal][val][0] += 1
             if tg == goal:
-                buckets[goal][bk][1] += 1
+                exact[goal][val][1] += 1
 
     # 计算命中率
     def rate(total, hits):
@@ -216,14 +208,15 @@ def _build_odds_hitrate():
 
     overall_stats = {g: {'total': v[0], 'hits': v[1], 'rate': rate(v[0], v[1])}
                      for g, v in overall.items() if v[0] > 0}
-    bucket_stats = {}
-    for g, bk_data in buckets.items():
-        bucket_stats[g] = {
-            bk: {'total': v[0], 'hits': v[1], 'rate': rate(v[0], v[1])}
-            for bk, v in bk_data.items() if v[0] > 0
+    
+    exact_stats = {}
+    for g, val_data in exact.items():
+        exact_stats[g] = {
+            str(k): {'total': v[0], 'hits': v[1], 'rate': rate(v[0], v[1])}
+            for k, v in val_data.items() if v[0] > 0
         }
 
-    _odds_hitrate_cache = {'overall': overall_stats, 'bucket': bucket_stats}
+    _odds_hitrate_cache = {'overall': overall_stats, 'exact': exact_stats}
     return _odds_hitrate_cache
 
 def get_hitrate_for_odds(goal, odds_val):
@@ -472,6 +465,15 @@ HTML_TEMPLATE = '''
         .odds-item.medium { background: #4a4a00; }
         .odds-item.high { background: #563a3a; }
         .odds-item.top { background: #006666; border: 2px solid #00d4ff; }
+        .odds-change-tag { font-size: 11px; margin-left: 4px; font-weight: normal; }
+        .odds-tags { display: flex; gap: 4px; margin-top: 4px; justify-content: center; }
+        .odds-tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+        .odds-tag.exclude { background: #dc2626; color: #fff; }
+        .odds-tag.focus { background: #16a34a; color: #fff; }
+        .odds-tag.gold { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #000; font-weight: bold; box-shadow: 0 0 8px rgba(251, 191, 36, 0.6); }
+        .odds-item.exclude { border: 2px solid #dc2626; }
+        .odds-item.focus { border: 2px solid #16a34a; box-shadow: 0 0 8px rgba(22, 163, 74, 0.5); }
+        .odds-item.gold-highlight { border: 2px solid #f59e0b; box-shadow: 0 0 12px rgba(251, 191, 36, 0.7); background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), transparent); }
         .score-odds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .score-odds .odds-item { padding: 8px 4px; }
 
@@ -577,11 +579,51 @@ HTML_TEMPLATE = '''
         /* 3球预测 */
         .g3-prediction-box { background: linear-gradient(135deg, #1a1a3e 0%, #16213e 100%); border-radius: 10px; padding: 15px; margin: 10px 0; border: 1px solid #0f3460; }
         .g3-prediction-box.golden-box { background: linear-gradient(135deg, #2d1f00 0%, #1a1200 100%); border: 1px solid #b8860b; box-shadow: 0 0 12px rgba(255,215,0,0.15); }
+        
+        /* 双选推荐样式 */
+        .double-pick-box { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); border: 1px solid #2ecc71; border-radius: 8px; padding: 12px; margin: 8px 0; }
+        .double-pick-title { font-size: 14px; color: #2ecc71; margin-bottom: 8px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+        .double-pick-content { padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px; }
+        .double-pick-main { font-size: 16px; color: #fff; margin-bottom: 6px; }
+        .double-pick-main.single { color: #f39c12; }
+        .double-pick-main strong { color: #2ecc71; font-size: 18px; }
+        .double-pick-info { font-size: 12px; color: #aaa; margin-bottom: 4px; }
+        .double-pick-stats { font-size: 11px; color: #888; }
+        .double-pick-stats .hit-rate { color: #2ecc71; font-weight: bold; }
+
+        /* 黄金2球/4球样式 */
+        .golden-2-box { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); border: 1px solid #22c55e; border-radius: 8px; padding: 10px; margin: 6px 0; }
+        .golden-4-box { background: linear-gradient(135deg, #1a1a2a 0%, #0d0d1a 100%); border: 1px solid #6366f1; border-radius: 8px; padding: 10px; margin: 6px 0; }
+        .golden-recommendation { font-size: 14px; font-weight: bold; margin-bottom: 6px; }
+        .golden-2-box .golden-recommendation { color: #22c55e; }
+        .golden-4-box .golden-recommendation { color: #818cf8; }
+        .golden-stats { font-size: 12px; margin-top: 6px; }
+        .hit-rate-high { color: #22c55e; font-weight: bold; }
+        .golden-2-box .golden-reason { font-size: 11px; color: #4ade80; background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; padding: 5px 8px; border-radius: 0 6px 6px 0; }
+        .golden-4-box .golden-reason { font-size: 11px; color: #818cf8; background: rgba(99,102,241,0.08); border-left: 3px solid #6366f1; padding: 5px 8px; border-radius: 0 6px 6px 0; }
+
+        /* 信心指数徽章 */
+        .confidence-badge { padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; }
+        .confidence-high { background: #27ae60; color: #fff; }
+        .confidence-mid { background: #f39c12; color: #fff; }
+        .confidence-low { background: #e74c3c; color: #fff; }
         .golden-badge { background: linear-gradient(90deg, #b8860b, #ffd700); color: #000; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
         .golden-reason { font-size: 11px; color: #f1c40f; background: rgba(241,196,15,0.08); border-left: 3px solid #f1c40f; padding: 6px 10px; border-radius: 0 6px 6px 0; margin: 4px 0 8px; }
         .g3-signal-item.signal-golden { background: rgba(241,196,15,0.1); border-left: 3px solid #f1c40f; }
         .signal-golden .g3-signal-tag { color: #f1c40f; }
         .signal-golden .g3-signal-score { color: #f1c40f; }
+        /* 超级3球 - 最高优先级信号 */
+        .g3-signal-item.signal-super { 
+            background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.15)); 
+            border-left: 4px solid #a855f7; 
+            animation: super-pulse 2s infinite;
+        }
+        @keyframes super-pulse {
+            0%, 100% { box-shadow: 0 0 8px rgba(168,85,247,0.3); }
+            50% { box-shadow: 0 0 16px rgba(168,85,247,0.5); }
+        }
+        .signal-super .g3-signal-tag { color: #a855f7; font-weight: bold; font-size: 12px; }
+        .signal-super .g3-signal-score { color: #a855f7; }
         .g3-warnings { margin-top: 8px; }
         .g3-warning-item { font-size: 12px; color: #e67e22; background: rgba(230,126,34,0.1); border-left: 3px solid #e67e22; padding: 5px 10px; border-radius: 0 6px 6px 0; margin-bottom: 4px; }
         .g3-prediction-title { font-size: 13px; color: #ffd700; font-weight: bold; margin-bottom: 8px; }
@@ -598,6 +640,9 @@ HTML_TEMPLATE = '''
         .g3-signal-item.signal-plus { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; }
         .g3-signal-item.signal-minus { background: rgba(239,68,68,0.08); border-left: 3px solid #ef4444; }
         .g3-signal-item.signal-neutral { background: rgba(148,163,184,0.06); border-left: 3px solid #888; }
+        .g3-signal-item.signal-warning { background: rgba(245,158,11,0.1); border-left: 3px solid #f59e0b; }
+        .signal-warning .g3-signal-tag { color: #f59e0b; }
+        .signal-warning .g3-signal-score { color: #f59e0b; }
         .g3-signal-tag { font-weight: bold; color: #fff; min-width: 90px; }
         .g3-signal-score { font-weight: bold; min-width: 30px; }
         .signal-plus .g3-signal-score { color: #4ade80; }
@@ -699,19 +744,41 @@ HTML_TEMPLATE = '''
         const _ODDS_HITRATE = __ODDS_STATS_JSON__;
         const _HITRATE_COLORS = {green:'#4ade80', yellow:'#facc15', red:'#f87171', gray:'#888'};
         function _getHitRateLabel(goalNum, oddsVal) {
-            const bk = _ODDS_HITRATE.bucket || {};
-            const goalBuckets = bk[goalNum] || {};
-            // 找精确bucket
+            // 直接精确匹配：找历史上有相同赔率的比赛
+            const exact = _ODDS_HITRATE.exact || {};
+            const goalExact = exact[goalNum] || {};
+
+            // 精确匹配：找赔率完全相同的历史记录
             let found = null;
-            for (const [bkStr, d] of Object.entries(goalBuckets)) {
-                const [lo, hi] = bkStr.split('~').map(Number);
-                if (oddsVal >= lo && oddsVal <= hi) { found = d; break; }
+            for (const [ekStr, d] of Object.entries(goalExact)) {
+                const ek = parseFloat(ekStr);
+                if (Math.abs(oddsVal - ek) < 0.01) {  // 赔率完全相同
+                    found = d;
+                    break;
+                }
             }
+
             const rate = found ? found.rate : null;
             const total = found ? found.total : 0;
-            const color = rate === null ? 'gray' : rate >= 35 ? 'green' : rate >= 20 ? 'yellow' : 'red';
+            // 样本太少(<3场)显示灰色，表示参考价值低
+            const color = rate === null ? 'gray' : total < 3 ? 'gray' : rate >= 35 ? 'green' : rate >= 20 ? 'yellow' : 'red';
+            const tagTitle = rate === null ? '无历史数据'
+                : `${goalNum}球赔率${oddsVal}，历史${total}场中${found.hits}场打出`;
             if (rate === null) return '';
-            return `<span class="hitrate-badge" style="font-size:10px;padding:1px 5px;border-radius:4px;margin-left:3px;background:${_HITRATE_COLORS[color]}22;color:${_HITRATE_COLORS[color]};border:1px solid ${_HITRATE_COLORS[color]}55" title="${goalNum}球赔率${oddsVal}区间历史命中率">${rate}%</span>`;
+            const sampleHint = total < 3 ? `(${total}场)` : '';
+            return `<span class="hitrate-badge" style="font-size:10px;padding:1px 5px;border-radius:4px;margin-left:3px;background:${_HITRATE_COLORS[color]}22;color:${_HITRATE_COLORS[color]};border:1px solid ${_HITRATE_COLORS[color]}55" title="${tagTitle}">${rate}%${sampleHint}</span>`;
+        }
+        // 获取命中率数值（供其他逻辑使用）
+        function _getHitRateValue(goalNum, oddsVal) {
+            const exact = _ODDS_HITRATE.exact || {};
+            const goalExact = exact[goalNum] || {};
+            for (const [ekStr, d] of Object.entries(goalExact)) {
+                const ek = parseFloat(ekStr);
+                if (Math.abs(oddsVal - ek) < 0.01) {
+                    return d.rate;
+                }
+            }
+            return null;
         }
 
         // ── 分页配置 ──────────────────────────────────────
@@ -796,13 +863,19 @@ HTML_TEMPLATE = '''
                         ` : ''}
                         ${m.g3_prediction.signals && m.g3_prediction.signals.length > 0 ? `
                         <div class="g3-signals">
-                            ${m.g3_prediction.signals.map(s => `
-                                <div class="g3-signal-item ${s[0].includes('黄金') ? 'signal-golden' : s[1].startsWith('+') ? 'signal-plus' : s[1].startsWith('-') ? 'signal-minus' : 'signal-neutral'}">
+                            ${m.g3_prediction.signals.map(s => {
+                                let cls = 'signal-neutral';
+                                if (s[0].includes('超级3球')) cls = 'signal-super';
+                                else if (s[0].includes('黄金3球')) cls = 'signal-golden';
+                                else if (s[0].includes('主强客弱') || s[0].includes('客强主弱') || s[0].includes('均衡偏弱')) cls = 'signal-warning';
+                                else if (s[1].startsWith('+')) cls = 'signal-plus';
+                                else if (s[1].startsWith('-')) cls = 'signal-minus';
+                                return `<div class="g3-signal-item ${cls}">
                                     <span class="g3-signal-tag">${s[0]}</span>
                                     <span class="g3-signal-score">${s[1]}</span>
                                     <span class="g3-signal-reason">${s[2]}</span>
-                                </div>
-                            `).join('')}
+                                </div>`;
+                            }).join('')}
                         </div>
                         ` : ''}
                         ${m.g3_prediction.hist_stats && m.g3_prediction.hist_stats.matched_count >= 2 ? `
@@ -833,6 +906,65 @@ HTML_TEMPLATE = '''
                                 <span class="hist-rate rate-mid">历史3球${m.g3_prediction.hist_stats.g3_hit_rate.toFixed(1)}%</span>
                                 <span class="hist-hits">(${m.g3_prediction.hist_stats.total_historical}场参考)</span>
                             </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+
+                    <!-- 双选推荐 -->
+                    ${m.g3_prediction && m.g3_prediction.double_pick && m.g3_prediction.double_pick.recommendation ? `
+                    <div class="double-pick-box">
+                        <div class="double-pick-title">
+                            🎯 双选推荐
+                            ${m.g3_prediction.double_pick.confidence ? `<span class="confidence-badge confidence-${m.g3_prediction.double_pick.confidence >= 60 ? 'high' : m.g3_prediction.double_pick.confidence >= 45 ? 'mid' : 'low'}">${m.g3_prediction.double_pick.confidence}%</span>` : ''}
+                        </div>
+                        <div class="double-pick-content">
+                            <div class="double-pick-main ${m.g3_prediction.double_pick.recommendation === '单选3球' ? 'single' : 'double'}">
+                                ${m.g3_prediction.double_pick.recommendation === '单选3球' ? '单选 <strong>3球</strong>' : '双选 <strong>' + m.g3_prediction.double_pick.recommendation.replace('球', '球 或 ') + '</strong>'}
+                            </div>
+                            <div class="double-pick-info">
+                                ${m.g3_prediction.double_pick.reason || m.g3_prediction.double_pick.signal || ''}
+                            </div>
+                            ${m.g3_prediction.double_pick.hit_rate !== null ? `
+                            <div class="double-pick-stats">
+                                历史命中率: <span class="hit-rate">${m.g3_prediction.double_pick.hit_rate}%</span>
+                                ${m.g3_prediction.double_pick.sample_size ? `(样本${m.g3_prediction.double_pick.sample_size}场)` : ''}
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <!-- 黄金2球/4球 -->
+                    ${(m.g3_prediction.golden_2goals && m.g3_prediction.golden_2goals.is_golden_2) || (m.g3_prediction.golden_4goals && m.g3_prediction.golden_4goals.is_golden_4) ? `
+                    <div class="g3-prediction-box">
+                        <div class="g3-prediction-title">🎯 黄金进球信号</div>
+                        ${m.g3_prediction.golden_2goals && m.g3_prediction.golden_2goals.is_golden_2 ? `
+                        <div class="golden-2-box">
+                            <div class="golden-recommendation">⭐ 黄金2球信号</div>
+                            <div class="golden-reason">
+                                ${m.g3_prediction.golden_2goals.reason || ''}
+                            </div>
+                            ${m.g3_prediction.golden_2goals.hit_rate !== null ? `
+                            <div class="golden-stats">
+                                <span class="hit-rate-high">历史命中率: ${m.g3_prediction.golden_2goals.hit_rate}%</span>
+                                ${m.g3_prediction.golden_2goals.sample_size ? `(样本${m.g3_prediction.golden_2goals.sample_size}场)` : ''}
+                            </div>
+                            ` : ''}
+                        </div>
+                        ` : ''}
+                        ${m.g3_prediction.golden_4goals && m.g3_prediction.golden_4goals.is_golden_4 ? `
+                        <div class="golden-4-box">
+                            <div class="golden-recommendation">⭐ 黄金4球信号</div>
+                            <div class="golden-reason">
+                                ${m.g3_prediction.golden_4goals.reason || ''}
+                            </div>
+                            ${m.g3_prediction.golden_4goals.hit_rate !== null ? `
+                            <div class="golden-stats">
+                                <span class="hit-rate-high">历史命中率: ${m.g3_prediction.golden_4goals.hit_rate}%</span>
+                                ${m.g3_prediction.golden_4goals.sample_size ? `(样本${m.g3_prediction.golden_4goals.sample_size}场)` : ''}
+                            </div>
+                            ` : ''}
                         </div>
                         ` : ''}
                     </div>
@@ -872,8 +1004,36 @@ HTML_TEMPLATE = '''
                         <div class="odds-grid">
                             ${Object.entries(m.total_goals || {}).map(([k, v]) => {
                                 const goalNum = parseInt(k.replace('球',''));
-                                const rateLabel = _getHitRateLabel(goalNum, parseFloat(v));
-                                return `<div class="odds-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v}${rateLabel}</div></div>`;
+                                const odds = parseFloat(v);
+                                const rateLabel = _getHitRateLabel(goalNum, odds);
+                                const hitRate = _getHitRateValue(goalNum, odds);  // 获取命中率数值
+                                const change = m.ttg_change && m.ttg_change[k];
+                                let changeTag = '';
+                                let excludeTag = '';
+                                let focusTag = '';
+                                let goldTag = '';
+                                if (change && change.count > 0) {
+                                    const pct = change.change_pct;
+                                    const isUp = pct > 0;
+                                    const color = isUp ? '#ef4444' : '#22c55e';
+                                    const arrow = isUp ? '↑' : '↓';
+                                    changeTag = `<span class="odds-change-tag" style="color:${color}">${arrow}${Math.abs(pct)}%</span>`;
+                                }
+                                // 排除/关注判断
+                                // 排除：赔率>3.5 且 升赔>=5%（纯高赔无变化不排除）
+                                const isExclude = odds > 3.5 && change && change.change_pct >= 5;
+                                const isFocus = odds >= 2.5 && odds <= 3.5 && change && change.change_pct < 0;
+                                // 黄金信号：命中率>=50%
+                                if (hitRate !== null && hitRate >= 50) {
+                                    goldTag = '<span class="odds-tag gold">&#9733;黄金</span>';
+                                }
+                                if (isExclude) {
+                                    excludeTag = '<span class="odds-tag exclude">&#10005;排除</span>';
+                                } else if (isFocus) {
+                                    focusTag = '<span class="odds-tag focus">&#9733;关注</span>';
+                                }
+                                const tagClass = isExclude ? 'exclude' : (isFocus ? 'focus' : '') + (goldTag ? ' gold-highlight' : '');
+                                return `<div class="odds-item ${getOddsClass(v)} ${tagClass}"><div class="label">${k}</div><div class="value">${v}${rateLabel}${changeTag}</div><div class="odds-tags">${goldTag}${excludeTag}${focusTag}</div></div>`;
                             }).join('')}
                         </div>
                     </div>
@@ -1465,12 +1625,25 @@ HTML_TEMPLATE = '''
                             else if (comb < 4.0)  { bonus = -3; label = '近况偏高'; }
                             else                  { bonus = -8; label = '近况偏大'; }
                             const bonusColor = bonus > 0 ? '#4ade80' : bonus < 0 ? '#f87171' : '#888';
+                            
+                            // 近况均衡度判断（2026-04-21 新规律）
+                            const diff = Math.abs(rf.home_avg - rf.away_avg);
+                            let balanceLabel = '';
+                            if (rf.home_avg >= 3.5 && rf.away_avg <= 2.0) {
+                                balanceLabel = '<span style="background:#ef444420;color:#f87171;padding:1px 4px;border-radius:3px;margin-left:4px;font-size:10px">主强客弱</span>';
+                            } else if (rf.away_avg >= 3.5 && rf.home_avg <= 2.0) {
+                                balanceLabel = '<span style="background:#ef444420;color:#f87171;padding:1px 4px;border-radius:3px;margin-left:4px;font-size:10px">客强主弱</span>';
+                            } else if (diff < 0.5 && comb < 2.5) {
+                                balanceLabel = '<span style="background:#f59e0b20;color:#f59e0b;padding:1px 4px;border-radius:3px;margin-left:4px;font-size:10px">均衡偏弱</span>';
+                            }
+                            
                             html += `<div style="padding:2px 12px 6px 42px;font-size:11px;color:#555">
                                 <span style="color:#888">近况:</span> 主${rf.home_avg.toFixed(1)}/客${rf.away_avg.toFixed(1)}
                                 <span style="color:#888">(${rf.home_games}/${rf.away_games}场)</span>
                                 &nbsp;
                                 <span style="color:${bonusColor};font-weight:bold">${bonus > 0 ? '+' : ''}${bonus}</span>
                                 <span style="color:#888;font-size:10px">(${label})</span>
+                                ${balanceLabel}
                             </div>`;
                         }
                         // 明细
@@ -1546,9 +1719,13 @@ def _build_match_card(data, api):
                     '0球': g3_pred.get('features', {}).get('0球'),
                     '1球': g3_pred.get('features', {}).get('1球'),
                     '2球': g3_pred.get('features', {}).get('2球'),
+                    '4球': g3_pred.get('features', {}).get('4球'),
                     '区间': g3_pred.get('features', {}).get('区间'),
                 },
                 'hist_stats': g3_pred.get('hist_stats'),
+                'double_pick': g3_pred.get('double_pick'),
+                'golden_2goals': g3_pred.get('golden_2goals'),
+                'golden_4goals': g3_pred.get('golden_4goals'),
             },
             # 让球：只保留数值
             'hhad': {
@@ -1557,8 +1734,8 @@ def _build_match_card(data, api):
                 '让平': hhad.get('让平'),
                 '让负': hhad.get('让负'),
             } if hhad else {},
-            # 变化数据：只保留数值
-            'ttg_change': {k: v for k, v in ttg_change.items() if isinstance(v, (int, float))},
+            # 变化数据
+            'ttg_change': ttg_change,
             'hafu_change': {k: v for k, v in hafu_change.items() if isinstance(v, (int, float))},
             'exclusion_list': exclusion_list,
         }
@@ -1589,6 +1766,8 @@ def get_matches():
                     try:
                         features = extract_features(data)
                         g3_pred = predict_3goals(features)
+                        # 双选推荐
+                        double_pick = recommend_double_pick(features)
                         # 历史相似比赛3球打出率
                         se = get_stats_engine()
                         g3_hist = se.query_similar(
@@ -1602,6 +1781,10 @@ def get_matches():
                             macao_pattern=features.get('macao_pattern', ''),
                             min_records=2,
                         )
+                        # 黄金2球预测
+                        g2_pred = predict_2goals(features)
+                        # 黄金4球预测
+                        g4_pred = predict_4goals(features)
                         data['g3_prediction'] = {
                             'recommendation': g3_pred.get('recommendation', '观望'),
                             'score': g3_pred.get('signal_score', 0),
@@ -1614,6 +1797,7 @@ def get_matches():
                                 '0球': features.get('0球'),
                                 '1球': features.get('1球'),
                                 '2球': features.get('2球'),
+                                '4球': features.get('4球'),
                                 '区间': features.get('区间'),
                                 '0球_整数高赔': features.get('0球_整数高赔'),
                                 '3球_降赔': features.get('3球_降赔'),
@@ -1621,6 +1805,11 @@ def get_matches():
                             },
                             # 历史相似比赛统计
                             'hist_stats': g3_hist,
+                            # 双选推荐
+                            'double_pick': double_pick,
+                            # 黄金2球/4球
+                            'golden_2goals': g2_pred,
+                            'golden_4goals': g4_pred,
                         }
                     except Exception as ex:
                         pass
@@ -1642,6 +1831,12 @@ def fetch_match(match_id):
             # ── 3球预测 ──
             features = extract_features(result)
             g3_pred = predict_3goals(features)
+            # 双选推荐
+            double_pick = recommend_double_pick(features)
+            # 黄金2球预测
+            g2_pred = predict_2goals(features)
+            # 黄金4球预测
+            g4_pred = predict_4goals(features)
             result['g3_prediction'] = {
                                 'recommendation': g3_pred.get('recommendation', '观望'),
                                 'score': g3_pred.get('signal_score', 0),
@@ -1654,6 +1849,7 @@ def fetch_match(match_id):
                     '0球': features.get('0球'),
                     '1球': features.get('1球'),
                     '2球': features.get('2球'),
+                    '4球': features.get('4球'),
                     '区间': features.get('区间'),
                     '0球_整数高赔': features.get('0球_整数高赔'),
                     '3球_降赔': features.get('3球_降赔'),
@@ -1667,6 +1863,11 @@ def fetch_match(match_id):
                     league_type=features.get('赛事类型', '联赛正赛'),
                     min_records=2,
                 ) if features.get('3球') else None,
+                # 双选推荐
+                'double_pick': double_pick,
+                # 黄金2球/4球
+                'golden_2goals': g2_pred,
+                'golden_4goals': g4_pred,
             }
             return jsonify({'success': True, 'data': result})
         else:
