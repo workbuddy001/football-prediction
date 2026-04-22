@@ -646,6 +646,10 @@ HTML_TEMPLATE = '''
         .g3-odds-info { font-size: 12px; color: #888; text-align: center; margin-bottom: 6px; }
         .g3-odds-info strong { color: #ffd700; font-size: 14px; }
         .g3-tier { background: #0f3460; color: #00d4ff; padding: 1px 6px; border-radius: 4px; font-size: 11px; margin-left: 4px; }
+        /* 排除3球时在赔率上方高亮显示 */
+        .g3-exclude-banner { background: linear-gradient(135deg, rgba(239,68,68,0.25), rgba(220,38,38,0.15)); border: 2px solid #ef4444; border-radius: 8px; padding: 8px 12px; margin-bottom: 8px; text-align: center; animation: pulse-red 1.5s ease-in-out infinite; }
+        .g3-exclude-banner-text { color: #fca5a5; font-size: 13px; font-weight: bold; }
+        @keyframes pulse-red { 0%, 100% { box-shadow: 0 0 8px rgba(239,68,68,0.3); } 50% { box-shadow: 0 0 16px rgba(239,68,68,0.5); } }
         .g3-signals { display: flex; flex-direction: column; gap: 4px; }
         .g3-signal-item { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border-radius: 6px; font-size: 12px; }
         .g3-signal-item.signal-plus { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; }
@@ -859,6 +863,14 @@ HTML_TEMPLATE = '''
                             ${m.g3_prediction.warnings.map(w => `
                                 <div class="g3-warning-item">${w}</div>
                             `).join('')}
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球')) ? `
+                        <div class="g3-exclude-banner">
+                            <div class="g3-exclude-banner-text">🚫 排除3球 - 三条件全满足</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#86efac;">🚫 排除2球 - 三条件全满足</div>
                         </div>` : ''}
                         ${m.g3_prediction.features['3球'] ? `
                         <div class="g3-odds-info">
@@ -1265,10 +1277,11 @@ HTML_TEMPLATE = '''
         function goPage(p) { renderPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
         async function loadMatches() {
-            // 并行加载：精简比赛列表 + 已保存比分
+            // 并行加载：精简比赛列表 + 已保存比分（加时间戳防缓存）
+            const ts = Date.now();
             const [matchesRes, scoresRes] = await Promise.all([
-                fetch('/api/matches?light=1'),
-                fetch('/api/saved-scores')
+                fetch('/api/matches?light=1&t=' + ts),
+                fetch('/api/saved-scores?t=' + ts)
             ]);
             window._allMatches = await matchesRes.json();
             const scoresData = scoresRes.ok ? (await scoresRes.json()) : {};
@@ -1755,7 +1768,7 @@ def _build_match_card(data, api):
             'total_goals': data.get('total_goals', {}),
             'g3_prediction': {
                 'recommendation': g3_pred.get('recommendation', '观望'),
-                'score': g3_pred.get('score', 0),
+                'score': g3_pred.get('signal_score', 0),
                 'signals': g3_pred.get('signals', []),
                 'warnings': g3_pred.get('warnings', []),
                 'golden_3goals': g3_pred.get('golden_3goals', False),

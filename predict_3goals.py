@@ -412,12 +412,70 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         warnings.append('友谊赛：信号全面降级');
         reasons.append('友谊赛，选3球不可靠')
 
+    # ══════════════════════════════════════════════════════════════
+    # Step 7: 三条件排除3球（完整版）
+    # 条件：近况正常(2.5~3.5) + 0球>13 + 初始3球>3.50
+    # 排除情况：
+    #   ① 初始>3.50 → 当前>3.50（升赔推离）
+    #   ② 初始>3.50 → 当前<3.50（降赔诱导到黄金区间）
+    # 不排除：初始<3.50（真正的黄金3球信号）
+    # 原理：初始在3.50以上说明庄家从一开始就不想要3球
+    # ══════════════════════════════════════════════════════════════
+    if form is not None:
+        combined_avg = form.get('combined_avg', 0)
+        g0 = features.get('0球')
+        g3_val = features.get('3球')
+        g3_change = features.get('3球_变化', 0)
+        
+        # 计算初始3球赔率
+        initial_g3 = g3_val
+        if g3_val is not None and g3_change is not None and g3_change != 0:
+            initial_g3 = g3_val / (1 + g3_change / 100)
+        
+        if (2.5 <= combined_avg <= 3.5 and 
+            g0 is not None and g0 > 13 and
+            initial_g3 is not None and initial_g3 > 3.50):
+            
+            # 初始3球>3.50，需要排除
+            if g3_val > 3.50:
+                # 升赔推离
+                signals.append(('排除3球', '-15', f'初始3球{initial_g3:.2f}>3.50→当前升至{g3_val}↑+0球{g0}>13'));
+                warnings.append(f'🚫 排除3球！初始{initial_g3:.2f}>3.50，当前升至{g3_val}（升赔推离）');
+                reasons.append(f'排除3球：初始3球{initial_g3:.2f}>3.50，庄家不想要3球')
+            else:
+                # 降赔诱导到黄金区间
+                signals.append(('排除3球', '-15', f'初始3球{initial_g3:.2f}>3.50→当前降至{g3_val}↓+0球{g0}>13'));
+                warnings.append(f'🚫 排除3球！初始{initial_g3:.2f}>3.50，被降赔到{g3_val}（诱导降赔）');
+                reasons.append(f'排除3球：初始3球{initial_g3:.2f}>3.50，被降赔诱导到{g3_val}，是诱导降赔陷阱')
+
+    # ══════════════════════════════════════════════════════════════
+    # Step 8: 排除2球（新增）
+    # 条件: 近况2.0~2.5 + 0球13~18 + 2球3.5~4.0
+    # 历史准确率: 87.5%
+    # ══════════════════════════════════════════════════════════════
+    if form is not None:
+        combined_avg = form.get('combined_avg', 0)
+        g0 = features.get('0球')
+        g2 = features.get('2球')
+        
+        if (2.0 <= combined_avg < 2.5 and 
+            g0 is not None and 13 <= g0 < 18 and
+            g2 is not None and 3.5 <= g2 < 4.0):
+            signals.append(('🚫排除2球', '-10', f'近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率'));
+            warnings.append(f'🚫 排除2球！近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率');
+            reasons.append(f'排除2球：近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率')
+
     # 综合评分
     def ps(s):
         s = s.strip()
         return (1 if s[0] == '+' else -1) * int(s[1:])
     score = max(-30, min(100, sum(ps(s[1]) for s in signals if s[1][0] in '+-')))
     if is_friendly: score = int(score * 0.5)
+
+    # 三条件排除信号特殊处理：直接覆盖推荐为排除3球（不管最终分数）
+    has_exclude_signal = any('排除3球' in str(s[0]) for s in signals)
+    if has_exclude_signal:
+        score = -15  # 确保分数为负，用于置信度显示
 
     # ── 黄金3球筛选器（4条定律同时满足） ──
     # 定律①: 评分达标（≥15）
