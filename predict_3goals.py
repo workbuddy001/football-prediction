@@ -1044,7 +1044,11 @@ def recommend_exclude_double_pick(features, match_data=None):
         for goal_info in all_goals:
             goal_info['change_pct'] = 0
 
-    # 排除逻辑：赔率>3.5 且 升赔>=5% → 但命中率>=20%时不排除（高概率选项）
+    # 排除逻辑（按优先级）：
+    # 1. 0球不排除
+    # 2. 赔率升>=5% → 强排除（赔率高被造热，不管命中率多高）
+    # 3. 赔率>3.5 且 命中率<20% → 排除（低概率高赔率）
+    # 4. 赔率>3.5 且 命中率>=20% 且 赔率没升 → 保留（高赔率高命中率但未被造热）
     excluded = []
     remaining = []
     for goal_info in all_goals:
@@ -1052,22 +1056,28 @@ def recommend_exclude_double_pick(features, match_data=None):
         odds = goal_info['odds']
         change_pct = goal_info.get('change_pct', 0)
         
-        # 检查历史命中率
-        hit = get_odds_hit_rate(g, odds)
-        hit_rate = hit[0] if hit else None
-        
-        # 排除条件：0球不排除；其他球 赔率>3.5 且 升赔>=5% 且 命中率<20%
+        # 0球永远不排除
         if g == 0:
-            # 0球不排除
             remaining.append(goal_info)
-        elif odds > 3.5 and change_pct >= 5:
-            # 高赔率+升赔，检查命中率
+            continue
+        
+        # 赔率升>=5% → 强排除（不管命中率）
+        if change_pct >= 5:
+            excluded.append(goal_info)
+            continue
+        
+        # 赔率没升，检查赔率绝对值和命中率
+        if odds > 3.5:
+            hit = get_odds_hit_rate(g, odds)
+            hit_rate = hit[0] if hit else None
+            # 赔率>3.5 且 命中率>=20% → 保留（高赔率但高命中率未被造热）
             if hit_rate is not None and hit_rate >= 20:
-                # 命中率>=20%，不排除（高概率选项）
                 remaining.append(goal_info)
             else:
+                # 命中率<20%，排除
                 excluded.append(goal_info)
         else:
+            # 赔率<=3.5，保留
             remaining.append(goal_info)
 
     result['excluded'] = [g['name'] for g in excluded]
