@@ -1,6 +1,247 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.21_周二010_20260422072102",
+      "match_id": "周二010",
+      "date_folder": "2026.04.21",
+      "home_team": "赫罗纳",
+      "away_team": "贝蒂斯",
+      "league": "西甲",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "2:3",
+      "confidence": 4,
+      "was_excluded": true,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 1.26,
+        "jc_draw_chg": -7.81,
+        "jc_away_chg": 5.56,
+        "mcao_home_chg": -9.68,
+        "mcao_draw_chg": 6.25,
+        "mcao_away_chg": 5.88,
+        "jc_init_odds": [
+          2.38,
+          3.2,
+          2.52
+        ],
+        "jc_real_odds": [
+          2.41,
+          2.95,
+          2.66
+        ],
+        "macao_init_odds": [
+          2.48,
+          3.2,
+          2.55
+        ],
+        "macao_real_odds": [
+          2.24,
+          3.4,
+          2.7
+        ],
+        "jc_pattern": "NDU",
+        "macao_pattern": "DUU"
+      },
+      "upset_odds": 2.66,
+      "home_form": "-",
+      "away_form": "-",
+      "handicap": "-1",
+      "macao_tip": "",
+      "had_cold_warning": false,
+      "warnings": [
+        "竞彩×澳门在平方向方向分歧"
+      ],
+      "record_time": "2026-04-22 07:21"
+    },
+    {
+      "upset_id": "2026.04.21_周二006_20260422071828",
+      "match_id": "周二006",
+      "date_folder": "2026.04.21",
+      "home_team": "牛津联",
+      "away_team": "雷克斯",
+      "league": "英冠",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "0:1",
+      "confidence": 4,
+      "was_excluded": true,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -7.94,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": 9.39,
+        "mcao_home_chg": -11.28,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 12.77,
+        "jc_init_odds": [
+          2.52,
+          3.08,
+          2.45
+        ],
+        "jc_real_odds": [
+          2.32,
+          3.08,
+          2.68
+        ],
+        "macao_init_odds": [
+          2.57,
+          3.23,
+          2.35
+        ],
+        "macao_real_odds": [
+          2.28,
+          3.23,
+          2.65
+        ],
+        "jc_pattern": "DNU",
+        "macao_pattern": "DNU"
+      },
+      "upset_odds": 2.68,
+      "home_form": "-",
+      "away_form": "-",
+      "handicap": "1",
+      "macao_tip": "",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-22 07:18"
+    },
+    {
+      "upset_id": "2026.04.21_周二004_20260422071649",
+      "match_id": "周二004",
+      "date_folder": "2026.04.21",
+      "home_team": "马洛卡",
+      "away_team": "巴伦西亚",
+      "league": "西甲",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "draw",
+      "actual_score": "1:1",
+      "confidence": 4,
+      "was_excluded": false,
+      "exclusions": [
+        "away"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -8.19,
+        "jc_draw_chg": 5.0,
+        "jc_away_chg": 6.18,
+        "mcao_home_chg": 2.94,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": -3.64,
+        "jc_init_odds": [
+          2.32,
+          3.0,
+          2.75
+        ],
+        "jc_real_odds": [
+          2.13,
+          3.15,
+          2.92
+        ],
+        "macao_init_odds": [
+          2.38,
+          3.05,
+          2.75
+        ],
+        "macao_real_odds": [
+          2.45,
+          3.05,
+          2.65
+        ],
+        "jc_pattern": "DUU",
+        "macao_pattern": "UND"
+      },
+      "upset_odds": 3.15,
+      "home_form": "-",
+      "away_form": "-",
+      "handicap": "-1",
+      "macao_tip": "",
+      "had_cold_warning": false,
+      "warnings": [
+        "竞彩×澳门在主方向,客方向方向分歧"
+      ],
+      "record_time": "2026-04-22 07:16"
+    },
+    {
+      "upset_id": "2026.04.21_周二001_20260422071545",
+      "match_id": "周二001",
+      "date_folder": "2026.04.21",
+      "home_team": "全北现代",
+      "away_team": "仁川联",
+      "league": "韩职",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：客胜被系统排除但实际打出",
+      "prediction": "主胜",
+      "predicted_dir": "home",
+      "actual_result": "away",
+      "actual_score": "1:2",
+      "confidence": 5,
+      "was_excluded": true,
+      "exclusions": [
+        "away",
+        "draw"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": -11.48,
+        "jc_draw_chg": 7.94,
+        "jc_away_chg": 22.34,
+        "mcao_home_chg": -15.46,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": 45.65,
+        "jc_init_odds": [
+          1.83,
+          3.15,
+          3.76
+        ],
+        "jc_real_odds": [
+          1.62,
+          3.4,
+          4.6
+        ],
+        "macao_init_odds": [
+          1.94,
+          3.25,
+          3.33
+        ],
+        "macao_real_odds": [
+          1.64,
+          3.25,
+          4.85
+        ],
+        "jc_pattern": "DUU",
+        "macao_pattern": "DNU"
+      },
+      "upset_odds": 4.6,
+      "home_form": "-",
+      "away_form": "-",
+      "handicap": "-1",
+      "macao_tip": "",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-22 07:15"
+    },
+    {
       "upset_id": "2026.04.20_周一005_20260421081157",
       "match_id": "周一005",
       "date_folder": "2026.04.20",
@@ -4416,12 +4657,12 @@
     }
   ],
   "stats": {
-    "total": 74,
+    "total": 78,
     "by_type": {
-      "reverse_cover": 46,
-      "unknown": 25,
+      "reverse_cover": 49,
+      "unknown": 26,
       "silent": 3
     },
-    "last_update": "2026-04-21 08:12"
+    "last_update": "2026-04-22 07:21"
   }
 }
