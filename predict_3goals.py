@@ -178,6 +178,9 @@ def extract_features(data: dict) -> Dict[str, Any]:
     f['1球'] = odds.get(1)
     f['0球'] = odds.get(0)
     f['4球'] = odds.get(4)
+    f['5球'] = odds.get(5)
+    f['6球'] = odds.get(6)
+    f['7球'] = odds.get(7)
 
     g3, g0, g1, g2 = f['3球'], f['0球'], f['1球'], f['2球']
 
@@ -1041,25 +1044,43 @@ def recommend_exclude_double_pick(features, match_data=None):
         for goal_info in all_goals:
             goal_info['change_pct'] = 0
 
-    # 排除逻辑：赔率>3.5 且 升赔>=5%（0球不排除）
+    # 排除逻辑：赔率>3.5 且 升赔>=5% → 但命中率>=20%时不排除（高概率选项）
     excluded = []
     remaining = []
     for goal_info in all_goals:
         g = goal_info['goal']
         odds = goal_info['odds']
         change_pct = goal_info.get('change_pct', 0)
-
-        # 排除条件：0球不排除；其他球 赔率>3.5 且 升赔>=5%
+        
+        # 检查历史命中率
+        hit = get_odds_hit_rate(g, odds)
+        hit_rate = hit[0] if hit else None
+        
+        # 排除条件：0球不排除；其他球 赔率>3.5 且 升赔>=5% 且 命中率<20%
         if g == 0:
             # 0球不排除
             remaining.append(goal_info)
         elif odds > 3.5 and change_pct >= 5:
-            excluded.append(goal_info)
+            # 高赔率+升赔，检查命中率
+            if hit_rate is not None and hit_rate >= 20:
+                # 命中率>=20%，不排除（高概率选项）
+                remaining.append(goal_info)
+            else:
+                excluded.append(goal_info)
         else:
             remaining.append(goal_info)
 
     result['excluded'] = [g['name'] for g in excluded]
     result['remaining'] = [g['name'] for g in remaining]
+    
+    # 找出高赔率但高命中率保留的选项（显示用）
+    high_odds_kept = []
+    for g in remaining:
+        odds = g['odds']
+        hit = get_odds_hit_rate(g['goal'], odds)
+        hit_rate = hit[0] if hit else None
+        if odds > 3.5 and hit_rate is not None and hit_rate >= 20:
+            high_odds_kept.append(g)
 
     if len(remaining) == 0:
         result['reason'] = '所有选项都被排除'
@@ -1109,13 +1130,19 @@ def recommend_exclude_double_pick(features, match_data=None):
 
     # 构建推荐
     excluded_names = [g['name'] for g in excluded]
+    # 高赔率但命中率>=20%保留的选项（显示用）
+    high_kept_names = [g['name'] for g in remaining 
+                       if g['odds'] > 3.5 and get_odds_hit_rate(g['goal'], g['odds']) 
+                       and get_odds_hit_rate(g['goal'], g['odds'])[0] >= 20]
+    
     if top1_rate - top2_rate > 15:
         # 第一名比第二名高15%以上，单选
         result['recommendation'] = f"单选{top1['name']}"
         result['second_pick'] = None
         sample_hint = f"(样本{top1_sample}场)" if top1_sample >= 3 else "(无样本)"
         excl_str = '、'.join(excluded_names) if excluded_names else '无'
-        result['reason'] = f"排除{excl_str}后，单选 {top1['name']}={top1['odds']} {sample_hint}(历史{top1_rate}%)"
+        kept_str = f'（{"、".join(high_kept_names)}赔率高但命中率≥20%保留）' if high_kept_names else ''
+        result['reason'] = f"排除{excl_str}{kept_str}，单选 {top1['name']}={top1['odds']} {sample_hint}(历史{top1_rate}%)"
     else:
         # 差距不大，双选
         result['recommendation'] = f"{top1['name']}+{top2['name']}"
@@ -1123,7 +1150,8 @@ def recommend_exclude_double_pick(features, match_data=None):
         hint1 = f"(历史{top1_rate}%)" if top1_sample >= 3 else "(无样本)"
         hint2 = f"(历史{top2_rate}%)" if top2_sample >= 3 else "(无样本)"
         excl_str = '、'.join(excluded_names) if excluded_names else '无'
-        result['reason'] = f"排除{excl_str}，选命中率最高两个：{top1['name']}={top1['odds']}{hint1} + {top2['name']}={top2['odds']}{hint2}"
+        kept_str = f'（{"、".join(high_kept_names)}赔率高但命中率≥20%保留）' if high_kept_names else ''
+        result['reason'] = f"排除{excl_str}{kept_str}，选命中率最高两个：{top1['name']}={top1['odds']}{hint1} + {top2['name']}={top2['odds']}{hint2}"
 
     return result
 
