@@ -471,3 +471,106 @@
 @keyframes intelSpin {
     to { transform: rotate(360deg); }
 }
+
+/* ============================================================
+ * 大3球 vs 小3球 预判样式
+ * ============================================================ */
+
+.big3-small3-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 12px;
+    border: 1px solid;
+}
+
+.big3-small3-box.big3-box {
+    border-color: #f97316;
+    background: linear-gradient(135deg, #1e293b 0%, #1c0a00 100%);
+}
+
+.big3-small3-box.small3-box {
+    border-color: #22c55e;
+    background: linear-gradient(135deg, #1e293b 0%, #0a1c0a 100%);
+}
+
+.big3-small3-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.big3-box .big3-small3-title {
+    color: #f97316;
+}
+
+.small3-box .big3-small3-title {
+    color: #22c55e;
+}
+
+.big3-confidence {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: #94a3b8;
+    font-weight: normal;
+}
+
+.big3-small3-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.big3-prob-bar, .small3-prob-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.prob-label {
+    font-size: 12px;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prob-bar {
+    height: 8px;
+    background: #334155;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.prob-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.big3-fill {
+    background: linear-gradient(90deg, #f97316, #ea580c);
+}
+
+.small3-fill {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.big3-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.factor-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    color: #cbd5e1;
+}

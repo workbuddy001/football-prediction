@@ -1906,3 +1906,592 @@ if __name__ == '__main__':
     print('理由:')
     for r in pred.get('reasoning', []):
         print(f'  * {r}')
+
+
+# ============================================================
+# 最终推荐函数（基于最严谨的方法）
+# ============================================================
+
+def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any], 
+                             g2_pred: Dict[str, Any] = None, g4_pred: Dict[str, Any] = None) -> Dict[str, Any]:
+    """
+    最终推荐函数 - 基于最严谨的方法给出推荐
+
+    推荐优先级（从高到低）：
+    1. 超级3球（黄金3球 + 0球=13）→ 推荐3球，历史75%命中率
+    2. 黄金3球（4定律同时满足）→ 推荐3球，历史40.8%命中率
+    3. 近况3.0-3.5 + 高球多降 + 3球3.5-3.7 → 推荐3球，历史50%命中率
+    4. 三条件排除3球 → 排除3球，历史9.1%命中率
+    5. 黄金2球（0球=10 + 2球3.1-3.3）→ 推荐2球，历史43%命中率
+    6. 黄金4球（0球=30 + 4球4.1-4.5）→ 推荐4球，历史67%命中率
+    7. 无高置信度信号 → 建议不投注
+
+    返回：
+    {
+        'recommendation': '3球' / '2球' / '4球' / '不投注' / '观望',
+        'confidence': 0-100,  # 信心指数
+        'hit_rate': 历史命中率%,
+        'sample_size': 样本数,
+        'reason': 理由,
+        'signal_type': '超级3球' / '黄金3球' / '近况+高球降' / '排除3球' / '黄金2球' / '黄金4球' / '无信号',
+        'is_bet': True / False,  # 是否建议投注
+    }
+    """
+    result = {
+        'recommendation': '观望',
+        'confidence': 0,
+        'hit_rate': None,
+        'sample_size': None,
+        'reason': None,
+        'signal_type': '无信号',
+        'is_bet': False,
+        'big3_vs_small3': None,  # 大3球vs小3球预判
+    }
+
+    form = features.get('近况')
+    g0 = features.get('0球')
+    g3 = features.get('3球')
+    g2 = features.get('2球')
+    g4 = features.get('4球')
+    combined_avg = form.get('combined_avg') if form else None
+    g3_change = features.get('3球_变化', 0)
+    drop_count = features.get('高球数多个下降', False)
+
+    # 计算初始3球赔率
+    initial_g3 = g3
+    if g3 is not None and g3_change is not None and g3_change != 0:
+        initial_g3 = g3 / (1 + g3_change / 100)
+
+    # 获取大小3球预判（传入完整的g3_pred和g2_pred字典）
+    big3_vs_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred)
+
+    def _make_result(rec_dict):
+        """包装返回结果，添加大小3球预判"""
+        rec_dict['big3_vs_small3'] = big3_vs_small3
+        return rec_dict
+
+    # ── 优先级1: 超级3球（黄金3球 + 0球=13）→ 历史75%命中率 ──
+    if g3_pred.get('super_golden') and g3_pred.get('super_golden_reason'):
+        return _make_result({
+            'recommendation': '3球',
+            'confidence': 85,
+            'hit_rate': 75,
+            'sample_size': 4,
+            'reason': '超级3球信号：' + ' | '.join(g3_pred.get('super_golden_reason', [])),
+            'signal_type': '超级3球',
+            'is_bet': True,
+        })
+
+    # ── 优先级2: 黄金3球（4定律同时满足）→ 历史40.8%命中率 ──
+    if g3_pred.get('golden_3goals') and g3_pred.get('golden_reason'):
+        # 检查近况条件：combined 2.5-3.0 是最佳区间
+        if combined_avg is not None and 2.5 <= combined_avg <= 3.0:
+            return _make_result({
+                'recommendation': '3球',
+                'confidence': 70,
+                'hit_rate': 42.9,
+                'sample_size': 28,
+                'reason': '黄金3球信号：' + ' | '.join(g3_pred.get('golden_reason', [])),
+                'signal_type': '黄金3球',
+                'is_bet': True,
+            })
+        else:
+            return _make_result({
+                'recommendation': '3球',
+                'confidence': 55,
+                'hit_rate': 40.8,
+                'sample_size': 49,
+                'reason': '黄金3球信号：' + ' | '.join(g3_pred.get('golden_reason', [])),
+                'signal_type': '黄金3球',
+                'is_bet': True,
+            })
+
+    # ── 优先级3: 近况3.0-3.5 + 高球多降 + 3球3.5-3.7 → 历史50%命中率 ──
+    if (combined_avg is not None and 3.0 <= combined_avg <= 3.5 and
+        drop_count and g3 is not None and 3.5 <= g3 <= 3.7):
+        return _make_result({
+            'recommendation': '3球',
+            'confidence': 65,
+            'hit_rate': 50,
+            'sample_size': 14,
+            'reason': f'近况{combined_avg}+高球多降+3球{g3}，历史50%命中率',
+            'signal_type': '近况+高球降',
+            'is_bet': True,
+        })
+
+    # ── 优先级4: 近况偏高 + 高球多降 + 3球偏高(3.7~4.0) → 观望 ──
+    if (combined_avg is not None and combined_avg >= 2.5 and
+        drop_count and g3 is not None and 3.7 < g3 <= 4.0):
+        return _make_result({
+            'recommendation': '观望',
+            'confidence': 30,
+            'hit_rate': 14,
+            'sample_size': None,
+            'reason': f'近况{combined_avg}+高球多降+3球{g3}偏高，历史14%命中率',
+            'signal_type': '近况+高球降(观望)',
+            'is_bet': False,
+        })
+
+    # ── 优先级5: 三条件排除3球 → 排除3球，历史9.1%命中率 ──
+    # 条件：近况正常(2.5~3.5) + 0球>13 + 初始3球>3.50
+    if (combined_avg is not None and 2.5 <= combined_avg <= 3.5 and
+        g0 is not None and g0 > 13 and initial_g3 is not None and initial_g3 > 3.50):
+        return _make_result({
+            'recommendation': '排除3球',
+            'confidence': 45,
+            'hit_rate': 9.1,
+            'sample_size': 11,
+            'reason': f'三条件排除3球：近况{combined_avg}+0球{g0}>13+初始3球{initial_g3:.2f}>3.50',
+            'signal_type': '排除3球',
+            'is_bet': False,
+        })
+
+    # ── 优先级6: 近况正常 + 0球<10 + 3球<3.7 → 排除3球，历史9.1% ──
+    if (combined_avg is not None and 2.5 <= combined_avg <= 3.5 and
+        g0 is not None and g0 < 10 and g3 is not None and g3 < 3.7):
+        return _make_result({
+            'recommendation': '排除3球',
+            'confidence': 40,
+            'hit_rate': 9.1,
+            'sample_size': 11,
+            'reason': f'近况正常+0球{g0}<10+3球{g3}<3.7，排除3球',
+            'signal_type': '排除3球',
+            'is_bet': False,
+        })
+
+    # ── 优先级7: 近况偏低(<2.5) + 高球多降 → 关注2球，历史37.9% ──
+    if (combined_avg is not None and combined_avg < 2.5 and drop_count):
+        # 检查黄金2球条件
+        if g2_pred and g2_pred.get('is_golden_2'):
+            return _make_result({
+                'recommendation': '2球',
+                'confidence': 60,
+                'hit_rate': g2_pred.get('hit_rate', 43),
+                'sample_size': g2_pred.get('sample_size', 9),
+                'reason': f'黄金2球：{g2_pred.get("reason", "")}',
+                'signal_type': '黄金2球',
+                'is_bet': True,
+            })
+        else:
+            # 通用近况偏低+高球降规律
+            return _make_result({
+                'recommendation': '2球',
+                'confidence': 50,
+                'hit_rate': 37.9,
+                'sample_size': 29,
+                'reason': f'近况{combined_avg}+高球多降为诱导，历史2球率37.9%最高',
+                'signal_type': '近况+高球降(关注2球)',
+                'is_bet': True,
+            })
+
+    # ── 优先级8: 黄金4球 → 推荐4球，历史67%命中率 ──
+    if g4_pred and g4_pred.get('is_golden_4'):
+        return _make_result({
+            'recommendation': '4球',
+            'confidence': 75,
+            'hit_rate': g4_pred.get('hit_rate', 67),
+            'sample_size': g4_pred.get('sample_size', 3),
+            'reason': f'黄金4球：{g4_pred.get("reason", "")}',
+            'signal_type': '黄金4球',
+            'is_bet': True,
+        })
+
+    # ── 优先级9: 近况偏高 + 高球多降 + 3球3.5~3.7 → 观望3球 ──
+    if (combined_avg is not None and combined_avg >= 2.5 and
+        drop_count and g3 is not None and 3.5 <= g3 <= 3.7):
+        return _make_result({
+            'recommendation': '观望3球',
+            'confidence': 35,
+            'hit_rate': 28,
+            'sample_size': None,
+            'reason': f'近况{combined_avg}+高球多降+3球{g3}，观望',
+            'signal_type': '近况+高球降(观望)',
+            'is_bet': False,
+        })
+
+    # ── 无高置信度信号 → 建议不投注 ──
+    # 检查是否有基本的3球关注信号
+    if g3_pred.get('recommendation') == '关注3球' and g3_pred.get('confidence', 0) >= 50:
+        return _make_result({
+            'recommendation': '观望',
+            'confidence': g3_pred.get('confidence', 40),
+            'hit_rate': None,
+            'sample_size': None,
+            'reason': '有3球关注信号但未达黄金标准，建议观望',
+            'signal_type': '关注3球(观望)',
+            'is_bet': False,
+        })
+
+    # 完全没有信号
+    return _make_result({
+        'recommendation': '不投注',
+        'confidence': 0,
+        'hit_rate': None,
+        'sample_size': None,
+        'reason': '无高置信度信号，建议不投注',
+        'signal_type': '无信号',
+        'is_bet': False,
+    })
+
+
+# ============================================================
+# 大3球 vs 小3球 预判函数（结合排除法 + 赔率）
+# ============================================================
+
+def predict_big3_vs_small3(features: dict, g3_signal: str = None, 
+                            g3_pred: dict = None, g2_pred: dict = None) -> dict:
+    """
+    预判3球是大3球(4+)还是小3球(恰好3)
+
+    【结合排除法信号 + 进球数赔率】
+
+    信号类型:
+    - 关注3球/黄金3球/超级3球 → 在3球场次中进一步区分大小
+    - 排除3球 → 排除3球后的进球分布（大比分偏多）
+    - 关注2球 → 倾向小比分
+    - 排除2球 → 倾向大比分
+    - 无特殊信号 → 使用赔率基础判断
+
+    核心规律（基于314场回测）:
+    | 信号类型       | 条件               | 大3球率 | 小3球率 | 方向   |
+    |----------------|--------------------|---------|---------|--------|
+    | 关注3球        | 0球>=15            | 42%     | 23%     | 大3球  |
+    | 关注3球        | 0球>=20            | 25%     | 38%     | 小3球  |
+    | 关注3球        | 0球<10             | 10%     | 30%     | 小3球  |
+    | 黄金3球        | 0球>=15            | 40%     | 25%     | 大3球  |
+    | 黄金3球        | 0球>=20            | 18%     | 45%     | 小3球  |
+    | 超级3球        | 全局               | 12%     | 75%     | 小3球  |
+    | 排除3球        | 全局               | 35%     | 17%     | 大比分 |
+    | 关注2球        | 全局               | 18%     | 18%     | 2球    |
+
+    返回:
+        {
+            'prediction': '大3球' / '小3球' / '不确定',
+            'confidence': 0-100,
+            'big3_probability': 0-100,
+            'small3_probability': 0-100,
+            'reasons': [理由列表],
+            'key_factors': {关键因素},
+            'signal_type': '关注3球+0>=15' / '黄金3球+0>=15' / ...
+        }
+    """
+    result = {
+        'prediction': '不确定',
+        'confidence': 0,
+        'big3_probability': 50,
+        'small3_probability': 50,
+        'reasons': [],
+        'key_factors': {},
+        'signal_type': None,
+    }
+
+    g0 = features.get('0球')
+    g1 = features.get('1球')
+    g2 = features.get('2球')
+    g3 = features.get('3球')
+    g4 = features.get('4球')
+    form = features.get('近况')
+    combined_avg = form.get('combined_avg') if form else None
+    drop_count = features.get('高球数多个下降', False)
+
+    # 检测排除/关注信号
+    signals_str = ''
+    if g3_pred:
+        signals_str = '|'.join([str(s[0]) for s in g3_pred.get('signals', [])])
+    has_exclude_3 = g3_pred and g3_pred.get('recommendation') == '排除3球'
+    has_focus_3 = g3_pred and g3_pred.get('recommendation') == '关注3球'
+    has_golden_3 = g3_pred and g3_pred.get('golden_3goals', False)
+    has_super_golden = g3_pred and g3_pred.get('super_golden', False)
+    has_exclude_2 = '排除2球' in signals_str
+    has_focus_2 = '关注2球' in signals_str or '⭐关注2球' in signals_str
+    has_focus_4 = g2_pred and g2_pred.get('recommendation') == '关注4球'
+
+    # 初始化概率
+    big3_prob = 50
+    small3_prob = 50
+    reasons = []
+    factors = {}
+    signal_type = None
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支1: 超级3球 → 75%小3球（最强信号）
+    # ═══════════════════════════════════════════════════════════
+    if has_super_golden:
+        signal_type = '超级3球'
+        big3_prob = 12
+        small3_prob = 75
+        reasons.append('超级3球信号（黄金3球+0球=13），3球率75%，倾向小3球')
+        factors['超级3球'] = '75%小3球，12%大3球'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支2: 关注3球 + 0球15-18 → 40-43%大3球
+    # 回测：0=15-16时42-44%大3球，0=17时75%小3球（特殊），0=18时43%大3球
+    # ═══════════════════════════════════════════════════════════
+    elif has_focus_3 and g0 is not None and 15 <= g0 < 20:
+        if g0 == 17:
+            # 0=17特殊：75%小3球
+            signal_type = f'关注3球+0球={g0}(特殊)'
+            big3_prob = 15
+            small3_prob = 75
+            reasons.append(f'关注3球+0球={g0}特殊区间，历史小3球率75%')
+            factors['关注3球+0=17'] = '大3球15%，小3球75%（特殊）'
+        else:
+            # 0=15-16, 18-19：倾向大3球
+            signal_type = f'关注3球+0球={g0}'
+            big3_prob = 43
+            small3_prob = 22
+            reasons.append(f'关注3球+0球{g0}在[15,20)区间，历史大3球率43%最高')
+            factors['关注3球+0>=15'] = f'大3球43%，小3球22%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支3: 黄金3球 + 0球>=15 且 <20 → 40%大3球
+    # ═══════════════════════════════════════════════════════════
+    elif has_golden_3 and g0 is not None and 15 <= g0 < 20:
+        signal_type = f'黄金3球+0球={g0}'
+        big3_prob = 40
+        small3_prob = 25
+        reasons.append(f'黄金3球+0球{g0}在[15,20)区间，历史大3球率40%')
+        factors['黄金3球+0>=15'] = f'大3球40%，小3球25%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支4: 关注3球 + 0球>=20 → 需要细分
+    # 回测发现：0球21时60%小3球，0球>=22时大3球概率上升
+    # 原理：0球21-22是转折点，超过22后倾向大比分
+    # ═══════════════════════════════════════════════════════════
+    elif has_focus_3 and g0 is not None and g0 >= 20:
+        if g0 < 22:
+            # 0球20-21：偏小3球
+            signal_type = f'关注3球+0球={g0}(<22)'
+            big3_prob = 20
+            small3_prob = 50
+            reasons.append(f'关注3球+0球{g0}<22，市场不看好0球，倾向小3球')
+            factors['关注3球+0<22'] = f'大3球20%，小3球50%'
+        else:
+            # 0球>=22：偏大3球
+            signal_type = f'关注3球+0球={g0}(>=22)'
+            big3_prob = 50
+            small3_prob = 15
+            reasons.append(f'关注3球+0球{g0}>=22，大比分场次，倾向大3球')
+            factors['关注3球+0>=22'] = f'大3球50%，小3球15%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支5: 黄金3球 + 0球>=20 → 类似逻辑
+    # ═══════════════════════════════════════════════════════════
+    elif has_golden_3 and g0 is not None and g0 >= 20:
+        if g0 < 22:
+            signal_type = f'黄金3球+0球={g0}(<22)'
+            big3_prob = 18
+            small3_prob = 45
+            reasons.append(f'黄金3球+0球{g0}<22，倾向小3球')
+            factors['黄金3球+0<22'] = f'大3球18%，小3球45%'
+        else:
+            signal_type = f'黄金3球+0球={g0}(>=22)'
+            big3_prob = 50
+            small3_prob = 15
+            reasons.append(f'黄金3球+0球{g0}>=22，大比分场次，倾向大3球')
+            factors['黄金3球+0>=22'] = f'大3球50%，小3球15%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支6: 关注3球 + 0球<10 → 30%小3球 vs 10%大3球
+    # 原理：小比分场次，大3球概率低
+    # ═══════════════════════════════════════════════════════════
+    elif has_focus_3 and g0 is not None and g0 < 10:
+        signal_type = f'关注3球+0球={g0}<10'
+        big3_prob = 10
+        small3_prob = 30
+        reasons.append(f'关注3球+0球{g0}<10，小比分场次，倾向小3球')
+        factors['关注3球+0<10'] = f'大3球10%，小3球30%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支7: 黄金3球 + 0球<10 → 小3球概率更高
+    # ═══════════════════════════════════════════════════════════
+    elif has_golden_3 and g0 is not None and g0 < 10:
+        signal_type = f'黄金3球+0球={g0}<10'
+        # 无具体数据，按基础概率推断
+        big3_prob = 15
+        small3_prob = 40
+        reasons.append(f'黄金3球+0球{g0}<10，小比分场次，倾向小3球')
+        factors['黄金3球+0<10'] = f'大3球15%，小3球40%（推断）'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支8: 排除3球 → 35%大比分(4+)
+    # 原理：3球被排除后，分布均匀，大比分(4+)占35%
+    # ═══════════════════════════════════════════════════════════
+    elif has_exclude_3:
+        signal_type = '排除3球'
+        # 排除3球场次分布：0球10%, 1球16%, 2球21%, 3球17%, 4球17%, 5球12%
+        # 4+球合计：17+12+2+5 = 35%（1+2球=47%，3球=17%）
+        if g0 is not None and g0 >= 15:
+            # 排除3球 + 0球高赔 → 更倾向大比分
+            big3_prob = 40
+            small3_prob = 15
+            reasons.append('排除3球+0球高赔，更倾向大比分(4+)')
+            factors['排除3球+0>=15'] = '大3球40%，小3球15%'
+        elif combined_avg is not None and combined_avg >= 3.0:
+            # 近况高 → 更倾向大比分
+            big3_prob = 45
+            small3_prob = 12
+            reasons.append('排除3球+高近况，极度倾向大比分(4+)')
+            factors['排除3球+高近况'] = '大3球45%，小3球12%'
+        elif combined_avg is not None and combined_avg < 2.5:
+            # 近况低 → 偏小比分
+            big3_prob = 25
+            small3_prob = 30
+            reasons.append('排除3球+低近况，偏小比分')
+            factors['排除3球+低近况'] = '大3球25%，小3球30%'
+        else:
+            # 一般排除3球
+            big3_prob = 35
+            small3_prob = 17
+            reasons.append('排除3球后，大比分(4+)概率35%最高')
+            factors['排除3球'] = '大3球35%，小3球17%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支9: 关注2球 → 倾向小比分
+    # ═══════════════════════════════════════════════════════════
+    elif has_focus_2:
+        signal_type = '关注2球'
+        # 关注2球分布：0球14%, 1球14%, 2球36%, 3球18%, 4+球18%
+        # 近况<2.0时2球率更高，近况>=2.5时2球率0%
+        if combined_avg is not None and combined_avg < 2.0:
+            big3_prob = 10
+            small3_prob = 55
+            reasons.append('关注2球+极低近况(<2.0)，倾向小3球')
+            factors['关注2球+极低近况'] = '大3球10%，小3球55%'
+        elif combined_avg is not None and combined_avg < 2.5:
+            big3_prob = 18
+            small3_prob = 36
+            reasons.append('关注2球+低近况(<2.5)，倾向2球或小3球')
+            factors['关注2球+低近况'] = '大3球18%，小3球36%'
+        else:
+            big3_prob = 18
+            small3_prob = 18
+            reasons.append('关注2球，分布较均匀，2球36%最高')
+            factors['关注2球'] = '大3球18%，小3球18%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支10: 排除2球 → 倾向大比分
+    # 回测显示：排除2球后30.8%大3球，基准35%，差异不够大
+    # 需要结合其他因素判断
+    # ═══════════════════════════════════════════════════════════
+    elif has_exclude_2:
+        signal_type = '排除2球'
+        # 回测数据：排除2球13场，30.8%大3球，15.4%小3球
+        # 需要更明确的条件才倾向大比分
+        if g0 is not None and g0 >= 18:
+            # 0球高赔 → 更倾向大比分
+            big3_prob = 40
+            small3_prob = 15
+            reasons.append('排除2球+0球高赔(>=18)，倾向大比分(4+)')
+            factors['排除2球+0高'] = '大3球40%，小3球15%'
+        elif combined_avg is not None and combined_avg >= 3.0:
+            # 高近况 → 倾向大比分
+            big3_prob = 35
+            small3_prob = 15
+            reasons.append('排除2球+高近况(>=3.0)，倾向大比分(4+)')
+            factors['排除2球+高近况'] = '大3球35%，小3球15%'
+        elif drop_count:
+            # 高球降赔 → 大比分信号
+            big3_prob = 35
+            small3_prob = 18
+            reasons.append('排除2球+高球多降赔，倾向大比分(4+)')
+            factors['排除2球+高球降'] = '大3球35%，小3球18%'
+        else:
+            # 一般排除2球，分布较均匀
+            big3_prob = 30
+            small3_prob = 18
+            reasons.append('排除2球，大比分(4+)概率略高但不确定')
+            factors['排除2球'] = '大3球30%，小3球18%（偏大）'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支11: 关注4球 → 强倾向大3球
+    # ═══════════════════════════════════════════════════════════
+    elif has_focus_4:
+        signal_type = '关注4球'
+        big3_prob = 60
+        small3_prob = 15
+        reasons.append('关注4球信号，倾向大3球(4+)')
+        factors['关注4球'] = '大3球60%，小3球15%'
+
+    # ═══════════════════════════════════════════════════════════
+    # 分支12: 无特殊信号 → 使用赔率基础判断
+    # ═══════════════════════════════════════════════════════════
+    else:
+        signal_type = '基础赔率'
+        # 基础判断逻辑
+        big3_score = 50
+        small3_score = 50
+
+        # 0球赔率
+        if g0 is not None:
+            if g0 < 10:
+                big3_score -= 15
+                small3_score += 15
+                factors['0球<10'] = '小比分场次'
+            elif g0 >= 15:
+                big3_score += 15
+                small3_score -= 15
+                factors['0球>=15'] = '大比分场次'
+
+        # 1球/g0比
+        if g1 is not None and g0 is not None and g0 > 0:
+            ratio = g1 / g0
+            if ratio > 0.5:
+                big3_score += 10
+                small3_score -= 10
+                factors['1球/g0高'] = '1球相对赔率高'
+
+        # 4球赔率
+        if g4 is not None and g0 is not None and g0 > 0:
+            ratio = g4 / g0
+            if ratio < 0.5:
+                big3_score += 12
+                small3_score -= 12
+                factors['4球/g0低'] = '4球相对赔率低'
+
+        # 近况
+        if combined_avg is not None:
+            if combined_avg >= 3.5:
+                big3_score += 15
+                small3_score -= 15
+                factors['高近况'] = '高近况'
+            elif combined_avg <= 2.0:
+                big3_score -= 12
+                small3_score += 12
+                factors['低近况'] = '低近况'
+
+        # 归一化
+        total = big3_score + small3_score
+        if total > 0:
+            big3_prob = round(big3_score / total * 100)
+            small3_prob = 100 - big3_prob
+
+        if factors:
+            reasons.append('基于赔率和近况的判断')
+        else:
+            reasons.append('无足够信号，判断不确定')
+
+    # ═══════════════════════════════════════════════════════════
+    # 最终判断（降低阈值从15到10，让更多场次给出明确判断）
+    # ═══════════════════════════════════════════════════════════
+    diff = abs(big3_prob - small3_prob)
+    if diff >= 10:  # 从15降低到10
+        if big3_prob > small3_prob:
+            prediction = '大3球'
+            confidence = min(75, 50 + diff)
+        else:
+            prediction = '小3球'
+            confidence = min(75, 50 + diff)
+    else:
+        prediction = '不确定'
+        confidence = 35
+
+    result['prediction'] = prediction
+    result['confidence'] = confidence
+    result['big3_probability'] = big3_prob
+    result['small3_probability'] = small3_prob
+    result['reasons'] = reasons
+    result['key_factors'] = factors
+    result['signal_type'] = signal_type
+
+    return result

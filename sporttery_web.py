@@ -9,7 +9,7 @@ import os
 import json
 import glob
 from sporttery_api import SportteryAPI
-from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, calc_recent_form, _extract_recent_matches, recommend_double_pick, recommend_exclude_double_pick
+from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, predict_big3_vs_small3, calc_recent_form, _extract_recent_matches, get_final_recommendation
 from _3goals_stats import StatsEngine
 
 app = Flask(__name__)
@@ -580,27 +580,50 @@ HTML_TEMPLATE = '''
         /* 3球预测 */
         .g3-prediction-box { background: linear-gradient(135deg, #1a1a3e 0%, #16213e 100%); border-radius: 10px; padding: 15px; margin: 10px 0; border: 1px solid #0f3460; }
         .g3-prediction-box.golden-box { background: linear-gradient(135deg, #2d1f00 0%, #1a1200 100%); border: 1px solid #b8860b; box-shadow: 0 0 12px rgba(255,215,0,0.15); }
-        
-        /* 双选推荐样式 */
-        .double-pick-box { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); border: 1px solid #2ecc71; border-radius: 8px; padding: 12px; margin: 8px 0; }
-        .double-pick-title { font-size: 14px; color: #2ecc71; margin-bottom: 8px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
-        .double-pick-content { padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px; }
-        .double-pick-main { font-size: 16px; color: #fff; margin-bottom: 6px; }
-        .double-pick-main.single { color: #f39c12; }
-        .double-pick-main strong { color: #2ecc71; font-size: 18px; }
-        .double-pick-info { font-size: 12px; color: #aaa; margin-bottom: 4px; }
-        .double-pick-stats { font-size: 11px; color: #888; }
-        .double-pick-stats .hit-rate { color: #2ecc71; font-weight: bold; }
-        
-        /* 排除法双选样式 */
-        .exclude-pick-box { background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%); border: 1px solid #a78bfa; border-radius: 8px; padding: 12px; margin: 8px 0; }
-        .exclude-pick-title { font-size: 14px; color: #a78bfa; margin-bottom: 8px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
-        .exclude-pick-content { padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px; }
-        .exclude-pick-main { font-size: 16px; color: #fff; margin-bottom: 6px; }
-        .exclude-pick-main strong { color: #a78bfa; font-size: 18px; }
-        .exclude-pick-excluded { font-size: 11px; color: #ef4444; margin-bottom: 4px; }
-        .exclude-pick-reason { font-size: 12px; color: #aaa; margin-bottom: 4px; }
-        .exclude-pick-stats { font-size: 11px; color: #888; }
+
+        /* 最终推荐样式 - 基于最严谨的方法 */
+        .final-rec-box { background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%); border-radius: 10px; padding: 15px; margin: 10px 0; }
+        .final-rec-bet { border: 2px solid #22c55e; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
+        .final-rec-no-bet { border: 2px solid #ef4444; box-shadow: 0 0 15px rgba(239,68,68,0.2); }
+        .final-rec-watch { border: 2px solid #f59e0b; box-shadow: 0 0 15px rgba(245,158,11,0.2); }
+        .final-rec-title { font-size: 15px; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .final-rec-bet .final-rec-title { color: #22c55e; }
+        .final-rec-no-bet .final-rec-title { color: #ef4444; }
+        .final-rec-watch .final-rec-title { color: #f59e0b; }
+        .signal-type-tag { font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px; color: #fff; }
+        .final-rec-content { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px; }
+        .final-rec-main { font-size: 20px; margin-bottom: 8px; }
+        .final-rec-main strong { font-size: 24px; }
+        .final-rec-bet .final-rec-main { color: #4ade80; }
+        .final-rec-bet .final-rec-main strong { color: #22c55e; }
+        .final-rec-no-bet .final-rec-main { color: #f87171; }
+        .final-rec-no-bet .final-rec-main strong { color: #ef4444; }
+        .final-rec-watch .final-rec-main { color: #fbbf24; }
+        .final-rec-watch .final-rec-main strong { color: #f59e0b; }
+        .final-rec-reason { font-size: 12px; color: #94a3b8; margin-bottom: 8px; line-height: 1.5; }
+        .final-rec-stats { font-size: 13px; margin-bottom: 6px; }
+        .final-rec-confidence { font-size: 12px; color: #64748b; }
+        .hit-rate-high { color: #22c55e; font-weight: bold; }
+        .hit-rate-mid { color: #f59e0b; font-weight: bold; }
+        .hit-rate-low { color: #ef4444; font-weight: bold; }
+
+        /* 大3球 vs 小3球 预判 */
+        .big3-small3-box { background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%); border-radius: 10px; padding: 12px; margin: 10px 0; }
+        .big3-box { border: 1px solid #22c55e; }
+        .small3-box { border: 1px solid #f59e0b; }
+        .big3-small3-title { font-size: 14px; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .big3-box .big3-small3-title { color: #22c55e; }
+        .small3-box .big3-small3-title { color: #f59e0b; }
+        .big3-confidence { font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px; color: #fff; }
+        .big3-small3-content { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px; }
+        .big3-prob-bar, .small3-prob-bar { margin-bottom: 8px; }
+        .prob-label { font-size: 12px; color: #94a3b8; margin-bottom: 4px; }
+        .prob-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+        .prob-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .big3-fill { background: linear-gradient(90deg, #22c55e, #4ade80); }
+        .small3-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .big3-factors { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .factor-tag { font-size: 10px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px; color: #94a3b8; }
 
         /* 黄金2球/4球样式 */
         .golden-2-box { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); border: 1px solid #22c55e; border-radius: 8px; padding: 10px; margin: 6px 0; }
@@ -973,55 +996,59 @@ HTML_TEMPLATE = '''
                     </div>
                     ` : ''}
 
-                    <!-- 双选推荐 -->
-                    ${m.g3_prediction && m.g3_prediction.double_pick && m.g3_prediction.double_pick.recommendation ? `
-                    <div class="double-pick-box">
-                        <div class="double-pick-title">
-                            🎯 双选推荐
-                            ${m.g3_prediction.double_pick.confidence ? `<span class="confidence-badge confidence-${m.g3_prediction.double_pick.confidence >= 60 ? 'high' : m.g3_prediction.double_pick.confidence >= 45 ? 'mid' : 'low'}">${m.g3_prediction.double_pick.confidence}%</span>` : ''}
+                    <!-- 最终推荐 -->
+                    ${m.g3_prediction && m.g3_prediction.final_rec ? `
+                    <div class="final-rec-box ${m.g3_prediction.final_rec.is_bet ? 'final-rec-bet' : m.g3_prediction.final_rec.recommendation === '不投注' ? 'final-rec-no-bet' : 'final-rec-watch'}">
+                        <div class="final-rec-title">
+                            ${m.g3_prediction.final_rec.recommendation === '不投注' ? '❌ 建议不投注' :
+                              m.g3_prediction.final_rec.is_bet ? '✅ 建议投注' : '👁️ 观望'}
+                            ${m.g3_prediction.final_rec.signal_type ? `<span class="signal-type-tag">${m.g3_prediction.final_rec.signal_type}</span>` : ''}
                         </div>
-                        <div class="double-pick-content">
-                            <div class="double-pick-main ${m.g3_prediction.double_pick.recommendation === '单选3球' ? 'single' : 'double'}">
-                                ${m.g3_prediction.double_pick.recommendation === '单选3球' ? '单选 <strong>3球</strong>' : '双选 <strong>' + m.g3_prediction.double_pick.recommendation.replace('球', '球 或 ') + '</strong>'}
+                        <div class="final-rec-content">
+                            <div class="final-rec-main ${m.g3_prediction.final_rec.is_bet ? 'bet' : 'no-bet'}">
+                                <strong>${m.g3_prediction.final_rec.recommendation}</strong>
                             </div>
-                            <div class="double-pick-info">
-                                ${m.g3_prediction.double_pick.reason || m.g3_prediction.double_pick.signal || ''}
+                            <div class="final-rec-reason">
+                                ${m.g3_prediction.final_rec.reason || ''}
                             </div>
-                            ${m.g3_prediction.double_pick.hit_rate !== null ? `
-                            <div class="double-pick-stats">
-                                历史命中率: <span class="hit-rate">${m.g3_prediction.double_pick.hit_rate}%</span>
-                                ${m.g3_prediction.double_pick.sample_size ? `(样本${m.g3_prediction.double_pick.sample_size}场)` : ''}
+                            ${m.g3_prediction.final_rec.hit_rate !== null ? `
+                            <div class="final-rec-stats">
+                                历史命中率: <span class="${m.g3_prediction.final_rec.hit_rate >= 50 ? 'hit-rate-high' : m.g3_prediction.final_rec.hit_rate >= 35 ? 'hit-rate-mid' : 'hit-rate-low'}">${m.g3_prediction.final_rec.hit_rate}%</span>
+                                ${m.g3_prediction.final_rec.sample_size ? `(样本${m.g3_prediction.final_rec.sample_size}场)` : '(基于历史统计)'}
+                            </div>
+                            ` : ''}
+                            ${m.g3_prediction.final_rec.confidence ? `
+                            <div class="final-rec-confidence">
+                                信心指数: ${m.g3_prediction.final_rec.confidence}%
                             </div>
                             ` : ''}
                         </div>
                     </div>
                     ` : ''}
 
-                    <!-- 排除法双选 -->
-                    ${m.g3_prediction && m.g3_prediction.exclude_pick && m.g3_prediction.exclude_pick.recommendation ? `
-                    <div class="exclude-pick-box">
-                        <div class="exclude-pick-title">
-                            🚫 排除法双选
-                            ${m.g3_prediction.exclude_pick.confidence ? `<span class="confidence-badge confidence-${m.g3_prediction.exclude_pick.confidence >= 60 ? 'high' : m.g3_prediction.exclude_pick.confidence >= 45 ? 'mid' : 'low'}">${m.g3_prediction.exclude_pick.confidence}%</span>` : ''}
+                    <!-- 大3球 vs 小3球 预判 -->
+                    ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.prediction !== '不确定' ? `
+                    <div class="big3-small3-box ${m.g3_prediction.final_rec.big3_vs_small3.prediction === '大3球' ? 'big3-box' : 'small3-box'}">
+                        <div class="big3-small3-title">
+                            ${m.g3_prediction.final_rec.big3_vs_small3.prediction === '大3球' ? '📈 大3球' : '📉 小3球'}预判
+                            <span class="big3-confidence">置信度 ${m.g3_prediction.final_rec.big3_vs_small3.confidence}%</span>
                         </div>
-                        <div class="exclude-pick-content">
-                            <div class="exclude-pick-main">
-                                ${m.g3_prediction.exclude_pick.recommendation.includes('单选') 
-                                    ? '单选 <strong>' + m.g3_prediction.exclude_pick.recommendation.replace('单选', '') + '</strong>' 
-                                    : '双选 <strong>' + m.g3_prediction.exclude_pick.recommendation.replace('球', '球 或 ') + '</strong>'}
+                        <div class="big3-small3-content">
+                            <div class="big3-prob-bar">
+                                <div class="prob-label">大3球(4+): ${m.g3_prediction.final_rec.big3_vs_small3.big3_probability}%</div>
+                                <div class="prob-bar">
+                                    <div class="prob-fill big3-fill" style="width: ${m.g3_prediction.final_rec.big3_vs_small3.big3_probability}%"></div>
+                                </div>
                             </div>
-                            ${m.g3_prediction.exclude_pick.excluded && m.g3_prediction.exclude_pick.excluded.length > 0 ? `
-                            <div class="exclude-pick-excluded">
-                                已排除: <span style="color:#ef4444">${m.g3_prediction.exclude_pick.excluded.join(', ')}</span>
+                            <div class="small3-prob-bar">
+                                <div class="prob-label">小3球(恰好3): ${m.g3_prediction.final_rec.big3_vs_small3.small3_probability}%</div>
+                                <div class="prob-bar">
+                                    <div class="prob-fill small3-fill" style="width: ${m.g3_prediction.final_rec.big3_vs_small3.small3_probability}%"></div>
+                                </div>
                             </div>
-                            ` : ''}
-                            <div class="exclude-pick-reason">
-                                ${m.g3_prediction.exclude_pick.reason || ''}
-                            </div>
-                            ${m.g3_prediction.exclude_pick.hit_rate !== null ? `
-                            <div class="exclude-pick-stats">
-                                <span style="color:#a78bfa">单选命中率: ${m.g3_prediction.exclude_pick.hit_rate}%</span>
-                                ${m.g3_prediction.exclude_pick.double_hit_rate !== null ? ` | <span style="color:#2ecc71">双选命中率: ${m.g3_prediction.exclude_pick.double_hit_rate}%</span>` : ''}
+                            ${m.g3_prediction.final_rec.big3_vs_small3.reasons && m.g3_prediction.final_rec.big3_vs_small3.reasons.length > 0 ? `
+                            <div class="big3-factors">
+                                ${m.g3_prediction.final_rec.big3_vs_small3.reasons.map(r => `<span class="factor-tag">${r}</span>`).join('')}
                             </div>
                             ` : ''}
                         </div>
@@ -1825,6 +1852,10 @@ def _build_match_card(data, api):
                 'exclude_pick': g3_pred.get('exclude_pick'),
                 'golden_2goals': g3_pred.get('golden_2goals'),
                 'golden_4goals': g3_pred.get('golden_4goals'),
+                # 最终推荐（基于最严谨的方法）
+                'final_rec': g3_pred.get('final_rec'),
+                # 大3球 vs 小3球预判
+                'big3_vs_small3': g3_pred.get('big3_vs_small3'),
             },
             # 让球：只保留数值
             'hhad': {
@@ -1865,10 +1896,6 @@ def get_matches():
                     try:
                         features = extract_features(data)
                         g3_pred = predict_3goals(features)
-                        # 双选推荐
-                        double_pick = recommend_double_pick(features)
-                        # 排除法双选
-                        exclude_pick = recommend_exclude_double_pick(features, data)
                         # 历史相似比赛3球打出率
                         se = get_stats_engine()
                         g3_hist = se.query_similar(
@@ -1886,6 +1913,10 @@ def get_matches():
                         g2_pred = predict_2goals(features)
                         # 黄金4球预测
                         g4_pred = predict_4goals(features)
+                        # 最终推荐（基于最严谨的方法）
+                        final_rec = get_final_recommendation(features, g3_pred, g2_pred, g4_pred)
+                        # 大3球 vs 小3球预判（结合排除法）
+                        big3_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred)
                         data['g3_prediction'] = {
                             'recommendation': g3_pred.get('recommendation', '观望'),
                             'score': g3_pred.get('signal_score', 0),
@@ -1893,6 +1924,8 @@ def get_matches():
                             'warnings': g3_pred.get('warnings', []),
                             'golden_3goals': g3_pred.get('golden_3goals', False),
                             'golden_reason': g3_pred.get('golden_reason', []),
+                            'super_golden': g3_pred.get('super_golden', False),
+                            'super_golden_reason': g3_pred.get('super_golden_reason', []),
                             'features': {
                                 '3球': features.get('3球'),
                                 '0球': features.get('0球'),
@@ -1906,13 +1939,13 @@ def get_matches():
                             },
                             # 历史相似比赛统计
                             'hist_stats': g3_hist,
-                            # 双选推荐
-                            'double_pick': double_pick,
-                            # 排除法双选
-                            'exclude_pick': exclude_pick,
                             # 黄金2球/4球
                             'golden_2goals': g2_pred,
                             'golden_4goals': g4_pred,
+                            # 最终推荐（基于最严谨的方法）
+                            'final_rec': final_rec,
+                            # 大3球 vs 小3球预判
+                            'big3_vs_small3': big3_small3,
                         }
                     except Exception as ex:
                         pass
@@ -1934,23 +1967,25 @@ def fetch_match(match_id):
             # ── 3球预测 ──
             features = extract_features(result)
             g3_pred = predict_3goals(features)
-            # 双选推荐
-            double_pick = recommend_double_pick(features)
-            # 排除法双选
-            exclude_pick = recommend_exclude_double_pick(features, result)
             # 黄金2球预测
             g2_pred = predict_2goals(features)
             # 黄金4球预测
             g4_pred = predict_4goals(features)
+            # 最终推荐（基于最严谨的方法）
+            final_rec = get_final_recommendation(features, g3_pred, g2_pred, g4_pred)
+            # 大3球 vs 小3球预判（结合排除法）
+            big3_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred)
             result['g3_prediction'] = {
-                                'recommendation': g3_pred.get('recommendation', '观望'),
-                                'score': g3_pred.get('signal_score', 0),
-                                'signals': g3_pred.get('signals', []),
-                                'warnings': g3_pred.get('warnings', []),
-                                'golden_3goals': g3_pred.get('golden_3goals', False),
-                                'golden_reason': g3_pred.get('golden_reason', []),
-                                'features': {
-                                    '3球': features.get('3球'),
+                'recommendation': g3_pred.get('recommendation', '观望'),
+                'score': g3_pred.get('signal_score', 0),
+                'signals': g3_pred.get('signals', []),
+                'warnings': g3_pred.get('warnings', []),
+                'golden_3goals': g3_pred.get('golden_3goals', False),
+                'golden_reason': g3_pred.get('golden_reason', []),
+                'super_golden': g3_pred.get('super_golden', False),
+                'super_golden_reason': g3_pred.get('super_golden_reason', []),
+                'features': {
+                    '3球': features.get('3球'),
                     '0球': features.get('0球'),
                     '1球': features.get('1球'),
                     '2球': features.get('2球'),
@@ -1968,13 +2003,13 @@ def fetch_match(match_id):
                     league_type=features.get('赛事类型', '联赛正赛'),
                     min_records=2,
                 ) if features.get('3球') else None,
-                # 双选推荐
-                'double_pick': double_pick,
-                # 排除法双选
-                'exclude_pick': exclude_pick,
                 # 黄金2球/4球
                 'golden_2goals': g2_pred,
                 'golden_4goals': g4_pred,
+                # 最终推荐（基于最严谨的方法）
+                'final_rec': final_rec,
+                # 大3球 vs 小3球预判
+                'big3_vs_small3': big3_small3,
             }
             return jsonify({'success': True, 'data': result})
         else:
