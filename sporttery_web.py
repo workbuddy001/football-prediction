@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-竞彩比分预测系统 - 完整版
+竞彩比分预测系统 - 完整版 v2.4.3 (2026-04-23)
 """
+VERSION = "2.4.3"
 from flask import Flask, jsonify, render_template_string, request
 from markupsafe import Markup
 import os
@@ -428,7 +429,7 @@ HTML_TEMPLATE = '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>竞彩比分预测系统 v2.4.26</title>
+    <title>竞彩比分预测系统 v2.4.27</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -1872,7 +1873,7 @@ def _build_match_card(data, api):
             'total_goals': data.get('total_goals', {}),
             'g3_prediction': {
                 'recommendation': g3_pred.get('recommendation', '观望'),
-                'score': g3_pred.get('signal_score', 0),
+                'score': g3_pred.get('score', 0),
                 'signals': g3_pred.get('signals', []),
                 'warnings': g3_pred.get('warnings', []),
                 'golden_3goals': g3_pred.get('golden_3goals', False),

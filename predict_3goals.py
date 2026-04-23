@@ -1720,6 +1720,15 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
             big3_prob = 46
             reasons.append('+近况>=3.5：历史46.2%大3球')
     
+    elif g0 is not None and g0 < 10:
+        # 【新发现】0球<10 + 高球(5/6/7)下降 → 19.2%大3球（比对照组6.7%高2.9倍）
+        signal_type = '0球低赔+高球下降'
+        big3_prob = 19
+        small3_prob = 23
+        reasons.append('⭐0球<10 + 高球下降信号')
+        reasons.append('历史19.2%大3球(比对照组6.7%高2.9倍)')
+        reasons.append('庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号')
+    
     elif g0 is not None and g0 <= 12:
         # 【反向信号】0球<=12 → 18.8%大3球（庄家造热0球）
         signal_type = '0球<=12反向'
@@ -1843,6 +1852,7 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
     elif big_ball_dropping:
         # 大球降组规则
         g3_in_range = g3 is not None and 3.2 <= g3 <= 3.4
+        g4_low = g4 is not None and g4 < 4.5  # 修复：在大球降分支也定义g4_low
         high_form = combined_avg is not None and combined_avg >= 3.5
         
         if g3_in_range and high_form:
