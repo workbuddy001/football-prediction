@@ -1689,9 +1689,28 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
     # ═══════════════════════════════════════════════════════════
     big_ball_rule_active = False
     big_ball_rule_boost = 0
+    small_ball_boost = 0  # 额外的小3球加成
     
     drop_count = features.get('高球数多个下降', False)
     high_changes = features.get('高球数变化', {})
+    
+    # 0球特殊值加成（2026-04-23增强）
+    # 0球=17 → 75%小3球（极端小比分信号）
+    # 0球=19 → 100%大3球（极端大比分信号）
+    # 0球=20-21 → 倾向小3球
+    g0_special = None
+    if g0 == 17:
+        g0_special = '小3球'
+        small_ball_boost = 30
+    elif g0 == 19:
+        g0_special = '大3球'
+        big_ball_rule_boost = 40
+        big_ball_rule_active = True
+        reasons.append('⭐0球=19极端大比分信号(+40%)')
+        reasons.append('历史100%大3球(4+球)')
+    elif g0 is not None and 20 <= g0 <= 21:
+        g0_special = '小3球'
+        small_ball_boost = 15
     
     if big_ball_rising:
         # 大球涨组规则
@@ -1703,6 +1722,12 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
             big_ball_rule_boost = 24
             reasons.append('🎯大球涨+3球3.2-3.4+近况<3.5')
             reasons.append('历史64.3%大3球(+24%)')
+            # 0球=17时优先小3球
+            if g0 == 17:
+                reasons.append('⚠️但0球=17，优先小3球(75%)')
+                big_ball_rule_active = False
+                big_ball_rule_boost = 0
+                small_ball_boost = 35
         elif g4_low and combined_avg is not None and combined_avg >= 3.5:
             big_ball_rule_active = True
             big_ball_rule_boost = 22
@@ -1716,11 +1741,23 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
                 big_ball_rule_boost = 12
                 reasons.append('🎯大球涨+4球<4.5+2-3差>=0.5')
                 reasons.append('历史52%大3球(+12%)')
+                # 0球=17时优先小3球
+                if g0 == 17:
+                    reasons.append('⚠️但0球=17，优先小3球(75%)')
+                    big_ball_rule_active = False
+                    big_ball_rule_boost = 0
+                    small_ball_boost = 35
             elif g0 is not None and g0 >= 13:
                 big_ball_rule_active = True
                 big_ball_rule_boost = 10
                 reasons.append('🎯大球涨+4球<4.5+0球>=13')
                 reasons.append('历史50%大3球(+10%)')
+                # 0球=17时优先小3球
+                if g0 == 17:
+                    reasons.append('⚠️但0球=17，优先小3球(75%)')
+                    big_ball_rule_active = False
+                    big_ball_rule_boost = 0
+                    small_ball_boost = 35
     
     elif big_ball_dropping:
         # 大球降组规则
@@ -1747,8 +1784,27 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
     # ═══════════════════════════════════════════════════════════
     diff = abs(big3_prob - small3_prob)
     
-    # 如果有大球规则加成且原本就有明确判断，应用加成
-    if big_ball_rule_active and big_ball_rule_boost > 0 and diff >= 10 and big3_prob > small3_prob:
+    # 小3球加成处理（0球特殊值）
+    if small_ball_boost > 0:
+        # 0球=17或20-21时，倾向小3球
+        if g0 == 17:
+            prediction = '小3球'
+            confidence = min(80, 50 + diff + small_ball_boost)
+            reasons.append('⭐基于0球=17特殊区间推荐小3球')
+        elif g0 is not None and 20 <= g0 <= 21:
+            # 中间地带，近况偏低时更倾向小3球
+            if combined_avg is not None and combined_avg < 2.5:
+                prediction = '小3球'
+                confidence = min(70, 50 + diff + small_ball_boost)
+                reasons.append(f'⭐0球={g0}+近况{combined_avg}推荐小3球')
+            else:
+                prediction = '不确定'
+                confidence = 40
+        else:
+            prediction = '不确定'
+            confidence = 40
+    # 大3球加成处理
+    elif big_ball_rule_active and big_ball_rule_boost > 0 and diff >= 10 and big3_prob > small3_prob:
         prediction = '大3球'
         confidence = min(85, 50 + diff + big_ball_rule_boost)
     elif diff >= 10:
@@ -1769,7 +1825,8 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
         'small3_probability': small3_prob,
         'reasons': reasons,
         'factors': factors,
-        'signal_type': signal_type
+        'signal_type': signal_type,
+        'g0_special': g0_special  # 0球特殊值标记
     }
 
 
