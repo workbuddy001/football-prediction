@@ -428,7 +428,10 @@ HTML_TEMPLATE = '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>竞彩比分预测系统</title>
+    <title>竞彩比分预测系统 v2.4.23</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #fff; min-height: 100vh; padding: 20px; }
@@ -606,6 +609,31 @@ HTML_TEMPLATE = '''
         .hit-rate-high { color: #22c55e; font-weight: bold; }
         .hit-rate-mid { color: #f59e0b; font-weight: bold; }
         .hit-rate-low { color: #ef4444; font-weight: bold; }
+
+        /* 大球规则强信号提示 */
+        .big-ball-rule-alert {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            animation: pulse-red 2s ease-in-out infinite;
+            border: 2px solid #fca5a5;
+        }
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            50% { box-shadow: 0 0 20px 5px rgba(220, 38, 38, 0.6); }
+        }
+        .big-ball-rule-alert .alert-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .big-ball-rule-alert .alert-detail {
+            font-size: 12px;
+            color: #fecaca;
+            line-height: 1.5;
+        }
 
         /* 大3球 vs 小3球 预判 */
         .big3-small3-box { background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%); border-radius: 10px; padding: 12px; margin: 10px 0; }
@@ -1022,6 +1050,16 @@ HTML_TEMPLATE = '''
                                 信心指数: ${m.g3_prediction.final_rec.confidence}%
                             </div>
                             ` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <!-- 大球规则强信号提示（2026-04-23新增） -->
+                    ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.prediction && m.g3_prediction.final_rec.big3_vs_small3.prediction !== '不确定' && m.g3_prediction.final_rec.big3_vs_small3.reasons && m.g3_prediction.final_rec.big3_vs_small3.reasons.some(r => r.includes('🎯')) ? `
+                    <div class="big-ball-rule-alert">
+                        <div class="alert-title">🎯 大球规则强信号！历史命中率大幅提升</div>
+                        <div class="alert-detail">
+                            ${m.g3_prediction.final_rec.big3_vs_small3.reasons.filter(r => r.includes('🎯')).map(r => r).join('<br>')}
                         </div>
                     </div>
                     ` : ''}
@@ -1913,10 +1951,18 @@ def get_matches():
                         g2_pred = predict_2goals(features)
                         # 黄金4球预测
                         g4_pred = predict_4goals(features)
+                        # 大球涨降判断（综合4/5/6/7球整体趋势）
+                        high_changes = features.get('高球数变化', {})
+                        rising_count = sum(1 for k, v in high_changes.items() if v is not None and v > 0)
+                        dropping_count = sum(1 for k, v in high_changes.items() if v is not None and v < 0)
+                        big_ball_rising = rising_count > dropping_count
+                        big_ball_dropping = dropping_count > rising_count
                         # 最终推荐（基于最严谨的方法）
                         final_rec = get_final_recommendation(features, g3_pred, g2_pred, g4_pred)
-                        # 大3球 vs 小3球预判（结合排除法）
-                        big3_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred)
+                        # 大3球 vs 小3球预判（结合排除法和大球涨降规则）
+                        big3_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred, 
+                                                             big_ball_rising=big_ball_rising, 
+                                                             big_ball_dropping=big_ball_dropping)
                         data['g3_prediction'] = {
                             'recommendation': g3_pred.get('recommendation', '观望'),
                             'score': g3_pred.get('signal_score', 0),
@@ -1971,10 +2017,18 @@ def fetch_match(match_id):
             g2_pred = predict_2goals(features)
             # 黄金4球预测
             g4_pred = predict_4goals(features)
+            # 大球涨降判断（综合4/5/6/7球整体趋势）
+            high_changes = features.get('高球数变化', {})
+            rising_count = sum(1 for k, v in high_changes.items() if v is not None and v > 0)
+            dropping_count = sum(1 for k, v in high_changes.items() if v is not None and v < 0)
+            big_ball_rising = rising_count > dropping_count
+            big_ball_dropping = dropping_count > rising_count
             # 最终推荐（基于最严谨的方法）
             final_rec = get_final_recommendation(features, g3_pred, g2_pred, g4_pred)
-            # 大3球 vs 小3球预判（结合排除法）
-            big3_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred)
+            # 大3球 vs 小3球预判（结合排除法和大球涨降规则）
+            big3_small3 = predict_big3_vs_small3(features, g3_pred=g3_pred, g2_pred=g2_pred,
+                                                 big_ball_rising=big_ball_rising,
+                                                 big_ball_dropping=big_ball_dropping)
             result['g3_prediction'] = {
                 'recommendation': g3_pred.get('recommendation', '观望'),
                 'score': g3_pred.get('signal_score', 0),
