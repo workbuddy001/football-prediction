@@ -172,6 +172,10 @@ def extract_features(data: dict) -> Dict[str, Any]:
     had = parse_had(data)
     scores = parse_score_odds(data)
 
+    # 计算近况数据
+    recent_data = _extract_recent_matches(data)
+    form = calc_recent_form(recent_data)
+
     f = {}
     f['3球'] = odds.get(3)
     f['2球'] = odds.get(2)
@@ -257,6 +261,8 @@ def extract_features(data: dict) -> Dict[str, Any]:
     recent = _extract_recent_matches(data)
     form = calc_recent_form(recent)
     f['近况'] = form
+    if form:
+        f['combined_avg'] = form.get('combined_avg')
 
     return f
 
@@ -1659,6 +1665,81 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
         small3_prob = 22
         reasons.append(f'关注3球 + 0球={g0}')
         reasons.append('历史数据：40-44%大3球，20-22%小3球')
+    
+    # ═══════════════════════════════════════════════════════════
+    # 2026-04-23 新增：0球基础规律（大3球命中率提升）
+    # 基于315场回测的深度分析
+    # ═══════════════════════════════════════════════════════════
+    elif g0 is not None and 13 <= g0 <= 16 and g3 is not None and 3.2 <= g3 <= 3.4:
+        # 【最强组合】0球13-16 + 3球3.2-3.4 → 56.5%大3球 (+27.6%)
+        signal_type = '0球13-16+3球黄金区间'
+        big3_prob = 57
+        small3_prob = 20
+        reasons.append('🎯0球13-16 + 3球3.2-3.4组合')
+        reasons.append('历史56.5%大3球(+27.6% vs基准)')
+        
+        # 结合近况进一步调整
+        if combined_avg is not None and combined_avg < 2.5:
+            # 近况<2.5 → 66.7%大3球
+            big3_prob = 67
+            reasons.append('⭐+近况<2.5加成：历史66.7%大3球')
+        elif combined_avg is not None and combined_avg >= 3.5:
+            # 近况>=3.5 → 46.2%大3球
+            big3_prob = 46
+            reasons.append('+近况>=3.5：历史46.2%大3球')
+    
+    elif g0 == 13 and combined_avg is not None and combined_avg < 2.5:
+        # 【推荐】0球=13 + 近况<2.5 → 66.7%大3球
+        signal_type = '0球13+近况偏低'
+        big3_prob = 67
+        small3_prob = 15
+        reasons.append('⭐0球=13 + 近况<2.5')
+        reasons.append('历史66.7%大3球(+37.8%)')
+    
+    elif g0 is not None and 15 <= g0 <= 16 and combined_avg is not None and combined_avg < 2.5:
+        # 【推荐】0球15-16 + 近况<2.5 → 62.5%大3球
+        signal_type = '0球15-16+近况偏低'
+        big3_prob = 63
+        small3_prob = 15
+        reasons.append('⭐0球15-16 + 近况<2.5')
+        reasons.append('历史62.5%大3球(+33.6%)')
+    
+    elif g0 is not None and 13 <= g0 <= 16:
+        # 【基础规律】0球13-16单独 → 39.1%大3球
+        signal_type = '0球13-16基础'
+        big3_prob = 39
+        small3_prob = 25
+        reasons.append('0球13-16区间')
+        reasons.append('历史39.1%大3球(+10.2% vs基准28.9%)')
+        
+        # 结合近况
+        if combined_avg is not None and combined_avg < 2.5:
+            big3_prob = 53
+            reasons.append('⭐+近况<2.5：历史52.6%大3球')
+        elif combined_avg is not None and combined_avg >= 3.5:
+            big3_prob = 46
+            reasons.append('+近况>=3.5：历史46.2%大3球')
+    
+    elif g0 is not None and g0 <= 12:
+        # 【反向信号】0球<=12 → 18.8%大3球（庄家造热0球）
+        signal_type = '0球<=12反向'
+        big3_prob = 19
+        small3_prob = 30
+        reasons.append('⚠️0球<=12区间（反向信号）')
+        reasons.append('庄家造热0球，实际大3球仅18.8%')
+    
+    elif g3 is not None and 3.2 <= g3 <= 3.4:
+        # 【黄金赔率】3球3.2-3.4 → 40.0%大3球
+        signal_type = '3球黄金赔率'
+        big3_prob = 40
+        small3_prob = 28
+        reasons.append('3球3.2-3.4黄金赔率区间')
+        reasons.append('历史40%大3球(+11.1% vs基准)')
+        
+        # 结合大球升降
+        if big_ball_rising and combined_avg is not None and combined_avg >= 3.5:
+            big3_prob = 75
+            reasons.append('⭐+近况>=3.5+大球降：历史75%大3球！')
     
     # 排除3球（整体）
     elif has_exclude_3:
