@@ -223,6 +223,21 @@ def extract_features(data: dict) -> Dict[str, Any]:
     f['3球_降赔'] = f['3球_变化'] is not None and f['3球_变化'] < -3
     f['3球_升赔'] = f['3球_变化'] is not None and f['3球_变化'] > 5
 
+    # ── 高球数变化（用于近况+高球降规律） ──
+    # 统计3/4/5/6/7球中下降≥5%的数量
+    high_goal_changes = {}
+    for g in [3, 4, 5, 6, 7]:
+        key = f'{g}球'
+        gc = changes.get(key, {})
+        ch = gc.get('change_pct')
+        high_goal_changes[f'{g}球_变化'] = ch
+        high_goal_changes[f'{g}球_降赔'] = ch is not None and ch <= -5
+    f['高球数变化'] = high_goal_changes
+    # 高球数降赔≥5%的数量
+    drop_count = sum(1 for g in [3, 4, 5, 6, 7] if high_goal_changes.get(f'{g}球_降赔', False))
+    f['高球数降赔_count'] = drop_count
+    f['高球数多个下降'] = drop_count >= 2  # 2个及以上
+
     # ── 胜平负 ──
     if had:
         vals = list(had.values())
@@ -497,6 +512,51 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
                 signals.append(('🚫排除2球', '-10', f'黄金2球+初始4球{g4_ini:.1f}≥6.5，近况{combined_avg:.1f}+0球{g0:.0f}+初始2球{g2_ini:.2f}，历史75%准确率'));
                 warnings.append(f'🚫 排除2球！黄金2球+初始4球{g4_ini:.1f}≥6.5，历史75%准确率');
                 reasons.append(f'排除2球：黄金2球+初始4球{g4_ini:.1f}≥6.5，历史75%准确率')
+
+    # ══════════════════════════════════════════════════════════════
+    # Step 9: 近况偏高 + 高球数多个下降 → 关注3球（最强组合：近况3.0~3.5 + 3球3.5~3.7 = 50%命中率）
+    # 核心原理：近况偏高时，高球数降赔是真实信号（和近况偏低时相反）
+    # 样本：近况>=2.5 + 高球2+个下降，共106场，3球率23.6%（基准28%），但特定组合达50%
+    # ══════════════════════════════════════════════════════════════
+    if form is not None:
+        combined_avg = form.get('combined_avg', 0)
+        drop_count = features.get('高球数多个下降', False)
+        g3_val = features.get('3球')
+        g2_val = features.get('2球')
+        g3_ch = features.get('3球_变化', 0)
+        hgc = features.get('高球数变化', {})
+
+        if drop_count and combined_avg >= 2.5:
+            # 整体高近况+高球降信号
+            if 3.0 <= combined_avg <= 3.5 and g3_val is not None and 3.5 <= g3_val <= 3.7:
+                # 最强组合：3球率50%（7/14）
+                signals.append(('⭐关注3球', '+12', f'近况{combined_avg:.1f}+高球降+3球{g3_val}，历史50%命中率'));
+                warnings.append(f'⭐ 关注3球！近况{combined_avg:.1f}+高球多降+3球{g3_val}，历史50%命中率');
+                reasons.append(f'关注3球：近况{combined_avg:.1f}+高球多降+3球{g3_val}，历史50%命中率')
+            elif g3_val is not None and 3.5 <= g3_val <= 3.7:
+                # 次强组合：整体高近况+高球降
+                signals.append(('⭐关注3球', '+8', f'近况{combined_avg:.1f}+高球多降+3球{g3_val}，历史28%'));
+                warnings.append(f'⭐ 关注3球：近况{combined_avg:.1f}+高球多降，3球率历史偏高');
+            elif g3_val is not None and 3.7 < g3_val <= 4.0:
+                # 3球赔率偏高，谨慎
+                signals.append(('⚠️观望3球', '+0', f'近况{combined_avg:.1f}+高球降+3球{g3_val}，历史14%'));
+
+    # ══════════════════════════════════════════════════════════════
+    # Step 9.5: 近况偏低 + 高球数多个下降 → 关注2球（37.9%）+ 0球可考虑
+    # 核心原理：近况偏低时，高球数降赔是诱导信号，实际以小比分收场
+    # ══════════════════════════════════════════════════════════════
+    if form is not None:
+        combined_avg = form.get('combined_avg', 0)
+        drop_count = features.get('高球数多个下降', False)
+        g0 = features.get('0球')
+
+        if drop_count and combined_avg < 2.5:
+            # 近况偏低+高球降 = 小比分信号
+            signals.append(('⭐关注2球', '+8', f'近况{combined_avg:.1f}+高球多降，历史2球37.9%'));
+            warnings.append(f'⭐ 关注2球：近况{combined_avg:.1f}+高球多降为诱导，历史2球率37.9%最高');
+            # 0球赔率>=13时也考虑
+            if g0 is not None and g0 >= 13:
+                signals.append(('⚠️考虑0球', '+3', f'近况{combined_avg:.1f}+0球{g0}≥13，历史0球率14%'));
 
     # 综合评分
     def ps(s):

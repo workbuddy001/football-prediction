@@ -658,6 +658,14 @@ HTML_TEMPLATE = '''
         .g3-signal-item.signal-warning { background: rgba(245,158,11,0.1); border-left: 3px solid #f59e0b; }
         .signal-warning .g3-signal-tag { color: #f59e0b; }
         .signal-warning .g3-signal-score { color: #f59e0b; }
+        /* 高近况+高球降信号 */
+        .g3-signal-item.signal-high-form { background: rgba(139,92,246,0.12); border-left: 3px solid #8b5cf6; }
+        .signal-high-form .g3-signal-tag { color: #c4b5fd; }
+        .signal-high-form .g3-signal-score { color: #a78bfa; }
+        /* 低近况+高球降信号 */
+        .g3-signal-item.signal-low-form { background: rgba(6,182,212,0.12); border-left: 3px solid #06b6d4; }
+        .signal-low-form .g3-signal-tag { color: #67e8f9; }
+        .signal-low-form .g3-signal-score { color: #22d3ee; }
         .g3-signal-tag { font-weight: bold; color: #fff; min-width: 90px; }
         .g3-signal-score { font-weight: bold; min-width: 30px; }
         .signal-plus .g3-signal-score { color: #4ade80; }
@@ -880,6 +888,26 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
                             <div class="g3-exclude-banner-text" style="color:#86efac;">🚫 排除2球 - 近况2.0~2.5+0球13~18</div>
                         </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('关注3球') && s[2].includes('50%')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#8b5cf6;background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(109,40,217,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#c4b5fd;">⭐ 关注3球 - 近况偏高+高球多降，历史50%命中率</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('关注3球') && !s[2].includes('50%') && s[2].includes('历史28%')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#6366f1;background:linear-gradient(135deg,rgba(99,102,241,0.25),rgba(79,70,229,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#a5b4fc;">⭐ 关注3球 - 近况偏高+高球多降，3球率偏高</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('观望3球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#f59e0b;background:linear-gradient(135deg,rgba(245,158,11,0.20),rgba(234,88,12,0.10));">
+                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">⚠️ 观望3球 - 近况偏高+高球降，但3球赔率偏高</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('关注2球') && s[2].includes('37.9%')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#06b6d4;background:linear-gradient(135deg,rgba(6,182,212,0.25),rgba(14,116,144,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#67e8f9;">⭐ 关注2球 - 近况偏低+高球多降为诱导，历史2球37.9%最高</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('考虑0球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#64748b;background:linear-gradient(135deg,rgba(100,116,139,0.20),rgba(71,85,105,0.10));">
+                            <div class="g3-exclude-banner-text" style="color:#cbd5e1;">⚠️ 考虑0球 - 近况偏低+高球多降+0球≥13</div>
+                        </div>` : ''}
                         ${m.g3_prediction.features['3球'] ? `
                         <div class="g3-odds-info">
                             3球赔率: <strong>${m.g3_prediction.features['3球']}</strong>
@@ -899,6 +927,9 @@ HTML_TEMPLATE = '''
                                 if (s[0].includes('超级3球')) cls = 'signal-super';
                                 else if (s[0].includes('黄金3球')) cls = 'signal-golden';
                                 else if (s[0].includes('主强客弱') || s[0].includes('客强主弱') || s[0].includes('均衡偏弱')) cls = 'signal-warning';
+                                else if (s[0].includes('关注3球') && s[2].includes('50%')) cls = 'signal-high-form';
+                                else if (s[0].includes('关注3球')) cls = 'signal-high-form';
+                                else if (s[0].includes('关注2球') || s[0].includes('考虑0球')) cls = 'signal-low-form';
                                 else if (s[1].startsWith('+')) cls = 'signal-plus';
                                 else if (s[1].startsWith('-')) cls = 'signal-minus';
                                 return `<div class="g3-signal-item ${cls}">
