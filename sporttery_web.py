@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-竞彩比分预测系统 - 完整版 v2.4.5 (2026-04-24)
+竞彩比分预测系统 - 完整版 v2.5.0 (2026-04-24)
 """
-VERSION = "2.4.5"
+VERSION = "2.5.0"
 from flask import Flask, jsonify, render_template_string, request
 from markupsafe import Markup
 import os
@@ -601,7 +601,7 @@ HTML_TEMPLATE = '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>竞彩比分预测系统 v2.4.27</title>
+    <title>竞彩比分预测系统 v2.5.0</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -1247,6 +1247,16 @@ HTML_TEMPLATE = '''
                         </div>
                     </div>
                     ` : ''}
+
+                    <!-- 2026-04-24 新规律说明 -->
+                    <div style="background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05)); border: 1px solid #f59e0b; border-radius: 10px; padding: 12px; margin: 10px 0; font-size: 12px; line-height: 1.6;">
+                        <div style="color: #f59e0b; font-weight: bold; margin-bottom: 6px;">📌 2026-04-24 新规律已生效</div>
+                        <div style="color: #d1d5db;">
+                            <div style="margin-bottom: 4px;"><b style="color: #22c55e;">大3球信号：</b>关注3球+0球=14 → 73.3%大3球 | 0球=14+近况2.5-3.0 → 85.7%大3球</div>
+                            <div style="margin-bottom: 4px;"><b style="color: #22c55e;">排除大3球：</b>关注3球+0球10-12+近况2.5-3.0 → 100%无大3球</div>
+                            <div><b style="color: #f59e0b;">小3球信号：</b>0球=16+近况3.0-3.5 → 66.7%小3球（样本小）</div>
+                        </div>
+                    </div>
 
                     <!-- 大球规则强信号提示（2026-04-23新增） -->
                     ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.prediction && m.g3_prediction.final_rec.big3_vs_small3.prediction !== '不确定' && m.g3_prediction.final_rec.big3_vs_small3.reasons && m.g3_prediction.final_rec.big3_vs_small3.reasons.some(r => r.includes('🎯')) ? `

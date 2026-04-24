@@ -1636,6 +1636,32 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
         reasons.append('关注3球 + 0球=19极端区间')
         reasons.append('历史数据：100%大3球(4+球)')
     
+    # ═════════════════════════════════════════════════════════
+    # 新规律1: 关注3球 + 0球=14（无需黄金3球）→ 73.3%大3球
+    # 样本：15场，是最强的大3球信号之一
+    # ═════════════════════════════════════════════════════════
+    elif has_focus_3 and g0 == 14:
+        signal_type = '关注3球+0=14'
+        # 按近况细分
+        if combined_avg is not None and 2.5 <= combined_avg <= 3.0:
+            # 近况2.5-3.0 → 85.7%大3球（7场）
+            big3_prob = 86
+            small3_prob = 14
+            reasons.append('⭐关注3球 + 0球=14 + 近况2.5-3.0')
+            reasons.append('历史数据：85.7%大3球(4+球)，最强信号！')
+        elif combined_avg is not None and 3.5 <= combined_avg <= 4.0:
+            # 近况3.5-4.0 → 100%大3球（3场，样本小）
+            big3_prob = 100
+            small3_prob = 0
+            reasons.append('⭐关注3球 + 0球=14 + 近况3.5-4.0')
+            reasons.append('历史数据：100%大3球(4+球)，样本小⚠️')
+        else:
+            # 其他近况 → 73.3%大3球（15场总样本）
+            big3_prob = 73
+            small3_prob = 13
+            reasons.append('⭐关注3球 + 0球=14（无需黄金3球前置）')
+            reasons.append('历史数据：73.3%大3球(4+球)，样本15场')
+    
     # 关注3球 + 0球>=22
     elif has_focus_3 and g0 is not None and g0 >= 22:
         signal_type = '关注3球+0>=22'
@@ -1658,13 +1684,34 @@ def predict_big3_vs_small3(features: Dict[str, Any], g3_pred: Dict = None,
             reasons.append(f'关注3球 + 0球={g0}')
             reasons.append('历史数据：倾向小3球')
     
+    # ═════════════════════════════════════════════════════════
+    # 新规律2: 关注3球 + 0球10-12 + 近况2.5-3.0 → 100%无大3球
+    # 样本：11场，0%大3球，是最强排除大3球信号！
+    # ═════════════════════════════════════════════════════════
+    elif (has_focus_3 and g0 is not None and 10 <= g0 <= 12 and
+          combined_avg is not None and 2.5 <= combined_avg <= 3.0):
+        signal_type = '关注3球+0球10-12+近况2.5-3.0'
+        big3_prob = 0
+        small3_prob = 64
+        reasons.append('⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0')
+        reasons.append('历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)')
+        reasons.append('最强排除大3球信号！比赛结果只能是小3球或恰好3球')
+    
     # 关注3球 + 0球=15-16
     elif has_focus_3 and g0 is not None and 15 <= g0 <= 16:
-        signal_type = '关注3球+0=15-16'
-        big3_prob = 40
-        small3_prob = 22
-        reasons.append(f'关注3球 + 0球={g0}')
-        reasons.append('历史数据：40-44%大3球，20-22%小3球')
+        # 细分：0球=16 + 近况3.0-3.5 → 66.7%小3球（3场，样本小）
+        if g0 == 16 and combined_avg is not None and 3.0 <= combined_avg <= 3.5:
+            signal_type = '关注3球+0=16+近况3.0-3.5'
+            big3_prob = 33
+            small3_prob = 67
+            reasons.append('⭐关注3球 + 0球=16 + 近况3.0-3.5')
+            reasons.append('历史数据：66.7%小3球(0-2球)，样本小⚠️')
+        else:
+            signal_type = '关注3球+0=15-16'
+            big3_prob = 40
+            small3_prob = 22
+            reasons.append(f'关注3球 + 0球={g0}')
+            reasons.append('历史数据：40-44%大3球，20-22%小3球')
     
     # ═══════════════════════════════════════════════════════════
     # 2026-04-23 新增：0球基础规律（大3球命中率提升）
