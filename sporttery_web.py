@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-竞彩比分预测系统 - 完整版 v2.4.4 (2026-04-24)
+竞彩比分预测系统 - 完整版 v2.4.5 (2026-04-24)
 """
-VERSION = "2.4.4"
+VERSION = "2.4.5"
 from flask import Flask, jsonify, render_template_string, request
 from markupsafe import Markup
 import os
@@ -1472,17 +1472,15 @@ HTML_TEMPLATE = '''
                     </div>
                     ` : ''}
 
+
                     <!-- 比分历史命中率推荐（新算法） -->
                     ${m.score_recommendations && m.score_recommendations.length > 0 ? `
-                    <div class="odds-section score-rec-section">
+                    <div class="odds-section score-rec-section" id="score-rec-section-${m.match_id}">
                         <div class="odds-title score-rec-title">
                             📊 历史高命中率比分
-                            <span class="score-rec-hint">基于历史${(() => {
-                                const total = m.score_recommendations.reduce((s, r) => s + r.total, 0);
-                                return Math.max(...m.score_recommendations.map(r=>r.total));
-                            })()}场同赔率区间统计</span>
+                            <span class="score-rec-hint" id="score-rec-hint-${m.match_id}">基于历史${Math.max(...m.score_recommendations.map(r=>r.total))}场同赔率区间统计</span>
                         </div>
-                        <div class="score-rec-list">
+                        <div class="score-rec-list" id="score-rec-list-${m.match_id}">
                             ${m.score_recommendations.map(rec => `
                                 <div class="score-rec-item level-${rec.level}" title="赔率${rec.odds}（${rec.bucket}区间），历史${rec.total}场中${rec.hits}次命中">
                                     <span class="score-rec-score">${rec.score}</span>
@@ -1493,7 +1491,13 @@ HTML_TEMPLATE = '''
                             `).join('')}
                         </div>
                     </div>
-                    ` : ''}
+                    ` : `<div class="odds-section score-rec-section" id="score-rec-section-${m.match_id}" style="display:none">
+                        <div class="odds-title score-rec-title">
+                            📊 历史高命中率比分
+                            <span class="score-rec-hint" id="score-rec-hint-${m.match_id}"></span>
+                        </div>
+                        <div class="score-rec-list" id="score-rec-list-${m.match_id}"></div>
+                    </div>`}
 
                     <!-- 前瞻数据标签页 -->
                     <div class="preview-tabs">
@@ -1879,6 +1883,44 @@ HTML_TEMPLATE = '''
                 }
             } catch(e2) {
                 console.warn('命中率刷新失败:', e2);
+            }
+            // 复盘后同步刷新当前比赛的"历史高命中率比分"模块
+            try {
+                const r3 = await fetch('/api/score_recommendations/' + matchId);
+                const recData = await r3.json();
+                if (recData.success && recData.recommendations) {
+                    const recListEl = document.getElementById('score-rec-list-' + matchId);
+                    const recSectionEl = document.getElementById('score-rec-section-' + matchId);
+                    if (recSectionEl) {
+                        const recs = recData.recommendations;
+                        if (recs.length > 0) {
+                            recSectionEl.style.display = '';
+                            if (recListEl) {
+                                var htmlParts = [];
+                                for (var i = 0; i < recs.length; i++) {
+                                    var rec = recs[i];
+                                    var title = '赔率' + rec.odds + '（' + rec.bucket + '区间），历史' + rec.total + '场中' + rec.hits + '次命中';
+                                    htmlParts.push(
+                                        '<div class="score-rec-item level-' + rec.level + '" title="' + title + '">' +
+                                        '<span class="score-rec-score">' + rec.score + '</span>' +
+                                        '<span class="score-rec-odds">赔率 ' + rec.odds + '</span>' +
+                                        '<span class="score-rec-rate">' + rec.rate + '%</span>' +
+                                        '<span class="score-rec-sample">' + rec.hits + '/' + rec.total + '场</span>' +
+                                        '</div>'
+                                    );
+                                }
+                                recListEl.innerHTML = htmlParts.join('');
+                            }
+                            // 更新标题里的样本数
+                            var hintEl = recSectionEl.querySelector('.score-rec-hint');
+                            if (hintEl) hintEl.textContent = '基于历史' + recData.total_records + '场同赔率区间统计（已更新）';
+                        } else {
+                            recSectionEl.style.display = 'none';
+                        }
+                    }
+                }
+            } catch(e3) {
+                console.warn('比分推荐刷新失败:', e3);
             }
             // 显示复盘结果
             let reviewText = `📋 复盘结果: 实际 ${home}:${away}，总进球 ${tgLabel}`;
@@ -2326,10 +2368,28 @@ def get_all_saved_scores():
 @app.route('/api/odds_hitrate')
 def get_odds_hitrate():
     """返回赔率命中率统计（供复盘后动态刷新）"""
-    global _odds_hitrate_cache
-    _odds_hitrate_cache = None  # 清除缓存，强制重新计算
+    global _odds_hitrate_cache, _score_hitrate_cache
+    _odds_hitrate_cache = None   # 清除进球数赔率缓存
+    _score_hitrate_cache = None  # 同时清除比分赔率缓存
     stats = _build_odds_hitrate()
     return jsonify(stats)
+
+@app.route('/api/score_recommendations/<match_id>')
+def get_score_recommendations(match_id):
+    """复盘后重新计算并返回某场比赛的历史高命中率比分推荐"""
+    global _score_hitrate_cache
+    _score_hitrate_cache = None  # 强制清除缓存，重新统计
+    try:
+        filepath = os.path.join(DATA_DIR, f'{match_id}.json')
+        if not os.path.exists(filepath):
+            return jsonify({'success': False, 'error': '比赛数据不存在'}), 404
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        recs = get_score_recommendations_for_match(data.get('score_odds', {}))
+        total_records = _build_score_hitrate_stats().get('total_records', 0)
+        return jsonify({'success': True, 'recommendations': recs, 'total_records': total_records})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
 
 @app.route('/api/similar/<match_id>')
 def get_similar(match_id):
