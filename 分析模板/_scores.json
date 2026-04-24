@@ -13084,5 +13084,491 @@
     "home_team": "利雅得胜利",
     "away_team": "多哈国民",
     "league": "亚洲冠军乙级联赛"
+  },
+  "2026.04.22_周三001": {
+    "match_id": "周三001",
+    "date": "2026.04.22",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "result": "away",
+    "record_time": "2026-04-23 18:13"
+  },
+  "2026.04.22_周三002": {
+    "match_id": "周三002",
+    "date": "2026.04.22",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "result": "home",
+    "record_time": "2026-04-23 18:15"
+  },
+  "2026.04.22_周三003": {
+    "match_id": "周三003",
+    "date": "2026.04.22",
+    "home_score": 3,
+    "away_score": 2,
+    "score_str": "3:2",
+    "result": "home",
+    "record_time": "2026-04-23 18:15"
+  },
+  "2026.04.22_周三004": {
+    "match_id": "周三004",
+    "date": "2026.04.22",
+    "home_score": 3,
+    "away_score": 2,
+    "score_str": "3:2",
+    "result": "home",
+    "record_time": "2026-04-23 18:16"
+  },
+  "2026.04.22_周三005": {
+    "match_id": "周三005",
+    "date": "2026.04.22",
+    "home_score": 3,
+    "away_score": 0,
+    "score_str": "3:0",
+    "result": "home",
+    "record_time": "2026-04-23 18:16"
+  },
+  "2026.04.22_周三006": {
+    "match_id": "周三006",
+    "date": "2026.04.22",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "result": "home",
+    "record_time": "2026-04-23 18:17"
+  },
+  "2026.04.22_周三007": {
+    "match_id": "周三007",
+    "date": "2026.04.22",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "result": "away",
+    "record_time": "2026-04-23 18:17"
+  },
+  "2026.04.22_周三008": {
+    "match_id": "周三008",
+    "date": "2026.04.22",
+    "home_score": 4,
+    "away_score": 1,
+    "score_str": "4:1",
+    "result": "home",
+    "record_time": "2026-04-23 18:18"
+  },
+  "2026.04.22_周三009": {
+    "match_id": "周三009",
+    "date": "2026.04.22",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "result": "away",
+    "record_time": "2026-04-23 18:19"
+  },
+  "2026.04.22_周三011": {
+    "match_id": "周三011",
+    "date": "2026.04.22",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "result": "draw",
+    "record_time": "2026-04-23 18:25"
+  },
+  "2026.04.22_周三016": {
+    "match_id": "周三016",
+    "date": "2026.04.22",
+    "home_score": 0,
+    "away_score": 2,
+    "score_str": "0:2",
+    "result": "away",
+    "record_time": "2026-04-23 18:27"
+  },
+  "2026.04.22_周三015": {
+    "match_id": "周三015",
+    "date": "2026.04.22",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "result": "home",
+    "record_time": "2026-04-23 18:28"
+  },
+  "2026.04.22_周三010": {
+    "match_id": "周三010",
+    "date": "2026.04.22",
+    "home_score": 0,
+    "away_score": 2,
+    "score_str": "0:2",
+    "result": "away",
+    "record_time": "2026-04-23 18:33"
+  },
+  "2026.04.22_周三012": {
+    "match_id": "周三012",
+    "date": "2026.04.22",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "result": "draw",
+    "record_time": "2026-04-23 18:33"
+  },
+  "2026.04.22_周三013": {
+    "match_id": "周三013",
+    "date": "2026.04.22",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "result": "draw",
+    "record_time": "2026-04-23 18:35"
+  },
+  "2026.04.22_周三014": {
+    "match_id": "周三014",
+    "date": "2026.04.22",
+    "home_score": 0,
+    "away_score": 2,
+    "score_str": "0:2",
+    "result": "away",
+    "record_time": "2026-04-23 18:37"
+  },
+  "2026.04.22_周三017": {
+    "match_id": "周三017",
+    "date": "2026.04.22",
+    "home_score": 5,
+    "away_score": 1,
+    "score_str": "5:1",
+    "result": "home",
+    "record_time": "2026-04-23 18:37"
+  },
+  "2039271": {
+    "match_id": "2039271",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-04-24 06:48",
+    "total_goals_odds": {
+      "0球": "11.50",
+      "1球": "4.80",
+      "2球": "3.60",
+      "3球": "3.20",
+      "4球": "4.85",
+      "5球": "11.00",
+      "6球": "23.00",
+      "7球": "35.00"
+    },
+    "hhad_odds": {
+      "让平": "3.12",
+      "让球": "+1",
+      "让胜": "2.40",
+      "让负": "2.55"
+    },
+    "home_team": "卡萨皮亚",
+    "away_team": "布拉加",
+    "league": "葡萄牙超级联赛"
+  },
+  "2039266": {
+    "match_id": "2039266",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-04-24 06:49",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "5.60",
+      "2球": "3.90",
+      "3球": "3.60",
+      "4球": "4.80",
+      "5球": "7.50",
+      "6球": "13.00",
+      "7球": "18.00"
+    },
+    "hhad_odds": {
+      "让平": "3.40",
+      "让球": "+1",
+      "让胜": "2.40",
+      "让负": "2.39"
+    },
+    "home_team": "欧奈宰纳伊马",
+    "away_team": "布赖代合作",
+    "league": "沙特职业联赛"
+  },
+  "2039269": {
+    "match_id": "2039269",
+    "home_score": 2,
+    "away_score": 3,
+    "score_str": "2:3",
+    "total_goals": 5,
+    "tg_result": "5+球",
+    "record_time": "2026-04-24 06:49",
+    "total_goals_odds": {
+      "0球": "14.00",
+      "1球": "5.60",
+      "2球": "3.95",
+      "3球": "3.20",
+      "4球": "4.65",
+      "5球": "8.80",
+      "6球": "15.50",
+      "7球": "22.00"
+    },
+    "hhad_odds": {
+      "让平": "4.10",
+      "让球": "-1",
+      "让胜": "4.90",
+      "让负": "1.47"
+    },
+    "home_team": "马尔默",
+    "away_team": "天狼星",
+    "league": "瑞典超级联赛"
+  },
+  "2039274": {
+    "match_id": "2039274",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-04-24 06:50",
+    "total_goals_odds": {
+      "0球": "11.50",
+      "1球": "4.60",
+      "2球": "3.40",
+      "3球": "3.60",
+      "4球": "4.80",
+      "5球": "11.00",
+      "6球": "21.00",
+      "7球": "32.00"
+    },
+    "hhad_odds": {
+      "让平": "3.45",
+      "让球": "+1",
+      "让胜": "1.74",
+      "让负": "3.78"
+    },
+    "home_team": "皇家奥维耶多",
+    "away_team": "比利亚雷亚尔",
+    "league": "西班牙甲级联赛"
+  },
+  "2039273": {
+    "match_id": "2039273",
+    "home_score": 6,
+    "away_score": 1,
+    "score_str": "6:1",
+    "total_goals": 7,
+    "tg_result": "5+球",
+    "record_time": "2026-04-24 06:51",
+    "total_goals_odds": {
+      "0球": "52.00",
+      "1球": "14.00",
+      "2球": "6.80",
+      "3球": "4.00",
+      "4球": "4.00",
+      "5球": "4.80",
+      "6球": "6.80",
+      "7球": "6.20"
+    },
+    "hhad_odds": {
+      "让平": "4.15",
+      "让球": "-2",
+      "让胜": "2.18",
+      "让负": "2.33"
+    },
+    "home_team": "PSV埃因霍温",
+    "away_team": "兹沃勒",
+    "league": "荷兰甲级联赛"
+  },
+  "2039272": {
+    "match_id": "2039272",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-04-24 06:54",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "6.55",
+      "2球": "4.05",
+      "3球": "3.25",
+      "4球": "4.40",
+      "5球": "7.85",
+      "6球": "13.50",
+      "7球": "18.00"
+    },
+    "hhad_odds": {
+      "让平": "3.40",
+      "让球": "-1",
+      "让胜": "2.70",
+      "让负": "2.15"
+    },
+    "home_team": "斯图加特",
+    "away_team": "弗赖堡",
+    "league": "德国杯"
+  },
+  "2039270": {
+    "match_id": "2039270",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-04-24 06:55",
+    "total_goals_odds": {
+      "0球": "10.00",
+      "1球": "4.10",
+      "2球": "3.10",
+      "3球": "3.50",
+      "4球": "5.90",
+      "5球": "13.00",
+      "6球": "30.00",
+      "7球": "44.00"
+    },
+    "hhad_odds": {
+      "让平": "3.55",
+      "让球": "-1",
+      "让胜": "4.20",
+      "让负": "1.64"
+    },
+    "home_team": "巴列卡诺",
+    "away_team": "西班牙人",
+    "league": "西班牙甲级联赛"
+  },
+  "2039268": {
+    "match_id": "2039268",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-04-24 06:55",
+    "total_goals_odds": {
+      "0球": "10.00",
+      "1球": "4.20",
+      "2球": "3.15",
+      "3球": "3.65",
+      "4球": "5.90",
+      "5球": "12.00",
+      "6球": "23.00",
+      "7球": "35.00"
+    },
+    "hhad_odds": {
+      "让平": "4.00",
+      "让球": "-1",
+      "让胜": "5.26",
+      "让负": "1.45"
+    },
+    "home_team": "莱万特",
+    "away_team": "塞维利亚",
+    "league": "西班牙甲级联赛"
+  },
+  "2039267": {
+    "match_id": "2039267",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "total_goals": 0,
+    "tg_result": "0球",
+    "record_time": "2026-04-24 06:56",
+    "total_goals_odds": {
+      "0球": "21.00",
+      "1球": "7.75",
+      "2球": "4.45",
+      "3球": "3.30",
+      "4球": "4.00",
+      "5球": "6.85",
+      "6球": "11.50",
+      "7球": "15.00"
+    },
+    "hhad_odds": {
+      "让平": "3.95",
+      "让球": "+1",
+      "让胜": "1.65",
+      "让负": "3.70"
+    },
+    "home_team": "前进之鹰",
+    "away_team": "阿尔克马尔",
+    "league": "荷兰甲级联赛"
+  },
+  "2026.04.23_周四001": {
+    "match_id": "周四001",
+    "date": "2026.04.23",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "result": "away",
+    "record_time": "2026-04-24 07:02"
+  },
+  "2026.04.23_周四002": {
+    "match_id": "周四002",
+    "date": "2026.04.23",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "result": "draw",
+    "record_time": "2026-04-24 07:04"
+  },
+  "2026.04.23_周四003": {
+    "match_id": "周四003",
+    "date": "2026.04.23",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "result": "home",
+    "record_time": "2026-04-24 07:04"
+  },
+  "2026.04.23_周四004": {
+    "match_id": "周四004",
+    "date": "2026.04.23",
+    "home_score": 2,
+    "away_score": 3,
+    "score_str": "2:3",
+    "result": "away",
+    "record_time": "2026-04-24 07:04"
+  },
+  "2026.04.23_周四005": {
+    "match_id": "周四005",
+    "date": "2026.04.23",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "result": "home",
+    "record_time": "2026-04-24 07:05"
+  },
+  "2026.04.23_周四006": {
+    "match_id": "周四006",
+    "date": "2026.04.23",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "result": "away",
+    "record_time": "2026-04-24 07:05"
+  },
+  "2026.04.23_周四007": {
+    "match_id": "周四007",
+    "date": "2026.04.23",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "result": "draw",
+    "record_time": "2026-04-24 07:08"
+  },
+  "2026.04.23_周四008": {
+    "match_id": "周四008",
+    "date": "2026.04.23",
+    "home_score": 6,
+    "away_score": 1,
+    "score_str": "6:1",
+    "result": "home",
+    "record_time": "2026-04-24 07:08"
+  },
+  "2026.04.23_周四009": {
+    "match_id": "周四009",
+    "date": "2026.04.23",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "result": "draw",
+    "record_time": "2026-04-24 07:10"
   }
 }

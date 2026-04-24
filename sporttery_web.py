@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-竞彩比分预测系统 - 完整版 v2.4.3 (2026-04-23)
+竞彩比分预测系统 - 完整版 v2.4.4 (2026-04-24)
 """
-VERSION = "2.4.3"
+VERSION = "2.4.4"
 from flask import Flask, jsonify, render_template_string, request
 from markupsafe import Markup
 import os
@@ -271,6 +271,178 @@ def get_hitrate_for_odds(goal, odds_val):
     }
 
 
+# ─────────────────────────────────────────────────────────────────
+# 比分赔率命中率统计（新版，基于实际比分赔率区间）
+# ─────────────────────────────────────────────────────────────────
+_score_hitrate_cache = None
+
+SCORE_ODDS_BUCKETS = [
+    (5,   8,   '5-8'),
+    (8,   11,  '8-11'),
+    (11,  15,  '11-15'),
+    (15,  20,  '15-20'),
+    (20,  30,  '20-30'),
+    (30,  50,  '30-50'),
+    (50,  100, '50-100'),
+    (100, 9999,'100+'),
+]
+
+def _get_score_odds_bucket(odds):
+    for lo, hi, label in SCORE_ODDS_BUCKETS:
+        if lo <= odds < hi:
+            return label
+    return '100+'
+
+def _build_score_hitrate_stats():
+    """
+    遍历所有有比分的历史记录，统计每个 (比分, 赔率区间) 的历史命中率。
+    返回格式: {
+        'score_bucket': {
+            '1:0': {
+                '5-8':  {'total': 131, 'hits': 19, 'rate': 14.5},
+                '8-11': {'total': 107, 'hits': 5,  'rate': 4.7},
+                ...
+            },
+            '2:1': {...},
+        },
+        'total_records': 325
+    }
+    """
+    global _score_hitrate_cache
+    if _score_hitrate_cache is not None:
+        return _score_hitrate_cache
+
+    scores_data = load_scores()
+    from collections import defaultdict
+
+    score_bucket = defaultdict(lambda: defaultdict(lambda: [0, 0]))  # [total, hits]
+    total_records = 0
+
+    for key, record in scores_data.items():
+        mid = record.get('match_id')
+        if not mid:
+            continue
+        hs = record.get('home_score')
+        aws = record.get('away_score')
+        if hs is None or aws is None:
+            continue
+        actual_key = '%d:%d' % (int(hs), int(aws))
+
+        fpath = os.path.join(DATA_DIR, '%s.json' % mid)
+        if not os.path.exists(fpath):
+            continue
+        try:
+            with open(fpath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except:
+            continue
+        so = data.get('score_odds', {})
+        if not so:
+            continue
+
+        total_records += 1
+        for score_key, odds_val in so.items():
+            try:
+                odds_val = float(odds_val)
+            except:
+                continue
+            if odds_val <= 0:
+                continue
+            parts = score_key.split(':')
+            if len(parts) != 2:
+                continue
+            try:
+                norm_key = '%d:%d' % (int(parts[0]), int(parts[1]))
+            except:
+                continue
+            bucket = _get_score_odds_bucket(odds_val)
+            score_bucket[norm_key][bucket][0] += 1
+            if norm_key == actual_key:
+                score_bucket[norm_key][bucket][1] += 1
+
+    # 转换为命中率格式
+    result = {}
+    for score, buckets in score_bucket.items():
+        result[score] = {}
+        for bucket, (total, hits) in buckets.items():
+            rate = round(hits / total * 100, 1) if total > 0 else 0.0
+            result[score][bucket] = {'total': total, 'hits': hits, 'rate': rate}
+
+    _score_hitrate_cache = {'score_bucket': result, 'total_records': total_records}
+    return _score_hitrate_cache
+
+
+def get_score_recommendations_for_match(score_odds, min_rate=9.0, min_sample=5):
+    """
+    为当前比赛返回历史命中率较高的比分提示。
+    根据当前赔率查找对应赔率区间的历史命中率。
+
+    返回: [
+        {
+            'score': '1:0',
+            'odds': 7.5,
+            'total_goals': 1,
+            'bucket': '5-8',
+            'rate': 14.5,
+            'total': 131,
+            'hits': 19,
+            'level': 'high'/'mid'/'normal',
+        },
+        ...
+    ]
+    按命中率从高到低排序
+    """
+    stats = _build_score_hitrate_stats()
+    score_bucket = stats.get('score_bucket', {})
+
+    recs = []
+    for score_key, odds_val in score_odds.items():
+        try:
+            odds_val = float(odds_val)
+        except:
+            continue
+        if odds_val <= 0:
+            continue
+        parts = score_key.split(':')
+        if len(parts) != 2:
+            continue
+        try:
+            sh, sa = int(parts[0]), int(parts[1])
+        except:
+            continue
+        norm_key = '%d:%d' % (sh, sa)
+        tg = sh + sa
+        bucket = _get_score_odds_bucket(odds_val)
+        bucket_data = score_bucket.get(norm_key, {}).get(bucket, {})
+        total = bucket_data.get('total', 0)
+        hits = bucket_data.get('hits', 0)
+        rate = bucket_data.get('rate', 0.0)
+
+        if total < min_sample or rate < min_rate:
+            continue
+
+        if rate >= 15:
+            level = 'high'
+        elif rate >= 11:
+            level = 'mid'
+        else:
+            level = 'normal'
+
+        recs.append({
+            'score': norm_key,
+            'odds': round(odds_val, 2),
+            'total_goals': tg,
+            'bucket': bucket,
+            'rate': rate,
+            'total': total,
+            'hits': hits,
+            'level': level,
+        })
+
+    recs.sort(key=lambda x: -x['rate'])
+    return recs
+
+
 def find_similar_matches(current_data, top_n=5):
     """
     在已记录比分的比赛中找相似场次
@@ -498,7 +670,7 @@ HTML_TEMPLATE = '''
         .change-neutral { border-left: 3px solid #888; }
         .change-neutral .change-value { color: #888; }
 
-        /* 进球数-比分联动排除列表 */
+        /* 进球数-比分联动排除列表（保留用于兼容） */
         .exclusion-section { margin-top: 12px; }
         .exclusion-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .exclusion-hint { font-size: 11px; color: #888; font-weight: normal; margin-left: 4px; }
@@ -511,6 +683,27 @@ HTML_TEMPLATE = '''
         .excl-level-badge { font-size: 12px; font-weight: bold; color: #fff; }
         .excl-goal { font-size: 15px; font-weight: bold; color: #ffd700; }
         .excl-goal-special { text-decoration: underline wavy #ef4444; }
+
+        /* 比分历史命中率推荐（新） */
+        .score-rec-section { margin-top: 12px; }
+        .score-rec-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .score-rec-hint { font-size: 11px; color: #888; font-weight: normal; margin-left: 4px; }
+        .score-rec-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .score-rec-item { display: flex; flex-direction: column; align-items: center; gap: 2px;
+            border-radius: 10px; padding: 8px 14px; border: 1px solid transparent; min-width: 80px; }
+        .score-rec-item.level-high { border-color: #22c55e; background: rgba(34,197,94,0.12); }
+        .score-rec-item.level-mid  { border-color: #facc15; background: rgba(250,204,21,0.10); }
+        .score-rec-item.level-normal { border-color: #60a5fa; background: rgba(96,165,250,0.08); }
+        .score-rec-score { font-size: 18px; font-weight: bold; letter-spacing: 1px; }
+        .level-high .score-rec-score { color: #4ade80; }
+        .level-mid  .score-rec-score { color: #facc15; }
+        .level-normal .score-rec-score { color: #93c5fd; }
+        .score-rec-odds { font-size: 11px; color: #888; }
+        .score-rec-rate { font-size: 12px; font-weight: bold; padding: 1px 6px; border-radius: 6px; }
+        .level-high .score-rec-rate { background: rgba(34,197,94,0.2); color: #4ade80; }
+        .level-mid  .score-rec-rate { background: rgba(250,204,21,0.2); color: #facc15; }
+        .level-normal .score-rec-rate { background: rgba(96,165,250,0.15); color: #93c5fd; }
+        .score-rec-sample { font-size: 10px; color: #555; }
         .excl-ttg-odds { font-size: 12px; color: #aaa; margin-left: auto; }
         .excl-body { padding: 8px 12px; }
         .excl-scores-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
@@ -1279,48 +1472,25 @@ HTML_TEMPLATE = '''
                     </div>
                     ` : ''}
 
-                    <!-- 进球数-比分联动排除列表 -->
-                    ${m.exclusion_list && m.exclusion_list.length > 0 ? `
-                    <div class="odds-section exclusion-section">
-                        <div class="odds-title exclusion-title">
-                            ⚡ 优先排除列表
-                            <span class="exclusion-hint">赔率尾数含 .25 / .75 / .15 的进球数或比分</span>
+                    <!-- 比分历史命中率推荐（新算法） -->
+                    ${m.score_recommendations && m.score_recommendations.length > 0 ? `
+                    <div class="odds-section score-rec-section">
+                        <div class="odds-title score-rec-title">
+                            📊 历史高命中率比分
+                            <span class="score-rec-hint">基于历史${(() => {
+                                const total = m.score_recommendations.reduce((s, r) => s + r.total, 0);
+                                return Math.max(...m.score_recommendations.map(r=>r.total));
+                            })()}场同赔率区间统计</span>
                         </div>
-                        <div class="exclusion-list">
-                            ${m.exclusion_list.map(item => {
-                                const levelCls = item.level === '强排除' ? 'excl-strong'
-                                               : item.level === '普通排除' ? 'excl-normal'
-                                               : 'excl-weak';
-                                const levelIcon = item.level === '强排除' ? '🔴'
-                                                : item.level === '普通排除' ? '🟠'
-                                                : '🟡';
-                                const specialScores = item.scores.filter(s => s.special);
-                                const normalScores = item.scores.filter(s => !s.special);
-                                return `<div class="excl-item ${levelCls}">
-                                    <div class="excl-header">
-                                        <span class="excl-level-badge">${levelIcon} ${item.level}</span>
-                                        <span class="excl-goal ${item.ttg_special ? 'excl-goal-special' : ''}">${item.goal}</span>
-                                        <span class="excl-ttg-odds">进球数赔率: ${item.ttg_odds}${item.ttg_special ? ' ★' : ''}</span>
-                                    </div>
-                                    <div class="excl-body">
-                                        ${specialScores.length > 0 ? `
-                                        <div class="excl-scores-row">
-                                            <span class="excl-scores-label">★ 特殊尾数比分:</span>
-                                            ${specialScores.map(s => `
-                                                <span class="excl-score-badge special">${s.score} (${s.odds})</span>
-                                            `).join('')}
-                                        </div>` : ''}
-                                        ${normalScores.length > 0 && item.level !== '仅比分排除' ? `
-                                        <div class="excl-scores-row">
-                                            <span class="excl-scores-label">普通比分:</span>
-                                            ${normalScores.map(s => `
-                                                <span class="excl-score-badge normal">${s.score} (${s.odds})</span>
-                                            `).join('')}
-                                        </div>` : ''}
-                                        <div class="excl-reason">${item.reason}</div>
-                                    </div>
-                                </div>`;
-                            }).join('')}
+                        <div class="score-rec-list">
+                            ${m.score_recommendations.map(rec => `
+                                <div class="score-rec-item level-${rec.level}" title="赔率${rec.odds}（${rec.bucket}区间），历史${rec.total}场中${rec.hits}次命中">
+                                    <span class="score-rec-score">${rec.score}</span>
+                                    <span class="score-rec-odds">赔率 ${rec.odds}</span>
+                                    <span class="score-rec-rate">${rec.rate}%</span>
+                                    <span class="score-rec-sample">${rec.hits}/${rec.total}场</span>
+                                </div>
+                            `).join('')}
                         </div>
                     </div>
                     ` : ''}
@@ -1907,6 +2077,8 @@ def _build_match_card(data, api):
             'ttg_change': ttg_change,
             'hafu_change': {k: v for k, v in hafu_change.items() if isinstance(v, (int, float))},
             'exclusion_list': exclusion_list,
+            # 比分历史命中率推荐（新）
+            'score_recommendations': data.get('score_recommendations', []),
         }
     else:
         # ── 完整版：返回全部字段 ──
@@ -1931,6 +2103,10 @@ def get_matches():
                             data.get('score_odds', {}),
                             data.get('total_goals', {})
                         )
+                    # 动态计算比分历史命中率推荐（每次都重新计算，确保最新）
+                    data['score_recommendations'] = get_score_recommendations_for_match(
+                        data.get('score_odds', {})
+                    )
                     # 动态补充/更新3球预测（强制重新计算，确保 signal_score 最新）
                     try:
                         features = extract_features(data)
