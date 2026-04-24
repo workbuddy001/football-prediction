@@ -1,0 +1,513 @@
+{
+  "match_id": "2038934",
+  "fetch_time": "2026-04-21 16:52:29",
+  "match_info": {
+    "home_team": "普拉滕斯",
+    "away_team": "科林蒂安",
+    "league": "南美解放者杯",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "400.0",
+    "01:00": "5.75",
+    "05:02": "600.0",
+    "05:01": "400.0",
+    "02:04": "125.0",
+    "02:05": "500.0",
+    "02:02": "17.00",
+    "02:03": "45.00",
+    "02:00": "11.50",
+    "02:01": "10.50",
+    "03:03": "100.0",
+    "03:01": "31.00",
+    "03:02": "48.00",
+    "03:00": "33.00",
+    "00:01": "5.65",
+    "00:00": "5.80",
+    "00:03": "31.00",
+    "00:02": "11.00",
+    "00:05": "250.0",
+    "00:04": "90.00",
+    "04:02": "200.0",
+    "04:01": "110.0",
+    "04:00": "120.0",
+    "01:02": "9.25",
+    "01:01": "5.50",
+    "01:04": "90.00",
+    "01:03": "27.00",
+    "01:05": "250.0"
+  },
+  "total_goals": {
+    "3球": "4.40",
+    "4球": "8.40",
+    "5球": "18.00",
+    "6球": "35.00",
+    "7球": "50.00",
+    "0球": "5.80",
+    "1球": "3.35",
+    "2球": "3.00"
+  },
+  "had": {
+    "胜": "2.92",
+    "平": "2.49",
+    "负": "2.60"
+  },
+  "ttg": {
+    "3球": "4.40",
+    "4球": "8.40",
+    "5球": "18.00",
+    "6球": "35.00",
+    "7球": "50.00",
+    "0球": "5.80",
+    "1球": "3.35",
+    "2球": "3.00"
+  },
+  "hafu": {
+    "负负": "4.60",
+    "平平": "3.75",
+    "胜胜": "5.00",
+    "负平": "14.50",
+    "平胜": "5.50",
+    "负胜": "33.00",
+    "胜负": "29.00",
+    "胜平": "14.50",
+    "平负": "5.40"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "8.30",
+    "让平": "4.40",
+    "让负": "1.28"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "科林蒂安",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "-",
+        "awayGoalAvgCntRatio": "",
+        "homeGoalAvgCnt": "-",
+        "homeGoalAvgCntRatio": "",
+        "totalLegCnt": 0
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "普拉滕斯",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "-",
+        "awayLossGoalAvgCntRatio": "",
+        "homeLossGoalAvgCnt": "-",
+        "homeLossGoalAvgCntRatio": "",
+        "totalLegCnt": 0
+      },
+      "matchId": 0,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 567,
+      "sportteryHomeTeamId": 2071701,
+      "sportteryMatchId": 2038934,
+      "uniformAwayTeamId": 85,
+      "uniformHomeTeamId": 57392
+    },
+    "history": {
+      "matchList": [],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "普拉滕斯",
+        "totalLegCnt": 0,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 567,
+        "teamId": 320,
+        "teamShortName": "科林蒂安",
+        "uniformTeamId": 85
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 2071701,
+        "teamId": 0,
+        "teamShortName": "普拉滕斯",
+        "uniformTeamId": 57392
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 575,
+            "awayTeamShortName": "巴西国际",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 567,
+            "homeTeamShortName": "科林蒂安",
+            "matchDate": "2026-04-06",
+            "matchId": 2468811,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 41,
+            "uniformHomeTeamId": 85,
+            "uniformLeagueId": 31,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 567,
+            "awayTeamShortName": "科林蒂安",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 572,
+            "homeTeamShortName": "弗鲁米嫩",
+            "matchDate": "2026-04-02",
+            "matchId": 2468927,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 85,
+            "uniformHomeTeamId": 47,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 571,
+            "awayTeamShortName": "弗拉门戈",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 567,
+            "homeTeamShortName": "科林蒂安",
+            "matchDate": "2026-03-23",
+            "matchId": 2468815,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 29,
+            "uniformHomeTeamId": 85,
+            "uniformLeagueId": 31,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 567,
+            "awayTeamShortName": "科林蒂安",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1947,
+            "homeTeamShortName": "沙佩科",
+            "matchDate": "2026-03-20",
+            "matchId": 2468816,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 85,
+            "uniformHomeTeamId": 1718,
+            "uniformLeagueId": 31,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 567,
+            "awayTeamShortName": "科林蒂安",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 581,
+            "homeTeamShortName": "桑托斯",
+            "matchDate": "2026-03-16",
+            "matchId": 2469052,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 85,
+            "uniformHomeTeamId": 45,
+            "uniformLeagueId": 31,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 3,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -3,
+          "sportteryTeamId": 0,
+          "teamId": 567,
+          "teamShortName": "科林蒂安",
+          "totalLegCnt": 5,
+          "uniformTeamId": 85,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      },
+      "home": {
+        "matchList": [],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 0,
+          "lossGoalCnt": 0,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 0,
+          "sportteryTeamId": 0,
+          "teamId": 2071701,
+          "teamShortName": "普拉滕斯",
+          "totalLegCnt": 0,
+          "uniformTeamId": 57392,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 0,
+      "seasonId": 0,
+      "seasonName": "",
+      "tables": [],
+      "tournamentId": 0,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2385465
+    },
+    "player": {
+      "away": {
+        "playerList": [],
+        "sportteryTeamId": 567,
+        "teamId": 320,
+        "teamShortName": "科林蒂安",
+        "uniformTeamId": 85
+      },
+      "home": {
+        "playerList": [],
+        "sportteryTeamId": 2071701,
+        "teamId": 0,
+        "teamShortName": "普拉滕斯",
+        "uniformTeamId": 57392
+      },
+      "seasonId": 0,
+      "seasonName": "",
+      "tournamentId": 0,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2385465
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": -28.6
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 3.4
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 2.3
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -14.3
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -12.5
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -7.7
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 3.1
+    }
+  },
+  "hafu_change": {
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.3
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 1.9
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -3.3
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -1.8
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": -12.1
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -3.8
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 13.8
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": -3.2
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 11.1
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "3.35",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "5.75",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "5.65",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.35（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "4.40",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "10.50",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "33.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "31.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "9.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.40（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

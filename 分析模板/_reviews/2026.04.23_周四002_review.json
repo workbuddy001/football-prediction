@@ -1,0 +1,78 @@
+{
+  "match_id": "周四002",
+  "date_folder": "2026.04.23",
+  "home_team": "前进之鹰",
+  "away_team": "阿尔克马",
+  "league": "荷甲",
+  "handicap": "1",
+  "home_form": "DWLWLW",
+  "away_form": "WDWLWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:0",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.65>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降30升0 / 平降0升24 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "30/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:0(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-24 07:04",
+  "macao_tip": "阿尔克马尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.72,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 4.15,
+    "mcao_home_chg": -25.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 32.68,
+    "jc_init_odds": [
+      2.97,
+      3.65,
+      1.93
+    ],
+    "jc_real_odds": [
+      2.8,
+      3.65,
+      2.01
+    ],
+    "macao_init_odds": [
+      2.8,
+      3.6,
+      2.05
+    ],
+    "macao_real_odds": [
+      2.1,
+      3.6,
+      2.72
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

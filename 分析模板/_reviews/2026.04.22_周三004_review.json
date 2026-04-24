@@ -1,0 +1,90 @@
+{
+  "match_id": "周三004",
+  "date_folder": "2026.04.22",
+  "home_team": "埃尔切",
+  "away_team": "马竞",
+  "league": "西甲",
+  "handicap": "1",
+  "home_form": "WLWWLL",
+  "away_form": "DLLWLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:2",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+2.9%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+8.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升0 / 平降14升8 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:2(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+2.9%+澳门不动，平局赔率≥3.5",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+8.1%>5%",
+    "📈 关键信号「强共识推离客」有效：30/30家公司升客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-23 18:16",
+  "macao_tip": "埃尔切 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -10.0,
+    "jc_draw_chg": 2.94,
+    "jc_away_chg": 8.11,
+    "mcao_home_chg": -8.37,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 9.24,
+    "jc_init_odds": [
+      2.6,
+      3.4,
+      2.22
+    ],
+    "jc_real_odds": [
+      2.34,
+      3.5,
+      2.4
+    ],
+    "macao_init_odds": [
+      2.51,
+      3.41,
+      2.38
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.41,
+      2.6
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

@@ -1,0 +1,789 @@
+{
+  "match_id": "2038925",
+  "fetch_time": "2026-04-23 01:24:00",
+  "match_info": {
+    "home_team": "库斯科",
+    "away_team": "弗拉门戈",
+    "league": "南美解放者杯",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "500.0",
+    "01:00": "10.00",
+    "05:02": "500.0",
+    "05:01": "400.0",
+    "02:04": "60.00",
+    "02:05": "150.0",
+    "02:02": "16.00",
+    "02:03": "26.00",
+    "02:00": "20.00",
+    "02:01": "12.00",
+    "03:03": "75.00",
+    "03:01": "38.00",
+    "03:02": "45.00",
+    "03:00": "55.00",
+    "00:01": "5.75",
+    "00:00": "9.50",
+    "00:03": "15.00",
+    "00:02": "7.50",
+    "00:05": "80.00",
+    "00:04": "35.00",
+    "04:02": "120.0",
+    "04:01": "100.0",
+    "04:00": "150.0",
+    "01:02": "7.50",
+    "01:01": "6.50",
+    "01:04": "35.00",
+    "01:03": "15.00",
+    "01:05": "80.00"
+  },
+  "total_goals": {
+    "3球": "3.50",
+    "4球": "6.60",
+    "5球": "13.50",
+    "6球": "23.00",
+    "7球": "37.00",
+    "0球": "9.50",
+    "1球": "4.00",
+    "2球": "3.15"
+  },
+  "had": {
+    "胜": "4.65",
+    "平": "3.13",
+    "负": "1.68"
+  },
+  "ttg": {
+    "3球": "3.50",
+    "4球": "6.60",
+    "5球": "13.50",
+    "6球": "23.00",
+    "7球": "37.00",
+    "0球": "9.50",
+    "1球": "4.00",
+    "2球": "3.15"
+  },
+  "hafu": {
+    "负负": "2.80",
+    "平平": "4.60",
+    "胜胜": "8.00",
+    "负平": "15.00",
+    "平胜": "9.50",
+    "负胜": "40.00",
+    "胜负": "26.00",
+    "胜平": "15.00",
+    "平负": "3.95"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.94",
+    "让平": "3.18",
+    "让负": "3.34"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "弗拉门戈",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "77",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "47",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "47",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.5",
+        "awayGoalAvgCntRatio": "65.8",
+        "homeGoalAvgCnt": "1.3",
+        "homeGoalAvgCntRatio": "34.2",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "库斯科",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.6",
+        "awayLossGoalAvgCntRatio": "35.3",
+        "homeLossGoalAvgCnt": "1.1",
+        "homeLossGoalAvgCntRatio": "64.7",
+        "totalLegCnt": 10
+      },
+      "matchId": 2512215,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 571,
+      "sportteryHomeTeamId": 1776,
+      "sportteryMatchId": 2038925,
+      "uniformAwayTeamId": 29,
+      "uniformHomeTeamId": 570
+    },
+    "history": {
+      "matchList": [],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "库斯科",
+        "totalLegCnt": 0,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 78657,
+            "personName": "阿莱士·山德罗",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "26"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 151131,
+            "personName": "Saúl",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          }
+        ],
+        "sportteryTeamId": 571,
+        "teamId": 318,
+        "teamShortName": "弗拉门戈",
+        "uniformTeamId": 29
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1776,
+        "teamId": 17205,
+        "teamShortName": "库斯科",
+        "uniformTeamId": 570
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 581,
+            "awayTeamShortName": "桑托斯",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 571,
+            "homeTeamShortName": "弗拉门戈",
+            "matchDate": "2026-04-06",
+            "matchId": 2468923,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 45,
+            "uniformHomeTeamId": 29,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 571,
+            "awayTeamShortName": "弗拉门戈",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2734,
+            "homeTeamShortName": "布拉干RB",
+            "matchDate": "2026-04-03",
+            "matchId": 2469041,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 29,
+            "uniformHomeTeamId": 18,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 571,
+            "awayTeamShortName": "弗拉门戈",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 567,
+            "homeTeamShortName": "科林蒂安",
+            "matchDate": "2026-03-23",
+            "matchId": 2468815,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 29,
+            "uniformHomeTeamId": 85,
+            "uniformLeagueId": 31,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Remo",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 571,
+            "homeTeamShortName": "弗拉门戈",
+            "matchDate": "2026-03-20",
+            "matchId": 2468933,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 11325,
+            "uniformHomeTeamId": 29,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 571,
+            "awayTeamShortName": "弗拉门戈",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 566,
+            "homeTeamShortName": "博塔弗戈",
+            "matchDate": "2026-03-15",
+            "matchId": 2468821,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 29,
+            "uniformHomeTeamId": 49,
+            "uniformLeagueId": 31,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 10,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 5,
+          "sportteryTeamId": 0,
+          "teamId": 571,
+          "teamShortName": "弗拉门戈",
+          "totalLegCnt": 5,
+          "uniformTeamId": 29,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 1776,
+            "awayTeamShortName": "库斯科",
+            "fullCourtGoal": "1:3",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1837,
+            "homeTeamShortName": "梅尔加",
+            "matchDate": "2026-04-05",
+            "matchId": 2489522,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 570,
+            "uniformHomeTeamId": 2024,
+            "uniformLeagueId": 1360,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1776,
+            "awayTeamShortName": "库斯科",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "UCV Moquegua",
+            "matchDate": "2026-03-22",
+            "matchId": 2489526,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 570,
+            "uniformHomeTeamId": 28292,
+            "uniformLeagueId": 1360,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Cienciano",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1776,
+            "homeTeamShortName": "库斯科",
+            "matchDate": "2026-03-16",
+            "matchId": 2489542,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 2966,
+            "uniformHomeTeamId": 570,
+            "uniformLeagueId": 1360,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Deportivo Garcilaso",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1776,
+            "homeTeamShortName": "库斯科",
+            "matchDate": "2026-03-08",
+            "matchId": 2489551,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 36582,
+            "uniformHomeTeamId": 570,
+            "uniformLeagueId": 1360,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1776,
+            "awayTeamShortName": "库斯科",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 0,
+            "homeTeamShortName": "Juan Pablo II College",
+            "matchDate": "2026-03-02",
+            "matchId": 2489459,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 570,
+            "uniformHomeTeamId": 43793,
+            "uniformLeagueId": 1360,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 8,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": 2,
+          "sportteryTeamId": 0,
+          "teamId": 1776,
+          "teamShortName": "库斯科",
+          "totalLegCnt": 5,
+          "uniformTeamId": 570,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48189,
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13572,
+          "groupName": "Group A",
+          "lossGoalMatchCnt": 2,
+          "phaseName": "",
+          "points": "0",
+          "ranking": "4",
+          "sportteryTeamId": 1776,
+          "teamId": 0,
+          "teamShortName": "库斯科",
+          "totalLegCnt": 2,
+          "uniformTeamId": 570,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        },
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13572,
+          "groupName": "Group A",
+          "lossGoalMatchCnt": 0,
+          "phaseName": "",
+          "points": "6",
+          "ranking": "1",
+          "sportteryTeamId": 571,
+          "teamId": 0,
+          "teamShortName": "弗拉门戈",
+          "totalLegCnt": 2,
+          "uniformTeamId": 29,
+          "winGoalMatchCnt": 2,
+          "winProbability": "100%"
+        }
+      ],
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2385463
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0.5",
+            "assistCnt": 1,
+            "assistProbability": "20%",
+            "goalAvgCnt": "1.0",
+            "goalCnt": 2,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 247639,
+            "personName": "德·阿拉斯凯塔",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0.5",
+            "assistCnt": 1,
+            "assistProbability": "20%",
+            "goalAvgCnt": "1.0",
+            "goalCnt": 2,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 395631,
+            "personName": "布鲁诺·亨里克",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 435998,
+            "personName": "佩德罗",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 571,
+        "teamId": 318,
+        "teamShortName": "弗拉门戈",
+        "uniformTeamId": 29
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "100%",
+            "injuryFlag": 0,
+            "personId": 253075,
+            "personName": "L. Colitto",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0.5",
+            "assistCnt": 1,
+            "assistProbability": "100%",
+            "goalAvgCnt": "0",
+            "goalCnt": 0,
+            "goalProbability": "0%",
+            "injuryFlag": 0,
+            "personId": 603180,
+            "personName": "D.索托",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "88"
+          }
+        ],
+        "sportteryTeamId": 1776,
+        "teamId": 17205,
+        "teamShortName": "库斯科",
+        "uniformTeamId": 570
+      },
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2385463
+    }
+  },
+  "ttg_change": {
+    "4球": {
+      "count": 3,
+      "change_pct": 10.0
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": -1.6
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -5.0
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 12.5
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 4.5
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -2.8
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": -4.8
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 8.8
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 3,
+      "change_pct": -8.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 5.3
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": -0.7
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": -12.2
+    },
+    "胜平": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 11.8
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 28.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.15",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "20.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "7.50",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.50",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(3.15)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "4.00",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "10.00",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "5.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.00（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "match_id": "周二009",
+  "date_folder": "2026.04.21",
+  "home_team": "皇马",
+  "away_team": "阿拉维斯",
+  "league": "西甲",
+  "handicap": "-2",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率6.20>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率11.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.14<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降28升1 / 平降1升28 / 客降5升22",
+      "strength": 3
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "28/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率6.20>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率11.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.14<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-22 07:19",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": 3.39,
+    "mcao_draw_chg": -4.92,
+    "mcao_away_chg": -14.0,
+    "jc_init_odds": [
+      1.14,
+      6.2,
+      11.0
+    ],
+    "jc_real_odds": [
+      1.14,
+      6.2,
+      11.0
+    ],
+    "macao_init_odds": [
+      1.18,
+      6.1,
+      10.0
+    ],
+    "macao_real_odds": [
+      1.22,
+      5.8,
+      8.6
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "UDD"
+  }
+}

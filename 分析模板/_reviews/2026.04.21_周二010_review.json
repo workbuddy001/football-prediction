@@ -1,0 +1,79 @@
+{
+  "match_id": "周二010",
+  "date_folder": "2026.04.21",
+  "home_team": "赫罗纳",
+  "away_team": "贝蒂斯",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在平方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降23升2 / 平降21升3 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为2:3(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在平方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望"
+  ],
+  "review_time": "2026-04-22 07:21",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.26,
+    "jc_draw_chg": -7.81,
+    "jc_away_chg": 5.56,
+    "mcao_home_chg": -9.68,
+    "mcao_draw_chg": 6.25,
+    "mcao_away_chg": 5.88,
+    "jc_init_odds": [
+      2.38,
+      3.2,
+      2.52
+    ],
+    "jc_real_odds": [
+      2.41,
+      2.95,
+      2.66
+    ],
+    "macao_init_odds": [
+      2.48,
+      3.2,
+      2.55
+    ],
+    "macao_real_odds": [
+      2.24,
+      3.4,
+      2.7
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "DUU"
+  }
+}

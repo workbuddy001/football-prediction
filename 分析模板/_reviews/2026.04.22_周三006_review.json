@@ -1,0 +1,76 @@
+{
+  "match_id": "周三006",
+  "date_folder": "2026.04.22",
+  "home_team": "埃夫斯堡",
+  "away_team": "佐加顿斯",
+  "league": "瑞超",
+  "handicap": "1",
+  "home_form": "WDWWWW",
+  "away_form": "LWWWWL",
+  "prediction": "平局",
+  "confidence": 3,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-6.2%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+5.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降5升20 / 平降19升4 / 客降8升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为2:1(主胜)",
+    "❌ 预测平局但实际是主胜，需要反思原因",
+    "📝 心水推荐为「埃尔夫斯堡 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-23 18:17",
+  "macao_tip": "埃尔夫斯堡 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -6.21,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 5.14,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.9,
+      3.15,
+      2.14
+    ],
+    "jc_real_odds": [
+      2.72,
+      3.15,
+      2.25
+    ],
+    "macao_init_odds": [
+      2.73,
+      3.32,
+      2.18
+    ],
+    "macao_real_odds": [
+      2.73,
+      3.32,
+      2.18
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "NNN"
+  }
+}

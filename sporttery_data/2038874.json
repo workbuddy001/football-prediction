@@ -1,0 +1,860 @@
+{
+  "match_id": "2038874",
+  "fetch_time": "2026-04-21 17:34:59",
+  "match_info": {
+    "home_team": "勒芒",
+    "away_team": "波城FC",
+    "league": "法国乙级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "80.00",
+    "01:00": "7.50",
+    "05:02": "100.0",
+    "05:01": "75.00",
+    "02:04": "100.0",
+    "02:05": "500.0",
+    "02:02": "12.50",
+    "02:03": "32.00",
+    "02:00": "8.50",
+    "02:01": "7.00",
+    "03:03": "55.00",
+    "03:01": "12.50",
+    "03:02": "20.00",
+    "03:00": "14.00",
+    "00:01": "12.00",
+    "00:00": "14.00",
+    "00:03": "55.00",
+    "00:02": "23.00",
+    "00:05": "500.0",
+    "00:04": "150.0",
+    "04:02": "48.00",
+    "04:01": "28.00",
+    "04:00": "29.00",
+    "01:02": "11.50",
+    "01:01": "6.50",
+    "01:04": "100.0",
+    "01:03": "32.00",
+    "01:05": "300.0"
+  },
+  "total_goals": {
+    "3球": "3.45",
+    "4球": "5.00",
+    "5球": "8.75",
+    "6球": "14.00",
+    "7球": "23.00",
+    "0球": "14.00",
+    "1球": "5.30",
+    "2球": "3.65"
+  },
+  "had": {
+    "胜": "1.63",
+    "平": "3.60",
+    "负": "4.20"
+  },
+  "ttg": {
+    "3球": "3.45",
+    "4球": "5.00",
+    "5球": "8.75",
+    "6球": "14.00",
+    "7球": "23.00",
+    "0球": "14.00",
+    "1球": "5.30",
+    "2球": "3.65"
+  },
+  "hafu": {
+    "负负": "7.00",
+    "平平": "5.90",
+    "胜胜": "2.65",
+    "负平": "14.00",
+    "平胜": "4.30",
+    "负胜": "20.00",
+    "胜负": "30.00",
+    "胜平": "14.00",
+    "平负": "9.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.18",
+    "让平": "3.20",
+    "让负": "1.99"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "波城FC",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "40",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.4",
+        "awayGoalAvgCntRatio": "43.8",
+        "homeGoalAvgCnt": "1.8",
+        "homeGoalAvgCntRatio": "56.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "勒芒",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "0",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "100",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 3
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.6",
+        "awayLossGoalAvgCntRatio": "51.6",
+        "homeLossGoalAvgCnt": "1.5",
+        "homeLossGoalAvgCntRatio": "48.4",
+        "totalLegCnt": 10
+      },
+      "matchId": 2355895,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "0",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "100",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 1
+      },
+      "sportteryAwayTeamId": 2664,
+      "sportteryHomeTeamId": 195,
+      "sportteryMatchId": 2038874,
+      "uniformAwayTeamId": 441,
+      "uniformHomeTeamId": 332
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 905,
+          "awayTeamShortName": "勒芒",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 81,
+          "halfTimeGoal": "1:2",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 934,
+          "homeTeamShortName": "波城FC",
+          "matchDate": "2025-11-22",
+          "matchId": 2356029,
+          "seasonId": 13417,
+          "sportteryAwayTeamId": 195,
+          "sportteryHomeTeamId": 2664,
+          "sportteryMatchId": 2035194,
+          "sportteryTournamentId": 81,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 250,
+          "tournamentShortName": "法乙",
+          "uniformAwayTeamId": 332,
+          "uniformHomeTeamId": 441,
+          "uniformLeagueId": 1049,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 905,
+          "awayTeamShortName": "勒芒",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 934,
+          "homeTeamShortName": "波城FC",
+          "matchDate": "2019-02-09",
+          "matchId": 941773,
+          "seasonId": 5024,
+          "sportteryAwayTeamId": 195,
+          "sportteryHomeTeamId": 2664,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 355,
+          "tournamentShortName": "法丙",
+          "uniformAwayTeamId": 332,
+          "uniformHomeTeamId": 441,
+          "uniformLeagueId": 1322,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 934,
+          "awayTeamShortName": "波城FC",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 905,
+          "homeTeamShortName": "勒芒",
+          "matchDate": "2018-09-01",
+          "matchId": 853246,
+          "seasonId": 5024,
+          "sportteryAwayTeamId": 2664,
+          "sportteryHomeTeamId": 195,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 355,
+          "tournamentShortName": "法丙",
+          "uniformAwayTeamId": 441,
+          "uniformHomeTeamId": 332,
+          "uniformLeagueId": 1322,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "勒芒",
+        "totalLegCnt": 3,
+        "winGoalMatchCnt": 3,
+        "winProbability": "100%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 2664,
+        "teamId": 934,
+        "teamShortName": "波城FC",
+        "uniformTeamId": 441
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 195,
+        "teamId": 905,
+        "teamShortName": "勒芒",
+        "uniformTeamId": 332
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 197,
+            "awayTeamShortName": "蒙彼利埃",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2664,
+            "homeTeamShortName": "波城FC",
+            "matchDate": "2026-03-21",
+            "matchId": 2355993,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038479,
+            "sportteryTournamentId": 81,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 537,
+            "uniformHomeTeamId": 441,
+            "uniformLeagueId": 1049,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2664,
+            "awayTeamShortName": "波城FC",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 199,
+            "homeTeamShortName": "克莱蒙",
+            "matchDate": "2026-03-14",
+            "matchId": 2355828,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038289,
+            "sportteryTournamentId": 81,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 441,
+            "uniformHomeTeamId": 175,
+            "uniformLeagueId": 1049,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 175,
+            "awayTeamShortName": "巴斯蒂亚",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 2664,
+            "homeTeamShortName": "波城FC",
+            "matchDate": "2026-03-07",
+            "matchId": 2355998,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 1974,
+            "uniformHomeTeamId": 441,
+            "uniformLeagueId": 1049,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 190,
+            "awayTeamShortName": "圣埃蒂安",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2664,
+            "homeTeamShortName": "波城FC",
+            "matchDate": "2026-03-01",
+            "matchId": 2356002,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 249,
+            "uniformHomeTeamId": 441,
+            "uniformLeagueId": 1049,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 2664,
+            "awayTeamShortName": "波城FC",
+            "fullCourtGoal": "4:3",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 198,
+            "homeTeamShortName": "特鲁瓦",
+            "matchDate": "2026-02-21",
+            "matchId": 2356083,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 441,
+            "uniformHomeTeamId": 100,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 6,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -3,
+          "sportteryTeamId": 0,
+          "teamId": 2664,
+          "teamShortName": "波城FC",
+          "totalLegCnt": 5,
+          "uniformTeamId": 441,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 195,
+            "awayTeamShortName": "勒芒",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "格勒诺布",
+            "matchDate": "2026-03-29",
+            "matchId": 2513437,
+            "seasonId": 14345,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1014,
+            "tournamentShortName": "俱乐部赛",
+            "uniformAwayTeamId": 332,
+            "uniformHomeTeamId": 499,
+            "uniformLeagueId": 719,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 195,
+            "awayTeamShortName": "勒芒",
+            "fullCourtGoal": "3:4",
+            "halfTimeGoal": "2:3",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 202,
+            "homeTeamShortName": "亚眠",
+            "matchDate": "2026-03-21",
+            "matchId": 2355827,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 332,
+            "uniformHomeTeamId": 223,
+            "uniformLeagueId": 1049,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 195,
+            "awayTeamShortName": "勒芒",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 450,
+            "homeTeamShortName": "南锡",
+            "matchDate": "2026-03-14",
+            "matchId": 2355996,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 332,
+            "uniformHomeTeamId": 284,
+            "uniformLeagueId": 1049,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2707,
+            "awayTeamShortName": "阿纳西",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 195,
+            "homeTeamShortName": "勒芒",
+            "matchDate": "2026-03-07",
+            "matchId": 2355901,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 835,
+            "uniformHomeTeamId": 332,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 195,
+            "awayTeamShortName": "勒芒",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1643,
+            "homeTeamShortName": "圣旺红星",
+            "matchDate": "2026-02-28",
+            "matchId": 2356003,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 332,
+            "uniformHomeTeamId": 346,
+            "uniformLeagueId": 1049,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 12,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 195,
+          "teamShortName": "勒芒",
+          "totalLegCnt": 5,
+          "uniformTeamId": 332,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47910,
+      "seasonId": 13417,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 12,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 4,
+          "phaseName": "",
+          "points": "57",
+          "ranking": "3",
+          "sportteryTeamId": 195,
+          "teamId": 0,
+          "teamShortName": "勒芒",
+          "totalLegCnt": 31,
+          "uniformTeamId": 332,
+          "winGoalMatchCnt": 15,
+          "winProbability": "48%"
+        },
+        {
+          "drawMatchCnt": 9,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 10,
+          "phaseName": "",
+          "points": "45",
+          "ranking": "9",
+          "sportteryTeamId": 2664,
+          "teamId": 0,
+          "teamShortName": "波城FC",
+          "totalLegCnt": 31,
+          "uniformTeamId": 441,
+          "winGoalMatchCnt": 12,
+          "winProbability": "39%"
+        }
+      ],
+      "tournamentId": 250,
+      "tournamentShortName": "法乙",
+      "uniformLeagueId": 1049,
+      "uniformMatchId": 2384849
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 13,
+            "goalProbability": "24%",
+            "injuryFlag": 0,
+            "personId": 670869,
+            "personName": "T. Arconte",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 25,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 727632,
+            "personName": "G. Versini",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "13%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 312538,
+            "personName": "莱特利尔",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 12,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          }
+        ],
+        "sportteryTeamId": 2664,
+        "teamId": 934,
+        "teamShortName": "波城FC",
+        "uniformTeamId": 441
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 10,
+            "goalProbability": "22%",
+            "injuryFlag": 0,
+            "personId": 434792,
+            "personName": "D. Guèye",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "25"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "20%",
+            "injuryFlag": 0,
+            "personId": 293465,
+            "personName": "A. Rabillard",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 501245,
+            "personName": "E. Colas",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 15,
+            "suspensionFlag": 0,
+            "uniformNo": "28"
+          }
+        ],
+        "sportteryTeamId": 195,
+        "teamId": 905,
+        "teamShortName": "勒芒",
+        "uniformTeamId": 332
+      },
+      "seasonId": 13417,
+      "seasonName": "2025/2026",
+      "tournamentId": 250,
+      "tournamentShortName": "法乙",
+      "uniformLeagueId": 1049,
+      "uniformMatchId": 2384849
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": -4.2
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 1.4
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 1.5
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -2.8
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -12.5
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 3.9
+    }
+  },
+  "hafu_change": {
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": -8.5
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 11.8
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 2.6
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 12.0
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": -3.6
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "5球",
+      "ttg_odds": "8.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "80.00",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "32.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "20.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "500.0",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "28.00",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "100.0",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(8.75)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ]
+}

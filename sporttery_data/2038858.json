@@ -1,0 +1,1004 @@
+{
+  "match_id": "2038858",
+  "fetch_time": "2026-04-21 17:48:56",
+  "match_info": {
+    "home_team": "达曼协定",
+    "away_team": "胡巴尔卡德西亚",
+    "league": "沙特职业联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "700.0",
+    "01:00": "23.00",
+    "05:02": "400.0",
+    "05:01": "500.0",
+    "02:04": "27.00",
+    "02:05": "45.00",
+    "02:02": "14.00",
+    "02:03": "18.00",
+    "02:00": "42.00",
+    "02:01": "17.50",
+    "03:03": "40.00",
+    "03:01": "45.00",
+    "03:02": "40.00",
+    "03:00": "90.00",
+    "00:01": "10.00",
+    "00:00": "29.00",
+    "00:03": "10.50",
+    "00:02": "8.25",
+    "00:05": "30.00",
+    "00:04": "16.00",
+    "04:02": "120.0",
+    "04:01": "150.0",
+    "04:00": "300.0",
+    "01:02": "7.20",
+    "01:01": "10.00",
+    "01:04": "15.00",
+    "01:03": "8.75",
+    "01:05": "29.00"
+  },
+  "total_goals": {
+    "3球": "3.55",
+    "4球": "3.95",
+    "5球": "6.25",
+    "6球": "9.00",
+    "7球": "11.00",
+    "0球": "29.00",
+    "1球": "8.25",
+    "2球": "4.95"
+  },
+  "had": {
+    "胜": "6.50",
+    "平": "5.15",
+    "负": "1.28"
+  },
+  "ttg": {
+    "3球": "3.55",
+    "4球": "3.95",
+    "5球": "6.25",
+    "6球": "9.00",
+    "7球": "11.00",
+    "0球": "29.00",
+    "1球": "8.25",
+    "2球": "4.95"
+  },
+  "hafu": {
+    "负负": "1.75",
+    "平平": "8.50",
+    "胜胜": "11.50",
+    "负平": "18.00",
+    "平胜": "17.00",
+    "负胜": "45.00",
+    "胜负": "21.00",
+    "胜平": "18.00",
+    "平负": "4.20"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "3.00",
+    "让平": "3.70",
+    "让负": "1.90"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "胡巴卡德",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "80",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "73",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "63",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.2",
+        "awayGoalAvgCntRatio": "66.7",
+        "homeGoalAvgCnt": "1.1",
+        "homeGoalAvgCntRatio": "33.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "达曼协定",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "37",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.0",
+        "awayLossGoalAvgCntRatio": "34.5",
+        "homeLossGoalAvgCnt": "1.9",
+        "homeLossGoalAvgCntRatio": "65.5",
+        "totalLegCnt": 10
+      },
+      "matchId": 2425096,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "56",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "39",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 6
+      },
+      "sportteryAwayTeamId": 2065838,
+      "sportteryHomeTeamId": 1226,
+      "sportteryMatchId": 2038858,
+      "uniformAwayTeamId": 57312,
+      "uniformHomeTeamId": 884
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 3512,
+          "awayTeamShortName": "达曼协定",
+          "fullCourtGoal": "4:0",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 3515,
+          "homeTeamShortName": "胡巴卡德",
+          "matchDate": "2026-02-24",
+          "matchId": 2425039,
+          "seasonId": 13802,
+          "sportteryAwayTeamId": 1226,
+          "sportteryHomeTeamId": 2065838,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 884,
+          "uniformHomeTeamId": 57312,
+          "uniformLeagueId": 1767,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 3512,
+          "awayTeamShortName": "达曼协定",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 3515,
+          "homeTeamShortName": "胡巴卡德",
+          "matchDate": "2025-04-05",
+          "matchId": 2163376,
+          "seasonId": 12092,
+          "sportteryAwayTeamId": 1226,
+          "sportteryHomeTeamId": 2065838,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 884,
+          "uniformHomeTeamId": 57312,
+          "uniformLeagueId": 1767,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 3515,
+          "awayTeamShortName": "胡巴卡德",
+          "fullCourtGoal": "0:2",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 3512,
+          "homeTeamShortName": "达曼协定",
+          "matchDate": "2024-11-03",
+          "matchId": 2163217,
+          "seasonId": 12092,
+          "sportteryAwayTeamId": 2065838,
+          "sportteryHomeTeamId": 1226,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 57312,
+          "uniformHomeTeamId": 884,
+          "uniformLeagueId": 1767,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 3515,
+          "awayTeamShortName": "胡巴卡德",
+          "fullCourtGoal": "1:3",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 3512,
+          "homeTeamShortName": "达曼协定",
+          "matchDate": "2021-04-11",
+          "matchId": 1366934,
+          "seasonId": 7574,
+          "sportteryAwayTeamId": 2065838,
+          "sportteryHomeTeamId": 1226,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 57312,
+          "uniformHomeTeamId": 884,
+          "uniformLeagueId": 1767,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 3512,
+          "awayTeamShortName": "达曼协定",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 3515,
+          "homeTeamShortName": "胡巴卡德",
+          "matchDate": "2020-12-28",
+          "matchId": 1322684,
+          "seasonId": 7574,
+          "sportteryAwayTeamId": 1226,
+          "sportteryHomeTeamId": 2065838,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 884,
+          "uniformHomeTeamId": 57312,
+          "uniformLeagueId": 1767,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 3,
+        "lossProbability": "60%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "达曼协定",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 2065838,
+        "teamId": 3515,
+        "teamShortName": "胡巴卡德",
+        "uniformTeamId": 57312
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 17,
+            "injuryFlag": 1,
+            "personId": 289781,
+            "personName": "M. Dembélé",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 1226,
+        "teamId": 3512,
+        "teamShortName": "达曼协定",
+        "uniformTeamId": 884
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1666,
+            "awayTeamShortName": "吉达国民",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2065838,
+            "homeTeamShortName": "胡巴卡德",
+            "matchDate": "2026-03-14",
+            "matchId": 2425108,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038288,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 738,
+            "uniformHomeTeamId": 57312,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2470,
+            "awayTeamShortName": "布赖合作",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2065838,
+            "homeTeamShortName": "胡巴卡德",
+            "matchDate": "2026-03-01",
+            "matchId": 2425127,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 1601,
+            "uniformHomeTeamId": 57312,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1226,
+            "awayTeamShortName": "达曼协定",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 2065838,
+            "homeTeamShortName": "胡巴卡德",
+            "matchDate": "2026-02-24",
+            "matchId": 2425039,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 884,
+            "uniformHomeTeamId": 57312,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 2065838,
+            "awayTeamShortName": "胡巴卡德",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 2065836,
+            "homeTeamShortName": "奈季沟渠",
+            "matchDate": "2026-02-21",
+            "matchId": 2425138,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57312,
+            "uniformHomeTeamId": 57274,
+            "uniformLeagueId": 1767,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2065842,
+            "awayTeamShortName": "新未来SC",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2065838,
+            "homeTeamShortName": "胡巴卡德",
+            "matchDate": "2026-02-13",
+            "matchId": 2425139,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2037762,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57270,
+            "uniformHomeTeamId": 57312,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 13,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 8,
+          "sportteryTeamId": 0,
+          "teamId": 2065838,
+          "teamShortName": "胡巴卡德",
+          "totalLegCnt": 5,
+          "uniformTeamId": 57312,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1226,
+            "awayTeamShortName": "达曼协定",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1046326,
+            "homeTeamShortName": "迈季宽广",
+            "matchDate": "2026-03-14",
+            "matchId": 2425104,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 884,
+            "uniformHomeTeamId": 55261,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1228,
+            "awayTeamShortName": "利雅青年",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1226,
+            "homeTeamShortName": "达曼协定",
+            "matchDate": "2026-03-08",
+            "matchId": 2425119,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 883,
+            "uniformHomeTeamId": 884,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1226,
+            "awayTeamShortName": "达曼协定",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2068549,
+            "homeTeamShortName": "拉斯决心",
+            "matchDate": "2026-02-28",
+            "matchId": 2425126,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 884,
+            "uniformHomeTeamId": 57266,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1226,
+            "awayTeamShortName": "达曼协定",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 2065838,
+            "homeTeamShortName": "胡巴卡德",
+            "matchDate": "2026-02-24",
+            "matchId": 2425039,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 884,
+            "uniformHomeTeamId": 57312,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 1915,
+            "awayTeamShortName": "穆拜征服",
+            "fullCourtGoal": "4:3",
+            "halfTimeGoal": "3:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 1226,
+            "homeTeamShortName": "达曼协定",
+            "matchDate": "2026-02-20",
+            "matchId": 2425135,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 631,
+            "uniformHomeTeamId": 884,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 6,
+          "lossGoalCnt": 12,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -6,
+          "sportteryTeamId": 0,
+          "teamId": 1226,
+          "teamShortName": "达曼协定",
+          "totalLegCnt": 5,
+          "uniformTeamId": 884,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48113,
+      "seasonId": 13802,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 6,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 11,
+          "phaseName": "",
+          "points": "42",
+          "ranking": "7",
+          "sportteryTeamId": 1226,
+          "teamId": 0,
+          "teamShortName": "达曼协定",
+          "totalLegCnt": 29,
+          "uniformTeamId": 884,
+          "winGoalMatchCnt": 12,
+          "winProbability": "41%"
+        },
+        {
+          "drawMatchCnt": 8,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "62",
+          "ranking": "4",
+          "sportteryTeamId": 2065838,
+          "teamId": 0,
+          "teamShortName": "胡巴卡德",
+          "totalLegCnt": 29,
+          "uniformTeamId": 57312,
+          "winGoalMatchCnt": 18,
+          "winProbability": "62%"
+        }
+      ],
+      "tournamentId": 125,
+      "tournamentShortName": "沙职",
+      "uniformLeagueId": 1767,
+      "uniformMatchId": 2384901
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "5%",
+            "goalAvgCnt": "1.0",
+            "goalCnt": 26,
+            "goalProbability": "38%",
+            "injuryFlag": 0,
+            "personId": 431497,
+            "personName": "基尼奥内斯",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "33"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "2%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 16,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 526616,
+            "personName": "雷特吉",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 7,
+            "assistProbability": "17%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 331580,
+            "personName": "南德斯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 28,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          }
+        ],
+        "sportteryTeamId": 2065838,
+        "teamId": 3515,
+        "teamShortName": "胡巴卡德",
+        "uniformTeamId": 57312
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "21%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 14,
+            "goalProbability": "36%",
+            "injuryFlag": 0,
+            "personId": 8828,
+            "personName": "韦纳尔迪姆",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 10,
+            "goalProbability": "26%",
+            "injuryFlag": 0,
+            "personId": 576460,
+            "personName": "哈立德 阿尔 甘南",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 17,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 6,
+            "goalProbability": "15%",
+            "injuryFlag": 1,
+            "personId": 289781,
+            "personName": "M. Dembélé",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 1226,
+        "teamId": 3512,
+        "teamShortName": "达曼协定",
+        "uniformTeamId": 884
+      },
+      "seasonId": 13802,
+      "seasonName": "2025/2026",
+      "tournamentId": 125,
+      "tournamentShortName": "沙职",
+      "uniformLeagueId": 1767,
+      "uniformMatchId": 2384901
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": -12.0
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": 13.8
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": 1.4
+    },
+    "0球": {
+      "count": 2,
+      "change_pct": 20.8
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -5.3
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -10.0
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": -10.2
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 13.8
+    }
+  },
+  "hafu_change": {
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 13.3
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": 2.4
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 3.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -3.8
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 4.5
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "8.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "23.00",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "10.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(8.25)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "5球",
+      "ttg_odds": "6.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "700.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "18.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "40.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "30.00",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "150.0",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "15.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(6.25)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "4.95",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "42.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "8.25",
+          "special": true
+        },
+        {
+          "score": "01:01",
+          "odds": "10.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.95（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "4球",
+      "ttg_odds": "3.95",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "14.00",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "45.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "16.00",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "300.0",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "8.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.95（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "match_id": "周三013",
+  "date_folder": "2026.04.22",
+  "home_team": "亚特兰大",
+  "away_team": "拉齐奥",
+  "league": "意大利杯",
+  "handicap": "-1",
+  "home_form": "DLWWLD",
+  "away_form": "WLDWWW",
+  "prediction": "平局",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.40>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降13升12 / 平降13升9 / 客降5升19",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测平局正确！实际比分为1:1(平局)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+5.1%>5%"
+  ],
+  "review_time": "2026-04-23 18:35",
+  "macao_tip": "亚特兰大 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.1,
+    "jc_draw_chg": -4.23,
+    "jc_away_chg": -7.37,
+    "mcao_home_chg": 10.43,
+    "mcao_draw_chg": -8.05,
+    "mcao_away_chg": -16.0,
+    "jc_init_odds": [
+      1.57,
+      3.55,
+      4.75
+    ],
+    "jc_real_odds": [
+      1.65,
+      3.4,
+      4.4
+    ],
+    "macao_init_odds": [
+      1.63,
+      3.48,
+      4.5
+    ],
+    "macao_real_odds": [
+      1.8,
+      3.2,
+      3.78
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}

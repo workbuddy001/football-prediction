@@ -1,0 +1,88 @@
+{
+  "match_id": "周四006",
+  "date_folder": "2026.04.23",
+  "home_team": "卡萨皮亚",
+  "away_team": "布拉加",
+  "league": "葡超",
+  "handicap": "1",
+  "home_form": "DLDLDD",
+  "away_form": "DWWDWL",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率6.05>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.85>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-4.7%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-3.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降19升6 / 平降22升3 / 客降4升24",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:1(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：主胜赔率6.05>5.0",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-4.7%+澳门不动",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-3.3%+澳门不动"
+  ],
+  "review_time": "2026-04-24 07:06",
+  "macao_tip": "布拉加 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.72,
+    "jc_draw_chg": -3.27,
+    "jc_away_chg": 2.16,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      6.35,
+      3.98,
+      1.39
+    ],
+    "jc_real_odds": [
+      6.05,
+      3.85,
+      1.42
+    ],
+    "macao_init_odds": [
+      4.8,
+      3.7,
+      1.54
+    ],
+    "macao_real_odds": [
+      4.8,
+      3.7,
+      1.54
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "NNN"
+  }
+}

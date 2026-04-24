@@ -1,0 +1,73 @@
+{
+  "match_id": "周四009",
+  "date_folder": "2026.04.23",
+  "home_team": "奥维耶多",
+  "away_team": "比利亚雷",
+  "league": "西甲",
+  "handicap": "1",
+  "home_form": "WWLWDL",
+  "away_form": "WLWDWL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "30家公司共识",
+      "detail": "主降30升0 / 平降26升1 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "30/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-24 07:10",
+  "macao_tip": "比利亚雷亚尔 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.89,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 1.64,
+    "mcao_home_chg": -7.01,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.48,
+    "jc_init_odds": [
+      3.6,
+      3.3,
+      1.83
+    ],
+    "jc_real_odds": [
+      3.46,
+      3.3,
+      1.86
+    ],
+    "macao_init_odds": [
+      3.28,
+      3.25,
+      2.01
+    ],
+    "macao_real_odds": [
+      3.05,
+      3.25,
+      2.1
+    ],
+    "jc_pattern": "DNN",
+    "macao_pattern": "DNU"
+  }
+}

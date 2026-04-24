@@ -1,0 +1,90 @@
+{
+  "match_id": "周三005",
+  "date_folder": "2026.04.22",
+  "home_team": "巴黎圣曼",
+  "away_team": "南特",
+  "league": "法甲",
+  "handicap": "-2",
+  "home_form": "LWWWWW",
+  "away_form": "DDDLLL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "3:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率7.50>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率13.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.17<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降23升4 / 平降2升26 / 客降3升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为3:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率7.50>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率13.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.17<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-23 18:16",
+  "macao_tip": "巴黎圣日耳曼 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 7.14,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -4.1,
+    "mcao_draw_chg": 14.29,
+    "mcao_away_chg": 9.09,
+    "jc_init_odds": [
+      1.17,
+      7.0,
+      13.0
+    ],
+    "jc_real_odds": [
+      1.17,
+      7.5,
+      13.0
+    ],
+    "macao_init_odds": [
+      1.22,
+      7.0,
+      11.0
+    ],
+    "macao_real_odds": [
+      1.17,
+      8.0,
+      12.0
+    ],
+    "jc_pattern": "NUN",
+    "macao_pattern": "DUU"
+  }
+}

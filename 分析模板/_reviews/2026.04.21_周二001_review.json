@@ -1,0 +1,91 @@
+{
+  "match_id": "周二001",
+  "date_folder": "2026.04.21",
+  "home_team": "全北现代",
+  "away_team": "仁川联",
+  "league": "韩职",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+22.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降29升0 / 平降0升27 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "29/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为1:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因"
+  ],
+  "review_time": "2026-04-22 07:15",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -11.48,
+    "jc_draw_chg": 7.94,
+    "jc_away_chg": 22.34,
+    "mcao_home_chg": -15.46,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 45.65,
+    "jc_init_odds": [
+      1.83,
+      3.15,
+      3.76
+    ],
+    "jc_real_odds": [
+      1.62,
+      3.4,
+      4.6
+    ],
+    "macao_init_odds": [
+      1.94,
+      3.25,
+      3.33
+    ],
+    "macao_real_odds": [
+      1.64,
+      3.25,
+      4.85
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

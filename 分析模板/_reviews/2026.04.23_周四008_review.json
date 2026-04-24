@@ -1,0 +1,97 @@
+{
+  "match_id": "周四008",
+  "date_folder": "2026.04.23",
+  "home_team": "埃因霍温",
+  "away_team": "兹沃勒",
+  "league": "荷甲",
+  "handicap": "-2",
+  "home_form": "WWLLWL",
+  "away_form": "DLWDDD",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "6:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率6.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率8.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.25<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降27升1 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为6:1(主胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-24 07:09",
+  "macao_tip": "PSV埃因霍温 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.93,
+    "jc_draw_chg": -7.69,
+    "jc_away_chg": -33.33,
+    "mcao_home_chg": 6.56,
+    "mcao_draw_chg": -13.33,
+    "mcao_away_chg": -31.82,
+    "jc_init_odds": [
+      1.18,
+      6.5,
+      12.0
+    ],
+    "jc_real_odds": [
+      1.25,
+      6.0,
+      8.0
+    ],
+    "macao_init_odds": [
+      1.22,
+      7.5,
+      11.0
+    ],
+    "macao_real_odds": [
+      1.3,
+      6.5,
+      7.5
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}

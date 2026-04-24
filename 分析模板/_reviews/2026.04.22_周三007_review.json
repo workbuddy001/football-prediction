@@ -1,0 +1,85 @@
+{
+  "match_id": "周三007",
+  "date_folder": "2026.04.22",
+  "home_team": "皇家社会",
+  "away_team": "赫塔费",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "DDWLWL",
+  "away_form": "LWWLWW",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:1",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+14.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升29 / 平降26升0 / 客降28升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:1(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在主方向,客方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望",
+    "📝 心水推荐为「皇家社会 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-23 18:17",
+  "macao_tip": "皇家社会 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -7.73,
+    "jc_draw_chg": -1.72,
+    "jc_away_chg": 14.75,
+    "mcao_home_chg": 3.37,
+    "mcao_draw_chg": -1.69,
+    "mcao_away_chg": -6.71,
+    "jc_init_odds": [
+      2.2,
+      2.9,
+      3.05
+    ],
+    "jc_real_odds": [
+      2.03,
+      2.85,
+      3.5
+    ],
+    "macao_init_odds": [
+      2.08,
+      2.95,
+      3.43
+    ],
+    "macao_real_odds": [
+      2.15,
+      2.9,
+      3.2
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UND"
+  }
+}

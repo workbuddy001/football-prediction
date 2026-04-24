@@ -1,0 +1,100 @@
+{
+  "match_id": "周三009",
+  "date_folder": "2026.04.22",
+  "home_team": "查尔顿",
+  "away_team": "伊普斯",
+  "league": "英冠",
+  "handicap": "1",
+  "home_form": "DLDLLD",
+  "away_form": "DLWWDW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "1:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.95>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.90>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+25.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+9.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升29 / 平降0升30 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为1:2(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（主胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：主胜赔率5.95>5.0",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+25.3%>5%",
+    "📈 关键信号「推离排除」有效：竞彩平局升+9.9%>5%"
+  ],
+  "review_time": "2026-04-23 18:19",
+  "macao_tip": "伊普斯维奇 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 25.26,
+    "jc_draw_chg": 9.86,
+    "jc_away_chg": -9.55,
+    "mcao_home_chg": 37.4,
+    "mcao_draw_chg": 15.94,
+    "mcao_away_chg": -15.7,
+    "jc_init_odds": [
+      4.75,
+      3.55,
+      1.57
+    ],
+    "jc_real_odds": [
+      5.95,
+      3.9,
+      1.42
+    ],
+    "macao_init_odds": [
+      3.93,
+      3.45,
+      1.72
+    ],
+    "macao_real_odds": [
+      5.4,
+      4.0,
+      1.45
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

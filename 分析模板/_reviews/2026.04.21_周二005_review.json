@@ -1,0 +1,78 @@
+{
+  "match_id": "周二005",
+  "date_folder": "2026.04.21",
+  "home_team": "毕尔巴鄂",
+  "away_team": "奥萨苏纳",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.38>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+7.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降11升13 / 平降4升20 / 客降9升16",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+7.4%>5%"
+  ],
+  "review_time": "2026-04-22 07:17",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.86,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 7.35,
+    "mcao_home_chg": 6.43,
+    "mcao_draw_chg": 2.07,
+    "mcao_away_chg": -15.12,
+    "jc_init_odds": [
+      1.75,
+      3.2,
+      4.08
+    ],
+    "jc_real_odds": [
+      1.7,
+      3.2,
+      4.38
+    ],
+    "macao_init_odds": [
+      1.71,
+      3.38,
+      4.3
+    ],
+    "macao_real_odds": [
+      1.82,
+      3.45,
+      3.65
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UUD"
+  }
+}

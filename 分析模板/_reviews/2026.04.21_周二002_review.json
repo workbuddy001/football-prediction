@@ -1,0 +1,71 @@
+{
+  "match_id": "周二002",
+  "date_folder": "2026.04.21",
+  "home_team": "金泉尚武",
+  "away_team": "江原FC",
+  "league": "韩职",
+  "handicap": "1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "0:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+8.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升25 / 平降26升1 / 客降12升13",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为0:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+8.3%>5%"
+  ],
+  "review_time": "2026-04-22 07:16",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 8.3,
+    "jc_draw_chg": -2.03,
+    "jc_away_chg": -4.31,
+    "mcao_home_chg": 13.21,
+    "mcao_draw_chg": -6.83,
+    "mcao_away_chg": -4.39,
+    "jc_init_odds": [
+      2.77,
+      2.96,
+      2.32
+    ],
+    "jc_real_odds": [
+      3.0,
+      2.9,
+      2.22
+    ],
+    "macao_init_odds": [
+      2.65,
+      3.22,
+      2.28
+    ],
+    "macao_real_odds": [
+      3.0,
+      3.0,
+      2.18
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}

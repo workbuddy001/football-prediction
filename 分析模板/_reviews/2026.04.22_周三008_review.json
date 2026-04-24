@@ -1,0 +1,83 @@
+{
+  "match_id": "周三008",
+  "date_folder": "2026.04.22",
+  "home_team": "特尔斯达",
+  "away_team": "鹿斯巴达",
+  "league": "荷甲",
+  "handicap": "-1",
+  "home_form": "LLWLWL",
+  "away_form": "LDWLDL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "4:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+6.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降30升0 / 平降1升25 / 客降0升30",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "30/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "30/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+6.1%>5%",
+    "📈 关键信号「强共识推离客」有效：30/30家公司升客胜（>25家阈值）",
+    "📈 关键信号「强共识造热主」有效：30/30家公司降主胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-23 18:18",
+  "macao_tip": "鹿特丹斯巴达 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.23,
+    "jc_draw_chg": -2.0,
+    "jc_away_chg": 6.11,
+    "mcao_home_chg": -9.42,
+    "mcao_draw_chg": 0.56,
+    "mcao_away_chg": 13.55,
+    "jc_init_odds": [
+      2.17,
+      3.5,
+      2.62
+    ],
+    "jc_real_odds": [
+      2.1,
+      3.43,
+      2.78
+    ],
+    "macao_init_odds": [
+      2.23,
+      3.58,
+      2.51
+    ],
+    "macao_real_odds": [
+      2.02,
+      3.6,
+      2.85
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "DNU"
+  }
+}

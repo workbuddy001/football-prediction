@@ -1,0 +1,1030 @@
+{
+  "match_id": "2038746",
+  "fetch_time": "2026-04-23 14:44:24",
+  "match_info": {
+    "home_team": "维冈竞技",
+    "away_team": "莱顿东方",
+    "league": "英格兰甲级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "120.0",
+    "01:00": "7.10",
+    "05:02": "250.0",
+    "05:01": "120.0",
+    "02:04": "80.00",
+    "02:05": "300.0",
+    "02:02": "13.00",
+    "02:03": "35.00",
+    "02:00": "10.00",
+    "02:01": "7.75",
+    "03:03": "60.00",
+    "03:01": "16.00",
+    "03:02": "28.00",
+    "03:00": "22.00",
+    "00:01": "8.75",
+    "00:00": "10.00",
+    "00:03": "40.00",
+    "00:02": "15.00",
+    "00:05": "200.0",
+    "00:04": "110.0",
+    "04:02": "70.00",
+    "04:01": "45.00",
+    "04:00": "55.00",
+    "01:02": "9.00",
+    "01:01": "6.00",
+    "01:04": "70.00",
+    "01:03": "25.00",
+    "01:05": "175.0"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "6.15",
+    "5球": "13.00",
+    "6球": "22.00",
+    "7球": "36.00",
+    "0球": "10.00",
+    "1球": "4.35",
+    "2球": "3.15"
+  },
+  "had": {
+    "胜": "2.20",
+    "平": "3.05",
+    "负": "2.88"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "6.15",
+    "5球": "13.00",
+    "6球": "22.00",
+    "7球": "36.00",
+    "0球": "10.00",
+    "1球": "4.35",
+    "2球": "3.15"
+  },
+  "hafu": {
+    "负负": "5.10",
+    "平平": "4.40",
+    "胜胜": "3.75",
+    "负平": "13.50",
+    "平胜": "5.20",
+    "负胜": "24.00",
+    "胜负": "27.00",
+    "胜平": "13.50",
+    "平负": "7.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "5.00",
+    "让平": "3.75",
+    "让负": "1.51"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "莱顿东方",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "47",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "37",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.5",
+        "awayGoalAvgCntRatio": "60.0",
+        "homeGoalAvgCnt": "1.0",
+        "homeGoalAvgCntRatio": "40.0",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "维冈",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 5
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.3",
+        "awayLossGoalAvgCntRatio": "44.8",
+        "homeLossGoalAvgCnt": "1.6",
+        "homeLossGoalAvgCntRatio": "55.2",
+        "totalLegCnt": 10
+      },
+      "matchId": 2353856,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "50",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 2
+      },
+      "sportteryAwayTeamId": 98,
+      "sportteryHomeTeamId": 63,
+      "sportteryMatchId": 2038746,
+      "uniformAwayTeamId": 1200,
+      "uniformHomeTeamId": 297
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 686,
+          "awayTeamShortName": "维冈",
+          "fullCourtGoal": "2:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 744,
+          "homeTeamShortName": "莱顿东方",
+          "matchDate": "2025-08-09",
+          "matchId": 2353618,
+          "seasonId": 13403,
+          "sportteryAwayTeamId": 63,
+          "sportteryHomeTeamId": 98,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 385,
+          "tournamentShortName": "英甲",
+          "uniformAwayTeamId": 297,
+          "uniformHomeTeamId": 1200,
+          "uniformLeagueId": 82,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 686,
+          "awayTeamShortName": "维冈",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 744,
+          "homeTeamShortName": "莱顿东方",
+          "matchDate": "2025-04-05",
+          "matchId": 2134019,
+          "seasonId": 11877,
+          "sportteryAwayTeamId": 63,
+          "sportteryHomeTeamId": 98,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 385,
+          "tournamentShortName": "英甲",
+          "uniformAwayTeamId": 297,
+          "uniformHomeTeamId": 1200,
+          "uniformLeagueId": 82,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 744,
+          "awayTeamShortName": "莱顿东方",
+          "fullCourtGoal": "0:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 686,
+          "homeTeamShortName": "维冈",
+          "matchDate": "2024-12-07",
+          "matchId": 2134323,
+          "seasonId": 11877,
+          "sportteryAwayTeamId": 98,
+          "sportteryHomeTeamId": 63,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 385,
+          "tournamentShortName": "英甲",
+          "uniformAwayTeamId": 1200,
+          "uniformHomeTeamId": 297,
+          "uniformLeagueId": 82,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 744,
+          "awayTeamShortName": "莱顿东方",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 686,
+          "homeTeamShortName": "维冈",
+          "matchDate": "2024-03-09",
+          "matchId": 2003339,
+          "seasonId": 10918,
+          "sportteryAwayTeamId": 98,
+          "sportteryHomeTeamId": 63,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 385,
+          "tournamentShortName": "英甲",
+          "uniformAwayTeamId": 1200,
+          "uniformHomeTeamId": 297,
+          "uniformLeagueId": 82,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 686,
+          "awayTeamShortName": "维冈",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 744,
+          "homeTeamShortName": "莱顿东方",
+          "matchDate": "2023-11-25",
+          "matchId": 2003698,
+          "seasonId": 10918,
+          "sportteryAwayTeamId": 63,
+          "sportteryHomeTeamId": 98,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 385,
+          "tournamentShortName": "英甲",
+          "uniformAwayTeamId": 297,
+          "uniformHomeTeamId": 1200,
+          "uniformLeagueId": 82,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "维冈",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 180020,
+            "personName": "D. Bachmann",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "1"
+          },
+          {
+            "appearanceCnt": 32,
+            "injuryFlag": 1,
+            "personId": 437911,
+            "personName": "S. Clare",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "28"
+          },
+          {
+            "appearanceCnt": 6,
+            "injuryFlag": 1,
+            "personId": 620501,
+            "personName": "R. Edmonds-Green",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 4,
+            "injuryFlag": 1,
+            "personId": 719409,
+            "personName": "A. Matthews",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 98,
+        "teamId": 744,
+        "teamShortName": "莱顿东方",
+        "uniformTeamId": 1200
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 63,
+        "teamId": 686,
+        "teamShortName": "维冈",
+        "uniformTeamId": 297
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 98,
+            "awayTeamShortName": "莱顿东方",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 448,
+            "homeTeamShortName": "埃克塞特",
+            "matchDate": "2026-03-28",
+            "matchId": 2353101,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038670,
+            "sportteryTournamentId": 21,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 1200,
+            "uniformHomeTeamId": 511,
+            "uniformLeagueId": 82,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 111,
+            "awayTeamShortName": "威科姆",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 98,
+            "homeTeamShortName": "莱顿东方",
+            "matchDate": "2026-03-21",
+            "matchId": 2353389,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 156,
+            "uniformHomeTeamId": 1200,
+            "uniformLeagueId": 82,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 98,
+            "awayTeamShortName": "莱顿东方",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1165,
+            "homeTeamShortName": "温布尔登",
+            "matchDate": "2026-03-18",
+            "matchId": 2352878,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 1200,
+            "uniformHomeTeamId": 753,
+            "uniformLeagueId": 82,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 80,
+            "awayTeamShortName": "彼得堡联",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 98,
+            "homeTeamShortName": "莱顿东方",
+            "matchDate": "2026-03-14",
+            "matchId": 2353398,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 445,
+            "uniformHomeTeamId": 1200,
+            "uniformLeagueId": 82,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 98,
+            "awayTeamShortName": "莱顿东方",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 739,
+            "homeTeamShortName": "斯蒂文",
+            "matchDate": "2026-03-11",
+            "matchId": 2353931,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 1200,
+            "uniformHomeTeamId": 177,
+            "uniformLeagueId": 82,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 10,
+          "lossGoalCnt": 4,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 98,
+          "teamShortName": "莱顿东方",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1200,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 63,
+            "awayTeamShortName": "维冈",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 56,
+            "homeTeamShortName": "雷丁",
+            "matchDate": "2026-03-28",
+            "matchId": 2353862,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038668,
+            "sportteryTournamentId": 21,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 297,
+            "uniformHomeTeamId": 356,
+            "uniformLeagueId": 82,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 448,
+            "awayTeamShortName": "埃克塞特",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 63,
+            "homeTeamShortName": "维冈",
+            "matchDate": "2026-03-21",
+            "matchId": 2353867,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 511,
+            "uniformHomeTeamId": 297,
+            "uniformLeagueId": 82,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 63,
+            "awayTeamShortName": "维冈",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 65,
+            "homeTeamShortName": "巴恩斯利",
+            "matchDate": "2026-03-18",
+            "matchId": 2352877,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 297,
+            "uniformHomeTeamId": 296,
+            "uniformLeagueId": 82,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 68,
+            "awayTeamShortName": "布拉德福",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 63,
+            "homeTeamShortName": "维冈",
+            "matchDate": "2026-03-14",
+            "matchId": 2353874,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 1490,
+            "uniformHomeTeamId": 297,
+            "uniformLeagueId": 82,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 53,
+            "awayTeamShortName": "普利茅斯",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 63,
+            "homeTeamShortName": "维冈",
+            "matchDate": "2026-03-11",
+            "matchId": 2354098,
+            "seasonId": 13403,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 385,
+            "tournamentShortName": "英甲",
+            "uniformAwayTeamId": 91,
+            "uniformHomeTeamId": 297,
+            "uniformLeagueId": 82,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 5,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 63,
+          "teamShortName": "维冈",
+          "totalLegCnt": 5,
+          "uniformTeamId": 297,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47903,
+      "seasonId": 13403,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 14,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 16,
+          "phaseName": "",
+          "points": "56",
+          "ranking": "14",
+          "sportteryTeamId": 63,
+          "teamId": 0,
+          "teamShortName": "维冈",
+          "totalLegCnt": 44,
+          "uniformTeamId": 297,
+          "winGoalMatchCnt": 14,
+          "winProbability": "32%"
+        },
+        {
+          "drawMatchCnt": 9,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 21,
+          "phaseName": "",
+          "points": "51",
+          "ranking": "19",
+          "sportteryTeamId": 98,
+          "teamId": 0,
+          "teamShortName": "莱顿东方",
+          "totalLegCnt": 44,
+          "uniformTeamId": 1200,
+          "winGoalMatchCnt": 14,
+          "winProbability": "32%"
+        }
+      ],
+      "tournamentId": 385,
+      "tournamentShortName": "英甲",
+      "uniformLeagueId": 82,
+      "uniformMatchId": 2382937
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 38,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 22,
+            "goalProbability": "39%",
+            "injuryFlag": 0,
+            "personId": 679301,
+            "personName": "D. Ballard",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 38,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          },
+          {
+            "appearanceCnt": 19,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 8,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 453853,
+            "personName": "康诺利",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 23,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 530203,
+            "personName": "I. El Mizouni",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          }
+        ],
+        "sportteryTeamId": 98,
+        "teamId": 744,
+        "teamShortName": "莱顿东方",
+        "uniformTeamId": 1200
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 38,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "2%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 15,
+            "goalProbability": "28%",
+            "injuryFlag": 0,
+            "personId": 642152,
+            "personName": "J. Taylor",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 16,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 39,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "15%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 7,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 454414,
+            "personName": "C. Wright",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 35,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 43,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 8,
+            "assistProbability": "20%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 5,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 458786,
+            "personName": "F. Murray",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 40,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 63,
+        "teamId": 686,
+        "teamShortName": "维冈",
+        "uniformTeamId": 297
+      },
+      "seasonId": 13403,
+      "seasonName": "2025/2026",
+      "tournamentId": 385,
+      "tournamentShortName": "英甲",
+      "uniformLeagueId": 82,
+      "uniformMatchId": 2382937
+    }
+  },
+  "ttg_change": {
+    "5球": {
+      "count": 5,
+      "change_pct": 13.0
+    },
+    "7球": {
+      "count": 4,
+      "change_pct": -10.0
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 2.5
+    },
+    "6球": {
+      "count": 4,
+      "change_pct": -8.3
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 3.6
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -5.6
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 3,
+      "change_pct": 6.1
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": -1.0
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -3.6
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 3,
+      "change_pct": -13.7
+    },
+    "胜胜": {
+      "count": 5,
+      "change_pct": 10.3
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.6
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 1.4
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.15",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "10.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "15.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(3.15)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "4球",
+      "ttg_odds": "6.15",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "13.00",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "16.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "110.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "55.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "25.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(6.15)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "4.35",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "7.10",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "8.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.35（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "3.40",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "7.75",
+          "special": true
+        },
+        {
+          "score": "03:00",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "40.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "9.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.40（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

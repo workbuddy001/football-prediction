@@ -1,0 +1,105 @@
+{
+  "match_id": "周二008",
+  "date_folder": "2026.04.21",
+  "home_team": "朗斯",
+  "away_team": "图卢兹",
+  "league": "法国杯",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "4:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.38<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+3.7%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+7.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降27升3 / 平降1升27 / 客降1升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "27/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.38<1.5，庄家高度自信",
+    "📈 关键信号「[不怕]标签」有效：竞彩升平局+3.7%+澳门不动，平局赔率≥3.5"
+  ],
+  "review_time": "2026-04-22 07:19",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.82,
+    "jc_draw_chg": 3.7,
+    "jc_away_chg": 7.14,
+    "mcao_home_chg": -1.35,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 4.76,
+    "jc_init_odds": [
+      1.42,
+      4.05,
+      5.6
+    ],
+    "jc_real_odds": [
+      1.38,
+      4.2,
+      6.0
+    ],
+    "macao_init_odds": [
+      1.48,
+      3.85,
+      5.25
+    ],
+    "macao_real_odds": [
+      1.46,
+      3.85,
+      5.5
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "NNU"
+  }
+}

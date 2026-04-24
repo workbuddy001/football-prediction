@@ -1,0 +1,853 @@
+{
+  "match_id": "2038977",
+  "fetch_time": "2026-04-21 22:47:31",
+  "match_info": {
+    "home_team": "罗马",
+    "away_team": "比萨",
+    "league": "意大利甲级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "30.00",
+    "01:00": "6.00",
+    "05:02": "120.0",
+    "05:01": "45.00",
+    "02:04": "500.0",
+    "02:05": "1000",
+    "02:02": "22.00",
+    "02:03": "100.0",
+    "02:00": "5.50",
+    "02:01": "6.50",
+    "03:03": "120.0",
+    "03:01": "10.50",
+    "03:02": "30.00",
+    "03:00": "7.00",
+    "00:01": "19.00",
+    "00:00": "13.00",
+    "00:03": "200.0",
+    "00:02": "60.00",
+    "00:05": "1000",
+    "00:04": "700.0",
+    "04:02": "50.00",
+    "04:01": "21.00",
+    "04:00": "13.00",
+    "01:02": "22.00",
+    "01:01": "9.25",
+    "01:04": "500.0",
+    "01:03": "100.0",
+    "01:05": "1000"
+  },
+  "total_goals": {
+    "3球": "3.00",
+    "4球": "4.85",
+    "5球": "10.50",
+    "6球": "21.00",
+    "7球": "35.00",
+    "0球": "13.00",
+    "1球": "5.00",
+    "2球": "3.75"
+  },
+  "had": {
+    "胜": "1.20",
+    "平": "5.15",
+    "负": "9.80"
+  },
+  "ttg": {
+    "3球": "3.00",
+    "4球": "4.85",
+    "5球": "10.50",
+    "6球": "21.00",
+    "7球": "35.00",
+    "0球": "13.00",
+    "1球": "5.00",
+    "2球": "3.75"
+  },
+  "hafu": {
+    "负负": "17.00",
+    "平平": "6.75",
+    "胜胜": "1.70",
+    "负平": "23.00",
+    "平胜": "3.60",
+    "负胜": "29.00",
+    "胜负": "80.00",
+    "胜平": "23.00",
+    "平负": "21.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "1.79",
+    "让平": "3.52",
+    "让负": "3.50"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "比萨",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 8,
+        "awayScoreRatio": "13",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "17",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "70",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.7",
+        "awayGoalAvgCntRatio": "26.9",
+        "homeGoalAvgCnt": "1.9",
+        "homeGoalAvgCntRatio": "73.1",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "罗马",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "0",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "100",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 1
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "2.4",
+        "awayLossGoalAvgCntRatio": "57.1",
+        "homeLossGoalAvgCnt": "1.8",
+        "homeLossGoalAvgCntRatio": "42.9",
+        "totalLegCnt": 10
+      },
+      "matchId": 2341132,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 2448,
+      "sportteryHomeTeamId": 132,
+      "sportteryMatchId": 2038977,
+      "uniformAwayTeamId": 1993,
+      "uniformHomeTeamId": 541
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1241,
+          "awayTeamShortName": "罗马",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1290,
+          "homeTeamShortName": "比萨",
+          "matchDate": "2025-08-31",
+          "matchId": 2341221,
+          "seasonId": 13290,
+          "sportteryAwayTeamId": 132,
+          "sportteryHomeTeamId": 2448,
+          "sportteryMatchId": 2033316,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 541,
+          "uniformHomeTeamId": 1993,
+          "uniformLeagueId": 73,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "罗马",
+        "totalLegCnt": 1,
+        "winGoalMatchCnt": 1,
+        "winProbability": "100%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 1,
+            "personId": 689796,
+            "personName": "İ. Vural",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "21"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 872093,
+            "personName": "德努恩",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "44"
+          }
+        ],
+        "sportteryTeamId": 2448,
+        "teamId": 1290,
+        "teamShortName": "比萨",
+        "uniformTeamId": 1993
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 13,
+            "injuryFlag": 1,
+            "personId": 352481,
+            "personName": "多夫比克",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 575341,
+            "personName": "K.科内",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 683408,
+            "personName": "Wesley",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "43"
+          }
+        ],
+        "sportteryTeamId": 132,
+        "teamId": 1241,
+        "teamShortName": "罗马",
+        "uniformTeamId": 541
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 136,
+            "awayTeamShortName": "都灵",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2448,
+            "homeTeamShortName": "比萨",
+            "matchDate": "2026-04-06",
+            "matchId": 2341136,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038856,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 126,
+            "uniformHomeTeamId": 1993,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2448,
+            "awayTeamShortName": "比萨",
+            "fullCourtGoal": "5:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "5",
+            "homeTeamId": 1040070,
+            "homeTeamShortName": "科莫",
+            "matchDate": "2026-03-22",
+            "matchId": 2340915,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038535,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 1993,
+            "uniformHomeTeamId": 51033,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 120,
+            "awayTeamShortName": "卡利亚里",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2448,
+            "homeTeamShortName": "比萨",
+            "matchDate": "2026-03-15",
+            "matchId": 2341142,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038353,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 123,
+            "uniformHomeTeamId": 1993,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2448,
+            "awayTeamShortName": "比萨",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 124,
+            "homeTeamShortName": "尤文图斯",
+            "matchDate": "2026-03-08",
+            "matchId": 2341026,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038146,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 1993,
+            "uniformHomeTeamId": 293,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 118,
+            "awayTeamShortName": "博洛尼亚",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2448,
+            "homeTeamShortName": "比萨",
+            "matchDate": "2026-03-03",
+            "matchId": 2341147,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2037979,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 124,
+            "uniformHomeTeamId": 1993,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 3,
+          "lossGoalCnt": 12,
+          "lossGoalMatchCnt": 4,
+          "lossProbability": "80%",
+          "netGoal": -9,
+          "sportteryTeamId": 0,
+          "teamId": 2448,
+          "teamShortName": "比萨",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1993,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 132,
+            "awayTeamShortName": "罗马",
+            "fullCourtGoal": "5:2",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "5",
+            "homeTeamId": 123,
+            "homeTeamShortName": "国际米兰",
+            "matchDate": "2026-04-06",
+            "matchId": 2341018,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038859,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 541,
+            "uniformHomeTeamId": 122,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 126,
+            "awayTeamShortName": "莱切",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 132,
+            "homeTeamShortName": "罗马",
+            "matchDate": "2026-03-23",
+            "matchId": 2341139,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038551,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 542,
+            "uniformHomeTeamId": 541,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 118,
+            "awayTeamShortName": "博洛尼亚",
+            "fullCourtGoal": "3:3",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 132,
+            "homeTeamShortName": "罗马",
+            "matchDate": "2026-03-20",
+            "matchId": 2505388,
+            "seasonId": 13334,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038437,
+            "sportteryTournamentId": 70,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1103,
+            "tournamentShortName": "欧罗巴",
+            "uniformAwayTeamId": 124,
+            "uniformHomeTeamId": 541,
+            "uniformLeagueId": 23,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 132,
+            "awayTeamShortName": "罗马",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1040070,
+            "homeTeamShortName": "科莫",
+            "matchDate": "2026-03-16",
+            "matchId": 2340920,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038361,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 541,
+            "uniformHomeTeamId": 51033,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 132,
+            "awayTeamShortName": "罗马",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 118,
+            "homeTeamShortName": "博洛尼亚",
+            "matchDate": "2026-03-13",
+            "matchId": 2505319,
+            "seasonId": 13334,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038240,
+            "sportteryTournamentId": 70,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1103,
+            "tournamentShortName": "欧罗巴",
+            "uniformAwayTeamId": 541,
+            "uniformHomeTeamId": 124,
+            "uniformLeagueId": 23,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 8,
+          "lossGoalCnt": 11,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -3,
+          "sportteryTeamId": 0,
+          "teamId": 132,
+          "teamShortName": "罗马",
+          "totalLegCnt": 5,
+          "uniformTeamId": 541,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47781,
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 4,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 11,
+          "phaseName": "",
+          "points": "58",
+          "ranking": "6",
+          "sportteryTeamId": 132,
+          "teamId": 0,
+          "teamShortName": "罗马",
+          "totalLegCnt": 33,
+          "uniformTeamId": 541,
+          "winGoalMatchCnt": 18,
+          "winProbability": "55%"
+        },
+        {
+          "drawMatchCnt": 12,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 19,
+          "phaseName": "",
+          "points": "18",
+          "ranking": "20",
+          "sportteryTeamId": 2448,
+          "teamId": 0,
+          "teamShortName": "比萨",
+          "totalLegCnt": 33,
+          "uniformTeamId": 1993,
+          "winGoalMatchCnt": 2,
+          "winProbability": "6%"
+        }
+      ],
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2385900
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 305755,
+            "personName": "S. Moreo",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          },
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 330852,
+            "personName": "M. N'Zola",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 12,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "15%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 2,
+            "goalProbability": "8%",
+            "injuryFlag": 0,
+            "personId": 447235,
+            "personName": "M. Tramoni",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 2448,
+        "teamId": 1290,
+        "teamShortName": "比萨",
+        "uniformTeamId": 1993
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 13,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.8",
+            "goalCnt": 10,
+            "goalProbability": "22%",
+            "injuryFlag": 0,
+            "personId": 399771,
+            "personName": "马伦",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 5,
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 676822,
+            "personName": "M. Soulé",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 24,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 339273,
+            "personName": "Lorenzo Pellegrini",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 132,
+        "teamId": 1241,
+        "teamShortName": "罗马",
+        "uniformTeamId": 541
+      },
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2385900
+    }
+  },
+  "ttg_change": {
+    "0球": {
+      "count": 1,
+      "change_pct": 8.3
+    },
+    "1球": {
+      "count": 3,
+      "change_pct": 7.5
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 7.1
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": 10.5
+    },
+    "7球": {
+      "count": 3,
+      "change_pct": 34.6
+    },
+    "4球": {
+      "count": 5,
+      "change_pct": -10.2
+    },
+    "3球": {
+      "count": 5,
+      "change_pct": -15.5
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": 23.5
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 8.9
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": 5.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "5.50",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "60.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "9.25",
+          "special": true
+        }
+      ],
+      "level": "强排除",
+      "reason": "进球数赔率(3.75)含特殊尾数，且对应比分中有特殊尾数赔率，联动双重排除信号"
+    }
+  ]
+}

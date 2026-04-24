@@ -1,0 +1,100 @@
+{
+  "match_id": "周三002",
+  "date_folder": "2026.04.22",
+  "home_team": "浦项制铁",
+  "away_team": "光州FC",
+  "league": "韩职",
+  "handicap": "-1",
+  "home_form": "LLWWDL",
+  "away_form": "LLLLDD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.80>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率6.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.43<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+10.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+8.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降25升0 / 平降1升27 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：客胜赔率6.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.43<1.5，庄家高度自信",
+    "📈 关键信号「推离排除」有效：竞彩平局升+10.8%>5%"
+  ],
+  "review_time": "2026-04-23 18:15",
+  "macao_tip": "浦项制铁 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.92,
+    "jc_draw_chg": 10.79,
+    "jc_away_chg": 8.11,
+    "mcao_home_chg": -4.46,
+    "mcao_draw_chg": 2.34,
+    "mcao_away_chg": 13.73,
+    "jc_init_odds": [
+      1.52,
+      3.43,
+      5.55
+    ],
+    "jc_real_odds": [
+      1.43,
+      3.8,
+      6.0
+    ],
+    "macao_init_odds": [
+      1.57,
+      3.42,
+      5.1
+    ],
+    "macao_real_odds": [
+      1.5,
+      3.5,
+      5.8
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DUU"
+  }
+}

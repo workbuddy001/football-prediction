@@ -1,0 +1,81 @@
+{
+  "match_id": "周三014",
+  "date_folder": "2026.04.22",
+  "home_team": "斯特拉斯",
+  "away_team": "尼斯",
+  "league": "法国杯",
+  "handicap": "-1",
+  "home_form": "LWLWWD",
+  "away_form": "DDLLWL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.85>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "客胜赔率4.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+13.8%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降20升8 / 平降2升27 / 客降10升17",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测主胜错误！实际比分为0:2(客胜)",
+    "❌ 预测主胜但实际是客胜，需要反思原因",
+    "📝 心水推荐为「斯特拉斯堡 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-23 18:37",
+  "macao_tip": "斯特拉斯堡 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -5.66,
+    "jc_draw_chg": 4.05,
+    "jc_away_chg": 13.79,
+    "mcao_home_chg": -8.47,
+    "mcao_draw_chg": -0.6,
+    "mcao_away_chg": 27.91,
+    "jc_init_odds": [
+      1.59,
+      3.7,
+      4.35
+    ],
+    "jc_real_odds": [
+      1.5,
+      3.85,
+      4.95
+    ],
+    "macao_init_odds": [
+      1.77,
+      3.32,
+      3.87
+    ],
+    "macao_real_odds": [
+      1.62,
+      3.3,
+      4.95
+    ],
+    "jc_pattern": "DUU",
+    "macao_pattern": "DNU"
+  }
+}

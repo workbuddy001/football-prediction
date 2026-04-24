@@ -1,0 +1,92 @@
+{
+  "match_id": "周三017",
+  "date_folder": "2026.04.22",
+  "home_team": "利雅得胜利",
+  "away_team": "多哈国民",
+  "league": "亚洲冠军乙级联赛",
+  "handicap": "-2",
+  "home_form": "WWWWWW",
+  "away_form": "WWDWDL",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "5:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away",
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在平方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率7.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率11.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.15<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+7.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降7升21 / 平降18升11 / 客降21升6",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为5:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（客胜/平局）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率7.00>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率11.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.15<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-23 18:37",
+  "macao_tip": "艾利雅得胜利 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 7.69,
+    "jc_away_chg": -15.38,
+    "mcao_home_chg": 5.41,
+    "mcao_draw_chg": -12.5,
+    "mcao_away_chg": -36.67,
+    "jc_init_odds": [
+      1.15,
+      6.5,
+      13.0
+    ],
+    "jc_real_odds": [
+      1.15,
+      7.0,
+      11.0
+    ],
+    "macao_init_odds": [
+      1.11,
+      8.0,
+      15.0
+    ],
+    "macao_real_odds": [
+      1.17,
+      7.0,
+      9.5
+    ],
+    "jc_pattern": "NUD",
+    "macao_pattern": "UDD"
+  }
+}

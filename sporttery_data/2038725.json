@@ -1,0 +1,764 @@
+{
+  "match_id": "2038725",
+  "fetch_time": "2026-04-23 00:29:37",
+  "match_info": {
+    "home_team": "摩洛哥",
+    "away_team": "巴拉圭",
+    "league": "国际赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "100.0",
+    "01:00": "5.40",
+    "05:02": "250.0",
+    "05:01": "100.0",
+    "02:04": "150.0",
+    "02:05": "500.0",
+    "02:02": "16.00",
+    "02:03": "50.00",
+    "02:00": "7.25",
+    "02:01": "7.25",
+    "03:03": "80.00",
+    "03:01": "17.00",
+    "03:02": "28.00",
+    "03:00": "16.00",
+    "00:01": "9.50",
+    "00:00": "8.50",
+    "00:03": "55.00",
+    "00:02": "18.00",
+    "00:05": "500.0",
+    "00:04": "150.0",
+    "04:02": "75.00",
+    "04:01": "38.00",
+    "04:00": "42.00",
+    "01:02": "11.50",
+    "01:01": "6.50",
+    "01:04": "110.0",
+    "01:03": "38.00",
+    "01:05": "400.0"
+  },
+  "total_goals": {
+    "3球": "3.65",
+    "4球": "7.00",
+    "5球": "15.00",
+    "6球": "28.00",
+    "7球": "45.00",
+    "0球": "8.50",
+    "1球": "4.00",
+    "2球": "2.90"
+  },
+  "had": {
+    "胜": "1.73",
+    "平": "3.20",
+    "负": "4.20"
+  },
+  "ttg": {
+    "3球": "3.65",
+    "4球": "7.00",
+    "5球": "15.00",
+    "6球": "28.00",
+    "7球": "45.00",
+    "0球": "8.50",
+    "1球": "4.00",
+    "2球": "2.90"
+  },
+  "hafu": {
+    "负负": "6.85",
+    "平平": "4.75",
+    "胜胜": "3.05",
+    "负平": "15.00",
+    "平胜": "4.00",
+    "负胜": "24.00",
+    "胜负": "36.00",
+    "胜平": "15.00",
+    "平负": "8.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.80",
+    "让平": "3.05",
+    "让负": "1.86"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "巴拉圭",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "50",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "80",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.1",
+        "awayGoalAvgCntRatio": "42.3",
+        "homeGoalAvgCnt": "1.5",
+        "homeGoalAvgCntRatio": "57.7",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "摩洛哥",
+      "last": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 1
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.0",
+        "awayLossGoalAvgCntRatio": "83.3",
+        "homeLossGoalAvgCnt": "0.2",
+        "homeLossGoalAvgCntRatio": "16.7",
+        "totalLegCnt": 10
+      },
+      "matchId": 2500064,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 418,
+      "sportteryHomeTeamId": 424,
+      "sportteryMatchId": 2038725,
+      "uniformAwayTeamId": 1197,
+      "uniformHomeTeamId": 719
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1509,
+          "awayTeamShortName": "摩洛哥",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 39,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1630,
+          "homeTeamShortName": "巴拉圭",
+          "matchDate": "2022-09-28",
+          "matchId": 1646685,
+          "seasonId": 8694,
+          "sportteryAwayTeamId": 424,
+          "sportteryHomeTeamId": 418,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 39,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 1012,
+          "tournamentShortName": "国际赛",
+          "uniformAwayTeamId": 719,
+          "uniformHomeTeamId": 1197,
+          "uniformLeagueId": 104,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "100%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "摩洛哥",
+        "totalLegCnt": 1,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 418,
+        "teamId": 1630,
+        "teamShortName": "巴拉圭",
+        "uniformTeamId": 1197
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 381105,
+            "personName": "马兹拉维",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          }
+        ],
+        "sportteryTeamId": 424,
+        "teamId": 1509,
+        "teamShortName": "摩洛哥",
+        "uniformTeamId": 719
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 418,
+            "awayTeamShortName": "巴拉圭",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 378,
+            "homeTeamShortName": "希腊",
+            "matchDate": "2026-03-28",
+            "matchId": 2501370,
+            "seasonId": 14311,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038643,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1197,
+            "uniformHomeTeamId": 72,
+            "uniformLeagueId": 104,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 418,
+            "awayTeamShortName": "巴拉圭",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 416,
+            "homeTeamShortName": "墨西哥",
+            "matchDate": "2025-11-19",
+            "matchId": 2448345,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2035151,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1197,
+            "uniformHomeTeamId": 756,
+            "uniformLeagueId": 104,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 418,
+            "awayTeamShortName": "巴拉圭",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 523,
+            "homeTeamShortName": "美国",
+            "matchDate": "2025-11-16",
+            "matchId": 2443126,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2035091,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1197,
+            "uniformHomeTeamId": 2105,
+            "uniformLeagueId": 104,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 418,
+            "awayTeamShortName": "巴拉圭",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 430,
+            "homeTeamShortName": "韩国",
+            "matchDate": "2025-10-14",
+            "matchId": 2344162,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1197,
+            "uniformHomeTeamId": 1348,
+            "uniformLeagueId": 104,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 418,
+            "awayTeamShortName": "巴拉圭",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 438,
+            "homeTeamShortName": "日本",
+            "matchDate": "2025-10-10",
+            "matchId": 2344163,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1197,
+            "uniformHomeTeamId": 869,
+            "uniformLeagueId": 104,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 6,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 418,
+          "teamShortName": "巴拉圭",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1197,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 415,
+            "awayTeamShortName": "厄瓜多尔",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 424,
+            "homeTeamShortName": "摩洛哥",
+            "matchDate": "2026-03-28",
+            "matchId": 2500065,
+            "seasonId": 14311,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038648,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1743,
+            "uniformHomeTeamId": 719,
+            "uniformLeagueId": 104,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 424,
+            "awayTeamShortName": "摩洛哥",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 774,
+            "homeTeamShortName": "塞内加尔",
+            "matchDate": "2026-01-19",
+            "matchId": 2486074,
+            "seasonId": 12930,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2037070,
+            "sportteryTournamentId": 3,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 164,
+            "tournamentShortName": "非洲杯",
+            "uniformAwayTeamId": 719,
+            "uniformHomeTeamId": 307,
+            "uniformLeagueId": 96,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 424,
+            "awayTeamShortName": "摩洛哥",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 773,
+            "homeTeamShortName": "尼日利亚",
+            "matchDate": "2026-01-15",
+            "matchId": 2483696,
+            "seasonId": 12930,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2036956,
+            "sportteryTournamentId": 3,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 164,
+            "tournamentShortName": "非洲杯",
+            "uniformAwayTeamId": 719,
+            "uniformHomeTeamId": 2115,
+            "uniformLeagueId": 96,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 424,
+            "awayTeamShortName": "摩洛哥",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 407,
+            "homeTeamShortName": "喀麦隆",
+            "matchDate": "2026-01-10",
+            "matchId": 2481325,
+            "seasonId": 12930,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2036794,
+            "sportteryTournamentId": 3,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 164,
+            "tournamentShortName": "非洲杯",
+            "uniformAwayTeamId": 719,
+            "uniformHomeTeamId": 1741,
+            "uniformLeagueId": 96,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1412,
+            "awayTeamShortName": "坦桑尼亚",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 424,
+            "homeTeamShortName": "摩洛哥",
+            "matchDate": "2026-01-05",
+            "matchId": 2480303,
+            "seasonId": 12930,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2036653,
+            "sportteryTournamentId": 3,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 164,
+            "tournamentShortName": "非洲杯",
+            "uniformAwayTeamId": 1822,
+            "uniformHomeTeamId": 719,
+            "uniformLeagueId": 96,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 4,
+          "lossGoalCnt": 1,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 3,
+          "sportteryTeamId": 0,
+          "teamId": 424,
+          "teamShortName": "摩洛哥",
+          "totalLegCnt": 5,
+          "uniformTeamId": 719,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48236,
+      "seasonId": 14311,
+      "seasonName": "2026",
+      "tables": [],
+      "tournamentId": 1012,
+      "tournamentShortName": "国际赛",
+      "uniformLeagueId": 104,
+      "uniformMatchId": 2382917
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 663156,
+            "personName": "D.戈麦斯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 616126,
+            "personName": "G. Caballero",
+            "playerPositionCode": "Attacker",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          }
+        ],
+        "sportteryTeamId": 418,
+        "teamId": 1630,
+        "teamShortName": "巴拉圭",
+        "uniformTeamId": 1197
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "1.0",
+            "goalCnt": 2,
+            "goalProbability": "67%",
+            "injuryFlag": 0,
+            "personId": 564470,
+            "personName": "N. El Aynaoui",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 686317,
+            "personName": "汉努斯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          }
+        ],
+        "sportteryTeamId": 424,
+        "teamId": 1509,
+        "teamShortName": "摩洛哥",
+        "uniformTeamId": 719
+      },
+      "seasonId": 14311,
+      "seasonName": "2026",
+      "tournamentId": 1012,
+      "tournamentShortName": "国际赛",
+      "uniformLeagueId": 104,
+      "uniformMatchId": 2382917
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": 9.8
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 8.1
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 3.7
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -4.9
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -5.2
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 6.2
+    }
+  },
+  "hafu_change": {
+    "负胜": {
+      "count": 1,
+      "change_pct": 9.1
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 9.6
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": -1.6
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": -9.1
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 7.6
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "2.90",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "00:02",
+          "odds": "18.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.50",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率2.90（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "3.65",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "03:00",
+          "odds": "16.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "55.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "11.50",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.65（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

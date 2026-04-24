@@ -1,0 +1,97 @@
+{
+  "match_id": "周三011",
+  "date_folder": "2026.04.22",
+  "home_team": "伯恩利",
+  "away_team": "曼城",
+  "league": "英超",
+  "handicap": "2",
+  "home_form": "LLLDLL",
+  "away_form": "WWWWLD",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "2:2",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率15.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率8.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+36.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+37.9%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升29 / 平降1升28 / 客降28升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "29/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "28/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为2:2(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「曼彻斯特城 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-23 18:25",
+  "macao_tip": "曼彻斯特城 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 36.36,
+    "jc_draw_chg": 37.93,
+    "jc_away_chg": -8.0,
+    "mcao_home_chg": 30.0,
+    "mcao_draw_chg": 30.77,
+    "mcao_away_chg": -6.4,
+    "jc_init_odds": [
+      11.0,
+      5.8,
+      1.25
+    ],
+    "jc_real_odds": [
+      15.0,
+      8.0,
+      1.15
+    ],
+    "macao_init_odds": [
+      10.0,
+      6.5,
+      1.25
+    ],
+    "macao_real_odds": [
+      13.0,
+      8.5,
+      1.17
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

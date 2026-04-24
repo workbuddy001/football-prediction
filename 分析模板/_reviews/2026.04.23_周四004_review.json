@@ -1,0 +1,88 @@
+{
+  "match_id": "周四004",
+  "date_folder": "2026.04.23",
+  "home_team": "马尔默",
+  "away_team": "天狼星",
+  "league": "瑞超",
+  "handicap": "-1",
+  "home_form": "WWDWDL",
+  "away_form": "WWWLDD",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "2:3",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": true,
+  "exclusions": [
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热5.7%",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+26.5%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降21升4 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测客胜正确！实际比分为2:3(客胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩主胜升+26.5%>5%",
+    "📈 关键信号「强共识推离主」有效：30/30家公司升主胜（>25家阈值）",
+    "📈 关键信号「强共识造热客」有效：30/30家公司降客胜（>25家阈值）"
+  ],
+  "review_time": "2026-04-24 07:04",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 26.49,
+    "jc_draw_chg": -5.71,
+    "jc_away_chg": -23.94,
+    "mcao_home_chg": 18.23,
+    "mcao_draw_chg": -7.41,
+    "mcao_away_chg": -12.89,
+    "jc_init_odds": [
+      1.85,
+      3.5,
+      3.3
+    ],
+    "jc_real_odds": [
+      2.34,
+      3.3,
+      2.51
+    ],
+    "macao_init_odds": [
+      2.03,
+      3.51,
+      2.87
+    ],
+    "macao_real_odds": [
+      2.4,
+      3.25,
+      2.5
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}

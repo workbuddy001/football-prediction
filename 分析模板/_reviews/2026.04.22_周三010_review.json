@@ -1,0 +1,85 @@
+{
+  "match_id": "周三010",
+  "date_folder": "2026.04.22",
+  "home_team": "勒沃库森",
+  "away_team": "拜仁",
+  "league": "德国杯",
+  "handicap": "1",
+  "home_form": "LWWDLD",
+  "away_form": "WWWWWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:2",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [
+    "竞彩×澳门在主方向,平方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率4.45>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.45>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升26 / 平降1升28 / 客降26升2",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "26/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "26/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:2(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-23 18:33",
+  "macao_tip": "拜仁慕尼黑 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -4.3,
+    "jc_draw_chg": -4.3,
+    "jc_away_chg": 2.8,
+    "mcao_home_chg": 16.28,
+    "mcao_draw_chg": 5.88,
+    "mcao_away_chg": -6.54,
+    "jc_init_odds": [
+      4.65,
+      4.65,
+      1.43
+    ],
+    "jc_real_odds": [
+      4.45,
+      4.45,
+      1.47
+    ],
+    "macao_init_odds": [
+      4.3,
+      4.25,
+      1.53
+    ],
+    "macao_real_odds": [
+      5.0,
+      4.5,
+      1.43
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "UUD"
+  }
+}

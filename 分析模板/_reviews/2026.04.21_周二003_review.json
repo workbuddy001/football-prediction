@@ -1,0 +1,73 @@
+{
+  "match_id": "周二003",
+  "date_folder": "2026.04.21",
+  "home_team": "町田泽维",
+  "away_team": "迪拜国民青年",
+  "league": "亚冠",
+  "handicap": "-1",
+  "home_form": "-",
+  "away_form": "-",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向,客方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+14.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升25 / 平降27升1 / 客降19升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+14.6%>5%"
+  ],
+  "review_time": "2026-04-22 07:16",
+  "macao_tip": "",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -10.8,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 14.62,
+    "mcao_home_chg": 15.02,
+    "mcao_draw_chg": -8.26,
+    "mcao_away_chg": -8.71,
+    "jc_init_odds": [
+      2.5,
+      2.9,
+      2.6
+    ],
+    "jc_real_odds": [
+      2.23,
+      2.9,
+      2.98
+    ],
+    "macao_init_odds": [
+      2.13,
+      3.27,
+      2.87
+    ],
+    "macao_real_odds": [
+      2.45,
+      3.0,
+      2.62
+    ],
+    "jc_pattern": "DNU",
+    "macao_pattern": "UDD"
+  }
+}

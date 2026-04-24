@@ -1,0 +1,93 @@
+{
+  "match_id": "周四003",
+  "date_folder": "2026.04.23",
+  "home_team": "莱万特",
+  "away_team": "塞维利亚",
+  "league": "西甲",
+  "handicap": "-1",
+  "home_form": "WLWDDW",
+  "away_form": "WLLLDD",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-3.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-6.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+10.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降27升2 / 平降18升7 / 客降1升28",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "28/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "27/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-3.3%+澳门不动",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-6.5%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+10.1%>5%"
+  ],
+  "review_time": "2026-04-24 07:04",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -3.33,
+    "jc_draw_chg": -6.45,
+    "jc_away_chg": 10.12,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.4,
+      3.1,
+      2.57
+    ],
+    "jc_real_odds": [
+      2.32,
+      2.9,
+      2.83
+    ],
+    "macao_init_odds": [
+      2.36,
+      3.0,
+      2.82
+    ],
+    "macao_real_odds": [
+      2.36,
+      3.0,
+      2.82
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "NNN"
+  }
+}

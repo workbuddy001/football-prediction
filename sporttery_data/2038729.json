@@ -1,0 +1,705 @@
+{
+  "match_id": "2038729",
+  "fetch_time": "2026-04-22 00:54:20",
+  "match_info": {
+    "home_team": "英格兰",
+    "away_team": "日本",
+    "league": "国际赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "45.00",
+    "01:00": "6.75",
+    "05:02": "90.00",
+    "05:01": "40.00",
+    "02:04": "200.0",
+    "02:05": "600.0",
+    "02:02": "17.00",
+    "02:03": "48.00",
+    "02:00": "6.50",
+    "02:01": "6.50",
+    "03:03": "70.00",
+    "03:01": "10.00",
+    "03:02": "22.00",
+    "03:00": "9.50",
+    "00:01": "16.00",
+    "00:00": "15.00",
+    "00:03": "120.0",
+    "00:02": "36.00",
+    "00:05": "800.0",
+    "00:04": "350.0",
+    "04:02": "40.00",
+    "04:01": "20.00",
+    "04:00": "18.00",
+    "01:02": "17.00",
+    "01:01": "8.50",
+    "01:04": "200.0",
+    "01:03": "55.00",
+    "01:05": "600.0"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "4.75",
+    "5球": "8.50",
+    "6球": "16.00",
+    "7球": "24.00",
+    "0球": "15.00",
+    "1球": "5.60",
+    "2球": "3.55"
+  },
+  "had": {
+    "胜": "1.40",
+    "平": "4.10",
+    "负": "5.85"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "4.75",
+    "5球": "8.50",
+    "6球": "16.00",
+    "7球": "24.00",
+    "0球": "15.00",
+    "1球": "5.60",
+    "2球": "3.55"
+  },
+  "hafu": {
+    "负负": "9.50",
+    "平平": "6.85",
+    "胜胜": "2.00",
+    "负平": "18.00",
+    "平胜": "4.00",
+    "负胜": "25.00",
+    "胜负": "45.00",
+    "胜平": "18.00",
+    "平负": "12.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "2.38",
+    "让平": "3.33",
+    "让负": "2.45"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "日本",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "77",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "83",
+        "homeWinGoalMatchCnt": 8,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "73",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.0",
+        "awayGoalAvgCntRatio": "44.4",
+        "homeGoalAvgCnt": "2.5",
+        "homeGoalAvgCntRatio": "55.6",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "英格兰",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.7",
+        "awayLossGoalAvgCntRatio": "63.6",
+        "homeLossGoalAvgCnt": "0.4",
+        "homeLossGoalAvgCntRatio": "36.4",
+        "totalLegCnt": 10
+      },
+      "matchId": 2480727,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 438,
+      "sportteryHomeTeamId": 370,
+      "sportteryMatchId": 2038729,
+      "uniformAwayTeamId": 869,
+      "uniformHomeTeamId": 1730
+    },
+    "history": {
+      "matchList": [],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "英格兰",
+        "totalLegCnt": 0,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 438,
+        "teamId": 1348,
+        "teamShortName": "日本",
+        "uniformTeamId": 869
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 370,
+        "teamId": 774,
+        "teamShortName": "英格兰",
+        "uniformTeamId": 1730
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 438,
+            "awayTeamShortName": "日本",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 398,
+            "homeTeamShortName": "苏格兰",
+            "matchDate": "2026-03-29",
+            "matchId": 2489279,
+            "seasonId": 14311,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038672,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 869,
+            "uniformHomeTeamId": 64,
+            "uniformLeagueId": 104,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 411,
+            "awayTeamShortName": "玻利维亚",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 438,
+            "homeTeamShortName": "日本",
+            "matchDate": "2025-11-18",
+            "matchId": 2445432,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2035137,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 757,
+            "uniformHomeTeamId": 869,
+            "uniformLeagueId": 104,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 422,
+            "awayTeamShortName": "加纳",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 438,
+            "homeTeamShortName": "日本",
+            "matchDate": "2025-11-14",
+            "matchId": 2454181,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2035054,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 720,
+            "uniformHomeTeamId": 869,
+            "uniformLeagueId": 104,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 417,
+            "awayTeamShortName": "巴西",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 438,
+            "homeTeamShortName": "日本",
+            "matchDate": "2025-10-14",
+            "matchId": 2437108,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1737,
+            "uniformHomeTeamId": 869,
+            "uniformLeagueId": 104,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 418,
+            "awayTeamShortName": "巴拉圭",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 438,
+            "homeTeamShortName": "日本",
+            "matchDate": "2025-10-10",
+            "matchId": 2344163,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1197,
+            "uniformHomeTeamId": 869,
+            "uniformLeagueId": 104,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 11,
+          "lossGoalCnt": 4,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 7,
+          "sportteryTeamId": 0,
+          "teamId": 438,
+          "teamShortName": "日本",
+          "totalLegCnt": 5,
+          "uniformTeamId": 869,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 414,
+            "awayTeamShortName": "乌拉圭",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 370,
+            "homeTeamShortName": "英格兰",
+            "matchDate": "2026-03-28",
+            "matchId": 2480731,
+            "seasonId": 14311,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038645,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 1198,
+            "uniformHomeTeamId": 1730,
+            "uniformLeagueId": 104,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 370,
+            "awayTeamShortName": "英格兰",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 357,
+            "homeTeamShortName": "阿尔巴尼",
+            "matchDate": "2025-11-17",
+            "matchId": 2267050,
+            "seasonId": 12739,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2035096,
+            "sportteryTournamentId": 73,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1092,
+            "tournamentShortName": "世预赛",
+            "uniformAwayTeamId": 1730,
+            "uniformHomeTeamId": 458,
+            "uniformLeagueId": 942,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 399,
+            "awayTeamShortName": "塞尔维亚",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 370,
+            "homeTeamShortName": "英格兰",
+            "matchDate": "2025-11-14",
+            "matchId": 2266964,
+            "seasonId": 12739,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2035018,
+            "sportteryTournamentId": 73,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1092,
+            "tournamentShortName": "世预赛",
+            "uniformAwayTeamId": 89,
+            "uniformHomeTeamId": 1730,
+            "uniformLeagueId": 942,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "5",
+            "awayTeamId": 370,
+            "awayTeamShortName": "英格兰",
+            "fullCourtGoal": "0:5",
+            "halfTimeGoal": "0:3",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 383,
+            "homeTeamShortName": "拉脱维亚",
+            "matchDate": "2025-10-15",
+            "matchId": 2266969,
+            "seasonId": 12739,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2034093,
+            "sportteryTournamentId": 73,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1092,
+            "tournamentShortName": "世预赛",
+            "uniformAwayTeamId": 1730,
+            "uniformHomeTeamId": 694,
+            "uniformLeagueId": 942,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 406,
+            "awayTeamShortName": "威尔士",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "3:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 370,
+            "homeTeamShortName": "英格兰",
+            "matchDate": "2025-10-10",
+            "matchId": 2307787,
+            "seasonId": 12810,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2033998,
+            "sportteryTournamentId": 39,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1012,
+            "tournamentShortName": "国际赛",
+            "uniformAwayTeamId": 92,
+            "uniformHomeTeamId": 1730,
+            "uniformLeagueId": 104,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 13,
+          "lossGoalCnt": 1,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 12,
+          "sportteryTeamId": 0,
+          "teamId": 370,
+          "teamShortName": "英格兰",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1730,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48236,
+      "seasonId": 14311,
+      "seasonName": "2026",
+      "tables": [],
+      "tournamentId": 1012,
+      "tournamentShortName": "国际赛",
+      "uniformLeagueId": 104,
+      "uniformMatchId": 2382923
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 507525,
+            "personName": "三笘薫",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 392263,
+            "personName": "伊东纯也",
+            "playerPositionCode": "Attacker",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          }
+        ],
+        "sportteryTeamId": 438,
+        "teamId": 1348,
+        "teamShortName": "日本",
+        "uniformTeamId": 869
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "100%",
+            "injuryFlag": 0,
+            "personId": 452343,
+            "personName": "本·怀特",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": ""
+          }
+        ],
+        "sportteryTeamId": 370,
+        "teamId": 774,
+        "teamShortName": "英格兰",
+        "uniformTeamId": 1730
+      },
+      "seasonId": 14311,
+      "seasonName": "2026",
+      "tournamentId": 1012,
+      "tournamentShortName": "国际赛",
+      "uniformLeagueId": 104,
+      "uniformMatchId": 2382923
+    }
+  },
+  "ttg_change": {
+    "5球": {
+      "count": 1,
+      "change_pct": -5.6
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 9.8
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 4.4
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": -14.3
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": -6.9
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 7.1
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -11.1
+    }
+  },
+  "hafu_change": {
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 2,
+      "change_pct": -25.0
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -5.3
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -10.7
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": -13.6
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 4.2
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -5.3
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": 5.3
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "4球",
+      "ttg_odds": "4.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "17.00",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "10.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "350.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "18.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "55.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(4.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "5.60",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "6.75",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "16.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率5.60（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}
