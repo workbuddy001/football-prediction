@@ -1,7 +1,7 @@
 """
 足球比赛预测分析 - 纯排除法框架 Web服务
 用法: python football_web.py [端口号]
-默认端口: 8899
+默认端口: 9000
 """
 
 import http.server
@@ -4499,7 +4499,7 @@ def main():
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8899
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 9000
     # 默认绑定 0.0.0.0 以支持外部访问
     host = os.environ.get("HOST", "0.0.0.0")
     server = http.server.HTTPServer((host, port), FootballAPIHandler)

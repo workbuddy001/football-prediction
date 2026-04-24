@@ -145,6 +145,7 @@ def compute_similarity(current_data, past_record, past_data):
 # 进球数赔率命中率统计（带缓存）
 # ─────────────────────────────────────────────────────────────────
 _odds_hitrate_cache = None
+_pattern_hitrate_cache = None
 
 def _build_odds_hitrate():
     """
@@ -219,6 +220,53 @@ def _build_odds_hitrate():
 
     _odds_hitrate_cache = {'overall': overall_stats, 'exact': exact_stats}
     return _odds_hitrate_cache
+
+# ────────────────────────────────────────────────────────────
+# 规律命中率统计（带缓存）
+# ────────────────────────────────────────────────────────────
+def _build_pattern_hitrate():
+    """
+    遍历所有有 big3_signal_type 的历史记录，计算各前置条件的命中率。
+
+    返回格式:
+      stats[signal_type] = {total, hits, misses, rate, prediction}
+    """
+    global _pattern_hitrate_cache
+    if _pattern_hitrate_cache is not None:
+        return _pattern_hitrate_cache
+
+    scores = load_scores()
+    # pattern_stats[signal_type] = [total, hits, prediction]
+    pattern_stats = {}
+
+    for key, record in scores.items():
+        signal_type = record.get('big3_signal_type')
+        prediction = record.get('big3_prediction')
+        result = record.get('big3_result')
+
+        if not signal_type or not result or result == 'unknown':
+            continue
+
+        if signal_type not in pattern_stats:
+            pattern_stats[signal_type] = [0, 0, prediction]
+
+        pattern_stats[signal_type][0] += 1
+        if result == 'hit':
+            pattern_stats[signal_type][1] += 1
+
+    # 计算命中率
+    result = {}
+    for signal_type, (total, hits, prediction) in pattern_stats.items():
+        result[signal_type] = {
+            'total': total,
+            'hits': hits,
+            'misses': total - hits,
+            'rate': round(hits / total * 100, 1) if total > 0 else 0,
+            'prediction': prediction
+        }
+
+    _pattern_hitrate_cache = result
+    return _pattern_hitrate_cache
 
 def get_hitrate_for_odds(goal, odds_val):
     """
@@ -973,6 +1021,11 @@ HTML_TEMPLATE = '''
         .score-msg.error { color: #f87171; }
         .score-msg.review-hit { color: #fbbf24; font-weight: bold; }
         .score-msg.review-miss { color: #f87171; }
+        /* 大3球预判命中率标签 */
+        .hit-rate-badge { margin-left: 8px; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+        .hit-rate-high { background: rgba(74,222,128,0.15); color: #4ade80; }
+        .hit-rate-mid { background: rgba(251,191,36,0.15); color: #fbbf24; }
+        .hit-rate-low { background: rgba(248,113,113,0.15); color: #f87171; }
         /* 相似比赛面板 */
         .similar-panel { margin-top: 10px; background: #0d1b2a; border-radius: 8px; border: 1px solid #1e3a5f; overflow: hidden; }
         .similar-header { background: #0f3460; color: #a78bfa; font-size: 12px; font-weight: bold; padding: 8px 12px; }
@@ -981,6 +1034,16 @@ HTML_TEMPLATE = '''
         .similar-rank { font-weight: bold; color: #a78bfa; min-width: 20px; }
         .similar-teams { flex: 1; color: #ccc; }
         .similar-score { font-weight: bold; min-width: 50px; text-align: center; }
+        /* 规律命中率统计 */
+        .pattern-stats { margin-top: 8px; padding: 8px 12px; background: #0a1628; border-radius: 6px; font-size: 12px; }
+        .pattern-stats-title { color: #fbbf24; font-weight: bold; margin-bottom: 6px; }
+        .pattern-stats-table { width: 100%; border-collapse: collapse; }
+        .pattern-stats-table th { color: #888; font-size: 11px; text-align: left; padding: 2px 6px; border-bottom: 1px solid #0f3460; }
+        .pattern-stats-table td { padding: 2px 6px; color: #e0e0e0; }
+        .pattern-stats-table tr:hover { background: #0f3460; }
+        .pattern-rate-high { color: #4ade80; font-weight: bold; }
+        .pattern-rate-mid { color: #fbbf24; }
+        .pattern-rate-low { color: #f87171; }
         .similar-score.tg-3 { color: #4ade80; }
         .similar-score.tg-other { color: #f87171; }
         .similar-score.tg-0 { color: #888; }
@@ -1359,8 +1422,9 @@ HTML_TEMPLATE = '''
                             <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
                             <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
                         </div>
-                        <div id="score-msg-${m.match_id}" class="score-msg"></div>
-                        <div id="similar-panel-${m.match_id}" class="similar-panel" style="display:none"></div>
+                    <div id="score-msg-${m.match_id}" class="score-msg"></div>
+                    <div id="pattern-stats-${m.match_id}" class="pattern-stats" style="display:none"></div>
+                    <div id="similar-panel-${m.match_id}" class="similar-panel" style="display:none"></div>
                     </div>
                     
                     <!-- 胜平负 -->
@@ -1910,6 +1974,16 @@ HTML_TEMPLATE = '''
             } catch(e2) {
                 console.warn('命中率刷新失败:', e2);
             }
+            // 复盘后刷新规律命中率统计
+            try {
+                const rPattern = await fetch('/api/pattern_hitrate');
+                const patternData = await rPattern.json();
+                if (patternData.success && patternData.stats) {
+                    displayPatternStats(matchId, patternData.stats);
+                }
+            } catch(e3) {
+                console.warn('规律命中率刷新失败:', e3);
+            }
             // 复盘后同步刷新当前比赛的"历史高命中率比分"模块
             try {
                 const r3 = await fetch('/api/score_recommendations/' + matchId);
@@ -1971,6 +2045,33 @@ HTML_TEMPLATE = '''
             }
             msgEl.innerHTML = reviewText;
         }
+
+        // ── 大3球预判命中率统计展示 ──────────────────────────
+        function displayPatternStats(matchId, stats) {
+            const container = document.getElementById('pattern-stats-' + matchId);
+            if (!container) return;
+            container.style.display = '';
+
+            let html = '<div class="pattern-stats-title">📊 前置条件命中率统计</div>';
+            html += '<table class="pattern-stats-table">';
+            html += '<tr><th>前置条件</th><th>预判</th><th>样本</th><th>命中</th><th>命中率</th></tr>';
+
+            for (const [signalType, data] of Object.entries(stats)) {
+                const rateClass = data.rate >= 70 ? 'pattern-rate-high' : 
+                              data.rate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                html += '<tr>' +
+                    '<td>' + signalType + '</td>' +
+                    '<td>' + data.prediction + '</td>' +
+                    '<td>' + data.total + '场</td>' +
+                    '<td>' + data.hits + '场</td>' +
+                    '<td class="' + rateClass + '">' + data.rate + '%</td>' +
+                '</tr>';
+            }
+
+            html += '</table>';
+            container.innerHTML = html;
+        }
+
 
         // ── 相似比赛查找 ───────────────────────────────────────
         async function showSimilar(matchId) {
@@ -2309,6 +2410,8 @@ def fetch_match(match_id):
                 'final_rec': final_rec,
                 # 大3球 vs 小3球预判
                 'big3_vs_small3': big3_small3,
+                # 前置条件命中率统计（用于前端显示）
+                'pattern_hitrate': _build_pattern_hitrate(),
             }
             return jsonify({'success': True, 'data': result})
         else:
@@ -2375,6 +2478,50 @@ def save_score(match_id):
             except:
                 pass
 
+        # ── 复盘：计算大3球/小3球规律命中情况 ──────────────────
+        try:
+            filepath = os.path.join(DATA_DIR, f'{match_id}.json')
+            if os.path.exists(filepath):
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+
+                features = extract_features(data)
+                g3_pred = predict_3goals(features)
+                big3_pred = predict_big3_vs_small3(features, g3_pred=g3_pred)
+
+                # 判断实际结果
+                # 小3球 = 总进球<3 (0/1/2球) | 恰好3球 = 总进球=3 | 大3球 = 总进球>3 (4+球)
+                if total >= 4:
+                    big3_actual = '大3球'
+                elif total <= 2:
+                    big3_actual = '小3球'
+                else:
+                    big3_actual = '恰好3球'  # total == 3
+
+                # 判断命中
+                prediction = big3_pred.get('prediction', '不确定')
+                signal_type = big3_pred.get('signal_type')  # 前置条件/规律名称
+
+                if prediction == '不确定':
+                    big3_result = 'unknown'
+                elif prediction == '大3球' and big3_actual == '大3球':
+                    big3_result = 'hit'
+                elif prediction == '小3球' and big3_actual == '小3球':
+                    big3_result = 'hit'
+                else:
+                    big3_result = 'miss'
+
+                # 保存到记录
+                record['big3_signal_type'] = signal_type  # 前置条件/规律名称
+                record['big3_prediction'] = prediction
+                record['big3_confidence'] = big3_pred.get('confidence', 0)
+                record['big3_actual'] = big3_actual
+                record['big3_result'] = big3_result
+                record['big3_reasons'] = big3_pred.get('reasons', [])
+        except Exception as e:
+            print(f'big3_vs_small3 计算失败: {e}')
+            import traceback; traceback.print_exc()
+
         save_score_record(record)
         return jsonify({'success': True, 'record': record})
     except Exception as e:
@@ -2399,6 +2546,14 @@ def get_odds_hitrate():
     _score_hitrate_cache = None  # 同时清除比分赔率缓存
     stats = _build_odds_hitrate()
     return jsonify(stats)
+
+@app.route('/api/pattern_hitrate')
+def get_pattern_hitrate():
+    """返回规律命中率统计（供复盘后动态刷新）"""
+    global _pattern_hitrate_cache
+    _pattern_hitrate_cache = None  # 清除缓存
+    stats = _build_pattern_hitrate()
+    return jsonify({'success': True, 'stats': stats})
 
 @app.route('/api/score_recommendations/<match_id>')
 def get_score_recommendations(match_id):

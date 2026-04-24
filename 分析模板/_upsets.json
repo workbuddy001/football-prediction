@@ -1,6 +1,65 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.24_周五001_20260424200607",
+      "match_id": "周五001",
+      "date_folder": "2026.04.24",
+      "home_team": "麦克阿瑟FC",
+      "away_team": "惠灵顿",
+      "league": "澳超",
+      "upset_type": "reverse_cover",
+      "upset_type_cn": "反向掩护型：主胜被系统排除但实际打出",
+      "prediction": "客胜",
+      "predicted_dir": "away",
+      "actual_result": "home",
+      "actual_score": "4:0",
+      "confidence": 4,
+      "was_excluded": true,
+      "exclusions": [
+        "home"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 22.73,
+        "jc_draw_chg": -4.34,
+        "jc_away_chg": -23.55,
+        "mcao_home_chg": 13.4,
+        "mcao_draw_chg": -5.41,
+        "mcao_away_chg": -11.64,
+        "jc_init_odds": [
+          1.76,
+          3.92,
+          3.27
+        ],
+        "jc_real_odds": [
+          2.16,
+          3.75,
+          2.5
+        ],
+        "macao_init_odds": [
+          1.94,
+          3.7,
+          2.92
+        ],
+        "macao_real_odds": [
+          2.2,
+          3.5,
+          2.58
+        ],
+        "jc_pattern": "UDD",
+        "macao_pattern": "UDD"
+      },
+      "upset_odds": 2.16,
+      "home_form": "LLWWLL",
+      "away_form": "WLWWWD",
+      "handicap": "-1",
+      "macao_tip": "惠灵顿凤凰 贏",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-24 20:06"
+    },
+    {
       "upset_id": "2026.04.23_周四007_20260424070833",
       "match_id": "周四007",
       "date_folder": "2026.04.23",
@@ -5192,12 +5251,12 @@
     }
   ],
   "stats": {
-    "total": 87,
+    "total": 88,
     "by_type": {
-      "reverse_cover": 55,
+      "reverse_cover": 56,
       "unknown": 29,
       "silent": 3
     },
-    "last_update": "2026-04-24 07:08"
+    "last_update": "2026-04-24 20:06"
   }
 }

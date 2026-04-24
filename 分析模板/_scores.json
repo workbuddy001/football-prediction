@@ -11518,7 +11518,7 @@
     "score_str": "0:0",
     "total_goals": 0,
     "tg_result": "0球",
-    "record_time": "2026-04-22 00:42",
+    "record_time": "2026-04-25 02:42",
     "total_goals_odds": {
       "0球": "10.00",
       "1球": "4.35",
@@ -11537,7 +11537,17 @@
     },
     "home_team": "维冈竞技",
     "away_team": "莱顿东方",
-    "league": "英格兰甲级联赛"
+    "league": "英格兰甲级联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
   },
   "2038745": {
     "match_id": "2038745",
@@ -12700,7 +12710,7 @@
     "score_str": "0:2",
     "total_goals": 2,
     "tg_result": "2球",
-    "record_time": "2026-04-23 09:56",
+    "record_time": "2026-04-25 02:43",
     "total_goals_odds": {
       "0球": "15.00",
       "1球": "5.55",
@@ -12719,7 +12729,16 @@
     },
     "home_team": "斯特拉斯堡",
     "away_team": "尼斯",
-    "league": "法国杯"
+    "league": "法国杯",
+    "big3_signal_type": "关注3球+0=15-16",
+    "big3_prediction": "大3球",
+    "big3_confidence": 68,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=15.0",
+      "历史数据：40-44%大3球，20-22%小3球"
+    ]
   },
   "2039264": {
     "match_id": "2039264",
@@ -12756,7 +12775,7 @@
     "score_str": "2:2",
     "total_goals": 4,
     "tg_result": "4球",
-    "record_time": "2026-04-23 09:57",
+    "record_time": "2026-04-25 02:44",
     "total_goals_odds": {
       "0球": "15.00",
       "1球": "6.00",
@@ -12775,7 +12794,17 @@
     },
     "home_team": "伯恩茅斯",
     "away_team": "利兹联",
-    "league": "英格兰超级联赛"
+    "league": "英格兰超级联赛",
+    "big3_signal_type": "0球13-16+3球黄金区间",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "🎯0球13-16 + 3球3.2-3.4组合",
+      "历史56.5%大3球(+27.6% vs基准)",
+      "⭐+近况<2.5加成：历史66.7%大3球"
+    ]
   },
   "2039262": {
     "match_id": "2039262",
@@ -13273,7 +13302,7 @@
     "score_str": "1:2",
     "total_goals": 3,
     "tg_result": "3球",
-    "record_time": "2026-04-24 06:49",
+    "record_time": "2026-04-25 02:38",
     "total_goals_odds": {
       "0球": "15.00",
       "1球": "5.60",
@@ -13292,7 +13321,17 @@
     },
     "home_team": "欧奈宰纳伊马",
     "away_team": "布赖代合作",
-    "league": "沙特职业联赛"
+    "league": "沙特职业联赛",
+    "big3_signal_type": "0球13-16基础",
+    "big3_prediction": "大3球",
+    "big3_confidence": 71,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "0球13-16区间",
+      "历史39.1%大3球(+10.2% vs基准28.9%)",
+      "+近况>=3.5：历史46.2%大3球"
+    ]
   },
   "2039269": {
     "match_id": "2039269",
@@ -13301,7 +13340,7 @@
     "score_str": "2:3",
     "total_goals": 5,
     "tg_result": "5+球",
-    "record_time": "2026-04-24 06:49",
+    "record_time": "2026-04-25 02:39",
     "total_goals_odds": {
       "0球": "14.00",
       "1球": "5.60",
@@ -13320,7 +13359,16 @@
     },
     "home_team": "马尔默",
     "away_team": "天狼星",
-    "league": "瑞典超级联赛"
+    "league": "瑞典超级联赛",
+    "big3_signal_type": "关注3球+0=14",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=14 + 近况2.5-3.0",
+      "历史数据：85.7%大3球(4+球)，最强信号！"
+    ]
   },
   "2039274": {
     "match_id": "2039274",
@@ -13329,7 +13377,7 @@
     "score_str": "1:1",
     "total_goals": 2,
     "tg_result": "2球",
-    "record_time": "2026-04-24 06:50",
+    "record_time": "2026-04-25 02:39",
     "total_goals_odds": {
       "0球": "11.50",
       "1球": "4.60",
@@ -13348,7 +13396,17 @@
     },
     "home_team": "皇家奥维耶多",
     "away_team": "比利亚雷亚尔",
-    "league": "西班牙甲级联赛"
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
   },
   "2039273": {
     "match_id": "2039273",
@@ -13385,7 +13443,7 @@
     "score_str": "1:1",
     "total_goals": 2,
     "tg_result": "2球",
-    "record_time": "2026-04-24 06:54",
+    "record_time": "2026-04-25 02:40",
     "total_goals_odds": {
       "0球": "16.00",
       "1球": "6.55",
@@ -13404,7 +13462,16 @@
     },
     "home_team": "斯图加特",
     "away_team": "弗赖堡",
-    "league": "德国杯"
+    "league": "德国杯",
+    "big3_signal_type": "关注3球+0=15-16",
+    "big3_prediction": "大3球",
+    "big3_confidence": 68,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=16.0",
+      "历史数据：40-44%大3球，20-22%小3球"
+    ]
   },
   "2039270": {
     "match_id": "2039270",
@@ -13413,7 +13480,7 @@
     "score_str": "1:0",
     "total_goals": 1,
     "tg_result": "1球",
-    "record_time": "2026-04-24 06:55",
+    "record_time": "2026-04-25 02:40",
     "total_goals_odds": {
       "0球": "10.00",
       "1球": "4.10",
@@ -13432,7 +13499,17 @@
     },
     "home_team": "巴列卡诺",
     "away_team": "西班牙人",
-    "league": "西班牙甲级联赛"
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
   },
   "2039268": {
     "match_id": "2039268",
@@ -13441,7 +13518,7 @@
     "score_str": "2:0",
     "total_goals": 2,
     "tg_result": "2球",
-    "record_time": "2026-04-24 06:55",
+    "record_time": "2026-04-25 02:41",
     "total_goals_odds": {
       "0球": "10.00",
       "1球": "4.20",
@@ -13460,7 +13537,16 @@
     },
     "home_team": "莱万特",
     "away_team": "塞维利亚",
-    "league": "西班牙甲级联赛"
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "0球<=12反向",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
   },
   "2039267": {
     "match_id": "2039267",
@@ -13570,5 +13656,171 @@
     "score_str": "1:1",
     "result": "draw",
     "record_time": "2026-04-24 07:10"
+  },
+  "2026.04.24_周五001": {
+    "match_id": "周五001",
+    "date": "2026.04.24",
+    "home_score": 4,
+    "away_score": 0,
+    "score_str": "4:0",
+    "result": "home",
+    "record_time": "2026-04-24 20:06"
+  },
+  "2039289": {
+    "match_id": "2039289",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-04-25 02:37",
+    "total_goals_odds": {
+      "0球": "11.00",
+      "1球": "4.30",
+      "2球": "3.15",
+      "3球": "3.75",
+      "4球": "6.20",
+      "5球": "11.00",
+      "6球": "17.00",
+      "7球": "28.00"
+    },
+    "hhad_odds": {
+      "让平": "4.20",
+      "让球": "-1",
+      "让胜": "6.00",
+      "让负": "1.38"
+    },
+    "home_team": "柏太阳神",
+    "away_team": "鹿岛鹿角",
+    "league": "日本职业联赛",
+    "big3_signal_type": "0球<=12反向",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039288": {
+    "match_id": "2039288",
+    "home_score": 4,
+    "away_score": 0,
+    "score_str": "4:0",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-04-25 02:38",
+    "total_goals_odds": {
+      "0球": "18.50",
+      "1球": "6.75",
+      "2球": "4.30",
+      "3球": "3.80",
+      "4球": "4.35",
+      "5球": "6.50",
+      "6球": "11.00",
+      "7球": "12.50"
+    },
+    "hhad_odds": {
+      "让平": "4.35",
+      "让球": "-1",
+      "让胜": "4.78",
+      "让负": "1.45"
+    },
+    "home_team": "麦克阿瑟FC",
+    "away_team": "惠灵顿凤凰",
+    "league": "澳大利亚超级联赛",
+    "big3_signal_type": "排除3球",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2026.04.24_周五002": {
+    "match_id": "周五002",
+    "date": "2026.04.24",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "result": "away",
+    "record_time": "2026-04-24 20:20"
+  },
+  "2039290": {
+    "match_id": "2039290",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-04-25 02:18",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "5.90",
+      "2球": "3.55",
+      "3球": "3.25",
+      "4球": "5.10",
+      "5球": "8.20",
+      "6球": "16.00",
+      "7球": "21.00"
+    },
+    "hhad_odds": {
+      "让平": "4.00",
+      "让球": "-1",
+      "让胜": "4.45",
+      "让负": "1.53"
+    },
+    "home_team": "TPS图尔库",
+    "away_team": "赫尔辛基火花",
+    "league": "芬兰超级联赛",
+    "big3_signal_type": "关注3球+0=15-16",
+    "big3_prediction": "大3球",
+    "big3_confidence": 68,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=15.0",
+      "历史数据：40-44%大3球，20-22%小3球"
+    ]
+  },
+  "2039291": {
+    "match_id": "2039291",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-04-25 02:34",
+    "total_goals_odds": {
+      "0球": "14.00",
+      "1球": "5.80",
+      "2球": "3.90",
+      "3球": "3.30",
+      "4球": "4.60",
+      "5球": "8.20",
+      "6球": "15.00",
+      "7球": "22.00"
+    },
+    "hhad_odds": {
+      "让平": "4.15",
+      "让球": "+1",
+      "让胜": "1.44",
+      "让负": "5.15"
+    },
+    "home_team": "拉斯决心",
+    "away_team": "利雅得",
+    "league": "沙特职业联赛",
+    "big3_signal_type": "关注3球+0=14",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=14 + 近况2.5-3.0",
+      "历史数据：85.7%大3球(4+球)，最强信号！"
+    ]
   }
 }
