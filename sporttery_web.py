@@ -846,6 +846,22 @@ HTML_TEMPLATE = '''
         .small3-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
         .big3-factors { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
         .factor-tag { font-size: 10px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px; color: #94a3b8; }
+        /* 2026-04-24 新规律高亮样式 */
+        .factor-tag-new {
+            font-size: 13px !important;
+            font-weight: bold;
+            background: linear-gradient(135deg, rgba(251,191,36,0.25), rgba(251,191,36,0.1));
+            border: 1.5px solid #f59e0b;
+            color: #fbbf24;
+            padding: 4px 12px;
+            border-radius: 12px;
+            animation: pulse-glow 2s ease-in-out infinite;
+            box-shadow: 0 0 8px rgba(251,191,36,0.3);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 8px rgba(251,191,36,0.3); }
+            50% { box-shadow: 0 0 16px rgba(251,191,36,0.6); }
+        }
 
         /* 黄金2球/4球样式 */
         .golden-2-box { background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%); border: 1px solid #22c55e; border-radius: 8px; padding: 10px; margin: 6px 0; }
@@ -1290,7 +1306,7 @@ HTML_TEMPLATE = '''
                             </div>
                             ${m.g3_prediction.final_rec.big3_vs_small3.reasons && m.g3_prediction.final_rec.big3_vs_small3.reasons.length > 0 ? `
                             <div class="big3-factors">
-                                ${m.g3_prediction.final_rec.big3_vs_small3.reasons.map(r => `<span class="factor-tag">${r}</span>`).join('')}
+                                ${m.g3_prediction.final_rec.big3_vs_small3.reasons.map(r => `<span class="factor-tag ${r.includes('⭐') ? 'factor-tag-new' : ''}">${r}</span>`).join('')}
                             </div>
                             ` : ''}
                         </div>
