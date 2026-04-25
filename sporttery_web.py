@@ -1546,23 +1546,23 @@ HTML_TEMPLATE = '''
                                     ${h.high_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
                                 </div>` : ''}
                                 ${h.draw_signal ? `
-                                <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,0.2);">
-                                    ${isHighDraw ? `
+                                <div style="margin-top:8px;padding:6px 8px;background:rgba(234,179,8,0.10);border:1px solid rgba(234,179,8,0.25);border-radius:6px;">
                                     <div style="display:flex;align-items:center;gap:6px;">
-                                        <span style="background:rgba(234,179,8,0.30);color:#fbbf24;padding:2px 8px;border-radius:4px;font-weight:bold;font-size:12px;">⚠️ 高平局信号</span>
-                                        <span style="color:#fbbf24;font-weight:bold;">平局率约${h.draw_pct}%</span>
+                                        <span style="background:rgba(234,179,8,0.25);color:#fbbf24;padding:2px 8px;border-radius:4px;font-weight:bold;font-size:12px;">⚠️ 高平局信号</span>
+                                        <span style="color:#fbbf24;font-weight:bold;font-size:13px;">90分钟平局率约${h.draw_pct}%</span>
                                     </div>
                                     <div style="color:#fcd34d;margin-top:4px;font-size:11px;">${h.draw_reason}</div>
-                                    ` : `
-                                    <div style="color:#94a3b8;">
-                                        <span style="margin-right:4px;">📊</span>预估平局率约${h.draw_pct}%
-                                        ${h.draw_reason ? ` - ${h.draw_reason}` : ''}
-                                    </div>
-                                    `}
                                 </div>
                                 ` : ''}
                             </div>`;
                         })() : ''}
+                    </div>
+                    ` : ''}
+
+                    <!-- 平局信号（所有had.平区间） -->
+                    ${m.draw_hint && m.draw_hint.active ? `
+                    <div class="odds-section">
+                        ${drawHintHtml(m.draw_hint)}
                     </div>
                     ` : ''}
 
@@ -2280,6 +2280,29 @@ HTML_TEMPLATE = '''
             }
         }
 
+        // 平局信号HTML生成（基于draw_level分色）
+        function drawHintHtml(d) {
+            if (!d || !d.active) return '';
+            const isSuper = d.draw_level === 'super_high';
+            const isHigh = d.draw_level === 'high';
+            const isMed = d.draw_level === 'medium';
+            const isLow = d.draw_level === 'low';
+            const isVLow = d.draw_level === 'very_low';
+            const bg = isSuper ? 'rgba(239,68,68,0.20)' : isHigh ? 'rgba(234,179,8,0.20)' : isMed ? 'rgba(59,130,246,0.15)' : isLow ? 'rgba(100,116,139,0.12)' : 'rgba(34,197,94,0.12)';
+            const border = isSuper ? 'rgba(239,68,68,0.5)' : isHigh ? 'rgba(234,179,8,0.5)' : isMed ? 'rgba(59,130,246,0.4)' : isLow ? 'rgba(100,116,139,0.3)' : 'rgba(34,197,94,0.3)';
+            const tagBg = isSuper ? 'rgba(239,68,68,0.30)' : isHigh ? 'rgba(234,179,8,0.25)' : isMed ? 'rgba(59,130,246,0.20)' : isLow ? 'rgba(100,116,139,0.18)' : 'rgba(34,197,94,0.20)';
+            const tagColor = isSuper ? '#fca5a5' : isHigh ? '#fbbf24' : isMed ? '#93c5fd' : isLow ? '#94a3b8' : '#4ade80';
+            const textColor = isSuper ? '#fca5a5' : isHigh ? '#fbbf24' : isMed ? '#93c5fd' : isLow ? '#94a3b8' : '#4ade80';
+            const label = isSuper ? '⚠️ 超高平局' : isHigh ? '⚠️ 高平局' : isMed ? '平局信号' : isLow ? '平局概率偏低' : '💚 平局概率低';
+            return '<div style="background:' + bg + ';border:1px solid ' + border + ';border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;">' +
+                '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">' +
+                    '<span style="background:' + tagBg + ';color:' + tagColor + ';padding:2px 8px;border-radius:4px;font-weight:bold;font-size:11px;">' + label + '</span>' +
+                    '<span style="color:' + textColor + ';font-weight:bold;font-size:13px;">90分钟平局率 ' + d.draw_pct + '%</span>' +
+                '</div>' +
+                '<div style="color:' + textColor + ';margin-top:4px;font-size:11px;">' + d.draw_reason + '</div>' +
+            '</div>';
+        }
+
     </script>
 </body>
 </html>
@@ -2294,7 +2317,7 @@ def index():
     html = HTML_TEMPLATE.replace('__ODDS_STATS_JSON__', stats_js)
     return html
 
-def _analyze_hhad_low_draw(hhad, recent_form):
+def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     """
     让球平低赔规律分析（基于341场历史回测）
 
@@ -2375,48 +2398,29 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         hhad_confidence = 68
 
 
-    # ── Step 3: 平局概率分析（基于正确解析的30场回测）──
-    # 按优先级（置信度从高到低）用if/elif，确保只触发一个条件
+    # ── Step 3: 平局概率分析（基于had.平回测, 2026-04-26修正）──
+    # 逻辑：不让球平局赔率(had.平)在高危区间时，90分钟平局概率显著上升
+    # 高危区间：[3.0,3.2) 或 [3.4,3.7)  → 平局率约45%
+    # 前置条件：任意hhad分析触发后均可作为风险提示
     draw_signal = False
-    draw_pct = 60  # 基准60.0%
+    draw_pct = 27   # 基准27.3%（所有比赛）
     draw_reason = ''
 
-    if not is_home_let and hhad_win < 2.3:
-        # 主受让+让胜<2.3 → 100%(6场) 最高置信度
-        draw_pct = 100
-        draw_reason = '主受让+让胜赔<2.3, 平局率100%(6场)'
+    had_draw_val = 0
+    try:
+        had = data.get('had', {}) if data is not None else {}
+        if had and '平' in had:
+            had_draw_val = float(had['平'])
+    except:
+        pass 
+
+    # 高危区间判断（回测：+had.平高危 → 平局率45%左右）
+    is_high_draw = (3.0 <= had_draw_val < 3.2) or (3.4 <= had_draw_val < 3.7)
+
+    if is_high_draw:
         draw_signal = True
-    elif not is_home_let and hhad_win < 2.5:
-        # 主受让+让胜<2.5 → 87.5%(8场)
-        draw_pct = 88
-        draw_reason = '主受让+让胜赔<2.5, 平局率87.5%(8场)'
-        draw_signal = True
-    elif not is_home_let and hhad_win < hhad_lose - 0.05:
-        # 主受让+让胜赔更低 → 85.7%(7场)
-        draw_pct = 86
-        draw_reason = '主受让+让胜赔更低, 平局率85.7%(7场)'
-        draw_signal = True
-    elif hhad_win < 2.3:
-        # 让胜<2.3 → 100%(6场)
-        draw_pct = 100
-        draw_reason = '让胜赔<2.3, 平局率100%(6场)'
-        draw_signal = True
-    elif hhad_win < 2.6:
-        # 让胜2.3-2.6 → 55.6%
-        draw_pct = 56
-        draw_reason = '让胜赔2.3-2.6, 平局率55.6%'
-        draw_signal = True
-    elif hhad_win < hhad_lose - 0.05:
-        # 让胜赔更低 → 71.4%(14场)
-        draw_pct = 71
-        draw_reason = '让胜赔更低, 平局率71.4%(14场)'
-        draw_signal = True
-        hints.append('让胜赔更低, 平局概率上升')
-    elif not is_home_let:
-        # 主受让基准 → 80.0%(10场)
-        draw_pct = 80
-        draw_reason = '主受让组平局率80.0%(10场)'
-        draw_signal = True
+        draw_pct = 45   # 回测均值约45%
+        draw_reason = f'had.平={had_draw_val:.2f}高危区间, 90分钟平局率约45%'
 
     # ── Step 4: 让胜/让负低赔信号（341场回测）──
     # 中低/中/高区间已有专属强信号，跳过通用低赔信号（避免提示混乱）
@@ -2509,6 +2513,102 @@ def _analyze_hhad_low_draw(hhad, recent_form):
     }
 
 
+def _analyze_draw_signal(had, hhad):
+    """
+    平局信号分析（所有had.平区间均显示，基于344场回测）
+    返回:
+        {
+            'active': bool,        # 是否有had数据
+            'had_draw': float,     # had.平赔率
+            'draw_level': str,     # 'super_high'/'high'/'medium'/'low'/'very_low'
+            'draw_pct': int,       # 预估平局率
+            'draw_reason': str,    # 原因说明
+            'special_combo': bool, # 触发超高组合(100%, 7场)
+            'combo_778': bool,     # 触发77.8%组合(9场)
+        }
+    """
+    if not had or '平' not in had:
+        return {'active': False}
+
+    try:
+        had_draw = float(had['平'])
+    except (ValueError, TypeError):
+        return {'active': False}
+
+    if had_draw <= 0:
+        return {'active': False}
+
+    result = {
+        'active': True,
+        'had_draw': had_draw,
+        'special_combo': False,
+        'combo_778': False,
+        'draw_level': 'medium',
+        'draw_pct': 27,
+        'draw_reason': '',
+    }
+
+    # ── 区间判断 + 平局率（基于344场回测）──
+    if 3.0 <= had_draw < 3.2:
+        result['draw_pct'] = 43
+        result['draw_level'] = 'high'
+        result['draw_reason'] = 'had.平=%.2f 高危区间[3.0,3.2), 平局率42.6%%(%d场)' % (had_draw, 47)
+    elif 3.4 <= had_draw < 3.6:
+        result['draw_pct'] = 36
+        result['draw_level'] = 'high'
+        result['draw_reason'] = 'had.平=%.2f 高危区间[3.4,3.6), 平局率35.7%%(%d场)' % (had_draw, 42)
+    elif 3.6 <= had_draw < 3.8:
+        result['draw_pct'] = 34
+        result['draw_level'] = 'medium'
+        result['draw_reason'] = 'had.平=%.2f [3.6,3.8), 平局率34.1%%(%d场)' % (had_draw, 41)
+    elif 2.8 <= had_draw < 3.0:
+        result['draw_pct'] = 26
+        result['draw_level'] = 'medium'
+        result['draw_reason'] = 'had.平=%.2f [2.8,3.0), 平局率25.6%%(%d场)' % (had_draw, 39)
+    elif 3.2 <= had_draw < 3.4:
+        result['draw_pct'] = 21
+        result['draw_level'] = 'low'
+        result['draw_reason'] = 'had.平=%.2f [3.2,3.4), 平局率21.1%%(%d场)' % (had_draw, 57)
+    elif 3.8 <= had_draw < 4.0:
+        result['draw_pct'] = 22
+        result['draw_level'] = 'low'
+        result['draw_reason'] = 'had.平=%.2f [3.8,4.0), 平局率21.9%%(%d场)' % (had_draw, 32)
+    elif 4.0 <= had_draw < 4.5:
+        result['draw_pct'] = 24
+        result['draw_level'] = 'low'
+        result['draw_reason'] = 'had.平=%.2f [4.0,4.5), 平局率23.5%%(%d场)' % (had_draw, 34)
+    elif had_draw < 2.8:
+        result['draw_pct'] = 33
+        result['draw_level'] = 'medium'
+        result['draw_reason'] = 'had.平=%.2f (<2.8), 平局率33.3%%(%d场,小样本)' % (had_draw, 6)
+    else:  # >= 4.5
+        result['draw_pct'] = 13
+        result['draw_level'] = 'very_low'
+        result['draw_reason'] = 'had.平=%.2f (>=4.5), 平局率13.0%%(%d场) [低平局区间]' % (had_draw, 46)
+
+    # ── 特殊组合：had[3.4,3.6) + hhd<3.3 ──
+    if 3.4 <= had_draw < 3.6 and hhad and '让平' in hhad and '让胜' in hhad:
+        try:
+            hhd = float(hhad['让平'])
+            hhd_win = float(hhad['让胜'])
+            if hhd < 3.3:
+                # 77.8%组合（9场7平）
+                result['combo_778'] = True
+                result['draw_pct'] = 78
+                result['draw_level'] = 'high'
+                result['draw_reason'] = 'had.平=%.2f + 让平%.2f<3.3, 平局率77.8%%(9场)' % (had_draw, hhd)
+                # 差值过滤：100%(7/7)
+                if abs(hhd - hhd_win) >= 0.3:
+                    result['special_combo'] = True
+                    result['draw_level'] = 'super_high'
+                    result['draw_pct'] = 100
+                    result['draw_reason'] = '⚠️ 超高平局信号: had.平=%.2f+让平%.2f+|让平-让胜|>=0.3, 平局率100%%(7/7)' % (had_draw, hhd)
+        except (ValueError, TypeError, KeyError):
+            pass
+
+    return result
+
+
 def _build_match_card(data, api):
     """
     提取比赛数据中卡片展示所需的字段，构建轻量化对象。
@@ -2535,7 +2635,10 @@ def _build_match_card(data, api):
             pass
 
         # 让球平低赔规律分析
-        hhad_hint = _analyze_hhad_low_draw(hhad, recent_form)
+        hhad_hint = _analyze_hhad_low_draw(hhad, recent_form, data)
+
+        # 平局信号分析（所有had.平区间均显示）
+        draw_hint = _analyze_draw_signal(had, hhad)
 
         return {
             'match_id': data.get('match_id'),
@@ -2600,9 +2703,15 @@ def _build_match_card(data, api):
             } if recent_form else None,
             # 让球平低赔规律提示
             'hhad_hint': hhad_hint,
+            # 平局信号（所有had.平区间）
+            'draw_hint': draw_hint,
         }
     else:
         # ── 完整版：返回全部字段 ──
+        # 平局信号分析（所有had.平区间均显示）
+        _full_had = data.get('had', {})
+        _full_hhad = data.get('hhad', {})
+        data['draw_hint'] = _analyze_draw_signal(_full_had, _full_hhad)
         return data
 
 
@@ -2711,6 +2820,17 @@ def fetch_match(match_id):
             # ── 3球预测 ──
             features = extract_features(result)
             g3_pred = predict_3goals(features)
+
+            # ── 让球平低赔规律分析（含Step 3高平局信号）──
+            _hhad = result.get('hhad', {})
+            _recent_form = None
+            try:
+                _rd = _extract_recent_matches(result)
+                _recent_form = calc_recent_form(_rd)
+            except Exception:
+                pass
+            hhad_hint = _analyze_hhad_low_draw(_hhad, _recent_form, result)
+            result['had_hint'] = hhad_hint
             # 黄金2球预测
             g2_pred = predict_2goals(features)
             # 黄金4球预测
