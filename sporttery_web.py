@@ -1026,6 +1026,16 @@ HTML_TEMPLATE = '''
         .hit-rate-high { background: rgba(74,222,128,0.15); color: #4ade80; }
         .hit-rate-mid { background: rgba(251,191,36,0.15); color: #fbbf24; }
         .hit-rate-low { background: rgba(248,113,113,0.15); color: #f87171; }
+        /* 命中率按钮 */
+        .btn-pattern { background: #0f3460; color: #a78bfa; border: 1px solid #8b5cf6; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; margin-left: 4px; }
+        .btn-pattern:hover { background: #1a4a2e; }
+        /* 单个前置条件命中率显示 */
+        .pattern-single-stats { margin-top: 8px; padding: 8px 12px; background: #0a1628; border-radius: 6px; }
+        .pattern-single-title { color: #fbbf24; font-weight: bold; font-size: 12px; margin-bottom: 4px; }
+        .pattern-single-content { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; }
+        .pattern-single-content span { color: #e0e0e0; }
+        .pattern-single-content strong { margin-left: 4px; }
+        .pattern-no-stats { color: #888; font-size: 12px; padding: 8px; }
         /* 相似比赛面板 */
         .similar-panel { margin-top: 10px; background: #0d1b2a; border-radius: 8px; border: 1px solid #1e3a5f; overflow: hidden; }
         .similar-header { background: #0f3460; color: #a78bfa; font-size: 12px; font-weight: bold; padding: 8px 12px; }
@@ -1082,11 +1092,13 @@ HTML_TEMPLATE = '''
         <div id="pagination"></div>
     </div>
 
-    <script>
+        <script>
         // 全局比赛数据缓存（供 doReview 获取 g3_prediction 用）
         window._matchData = {};
         // 全局已保存比分缓存 { match_id: {home_score, away_score, total_goals, ...} }
         window._savedScores = {};
+        // 前置条件命中率统计（全局存储）
+        let _patternStats = {};
         // 进球数赔率命中率统计
         const _ODDS_HITRATE = __ODDS_STATS_JSON__;
         const _HITRATE_COLORS = {green:'#4ade80', yellow:'#facc15', red:'#f87171', gray:'#888'};
@@ -1421,6 +1433,9 @@ HTML_TEMPLATE = '''
                             <button class="btn-save-score" onclick="saveScore('${m.match_id}')">💾 保存</button>
                             <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
                             <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
+                            ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.signal_type ? `
+                            <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.big3_vs_small3.signal_type}')">📊 命中率</button>
+                            ` : ''}
                         </div>
                     <div id="score-msg-${m.match_id}" class="score-msg"></div>
                     <div id="pattern-stats-${m.match_id}" class="pattern-stats" style="display:none"></div>
@@ -1979,6 +1994,7 @@ HTML_TEMPLATE = '''
                 const rPattern = await fetch('/api/pattern_hitrate');
                 const patternData = await rPattern.json();
                 if (patternData.success && patternData.stats) {
+                    _patternStats = patternData.stats;  // 存储到全局变量
                     displayPatternStats(matchId, patternData.stats);
                 }
             } catch(e3) {
@@ -2167,8 +2183,49 @@ HTML_TEMPLATE = '''
             }
         }
 
+
+
         // 初始加载
         loadMatches();
+
+        // 加载前置条件命中率统计（页面加载时立即获取）
+        fetch('/api/pattern_hitrate')
+            .then(r => r.json())
+            .then(data => {
+                if (data.success && data.stats) {
+                    _patternStats = data.stats;
+                }
+            })
+            .catch(e => console.error('前置条件命中率加载失败:', e));
+
+        function togglePatternStats(matchId, signalType) {
+            const container = document.getElementById('pattern-stats-' + matchId);
+            if (!container) return;
+
+            if (container.style.display === 'none') {
+                const stats = _patternStats[signalType];
+                if (!stats) {
+                    container.innerHTML = '<div class="pattern-no-stats">无统计</div>';
+                } else {
+                    const rateClass = stats.rate >= 70 ? 'pattern-rate-high' :
+                                 stats.rate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                    container.innerHTML = `
+                        <div class="pattern-single-stats">
+                            <div class="pattern-single-title">📊 ${signalType} 命中率统计</div>
+                            <div class="pattern-single-content">
+                                <span>预判: <strong>${stats.prediction}</strong></span>
+                                <span>样本: <strong>${stats.total}场</strong></span>
+                                <span class="${rateClass}">命中率: <strong>${stats.rate}%</strong></span>
+                            </div>
+                        </div>
+                    `;
+                }
+                container.style.display = '';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
     </script>
 </body>
 </html>
