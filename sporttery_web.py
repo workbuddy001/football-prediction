@@ -2276,8 +2276,7 @@ def index():
 
 def _analyze_hhad_low_draw(hhad, recent_form):
     """
-    让球平低赔规律分析
-    基于59场历史回测数据的统计规律
+    让球平低赔规律分析（基于341场历史回测）
 
     参数:
         hhad: {'让球': str, '让胜': float, '让平': float, '让负': float}
@@ -2387,6 +2386,28 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         draw_pct = max(draw_pct, 86)
         draw_reason = '主受让+让胜赔更低, 平局率85.7%(7场)'
         draw_signal = True
+
+    # ── Step 4: 让胜/让负低赔信号（341场回测）──
+    # 让胜<1.60 → 让胜57.1%(35场)
+    if hhad_win < 1.60:
+        hhad_pick = '让胜'
+        hhad_confidence = 57
+        hints.append(f'让胜<1.60超低热, 让胜率57.1%(35场)')
+    # 让负<1.60 → 让负59.2%(76场)
+    elif hhad_lose < 1.60:
+        hhad_pick = '让负'
+        hhad_confidence = 59
+        hints.append(f'让负<1.60超低热, 让负率59.2%(76场)')
+    # 让胜>3.00 → 让负53.8%(145场) 反向信号
+    elif hhad_win > 3.00:
+        hhad_pick = '让负'
+        hhad_confidence = 54
+        hints.append(f'让胜>3.00高赔, 让负率53.8%(145场)')
+    # 让负>3.00 → 让胜56.8%(88场) 反向信号
+    elif hhad_lose > 3.00:
+        hhad_pick = '让胜'
+        hhad_confidence = 57
+        hints.append(f'让负>3.00高赔, 让胜率56.8%(88场)')
 
     return {
         'active': True,
