@@ -1519,11 +1519,15 @@ HTML_TEMPLATE = '''
                             const tagBg = isHighDraw ? 'rgba(234,179,8,0.25)' : 'rgba(100,116,139,0.2)';
                             return `
                             <div class="hhad-hint-box" style="${bgStyle}border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;">
-                                ${h.is_mid
-                                    ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">⚠️ 让球平中赔3.65-3.95规律触发！</div>`
-                                    : (h.draw_signal && h.draw_pct >= 60
-                                        ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">🎯 让球平低赔规律触发！</div>`
-                                        : `<div style="color:${tagColor};font-weight:bold;font-size:13px;margin-bottom:6px;">💡 让球平低赔规律</div>`)}
+                                ${h.is_midlow
+                                    ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">让球平中低赔3.3-3.64规律触发！</div>`
+                                    : h.is_high
+                                        ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">让球平高赔4.0-4.5规律触发！</div>`
+                                        : h.is_mid
+                                            ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">⚠️ 让球平中赔3.65-3.95规律触发！</div>`
+                                            : (h.draw_signal && h.draw_pct >= 60
+                                                ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">🎯 让球平低赔规律触发！</div>`
+                                                : `<div style="color:${tagColor};font-weight:bold;font-size:13px;margin-bottom:6px;">💡 让球平低赔规律</div>`)}
                                 <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
                                     <span style="background:${tagBg};color:${tagColor};padding:2px 8px;border-radius:4px;font-weight:bold;font-size:11px;">推荐${h.hhad_pick}</span>
                                     <span style="color:#94a3b8;">置信度 ${h.hhad_confidence}%</span>
@@ -1532,6 +1536,14 @@ HTML_TEMPLATE = '''
                                 ${h.mid_hints && h.mid_hints.length > 0 ? `
                                 <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
                                     ${h.mid_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
+                                </div>` : ''}
+                                ${h.midlow_hints && h.midlow_hints.length > 0 ? `
+                                <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
+                                    ${h.midlow_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
+                                </div>` : ''}
+                                ${h.high_hints && h.high_hints.length > 0 ? `
+                                <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
+                                    ${h.high_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
                                 </div>` : ''}
                                 ${h.draw_signal ? `
                                 <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,0.2);">
@@ -2335,13 +2347,19 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         form_diff = recent_form['home_avg'] - recent_form['away_avg']
         combined_avg = recent_form['combined_avg']
 
-    # 触发条件
-    is_low = hhad_draw < 3.3
-    is_mid = (hhad_draw >= 3.65 and hhad_draw <= 3.95)
+    # 触发条件 — 各区间
+    is_low = hhad_draw < 3.3                       # 极低/低区间
+    is_midlow = (hhad_draw >= 3.3 and hhad_draw <= 3.64)   # 中低区间(3.3~3.64)
+    is_mid = (hhad_draw >= 3.65 and hhad_draw <= 3.95)      # 中区间(3.65~3.95)
+    is_high = (hhad_draw >= 4.0 and hhad_draw <= 4.5)       # 高区间(4.0~4.5)
     # 中赔前置条件: 主受让 + 客队近况好(form_diff < -0.3)
     is_mid_match = is_mid and (not is_home_let) and form_diff is not None and form_diff < -0.3
+    # 中低区间前置条件: 客队近况好(form_diff < -0.3) + 让胜赔更低
+    is_midlow_match = is_midlow and form_diff is not None and form_diff < -0.3 and hhad_win < hhad_lose - 0.05
+    # 高区间前置条件: 主让球 + 客队近况好(form_diff < -0.5) + 让负赔更低
+    is_high_match = is_high and is_home_let and form_diff is not None and form_diff < -0.5 and hhad_lose < hhad_win - 0.05
 
-    if not is_low and not is_mid_match:
+    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match:
         return None
 
     hints = []
@@ -2401,26 +2419,28 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         draw_signal = True
 
     # ── Step 4: 让胜/让负低赔信号（341场回测）──
-    # 让胜<1.60 → 让胜57.1%(35场)
-    if hhad_win < 1.60:
-        hhad_pick = '让胜'
-        hhad_confidence = 57
-        hints.append(f'让胜<1.60超低热, 让胜率57.1%(35场)')
-    # 让负<1.60 → 让负59.2%(76场)
-    elif hhad_lose < 1.60:
-        hhad_pick = '让负'
-        hhad_confidence = 59
-        hints.append(f'让负<1.60超低热, 让负率59.2%(76场)')
-    # 让胜>3.00 → 让负53.8%(145场) 反向信号
-    elif hhad_win > 3.00:
-        hhad_pick = '让负'
-        hhad_confidence = 54
-        hints.append(f'让胜>3.00高赔, 让负率53.8%(145场)')
-    # 让负>3.00 → 让胜56.8%(88场) 反向信号
-    elif hhad_lose > 3.00:
-        hhad_pick = '让胜'
-        hhad_confidence = 57
-        hints.append(f'让负>3.00高赔, 让胜率56.8%(88场)')
+    # 中赔区间(3.65~3.95)已有专属强信号，跳过通用低赔信号（避免提示混乱）
+    if not is_mid_match:
+        # 让胜<1.60 → 让胜57.1%(35场)
+        if hhad_win < 1.60:
+            hhad_pick = '让胜'
+            hhad_confidence = 57
+            hints.append(f'让胜<1.60超低热, 让胜率57.1%(35场)')
+        # 让负<1.60 → 让负59.2%(76场)
+        elif hhad_lose < 1.60:
+            hhad_pick = '让负'
+            hhad_confidence = 59
+            hints.append(f'让负<1.60超低热, 让负率59.2%(76场)')
+        # 让胜>3.00 → 让负53.8%(145场) 反向信号
+        elif hhad_win > 3.00:
+            hhad_pick = '让负'
+            hhad_confidence = 54
+            hints.append(f'让胜>3.00高赔, 让负率53.8%(145场)')
+        # 让负>3.00 → 让胜56.8%(88场) 反向信号
+        elif hhad_lose > 3.00:
+            hhad_pick = '让胜'
+            hhad_confidence = 57
+            hints.append(f'让负>3.00高赔, 让胜率56.8%(88场)')
 
     # ── Step 5: 中赔细分提醒（前置条件: 主受让+客队近况好+让平3.65~3.95）──
     mid_hints = []
@@ -2446,9 +2466,34 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         else:
             mid_hints.append(f'⚠️ 客队近况远好(form_diff={form_diff:.1f}), 让胜率62.5%(8场), 谨慎')
 
+    # ── Step 6: 中低区间细分提醒（前置条件: 客近况好+让胜赔更低, 3.3~3.64）──
+    midlow_hints = []
+    if is_midlow_match:
+        # 让胜赔率 1.60~1.80 → 让胜83%(6场) ⭐⭐⭐
+        if 1.60 <= hhad_win < 1.80:
+            hhad_pick = '让胜'
+            hhad_confidence = 83
+            midlow_hints.append(f'⭐⭐⭐ 中低区间+让胜1.60~1.80, 让胜率83%(6场)')
+        # 让胜赔率 < 1.60 → 仅50%, 反向信号!
+        elif hhad_win < 1.60:
+            midlow_hints.append(f'⚠️ 中低区间+让胜赔<1.60, 让胜率仅50%, 可能是诱盘!')
+        else:
+            hhad_pick = '让胜'
+            hhad_confidence = 79
+            midlow_hints.append(f'⭐⭐ 中低区间+让胜赔更低, 让胜率79%(19场)')
+
+    # ── Step 7: 高区间细分提醒（前置条件: 主让球+客近况好+让负赔更低, 4.0~4.5）──
+    high_hints = []
+    if is_high_match:
+        hhad_pick = '让负'
+        hhad_confidence = 90
+        high_hints.append(f'⭐⭐⭐ 高区间+客近况好+让负赔更低, 让负率90%(10场)')
+
     return {
         'active': True,
-        'is_mid': is_mid,          # 是否中赔区间(3.65~3.95)
+        'is_mid': is_mid,              # 是否中赔区间(3.65~3.95)
+        'is_midlow': is_midlow_match,  # 是否中低区间(3.3~3.64)
+        'is_high': is_high_match,       # 是否高区间(4.0~4.5)
         'hhad_draw': round(hhad_draw, 2),
         'handicap': handicap,
         'direction': direction,
@@ -2458,7 +2503,9 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         'draw_pct': draw_pct,
         'draw_reason': draw_reason,
         'hints': hints,
-        'mid_hints': mid_hints,   # 中赔区间细分提醒（单独显示）
+        'mid_hints': mid_hints,        # 中赔区间细分提醒
+        'midlow_hints': midlow_hints,  # 中低区间细分提醒
+        'high_hints': high_hints,      # 高区间细分提醒
     }
 
 
