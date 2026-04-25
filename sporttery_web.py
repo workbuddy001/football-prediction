@@ -1443,13 +1443,13 @@ HTML_TEMPLATE = '''
                     </div>
                     
                     <!-- 胜平负 -->
-                    ${Object.keys(m.had || {}).filter(k => k !== '更新时间').length > 0 ? `
+                    ${m.had && (m.had['胜'] !== undefined || m.had['平'] !== undefined || m.had['负'] !== undefined) ? `
                     <div class="odds-section">
                         <div class="odds-title">胜平负</div>
                         <div class="odds-grid">
-                            ${Object.entries(m.had || {}).filter(([k]) => k !== '更新时间').map(([k, v]) => 
-                                `<div class="odds-item ${getOddsClass(v)}"><div class="label">${k}</div><div class="value">${v}</div></div>`
-                            ).join('')}
+                            <div class="odds-item ${getOddsClass(m.had['胜'])}"><div class="label">主胜</div><div class="value">${m.had['胜'] || '-'}</div></div>
+                            <div class="odds-item ${getOddsClass(m.had['平'])}"><div class="label">平局</div><div class="value">${m.had['平'] || '-'}</div></div>
+                            <div class="odds-item ${getOddsClass(m.had['负'])}"><div class="label">客胜</div><div class="value">${m.had['负'] || '-'}</div></div>
                         </div>
                     </div>
                     ` : ''}
@@ -1499,7 +1499,7 @@ HTML_TEMPLATE = '''
                         </div>
                     </div>
                     ` : ''}
-                    
+
                     <!-- 让球胜平负 -->
                     ${m.hhad && m.hhad.让球 ? `
                     <div class="odds-section">
@@ -2521,6 +2521,7 @@ def _build_match_card(data, api):
         match_info = data.get('match_info', {})
         g3_pred = data.get('g3_prediction', {})
         hhad = data.get('hhad', {})
+        had = data.get('had', {})
         ttg_change = data.get('ttg_change', {})
         hafu_change = data.get('hafu_change', {})
         exclusion_list = data.get('exclusion_list', [])
@@ -2572,6 +2573,12 @@ def _build_match_card(data, api):
                 # 大3球 vs 小3球预判
                 'big3_vs_small3': g3_pred.get('big3_vs_small3'),
             },
+            # 不让球胜平负
+            'had': {
+                '胜': had.get('胜'),
+                '平': had.get('平'),
+                '负': had.get('负'),
+            } if had else {},
             # 让球：只保留数值
             'hhad': {
                 '让球': hhad.get('让球'),
