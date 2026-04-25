@@ -1,6 +1,65 @@
 {
   "upsets": [
     {
+      "upset_id": "2026.04.25_周六001_20260425195151",
+      "match_id": "周六001",
+      "date_folder": "2026.04.25",
+      "home_team": "江原FC",
+      "away_team": "首尔FC",
+      "league": "韩职",
+      "upset_type": "unknown",
+      "upset_type_cn": "未知类型：预测失败且无明显规律",
+      "prediction": "平局",
+      "predicted_dir": "draw",
+      "actual_result": "away",
+      "actual_score": "1:2",
+      "confidence": 3,
+      "was_excluded": false,
+      "exclusions": [
+        "home"
+      ],
+      "odds_fingerprint": {
+        "jc_change_dir": "",
+        "macao_change_dir": "",
+        "jc_home_chg": 6.5,
+        "jc_draw_chg": 0.0,
+        "jc_away_chg": -6.42,
+        "mcao_home_chg": 1.21,
+        "mcao_draw_chg": 0.0,
+        "mcao_away_chg": -1.15,
+        "jc_init_odds": [
+          2.46,
+          2.9,
+          2.65
+        ],
+        "jc_real_odds": [
+          2.62,
+          2.9,
+          2.48
+        ],
+        "macao_init_odds": [
+          2.47,
+          2.98,
+          2.61
+        ],
+        "macao_real_odds": [
+          2.5,
+          2.98,
+          2.58
+        ],
+        "jc_pattern": "UND",
+        "macao_pattern": "NNN"
+      },
+      "upset_odds": 2.48,
+      "home_form": "WDWWLD",
+      "away_form": "WLWWDW",
+      "handicap": "-1",
+      "macao_tip": "和局",
+      "had_cold_warning": false,
+      "warnings": [],
+      "record_time": "2026-04-25 19:51"
+    },
+    {
       "upset_id": "2026.04.24_周五012_20260425075216",
       "match_id": "周五012",
       "date_folder": "2026.04.24",
@@ -5432,12 +5491,12 @@
     }
   ],
   "stats": {
-    "total": 91,
+    "total": 92,
     "by_type": {
+      "unknown": 30,
       "reverse_cover": 59,
-      "unknown": 29,
       "silent": 3
     },
-    "last_update": "2026-04-25 07:52"
+    "last_update": "2026-04-25 19:51"
   }
 }

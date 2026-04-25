@@ -1,6 +1,6 @@
 {
   "match_id": "2038740",
-  "fetch_time": "2026-04-22 00:47:16",
+  "fetch_time": "2026-04-25 19:39:23",
   "match_info": {
     "home_team": "墨西哥",
     "away_team": "比利时",
@@ -671,33 +671,33 @@
     }
   },
   "ttg_change": {
+    "7球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
     "5球": {
       "count": 1,
       "change_pct": 11.8
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": -9.3
     },
     "2球": {
       "count": 1,
       "change_pct": -2.7
     },
-    "7球": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "4球": {
+    "3球": {
       "count": 1,
-      "change_pct": 8.0
+      "change_pct": 4.4
     },
     "0球": {
       "count": 1,
       "change_pct": -14.3
     },
-    "3球": {
+    "4球": {
       "count": 1,
-      "change_pct": 4.4
+      "change_pct": 8.0
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": -9.3
     },
     "6球": {
       "count": 2,

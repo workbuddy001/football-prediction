@@ -1,6 +1,6 @@
 {
   "match_id": "2038818",
-  "fetch_time": "2026-04-21 20:15:56",
+  "fetch_time": "2026-04-25 17:38:15",
   "match_info": {
     "home_team": "云达不来梅",
     "away_team": "莱比锡红牛",
@@ -320,13 +320,13 @@
             "uniformNo": "25"
           },
           {
-            "appearanceCnt": 15,
+            "appearanceCnt": 16,
             "injuryFlag": 1,
             "personId": 721528,
             "personName": "F. Ouédraogo",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 10,
+            "startedMatchCnt": 11,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "20"
@@ -344,26 +344,26 @@
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "injuryFlag": 1,
             "personId": 730583,
             "personName": "M. Finkgräfe",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 7,
             "suspensionFlag": 0,
             "uniformNo": "35"
           },
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "injuryFlag": 1,
             "personId": 730733,
             "personName": "B. Gruda",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 6,
-            "substituteMatchCnt": 3,
+            "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
@@ -380,13 +380,13 @@
             "uniformNo": "47"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "injuryFlag": 1,
             "personId": 885358,
             "personName": "迪奥曼德",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "49"
@@ -839,55 +839,55 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.2",
             "assistCnt": 7,
             "assistProbability": "16%",
             "goalAvgCnt": "0.4",
             "goalCnt": 12,
-            "goalProbability": "21%",
-            "injuryFlag": 0,
-            "personId": 427647,
-            "personName": "C. Baumgartner",
-            "playerPositionCode": "Midfielder",
-            "playerPositionDesc": "中场",
-            "startedMatchCnt": 28,
-            "substituteMatchCnt": 1,
-            "suspensionFlag": 0,
-            "uniformNo": "14"
-          },
-          {
-            "appearanceCnt": 29,
-            "assistAvgCnt": "0.2",
-            "assistCnt": 6,
-            "assistProbability": "14%",
-            "goalAvgCnt": "0.4",
-            "goalCnt": 12,
-            "goalProbability": "21%",
+            "goalProbability": "20%",
             "injuryFlag": 1,
             "personId": 885358,
             "personName": "迪奥曼德",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "49"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.2",
+            "assistCnt": 7,
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 12,
+            "goalProbability": "20%",
+            "injuryFlag": 0,
+            "personId": 427647,
+            "personName": "C. Baumgartner",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "9%",
             "goalAvgCnt": "0.3",
-            "goalCnt": 8,
-            "goalProbability": "14%",
+            "goalCnt": 9,
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 677522,
             "personName": "Rômulo",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "40"
@@ -969,25 +969,17 @@
     }
   },
   "ttg_change": {
-    "6球": {
-      "count": 1,
-      "change_pct": -9.1
-    },
     "4球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "7球": {
-      "count": 1,
-      "change_pct": -7.1
-    },
-    "5球": {
-      "count": 1,
-      "change_pct": -2.2
-    },
-    "3球": {
+    "1球": {
       "count": 2,
-      "change_pct": 0.0
+      "change_pct": 7.1
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -9.1
     },
     "0球": {
       "count": 0,
@@ -997,12 +989,24 @@
       "count": 2,
       "change_pct": 3.5
     },
-    "1球": {
+    "7球": {
+      "count": 1,
+      "change_pct": -7.1
+    },
+    "3球": {
       "count": 2,
-      "change_pct": 7.1
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -2.2
     }
   },
   "hafu_change": {
+    "胜胜": {
+      "count": 1,
+      "change_pct": 5.2
+    },
     "负负": {
       "count": 1,
       "change_pct": -1.9
@@ -1011,31 +1015,27 @@
       "count": 1,
       "change_pct": -2.1
     },
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平平": {
-      "count": 0,
-      "change_pct": 0.0
+    "平胜": {
+      "count": 1,
+      "change_pct": 2.9
     },
     "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 5.2
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
     },
-    "平胜": {
-      "count": 1,
-      "change_pct": 2.9
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "负平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜负": {
+    "平平": {
       "count": 0,
       "change_pct": 0.0
     }

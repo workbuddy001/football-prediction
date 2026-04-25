@@ -1,6 +1,6 @@
 {
   "match_id": "2038876",
-  "fetch_time": "2026-04-21 17:32:19",
+  "fetch_time": "2026-04-25 17:40:04",
   "match_info": {
     "home_team": "赫罗纳",
     "away_team": "比利亚雷亚尔",
@@ -729,33 +729,33 @@
           "drawMatchCnt": 11,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 11,
+          "lossGoalMatchCnt": 12,
           "phaseName": "",
           "points": "38",
-          "ranking": "11",
+          "ranking": "13",
           "sportteryTeamId": 1885,
           "teamId": 0,
           "teamShortName": "赫罗纳",
-          "totalLegCnt": 31,
+          "totalLegCnt": 32,
           "uniformTeamId": 639,
           "winGoalMatchCnt": 9,
-          "winProbability": "29%"
+          "winProbability": "28%"
         },
         {
-          "drawMatchCnt": 4,
+          "drawMatchCnt": 5,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 8,
           "phaseName": "",
-          "points": "61",
+          "points": "62",
           "ranking": "3",
           "sportteryTeamId": 679,
           "teamId": 0,
           "teamShortName": "比利亚雷",
-          "totalLegCnt": 31,
+          "totalLegCnt": 32,
           "uniformTeamId": 137,
           "winGoalMatchCnt": 19,
-          "winProbability": "61%"
+          "winProbability": "59%"
         }
       ],
       "tournamentId": 128,
@@ -767,38 +767,38 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
             "assistProbability": "12%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
-            "goalProbability": "15%",
+            "goalProbability": "14%",
             "injuryFlag": 0,
             "personId": 541921,
             "personName": "米考塔泽",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 19,
-            "substituteMatchCnt": 7,
+            "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "10%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
-            "goalProbability": "15%",
+            "goalProbability": "14%",
             "injuryFlag": 0,
             "personId": 646725,
             "personName": "阿尔伯托 莫莱罗",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 25,
-            "substituteMatchCnt": 5,
+            "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "20"
           },
@@ -835,7 +835,7 @@
             "assistProbability": "4%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
-            "goalProbability": "28%",
+            "goalProbability": "26%",
             "injuryFlag": 0,
             "personId": 574324,
             "personName": "瓦纳特",
@@ -847,37 +847,37 @@
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 25,
+            "appearanceCnt": 26,
             "assistAvgCnt": "0.2",
             "assistCnt": 4,
             "assistProbability": "17%",
             "goalAvgCnt": "0.2",
-            "goalCnt": 5,
-            "goalProbability": "16%",
+            "goalCnt": 6,
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 290324,
             "personName": "齐汉科夫",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "15"
           },
           {
-            "appearanceCnt": 17,
+            "appearanceCnt": 18,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
             "assistProbability": "8%",
-            "goalAvgCnt": "0.2",
-            "goalCnt": 4,
-            "goalProbability": "13%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 5,
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 564548,
             "personName": "乌纳希",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 13,
+            "startedMatchCnt": 14,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "18"
@@ -897,30 +897,6 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": 2.6
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": -4.3
-    },
-    "0球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "5球": {
-      "count": 1,
-      "change_pct": 6.7
-    },
-    "6球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "4球": {
       "count": 1,
       "change_pct": -4.3
@@ -928,14 +904,58 @@
     "1球": {
       "count": 1,
       "change_pct": 4.3
+    },
+    "6球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 2.6
+    },
+    "7球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -4.3
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 6.7
     }
   },
   "hafu_change": {
+    "胜胜": {
+      "count": 1,
+      "change_pct": 4.4
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": 3.1
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "胜平": {
       "count": 1,
       "change_pct": -7.1
     },
-    "平胜": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -943,29 +963,9 @@
       "count": 1,
       "change_pct": -7.1
     },
-    "平负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "平平": {
       "count": 1,
       "change_pct": -5.0
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "负负": {
-      "count": 1,
-      "change_pct": 3.1
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 4.4
     }
   },
   "exclusion_list": [

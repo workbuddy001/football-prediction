@@ -2419,8 +2419,8 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         draw_signal = True
 
     # ── Step 4: 让胜/让负低赔信号（341场回测）──
-    # 中赔区间(3.65~3.95)已有专属强信号，跳过通用低赔信号（避免提示混乱）
-    if not is_mid_match:
+    # 中低/中/高区间已有专属强信号，跳过通用低赔信号（避免提示混乱）
+    if not is_mid_match and not is_midlow_match and not is_high_match:
         # 让胜<1.60 → 让胜57.1%(35场)
         if hhad_win < 1.60:
             hhad_pick = '让胜'

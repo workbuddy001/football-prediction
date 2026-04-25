@@ -1,6 +1,6 @@
 {
   "match_id": "2038877",
-  "fetch_time": "2026-04-21 17:30:19",
+  "fetch_time": "2026-04-25 17:36:36",
   "match_info": {
     "home_team": "卡萨皮亚",
     "away_team": "本菲卡",
@@ -676,14 +676,14 @@
           "drawMatchCnt": 11,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 13,
+          "lossGoalMatchCnt": 14,
           "phaseName": "",
           "points": "26",
           "ranking": "16",
           "sportteryTeamId": 2702,
           "teamId": 0,
           "teamShortName": "卡萨皮亚",
-          "totalLegCnt": 29,
+          "totalLegCnt": 30,
           "uniformTeamId": 51219,
           "winGoalMatchCnt": 5,
           "winProbability": "17%"
@@ -776,7 +776,7 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -789,12 +789,12 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 21,
-            "substituteMatchCnt": 7,
+            "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "90"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.3",
             "assistCnt": 8,
             "assistProbability": "42%",
@@ -806,13 +806,13 @@
             "personName": "J. Livolant",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 29,
+            "startedMatchCnt": 30,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "29"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "21%",
@@ -824,7 +824,7 @@
             "personName": "阿尔梅达达库尼亚",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 29,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "72"
@@ -844,30 +844,6 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 1,
-      "change_pct": 6.7
-    },
-    "2球": {
-      "count": 2,
-      "change_pct": 4.9
-    },
-    "3球": {
-      "count": 3,
-      "change_pct": -7.1
-    },
-    "0球": {
-      "count": 1,
-      "change_pct": 5.0
-    },
-    "5球": {
-      "count": 1,
-      "change_pct": 3.6
-    },
-    "6球": {
-      "count": 1,
-      "change_pct": 8.3
-    },
     "4球": {
       "count": 3,
       "change_pct": -6.8
@@ -875,6 +851,30 @@
     "1球": {
       "count": 2,
       "change_pct": 6.2
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 8.3
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 5.0
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 4.9
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 6.7
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -7.1
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 3.6
     }
   },
   "hafu_change": {},

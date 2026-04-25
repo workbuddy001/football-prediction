@@ -1,0 +1,1021 @@
+{
+  "match_id": "2039315",
+  "fetch_time": "2026-04-25 23:15:48",
+  "match_info": {
+    "home_team": "帕尔马",
+    "away_team": "比萨",
+    "league": "意大利甲级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "150.0",
+    "01:00": "5.75",
+    "05:02": "300.0",
+    "05:01": "175.0",
+    "02:04": "200.0",
+    "02:05": "600.0",
+    "02:02": "16.00",
+    "02:03": "50.00",
+    "02:00": "7.75",
+    "02:01": "7.25",
+    "03:03": "100.0",
+    "03:01": "18.00",
+    "03:02": "32.00",
+    "03:00": "16.00",
+    "00:01": "8.00",
+    "00:00": "7.50",
+    "00:03": "60.00",
+    "00:02": "16.00",
+    "00:05": "500.0",
+    "00:04": "200.0",
+    "04:02": "100.0",
+    "04:01": "55.00",
+    "04:00": "55.00",
+    "01:02": "11.00",
+    "01:01": "5.75",
+    "01:04": "175.0",
+    "01:03": "40.00",
+    "01:05": "400.0"
+  },
+  "total_goals": {
+    "3球": "4.00",
+    "4球": "7.00",
+    "5球": "15.00",
+    "6球": "28.00",
+    "7球": "45.00",
+    "0球": "7.50",
+    "1球": "3.70",
+    "2球": "3.00"
+  },
+  "had": {
+    "胜": "1.93",
+    "平": "3.00",
+    "负": "3.60"
+  },
+  "ttg": {
+    "3球": "4.00",
+    "4球": "7.00",
+    "5球": "15.00",
+    "6球": "28.00",
+    "7球": "45.00",
+    "0球": "7.50",
+    "1球": "3.70",
+    "2球": "3.00"
+  },
+  "hafu": {
+    "负负": "5.85",
+    "平平": "4.50",
+    "胜胜": "3.10",
+    "负平": "16.00",
+    "平胜": "4.70",
+    "负胜": "29.00",
+    "胜负": "35.00",
+    "胜平": "16.00",
+    "平负": "7.25"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "4.45",
+    "让平": "3.35",
+    "让负": "1.65"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "比萨",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 8,
+        "awayScoreRatio": "13",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "13",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "30",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.5",
+        "awayGoalAvgCntRatio": "35.7",
+        "homeGoalAvgCnt": "0.9",
+        "homeGoalAvgCntRatio": "64.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "帕尔马",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "38",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 8
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "2.0",
+        "awayLossGoalAvgCntRatio": "66.7",
+        "homeLossGoalAvgCnt": "1.0",
+        "homeLossGoalAvgCntRatio": "33.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2341124,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "58",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 4
+      },
+      "sportteryAwayTeamId": 2448,
+      "sportteryHomeTeamId": 130,
+      "sportteryMatchId": 2039315,
+      "uniformAwayTeamId": 1993,
+      "uniformHomeTeamId": 418
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1243,
+          "awayTeamShortName": "帕尔马",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1290,
+          "homeTeamShortName": "比萨",
+          "matchDate": "2025-12-08",
+          "matchId": 2341183,
+          "seasonId": 13290,
+          "sportteryAwayTeamId": 130,
+          "sportteryHomeTeamId": 2448,
+          "sportteryMatchId": 2035833,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 418,
+          "uniformHomeTeamId": 1993,
+          "uniformLeagueId": 73,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1290,
+          "awayTeamShortName": "比萨",
+          "fullCourtGoal": "3:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 1243,
+          "homeTeamShortName": "帕尔马",
+          "matchDate": "2024-02-17",
+          "matchId": 1957307,
+          "seasonId": 9959,
+          "sportteryAwayTeamId": 2448,
+          "sportteryHomeTeamId": 130,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 249,
+          "tournamentShortName": "意乙",
+          "uniformAwayTeamId": 1993,
+          "uniformHomeTeamId": 418,
+          "uniformLeagueId": 1756,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1243,
+          "awayTeamShortName": "帕尔马",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1290,
+          "homeTeamShortName": "比萨",
+          "matchDate": "2023-08-30",
+          "matchId": 1869159,
+          "seasonId": 9959,
+          "sportteryAwayTeamId": 130,
+          "sportteryHomeTeamId": 2448,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 249,
+          "tournamentShortName": "意乙",
+          "uniformAwayTeamId": 418,
+          "uniformHomeTeamId": 1993,
+          "uniformLeagueId": 1756,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1290,
+          "awayTeamShortName": "比萨",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1243,
+          "homeTeamShortName": "帕尔马",
+          "matchDate": "2023-03-01",
+          "matchId": 1618767,
+          "seasonId": 9182,
+          "sportteryAwayTeamId": 2448,
+          "sportteryHomeTeamId": 130,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 249,
+          "tournamentShortName": "意乙",
+          "uniformAwayTeamId": 1993,
+          "uniformHomeTeamId": 418,
+          "uniformLeagueId": 1756,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1243,
+          "awayTeamShortName": "帕尔马",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1290,
+          "homeTeamShortName": "比萨",
+          "matchDate": "2022-10-08",
+          "matchId": 1618575,
+          "seasonId": 9182,
+          "sportteryAwayTeamId": 130,
+          "sportteryHomeTeamId": 2448,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 249,
+          "tournamentShortName": "意乙",
+          "uniformAwayTeamId": 418,
+          "uniformHomeTeamId": 1993,
+          "uniformLeagueId": 1756,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 1,
+        "lossProbability": "20%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "帕尔马",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 3,
+        "winProbability": "60%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 29,
+            "injuryFlag": 1,
+            "personId": 454740,
+            "personName": "M. Léris",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 13,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 872093,
+            "personName": "德努恩",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "44"
+          }
+        ],
+        "sportteryTeamId": 2448,
+        "teamId": 1290,
+        "teamShortName": "比萨",
+        "uniformTeamId": 1993
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 1,
+            "personId": 449042,
+            "personName": "Espeto",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 9,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 32,
+            "injuryFlag": 1,
+            "personId": 666993,
+            "personName": "M. Pellegrino",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 667153,
+            "personName": "M. Frigan",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 8,
+            "injuryFlag": 1,
+            "personId": 778753,
+            "personName": "B. Cremaschi",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "25"
+          }
+        ],
+        "sportteryTeamId": 130,
+        "teamId": 1243,
+        "teamShortName": "帕尔马",
+        "uniformTeamId": 418
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 26,
+            "awayTeamShortName": "热那亚",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2448,
+            "homeTeamShortName": "比萨",
+            "matchDate": "2026-04-20",
+            "matchId": 2341130,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039199,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 130,
+            "uniformHomeTeamId": 1993,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2448,
+            "awayTeamShortName": "比萨",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 132,
+            "homeTeamShortName": "罗马",
+            "matchDate": "2026-04-11",
+            "matchId": 2341132,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038977,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 1993,
+            "uniformHomeTeamId": 541,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 136,
+            "awayTeamShortName": "都灵",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2448,
+            "homeTeamShortName": "比萨",
+            "matchDate": "2026-04-06",
+            "matchId": 2341136,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038856,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 126,
+            "uniformHomeTeamId": 1993,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2448,
+            "awayTeamShortName": "比萨",
+            "fullCourtGoal": "5:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "5",
+            "homeTeamId": 1040070,
+            "homeTeamShortName": "科莫",
+            "matchDate": "2026-03-22",
+            "matchId": 2340915,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038535,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 1993,
+            "uniformHomeTeamId": 51033,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 120,
+            "awayTeamShortName": "卡利亚里",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2448,
+            "homeTeamShortName": "比萨",
+            "matchDate": "2026-03-15",
+            "matchId": 2341142,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038353,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 123,
+            "uniformHomeTeamId": 1993,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 4,
+          "lossGoalCnt": 12,
+          "lossGoalMatchCnt": 4,
+          "lossProbability": "80%",
+          "netGoal": -8,
+          "sportteryTeamId": 0,
+          "teamId": 2448,
+          "teamShortName": "比萨",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1993,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 130,
+            "awayTeamShortName": "帕尔马",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 135,
+            "homeTeamShortName": "乌迪内斯",
+            "matchDate": "2026-04-18",
+            "matchId": 2341233,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039161,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 418,
+            "uniformHomeTeamId": 202,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 744,
+            "awayTeamShortName": "那不勒斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 130,
+            "homeTeamShortName": "帕尔马",
+            "matchDate": "2026-04-12",
+            "matchId": 2341133,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039046,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 136,
+            "uniformHomeTeamId": 418,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 130,
+            "awayTeamShortName": "帕尔马",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 125,
+            "homeTeamShortName": "拉齐奥",
+            "matchDate": "2026-04-05",
+            "matchId": 2341016,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038830,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 418,
+            "uniformHomeTeamId": 419,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 2700,
+            "awayTeamShortName": "克雷莫纳",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 130,
+            "homeTeamShortName": "帕尔马",
+            "matchDate": "2026-03-21",
+            "matchId": 2341140,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038508,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 192,
+            "uniformHomeTeamId": 418,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 130,
+            "awayTeamShortName": "帕尔马",
+            "fullCourtGoal": "4:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 136,
+            "homeTeamShortName": "都灵",
+            "matchDate": "2026-03-14",
+            "matchId": 2341237,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038293,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 418,
+            "uniformHomeTeamId": 126,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 4,
+          "lossGoalCnt": 8,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -4,
+          "sportteryTeamId": 0,
+          "teamId": 130,
+          "teamShortName": "帕尔马",
+          "totalLegCnt": 5,
+          "uniformTeamId": 418,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47781,
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 12,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 12,
+          "phaseName": "",
+          "points": "39",
+          "ranking": "14",
+          "sportteryTeamId": 130,
+          "teamId": 0,
+          "teamShortName": "帕尔马",
+          "totalLegCnt": 33,
+          "uniformTeamId": 418,
+          "winGoalMatchCnt": 9,
+          "winProbability": "27%"
+        },
+        {
+          "drawMatchCnt": 12,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 19,
+          "phaseName": "",
+          "points": "18",
+          "ranking": "20",
+          "sportteryTeamId": 2448,
+          "teamId": 0,
+          "teamShortName": "比萨",
+          "totalLegCnt": 33,
+          "uniformTeamId": 1993,
+          "winGoalMatchCnt": 2,
+          "winProbability": "6%"
+        }
+      ],
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2388579
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 305755,
+            "personName": "S. Moreo",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          },
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 330852,
+            "personName": "M. N'Zola",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 12,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "15%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 2,
+            "goalProbability": "8%",
+            "injuryFlag": 0,
+            "personId": 447235,
+            "personName": "M. Tramoni",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 2448,
+        "teamId": 1290,
+        "teamShortName": "比萨",
+        "uniformTeamId": 1993
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "36%",
+            "injuryFlag": 1,
+            "personId": 666993,
+            "personName": "M. Pellegrino",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 30,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 509652,
+            "personName": "阿德里安 博纳比",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 2,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 542485,
+            "personName": "E.德尔 普拉托",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          }
+        ],
+        "sportteryTeamId": 130,
+        "teamId": 1243,
+        "teamShortName": "帕尔马",
+        "uniformTeamId": 418
+      },
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2388579
+    }
+  },
+  "ttg_change": {
+    "5球": {
+      "count": 1,
+      "change_pct": 7.1
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 1.4
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 7.7
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -6.2
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": -1.6
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 12.5
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 2.6
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": -2.6
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -3.3
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -6.4
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 3.3
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 2.2
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "3.70",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "5.75",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "8.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.70（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "3.00",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "7.75",
+          "special": true
+        },
+        {
+          "score": "00:02",
+          "odds": "16.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "5.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.00（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "4.00",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "03:00",
+          "odds": "16.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "60.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "11.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.00（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}
