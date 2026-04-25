@@ -1,6 +1,6 @@
 {
   "match_id": "2038872",
-  "fetch_time": "2026-04-21 17:36:55",
+  "fetch_time": "2026-04-26 01:17:24",
   "match_info": {
     "home_team": "斯旺西",
     "away_team": "米德尔斯堡",
@@ -308,13 +308,13 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 39,
+            "appearanceCnt": 40,
             "injuryFlag": 1,
             "personId": 315557,
             "personName": "塔吉特",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 37,
+            "startedMatchCnt": 38,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "3"
@@ -332,13 +332,13 @@
             "uniformNo": "5"
           },
           {
-            "appearanceCnt": 37,
+            "appearanceCnt": 38,
             "injuryFlag": 1,
             "personId": 458850,
             "personName": "M. Whittaker",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 32,
+            "startedMatchCnt": 33,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "11"
@@ -356,14 +356,14 @@
             "uniformNo": "7"
           },
           {
-            "appearanceCnt": 20,
+            "appearanceCnt": 21,
             "injuryFlag": 1,
             "personId": 522732,
             "personName": "S·西尔维拉",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 8,
-            "substituteMatchCnt": 12,
+            "substituteMatchCnt": 13,
             "suspensionFlag": 0,
             "uniformNo": "22"
           },
@@ -743,15 +743,15 @@
           "groupName": "",
           "lossGoalMatchCnt": 18,
           "phaseName": "",
-          "points": "57",
-          "ranking": "15",
+          "points": "60",
+          "ranking": "11",
           "sportteryTeamId": 110,
           "teamId": 0,
           "teamShortName": "斯旺西",
-          "totalLegCnt": 43,
+          "totalLegCnt": 44,
           "uniformTeamId": 201,
-          "winGoalMatchCnt": 16,
-          "winProbability": "37%"
+          "winGoalMatchCnt": 17,
+          "winProbability": "39%"
         },
         {
           "drawMatchCnt": 13,
@@ -759,15 +759,15 @@
           "groupName": "",
           "lossGoalMatchCnt": 10,
           "phaseName": "",
-          "points": "73",
+          "points": "76",
           "ranking": "5",
           "sportteryTeamId": 14,
           "teamId": 0,
           "teamShortName": "米堡",
-          "totalLegCnt": 43,
+          "totalLegCnt": 44,
           "uniformTeamId": 216,
-          "winGoalMatchCnt": 20,
-          "winProbability": "47%"
+          "winGoalMatchCnt": 21,
+          "winProbability": "48%"
         }
       ],
       "tournamentId": 278,
@@ -779,7 +779,25 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 40,
+            "appearanceCnt": 38,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 12,
+            "goalProbability": "17%",
+            "injuryFlag": 1,
+            "personId": 458850,
+            "personName": "M. Whittaker",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 33,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 41,
             "assistAvgCnt": "0.2",
             "assistCnt": 8,
             "assistProbability": "14%",
@@ -791,31 +809,13 @@
             "personName": "F. Azaz",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 35,
+            "startedMatchCnt": 36,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "20"
           },
           {
-            "appearanceCnt": 37,
-            "assistAvgCnt": "0.2",
-            "assistCnt": 6,
-            "assistProbability": "10%",
-            "goalAvgCnt": "0.3",
-            "goalCnt": 11,
-            "goalProbability": "15%",
-            "injuryFlag": 1,
-            "personId": 458850,
-            "personName": "M. Whittaker",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 32,
-            "substituteMatchCnt": 5,
-            "suspensionFlag": 0,
-            "uniformNo": "11"
-          },
-          {
-            "appearanceCnt": 43,
+            "appearanceCnt": 44,
             "assistAvgCnt": "0.1",
             "assistCnt": 5,
             "assistProbability": "9%",
@@ -827,7 +827,7 @@
             "personName": "康韦",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 41,
+            "startedMatchCnt": 42,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "9"
@@ -841,12 +841,12 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 41,
+            "appearanceCnt": 42,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "8%",
             "goalAvgCnt": "0.5",
-            "goalCnt": 21,
+            "goalCnt": 22,
             "goalProbability": "42%",
             "injuryFlag": 0,
             "personId": 509482,
@@ -854,12 +854,12 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 33,
-            "substituteMatchCnt": 8,
+            "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 37,
+            "appearanceCnt": 38,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -872,27 +872,27 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 16,
-            "substituteMatchCnt": 21,
+            "substituteMatchCnt": 22,
             "suspensionFlag": 0,
             "uniformNo": "20"
           },
           {
-            "appearanceCnt": 22,
+            "appearanceCnt": 43,
             "assistAvgCnt": "0.1",
-            "assistCnt": 2,
-            "assistProbability": "6%",
-            "goalAvgCnt": "0.2",
+            "assistCnt": 5,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.1",
             "goalCnt": 4,
             "goalProbability": "8%",
             "injuryFlag": 0,
-            "personId": 465872,
-            "personName": "A. Idah",
+            "personId": 595633,
+            "personName": "Ronald",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 5,
-            "substituteMatchCnt": 17,
+            "startedMatchCnt": 33,
+            "substituteMatchCnt": 10,
             "suspensionFlag": 0,
-            "uniformNo": "33"
+            "uniformNo": "35"
           }
         ],
         "sportteryTeamId": 110,
@@ -909,21 +909,25 @@
     }
   },
   "ttg_change": {
+    "0球": {
+      "count": 1,
+      "change_pct": 7.7
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 1.9
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 2.0
+    },
     "7球": {
       "count": 1,
       "change_pct": 4.0
     },
-    "2球": {
-      "count": 1,
-      "change_pct": -2.9
-    },
     "3球": {
       "count": 1,
       "change_pct": -2.9
-    },
-    "0球": {
-      "count": 1,
-      "change_pct": 7.7
     },
     "5球": {
       "count": 0,
@@ -933,25 +937,17 @@
       "count": 1,
       "change_pct": 5.9
     },
-    "4球": {
+    "2球": {
       "count": 1,
-      "change_pct": 2.0
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": 1.9
+      "change_pct": -2.9
     }
   },
   "hafu_change": {
-    "胜平": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平胜": {
-      "count": 2,
-      "change_pct": 10.7
-    },
-    "负平": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -959,25 +955,29 @@
       "count": 2,
       "change_pct": -7.3
     },
-    "胜负": {
+    "胜胜": {
+      "count": 2,
+      "change_pct": 9.6
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 10.7
+    },
+    "负负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
       "count": 0,
       "change_pct": 0.0
     },
     "平平": {
       "count": 2,
       "change_pct": -6.2
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "负负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 9.6
     }
   },
   "exclusion_list": [

@@ -8,7 +8,7 @@ import json
 import time
 import os
 
-TARGET_DATE = "2026-04-24"
+TARGET_DATE = "2026-04-25"
 PAGE_URL    = f"https://trade.500.com/jczq/?playid=312&g=2&date={TARGET_DATE}"
 OUT_DIR     = f"d:\\work\\workbuddy\\足球预测\\分析模板\\{TARGET_DATE.replace('-', '.')}"
 RAW_HTML    = f"{OUT_DIR}\\page_raw_{TARGET_DATE}.html"

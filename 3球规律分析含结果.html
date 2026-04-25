@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>3球规律分析（含实际结果验证）</title>
+<style>
+body{background:#0f1117;color:#e2e8f0;font-family:Segoe UI,sans-serif;font-size:14px;padding:20px}
+h1{color:#fbbf24;font-size:22px;margin-bottom:6px}
+.subtitle{color:#64748b;margin-bottom:24px}
+.section{background:#1a1f2e;border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid #2d3748}
+.section-title{color:#60a5fa;font-size:16px;font-weight:bold;margin-bottom:14px;border-bottom:1px solid #2d3748;padding-bottom:8px}
+.kpi-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.kpi{background:#0f172a;border-radius:8px;padding:14px 18px;min-width:140px;border-left:4px solid #3b82f6}
+.kpi-label{font-size:11px;color:#64748b;margin-bottom:4px}
+.kpi-value{font-size:24px;font-weight:bold}
+.kpi-sub{font-size:11px;color:#475569}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold}
+.tag-red{background:rgba(239,68,68,.2);color:#fca5a5;border:1px solid #ef4444}
+.tag-orange{background:rgba(249,115,22,.2);color:#fdba74;border:1px solid #f97316}
+.tag-yellow{background:rgba(234,179,8,.2);color:#fde047;border:1px solid #eab308}
+.tag-blue{background:rgba(59,130,246,.2);color:#93c5fd;border:1px solid #3b82f6}
+.rule-table{width:100%;border-collapse:collapse}
+.rule-table th{text-align:left;padding:8px 12px;background:#0f172a;color:#94a3b8;font-size:12px;border-bottom:1px solid #2d3748}
+.rule-table td{padding:8px 12px;border-bottom:1px solid #1e293b}
+.rule-table tr:hover{background:#1e293b}
+.hit-yes{color:#4ade80;font-weight:bold}
+.hit-no{color:#f87171}
+.note{padding:10px;background:#0f172a;border-radius:6px;font-size:13px;color:#94a3b8;margin-top:12px;line-height:1.8}
+.note strong{color:#fbbf24}
+.highlight{color:#4ade80;font-weight:bold}
+.footer{text-align:center;color:#475569;font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<h1>3球规律分析（含实际结果验证）</h1>
+<div class="subtitle">sporttery_data X _scores.json | 关联成功: 38场 | 含3球赔率: 34场</div>
+
+<div class="section">
+<div class="section-title">核心指标</div>
+<div class="kpi-row">
+<div class="kpi"><div class="kpi-label">3球被排除打出率</div><div class="kpi-value">46.2%</div><div class="kpi-sub">特殊尾数组 13场</div></div>
+<div class="kpi"><div class="kpi-label">3球未排除打出率</div><div class="kpi-value">23.8%</div><div class="kpi-sub">正常赔率组 21场</div></div>
+<div class="kpi"><div class="kpi-label">3.0-3.5区间打出率</div><div class="kpi-value">37.5%</div><div class="kpi-sub">赔率值信号强</div></div>
+<div class="kpi"><div class="kpi-label">3.5-4.0区间打出率</div><div class="kpi-value">18.8%</div><div class="kpi-sub">赔率值信号弱</div></div>
+<div class="kpi"><div class="kpi-label">特殊比分排除正确</div><div class="kpi-value">69.8%</div><div class="kpi-sub">43个比分</div></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">【A】3球赔率含特殊尾数(被排除) &rarr; 实际结果</div>
+<table class="rule-table">
+<tr><th>场次</th><th>对阵</th><th>3球赔率</th><th>排除级别</th><th>特殊比分</th><th>实际比分</th><th>结果</th></tr>
+<tr><td>周五007</td><td>圣保利 vs 科隆</td><td>3.50</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01, 01:02</td><td>1:1</td><td class="hit-no">-2G</td></tr><tr><td>周五008</td><td>国际米兰 vs 卡利亚里</td><td>3.30</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>3:0</td><td class="hit-yes">+3G</td></tr><tr><td>周五009</td><td>朗斯 vs 图卢兹</td><td>3.25</td><td><span class="tag ">强排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>3:2</td><td class="hit-no">-5G</td></tr><tr><td>周六001</td><td>惠灵顿凤凰 vs 西悉尼漫步</td><td>3.45</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">01:02</td><td>2:1</td><td class="hit-yes">+3G</td></tr><tr><td>周六002</td><td>东京绿茵 vs 千叶市原</td><td>3.90</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>1:0</td><td class="hit-no">-1G</td></tr><tr><td>周六009</td><td>博德闪耀 vs 奥勒松</td><td>4.75</td><td><span class="tag ">普通排除</span></td><td style="color:#fde047;font-size:12px"></td><td>3:0</td><td class="hit-yes">+3G</td></tr><tr><td>周六010</td><td>乌迪内斯 vs 帕尔马</td><td>3.85</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>0:1</td><td class="hit-no">-1G</td></tr><tr><td>周六013</td><td>霍芬海姆 vs 多特蒙德</td><td>3.55</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>2:1</td><td class="hit-yes">+3G</td></tr><tr><td>周六014</td><td>云达不来梅 vs 汉堡</td><td>3.35</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>3:1</td><td class="hit-no">-4G</td></tr><tr><td>周六016</td><td>勒沃库森 vs 奥格斯堡</td><td>3.60</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>1:2</td><td class="hit-yes">+3G</td></tr><tr><td>周六018</td><td>纽卡斯尔联 vs 伯恩茅斯</td><td>3.45</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">01:02</td><td>1:2</td><td class="hit-yes">+3G</td></tr><tr><td>周六019</td><td>洛里昂 vs 马赛</td><td>3.60</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">01:02</td><td>2:0</td><td class="hit-no">-2G</td></tr><tr><td>周四003</td><td>皇家贝蒂斯 vs 布拉加</td><td>3.45</td><td><span class="tag ">仅比分排除</span></td><td style="color:#fde047;font-size:12px">02:01</td><td>2:4</td><td class="hit-no">-6G</td></tr>
+</table>
+<div class="note">
+<strong>规律A验证：</strong><br/>
+被排除 13 场中3球打出 6 场(46.2%)，特殊尾数排除3球的信号并不强。<br/>
+但<strong class="highlight">仅比分特殊+进球数正常</strong>的7场中3球打出5场(71.4%)，说明特殊尾数诱导的是<strong>特定比分</strong>而非进球总数。
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">【B】3球赔率正常(无特殊尾数) &rarr; 实际结果</div>
+<table class="rule-table">
+<tr><th>场次</th><th>对阵</th><th>3球赔率</th><th>排除级别</th><th>实际比分</th><th>结果</th></tr>
+<tr><td>周五003</td><td>萨索洛 vs 科莫</td><td>3.30</td><td>none</td><td>2:1</td><td class="hit-yes">+3G</td></tr><tr><td>周五004</td><td>佐加顿斯 vs 马尔默</td><td>3.50</td><td>none</td><td>0:1</td><td class="hit-no">-1G</td></tr><tr><td>周五005</td><td>勒芒 vs 克莱蒙</td><td>3.40</td><td>none</td><td>1:0</td><td class="hit-no">-1G</td></tr><tr><td>周五006</td><td>阿尔梅勒城 vs 多德勒支</td><td>3.45</td><td>none</td><td>4:1</td><td class="hit-no">-5G</td></tr><tr><td>周五010</td><td>布莱克本 vs 考文垂</td><td>3.55</td><td>none</td><td>1:1</td><td class="hit-no">-2G</td></tr><tr><td>周五011</td><td>里奥阿维 vs 阿维斯SA</td><td>3.40</td><td>none</td><td>2:2</td><td class="hit-no">-4G</td></tr><tr><td>周五012</td><td>温哥华白帽 vs 堪萨斯城竞</td><td>4.10</td><td>none</td><td>3:0</td><td class="hit-yes">+3G</td></tr><tr><td>周六003</td><td>大阪樱花 vs 京都不死鸟</td><td>3.40</td><td>none</td><td>3:0</td><td class="hit-yes">+3G</td></tr><tr><td>周六004</td><td>济州SK vs 金泉尚武</td><td>3.60</td><td>none</td><td>1:1</td><td class="hit-no">-2G</td></tr><tr><td>周六005</td><td>悉尼FC vs 珀斯光荣</td><td>3.65</td><td>none</td><td>0:0</td><td class="hit-no">-0G</td></tr><tr><td>周六007</td><td>布伦特福德 vs 富勒姆</td><td>3.35</td><td>none</td><td>0:0</td><td class="hit-no">-0G</td></tr><tr><td>周六008</td><td>德比郡 vs 牛津联</td><td>3.45</td><td>none</td><td>1:0</td><td class="hit-no">-1G</td></tr><tr><td>周六011</td><td>天狼星 vs 韦斯特罗斯</td><td>3.55</td><td>none</td><td>4:1</td><td class="hit-no">-5G</td></tr><tr><td>周六012</td><td>雅罗 vs 库奥皮奥</td><td>3.50</td><td>none</td><td>1:1</td><td class="hit-no">-2G</td></tr><tr><td>周六017</td><td>利兹联 vs 狼队</td><td>3.45</td><td>none</td><td>3:0</td><td class="hit-yes">+3G</td></tr><tr><td>周六020</td><td>那不勒斯 vs 拉齐奥</td><td>3.85</td><td>none</td><td>0:2</td><td class="hit-no">-2G</td></tr><tr><td>周四001</td><td>维戈塞尔塔 vs 弗赖堡</td><td>3.30</td><td>none</td><td>1:3</td><td class="hit-no">-4G</td></tr><tr><td>周四002</td><td>诺丁汉森林 vs 波尔图</td><td>3.70</td><td>none</td><td>1:0</td><td class="hit-no">-1G</td></tr><tr><td>周四004</td><td>阿斯顿维拉 vs 博洛尼亚</td><td>3.30</td><td>none</td><td>4:0</td><td class="hit-no">-4G</td></tr><tr><td>周四005</td><td>佛罗伦萨 vs 水晶宫</td><td>3.60</td><td>none</td><td>2:1</td><td class="hit-yes">+3G</td></tr><tr><td>周四006</td><td>雅典AEK vs 巴列卡诺</td><td>3.50</td><td>none</td><td>3:1</td><td class="hit-no">-4G</td></tr>
+</table>
+<div class="note">
+<strong>规律B验证：</strong><br/>
+未排除 21 场中3球打出 5 场(23.8%)。<br/>
+综合A+B：排除组的打出率反而更高(46.2% vs 23.8%)，
+特殊尾数诱导往往集中在容易出3球的比赛。
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">【C】3球赔率值区间 vs 实际打出率</div>
+<table class="rule-table">
+<tr><th>赔率区间</th><th>场次</th><th>3球打出</th><th>打出率</th><th>信号强度</th></tr>
+<tr><td>0-3.0</td><td>0</td><td>0</td><td style="color:#f87171">0.0%</td><td>WEAK</td></tr><tr><td>3.0-3.5</td><td>16</td><td>6</td><td style="color:#4ade80">37.5%</td><td>STRONG</td></tr><tr><td>3.5-4.0</td><td>16</td><td>3</td><td style="color:#f87171">18.8%</td><td>WEAK</td></tr><tr><td>4.0-999</td><td>2</td><td>2</td><td style="color:#4ade80">100.0%</td><td>STRONG</td></tr>
+</table>
+<div class="note">
+<strong>规律C验证（最重要）：</strong><br/>
+赔率值是比特殊尾数更强的信号。<br/>
+3.0-3.5区间打出率 37.5%，3.5-4.0区间仅 18.8%。<br/>
+<strong class="highlight">低于3.50的3球赔率值得关注；高于3.50时降低3球预期。</strong>
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">【D】3球赔率变化 vs 实际打出率</div>
+<table class="rule-table">
+<tr><th>变化类型</th><th>场次</th><th>3球打出</th><th>打出率</th></tr>
+<tr><td>UP&gt;5%</td><td>1</td><td>1</td><td style="color:#4ade80">100.0%</td></tr><tr><td>DOWN&lt;-5%</td><td>3</td><td>1</td><td style="color:#4ade80">33.3%</td></tr><tr><td>STABLE</td><td>30</td><td>9</td><td style="color:#f87171">30.0%</td></tr>
+</table>
+<div class="note">
+<strong>规律D验证：</strong>样本较小，参考价值有限。升赔(推离)仅1场，降赔(造热)3场均33.3%打出。
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">【E】各进球数赔率（含特殊尾数区分）</div>
+<table class="rule-table">
+<tr><th>进球</th><th>总场</th><th>打出率</th><th>特殊场</th><th>特殊打出率</th><th>普通场</th><th>普通打出率</th><th>规律</th></tr>
+<tr><td><b>0球</b></td><td>38</td><td style="color:#f87171">5.3%</td><td>0</td><td style="color:#fbbf24">-</td><td>38</td><td style="color:#94a3b8">5.3%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>1球</b></td><td>38</td><td style="color:#f87171">21.1%</td><td>8</td><td style="color:#fbbf24">12.5%</td><td>30</td><td style="color:#94a3b8">23.3%</td><td style="color:#f87171">EXCLUDE</td></tr><tr><td><b>2球</b></td><td>38</td><td style="color:#f87171">15.8%</td><td>4</td><td style="color:#fbbf24">25.0%</td><td>34</td><td style="color:#94a3b8">14.7%</td><td style="color:#f87171">EXCLUDE</td></tr><tr><td><b>3球</b></td><td>34</td><td style="color:#f87171">32.4%</td><td>2</td><td style="color:#fbbf24">50.0%</td><td>32</td><td style="color:#94a3b8">31.2%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>3+球</b></td><td>4</td><td style="color:#f87171">25.0%</td><td>0</td><td style="color:#fbbf24">-</td><td>4</td><td style="color:#94a3b8">25.0%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>4球</b></td><td>34</td><td style="color:#f87171">14.7%</td><td>8</td><td style="color:#fbbf24">12.5%</td><td>26</td><td style="color:#94a3b8">15.4%</td><td style="color:#f87171">EXCLUDE</td></tr><tr><td><b>4+球</b></td><td>4</td><td style="color:#f87171">0.0%</td><td>1</td><td style="color:#fbbf24">0.0%</td><td>3</td><td style="color:#94a3b8">0.0%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>5球</b></td><td>34</td><td style="color:#f87171">8.8%</td><td>2</td><td style="color:#fbbf24">0.0%</td><td>32</td><td style="color:#94a3b8">9.4%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>5+球</b></td><td>4</td><td style="color:#f87171">25.0%</td><td>0</td><td style="color:#fbbf24">-</td><td>4</td><td style="color:#94a3b8">25.0%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>6球</b></td><td>34</td><td style="color:#f87171">2.9%</td><td>1</td><td style="color:#fbbf24">0.0%</td><td>33</td><td style="color:#94a3b8">3.0%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>6+球</b></td><td>4</td><td style="color:#f87171">0.0%</td><td>0</td><td style="color:#fbbf24">-</td><td>4</td><td style="color:#94a3b8">0.0%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>7球</b></td><td>34</td><td style="color:#f87171">0.0%</td><td>1</td><td style="color:#fbbf24">0.0%</td><td>33</td><td style="color:#94a3b8">0.0%</td><td style="color:#64748b">SMALL</td></tr><tr><td><b>7+球</b></td><td>4</td><td style="color:#f87171">0.0%</td><td>0</td><td style="color:#fbbf24">-</td><td>4</td><td style="color:#94a3b8">0.0%</td><td style="color:#64748b">SMALL</td></tr>
+</table>
+</div>
+
+<div class="section">
+<div class="section-title">【F】特殊尾数比分排除验证</div>
+<table class="rule-table">
+<tr><th>场次</th><th>对阵</th><th>比分</th><th>赔率</th><th>级别</th><th>进球数</th><th>实际比分</th><th>排除结果</th></tr>
+<tr><td>周五003</td><td>萨索洛 vs 科莫</td><td style="color:#fde047">00:01</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>2:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五003</td><td>萨索洛 vs 科莫</td><td style="color:#fde047">00:02</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>2:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五003</td><td>萨索洛 vs 科莫</td><td style="color:#fde047">0:1</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>2:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五003</td><td>萨索洛 vs 科莫</td><td style="color:#fde047">0:2</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>2:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五003</td><td>萨索洛 vs 科莫</td><td style="color:#fde047">1:1</td><td>7.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>2:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五004</td><td>佐加顿斯 vs 马尔默</td><td style="color:#fde047">01:00</td><td>8.25</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>0:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周五004</td><td>佐加顿斯 vs 马尔默</td><td style="color:#fde047">01:01</td><td>6.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>0:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五004</td><td>佐加顿斯 vs 马尔默</td><td style="color:#fde047">1:0</td><td>8.25</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>0:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周五004</td><td>佐加顿斯 vs 马尔默</td><td style="color:#fde047">1:1</td><td>6.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>0:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五005</td><td>勒芒 vs 克莱蒙</td><td style="color:#fde047">01:01</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>1:0</td><td class="hit-no">WRONG</td></tr><tr><td>周五007</td><td>圣保利 vs 科隆</td><td style="color:#fde047">02:01</td><td>8.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>1:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五007</td><td>圣保利 vs 科隆</td><td style="color:#fde047">01:02</td><td>7.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>1:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五008</td><td>国际米兰 vs 卡利亚里</td><td style="color:#fde047">01:00</td><td>7.25</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>3:0</td><td class="hit-no">WRONG</td></tr><tr><td>周五008</td><td>国际米兰 vs 卡利亚里</td><td style="color:#fde047">02:01</td><td>7.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>3:0</td><td class="hit-yes">RIGHT</td></tr><tr><td>周五009</td><td>朗斯 vs 图卢兹</td><td style="color:#fde047">02:01</td><td>6.75</td><td><span class="tag ">强排除</span></td><td>3球</td><td>3:2</td><td class="hit-no">WRONG</td></tr><tr><td>周五010</td><td>布莱克本 vs 考文垂</td><td style="color:#fde047">00:01</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>1:1</td><td class="hit-no">WRONG</td></tr><tr><td>周五012</td><td>温哥华白 vs 堪萨斯城</td><td style="color:#fde047">02:00</td><td>8.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>3:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六001</td><td>惠灵顿凤 vs 西悉尼漫</td><td style="color:#fde047">01:02</td><td>9.25</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>2:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六002</td><td>东京绿茵 vs 千叶市原</td><td style="color:#fde047">02:01</td><td>7.25</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>1:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六003</td><td>大阪樱花 vs 京都不死</td><td style="color:#fde047">00:01</td><td>9.75</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>3:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六003</td><td>大阪樱花 vs 京都不死</td><td style="color:#fde047">01:01</td><td>6.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>3:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六004</td><td>济州SK vs 金泉尚武</td><td style="color:#fde047">01:01</td><td>5.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>1:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六005</td><td>悉尼FC vs 珀斯光荣</td><td style="color:#fde047">02:00</td><td>8.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>0:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六007</td><td>布伦特福 vs 富勒姆</td><td style="color:#fde047">01:00</td><td>8.75</td><td><span class="tag ">强排除</span></td><td>1球</td><td>0:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六007</td><td>布伦特福 vs 富勒姆</td><td style="color:#fde047">02:00</td><td>9.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>0:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六010</td><td>乌迪内斯 vs 帕尔马</td><td style="color:#fde047">02:01</td><td>7.25</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>0:1</td><td class="hit-no">WRONG</td></tr><tr><td>周六012</td><td>雅罗 vs 库奥皮奥</td><td style="color:#fde047">00:02</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>1:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六012</td><td>雅罗 vs 库奥皮奥</td><td style="color:#fde047">01:01</td><td>8.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>1:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六013</td><td>霍芬海姆 vs 多特蒙德</td><td style="color:#fde047">02:01</td><td>7.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>2:1</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六014</td><td>云达不来 vs 汉堡</td><td style="color:#fde047">01:00</td><td>8.25</td><td><span class="tag ">强排除</span></td><td>1球</td><td>3:1</td><td class="hit-no">WRONG</td></tr><tr><td>周六014</td><td>云达不来 vs 汉堡</td><td style="color:#fde047">02:01</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>3:1</td><td class="hit-no">WRONG</td></tr><tr><td>周六016</td><td>勒沃库森 vs 奥格斯堡</td><td style="color:#fde047">03:01</td><td>8.75</td><td><span class="tag ">强排除</span></td><td>4球</td><td>1:2</td><td class="hit-no">WRONG</td></tr><tr><td>周六016</td><td>勒沃库森 vs 奥格斯堡</td><td style="color:#fde047">01:01</td><td>9.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>1:2</td><td class="hit-no">WRONG</td></tr><tr><td>周六016</td><td>勒沃库森 vs 奥格斯堡</td><td style="color:#fde047">02:01</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>1:2</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六018</td><td>纽卡斯尔 vs 伯恩茅斯</td><td style="color:#fde047">01:02</td><td>9.25</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>1:2</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六019</td><td>洛里昂 vs 马赛</td><td style="color:#fde047">00:02</td><td>9.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>2:0</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六019</td><td>洛里昂 vs 马赛</td><td style="color:#fde047">01:01</td><td>7.75</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>2:0</td><td class="hit-yes">RIGHT</td></tr><tr><td>周六019</td><td>洛里昂 vs 马赛</td><td style="color:#fde047">01:02</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>2:0</td><td class="hit-no">WRONG</td></tr><tr><td>周六020</td><td>那不勒斯 vs 拉齐奥</td><td style="color:#fde047">02:00</td><td>5.75</td><td><span class="tag ">强排除</span></td><td>2球</td><td>0:2</td><td class="hit-yes">RIGHT</td></tr><tr><td>周四003</td><td>皇家贝蒂 vs 布拉加</td><td style="color:#fde047">01:00</td><td>6.25</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>2:4</td><td class="hit-no">WRONG</td></tr><tr><td>周四003</td><td>皇家贝蒂 vs 布拉加</td><td style="color:#fde047">02:01</td><td>6.75</td><td><span class="tag ">仅比分排除</span></td><td>3球</td><td>2:4</td><td class="hit-no">WRONG</td></tr><tr><td>周四004</td><td>阿斯顿维 vs 博洛尼亚</td><td style="color:#fde047">01:00</td><td>7.75</td><td><span class="tag ">仅比分排除</span></td><td>1球</td><td>4:0</td><td class="hit-no">WRONG</td></tr><tr><td>周四005</td><td>佛罗伦萨 vs 水晶宫</td><td style="color:#fde047">01:01</td><td>6.25</td><td><span class="tag ">仅比分排除</span></td><td>2球</td><td>2:1</td><td class="hit-no">WRONG</td></tr>
+</table>
+<div class="note">
+<strong>规律F验证：</strong>特殊尾数比分共 43 个，排除正确率 69.8%。
+特殊尾数更多是诱导去买某个比分，而非影响总进球数。
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">修正后的3球规律体系</div>
+<table class="rule-table">
+<tr><th>优先级</th><th>规律</th><th>条件</th><th>操作</th><th>验证</th></tr>
+<tr><td><span class="tag tag-blue">HIGH</span></td><td><b style="color:#fbbf24">赔率值信号</b></td><td>3球赔率 &lt; 3.50</td><td>+关注3球机会</td><td>37.5%打出</td></tr>
+<tr><td><span class="tag tag-blue">HIGH</span></td><td><b style="color:#fbbf24">赔率值信号</b></td><td>3球赔率 &gt; 3.50</td><td>-降低3球预期</td><td>仅 18.8%打出</td></tr>
+<tr><td><span class="tag tag-orange">MED</span></td><td><b style="color:#f97316">仅比分特殊</b></td><td>进球数正常 + 比比分特殊</td><td>+3球加分</td><td>71.4%打出(7场)</td></tr>
+<tr><td><span class="tag tag-orange">MED</span></td><td><b style="color:#f97316">联动排除</b></td><td>进球数+比分同时特殊</td><td>谨慎信号混乱</td><td>46.2%打出</td></tr>
+<tr><td><span class="tag tag-yellow">LOW</span></td><td><b style="color:#eab308">赔率变化</b></td><td>降赔造热3球</td><td>参考有限</td><td>样本不足</td></tr>
+</table>
+<div class="note" style="margin-top:12px">
+<strong style="color:#ef4444">最重要修正：</strong>特殊尾数诱导的是<strong>特定比分</strong>而非进球总数。
+<strong class="highlight">赔率值本身才是判断3球是否值得买的核心信号。</strong>
+</div>
+</div>
+
+<div class="footer">分析日期: 2026-04-19 | 数据关联: 38场 | 含3球赔率: 34场</div>
+</body>
+</html>

@@ -1,0 +1,3006 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>综合比分预测回溯报告</title>
+<style>
+body {font-family:system-ui,sans-serif;max-width:1400px;margin:0 auto;padding:20px;background:#f5f5f5}
+h1 {color:#2c3e50;border-bottom:3px solid #3498db;padding-bottom:10px}
+.summary {background:white;border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.stat-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+.card {background:#3498db;color:white;border-radius:12px;padding:20px;text-align:center}
+.card .num {font-size:2.5em;font-weight:bold}
+.card .label {font-size:.9em;opacity:.9;margin-top:4px}
+table {width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;margin:16px 0}
+th {background:#34495e;color:white;padding:12px;text-align:center}
+td {padding:9px 12px;border-bottom:1px solid #eee;text-align:center;font-size:.85em}
+td:first-child {text-align:left}
+tr:hover {background:#f8f9fa}
+.badge {display:inline-block;padding:3px 10px;border-radius:20px;font-size:.75em;font-weight:bold}
+.bg-green {background:#d4edda;color:#155724}
+.bg-red {background:#f8d7da;color:#721c24}
+.bg-yellow {background:#fff3cd;color:#856404}
+.bg-blue {background:#d1ecf1;color:#0c5460}
+</style>
+</head>
+<body>
+<h1>综合比分预测算法回溯报告</h1>
+
+<div class="summary">
+<h2>总体统计</h2>
+<div class="stat-grid">
+<div class="card"><div class="num">325</div><div class="label">总比赛数</div></div>
+<div class="card" style="background:#27ae60"><div class="num">68/325</div><div class="label">总进球预测命中率</div></div>
+<div class="card" style="background:#9b59b6"><div class="num">20.9%</div><div class="label">命中率</div></div>
+<div class="card" style="background:#e67e22"><div class="num">8</div><div class="label">信号类型数</div></div>
+</div>
+</div>
+
+<h2>按推荐信号统计</h2>
+<table>
+<thead><tr>
+<th>信号类型</th><th>样本</th><th>命中</th><th>命中率</th><th>评级</th>
+</tr></thead>
+<tbody>
+<tr><td>黄金2球</td><td>1</td><td>1</td><td>100.0%</td><td><span class="badge bg-green">100.0%</span></td></tr><tr><td>排除3球</td><td>38</td><td>31</td><td>81.6%</td><td><span class="badge bg-green">81.6%</span></td></tr><tr><td>超级3球</td><td>8</td><td>6</td><td>75.0%</td><td><span class="badge bg-green">75.0%</span></td></tr><tr><td>黄金4球</td><td>3</td><td>2</td><td>66.7%</td><td><span class="badge bg-green">66.7%</span></td></tr><tr><td>近况+高球降</td><td>17</td><td>7</td><td>41.2%</td><td><span class="badge bg-yellow">41.2%</span></td></tr><tr><td>近况+高球降(关注2球)</td><td>27</td><td>9</td><td>33.3%</td><td><span class="badge bg-yellow">33.3%</span></td></tr><tr><td>黄金3球</td><td>40</td><td>12</td><td>30.0%</td><td><span class="badge bg-yellow">30.0%</span></td></tr><tr><td>近况+高球降(观望)</td><td>29</td><td>0</td><td>0.0%</td><td><span class="badge bg-red">0.0%</span></td></tr></tbody></table>
+
+<h2>大3球 vs 小3球预判</h2>
+<table>
+<thead><tr><th>预判类型</th><th>样本</th><th>命中</th><th>命中率</th></tr></thead>
+<tbody>
+<tr><td>大3球(4+球)</td><td>144</td><td>61</td><td>42.4%</td></tr><tr><td>小3球(恰好3球)</td><td>87</td><td>28</td><td>32.2%</td></tr></tbody></table>
+
+<h2>历史高命中率比分 TOP 30</h2>
+<table>
+<thead><tr><th>比分</th><th>样本</th><th>命中</th><th>命中率</th><th>评级</th></tr></thead>
+<tbody>
+<tr><td style="font-weight:bold">3:0</td><td>58</td><td>9</td><td>15.5%</td><td><span class="badge bg-yellow">15.5%</span></td></tr><tr><td style="font-weight:bold">1:0</td><td>131</td><td>19</td><td>14.5%</td><td><span class="badge bg-yellow">14.5%</span></td></tr><tr><td style="font-weight:bold">0:1</td><td>66</td><td>9</td><td>13.6%</td><td><span class="badge bg-yellow">13.6%</span></td></tr><tr><td style="font-weight:bold">1:1</td><td>255</td><td>33</td><td>12.9%</td><td><span class="badge bg-yellow">12.9%</span></td></tr><tr><td style="font-weight:bold">0:0</td><td>155</td><td>19</td><td>12.3%</td><td><span class="badge bg-yellow">12.3%</span></td></tr><tr><td style="font-weight:bold">0:3</td><td>17</td><td>2</td><td>11.8%</td><td><span class="badge bg-yellow">11.8%</span></td></tr><tr><td style="font-weight:bold">2:1</td><td>109</td><td>12</td><td>11.0%</td><td><span class="badge bg-yellow">11.0%</span></td></tr><tr><td style="font-weight:bold">2:2</td><td>46</td><td>5</td><td>10.9%</td><td><span class="badge bg-yellow">10.9%</span></td></tr><tr><td style="font-weight:bold">1:2</td><td>204</td><td>22</td><td>10.8%</td><td><span class="badge bg-yellow">10.8%</span></td></tr><tr><td style="font-weight:bold">2:0</td><td>73</td><td>7</td><td>9.6%</td><td><span class="badge bg-red">9.6%</span></td></tr></tbody></table>
+
+<h2>预测明细</h2>
+<table>
+<thead><tr>
+<th>比赛ID</th><th>实际比分</th><th>总进球</th><th>推荐</th><th>信号类型</th><th>命中</th>
+<th>大3/小3预判</th>
+<th>推荐比分</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="font-size:.8em">2038719</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038720</td>
+<td style="font-weight:bold">5:1</td>
+<td>6球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038721</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038722</td>
+<td style="font-weight:bold">2:3</td>
+<td>5球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038723</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038724</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038725</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038726</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038727</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038728</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038729</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038730</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038731</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038732</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038733</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038734</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038735</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 2:1, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038736</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038737</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:3, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038738</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038739</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038740</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038741</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038742</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038743</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038744</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038745</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038746</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038782</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038783</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038784</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038785</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038786</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038787</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038788</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038789</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038790</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038791</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038792</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038793</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038794</td>
+<td style="font-weight:bold">4:2</td>
+<td>6球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038806</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038807</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038808</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038809</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038810</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038811</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038812</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038813</td>
+<td style="font-weight:bold">4:0</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038814</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038815</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038816</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038818</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038819</td>
+<td style="font-weight:bold">2:3</td>
+<td>5球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038820</td>
+<td style="font-weight:bold">4:3</td>
+<td>7球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038821</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038822</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038823</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038824</td>
+<td style="font-weight:bold">4:3</td>
+<td>7球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2038825</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038826</td>
+<td style="font-weight:bold">7:0</td>
+<td>7球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038827</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038828</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038829</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038830</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038831</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">2:1, 0:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038832</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:2, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038833</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038834</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038835</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038836</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2038837</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038838</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038839</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038840</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038841</td>
+<td style="font-weight:bold">5:0</td>
+<td>5球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038842</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038843</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 0:3, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038844</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038846</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038847</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038848</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038849</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038850</td>
+<td style="font-weight:bold">2:3</td>
+<td>5球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038851</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038852</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038853</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038854</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038855</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038856</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038857</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038858</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038859</td>
+<td style="font-weight:bold">5:2</td>
+<td>7球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038860</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038861</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038862</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038863</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038864</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038865</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038866</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038867</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038868</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038869</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038870</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038871</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">3:0, 1:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038872</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038873</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038874</td>
+<td style="font-weight:bold">4:0</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038875</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 0:3, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038876</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038877</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:1, 1:2, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038913</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038914</td>
+<td style="font-weight:bold">2:3</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038915</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038916</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038917</td>
+<td style="font-weight:bold">1:5</td>
+<td>6球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038918</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:1, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038919</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038920</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038921</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038922</td>
+<td style="font-weight:bold">3:4</td>
+<td>7球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038923</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2038924</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038925</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038926</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038927</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:1, 0:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038928</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038929</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038930</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038931</td>
+<td style="font-weight:bold">1:3</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038932</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038933</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038934</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038967</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038968</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038969</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038970</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038971</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038972</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038973</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 2:1, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038974</td>
+<td style="font-weight:bold">5:0</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2038975</td>
+<td style="font-weight:bold">1:3</td>
+<td>4球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038976</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038977</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">3:0, 1:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038978</td>
+<td style="font-weight:bold">4:0</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038979</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2038980</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2038981</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2038982</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039003</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039004</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039005</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039006</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039007</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039008</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039009</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039010</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039011</td>
+<td style="font-weight:bold">3:3</td>
+<td>6球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039012</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039013</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039014</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039015</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039016</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039017</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039018</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039019</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039020</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039021</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039022</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:3, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039023</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039024</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2039025</td>
+<td style="font-weight:bold">0:5</td>
+<td>5球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039026</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039027</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039028</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039029</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039030</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039031</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039032</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039033</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039034</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039035</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039036</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039037</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039038</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039039</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039040</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039041</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039042</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039043</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039044</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039045</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039046</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:1, 0:0, 0:1, 1:1, 0:3</td>
+</tr><tr>
+<td style="font-size:.8em">2039047</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039048</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039049</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039050</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039051</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039052</td>
+<td style="font-weight:bold">0:4</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039053</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:2, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039054</td>
+<td style="font-weight:bold">4:0</td>
+<td>4球</td>
+<td><span class="badge bg-yellow">4球</span></td>
+<td style="font-size:.8em">黄金4球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039055</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039056</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039057</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039058</td>
+<td style="font-weight:bold">3:4</td>
+<td>7球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039059</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039060</td>
+<td style="font-weight:bold">1:3</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039061</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">4球</span></td>
+<td style="font-size:.8em">黄金4球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2039062</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039063</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039064</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039065</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039067</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039068</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039101</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-yellow">4球</span></td>
+<td style="font-size:.8em">黄金4球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2039102</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039103</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039104</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039109</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:1, 0:0, 0:1, 1:1, 0:3</td>
+</tr><tr>
+<td style="font-size:.8em">2039116</td>
+<td style="font-weight:bold">1:3</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039117</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039118</td>
+<td style="font-weight:bold">2:4</td>
+<td>6球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039119</td>
+<td style="font-weight:bold">4:0</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039120</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039121</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039135</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039136</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039137</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039138</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039139</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039140</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039141</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039142</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">3:0, 1:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039143</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039144</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039145</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039146</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">3:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039153</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039154</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039155</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039156</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039157</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039158</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039159</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039160</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039161</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039162</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039163</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 0:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039164</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039165</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039166</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039167</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望3球</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039168</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039169</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039170</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">黄金2球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039171</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039178</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039179</td>
+<td style="font-weight:bold">5:1</td>
+<td>6球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039180</td>
+<td style="font-weight:bold">3:1</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039181</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039182</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">近况+高球降</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039183</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039184</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039185</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039186</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 0:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039187</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039188</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:2, 2:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039189</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039190</td>
+<td style="font-weight:bold">4:3</td>
+<td>7球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039191</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039192</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">2:1, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039193</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039194</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039195</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039196</td>
+<td style="font-weight:bold">0:3</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 2:2, 1:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039197</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039198</td>
+<td style="font-weight:bold">4:2</td>
+<td>6球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:0, 2:1, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039199</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:1, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039200</td>
+<td style="font-weight:bold">5:1</td>
+<td>6球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039201</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039202</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039203</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039204</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039205</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039206</td>
+<td style="font-weight:bold">1:4</td>
+<td>5球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">-</td>
+</tr><tr>
+<td style="font-size:.8em">2039207</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039208</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039209</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039210</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039211</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039239</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">超级3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039242</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039243</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039244</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039245</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039246</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039247</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 3:0, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039248</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039249</td>
+<td style="font-weight:bold">2:3</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039250</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039251</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td><span class="badge bg-yellow">2球</span></td>
+<td style="font-size:.8em">近况+高球降(关注2球)</td>
+<td>❌</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 3:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039252</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039253</td>
+<td style="font-weight:bold">3:2</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039254</td>
+<td style="font-weight:bold">3:0</td>
+<td>3球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 2:1, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039255</td>
+<td style="font-weight:bold">2:1</td>
+<td>3球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>✅</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:0, 0:1, 1:1, 1:2, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039256</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039257</td>
+<td style="font-weight:bold">4:1</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:2, 0:0, 2:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039258</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039259</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">0:3, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039260</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td><span class="badge bg-red">排除3球</span></td>
+<td style="font-size:.8em">排除3球</td>
+<td>✅</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039261</td>
+<td style="font-weight:bold">2:2</td>
+<td>4球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039262</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039263</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:0, 1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039264</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">近况+高球降(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">3:0, 2:1, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039265</td>
+<td style="font-weight:bold">0:2</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:2, 2:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039266</td>
+<td style="font-weight:bold">1:2</td>
+<td>3球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">2:1, 1:1, 0:3, 1:2, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039267</td>
+<td style="font-weight:bold">0:0</td>
+<td>0球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">2:2, 1:2, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039268</td>
+<td style="font-weight:bold">2:0</td>
+<td>2球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039269</td>
+<td style="font-weight:bold">2:3</td>
+<td>5球</td>
+<td><span class="badge bg-blue">3球</span></td>
+<td style="font-size:.8em">黄金3球</td>
+<td>❌</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 1:2, 2:0, 2:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039270</td>
+<td style="font-weight:bold">1:0</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">1:0, 0:0, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039271</td>
+<td style="font-weight:bold">0:1</td>
+<td>1球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">2:1, 0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039272</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">1:1, 0:0</td>
+</tr><tr>
+<td style="font-size:.8em">2039273</td>
+<td style="font-weight:bold">6:1</td>
+<td>7球</td>
+<td>不投注</td>
+<td style="font-size:.8em">无信号</td>
+<td>—</td>
+<td style="font-size:.8em">不确定</td>
+<td style="font-size:.8em">3:0, 2:1, 1:1</td>
+</tr><tr>
+<td style="font-size:.8em">2039274</td>
+<td style="font-weight:bold">1:1</td>
+<td>2球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">小3球</td>
+<td style="font-size:.8em">0:1, 1:1, 1:2</td>
+</tr><tr>
+<td style="font-size:.8em">2039279</td>
+<td style="font-weight:bold">5:1</td>
+<td>6球</td>
+<td>观望</td>
+<td style="font-size:.8em">关注3球(观望)</td>
+<td>—</td>
+<td style="font-size:.8em">大3球</td>
+<td style="font-size:.8em">3:0, 2:1</td>
+</tr></tbody></table>
+
+<h2>算法说明</h2>
+<table>
+<tr style="background:#34495e;color:white"><th style="padding:10px;text-align:left">模块</th><th style="padding:10px;text-align:left">功能</th><th style="padding:10px;text-align:left">命中率/效果</th></tr>
+<tr><td style="padding:8px">总进球推荐</td><td style="padding:8px">综合9级优先级推荐具体进球数</td><td style="padding:8px">见上方按信号统计</td></tr>
+<tr><td style="padding:8px">大3球 vs 小3球</td><td style="padding:8px">判断总进球3球时是恰好3还是4+球</td><td style="padding:8px">见上方大3/小3统计</td></tr>
+<tr><td style="padding:8px">历史比分命中率</td><td style="padding:8px">按赔率区间统计各比分历史命中率</td><td style="padding:8px">见上方比分TOP统计</td></tr>
+<tr><td style="padding:8px">黄金3球</td><td style="padding:8px">4定律同时满足:评分≥15+近况2.5~3.5+3球3.0~3.5+2>3<4</td><td style="padding:8px">历史40.8%</td></tr>
+<tr><td style="padding:8px">超级3球</td><td style="padding:8px">黄金3球 + 0球=13</td><td style="padding:8px">历史75%</td></tr>
+<tr><td style="padding:8px">黄金2球</td><td style="padding:8px">0球=10 + 2球3.1~3.3</td><td style="padding:8px">历史43%</td></tr>
+<tr><td style="padding:8px">黄金4球</td><td style="padding:8px">0球=30 + 4球4.1~4.5</td><td style="padding:8px">历史67%</td></tr>
+</table>
+
+</body></html>

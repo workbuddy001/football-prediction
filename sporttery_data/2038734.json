@@ -1,6 +1,6 @@
 {
   "match_id": "2038734",
-  "fetch_time": "2026-04-22 00:51:28",
+  "fetch_time": "2026-04-26 01:24:04",
   "match_info": {
     "home_team": "捷克",
     "away_team": "丹麦",
@@ -772,37 +772,37 @@
     }
   },
   "ttg_change": {
-    "5球": {
-      "count": 1,
-      "change_pct": -8.0
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": 3.6
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": 3.2
-    },
-    "7球": {
-      "count": 1,
-      "change_pct": -14.3
-    },
     "4球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "0球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "3球": {
       "count": 0,
       "change_pct": 0.0
     },
     "6球": {
       "count": 1,
       "change_pct": -9.1
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": -14.3
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 3.2
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 3.6
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -8.0
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {
@@ -810,7 +810,23 @@
       "count": 0,
       "change_pct": 0.0
     },
+    "平胜": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -3.1
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 6.2
+    },
     "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -822,25 +838,9 @@
       "count": 1,
       "change_pct": -4.1
     },
-    "负负": {
-      "count": 1,
-      "change_pct": -3.1
-    },
     "平平": {
       "count": 1,
       "change_pct": 2.1
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 6.2
-    },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平胜": {
-      "count": 1,
-      "change_pct": 2.9
     }
   },
   "exclusion_list": [

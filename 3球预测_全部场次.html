@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>3球预测算法 v2</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:1300px;margin:0 auto;padding:20px;background:#fafafa}
+h1{color:#2c3e50;border-bottom:3px solid #3498db;padding-bottom:10px}
+h2{color:#34495e;margin-top:32px;border-left:4px solid #3498db;padding-left:10px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+.card{background:white;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card .num{font-size:2em;font-weight:bold;color:#3498db}
+.card .num.green{color:#27ae60}.card .num.red{color:#e74c3c}.card .num.purple{color:#9b59b6}
+.card .label{color:#888;font-size:.9em;margin-top:4px}
+table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+th{background:#34495e;color:white;padding:12px;text-align:left;font-size:.85em}
+td{padding:9px 12px;border-bottom:1px solid #eee;font-size:.85em}
+tr:hover{background:#f8f9fa}
+.sig{display:inline-block;margin:1px 3px;font-size:.7em;padding:2px 6px;border-radius:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.8em;font-weight:bold}
+.bg-green{background:#d4edda;color:#155724}
+.bg-red{background:#f8d7da;color:#721c24}
+.bg-gray{background:#e9ecef;color:#495057}
+.bg-yellow{background:#fff3cd;color:#856404}
+</style>
+</head>
+<body>
+<h1>3球预测算法 v2</h1>
+<p style="color:#888">规律⑨(赔率值) + 规律⑩(0球整数尾数) | 共 27 场验证</p>
+
+<h2>回测统计</h2>
+<div class="stats-grid">
+  <div class="card"><div class="num">19/27</div><div class="label">总体准确率 (70.4%)</div></div>
+  <div class="card"><div class="num green">31.2%</div><div class="label">3球赔率&lt;3.50 (16场)</div></div>
+  <div class="card"><div class="num red">12.1%</div><div class="label">3球赔率≥3.50 (33场)</div></div>
+  <div class="card"><div class="num purple">54.5%</div><div class="label">0球整数高赔信号 (11场)</div></div>
+</div>
+
+<h2>预测明细</h2>
+<table>
+<thead><tr>
+  <th>比赛</th><th>联赛</th><th>3球</th><th>0球</th><th>评分</th><th>推荐</th><th>置信</th>
+  <th>触发信号</th><th>实际比分</th><th>命中</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td>维戈塞尔塔 vs 弗赖堡</td>
+  <td style="color:#888;font-size:.8em">欧罗巴联赛</td>
+  <td><b>3.3</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>诺丁汉森林 vs 波尔图</td>
+  <td style="color:#888;font-size:.8em">欧罗巴联赛</td>
+  <td><b>3.7</b></td>
+  <td>9.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>-5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>皇家贝蒂斯 vs 布拉加</td>
+  <td style="color:#888;font-size:.8em">欧罗巴联赛</td>
+  <td><b>3.45</b></td>
+  <td>11.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>13</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">3球降赔(+8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>阿斯顿维拉 vs 博洛尼亚</td>
+  <td style="color:#888;font-size:.8em">欧罗巴联赛</td>
+  <td><b>3.3</b></td>
+  <td>15.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>13</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">3球降赔(+8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>佛罗伦萨 vs 水晶宫</td>
+  <td style="color:#888;font-size:.8em">欧洲协会联赛</td>
+  <td><b>3.6</b></td>
+  <td>10.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>雅典AEK vs 巴列卡诺</td>
+  <td style="color:#888;font-size:.8em">欧洲协会联赛</td>
+  <td><b>3.5</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>墨尔本胜利 vs 纽卡斯尔喷气机</td>
+  <td style="color:#888;font-size:.8em">澳大利亚超级联赛</td>
+  <td><b>3.9</b></td>
+  <td>28.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>7</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">3球升赔(-8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>埃尔沃斯堡 vs 卡尔斯鲁厄</td>
+  <td style="color:#888;font-size:.8em">德国乙级联赛</td>
+  <td><b>3.55</b></td>
+  <td>28.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>萨索洛 vs 科莫</td>
+  <td style="color:#888;font-size:.8em">意大利甲级联赛</td>
+  <td><b>3.3</b></td>
+  <td>15.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>佐加顿斯 vs 马尔默</td>
+  <td style="color:#888;font-size:.8em">瑞典超级联赛</td>
+  <td><b>3.5</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>勒芒 vs 克莱蒙</td>
+  <td style="color:#888;font-size:.8em">法国乙级联赛</td>
+  <td><b>3.4</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>阿尔梅勒城 vs 多德勒支</td>
+  <td style="color:#888;font-size:.8em">荷兰乙级联赛</td>
+  <td><b>3.45</b></td>
+  <td>22.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>20</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>75%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>圣保利 vs 科隆</td>
+  <td style="color:#888;font-size:.8em">德国甲级联赛</td>
+  <td><b>3.5</b></td>
+  <td>10.5</td>
+  <td><b>13</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">3球降赔(+8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>国际米兰 vs 卡利亚里</td>
+  <td style="color:#888;font-size:.8em">意大利甲级联赛</td>
+  <td><b>3.3</b></td>
+  <td>20.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>28</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>83%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">3球降赔(+8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>朗斯 vs 图卢兹</td>
+  <td style="color:#888;font-size:.8em">法国甲级联赛</td>
+  <td><b>3.25</b></td>
+  <td>15.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>13</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">3球降赔(+8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>布莱克本 vs 考文垂</td>
+  <td style="color:#888;font-size:.8em">英格兰冠军联赛</td>
+  <td><b>3.55</b></td>
+  <td>10.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>里奥阿维 vs 阿维斯SAD</td>
+  <td style="color:#888;font-size:.8em">葡萄牙超级联赛</td>
+  <td><b>3.4</b></td>
+  <td>12.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>温哥华白帽 vs 堪萨斯城竞技</td>
+  <td style="color:#888;font-size:.8em">美国职业大联盟</td>
+  <td><b>4.1</b></td>
+  <td>50.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>7</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#e74c3c22;color:#e74c3c">3球E级(-8)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>惠灵顿凤凰 vs 西悉尼漫步者</td>
+  <td style="color:#888;font-size:.8em">澳大利亚超级联赛</td>
+  <td><b>3.45</b></td>
+  <td>21.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>20</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>75%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>大阪樱花 vs 京都不死鸟</td>
+  <td style="color:#888;font-size:.8em">日本职业联赛</td>
+  <td><b>3.4</b></td>
+  <td>11.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>济州SK vs 金泉尚武</td>
+  <td style="color:#888;font-size:.8em">韩国职业联赛</td>
+  <td><b>3.6</b></td>
+  <td>9.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>悉尼FC vs 珀斯光荣</td>
+  <td style="color:#888;font-size:.8em">澳大利亚超级联赛</td>
+  <td><b>3.65</b></td>
+  <td>21.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>马格德堡 vs 杜塞尔多夫</td>
+  <td style="color:#888;font-size:.8em">德国乙级联赛</td>
+  <td><b>3.75</b></td>
+  <td>20.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>7</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">3球升赔(-8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>布伦特福德 vs 富勒姆</td>
+  <td style="color:#888;font-size:.8em">英格兰超级联赛</td>
+  <td><b>3.35</b></td>
+  <td>17.5</td>
+  <td><b>10</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>德比郡 vs 牛津联</td>
+  <td style="color:#888;font-size:.8em">英格兰冠军联赛</td>
+  <td><b>3.45</b></td>
+  <td>10.5</td>
+  <td><b>18</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>73%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">3球降赔(+8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>博德闪耀 vs 奥勒松</td>
+  <td style="color:#888;font-size:.8em">挪威超级联赛</td>
+  <td><b>4.75</b></td>
+  <td>70.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>-1</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#e74c3c22;color:#e74c3c">3球E级(-8)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">3球升赔(-8)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>乌迪内斯 vs 帕尔马</td>
+  <td style="color:#888;font-size:.8em">意大利甲级联赛</td>
+  <td><b>3.85</b></td>
+  <td>8.5</td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>天狼星 vs 韦斯特罗斯</td>
+  <td style="color:#888;font-size:.8em">瑞典超级联赛</td>
+  <td><b>3.55</b></td>
+  <td>13.5</td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>雅罗 vs 库奥皮奥</td>
+  <td style="color:#888;font-size:.8em">芬兰超级联赛</td>
+  <td><b>3.5</b></td>
+  <td>15.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>霍芬海姆 vs 多特蒙德</td>
+  <td style="color:#888;font-size:.8em">德国甲级联赛</td>
+  <td><b>3.55</b></td>
+  <td>22.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>云达不来梅 vs 汉堡</td>
+  <td style="color:#888;font-size:.8em">德国甲级联赛</td>
+  <td><b>3.35</b></td>
+  <td>14.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>柏林联合 vs 沃尔夫斯堡</td>
+  <td style="color:#888;font-size:.8em">德国甲级联赛</td>
+  <td><b>3.5</b></td>
+  <td>13.5</td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>勒沃库森 vs 奥格斯堡</td>
+  <td style="color:#888;font-size:.8em">德国甲级联赛</td>
+  <td><b>3.6</b></td>
+  <td>26.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>利兹联 vs 狼队</td>
+  <td style="color:#888;font-size:.8em">英格兰超级联赛</td>
+  <td><b>3.45</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>纽卡斯尔联 vs 伯恩茅斯</td>
+  <td style="color:#888;font-size:.8em">英格兰超级联赛</td>
+  <td><b>3.45</b></td>
+  <td>21.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>20</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>75%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">3球C级(+5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>洛里昂 vs 马赛</td>
+  <td style="color:#888;font-size:.8em">法国甲级联赛</td>
+  <td><b>3.6</b></td>
+  <td>23.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>那不勒斯 vs 拉齐奥</td>
+  <td style="color:#888;font-size:.8em">意大利甲级联赛</td>
+  <td><b>3.85</b></td>
+  <td>9.5</td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>摩雷伦斯 vs 埃斯托里尔</td>
+  <td style="color:#888;font-size:.8em">葡萄牙超级联赛</td>
+  <td><b>3.55</b></td>
+  <td>12.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>东京绿茵 vs 千叶市原</td>
+  <td style="color:#888;font-size:.8em">日本职业联赛</td>
+  <td><b>3.9</b></td>
+  <td>7.5</td>
+  <td><b>5</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td> vs </td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>None</td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>墨胜利 vs 纽喷气机</td>
+  <td style="color:#888;font-size:.8em">澳超</td>
+  <td><b>3.9</b></td>
+  <td>28.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#88822;color:#888">3球D级(0)</span><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td> vs </td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>None</td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td> vs </td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>None</td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>佐加顿斯 vs 马尔默</td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>勒芒 vs 克莱蒙</td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>13.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>埃尔沃斯堡 vs 卡尔斯鲁厄</td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>28.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>墨尔本胜利 vs 纽卡斯尔喷气机</td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>28.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>萨索洛 vs 科莫</td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>15.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>0</b></td>
+  <td><span class="badge bg-gray">观望</span></td>
+  <td>—</td>
+  <td><span class="sig" style="background:#e74c3c22;color:#e74c3c">0球整数中赔(-5)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr><tr>
+  <td>阿尔梅勒城 vs 多德勒支</td>
+  <td style="color:#888;font-size:.8em"></td>
+  <td><b>None</b></td>
+  <td>22.0<span style="color:#9b59b6">整数</span></td>
+  <td><b>15</b></td>
+  <td><span class="badge bg-green">关注3球</span></td>
+  <td>70%</td>
+  <td><span class="sig" style="background:#27ae6022;color:#27ae60">0球整数高赔(+10)</span><span class="sig" style="background:#27ae6022;color:#27ae60">2球<1球×0.85(+5)</span></td>
+  <td style="font-size:.8em">—</td>
+  <td>—</td>
+</tr></tbody></table>
+<h2>评分算法说明</h2>
+<table>
+<tr style="background:#34495e;color:white"><th style="padding:10px">信号</th><th style="padding:10px">分值</th><th style="padding:10px">说明</th></tr>
+<tr><td style="padding:8px">3球 &lt; 2.50 (A级)</td><td style="color:#27ae60;font-weight:bold">+20</td><td style="padding:8px">历史打出率最高区间</td></tr>
+<tr><td style="padding:8px">3球 2.50-3.00 (B级)</td><td style="color:#27ae60;font-weight:bold">+12</td><td style="padding:8px">关注</td></tr>
+<tr><td style="padding:8px">3球 3.00-3.50 (C级)</td><td style="color:#27ae60;font-weight:bold">+5</td><td style="padding:8px">可关注</td></tr>
+<tr><td style="padding:8px">3球 4.00-5.00 (E级)</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">降低预期</td></tr>
+<tr><td style="padding:8px">3球 &gt; 5.00 (F级)</td><td style="color:#e74c3c;font-weight:bold">-20</td><td style="padding:8px">排除3球</td></tr>
+<tr><td style="padding:8px">0球整数+赔率&gt;15</td><td style="color:#9b59b6;font-weight:bold">+10</td><td style="padding:8px">规律10核心：历史3球打出率92.9%</td></tr>
+<tr><td style="padding:8px">0球整数+赔率8-15</td><td style="color:#e74c3c;font-weight:bold">-5</td><td style="padding:8px">可能是庄家诱导陷阱</td></tr>
+<tr><td style="padding:8px">2球显著高于1球(&gt;1.4x)</td><td style="color:#e74c3c;font-weight:bold">-6</td><td style="padding:8px">市场倾向小比分</td></tr>
+<tr><td style="padding:8px">3球降赔(&lt;-3%)</td><td style="color:#27ae60;font-weight:bold">+8</td><td style="padding:8px">引导筹码流向</td></tr>
+<tr><td style="padding:8px">3球升赔(&gt;5%)</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">庄家推离</td></tr>
+<tr><td style="padding:8px">友谊赛</td><td style="color:#f39c12;font-weight:bold">×0.5</td><td style="padding:8px">所有分数减半，观望为主</td></tr>
+</table>
+<p style="color:#666;margin-top:16px;font-size:.85em">
+  评分 ≥ 15 → 关注3球 | 评分 ≤ -10 → 排除3球 | 中间 → 观望
+</p>
+</body></html>

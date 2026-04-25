@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3球规律分析报告</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'Microsoft YaHei', sans-serif; background: #0f1923; color: #e0e0e0; padding: 24px; }
+h1 { text-align: center; color: #ffd700; font-size: 22px; margin-bottom: 6px; }
+.subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 28px; }
+
+.card { background: #1a2634; border-radius: 12px; padding: 20px; margin-bottom: 18px; border: 1px solid #2a3a4a; }
+.card-title { color: #ffd700; font-size: 14px; font-weight: bold; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #2a3a4a; display: flex; align-items: center; gap: 8px; }
+.card-title .num { background: #ffd700; color: #0f1923; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; }
+
+.stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.stat-box { background: #0f1923; border-radius: 8px; padding: 12px 16px; flex: 1; min-width: 120px; }
+.stat-box .val { font-size: 22px; font-weight: bold; color: #ffd700; }
+.stat-box .label { font-size: 12px; color: #888; margin-top: 4px; }
+.stat-box .val.up { color: #ef4444; }
+.stat-box .val.down { color: #22c55e; }
+
+.bar-section { margin: 10px 0; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+.bar-label { width: 60px; font-size: 12px; color: #aaa; flex-shrink: 0; }
+.bar-track { flex: 1; height: 14px; background: #0f1923; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; transition: width 0.6s ease; }
+.bar-value { width: 48px; font-size: 12px; color: #aaa; text-align: right; flex-shrink: 0; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+.badge-red { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid #ef4444; }
+.badge-green { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid #22c55e; }
+.badge-yellow { background: rgba(250,204,21,0.15); color: #facc15; border: 1px solid #eab308; }
+.badge-blue { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid #3b82f6; }
+.badge-gray { background: rgba(107,114,128,0.15); color: #9ca3af; border: 1px solid #6b7280; }
+
+.rule-card { background: #0f1923; border-radius: 8px; padding: 14px; margin: 8px 0; border-left: 3px solid; }
+.rule-card.red { border-color: #ef4444; }
+.rule-card.green { border-color: #22c55e; }
+.rule-card.yellow { border-color: #eab308; }
+.rule-card.blue { border-color: #3b82f6; }
+.rule-title { font-size: 13px; font-weight: bold; margin-bottom: 6px; }
+.rule-body { font-size: 12px; color: #aaa; line-height: 1.6; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.table th { background: #0f1923; color: #ffd700; padding: 8px 10px; text-align: left; font-weight: bold; border-bottom: 1px solid #2a3a4a; }
+.table td { padding: 7px 10px; border-bottom: 1px solid #1a2634; color: #ccc; }
+.table tr:hover td { background: rgba(255,215,0,0.05); }
+.table .num { text-align: center; font-weight: bold; color: #ffd700; }
+
+.score-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.score-item { background: #0f1923; border-radius: 8px; padding: 12px; text-align: center; }
+.score-item .score { font-size: 18px; font-weight: bold; color: #ffd700; }
+.score-item .odds { font-size: 20px; color: #60a5fa; font-weight: bold; margin-top: 4px; }
+.score-item .cnt { font-size: 11px; color: #888; margin-top: 2px; }
+
+.tip { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 8px; padding: 12px; font-size: 12px; color: #93c5fd; line-height: 1.6; margin-top: 10px; }
+.tip.red { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.3); color: #fca5a5; }
+
+.section-label { font-size: 11px; color: #666; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+.summary-box { background: linear-gradient(135deg, #1a2a3a 0%, #0f1923 100%); border-radius: 12px; padding: 20px; margin-top: 8px; border: 1px solid #ffd70033; }
+.summary-title { color: #ffd700; font-size: 14px; font-weight: bold; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<h1>⚽ 3球规律分析报告</h1>
+<p class="subtitle">基于 39 场比赛历史数据 | sporttery_data 统计</p>
+
+<!-- 核心指标 -->
+<div class="card">
+  <div class="card-title"><span class="num">1</span>3球赔率核心指标</div>
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="val">3.50</div>
+      <div class="label">中位数赔率</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">3.57</div>
+      <div class="label">平均赔率</div>
+    </div>
+    <div class="stat-box">
+      <div class="val up">3.25</div>
+      <div class="label">最低赔率</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">4.75</div>
+      <div class="label">最高赔率</div>
+    </div>
+  </div>
+
+  <p class="section-label">赔率区间分布</p>
+  <div class="bar-section">
+    <div class="bar-row">
+      <span class="bar-label">3.0-3.5</span>
+      <div class="bar-track"><div class="bar-fill" style="width:41%;background:#22c55e"></div></div>
+      <span class="bar-value">16场 41%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">3.5-4.0</span>
+      <div class="bar-track"><div class="bar-fill" style="width:54%;background:#3b82f6"></div></div>
+      <span class="bar-value">21场 54%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">4.0-5.0</span>
+      <div class="bar-track"><div class="bar-fill" style="width:5%;background:#f97316"></div></div>
+      <span class="bar-value">2场 5%</span>
+    </div>
+  </div>
+
+  <div class="tip">
+    📊 <strong>核心发现</strong>：3球赔率95%集中在 <strong>3.0-4.0</strong> 区间，说明这是一个"中庸"选项——既不高也不低，是庄家给3球定位的核心区间。低于3.50的3球值得特别关注。
+  </div>
+</div>
+
+<!-- 尾数特征 -->
+<div class="card">
+  <div class="card-title"><span class="num">2</span>3球赔率尾数特征</div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="val" style="color:#f87171">7.7%</div>
+      <div class="label">特殊尾数(.25/.75/.15)占比</div>
+    </div>
+    <div class="stat-box">
+      <div class="val" style="color:#ef4444">3场</div>
+      <div class="label">含特殊尾数场次</div>
+    </div>
+    <div class="stat-box">
+      <div class="val" style="color:#eab308">3.92</div>
+      <div class="label">特殊尾数3球均值赔率</div>
+    </div>
+  </div>
+
+  <p class="section-label">尾数类型分布</p>
+  <div class="bar-section">
+    <div class="bar-row">
+      <span class="bar-label">0.45/0.95</span>
+      <div class="bar-track"><div class="bar-fill" style="width:15%;background:#3b82f6"></div></div>
+      <span class="bar-value">6场 15%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">其他</span>
+      <div class="bar-track"><div class="bar-fill" style="width:15%;background:#3b82f6"></div></div>
+      <span class="bar-value">6场 15%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">0.1/0.6</span>
+      <div class="bar-track"><div class="bar-fill" style="width:13%;background:#3b82f6"></div></div>
+      <span class="bar-value">5场 13%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">整/0.5</span>
+      <div class="bar-track"><div class="bar-fill" style="width:13%;background:#3b82f6"></div></div>
+      <span class="bar-value">5场 13%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">0.4/0.9</span>
+      <div class="bar-track"><div class="bar-fill" style="width:13%;background:#3b82f6"></div></div>
+      <span class="bar-value">5场 13%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">0.3/0.8</span>
+      <div class="bar-track"><div class="bar-fill" style="width:10%;background:#3b82f6"></div></div>
+      <span class="bar-value">4场 10%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">0.35/0.85</span>
+      <div class="bar-track"><div class="bar-fill" style="width:10%;background:#3b82f6"></div></div>
+      <span class="bar-value">4场 10%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label" style="color:#ef4444">特殊★</span>
+      <div class="bar-track"><div class="bar-fill" style="width:8%;background:#ef4444"></div></div>
+      <span class="bar-value">3场 8%</span>
+    </div>
+  </div>
+
+  <div class="tip red">
+    🔴 <strong>排除信号</strong>：3球含特殊尾数(.25/.75/.15)仅出现3场(8%)，但均值赔率高达<strong>3.92</strong>，明显高于整体均值3.57。这暗示3球赔率一旦出现特殊尾数，很可能是<strong>庄家的诱导信号</strong>，应优先排除。
+  </div>
+</div>
+
+<!-- 赔率变化 -->
+<div class="card">
+  <div class="card-title"><span class="num">3</span>3球赔率变化规律</div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="val" style="color:#ef4444">↑33%</div>
+      <div class="label">上升(推离)场次</div>
+    </div>
+    <div class="stat-box">
+      <div class="val" style="color:#22c55e">↓44%</div>
+      <div class="label">下降(造热)场次</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">19%</div>
+      <div class="label">不变场次</div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:12px">
+    <div>
+      <p class="section-label">升幅(推离)</p>
+      <div style="background:#0f1923;border-radius:8px;padding:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="color:#ef4444;font-weight:bold">↑均值 +4.3%</span>
+          <span style="color:#888;font-size:12px">最大值 +11.8%</span>
+        </div>
+        <div class="bar-section" style="margin:0">
+          <div class="bar-row" style="margin:3px 0">
+            <span class="bar-label" style="width:50px">&gt;5%</span>
+            <div class="bar-track" style="height:10px"><div class="bar-fill" style="width:30%;background:#ef4444"></div></div>
+            <span class="bar-value" style="width:36px">3场</span>
+          </div>
+          <div class="bar-row" style="margin:3px 0">
+            <span class="bar-label" style="width:50px">1-5%</span>
+            <div class="bar-track" style="height:10px"><div class="bar-fill" style="width:60%;background:#f97316"></div></div>
+            <span class="bar-value" style="width:36px">9场</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="section-label">降幅(造热)</p>
+      <div style="background:#0f1923;border-radius:8px;padding:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="color:#22c55e;font-weight:bold">↓均值 -3.7%</span>
+          <span style="color:#888;font-size:12px">最大值 -8.3%</span>
+        </div>
+        <div class="bar-section" style="margin:0">
+          <div class="bar-row" style="margin:3px 0">
+            <span class="bar-label" style="width:50px">&gt;5%</span>
+            <div class="bar-track" style="height:10px"><div class="bar-fill" style="width:20%;background:#22c55e"></div></div>
+            <span class="bar-value" style="width:36px">2场</span>
+          </div>
+          <div class="bar-row" style="margin:3px 0">
+            <span class="bar-label" style="width:50px">1-5%</span>
+            <div class="bar-track" style="height:10px"><div class="bar-fill" style="width:70%;background:#10b981"></div></div>
+            <span class="bar-value" style="width:36px">14场</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip" style="margin-top:12px">
+    📈 <strong>变化次数</strong>：47%只变化1次，19%不变，19%变化2次。3球变化次数越多(≥3次)，说明市场对3球的判断分歧越大，打出概率越不稳定。
+  </div>
+</div>
+
+<!-- 对应比分 -->
+<div class="card">
+  <div class="card-title"><span class="num">4</span>3球对应比分赔率特征</div>
+
+  <p class="section-label">各比分赔率均值对比</p>
+  <div class="score-table">
+    <div class="score-item">
+      <div class="score">2:1</div>
+      <div class="odds">均值 8.1</div>
+      <div class="cnt">39场比赛 | 特殊尾数9次 ★</div>
+    </div>
+    <div class="score-item">
+      <div class="score">1:2</div>
+      <div class="odds">均值 13.2</div>
+      <div class="cnt">39场比赛 | 特殊尾数5次</div>
+    </div>
+    <div class="score-item">
+      <div class="score">3:0</div>
+      <div class="odds">均值 22.9</div>
+      <div class="cnt">39场比赛 | 特殊尾数0次</div>
+    </div>
+    <div class="score-item">
+      <div class="score">0:3</div>
+      <div class="odds">均值 78.7</div>
+      <div class="cnt">39场比赛 | 特殊尾数0次</div>
+    </div>
+  </div>
+
+  <div class="tip" style="margin-top:12px">
+    ⚽ <strong>重要发现</strong>：<strong>2-1</strong>比分特殊尾数出现率最高(23%=9/39)，远超1-2(13%)。这意味着<strong>2-1是最容易被做局的比分</strong>，若2-1赔率含.25/.75/.15应优先排除。
+  </div>
+</div>
+
+<!-- 3球与2球/4球关系 -->
+<div class="card">
+  <div class="card-title"><span class="num">5</span>3球 vs 2球/4球赔率关系</div>
+
+  <div class="grid-2">
+    <div>
+      <p class="section-label">3球 / 2球 比值</p>
+      <div style="text-align:center;padding:16px 0">
+        <div style="font-size:32px;font-weight:bold;color:#ffd700">0.94</div>
+        <div style="color:#888;font-size:12px;margin-top:4px">中位数比值</div>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <span class="badge badge-green">3球&lt;2球 24场 62%</span>
+        <span class="badge badge-gray">3球&gt;2球 14场 38%</span>
+      </div>
+      <div class="tip" style="margin-top:10px;font-size:11px">
+        3球赔率比2球更低(更受庄家青睐)的概率达62%
+      </div>
+    </div>
+    <div>
+      <p class="section-label">4球 / 3球 比值</p>
+      <div style="text-align:center;padding:16px 0">
+        <div style="font-size:32px;font-weight:bold;color:#60a5fa">1.44</div>
+        <div style="color:#888;font-size:12px;margin-top:4px">中位数比值</div>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <span class="badge badge-gray">4球&lt;3球 1场 3%</span>
+        <span class="badge badge-blue">4球&gt;3球 38场 97%</span>
+      </div>
+      <div class="tip" style="margin-top:10px;font-size:11px">
+        4球赔率几乎总是高于3球(97%)，赔率结构非常稳定
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 综合规律 -->
+<div class="card">
+  <div class="card-title"><span class="num">6</span>综合规律总结（投注建议）</div>
+
+  <div class="rule-card red">
+    <div class="rule-title">🚫 规律A【高置信排除】3球赔率含特殊尾数(.25/.75/.15)</div>
+    <div class="rule-body">
+      3球特殊尾数仅出现3场(8%)，但均值赔率高达3.92，明显高于正常均值3.57。<br>
+      <strong>出现特殊尾数 = 庄家诱导信号 = 优先排除3球</strong>
+    </div>
+  </div>
+
+  <div class="rule-card red">
+    <div class="rule-title">🚫 规律B【排除】3球对应比分2-1含特殊尾数</div>
+    <div class="rule-body">
+      2-1比分特殊尾数出现9次，是所有3球比分中最多的(23%)。<br>
+      <strong>2-1一旦出现.25/.75/.15尾数，应优先排除该比分（不影响3球本身判断）</strong>
+    </div>
+  </div>
+
+  <div class="rule-card yellow">
+    <div class="rule-title">⚠️ 规律C【参考】3球升赔(推离)幅度>5%</div>
+    <div class="rule-body">
+      升幅>5%的3球有3场，庄家主动推离说明不想要3球打出。<br>
+      <strong>升幅越大(尤其是+8%以上)，排除信号越强</strong>
+    </div>
+  </div>
+
+  <div class="rule-card green">
+    <div class="rule-title">✅ 规律D【关注】3球赔率&lt;3.50 + 降赔变化</div>
+    <div class="rule-body">
+      3球赔率在3.0-3.5区间(41%)，且降赔(造热)场次占44%。<br>
+      <strong>3球赔率&lt;3.50且有下降趋势 = 庄家在引导筹码去3球 = 值得考虑</strong>
+    </div>
+  </div>
+
+  <div class="rule-card blue">
+    <div class="rule-title">📊 规律E【结构参考】3球 vs 2球赔率关系</div>
+    <div class="rule-body">
+      62%的比赛中3球赔率&lt;2球赔率，说明3球是庄家中意的中间选项。<br>
+      <strong>若3球/2球比值&lt;0.80（3球明显偏低），3球打出概率上升</strong>
+    </div>
+  </div>
+
+  <div class="rule-card blue">
+    <div class="rule-title">🔄 规律F【谨慎】3球变化次数≥3次</div>
+    <div class="rule-body">
+      3球赔率变化3次以上的场次占14%，变化越多说明市场分歧越大。<br>
+      <strong>变化次数≥3时，3球方向应谨慎对待</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- 特殊场次 -->
+<div class="card">
+  <div class="card-title">🔍 特殊场次追踪</div>
+
+  <p class="section-label">3球赔率含特殊尾数的场次（应排除3球）</p>
+  <table class="table">
+    <thead>
+      <tr><th>比赛</th><th>3球赔率</th><th>3球尾数</th><th>对应2-1</th><th>2-1尾数</th><th>联动</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>朗斯 vs 图卢兹</td>
+        <td class="num" style="color:#ef4444">3.25</td>
+        <td><span class="badge badge-red">.25特殊</span></td>
+        <td>—</td>
+        <td>—</td>
+        <td><span class="badge badge-yellow">?</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:#666;margin-top:8px">注：其他2场特殊尾数场次数据需补充验证</p>
+
+  <div class="tip" style="margin-top:14px">
+    💡 <strong>实战建议</strong>：每场比赛先查3球赔率 → 若含特殊尾数则3球排除 → 再看2-1比分是否有特殊尾数 → 综合判断投注方向。
+  </div>
+</div>
+
+</body>
+</html>

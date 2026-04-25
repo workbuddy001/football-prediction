@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>3球预测算法 v2</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:1300px;margin:0 auto;padding:20px;background:#fafafa}
+h1{color:#2c3e50;border-bottom:3px solid #3498db;padding-bottom:10px}
+h2{color:#34495e;margin-top:32px;border-left:4px solid #3498db;padding-left:10px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+.card{background:white;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card .num{font-size:2em;font-weight:bold;color:#3498db}
+.card .num.green{color:#27ae60}.card .num.red{color:#e74c3c}.card .num.purple{color:#9b59b6}
+.card .label{color:#888;font-size:.9em;margin-top:4px}
+table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+th{background:#34495e;color:white;padding:12px;text-align:left;font-size:.85em}
+td{padding:9px 12px;border-bottom:1px solid #eee;font-size:.85em}
+tr:hover{background:#f8f9fa}
+.sig{display:inline-block;margin:1px 3px;font-size:.7em;padding:2px 6px;border-radius:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.8em;font-weight:bold}
+.bg-green{background:#d4edda;color:#155724}
+.bg-red{background:#f8d7da;color:#721c24}
+.bg-gray{background:#e9ecef;color:#495057}
+.bg-yellow{background:#fff3cd;color:#856404}
+</style>
+</head>
+<body>
+<h1>3球预测算法 v2</h1>
+<p style="color:#888">规律⑨(赔率值) + 规律⑩(0球整数尾数) | 共 62 场验证</p>
+
+<h2>回测统计</h2>
+<div class="stats-grid">
+  <div class="card"><div class="num">32/62</div><div class="label">总体准确率 (51.6%)</div></div>
+  <div class="card"><div class="num green">8.5%</div><div class="label">3球赔率&lt;3.50 (118场)</div></div>
+  <div class="card"><div class="num red">3.5%</div><div class="label">3球赔率≥3.50 (230场)</div></div>
+  <div class="card"><div class="num purple">38.1%</div><div class="label">0球整数高赔信号 (21场)</div></div>
+</div>
+
+<h2>预测明细</h2>
+<table>
+<thead><tr>
+  <th>比赛</th><th>联赛</th><th>3球</th><th>0球</th><th>评分</th><th>推荐</th><th>置信</th>
+  <th>触发信号</th><th>实际比分</th><th>命中</th>
+</tr></thead>
+<tbody>
+</tbody></table>
+<h2>评分算法说明</h2>
+<table>
+<tr style="background:#34495e;color:white"><th style="padding:10px">信号</th><th style="padding:10px">分值</th><th style="padding:10px">说明</th></tr>
+<tr><td style="padding:8px">3球 &lt; 2.50 (A级)</td><td style="color:#27ae60;font-weight:bold">+20</td><td style="padding:8px">历史打出率最高区间</td></tr>
+<tr><td style="padding:8px">3球 2.50-3.00 (B级)</td><td style="color:#27ae60;font-weight:bold">+12</td><td style="padding:8px">关注</td></tr>
+<tr><td style="padding:8px">3球 3.00-3.50 (C级)</td><td style="color:#27ae60;font-weight:bold">+5</td><td style="padding:8px">可关注</td></tr>
+<tr><td style="padding:8px">3球 4.00-5.00 (E级)</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">降低预期</td></tr>
+<tr><td style="padding:8px">3球 &gt; 5.00 (F级)</td><td style="color:#e74c3c;font-weight:bold">-20</td><td style="padding:8px">排除3球</td></tr>
+<tr><td style="padding:8px">0球整数+赔率&gt;15</td><td style="color:#9b59b6;font-weight:bold">+10</td><td style="padding:8px">规律10核心：历史3球打出率92.9%</td></tr>
+<tr><td style="padding:8px">0球整数+赔率8-15</td><td style="color:#e74c3c;font-weight:bold">-5</td><td style="padding:8px">可能是庄家诱导陷阱</td></tr>
+<tr><td style="padding:8px">2球显著高于1球(&gt;1.4x)</td><td style="color:#e74c3c;font-weight:bold">-6</td><td style="padding:8px">市场倾向小比分</td></tr>
+<tr><td style="padding:8px">3球降赔(&lt;-3%)</td><td style="color:#27ae60;font-weight:bold">+8</td><td style="padding:8px">引导筹码流向</td></tr>
+<tr><td style="padding:8px">3球升赔(&gt;5%)</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">庄家推离</td></tr>
+<tr><td style="padding:8px">友谊赛</td><td style="color:#f39c12;font-weight:bold">×0.5</td><td style="padding:8px">所有分数减半，观望为主</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值&lt;2.0</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">双方近3场均值过小，偏离3球</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值2.0~2.5</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏低，不支持3球</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值3.5~4.0</td><td style="color:#e74c3c;font-weight:bold">-3</td><td style="padding:8px">近况偏高，大开大合，3球不稳</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值&gt;4.0</td><td style="color:#e74c3c;font-weight:bold">-8</td><td style="padding:8px">双方近况过大，小比分概率高</td></tr>
+<tr><td style="padding:8px">Step0: 近况均值2.5~3.5</td><td style="color:#27ae60;font-weight:bold">+3</td><td style="padding:8px">符合3球特征，加分（均值≈3说明该队近期总进球接近3球/场）</td></tr>
+</table>
+<tr style="background:#2d1f00">
+  <td style="padding:8px;color:#f1c40f;font-weight:bold">⭐黄金3球</td>
+  <td style="color:#f1c40f;font-weight:bold">标记</td>
+  <td style="padding:8px;color:#f1c40f">
+    同时满足4条定律：①评分≥15 ②近况均值2.5~3.5 ③3球C级(3.00~3.50) ④2球&gt;3球&lt;4球梯度
+  </td>
+</tr>
+<tr style="background:#3d2000">
+  <td style="padding:8px;color:#e67e22;font-weight:bold">⚠️4球预警</td>
+  <td style="color:#e67e22;font-weight:bold">提醒</td>
+  <td style="padding:8px;color:#e67e22">
+    黄金3球+4球赔率在4.95~6区间时，需预防4球打出（4球赔率适中，有一定打出概率）
+  </td>
+</tr>
+</table>
+<p style="color:#888;font-size:.85em;margin-top:8px">
+  数据来源: preview.recent（竞彩网，每场比赛自带主客队近5场历史）
+</p>
+<p style="color:#666;margin-top:16px;font-size:.85em">
+  评分 ≥ 15 → 关注3球 | 评分 ≤ -10 → 排除3球 | 中间 → 观望
+</p>
+</body></html>
