@@ -2425,8 +2425,13 @@ def _analyze_hhad_low_draw(hhad, recent_form):
     # ── Step 5: 中赔细分提醒（前置条件: 主受让+客队近况好+让平3.65~3.95）──
     mid_hints = []
     if is_mid_match:
-        # 让负赔 > 3.0 → 让胜100%(10场) ⭐⭐⭐
-        if hhad_lose > 3.0:
+        # 优先级1: 让胜赔更低 → 让胜88.2%(17场) ⭐⭐⭐
+        if hhad_win < hhad_lose - 0.05:
+            hhad_pick = '让胜'
+            hhad_confidence = 88
+            mid_hints.append(f'⭐⭐⭐ 中赔区间+让胜赔更低, 让胜率88.2%(17场)')
+        # 优先级2: 让负赔 > 3.0 → 让胜100%(10场) ⭐⭐⭐
+        elif hhad_lose > 3.0:
             hhad_pick = '让胜'
             hhad_confidence = 100
             mid_hints.append(f'⭐⭐⭐ 中赔区间+让负赔>3.0, 让胜率100%(10场)')
