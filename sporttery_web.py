@@ -1519,12 +1519,20 @@ HTML_TEMPLATE = '''
                             const tagBg = isHighDraw ? 'rgba(234,179,8,0.25)' : 'rgba(100,116,139,0.2)';
                             return `
                             <div class="hhad-hint-box" style="${bgStyle}border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;">
-                                ${isHighDraw ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">🎯 让球平低赔规律触发！</div>` : `<div style="color:${tagColor};font-weight:bold;font-size:13px;margin-bottom:6px;">💡 让球平低赔规律</div>`}
+                                ${h.is_mid
+                                    ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">⚠️ 让球平中赔3.65-3.95规律触发！</div>`
+                                    : (h.draw_signal && h.draw_pct >= 60
+                                        ? `<div style="color:#fbbf24;font-weight:bold;font-size:13px;margin-bottom:6px;">🎯 让球平低赔规律触发！</div>`
+                                        : `<div style="color:${tagColor};font-weight:bold;font-size:13px;margin-bottom:6px;">💡 让球平低赔规律</div>`)}
                                 <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
                                     <span style="background:${tagBg};color:${tagColor};padding:2px 8px;border-radius:4px;font-weight:bold;font-size:11px;">推荐${h.hhad_pick}</span>
                                     <span style="color:#94a3b8;">置信度 ${h.hhad_confidence}%</span>
                                 </div>
                                 ${h.hints.map(tip => `<div style="color:#cbd5e1;margin:2px 0 2px 4px;">• ${tip}</div>`).join('')}
+                                ${h.mid_hints && h.mid_hints.length > 0 ? `
+                                <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
+                                    ${h.mid_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
+                                </div>` : ''}
                                 ${h.draw_signal ? `
                                 <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,0.2);">
                                     ${isHighDraw ? `
@@ -2309,27 +2317,36 @@ def _analyze_hhad_low_draw(hhad, recent_form):
     if hhad_draw <= 0:
         return None
 
-    # 只处理让平低赔(<3.3)
-    if hhad_draw >= 3.3:
-        return None
-
-    # 解析让球数
-    # 竞彩数据格式: '-1' = 主队让1球, '+1' = 主队受让1球
-    # handicap: 正=主让球, 负=主受让
+    # 解析让球数（提前，中赔需要判断让球方向）
     h_str = str(hhad.get('让球', ''))
     try:
-        raw = float(h_str)  # '-1' → -1.0, '+1' → 1.0
-        handicap = -raw      # '-1'(主让) → +1, '+1'(主受让) → -1
+        raw = float(h_str)
+        handicap = -raw
     except:
+        return None
+
+    is_home_let = handicap > 0
+    direction = '主让球' if is_home_let else '主受让'
+
+    # 计算近况差（提前，中赔需要判断客队近况是否更好）
+    form_diff = None
+    combined_avg = None
+    if recent_form and recent_form.get('home_avg') is not None:
+        form_diff = recent_form['home_avg'] - recent_form['away_avg']
+        combined_avg = recent_form['combined_avg']
+
+    # 触发条件
+    is_low = hhad_draw < 3.3
+    is_mid = (hhad_draw >= 3.65 and hhad_draw <= 3.95)
+    # 中赔前置条件: 主受让 + 客队近况好(form_diff < -0.3)
+    is_mid_match = is_mid and (not is_home_let) and form_diff is not None and form_diff < -0.3
+
+    if not is_low and not is_mid_match:
         return None
 
     hints = []
 
     # ── Step 1: 让球方向判断 ──
-    is_home_let = handicap > 0  # 主让球(数据中'-1')
-    direction = '主让球' if is_home_let else '主受让'
-
-    # 全量回测(正确解析): 主让球113场→让负55.8%, 主受让63场→让胜68.3%
     if is_home_let:
         hints.append(f'主让球(让球-1), 让负率55.8%(113场)')
         hhad_pick = '让负'
@@ -2339,52 +2356,48 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         hhad_pick = '让胜'
         hhad_confidence = 68
 
-    # ── Step 2: 近况差分析（如果有的话）──
-    form_diff = None
-    combined_avg = None
-    if recent_form and recent_form.get('home_avg') is not None:
-        form_diff = recent_form['home_avg'] - recent_form['away_avg']
-        combined_avg = recent_form['combined_avg']
-
 
     # ── Step 3: 平局概率分析（基于正确解析的30场回测）──
+    # 按优先级（置信度从高到低）用if/elif，确保只触发一个条件
     draw_signal = False
     draw_pct = 60  # 基准60.0%
     draw_reason = ''
 
-    # 主受让: 平局率80.0%(10场)
-    if not is_home_let:
-        draw_pct = 80
-        draw_reason = '主受让组平局率80.0%(10场)'
+    if not is_home_let and hhad_win < 2.3:
+        # 主受让+让胜<2.3 → 100%(6场) 最高置信度
+        draw_pct = 100
+        draw_reason = '主受让+让胜赔<2.3, 平局率100%(6场)'
         draw_signal = True
-
-    # 让胜赔更低 → 平局率71.4%(14场)
-    if hhad_win < hhad_lose - 0.05:
-        draw_pct = max(draw_pct, 71)
-        draw_reason = '让胜赔更低, 平局率71.4%(14场)'
+    elif not is_home_let and hhad_win < 2.5:
+        # 主受让+让胜<2.5 → 87.5%(8场)
+        draw_pct = 88
+        draw_reason = '主受让+让胜赔<2.5, 平局率87.5%(8场)'
         draw_signal = True
-        hints.append('让胜赔更低, 平局概率上升')
-
-    # 让胜赔率越低, 平局率越高
-    if hhad_win < 2.3:
-        draw_pct = max(draw_pct, 100)
+    elif not is_home_let and hhad_win < hhad_lose - 0.05:
+        # 主受让+让胜赔更低 → 85.7%(7场)
+        draw_pct = 86
+        draw_reason = '主受让+让胜赔更低, 平局率85.7%(7场)'
+        draw_signal = True
+    elif hhad_win < 2.3:
+        # 让胜<2.3 → 100%(6场)
+        draw_pct = 100
         draw_reason = '让胜赔<2.3, 平局率100%(6场)'
         draw_signal = True
     elif hhad_win < 2.6:
-        draw_pct = max(draw_pct, 56)
+        # 让胜2.3-2.6 → 55.6%
+        draw_pct = 56
         draw_reason = '让胜赔2.3-2.6, 平局率55.6%'
         draw_signal = True
-
-    # 主受让+让胜赔<2.5 → 87.5%(8场)
-    if not is_home_let and hhad_win < 2.5:
-        draw_pct = max(draw_pct, 88)
-        draw_reason = '主受让+让胜赔<2.5, 平局率87.5%(8场)'
+    elif hhad_win < hhad_lose - 0.05:
+        # 让胜赔更低 → 71.4%(14场)
+        draw_pct = 71
+        draw_reason = '让胜赔更低, 平局率71.4%(14场)'
         draw_signal = True
-
-    # 主受让+让胜赔更低 → 85.7%(7场)
-    if not is_home_let and hhad_win < hhad_lose - 0.05:
-        draw_pct = max(draw_pct, 86)
-        draw_reason = '主受让+让胜赔更低, 平局率85.7%(7场)'
+        hints.append('让胜赔更低, 平局概率上升')
+    elif not is_home_let:
+        # 主受让基准 → 80.0%(10场)
+        draw_pct = 80
+        draw_reason = '主受让组平局率80.0%(10场)'
         draw_signal = True
 
     # ── Step 4: 让胜/让负低赔信号（341场回测）──
@@ -2409,8 +2422,28 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         hhad_confidence = 57
         hints.append(f'让负>3.00高赔, 让胜率56.8%(88场)')
 
+    # ── Step 5: 中赔细分提醒（前置条件: 主受让+客队近况好+让平3.65~3.95）──
+    mid_hints = []
+    if is_mid_match:
+        # 让负赔 > 3.0 → 让胜100%(10场) ⭐⭐⭐
+        if hhad_lose > 3.0:
+            hhad_pick = '让胜'
+            hhad_confidence = 100
+            mid_hints.append(f'⭐⭐⭐ 中赔区间+让负赔>3.0, 让胜率100%(10场)')
+        # 让负赔 < 2.5 → 让胜50%(4场), 谨慎
+        elif hhad_lose < 2.5:
+            mid_hints.append(f'⚠️ 中赔区间+让负赔<2.5, 让胜率仅50%(4场), 谨慎')
+
+        # 差值 > -1.0（客队近况略好）→ 让胜91%(11场) ⭐⭐
+        if form_diff > -1.0:
+            mid_hints.append(f'⭐⭐ 客队近况略好(form_diff={form_diff:.1f}), 让胜率91%(11场)')
+        # 差值 ≤ -1.0（客队近况远好）→ 让胜62.5%(8场), 谨慎
+        else:
+            mid_hints.append(f'⚠️ 客队近况远好(form_diff={form_diff:.1f}), 让胜率62.5%(8场), 谨慎')
+
     return {
         'active': True,
+        'is_mid': is_mid,          # 是否中赔区间(3.65~3.95)
         'hhad_draw': round(hhad_draw, 2),
         'handicap': handicap,
         'direction': direction,
@@ -2420,6 +2453,7 @@ def _analyze_hhad_low_draw(hhad, recent_form):
         'draw_pct': draw_pct,
         'draw_reason': draw_reason,
         'hints': hints,
+        'mid_hints': mid_hints,   # 中赔区间细分提醒（单独显示）
     }
 
 

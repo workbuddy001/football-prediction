@@ -1,0 +1,1041 @@
+{
+  "match_id": "2039309",
+  "fetch_time": "2026-04-25 16:05:36",
+  "match_info": {
+    "home_team": "纽卡斯尔喷气机",
+    "away_team": "中央海岸水手",
+    "league": "澳大利亚超级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "41.00",
+    "01:00": "13.00",
+    "05:02": "41.00",
+    "05:01": "28.00",
+    "02:04": "70.00",
+    "02:05": "150.0",
+    "02:02": "11.50",
+    "02:03": "28.00",
+    "02:00": "11.50",
+    "02:01": "7.50",
+    "03:03": "27.00",
+    "03:01": "8.75",
+    "03:02": "13.00",
+    "03:00": "13.00",
+    "00:01": "29.00",
+    "00:00": "29.00",
+    "00:03": "90.00",
+    "00:02": "45.00",
+    "00:05": "300.0",
+    "00:04": "175.0",
+    "04:02": "22.00",
+    "04:01": "14.00",
+    "04:00": "22.00",
+    "01:02": "16.00",
+    "01:01": "11.00",
+    "01:04": "85.00",
+    "01:03": "37.00",
+    "01:05": "250.0"
+  },
+  "total_goals": {
+    "3球": "4.00",
+    "4球": "4.10",
+    "5球": "5.55",
+    "6球": "7.75",
+    "7球": "7.30",
+    "0球": "29.00",
+    "1球": "10.00",
+    "2球": "5.55"
+  },
+  "had": {
+    "胜": "1.33",
+    "平": "5.10",
+    "负": "5.50"
+  },
+  "ttg": {
+    "3球": "4.00",
+    "4球": "4.10",
+    "5球": "5.55",
+    "6球": "7.75",
+    "7球": "7.30",
+    "0球": "29.00",
+    "1球": "10.00",
+    "2球": "5.55"
+  },
+  "hafu": {
+    "负负": "9.90",
+    "平平": "9.00",
+    "胜胜": "1.91",
+    "负平": "14.50",
+    "平胜": "4.65",
+    "负胜": "16.00",
+    "胜负": "29.00",
+    "胜平": "14.50",
+    "平负": "14.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "1.98",
+    "让平": "3.85",
+    "让负": "2.74"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "中央海岸",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "60",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.6",
+        "awayGoalAvgCntRatio": "48.5",
+        "homeGoalAvgCnt": "1.7",
+        "homeGoalAvgCntRatio": "51.5",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "纽喷气机",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "77",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 7,
+        "homeScoreRatio": "17",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.5",
+        "awayLossGoalAvgCntRatio": "53.6",
+        "homeLossGoalAvgCnt": "1.3",
+        "homeLossGoalAvgCntRatio": "46.4",
+        "totalLegCnt": 10
+      },
+      "matchId": 2445044,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "80",
+        "awayWinGoalMatchCnt": 8,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 8,
+        "homeScoreRatio": "20",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 1135,
+      "sportteryHomeTeamId": 1136,
+      "sportteryMatchId": 2039309,
+      "uniformAwayTeamId": 453,
+      "uniformHomeTeamId": 210
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 4320,
+          "awayTeamShortName": "纽喷气机",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 4317,
+          "homeTeamShortName": "中央海岸",
+          "matchDate": "2026-02-28",
+          "matchId": 2445085,
+          "seasonId": 13971,
+          "sportteryAwayTeamId": 1136,
+          "sportteryHomeTeamId": 1135,
+          "sportteryMatchId": 2037928,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 210,
+          "uniformHomeTeamId": 453,
+          "uniformLeagueId": 70,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 4320,
+          "awayTeamShortName": "纽喷气机",
+          "fullCourtGoal": "3:2",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 4317,
+          "homeTeamShortName": "中央海岸",
+          "matchDate": "2025-10-19",
+          "matchId": 2445034,
+          "seasonId": 13971,
+          "sportteryAwayTeamId": 1136,
+          "sportteryHomeTeamId": 1135,
+          "sportteryMatchId": 2034171,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 210,
+          "uniformHomeTeamId": 453,
+          "uniformLeagueId": 70,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 4317,
+          "awayTeamShortName": "中央海岸",
+          "fullCourtGoal": "6:0",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "6",
+          "homeTeamId": 4320,
+          "homeTeamShortName": "纽喷气机",
+          "matchDate": "2025-04-12",
+          "matchId": 2182873,
+          "seasonId": 12214,
+          "sportteryAwayTeamId": 1135,
+          "sportteryHomeTeamId": 1136,
+          "sportteryMatchId": 2031133,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 6,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 453,
+          "uniformHomeTeamId": 210,
+          "uniformLeagueId": 70,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 4320,
+          "awayTeamShortName": "纽喷气机",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 4317,
+          "homeTeamShortName": "中央海岸",
+          "matchDate": "2025-02-01",
+          "matchId": 2182917,
+          "seasonId": 12214,
+          "sportteryAwayTeamId": 1136,
+          "sportteryHomeTeamId": 1135,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 210,
+          "uniformHomeTeamId": 453,
+          "uniformLeagueId": 70,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 4317,
+          "awayTeamShortName": "中央海岸",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 4320,
+          "homeTeamShortName": "纽喷气机",
+          "matchDate": "2024-11-22",
+          "matchId": 2182822,
+          "seasonId": 12214,
+          "sportteryAwayTeamId": 1135,
+          "sportteryHomeTeamId": 1136,
+          "sportteryMatchId": 1028039,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 453,
+          "uniformHomeTeamId": 210,
+          "uniformLeagueId": 70,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "纽喷气机",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 19,
+            "injuryFlag": 1,
+            "personId": 461231,
+            "personName": "A.麦卡蒙特",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 18,
+            "injuryFlag": 1,
+            "personId": 689638,
+            "personName": "M. Di Pizio",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 1135,
+        "teamId": 4317,
+        "teamShortName": "中央海岸",
+        "uniformTeamId": 453
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 19,
+            "injuryFlag": 1,
+            "personId": 143801,
+            "personName": "绍内西",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          },
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 1,
+            "personId": 522668,
+            "personName": "T. Aquilina",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "39"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 560316,
+            "personName": "N·詹姆斯",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "21"
+          },
+          {
+            "appearanceCnt": 11,
+            "injuryFlag": 1,
+            "personId": 680794,
+            "personName": "A. Badolate",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 3,
+            "injuryFlag": 1,
+            "personId": 795730,
+            "personName": "O. Fryer",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "25"
+          },
+          {
+            "appearanceCnt": 5,
+            "injuryFlag": 1,
+            "personId": 863440,
+            "personName": "C. Bracco",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "45"
+          }
+        ],
+        "sportteryTeamId": 1136,
+        "teamId": 4320,
+        "teamShortName": "纽喷气机",
+        "uniformTeamId": 210
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1135,
+            "awayTeamShortName": "中央海岸",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1055698,
+            "homeTeamShortName": "奥克兰FC",
+            "matchDate": "2026-04-19",
+            "matchId": 2445047,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 453,
+            "uniformHomeTeamId": 57122,
+            "uniformLeagueId": 70,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1138,
+            "awayTeamShortName": "布里斯班",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1135,
+            "homeTeamShortName": "中央海岸",
+            "matchDate": "2026-04-10",
+            "matchId": 2445057,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038967,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 209,
+            "uniformHomeTeamId": 453,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1135,
+            "awayTeamShortName": "中央海岸",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1427,
+            "homeTeamShortName": "墨尔本城",
+            "matchDate": "2026-04-07",
+            "matchId": 2444943,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038913,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 453,
+            "uniformHomeTeamId": 208,
+            "uniformLeagueId": 70,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1137,
+            "awayTeamShortName": "珀斯",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1135,
+            "homeTeamShortName": "中央海岸",
+            "matchDate": "2026-04-04",
+            "matchId": 2445061,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038807,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 134,
+            "uniformHomeTeamId": 453,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1135,
+            "awayTeamShortName": "中央海岸",
+            "fullCourtGoal": "4:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 1077,
+            "homeTeamShortName": "墨胜利",
+            "matchDate": "2026-03-21",
+            "matchId": 2445066,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038503,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 453,
+            "uniformHomeTeamId": 454,
+            "uniformLeagueId": 70,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 7,
+          "lossGoalCnt": 10,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -3,
+          "sportteryTeamId": 0,
+          "teamId": 1135,
+          "teamShortName": "中央海岸",
+          "totalLegCnt": 5,
+          "uniformTeamId": 453,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1136,
+            "awayTeamShortName": "纽喷气机",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1077,
+            "homeTeamShortName": "墨胜利",
+            "matchDate": "2026-04-17",
+            "matchId": 2445051,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039135,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 210,
+            "uniformHomeTeamId": 454,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1096,
+            "awayTeamShortName": "阿德莱德",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1136,
+            "homeTeamShortName": "纽喷气机",
+            "matchDate": "2026-04-11",
+            "matchId": 2445055,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039005,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 139,
+            "uniformHomeTeamId": 210,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1136,
+            "awayTeamShortName": "纽喷气机",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 1025286,
+            "homeTeamShortName": "麦克阿瑟",
+            "matchDate": "2026-04-02",
+            "matchId": 2445063,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038744,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 210,
+            "uniformHomeTeamId": 2098,
+            "uniformLeagueId": 70,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1136,
+            "awayTeamShortName": "纽喷气机",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 753,
+            "homeTeamShortName": "悉尼FC",
+            "matchDate": "2026-03-22",
+            "matchId": 2445065,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 210,
+            "uniformHomeTeamId": 135,
+            "uniformLeagueId": 70,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1055698,
+            "awayTeamShortName": "奥克兰FC",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1136,
+            "homeTeamShortName": "纽喷气机",
+            "matchDate": "2026-03-14",
+            "matchId": 2445070,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038310,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 57122,
+            "uniformHomeTeamId": 210,
+            "uniformLeagueId": 70,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 8,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 1136,
+          "teamShortName": "纽喷气机",
+          "totalLegCnt": 5,
+          "uniformTeamId": 210,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48081,
+      "seasonId": 13971,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 3,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 8,
+          "phaseName": "",
+          "points": "45",
+          "ranking": "1",
+          "sportteryTeamId": 1136,
+          "teamId": 0,
+          "teamShortName": "纽喷气机",
+          "totalLegCnt": 25,
+          "uniformTeamId": 210,
+          "winGoalMatchCnt": 14,
+          "winProbability": "56%"
+        },
+        {
+          "drawMatchCnt": 8,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 9,
+          "phaseName": "",
+          "points": "32",
+          "ranking": "9",
+          "sportteryTeamId": 1135,
+          "teamId": 0,
+          "teamShortName": "中央海岸",
+          "totalLegCnt": 25,
+          "uniformTeamId": 453,
+          "winGoalMatchCnt": 8,
+          "winProbability": "32%"
+        }
+      ],
+      "tournamentId": 39,
+      "tournamentShortName": "澳超",
+      "uniformLeagueId": 70,
+      "uniformMatchId": 2388574
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "18%",
+            "injuryFlag": 0,
+            "personId": 658614,
+            "personName": "S. Ngor",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 13,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 5,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 640016,
+            "personName": "A·奥古拉",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "72"
+          },
+          {
+            "appearanceCnt": 22,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 776425,
+            "personName": "B. Brandtman",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "37"
+          }
+        ],
+        "sportteryTeamId": 1135,
+        "teamId": 4317,
+        "teamShortName": "中央海岸",
+        "uniformTeamId": 453
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 20,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 8,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 686905,
+            "personName": "C. Taylor",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "13"
+          },
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 666875,
+            "personName": "L. Rose",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 19,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 20,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 3,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 7,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 643661,
+            "personName": "E. Adams",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 14,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 1136,
+        "teamId": 4320,
+        "teamShortName": "纽喷气机",
+        "uniformTeamId": 210
+      },
+      "seasonId": 13971,
+      "seasonName": "2025/2026",
+      "tournamentId": 39,
+      "tournamentShortName": "澳超",
+      "uniformLeagueId": 70,
+      "uniformMatchId": 2388574
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 3,
+      "change_pct": -5.8
+    },
+    "5球": {
+      "count": 4,
+      "change_pct": 8.8
+    },
+    "2球": {
+      "count": 4,
+      "change_pct": -0.9
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "0球": {
+      "count": 3,
+      "change_pct": -23.7
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": -4.8
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 2.6
+    }
+  },
+  "hafu_change": {
+    "负平": {
+      "count": 1,
+      "change_pct": -3.3
+    },
+    "平胜": {
+      "count": 5,
+      "change_pct": -2.1
+    },
+    "平负": {
+      "count": 4,
+      "change_pct": 11.5
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.3
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 6,
+      "change_pct": -5.3
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": -6.5
+    },
+    "胜胜": {
+      "count": 8,
+      "change_pct": -2.1
+    },
+    "负负": {
+      "count": 5,
+      "change_pct": 20.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "6球",
+      "ttg_odds": "7.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:01",
+          "odds": "28.00",
+          "special": false
+        },
+        {
+          "score": "02:04",
+          "odds": "70.00",
+          "special": false
+        },
+        {
+          "score": "03:03",
+          "odds": "27.00",
+          "special": false
+        },
+        {
+          "score": "04:02",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "01:05",
+          "odds": "250.0",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(7.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "4球",
+      "ttg_odds": "4.10",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "11.50",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "8.75",
+          "special": true
+        },
+        {
+          "score": "00:04",
+          "odds": "175.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "37.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.10（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}
