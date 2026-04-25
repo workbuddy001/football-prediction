@@ -1,6 +1,6 @@
 {
   "match_id": "2039302",
-  "fetch_time": "2026-04-24 21:23:58",
+  "fetch_time": "2026-04-25 07:28:52",
   "match_info": {
     "home_team": "阿尔维卡",
     "away_team": "阿罗卡",
@@ -691,25 +691,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 1,
-      "change_pct": 9.5
-    },
-    "2球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "4球": {
-      "count": 1,
-      "change_pct": 1.7
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": -7.0
-    },
-    "3球": {
-      "count": 1,
-      "change_pct": 2.8
+      "change_pct": 4.5
     },
     "0球": {
       "count": 0,
@@ -719,21 +703,29 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "5球": {
+    "1球": {
       "count": 1,
-      "change_pct": 4.5
+      "change_pct": -7.0
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 1.7
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 2.8
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 9.5
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 2.9
-    },
-    "负平": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -745,19 +737,27 @@
       "count": 0,
       "change_pct": 0.0
     },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "平平": {
       "count": 1,
       "change_pct": -5.9
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 1,
       "change_pct": -3.8
     },
-    "平负": {
+    "胜平": {
       "count": 0,
       "change_pct": 0.0
     }

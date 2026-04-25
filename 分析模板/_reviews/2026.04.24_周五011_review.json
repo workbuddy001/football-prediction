@@ -1,0 +1,93 @@
+{
+  "match_id": "周五011",
+  "date_folder": "2026.04.24",
+  "home_team": "那不勒斯",
+  "away_team": "克雷莫纳",
+  "league": "意甲",
+  "handicap": "-1",
+  "home_form": "LDWWWW",
+  "away_form": "DLLWLL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "4:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率9.50>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.23<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-4.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-5.0%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升25 / 平降9升9 / 客降17升9",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为4:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：客胜赔率9.50>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.23<1.5，庄家高度自信",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-4.0%+澳门不动"
+  ],
+  "review_time": "2026-04-25 07:51",
+  "macao_tip": "那不勒斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 1.65,
+    "jc_draw_chg": -4.04,
+    "jc_away_chg": -5.0,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.21,
+      4.95,
+      10.0
+    ],
+    "jc_real_odds": [
+      1.23,
+      4.75,
+      9.5
+    ],
+    "macao_init_odds": [
+      1.27,
+      4.7,
+      8.9
+    ],
+    "macao_real_odds": [
+      1.27,
+      4.7,
+      8.9
+    ],
+    "jc_pattern": "NDD",
+    "macao_pattern": "NNN"
+  }
+}

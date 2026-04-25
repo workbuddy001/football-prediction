@@ -1,6 +1,6 @@
 {
   "match_id": "2039295",
-  "fetch_time": "2026-04-24 21:15:17",
+  "fetch_time": "2026-04-25 07:11:32",
   "match_info": {
     "home_team": "拉瓦勒",
     "away_team": "罗德兹",
@@ -682,7 +682,7 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
             "assistProbability": "7%",
@@ -694,13 +694,13 @@
             "personName": "T. Arconte",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 25,
+            "startedMatchCnt": 26,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -712,13 +712,13 @@
             "personName": "I. Baldé",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 18,
+            "startedMatchCnt": 19,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "18"
           },
           {
-            "appearanceCnt": 31,
+            "appearanceCnt": 32,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
             "assistProbability": "7%",
@@ -731,7 +731,7 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 16,
-            "substituteMatchCnt": 15,
+            "substituteMatchCnt": 16,
             "suspensionFlag": 0,
             "uniformNo": "9"
           }
@@ -744,7 +744,7 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -756,13 +756,13 @@
             "personName": "Mamadou Camara",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 24,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -775,16 +775,16 @@
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 8,
-            "substituteMatchCnt": 15,
+            "substituteMatchCnt": 16,
             "suspensionFlag": 0,
             "uniformNo": "20"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
             "assistProbability": "15%",
-            "goalAvgCnt": "0.2",
+            "goalAvgCnt": "0.1",
             "goalCnt": 4,
             "goalProbability": "14%",
             "injuryFlag": 0,
@@ -792,7 +792,7 @@
             "personName": "M.塞卢基",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 20,
+            "startedMatchCnt": 21,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "10"
@@ -812,25 +812,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 1,
-      "change_pct": 5.9
-    },
-    "2球": {
-      "count": 2,
-      "change_pct": -7.1
-    },
-    "4球": {
-      "count": 1,
-      "change_pct": 5.8
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": 5.0
-    },
-    "3球": {
-      "count": 1,
-      "change_pct": -2.9
+      "change_pct": 5.6
     },
     "0球": {
       "count": 0,
@@ -840,21 +824,29 @@
       "count": 1,
       "change_pct": 7.1
     },
-    "5球": {
+    "1球": {
       "count": 1,
-      "change_pct": 5.6
+      "change_pct": 5.0
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 5.8
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 5.9
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -7.1
     }
   },
   "hafu_change": {
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 2.4
-    },
-    "负平": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -866,19 +858,27 @@
       "count": 1,
       "change_pct": 3.6
     },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 2.4
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "平平": {
       "count": 1,
       "change_pct": -3.8
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平负": {
+    "胜平": {
       "count": 0,
       "change_pct": 0.0
     }

@@ -1,0 +1,83 @@
+{
+  "match_id": "周五015",
+  "date_folder": "2026.04.24",
+  "home_team": "阿尔维卡",
+  "away_team": "阿罗卡",
+  "league": "葡超",
+  "handicap": "-1",
+  "home_form": "LWWLDD",
+  "away_form": "WLWWLL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "2:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降主胜-2.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-7.5%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩客胜升+11.0%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降22升3 / 平降6升18 / 客降3升24",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为2:1(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「[不跟]标签」有效：竞彩降主胜-2.3%+澳门不动",
+    "📈 关键信号「[不跟]标签」有效：竞彩降平局-7.5%+澳门不动",
+    "📈 关键信号「推离排除」有效：竞彩客胜升+11.0%>5%"
+  ],
+  "review_time": "2026-04-25 07:33",
+  "macao_tip": "阿罗卡 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.29,
+    "jc_draw_chg": -7.55,
+    "jc_away_chg": 10.99,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.18,
+      3.18,
+      2.82
+    ],
+    "jc_real_odds": [
+      2.13,
+      2.94,
+      3.13
+    ],
+    "macao_init_odds": [
+      2.13,
+      3.25,
+      2.85
+    ],
+    "macao_real_odds": [
+      2.13,
+      3.25,
+      2.85
+    ],
+    "jc_pattern": "DDU",
+    "macao_pattern": "NNN"
+  }
+}

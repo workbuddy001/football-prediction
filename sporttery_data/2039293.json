@@ -1,6 +1,6 @@
 {
   "match_id": "2039293",
-  "fetch_time": "2026-04-24 21:12:40",
+  "fetch_time": "2026-04-25 02:49:59",
   "match_info": {
     "home_team": "杜塞尔多夫",
     "away_team": "德累斯顿",
@@ -837,9 +837,21 @@
     }
   },
   "ttg_change": {
+    "1球": {
+      "count": 2,
+      "change_pct": 7.2
+    },
     "6球": {
       "count": 3,
       "change_pct": 24.1
+    },
+    "7球": {
+      "count": 3,
+      "change_pct": 18.2
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": 3.0
     },
     "2球": {
       "count": 3,
@@ -849,25 +861,13 @@
       "count": 4,
       "change_pct": -12.6
     },
-    "1球": {
-      "count": 2,
-      "change_pct": 7.2
-    },
-    "3球": {
-      "count": 3,
-      "change_pct": -7.2
-    },
     "0球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "7球": {
+    "3球": {
       "count": 3,
-      "change_pct": 18.2
-    },
-    "5球": {
-      "count": 2,
-      "change_pct": 3.0
+      "change_pct": -7.2
     }
   },
   "hafu_change": {},

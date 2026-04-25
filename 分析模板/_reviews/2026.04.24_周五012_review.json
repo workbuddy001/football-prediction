@@ -1,0 +1,97 @@
+{
+  "match_id": "周五012",
+  "date_folder": "2026.04.24",
+  "home_team": "布雷斯特",
+  "away_team": "朗斯",
+  "league": "法甲",
+  "handicap": "1",
+  "home_form": "DLLLWW",
+  "away_form": "WWLWLW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "3:3",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "draw",
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "主胜赔率5.50>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.20>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+14.6%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+6.3%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降0升30 / 客降30升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "30/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为3:3(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "📝 心水推荐为「朗斯 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-25 07:52",
+  "macao_tip": "朗斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 14.58,
+    "jc_draw_chg": 6.33,
+    "jc_away_chg": -6.0,
+    "mcao_home_chg": 25.33,
+    "mcao_draw_chg": 11.11,
+    "mcao_away_chg": -12.28,
+    "jc_init_odds": [
+      4.8,
+      3.95,
+      1.5
+    ],
+    "jc_real_odds": [
+      5.5,
+      4.2,
+      1.41
+    ],
+    "macao_init_odds": [
+      3.83,
+      3.78,
+      1.71
+    ],
+    "macao_real_odds": [
+      4.8,
+      4.2,
+      1.5
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UUD"
+  }
+}

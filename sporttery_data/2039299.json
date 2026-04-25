@@ -1,6 +1,6 @@
 {
   "match_id": "2039299",
-  "fetch_time": "2026-04-24 21:21:52",
+  "fetch_time": "2026-04-25 07:23:26",
   "match_info": {
     "home_team": "布雷斯特",
     "away_team": "朗斯",
@@ -351,6 +351,18 @@
       },
       "home": {
         "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 21,
+            "injuryFlag": 1,
+            "personId": 428267,
+            "personName": "G.库德特",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
           {
             "appearanceCnt": 20,
             "injuryFlag": 1,
@@ -731,48 +743,30 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 25,
+            "appearanceCnt": 26,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "7%",
+            "assistProbability": "6%",
             "goalAvgCnt": "0.5",
             "goalCnt": 12,
-            "goalProbability": "21%",
+            "goalProbability": "20%",
             "injuryFlag": 0,
             "personId": 376915,
             "personName": "O. Édouard",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 23,
-            "substituteMatchCnt": 2,
+            "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 25,
-            "assistAvgCnt": "0.1",
-            "assistCnt": 2,
-            "assistProbability": "4%",
-            "goalAvgCnt": "0.4",
-            "goalCnt": 10,
-            "goalProbability": "17%",
-            "injuryFlag": 0,
-            "personId": 235484,
-            "personName": "W. Saïd",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 22,
-            "substituteMatchCnt": 3,
-            "suspensionFlag": 0,
-            "uniformNo": "22"
-          },
-          {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
             "assistProbability": "11%",
             "goalAvgCnt": "0.3",
-            "goalCnt": 9,
+            "goalCnt": 10,
             "goalProbability": "16%",
             "injuryFlag": 0,
             "personId": 180836,
@@ -780,9 +774,27 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 27,
-            "substituteMatchCnt": 2,
+            "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 10,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 235484,
+            "personName": "W. Saïd",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
           }
         ],
         "sportteryTeamId": 179,
@@ -793,37 +805,37 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "11%",
+            "assistProbability": "10%",
             "goalAvgCnt": "0.3",
             "goalCnt": 8,
-            "goalProbability": "21%",
+            "goalProbability": "20%",
             "injuryFlag": 0,
             "personId": 328270,
             "personName": "R. Del Castillo",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 27,
+            "startedMatchCnt": 28,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.3",
-            "assistCnt": 8,
+            "assistCnt": 9,
             "assistProbability": "30%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
-            "goalProbability": "18%",
+            "goalProbability": "17%",
             "injuryFlag": 0,
             "personId": 264466,
             "personName": "L.阿戈克",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 27,
+            "startedMatchCnt": 28,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "19"
@@ -832,10 +844,10 @@
             "appearanceCnt": 20,
             "assistAvgCnt": "0.2",
             "assistCnt": 3,
-            "assistProbability": "11%",
+            "assistProbability": "10%",
             "goalAvgCnt": "0.3",
             "goalCnt": 5,
-            "goalProbability": "13%",
+            "goalProbability": "12%",
             "injuryFlag": 1,
             "personId": 680814,
             "personName": "K. Doumbia",
@@ -861,25 +873,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
-      "count": 1,
-      "change_pct": 7.7
-    },
-    "2球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "4球": {
+    "5球": {
       "count": 2,
-      "change_pct": -7.4
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": 4.3
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": -4.3
+      "change_pct": 6.7
     },
     "0球": {
       "count": 0,
@@ -889,23 +885,31 @@
       "count": 2,
       "change_pct": 19.4
     },
-    "5球": {
+    "1球": {
+      "count": 1,
+      "change_pct": 4.3
+    },
+    "4球": {
       "count": 2,
-      "change_pct": 6.7
+      "change_pct": -7.4
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -4.3
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 7.7
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {
-    "胜平": {
-      "count": 1,
-      "change_pct": 5.9
-    },
-    "胜胜": {
-      "count": 4,
-      "change_pct": 21.2
-    },
-    "负平": {
-      "count": 1,
-      "change_pct": 5.9
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "负负": {
       "count": 2,
@@ -915,21 +919,29 @@
       "count": 0,
       "change_pct": 0.0
     },
+    "胜胜": {
+      "count": 4,
+      "change_pct": 21.2
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": -12.2
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": 5.9
+    },
     "平平": {
       "count": 3,
       "change_pct": 14.4
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 4,
       "change_pct": 22.7
     },
-    "平负": {
-      "count": 3,
-      "change_pct": -12.2
+    "胜平": {
+      "count": 1,
+      "change_pct": 5.9
     }
   },
   "exclusion_list": [

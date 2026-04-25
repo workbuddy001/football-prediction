@@ -1,0 +1,78 @@
+{
+  "match_id": "周五013",
+  "date_folder": "2026.04.24",
+  "home_team": "桑德兰",
+  "away_team": "诺丁汉",
+  "league": "英超",
+  "handicap": "1",
+  "home_form": "LWWLLW",
+  "away_form": "WWDDWW",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "0:5",
+  "actual_result": "away",
+  "result_cn": "客胜",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-5.3%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降26升2 / 平降7升15 / 客降0升29",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离客",
+      "detail": "29/30家公司升客胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热主",
+      "detail": "26/30家公司降主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为0:5(客胜)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-25 07:33",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": -5.33,
+    "jc_away_chg": 4.6,
+    "mcao_home_chg": -6.14,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 5.15,
+    "jc_init_odds": [
+      2.65,
+      3.0,
+      2.39
+    ],
+    "jc_real_odds": [
+      2.65,
+      2.84,
+      2.5
+    ],
+    "macao_init_odds": [
+      2.77,
+      3.1,
+      2.33
+    ],
+    "macao_real_odds": [
+      2.6,
+      3.1,
+      2.45
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "DNU"
+  }
+}

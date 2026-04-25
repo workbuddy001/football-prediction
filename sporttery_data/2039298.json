@@ -1,6 +1,6 @@
 {
   "match_id": "2039298",
-  "fetch_time": "2026-04-24 21:20:50",
+  "fetch_time": "2026-04-25 07:22:32",
   "match_info": {
     "home_team": "那不勒斯",
     "away_team": "克雷莫纳",
@@ -885,25 +885,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 2,
-      "change_pct": 18.8
-    },
-    "2球": {
-      "count": 2,
-      "change_pct": -1.4
-    },
-    "4球": {
-      "count": 3,
-      "change_pct": 4.0
-    },
-    "1球": {
-      "count": 2,
-      "change_pct": -2.0
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": -5.7
+      "change_pct": 8.9
     },
     "0球": {
       "count": 1,
@@ -913,23 +897,31 @@
       "count": 2,
       "change_pct": 20.8
     },
-    "5球": {
+    "1球": {
       "count": 2,
-      "change_pct": 8.9
+      "change_pct": -2.0
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": 4.0
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -5.7
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": 18.8
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -1.4
     }
   },
   "hafu_change": {
-    "胜平": {
+    "胜负": {
       "count": 1,
-      "change_pct": -4.3
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 2.9
-    },
-    "负平": {
-      "count": 1,
-      "change_pct": -4.3
+      "change_pct": -12.5
     },
     "负负": {
       "count": 1,
@@ -939,21 +931,29 @@
       "count": 0,
       "change_pct": 0.0
     },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -18.2
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -4.3
+    },
     "平平": {
       "count": 1,
       "change_pct": -1.5
-    },
-    "胜负": {
-      "count": 1,
-      "change_pct": -12.5
     },
     "平胜": {
       "count": 1,
       "change_pct": 5.7
     },
-    "平负": {
+    "胜平": {
       "count": 1,
-      "change_pct": -18.2
+      "change_pct": -4.3
     }
   },
   "exclusion_list": [

@@ -1,0 +1,95 @@
+{
+  "match_id": "周五014",
+  "date_folder": "2026.04.24",
+  "home_team": "贝蒂斯",
+  "away_team": "皇马",
+  "league": "西甲",
+  "handicap": "1",
+  "home_form": "WLDDDL",
+  "away_form": "WLDLLW",
+  "prediction": "客胜",
+  "confidence": 4,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [
+    "draw"
+  ],
+  "warnings": [
+    "竞彩×澳门在主方向方向分歧"
+  ],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.95≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "主胜赔率3.75>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.95>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+1.3%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升28 / 平降5升22 / 客降23升5",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为1:1(平局)",
+    "❌ 预测客胜但实际是平局，需要反思原因",
+    "⚠️ 当时已有警告「竞彩×澳门在主方向方向分歧」未重视",
+    "⚠️ 存在分歧/矛盾信号时强行预测，应改为观望",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-25 07:33",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": -2.6,
+    "jc_draw_chg": 1.28,
+    "jc_away_chg": 0.61,
+    "mcao_home_chg": 5.9,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -3.19,
+    "jc_init_odds": [
+      3.85,
+      3.9,
+      1.63
+    ],
+    "jc_real_odds": [
+      3.75,
+      3.95,
+      1.64
+    ],
+    "macao_init_odds": [
+      3.22,
+      3.71,
+      1.88
+    ],
+    "macao_real_odds": [
+      3.41,
+      3.71,
+      1.82
+    ],
+    "jc_pattern": "DNN",
+    "macao_pattern": "UND"
+  }
+}

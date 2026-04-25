@@ -1,6 +1,6 @@
 {
   "match_id": "2039301",
-  "fetch_time": "2026-04-24 21:22:21",
+  "fetch_time": "2026-04-25 07:27:44",
   "match_info": {
     "home_team": "皇家贝蒂斯",
     "away_team": "皇家马德里",
@@ -340,14 +340,14 @@
       "home": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 13,
+            "appearanceCnt": 14,
             "injuryFlag": 1,
             "personId": 262202,
             "personName": "Diego Llorente",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
             "startedMatchCnt": 10,
-            "substituteMatchCnt": 3,
+            "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "3"
           },
@@ -731,43 +731,43 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "8%",
             "goalAvgCnt": "0.9",
             "goalCnt": 24,
-            "goalProbability": "36%",
+            "goalProbability": "35%",
             "injuryFlag": 0,
             "personId": 377149,
             "personName": "K. Mbappé",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 26,
+            "startedMatchCnt": 27,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 31,
+            "appearanceCnt": 32,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
             "assistProbability": "10%",
             "goalAvgCnt": "0.4",
-            "goalCnt": 12,
-            "goalProbability": "18%",
+            "goalCnt": 13,
+            "goalProbability": "19%",
             "injuryFlag": 0,
             "personId": 474972,
             "personName": "Vinícius Júnior",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 27,
+            "startedMatchCnt": 28,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "7"
           },
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "assistAvgCnt": "0.3",
             "assistCnt": 8,
             "assistProbability": "17%",
@@ -779,7 +779,7 @@
             "personName": "巴尔韦德",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 29,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "8"
@@ -793,7 +793,7 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "9%",
@@ -806,15 +806,15 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 26,
-            "substituteMatchCnt": 1,
+            "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 24,
             "assistAvgCnt": "0.3",
             "assistCnt": 7,
-            "assistProbability": "21%",
+            "assistProbability": "20%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
             "goalProbability": "14%",
@@ -823,16 +823,16 @@
             "personName": "埃扎勒祖利",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 20,
+            "startedMatchCnt": 21,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
-            "assistProbability": "15%",
+            "assistProbability": "14%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
             "goalProbability": "14%",
@@ -841,7 +841,7 @@
             "personName": "Antony",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "7"
@@ -861,25 +861,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 1,
-      "change_pct": 4.8
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": 2.4
-    },
-    "4球": {
-      "count": 1,
-      "change_pct": -3.4
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": 1.4
-    },
-    "3球": {
-      "count": 1,
-      "change_pct": -4.2
+      "change_pct": 3.9
     },
     "0球": {
       "count": 0,
@@ -889,23 +873,31 @@
       "count": 1,
       "change_pct": 3.8
     },
-    "5球": {
+    "1球": {
       "count": 1,
-      "change_pct": 3.9
+      "change_pct": 1.4
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -3.4
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -4.2
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 4.8
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 2.4
     }
   },
   "hafu_change": {
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
+    "胜负": {
       "count": 2,
-      "change_pct": 6.4
-    },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
+      "change_pct": 10.5
     },
     "负负": {
       "count": 2,
@@ -915,21 +907,29 @@
       "count": 1,
       "change_pct": 10.0
     },
-    "平平": {
+    "胜胜": {
+      "count": 2,
+      "change_pct": 6.4
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": -16.3
+    },
+    "负平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜负": {
-      "count": 2,
-      "change_pct": 10.5
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "平胜": {
       "count": 1,
       "change_pct": 5.0
     },
-    "平负": {
-      "count": 3,
-      "change_pct": -16.3
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
     }
   },
   "exclusion_list": [

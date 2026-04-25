@@ -1,6 +1,6 @@
 {
   "match_id": "2039300",
-  "fetch_time": "2026-04-25 00:31:34",
+  "fetch_time": "2026-04-25 07:26:20",
   "match_info": {
     "home_team": "桑德兰",
     "away_team": "诺丁汉森林",
@@ -293,13 +293,13 @@
             "uniformNo": "13"
           },
           {
-            "appearanceCnt": 33,
+            "appearanceCnt": 34,
             "injuryFlag": 1,
             "personId": 414655,
             "personName": "E. Anderson",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 33,
+            "startedMatchCnt": 34,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "8"
@@ -776,37 +776,37 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 33,
+            "appearanceCnt": 34,
             "assistAvgCnt": "0.1",
-            "assistCnt": 2,
-            "assistProbability": "8%",
+            "assistCnt": 3,
+            "assistProbability": "11%",
             "goalAvgCnt": "0.4",
-            "goalCnt": 12,
+            "goalCnt": 13,
             "goalProbability": "32%",
             "injuryFlag": 0,
             "personId": 454457,
             "personName": "吉布斯-怀特",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 32,
+            "startedMatchCnt": 33,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 32,
+            "appearanceCnt": 33,
             "assistAvgCnt": "0.1",
-            "assistCnt": 3,
-            "assistProbability": "12%",
-            "goalAvgCnt": "0.1",
-            "goalCnt": 4,
-            "goalProbability": "11%",
+            "assistCnt": 4,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "12%",
             "injuryFlag": 0,
             "personId": 593040,
             "personName": "Igor Jesus",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "19"
@@ -815,10 +815,10 @@
             "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
-            "assistProbability": "16%",
+            "assistProbability": "14%",
             "goalAvgCnt": "0.1",
             "goalCnt": 3,
-            "goalProbability": "8%",
+            "goalProbability": "7%",
             "injuryFlag": 1,
             "personId": 455314,
             "personName": "C. Hudson-Odoi",
@@ -838,7 +838,7 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "5%",
@@ -850,13 +850,13 @@
             "personName": "布罗比",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 17,
+            "startedMatchCnt": 18,
             "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -869,12 +869,12 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 11,
-            "substituteMatchCnt": 17,
+            "substituteMatchCnt": 18,
             "suspensionFlag": 0,
             "uniformNo": "18"
           },
           {
-            "appearanceCnt": 31,
+            "appearanceCnt": 32,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
             "assistProbability": "23%",
@@ -886,7 +886,7 @@
             "personName": "E. Le Fée",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 29,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "28"
@@ -906,25 +906,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 1,
-      "change_pct": 13.6
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": -3.2
-    },
-    "4球": {
-      "count": 1,
-      "change_pct": 3.3
-    },
-    "1球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "3球": {
-      "count": 1,
-      "change_pct": -2.7
+      "change_pct": 4.2
     },
     "0球": {
       "count": 0,
@@ -934,21 +918,29 @@
       "count": 1,
       "change_pct": 14.3
     },
-    "5球": {
+    "1球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
       "count": 1,
-      "change_pct": 4.2
+      "change_pct": 3.3
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -2.7
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 13.6
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": -3.2
     }
   },
   "hafu_change": {
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "负平": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -960,19 +952,27 @@
       "count": 0,
       "change_pct": 0.0
     },
+    "胜胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "平平": {
       "count": 1,
       "change_pct": -5.6
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平负": {
+    "胜平": {
       "count": 0,
       "change_pct": 0.0
     }

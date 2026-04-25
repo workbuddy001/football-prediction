@@ -1,6 +1,6 @@
 {
   "match_id": "2039296",
-  "fetch_time": "2026-04-24 21:17:34",
+  "fetch_time": "2026-04-25 07:13:24",
   "match_info": {
     "home_team": "芬洛",
     "away_team": "阿尔梅勒城",
@@ -308,13 +308,13 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "injuryFlag": 1,
             "personId": 454471,
             "personName": "F. Druijf",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "9"
@@ -682,7 +682,7 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 36,
+            "appearanceCnt": 37,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "2%",
@@ -694,13 +694,13 @@
             "personName": "J. Rijkhoff",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 33,
+            "startedMatchCnt": 34,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "8%",
@@ -712,17 +712,17 @@
             "personName": "F. Druijf",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 36,
+            "appearanceCnt": 37,
             "assistAvgCnt": "0.2",
             "assistCnt": 6,
             "assistProbability": "11%",
-            "goalAvgCnt": "0.3",
+            "goalAvgCnt": "0.2",
             "goalCnt": 9,
             "goalProbability": "12%",
             "injuryFlag": 0,
@@ -730,7 +730,7 @@
             "personName": "E. Poku",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 21,
+            "startedMatchCnt": 22,
             "substituteMatchCnt": 15,
             "suspensionFlag": 0,
             "uniformNo": "17"
@@ -744,37 +744,37 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 33,
+            "appearanceCnt": 34,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "10%",
             "goalAvgCnt": "0.4",
-            "goalCnt": 13,
-            "goalProbability": "28%",
+            "goalCnt": 15,
+            "goalProbability": "30%",
             "injuryFlag": 0,
             "personId": 667862,
             "personName": "D.赞德贝根",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 29,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "13%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
-            "goalProbability": "19%",
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 881125,
             "personName": "B. van Zijl",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 14,
+            "startedMatchCnt": 15,
             "substituteMatchCnt": 15,
             "suspensionFlag": 0,
             "uniformNo": "18"
@@ -786,7 +786,7 @@
             "assistProbability": "3%",
             "goalAvgCnt": "0.1",
             "goalCnt": 4,
-            "goalProbability": "9%",
+            "goalProbability": "8%",
             "injuryFlag": 0,
             "personId": 727338,
             "personName": "N. Ait Mouhou",
@@ -812,25 +812,9 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 2,
-      "change_pct": 6.7
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": 2.1
-    },
-    "4球": {
-      "count": 4,
-      "change_pct": -15.1
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": 1.2
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": 4.2
+      "change_pct": 3.3
     },
     "0球": {
       "count": 0,
@@ -840,21 +824,29 @@
       "count": 3,
       "change_pct": 13.6
     },
-    "5球": {
+    "1球": {
+      "count": 1,
+      "change_pct": 1.2
+    },
+    "4球": {
+      "count": 4,
+      "change_pct": -15.1
+    },
+    "3球": {
       "count": 2,
-      "change_pct": 3.3
+      "change_pct": 4.2
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": 6.7
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 2.1
     }
   },
   "hafu_change": {
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "负平": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -866,11 +858,19 @@
       "count": 2,
       "change_pct": 0.0
     },
-    "平平": {
+    "胜胜": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "负平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜负": {
+    "平平": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -878,8 +878,8 @@
       "count": 2,
       "change_pct": 0.0
     },
-    "平负": {
-      "count": 2,
+    "胜平": {
+      "count": 0,
       "change_pct": 0.0
     }
   },

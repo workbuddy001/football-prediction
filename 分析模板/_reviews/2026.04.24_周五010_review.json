@@ -1,0 +1,97 @@
+{
+  "match_id": "周五010",
+  "date_folder": "2026.04.24",
+  "home_team": "莱红牛",
+  "away_team": "柏林联合",
+  "league": "德甲",
+  "handicap": "-1",
+  "home_form": "WWWWLW",
+  "away_form": "LLDLWL",
+  "prediction": "平局",
+  "confidence": 5,
+  "actual_score": "3:1",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "away",
+    "home"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率4.60>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率7.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.30<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+5.7%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升28 / 平降21升3 / 客降27升1",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "28/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "27/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测平局错误！实际比分为3:1(主胜)",
+    "❌ 预测平局但实际是主胜，需要反思原因",
+    "📝 心水推荐为「莱比锡红牛 贏」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-25 07:51",
+  "macao_tip": "莱比锡红牛 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 5.69,
+    "jc_draw_chg": -10.68,
+    "jc_away_chg": -14.11,
+    "mcao_home_chg": 8.66,
+    "mcao_draw_chg": -12.62,
+    "mcao_away_chg": -21.05,
+    "jc_init_odds": [
+      1.23,
+      5.15,
+      8.15
+    ],
+    "jc_real_odds": [
+      1.3,
+      4.6,
+      7.0
+    ],
+    "macao_init_odds": [
+      1.27,
+      5.15,
+      7.6
+    ],
+    "macao_real_odds": [
+      1.38,
+      4.5,
+      6.0
+    ],
+    "jc_pattern": "UDD",
+    "macao_pattern": "UDD"
+  }
+}
