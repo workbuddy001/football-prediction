@@ -2385,15 +2385,19 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     # 新增规律3: 让胜<2.2 + 让平>=3.7 + 主近况好(form_diff>0) + had_win<1.5 → 让胜87.5%
     had_win = 0
     try:
-        had = d.get('had', {})
-        if had:
-            if '胜' in had:
-                had_win = float(had['胜'])  # 直接用[]访问，如果key不存在会抛异常（方便调试）
-            elif '主胜' in had:
-                had_win = float(had['主胜'])
+        # 注意：函数参数是data（第三个参数），不是d！
+        if data is not None:
+            had_data = data.get('had', {})
+        else:
+            had_data = {}
+        if had_data:
+            if '胜' in had_data:
+                had_win = float(had_data['胜'])  # 直接用[]访问，如果key不存在会抛异常（方便调试）
+            elif '主胜' in had_data:
+                had_win = float(had_data['主胜'])
             else:
                 # 打印had的所有keys，方便调试
-                print(f'[DEBUG] had keys: {list(had.keys())}, cannot find had_win')
+                print(f'[DEBUG] had_data keys: {list(had_data.keys())}, cannot find had_win')
     except Exception as e:
         print(f'[DEBUG] Error reading had_win: {e}')
         pass
@@ -3260,8 +3264,8 @@ def test_law3():
         debug_info['condition_4_had_win_in_0_1.5'] = 0 < had_win < 1.5
         debug_info['is_law3_calculated'] = hhad_win < 2.2 and hhad_draw >= 3.7 and form_diff is not None and form_diff > 0 and 0 < had_win < 1.5
         
-        # 调用原函数
-        result = _analyze_hhad_low_draw(d, recent_form)
+        # 调用原函数（注意：第三个参数是完整比赛数据d）
+        result = _analyze_hhad_low_draw(d, recent_form, d)
         debug_info['function_result'] = result
         
         return jsonify(debug_info)
