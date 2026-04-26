@@ -2402,7 +2402,7 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     # 高区间前置条件: 主让球 + 客队近况好(form_diff < -0.5) + 让负赔更低
     is_high_match = is_high and is_home_let and form_diff is not None and form_diff < -0.5 and hhad_lose < hhad_win - 0.05
 
-    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match and not is_law1 and not is_law2:
+    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match and not is_law1 and not is_law2 and not is_law3:
         return None
 
     hints = []
