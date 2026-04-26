@@ -2449,7 +2449,7 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
 
     had_draw_val = 0
     try:
-        had = data.get('had', {}) if data is not None else {}
+        had = d.get('had', {}) if d is not None else {}
         if had and '平' in had:
             had_draw_val = float(had['平'])
     except:
@@ -2553,7 +2553,11 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         'high_hints': high_hints,      # 高区间细分提醒
         'is_law1': is_law1,          # 新规律1触发
         'is_law2': is_law2,          # 新规律2触发
+        'is_law3': is_law3,          # 新规律3触发
     }
+
+
+
 
 
 def _analyze_draw_signal(had, hhad):
