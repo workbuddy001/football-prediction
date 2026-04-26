@@ -2382,6 +2382,19 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     # 新增规律2: 让胜1.7-2.0 + 让平3.3-3.7 + 客远好(form_diff<-0.3) → 让胜77.8%
     is_law2 = (1.7 <= hhad_win < 2.0) and (3.3 <= hhad_draw < 3.7) and form_diff is not None and form_diff < -0.3
 
+    # 新增规律3: 让胜<2.2 + 让平>=3.7 + 主近况好(form_diff>0) + had_win<1.5 → 让胜87.5%
+    had = None
+    had_win = 0
+    try:
+        had = d.get('had', {})
+        if had:
+            if '胜' in had:
+                had_win = float(had.get('胜', 0))
+            elif '主胜' in had:
+                had_win = float(had.get('主胜', 0))
+    except: pass
+    is_law3 = hhad_win < 2.2 and hhad_draw >= 3.7 and form_diff is not None and form_diff > 0 and 0 < had_win < 1.5
+
     # 中赔前置条件: 主受让 + 客队近况好(form_diff < -0.3)
     is_mid_match = is_mid and (not is_home_let) and form_diff is not None and form_diff < -0.3
     # 中低区间前置条件: 客队近况好(form_diff < -0.3) + 让胜赔更低
@@ -2415,6 +2428,14 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         hhad_pick = '让胜'
         hhad_confidence = 78
         hints.append(f'⚡新规律2: 让胜1.7-2.0+让平3.3-3.7+客远好, 让胜率77.8%(9场)')
+    # 规律3: 让胜<2.2 + 让平>=3.7 + 主近况好 + had_win<1.5 → 让胜87.5%
+    elif is_law3:
+        hhad_pick = '让胜'
+        hhad_confidence = 88
+        hints.append(f'⚡新规律3: 让胜<2.2+让平≥3.7+主近况好+普通主胜<1.5, 让胜率87.5%(8场)')
+        # 爆冷提醒：had_win极低(<1.3)时，主队可能爆冷输球
+        if had_win > 0 and had_win < 1.3:
+            hints.append(f'⚠️爆冷提醒: 普通主胜={had_win}<1.3, 主队可能爆冷输球, 谨慎投注')
 
 
     # ── Step 3: 平局概率分析（基于had.平回测, 2026-04-26修正）──
