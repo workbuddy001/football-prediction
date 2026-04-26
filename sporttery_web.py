@@ -227,43 +227,61 @@ def _build_odds_hitrate():
 def _build_pattern_hitrate():
     """
     遍历所有有 big3_signal_type 的历史记录，计算各前置条件的命中率。
-
+    按"小3球/恰好3球/大3球"三个维度分别统计。
+    
     返回格式:
-      stats[signal_type] = {total, hits, misses, rate, prediction}
+      stats[signal_type] = {
+        'total': total,
+        'prediction': prediction,
+        '小3球': {hits, total, rate},
+        '恰好3球': {hits, total, rate},
+        '大3球': {hits, total, rate},
+      }
     """
     global _pattern_hitrate_cache
     if _pattern_hitrate_cache is not None:
         return _pattern_hitrate_cache
 
     scores = load_scores()
-    # pattern_stats[signal_type] = [total, hits, prediction]
+    # pattern_stats[signal_type] = {prediction, actuals: {小3球: [hits, total], 恰好3球: [hits, total], 大3球: [hits, total]}}
     pattern_stats = {}
 
     for key, record in scores.items():
         signal_type = record.get('big3_signal_type')
         prediction = record.get('big3_prediction')
         result = record.get('big3_result')
+        actual = record.get('big3_actual', '')
 
-        if not signal_type or not result or result == 'unknown':
+        if not signal_type or not result or result == 'unknown' or not actual:
             continue
 
         if signal_type not in pattern_stats:
-            pattern_stats[signal_type] = [0, 0, prediction]
+            pattern_stats[signal_type] = {
+                'prediction': prediction,
+                '小3球': [0, 0],    # [hits, total]
+                '恰好3球': [0, 0],
+                '大3球': [0, 0],
+            }
 
-        pattern_stats[signal_type][0] += 1
-        if result == 'hit':
-            pattern_stats[signal_type][1] += 1
+        # 统计实际结果分布
+        if actual in pattern_stats[signal_type]:
+            pattern_stats[signal_type][actual][1] += 1  # total
+            if result == 'hit':
+                pattern_stats[signal_type][actual][0] += 1  # hits
 
     # 计算命中率
     result = {}
-    for signal_type, (total, hits, prediction) in pattern_stats.items():
-        result[signal_type] = {
-            'total': total,
-            'hits': hits,
-            'misses': total - hits,
-            'rate': round(hits / total * 100, 1) if total > 0 else 0,
-            'prediction': prediction
-        }
+    for signal_type, data in pattern_stats.items():
+        pred = data['prediction']
+        entry = {'prediction': pred, 'total': 0}
+        
+        for key in ['小3球', '恰好3球', '大3球']:
+            hits, total = data[key]
+            rate = round(hits / total * 100, 1) if total > 0 else 0
+            entry[key] = {'hits': hits, 'total': total, 'rate': rate}
+            entry['total'] += total
+        
+        result[signal_type] = entry
 
     _pattern_hitrate_cache = result
     return _pattern_hitrate_cache
@@ -2125,17 +2143,37 @@ HTML_TEMPLATE = '''
 
             let html = '<div class="pattern-stats-title">📊 前置条件命中率统计</div>';
             html += '<table class="pattern-stats-table">';
-            html += '<tr><th>前置条件</th><th>预判</th><th>样本</th><th>命中</th><th>命中率</th></tr>';
+            html += '<tr><th>前置条件</th><th>预判</th><th>样本</th><th>小3球(0-2)</th><th>恰好3球</th><th>大3球(4+)</th></tr>';
 
             for (const [signalType, data] of Object.entries(stats)) {
-                const rateClass = data.rate >= 70 ? 'pattern-rate-high' : 
-                              data.rate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                // 小3球命中率
+                const s = data['小3球'] || {};
+                const sRate = s.rate || 0;
+                const sClass = sRate >= 70 ? 'pattern-rate-high' : 
+                              sRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                const sText = s.total > 0 ? `${s.hits}场/${s.total}场(${sRate}%)` : '-';
+
+                // 恰好3球命中率
+                const m = data['恰好3球'] || {};
+                const mRate = m.rate || 0;
+                const mClass = mRate >= 70 ? 'pattern-rate-high' : 
+                              mRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                const mText = m.total > 0 ? `${m.hits}场/${m.total}场(${mRate}%)` : '-';
+
+                // 大3球命中率
+                const b = data['大3球'] || {};
+                const bRate = b.rate || 0;
+                const bClass = bRate >= 70 ? 'pattern-rate-high' : 
+                              bRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                const bText = b.total > 0 ? `${b.hits}场/${b.total}场(${bRate}%)` : '-';
+
                 html += '<tr>' +
                     '<td>' + signalType + '</td>' +
                     '<td>' + data.prediction + '</td>' +
                     '<td>' + data.total + '场</td>' +
-                    '<td>' + data.hits + '场</td>' +
-                    '<td class="' + rateClass + '">' + data.rate + '%</td>' +
+                    '<td class="' + sClass + '">' + sText + '</td>' +
+                    '<td class="' + mClass + '">' + mText + '</td>' +
+                    '<td class="' + bClass + '">' + bText + '</td>' +
                 '</tr>';
             }
 
