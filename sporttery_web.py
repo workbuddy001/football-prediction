@@ -2375,6 +2375,13 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     is_midlow = (hhad_draw >= 3.3 and hhad_draw <= 3.64)   # 中低区间(3.3~3.64)
     is_mid = (hhad_draw >= 3.65 and hhad_draw <= 3.95)      # 中区间(3.65~3.95)
     is_high = (hhad_draw >= 4.0 and hhad_draw <= 4.5)       # 高区间(4.0~4.5)
+
+    # 新增规律1: 让胜<1.7 + 让平>=3.7 + 客队近况好(form_diff<0) → 让胜84.6%
+    is_law1 = hhad_win < 1.7 and hhad_draw >= 3.7 and form_diff is not None and form_diff < 0
+
+    # 新增规律2: 让胜1.7-2.0 + 让平3.3-3.7 + 客远好(form_diff<-0.3) → 让胜77.8%
+    is_law2 = (1.7 <= hhad_win < 2.0) and (3.3 <= hhad_draw < 3.7) and form_diff is not None and form_diff < -0.3
+
     # 中赔前置条件: 主受让 + 客队近况好(form_diff < -0.3)
     is_mid_match = is_mid and (not is_home_let) and form_diff is not None and form_diff < -0.3
     # 中低区间前置条件: 客队近况好(form_diff < -0.3) + 让胜赔更低
@@ -2382,7 +2389,7 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     # 高区间前置条件: 主让球 + 客队近况好(form_diff < -0.5) + 让负赔更低
     is_high_match = is_high and is_home_let and form_diff is not None and form_diff < -0.5 and hhad_lose < hhad_win - 0.05
 
-    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match:
+    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match and not is_law1 and not is_law2:
         return None
 
     hints = []
@@ -2396,6 +2403,18 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         hints.append(f'主受让(让球+1), 让胜率68.3%(63场)')
         hhad_pick = '让胜'
         hhad_confidence = 68
+
+    # ── Step 1.5: 新规律判断（覆盖默认方向）──
+    # 规律1: 让胜<1.7 + 让平>=3.7 + 客队近况好 → 让胜84.6%
+    if is_law1:
+        hhad_pick = '让胜'
+        hhad_confidence = 85
+        hints.append(f'⚡新规律1: 让胜<1.7+让平≥3.7+客近况好, 让胜率84.6%(13场)')
+    # 规律2: 让胜1.7-2.0 + 让平3.3-3.7 + 客远好 → 让胜77.8%
+    elif is_law2:
+        hhad_pick = '让胜'
+        hhad_confidence = 78
+        hints.append(f'⚡新规律2: 让胜1.7-2.0+让平3.3-3.7+客远好, 让胜率77.8%(9场)')
 
 
     # ── Step 3: 平局概率分析（基于had.平回测, 2026-04-26修正）──
@@ -2510,16 +2529,19 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         'mid_hints': mid_hints,        # 中赔区间细分提醒
         'midlow_hints': midlow_hints,  # 中低区间细分提醒
         'high_hints': high_hints,      # 高区间细分提醒
+        'is_law1': is_law1,          # 新规律1触发
+        'is_law2': is_law2,          # 新规律2触发
     }
 
 
 def _analyze_draw_signal(had, hhad):
     """
-    平局信号分析（所有had.平区间均显示，基于344场回测）
+    平局信号分析（结合HAD平局赔率 + HHD让平赔率，基于361场回测）
     返回:
         {
             'active': bool,        # 是否有had数据
             'had_draw': float,     # had.平赔率
+            'hhd_draw': float,     # hhd.让平赔率（若有）
             'draw_level': str,     # 'super_high'/'high'/'medium'/'low'/'very_low'
             'draw_pct': int,       # 预估平局率
             'draw_reason': str,    # 原因说明
@@ -2538,9 +2560,18 @@ def _analyze_draw_signal(had, hhad):
     if had_draw <= 0:
         return {'active': False}
 
+    # 提取让平赔率（HHD）
+    hhd_draw = 0
+    if hhad and '让平' in hhad:
+        try:
+            hhd_draw = float(hhad['让平'])
+        except (ValueError, TypeError):
+            hhd_draw = 0
+
     result = {
         'active': True,
         'had_draw': had_draw,
+        'hhd_draw': hhd_draw,
         'special_combo': False,
         'combo_778': False,
         'draw_level': 'medium',
@@ -2548,61 +2579,111 @@ def _analyze_draw_signal(had, hhad):
         'draw_reason': '',
     }
 
-    # ── 区间判断 + 平局率（基于344场回测）──
-    if 3.0 <= had_draw < 3.2:
-        result['draw_pct'] = 43
-        result['draw_level'] = 'high'
-        result['draw_reason'] = 'had.平=%.2f 高危区间[3.0,3.2), 平局率42.6%%(%d场)' % (had_draw, 47)
-    elif 3.4 <= had_draw < 3.6:
-        result['draw_pct'] = 36
-        result['draw_level'] = 'high'
-        result['draw_reason'] = 'had.平=%.2f 高危区间[3.4,3.6), 平局率35.7%%(%d场)' % (had_draw, 42)
-    elif 3.6 <= had_draw < 3.8:
-        result['draw_pct'] = 34
-        result['draw_level'] = 'medium'
-        result['draw_reason'] = 'had.平=%.2f [3.6,3.8), 平局率34.1%%(%d场)' % (had_draw, 41)
-    elif 2.8 <= had_draw < 3.0:
-        result['draw_pct'] = 26
-        result['draw_level'] = 'medium'
-        result['draw_reason'] = 'had.平=%.2f [2.8,3.0), 平局率25.6%%(%d场)' % (had_draw, 39)
-    elif 3.2 <= had_draw < 3.4:
-        result['draw_pct'] = 21
+    # ── 规则1：高平局概率（>40%）──
+    # HAD平局[3.0,3.2) → 42.6%  OR  HHD让平<3.3 → 41.0%
+    is_high_had = (3.0 <= had_draw < 3.2)
+    is_high_hhd = (hhd_draw > 0 and hhd_draw < 3.3)
+    if is_high_had or is_high_hhd:
+        if is_high_had and is_high_hhd:
+            # 双高信号叠加
+            result['draw_pct'] = 43
+            result['draw_level'] = 'high'
+            result['draw_reason'] = 'had.平=%.2f[3.0,3.2) + 让平=%.2f<3.3, 平局率约43%%' % (had_draw, hhd_draw)
+        elif is_high_had:
+            result['draw_pct'] = 43
+            result['draw_level'] = 'high'
+            result['draw_reason'] = 'had.平=%.2f 高危区间[3.0,3.2), 平局率42.6%%(%d场)' % (had_draw, 47)
+        else:
+            result['draw_pct'] = 41
+            result['draw_level'] = 'high'
+            result['draw_reason'] = '让平=%.2f<3.3, 平局率41.0%%(%d场)' % (hhd_draw, 61)
+
+    # ── 规则2：低平局概率（<20%）──
+    # HHD让平[3.3,3.5) → 20.7%  ← 最强单独信号
+    # HAD平局≥3.7 → 19.5%
+    is_low_hhd = (hhd_draw > 0 and 3.3 <= hhd_draw < 3.5)
+    is_low_had = (had_draw >= 3.7)
+    # HAD≤3.0 + HHD≥3.3 → ~20%  ← 新增（优先级更高）
+    is_low_combo = (had_draw <= 3.0 and hhd_draw >= 3.3)
+    
+    if is_low_combo:
         result['draw_level'] = 'low'
-        result['draw_reason'] = 'had.平=%.2f [3.2,3.4), 平局率21.1%%(%d场)' % (had_draw, 57)
-    elif 3.8 <= had_draw < 4.0:
-        result['draw_pct'] = 22
+        result['draw_pct'] = 20
+        result['draw_reason'] = 'had.平=%.2f<=3.0 + 让平=%.2f>=3.3, 平局率约20%%' % (had_draw, hhd_draw)
+    elif is_low_hhd or is_low_had:
         result['draw_level'] = 'low'
-        result['draw_reason'] = 'had.平=%.2f [3.8,4.0), 平局率21.9%%(%d场)' % (had_draw, 32)
-    elif 4.0 <= had_draw < 4.5:
-        result['draw_pct'] = 24
-        result['draw_level'] = 'low'
-        result['draw_reason'] = 'had.平=%.2f [4.0,4.5), 平局率23.5%%(%d场)' % (had_draw, 34)
-    elif had_draw < 2.8:
-        result['draw_pct'] = 33
-        result['draw_level'] = 'medium'
-        result['draw_reason'] = 'had.平=%.2f (<2.8), 平局率33.3%%(%d场,小样本)' % (had_draw, 6)
-    else:  # >= 4.5
-        result['draw_pct'] = 13
+        pct = 21
+        reasons = []
+        if is_low_hhd:
+            pct = min(pct, 21)
+            reasons.append('让平=%.2f[3.3,3.5)' % hhd_draw)
+        if is_low_had:
+            pct = min(pct, 20)
+            reasons.append('had.平=%.2f>=3.7' % had_draw)
+        result['draw_pct'] = pct
+        result['draw_reason'] = ' + '.join(reasons) + ', 平局率约%d%%' % pct
+
+    # ── 规则3：最强排除信号（平局率<15%）──
+    # HHD让平[3.3,3.5) + HAD平局≥3.7 → 平局率<15%
+    if is_low_hhd and is_low_had:
         result['draw_level'] = 'very_low'
-        result['draw_reason'] = 'had.平=%.2f (>=4.5), 平局率13.0%%(%d场) [低平局区间]' % (had_draw, 46)
+        result['draw_pct'] = 15
+        result['draw_reason'] = '⚠️ 最强排除: 让平=%.2f[3.3,3.5) + had.平=%.2f>=3.7, 平局率<15%%' % (hhd_draw, had_draw)
+
+    # ── 原有区间判断（作为补充，当上述规则未触发时）──
+    if result['draw_reason'] == '':
+        if 3.0 <= had_draw < 3.2:
+            result['draw_pct'] = 43
+            result['draw_level'] = 'high'
+            result['draw_reason'] = 'had.平=%.2f 高危区间[3.0,3.2), 平局率42.6%%(%d场)' % (had_draw, 47)
+        elif 3.4 <= had_draw < 3.6:
+            result['draw_pct'] = 36
+            result['draw_level'] = 'high'
+            result['draw_reason'] = 'had.平=%.2f 高危区间[3.4,3.6), 平局率35.7%%(%d场)' % (had_draw, 42)
+        elif 3.6 <= had_draw < 3.8:
+            result['draw_pct'] = 34
+            result['draw_level'] = 'medium'
+            result['draw_reason'] = 'had.平=%.2f [3.6,3.8), 平局率34.1%%(%d场)' % (had_draw, 41)
+        elif 2.8 <= had_draw < 3.0:
+            result['draw_pct'] = 26
+            result['draw_level'] = 'medium'
+            result['draw_reason'] = 'had.平=%.2f [2.8,3.0), 平局率25.6%%(%d场)' % (had_draw, 39)
+        elif 3.2 <= had_draw < 3.4:
+            result['draw_pct'] = 21
+            result['draw_level'] = 'low'
+            result['draw_reason'] = 'had.平=%.2f [3.2,3.4), 平局率21.1%%(%d场)' % (had_draw, 57)
+        elif 3.8 <= had_draw < 4.0:
+            result['draw_pct'] = 22
+            result['draw_level'] = 'low'
+            result['draw_reason'] = 'had.平=%.2f [3.8,4.0), 平局率21.9%%(%d场)' % (had_draw, 32)
+        elif 4.0 <= had_draw < 4.5:
+            result['draw_pct'] = 24
+            result['draw_level'] = 'low'
+            result['draw_reason'] = 'had.平=%.2f [4.0,4.5), 平局率23.5%%(%d场)' % (had_draw, 34)
+        elif had_draw < 2.8:
+            result['draw_pct'] = 33
+            result['draw_level'] = 'medium'
+            result['draw_reason'] = 'had.平=%.2f (<2.8), 平局率33.3%%(%d场,小样本)' % (had_draw, 6)
+        else:  # >= 4.5
+            result['draw_pct'] = 13
+            result['draw_level'] = 'very_low'
+            result['draw_reason'] = 'had.平=%.2f (>=4.5), 平局率13.0%%(%d场) [低平局区间]' % (had_draw, 46)
 
     # ── 特殊组合：had[3.4,3.6) + hhd<3.3 ──
-    if 3.4 <= had_draw < 3.6 and hhad and '让平' in hhad and '让胜' in hhad:
+    if 3.4 <= had_draw < 3.6 and hhd_draw > 0 and hhd_draw < 3.3:
         try:
-            hhd = float(hhad['让平'])
             hhd_win = float(hhad['让胜'])
-            if hhd < 3.3:
-                # 77.8%组合（9场7平）
-                result['combo_778'] = True
-                result['draw_pct'] = 78
-                result['draw_level'] = 'high'
-                result['draw_reason'] = 'had.平=%.2f + 让平%.2f<3.3, 平局率77.8%%(9场)' % (had_draw, hhd)
-                # 差值过滤：100%(7/7)
-                if abs(hhd - hhd_win) >= 0.3:
-                    result['special_combo'] = True
-                    result['draw_level'] = 'super_high'
-                    result['draw_pct'] = 100
-                    result['draw_reason'] = '⚠️ 超高平局信号: had.平=%.2f+让平%.2f+|让平-让胜|>=0.3, 平局率100%%(7/7)' % (had_draw, hhd)
+            # 77.8%组合（9场7平）
+            result['combo_778'] = True
+            result['draw_pct'] = 78
+            result['draw_level'] = 'high'
+            result['draw_reason'] = 'had.平=%.2f + 让平%.2f<3.3, 平局率77.8%%(9场)' % (had_draw, hhd_draw)
+            # 差值过滤：100%(7/7)
+            if abs(hhd_draw - hhd_win) >= 0.3:
+                result['special_combo'] = True
+                result['draw_level'] = 'super_high'
+                result['draw_pct'] = 100
+                result['draw_reason'] = '⚠️ 超高平局信号: had.平=%.2f+让平%.2f+|让平-让胜|>=0.3, 平局率100%%(7/7)' % (had_draw, hhd_draw)
         except (ValueError, TypeError, KeyError):
             pass
 
