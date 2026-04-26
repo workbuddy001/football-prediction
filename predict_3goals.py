@@ -2393,15 +2393,45 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
         rec_dict['big3_vs_small3'] = big3_vs_small3
         return rec_dict
 
-    # ── 优先级1: 超级3球（黄金3球 + 0球=13）→ 历史75%命中率 ──
+    # ── 优先级1: 黄金3球+0球20-21 → 历史70.0%命中率 ──
+    # 条件：黄金3球(4条件) + 0球赔率20-21
+    is_golden = g3_pred.get('golden_3goals', False) if g3_pred else False
+    g0 = features.get('0球') or features.get('odds0', 0)
+    if is_golden and g0 and 20 <= g0 <= 21:
+        return _make_result({
+            'recommendation': '3球',
+            'confidence': 90,  # 最高置信度
+            'hit_rate': 70.0,
+            'sample_size': 10,
+            'reason': '黄金3球+0球20-21：命中率70.0%(7/10)',
+            'signal_type': '黄金3球+0球20-21',
+            'is_bet': True,
+        })
+
+    # ── 优先级2: 超级3球（黄金3球 + 0球=13）→ 历史60.0%命中率 ──
     if g3_pred.get('super_golden') and g3_pred.get('super_golden_reason'):
         return _make_result({
             'recommendation': '3球',
             'confidence': 85,
-            'hit_rate': 75,
-            'sample_size': 4,
+            'hit_rate': 60.0,  # 更新：60.0%(6/10)
+            'sample_size': 10,     # 更新：10场
             'reason': '超级3球信号：' + ' | '.join(g3_pred.get('super_golden_reason', [])),
             'signal_type': '超级3球',
+            'is_bet': True,
+        })
+
+    # ── 优先级3: 0球20-21+近况2.5-3.5 → 历史53.3%命中率 ──
+    form = features.get('近况')
+    combined_avg = form.get('combined_avg') if form else None
+    if (g0 and 20 <= g0 <= 21 and
+        combined_avg is not None and 2.5 <= combined_avg <= 3.5):
+        return _make_result({
+            'recommendation': '3球',
+            'confidence': 75,
+            'hit_rate': 53.3,
+            'sample_size': 15,
+            'reason': f'0球{g0}+近况{combined_avg:.1f}，命中率53.3%(8/15)',
+            'signal_type': '0球20-21+近况2.5-3.5',
             'is_bet': True,
         })
 
