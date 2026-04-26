@@ -2433,11 +2433,17 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         hhad_pick = '让胜'
         hhad_confidence = 85
         hints.append(f'⚡新规律1: 让胜<1.7+让平≥3.7+客近况好, 让胜率84.6%(13场)')
+        # 低赔率警告
+        if hhad_win < 1.50:
+            hints.append(f'⚠️ 让胜赔率过低({hhad_win:.2f}<1.50)，可能存在诱盘风险，请谨慎')
     # 规律2: 让胜1.7-2.0 + 让平3.3-3.7 + 客远好 → 让胜77.8%
     elif is_law2:
         hhad_pick = '让胜'
         hhad_confidence = 78
         hints.append(f'⚡新规律2: 让胜1.7-2.0+让平3.3-3.7+客远好, 让胜率77.8%(9场)')
+        # 低赔率警告（规律2的让胜赔率范围1.7-2.0，不会<1.50，但保留检查）
+        if hhad_win < 1.50:
+            hints.append(f'⚠️ 让胜赔率过低({hhad_win:.2f}<1.50)，可能存在诱盘风险，请谨慎')
     # 规律3: 让胜<2.2 + 让平>=3.7 + 主近况好 + had_win<1.5 → 让胜87.5%
     elif is_law3:
         hhad_pick = '让胜'
@@ -2542,6 +2548,12 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         hhad_pick = '让负'
         hhad_confidence = 90
         high_hints.append(f'⭐⭐⭐ 高区间+客近况好+让负赔更低, 让负率90%(10场)')
+
+    # 低赔率警告：推荐方赔率<1.50时可能存在诱盘风险
+    if hhad_pick == '让胜' and hhad_win < 1.50:
+        hints.append(f'⚠️ 让胜赔率过低({hhad_win:.2f}<1.50)，可能存在诱盘风险，请谨慎')
+    elif hhad_pick == '让负' and hhad_lose < 1.50:
+        hints.append(f'⚠️ 让负赔率过低({hhad_lose:.2f}<1.50)，可能存在诱盘风险，请谨慎')
 
     return {
         'active': True,
