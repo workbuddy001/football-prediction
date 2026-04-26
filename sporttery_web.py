@@ -228,14 +228,14 @@ def _build_pattern_hitrate():
     """
     遍历所有有 big3_signal_type 的历史记录，计算各前置条件的命中率。
     按"小3球/恰好3球/大3球"三个维度分别统计。
-    
+
     返回格式:
       stats[signal_type] = {
         'total': total,
         'prediction': prediction,
-        '小3球': {hits, total, rate},
-        '恰好3球': {hits, total, rate},
-        '大3球': {hits, total, rate},
+        '小3球': {'hits': h, 'total': t, 'rate': r},
+        '恰好3球': {'hits': h, 'total': t, 'rate': r},
+        '大3球': {'hits': h, 'total': t, 'rate': r},
       }
     """
     global _pattern_hitrate_cache
@@ -243,7 +243,7 @@ def _build_pattern_hitrate():
         return _pattern_hitrate_cache
 
     scores = load_scores()
-    # pattern_stats[signal_type] = {prediction, actuals: {小3球: [hits, total], 恰好3球: [hits, total], 大3球: [hits, total]}}
+    # pattern_stats[signal_type] = {'prediction': p, '小3球': [hits, total], ...}
     pattern_stats = {}
 
     for key, record in scores.items():
@@ -264,7 +264,7 @@ def _build_pattern_hitrate():
             }
 
         # 统计实际结果分布
-        if actual in pattern_stats[signal_type]:
+        if actual in ['小3球', '恰好3球', '大3球']:
             pattern_stats[signal_type][actual][1] += 1  # total
             if result == 'hit':
                 pattern_stats[signal_type][actual][0] += 1  # hits
@@ -274,18 +274,19 @@ def _build_pattern_hitrate():
     for signal_type, data in pattern_stats.items():
         pred = data['prediction']
         entry = {'prediction': pred, 'total': 0}
-        
+
         for key in ['小3球', '恰好3球', '大3球']:
-            hits, total = data[key]
+            hd = data[key]
+            hits = hd[0]
+            total = hd[1]
             rate = round(hits / total * 100, 1) if total > 0 else 0
             entry[key] = {'hits': hits, 'total': total, 'rate': rate}
             entry['total'] += total
-        
+
         result[signal_type] = entry
 
     _pattern_hitrate_cache = result
-    return _pattern_hitrate_cache
-
+    return result
 def get_hitrate_for_odds(goal, odds_val):
     """
     返回指定进球数和赔率对应的命中率信息。
@@ -667,7 +668,7 @@ HTML_TEMPLATE = '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>竞彩比分预测系统 v2.5.0</title>
+    <title>竞彩比分预测系统 v2.6.0</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -2300,16 +2301,40 @@ HTML_TEMPLATE = '''
                 if (!stats) {
                     container.innerHTML = '<div class="pattern-no-stats">无统计</div>';
                 } else {
-                    const rateClass = stats.rate >= 70 ? 'pattern-rate-high' :
-                                 stats.rate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                    // 小3球
+                    const s = stats['小3球'] || {};
+                    const sRate = s.rate || 0;
+                    const sClass = sRate >= 70 ? 'pattern-rate-high' :
+                                  sRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                    const sText = s.total > 0 ? `${s.hits}场/${s.total}场(${sRate}%)` : '-';
+
+                    // 恰好3球
+                    const m = stats['恰好3球'] || {};
+                    const mRate = m.rate || 0;
+                    const mClass = mRate >= 70 ? 'pattern-rate-high' :
+                                  mRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                    const mText = m.total > 0 ? `${m.hits}场/${m.total}场(${mRate}%)` : '-';
+
+                    // 大3球
+                    const b = stats['大3球'] || {};
+                    const bRate = b.rate || 0;
+                    const bClass = bRate >= 70 ? 'pattern-rate-high' :
+                                  bRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
+                    const bText = b.total > 0 ? `${b.hits}场/${b.total}场(${bRate}%)` : '-';
+
                     container.innerHTML = `
                         <div class="pattern-single-stats">
                             <div class="pattern-single-title">📊 ${signalType} 命中率统计</div>
-                            <div class="pattern-single-content">
-                                <span>预判: <strong>${stats.prediction}</strong></span>
-                                <span>样本: <strong>${stats.total}场</strong></span>
-                                <span class="${rateClass}">命中率: <strong>${stats.rate}%</strong></span>
-                            </div>
+                            <table class="pattern-stats-table">
+                                <tr><th>预判</th><th>样本</th><th>小3球(0-2)</th><th>恰好3球</th><th>大3球(4+)</th></tr>
+                                <tr>
+                                    <td><strong>${stats.prediction}</strong></td>
+                                    <td><strong>${stats.total}场</strong></td>
+                                    <td class="${sClass}">${sText}</td>
+                                    <td class="${mClass}">${mText}</td>
+                                    <td class="${bClass}">${bText}</td>
+                                </tr>
+                            </table>
                         </div>
                     `;
                 }
