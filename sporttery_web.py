@@ -3216,11 +3216,24 @@ def test_law3():
                     }
                 except: pass
         
-        # 调用分析函数
-        result = _analyze_hhad_low_draw(d, recent_form)
+        # 调用分析函数，并捕获内部变量
+        import inspect
+        source_lines = inspect.getsource(_analyze_hhad_low_draw)
         
-        # 返回详细调试信息
+        # 修改函数，添加debug输出
+        debug_info = {
+            'match_id': '2039323',
+            'recent_form_passed': recent_form,
+            'recent_form_valid': recent_form is not None and recent_form.get('home_avg') is not None
+        }
+        
+        # 手动计算所有中间变量
+        hhad = d.get('hhad', {})
         had = d.get('had', {})
+        
+        hhad_win = float(hhad.get('让胜', 0))
+        hhad_draw = float(hhad.get('让平', 0))
+        
         had_win = 0
         if had:
             if '胜' in had:
@@ -3228,16 +3241,23 @@ def test_law3():
             elif '主胜' in had:
                 had_win = float(had.get('主胜', 0))
         
-        debug_info = {
-            'match_id': '2039323',
-            'hhad_win': float(d.get('hhad', {}).get('让胜', 0)),
-            'hhad_draw': float(d.get('hhad', {}).get('让平', 0)),
-            'had': had,
-            'had_win': had_win,
-            'recent_form': recent_form,
-            'is_law3': float(d.get('hhad', {}).get('让胜', 0)) < 2.2 and float(d.get('hhad', {}).get('让平', 0)) >= 3.7 and recent_form is not None and (recent_form.get('home_avg', 0) - recent_form.get('away_avg', 0)) > 0 and 0 < had_win < 1.5,
-            'result': result,
-        }
+        form_diff = None
+        if recent_form and recent_form.get('home_avg') is not None:
+            form_diff = recent_form['home_avg'] - recent_form['away_avg']
+        
+        debug_info['hhad_win'] = hhad_win
+        debug_info['hhad_draw'] = hhad_draw
+        debug_info['had_win'] = had_win
+        debug_info['form_diff'] = form_diff
+        debug_info['condition_1_hhad_win_lt_2.2'] = hhad_win < 2.2
+        debug_info['condition_2_hhad_draw_ge_3.7'] = hhad_draw >= 3.7
+        debug_info['condition_3_form_diff_gt_0'] = form_diff is not None and form_diff > 0
+        debug_info['condition_4_had_win_in_0_1.5'] = 0 < had_win < 1.5
+        debug_info['is_law3_calculated'] = hhad_win < 2.2 and hhad_draw >= 3.7 and form_diff is not None and form_diff > 0 and 0 < had_win < 1.5
+        
+        # 调用原函数
+        result = _analyze_hhad_low_draw(d, recent_form)
+        debug_info['function_result'] = result
         
         return jsonify(debug_info)
     except Exception as e:
