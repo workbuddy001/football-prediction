@@ -1470,8 +1470,8 @@ HTML_TEMPLATE = '''
                             <button class="btn-save-score" onclick="saveScore('${m.match_id}')">💾 保存</button>
                             <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
                             <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
-                            ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type ? `
-                            <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.signal_type}')">📊 命中率</button>
+                            ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.signal_type ? `
+                            <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.big3_vs_small3.signal_type}')">📊 命中率</button>
                             ` : ''}
                         </div>
                     <div id="score-msg-${m.match_id}" class="score-msg"></div>
