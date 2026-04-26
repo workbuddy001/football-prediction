@@ -898,13 +898,14 @@ HTML_TEMPLATE = '''
         .factor-tag-new {
             font-size: 13px !important;
             font-weight: bold;
-            background: linear-gradient(135deg, rgba(251,191,36,0.25), rgba(251,191,36,0.1));
-            border: 1.5px solid #f59e0b;
-            color: #fbbf24;
+            background: linear-gradient(135deg, rgba(250,204,21,0.4), rgba(234,179,8,0.25));
+            border: 2px solid #fde047;
+            color: #fef08a !important;
             padding: 4px 12px;
             border-radius: 12px;
             animation: pulse-glow 2s ease-in-out infinite;
-            box-shadow: 0 0 8px rgba(251,191,36,0.3);
+            box-shadow: 0 0 12px rgba(250,204,21,0.5);
+            text-shadow: 0 0 6px rgba(250,204,21,0.8);
         }
         @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 0 8px rgba(251,191,36,0.3); }
@@ -945,7 +946,7 @@ HTML_TEMPLATE = '''
         .signal-super .g3-signal-tag { color: #a855f7; font-weight: bold; font-size: 12px; }
         .signal-super .g3-signal-score { color: #a855f7; }
         .g3-warnings { margin-top: 8px; }
-        .g3-warning-item { font-size: 12px; color: #e67e22; background: rgba(230,126,34,0.1); border-left: 3px solid #e67e22; padding: 5px 10px; border-radius: 0 6px 6px 0; margin-bottom: 4px; }
+        .g3-warning-item { font-size: 12px; color: #ef4444; background: rgba(239,68,68,0.1); border-left: 3px solid #ef4444; padding: 5px 10px; border-radius: 0 6px 6px 0; margin-bottom: 4px; }
         .g3-prediction-title { font-size: 13px; color: #ffd700; font-weight: bold; margin-bottom: 8px; }
         .g3-prediction-value { font-size: 20px; font-weight: bold; padding: 8px 12px; border-radius: 8px; text-align: center; margin-bottom: 8px; }
         .g3-prediction-value.rec-focus { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
@@ -1532,18 +1533,18 @@ HTML_TEMPLATE = '''
                                     <span style="background:${tagBg};color:${tagColor};padding:2px 8px;border-radius:4px;font-weight:bold;font-size:11px;">推荐${h.hhad_pick}</span>
                                     <span style="color:#94a3b8;">置信度 ${h.hhad_confidence}%</span>
                                 </div>
-                                ${h.hints.map(tip => `<div style="color:#cbd5e1;margin:2px 0 2px 4px;">• ${tip}</div>`).join('')}
+                                ${h.hints.map(tip => `<div style="color:${tip.includes('⚠️') ? '#ef4444' : '#cbd5e1'};margin:2px 0 2px 4px;">• ${tip}</div>`).join('')}
                                 ${h.mid_hints && h.mid_hints.length > 0 ? `
                                 <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
-                                    ${h.mid_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
+                                    ${h.mid_hints.map(tip => `<div style="color:${tip.includes('⚠️') ? '#ef4444' : '#fbbf24'};font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
                                 </div>` : ''}
                                 ${h.midlow_hints && h.midlow_hints.length > 0 ? `
                                 <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
-                                    ${h.midlow_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
+                                    ${h.midlow_hints.map(tip => `<div style="color:${tip.includes('⚠️') ? '#ef4444' : '#fbbf24'};font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
                                 </div>` : ''}
                                 ${h.high_hints && h.high_hints.length > 0 ? `
                                 <div style="margin-top:6px;padding:4px 8px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);border-radius:4px;">
-                                    ${h.high_hints.map(tip => `<div style="color:#fbbf24;font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
+                                    ${h.high_hints.map(tip => `<div style="color:${tip.includes('⚠️') ? '#ef4444' : '#fbbf24'};font-size:11px;margin:2px 0;">• ${tip}</div>`).join('')}
                                 </div>` : ''}
                                 ${h.draw_signal ? `
                                 <div style="margin-top:8px;padding:6px 8px;background:rgba(234,179,8,0.10);border:1px solid rgba(234,179,8,0.25);border-radius:6px;">
