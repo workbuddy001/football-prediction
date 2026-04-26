@@ -867,6 +867,13 @@ HTML_TEMPLATE = '''
         .final-rec-bet { border: 2px solid #22c55e; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
         .final-rec-no-bet { border: 2px solid #ef4444; box-shadow: 0 0 15px rgba(239,68,68,0.2); }
         .final-rec-watch { border: 2px solid #f59e0b; box-shadow: 0 0 15px rgba(245,158,11,0.2); }
+        /* 3个高置信度3球规律 - 醒目显示 */
+        .final-rec-golden-3-20-21 { border: 3px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3); background: linear-gradient(135deg, #2d1f00 0%, #1a1200 100%); }
+        .final-rec-super-3 { border: 3px solid #ff6b6b; box-shadow: 0 0 20px rgba(255,107,107,0.3); background: linear-gradient(135deg, #2d0000 0%, #1a0000 100%); }
+        .final-rec-0-20-21-form { border: 3px solid #4ade80; box-shadow: 0 0 20px rgba(74,222,128,0.3); background: linear-gradient(135deg, #0d1a0d 0%, #0d1a0d 100%); }
+        .final-rec-golden-3-20-21 .final-rec-title { color: #ffd700; font-size: 17px; }
+        .final-rec-super-3 .final-rec-title { color: #ff6b6b; font-size: 17px; }
+        .final-rec-0-20-21-form .final-rec-title { color: #4ade80; font-size: 17px; }
         .final-rec-title { font-size: 15px; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
         .final-rec-bet .final-rec-title { color: #22c55e; }
         .final-rec-no-bet .final-rec-title { color: #ef4444; }
@@ -1348,10 +1355,16 @@ HTML_TEMPLATE = '''
 
                     <!-- 最终推荐 -->
                     ${m.g3_prediction && m.g3_prediction.final_rec ? `
-                    <div class="final-rec-box ${m.g3_prediction.final_rec.is_bet ? 'final-rec-bet' : m.g3_prediction.final_rec.recommendation === '不投注' ? 'final-rec-no-bet' : 'final-rec-watch'}">
+                    <div class="final-rec-box ${m.g3_prediction.final_rec.signal_type === '黄金3球+0球20-21' ? 'final-rec-golden-3-20-21' :
+                      m.g3_prediction.final_rec.signal_type === '超级3球' ? 'final-rec-super-3' :
+                      m.g3_prediction.final_rec.signal_type === '0球20-21+近况2.5-3.5' ? 'final-rec-0-20-21-form' :
+                      (m.g3_prediction.final_rec.is_bet ? 'final-rec-bet' : m.g3_prediction.final_rec.recommendation === '不投注' ? 'final-rec-no-bet' : 'final-rec-watch')}">
                         <div class="final-rec-title">
-                            ${m.g3_prediction.final_rec.recommendation === '不投注' ? '❌ 建议不投注' :
-                              m.g3_prediction.final_rec.is_bet ? '✅ 建议投注' : '👁️ 观望'}
+                            ${m.g3_prediction.final_rec.signal_type === '黄金3球+0球20-21' ? '⭐⭐⭐ 黄金3球+0球20-21 (70.0%)' :
+                              m.g3_prediction.final_rec.signal_type === '超级3球' ? '⭐⭐ 超级3球 (60.0%)' :
+                              m.g3_prediction.final_rec.signal_type === '0球20-21+近况2.5-3.5' ? '⭐ 0球20-21+近况2.5-3.5 (53.3%)' :
+                              (m.g3_prediction.final_rec.recommendation === '不投注' ? '❌ 建议不投注' :
+                               m.g3_prediction.final_rec.is_bet ? '✅ 建议投注' : '👁️ 观望')}
                             ${m.g3_prediction.final_rec.signal_type ? `<span class="signal-type-tag">${m.g3_prediction.final_rec.signal_type}</span>` : ''}
                         </div>
                         <div class="final-rec-content">
