@@ -2383,17 +2383,22 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     is_law2 = (1.7 <= hhad_win < 2.0) and (3.3 <= hhad_draw < 3.7) and form_diff is not None and form_diff < -0.3
 
     # 新增规律3: 让胜<2.2 + 让平>=3.7 + 主近况好(form_diff>0) + had_win<1.5 → 让胜87.5%
-    had = None
     had_win = 0
     try:
         had = d.get('had', {})
         if had:
             if '胜' in had:
-                had_win = float(had.get('胜', 0))
+                had_win = float(had['胜'])  # 直接用[]访问，如果key不存在会抛异常（方便调试）
             elif '主胜' in had:
-                had_win = float(had.get('主胜', 0))
-    except: pass
+                had_win = float(had['主胜'])
+            else:
+                # 打印had的所有keys，方便调试
+                print(f'[DEBUG] had keys: {list(had.keys())}, cannot find had_win')
+    except Exception as e:
+        print(f'[DEBUG] Error reading had_win: {e}')
+        pass
     is_law3 = hhad_win < 2.2 and hhad_draw >= 3.7 and form_diff is not None and form_diff > 0 and 0 < had_win < 1.5
+    print(f'[DEBUG] is_law3 calculation: hhad_win={hhad_win}<2.2, hhad_draw={hhad_draw}>=3.7, form_diff={form_diff}>0, had_win={had_win} in (0,1.5) → {is_law3}')
 
     # 中赔前置条件: 主受让 + 客队近况好(form_diff < -0.3)
     is_mid_match = is_mid and (not is_home_let) and form_diff is not None and form_diff < -0.3
