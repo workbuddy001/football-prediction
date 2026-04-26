@@ -2441,7 +2441,10 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         hhad_pick = '让胜'
         hhad_confidence = 78
         hints.append(f'⚡新规律2: 让胜1.7-2.0+让平3.3-3.7+客远好, 让胜率77.8%(9场)')
-        # 低赔率警告（规律2的让胜赔率范围1.7-2.0，不会<1.50，但保留检查）
+        # 1.75-1.79范围警告（回测显示此范围0%命中）
+        if 1.75 <= hhad_win < 1.80:
+            hints.append(f'⚠️ 让胜赔率({hhad_win:.2f})在1.75-1.79范围，回测0%命中，建议谨慎或排除')
+        # 低赔率警告
         if hhad_win < 1.50:
             hints.append(f'⚠️ 让胜赔率过低({hhad_win:.2f}<1.50)，可能存在诱盘风险，请谨慎')
     # 规律3: 让胜<2.2 + 让平>=3.7 + 主近况好 + had_win<1.5 → 让胜87.5%
