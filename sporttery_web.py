@@ -3190,20 +3190,48 @@ def test_law3():
         with open('sporttery_data/2039323.json', 'r', encoding='utf-8') as f:
             d = json_mod.load(f, strict=False)
         
-        # 计算近况差
-        from analyze_328_jingcai import calculate_form_diff
-        recent_form = calculate_form_diff(d)
+        # 手动计算近况差
+        recent_form = None
+        preview = d.get('preview', {})
+        recent = preview.get('recent', {})
+        if recent:
+            home_data = recent.get('home', {})
+            away_data = recent.get('away', {})
+            home_list = home_data.get('matchList', []) if isinstance(home_data, dict) else []
+            away_list = away_data.get('matchList', []) if isinstance(away_data, dict) else []
+            
+            if home_list and away_list:
+                try:
+                    home_avg = sum([float(x.get('homeTeamFullCourtGoalCnt', 0)) for x in home_list]) / len(home_list)
+                    away_avg = sum([float(x.get('awayTeamFullCourtGoalCnt', 0)) for x in away_list]) / len(away_list)
+                    combined_avg = (home_avg + away_avg) / 2
+                    recent_form = {
+                        'home_avg': home_avg,
+                        'away_avg': away_avg,
+                        'combined_avg': combined_avg
+                    }
+                except: pass
         
         # 调用分析函数
         result = _analyze_hhad_low_draw(d, recent_form)
         
         # 返回详细调试信息
+        had = d.get('had', {})
+        had_win = 0
+        if had:
+            if '胜' in had:
+                had_win = float(had.get('胜', 0))
+            elif '主胜' in had:
+                had_win = float(had.get('主胜', 0))
+        
         debug_info = {
             'match_id': '2039323',
             'hhad_win': float(d.get('hhad', {}).get('让胜', 0)),
             'hhad_draw': float(d.get('hhad', {}).get('让平', 0)),
-            'had': d.get('had', {}),
+            'had': had,
+            'had_win': had_win,
             'recent_form': recent_form,
+            'is_law3': float(d.get('hhad', {}).get('让胜', 0)) < 2.2 and float(d.get('hhad', {}).get('让平', 0)) >= 3.7 and recent_form is not None and (recent_form.get('home_avg', 0) - recent_form.get('away_avg', 0)) > 0 and 0 < had_win < 1.5,
             'result': result,
         }
         
