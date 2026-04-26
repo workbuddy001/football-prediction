@@ -1,6 +1,6 @@
 {
   "match_id": "2038721",
-  "fetch_time": "2026-04-22 10:43:50",
+  "fetch_time": "2026-04-26 17:08:35",
   "match_info": {
     "home_team": "挪威",
     "away_team": "瑞士",
@@ -662,37 +662,37 @@
     }
   },
   "ttg_change": {
-    "4球": {
-      "count": 1,
-      "change_pct": -3.2
-    },
-    "0球": {
-      "count": 1,
-      "change_pct": 13.3
-    },
     "7球": {
       "count": 4,
       "change_pct": -34.8
     },
-    "3球": {
+    "4球": {
       "count": 1,
-      "change_pct": 2.9
+      "change_pct": -3.2
     },
     "1球": {
       "count": 2,
       "change_pct": 14.0
     },
-    "5球": {
-      "count": 2,
-      "change_pct": -10.5
-    },
     "2球": {
       "count": 3,
       "change_pct": 8.3
     },
+    "0球": {
+      "count": 1,
+      "change_pct": 13.3
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -10.5
+    },
     "6球": {
       "count": 3,
       "change_pct": -18.8
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 2.9
     }
   },
   "hafu_change": {},

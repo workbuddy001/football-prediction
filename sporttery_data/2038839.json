@@ -1,6 +1,6 @@
 {
   "match_id": "2038839",
-  "fetch_time": "2026-04-21 18:01:05",
+  "fetch_time": "2026-04-26 11:57:28",
   "match_info": {
     "home_team": "川崎前锋",
     "away_team": "浦和红钻",
@@ -308,13 +308,13 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 11,
+            "appearanceCnt": 12,
             "injuryFlag": 1,
             "personId": 538929,
             "personName": "K. Shibato",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 9,
+            "startedMatchCnt": 10,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "22"
@@ -364,7 +364,7 @@
           },
           {
             "awayTeamFullCourtGoalCnt": "1",
-            "awayTeamId": 0,
+            "awayTeamId": 552,
             "awayTeamShortName": "柏太阳神",
             "fullCourtGoal": "1:1",
             "halfTimeGoal": "0:0",
@@ -422,7 +422,7 @@
             "halfTimeGoal": "1:0",
             "homeMatchResult": "",
             "homeTeamFullCourtGoalCnt": "2",
-            "homeTeamId": 560,
+            "homeTeamId": 0,
             "homeTeamShortName": "浦和红钻",
             "matchDate": "2026-03-07",
             "matchId": 2496741,
@@ -646,31 +646,31 @@
           "groupName": "East",
           "lossGoalMatchCnt": 4,
           "phaseName": "",
-          "points": "17",
-          "ranking": "5",
+          "points": "20",
+          "ranking": "4",
           "sportteryTeamId": 553,
           "teamId": 0,
           "teamShortName": "川崎前锋",
-          "totalLegCnt": 11,
+          "totalLegCnt": 12,
           "uniformTeamId": 477,
-          "winGoalMatchCnt": 4,
-          "winProbability": "36%"
+          "winGoalMatchCnt": 5,
+          "winProbability": "42%"
         },
         {
           "drawMatchCnt": 3,
           "groupId": 13676,
           "groupName": "East",
-          "lossGoalMatchCnt": 5,
+          "lossGoalMatchCnt": 6,
           "phaseName": "",
           "points": "12",
           "ranking": "7",
           "sportteryTeamId": 560,
           "teamId": 0,
           "teamShortName": "浦和红钻",
-          "totalLegCnt": 11,
+          "totalLegCnt": 12,
           "uniformTeamId": 159,
           "winGoalMatchCnt": 3,
-          "winProbability": "27%"
+          "winProbability": "25%"
         }
       ],
       "tournamentId": 2271,
@@ -682,58 +682,58 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 10,
+            "appearanceCnt": 11,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.4",
             "goalCnt": 4,
-            "goalProbability": "29%",
+            "goalProbability": "27%",
             "injuryFlag": 0,
             "personId": 887686,
             "personName": "肥田野蓮治",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 7,
+            "startedMatchCnt": 8,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "36"
           },
           {
-            "appearanceCnt": 11,
+            "appearanceCnt": 12,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 2,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 604398,
+            "personName": "T. Kaneko",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "77"
+          },
+          {
+            "appearanceCnt": 12,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.2",
             "goalCnt": 2,
-            "goalProbability": "14%",
+            "goalProbability": "13%",
             "injuryFlag": 0,
             "personId": 319220,
             "personName": "R. Watanabe",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 11,
+            "startedMatchCnt": 12,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "13"
-          },
-          {
-            "appearanceCnt": 11,
-            "assistAvgCnt": "0.3",
-            "assistCnt": 3,
-            "assistProbability": "33%",
-            "goalAvgCnt": "0.1",
-            "goalCnt": 1,
-            "goalProbability": "7%",
-            "injuryFlag": 0,
-            "personId": 398674,
-            "personName": "Matheus Sávio",
-            "playerPositionCode": "Midfielder",
-            "playerPositionDesc": "中场",
-            "startedMatchCnt": 11,
-            "substituteMatchCnt": 0,
-            "suspensionFlag": 0,
-            "uniformNo": "8"
           }
         ],
         "sportteryTeamId": 560,
@@ -744,55 +744,55 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 11,
+            "appearanceCnt": 12,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.6",
             "goalCnt": 7,
-            "goalProbability": "47%",
+            "goalProbability": "41%",
             "injuryFlag": 0,
             "personId": 593697,
             "personName": "Erison",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 8,
-            "substituteMatchCnt": 3,
+            "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 10,
-            "assistAvgCnt": "0.2",
-            "assistCnt": 2,
-            "assistProbability": "22%",
+            "appearanceCnt": 11,
+            "assistAvgCnt": "0.4",
+            "assistCnt": 4,
+            "assistProbability": "36%",
             "goalAvgCnt": "0.3",
             "goalCnt": 3,
-            "goalProbability": "20%",
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 533300,
             "personName": "Y. Wakizaka",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 10,
+            "startedMatchCnt": 11,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "14"
           },
           {
-            "appearanceCnt": 11,
+            "appearanceCnt": 12,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.2",
             "goalCnt": 2,
-            "goalProbability": "13%",
+            "goalProbability": "12%",
             "injuryFlag": 0,
             "personId": 477058,
             "personName": "L. Romanić",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 3,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "91"
@@ -812,40 +812,44 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 4,
-      "change_pct": -22.7
-    },
     "2球": {
       "count": 2,
       "change_pct": 2.7
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": 6.0
     },
     "0球": {
       "count": 1,
       "change_pct": 7.1
     },
-    "5球": {
-      "count": 1,
-      "change_pct": -3.1
-    },
     "6球": {
       "count": 3,
       "change_pct": -13.3
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 7.1
+    },
+    "7球": {
+      "count": 4,
+      "change_pct": -22.7
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": 6.0
     },
     "4球": {
       "count": 2,
       "change_pct": -7.0
     },
-    "1球": {
-      "count": 2,
-      "change_pct": 7.1
+    "5球": {
+      "count": 1,
+      "change_pct": -3.1
     }
   },
   "hafu_change": {
+    "胜负": {
+      "count": 1,
+      "change_pct": -4.5
+    },
     "胜平": {
       "count": 2,
       "change_pct": -7.1
@@ -858,29 +862,25 @@
       "count": 2,
       "change_pct": -7.1
     },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "平负": {
       "count": 1,
       "change_pct": -1.8
-    },
-    "胜负": {
-      "count": 1,
-      "change_pct": -4.5
     },
     "平平": {
       "count": 1,
       "change_pct": 3.6
     },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
+    "胜胜": {
+      "count": 2,
+      "change_pct": 3.8
     },
     "负负": {
       "count": 2,
       "change_pct": -1.3
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 3.8
     }
   },
   "exclusion_list": [

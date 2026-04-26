@@ -1,6 +1,6 @@
 {
   "match_id": "2038870",
-  "fetch_time": "2026-04-21 17:39:04",
+  "fetch_time": "2026-04-26 11:57:58",
   "match_info": {
     "home_team": "布莱克本",
     "away_team": "西布罗姆维奇",
@@ -320,14 +320,14 @@
             "uniformNo": "5"
           },
           {
-            "appearanceCnt": 24,
+            "appearanceCnt": 26,
             "injuryFlag": 1,
             "personId": 377873,
             "personName": "阿亨-格兰特",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 17,
-            "substituteMatchCnt": 7,
+            "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
@@ -344,13 +344,13 @@
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 33,
+            "appearanceCnt": 35,
             "injuryFlag": 1,
             "personId": 425829,
             "personName": "O.迪亚基特",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 10,
             "suspensionFlag": 0,
             "uniformNo": "17"
@@ -368,14 +368,14 @@
             "uniformNo": "2"
           },
           {
-            "appearanceCnt": 1,
+            "appearanceCnt": 3,
             "injuryFlag": 1,
             "personId": 715448,
             "personName": "T. Bany",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 0,
-            "substituteMatchCnt": 1,
+            "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "26"
           }
@@ -424,13 +424,13 @@
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "injuryFlag": 1,
             "personId": 516482,
             "personName": "E. Cashin",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 18,
+            "startedMatchCnt": 19,
             "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "20"
@@ -508,14 +508,14 @@
             "uniformNo": "40"
           },
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "injuryFlag": 1,
             "personId": 799497,
             "personName": "M. Baradji",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 17,
-            "substituteMatchCnt": 13,
+            "substituteMatchCnt": 14,
             "suspensionFlag": 0,
             "uniformNo": "24"
           }
@@ -839,31 +839,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 19,
           "phaseName": "",
-          "points": "49",
-          "ranking": "21",
+          "points": "52",
+          "ranking": "20",
           "sportteryTeamId": 4,
           "teamId": 0,
           "teamShortName": "布莱克本",
-          "totalLegCnt": 44,
+          "totalLegCnt": 45,
           "uniformTeamId": 3,
-          "winGoalMatchCnt": 12,
-          "winProbability": "27%"
+          "winGoalMatchCnt": 13,
+          "winProbability": "29%"
         },
         {
-          "drawMatchCnt": 13,
+          "drawMatchCnt": 14,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 18,
           "phaseName": "",
-          "points": "49",
-          "ranking": "20",
+          "points": "51",
+          "ranking": "21",
           "sportteryTeamId": 20,
           "teamId": 0,
           "teamShortName": "西布罗姆",
-          "totalLegCnt": 43,
+          "totalLegCnt": 45,
           "uniformTeamId": 206,
-          "winGoalMatchCnt": 12,
-          "winProbability": "28%"
+          "winGoalMatchCnt": 13,
+          "winProbability": "29%"
         }
       ],
       "tournamentId": 278,
@@ -875,55 +875,55 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 43,
+            "appearanceCnt": 45,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "9%",
             "goalAvgCnt": "0.2",
             "goalCnt": 9,
-            "goalProbability": "20%",
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 550211,
             "personName": "A. Heggebø",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 35,
-            "substituteMatchCnt": 8,
+            "startedMatchCnt": 36,
+            "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 43,
+            "appearanceCnt": 45,
             "assistAvgCnt": "0",
             "assistCnt": 2,
-            "assistProbability": "5%",
+            "assistProbability": "4%",
             "goalAvgCnt": "0.2",
-            "goalCnt": 8,
-            "goalProbability": "17%",
+            "goalCnt": 9,
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 641166,
             "personName": "I. Price",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 40,
+            "startedMatchCnt": 42,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "21"
           },
           {
-            "appearanceCnt": 36,
+            "appearanceCnt": 38,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
-            "assistProbability": "5%",
+            "assistProbability": "4%",
             "goalAvgCnt": "0.1",
             "goalCnt": 4,
-            "goalProbability": "9%",
+            "goalProbability": "8%",
             "injuryFlag": 0,
             "personId": 496558,
             "personName": "G.坎贝尔",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 30,
+            "startedMatchCnt": 32,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "6"
@@ -937,19 +937,19 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 44,
+            "appearanceCnt": 45,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "3%",
             "goalAvgCnt": "0.2",
-            "goalCnt": 8,
-            "goalProbability": "21%",
+            "goalCnt": 10,
+            "goalProbability": "24%",
             "injuryFlag": 0,
             "personId": 565519,
             "personName": "Y. Ohashi",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 36,
+            "startedMatchCnt": 37,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "23"
@@ -961,7 +961,7 @@
             "assistProbability": "0%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
-            "goalProbability": "18%",
+            "goalProbability": "17%",
             "injuryFlag": 1,
             "personId": 502104,
             "personName": "A. Guðjohnsen",
@@ -973,20 +973,20 @@
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "10%",
+            "assistProbability": "9%",
             "goalAvgCnt": "0.2",
             "goalCnt": 5,
-            "goalProbability": "13%",
+            "goalProbability": "12%",
             "injuryFlag": 0,
             "personId": 454456,
             "personName": "T. Cantwell",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 22,
-            "substituteMatchCnt": 4,
+            "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "10"
           }
@@ -1006,6 +1006,10 @@
   },
   "ttg_change": {},
   "hafu_change": {
+    "胜负": {
+      "count": 1,
+      "change_pct": 3.8
+    },
     "胜平": {
       "count": 2,
       "change_pct": -6.7
@@ -1018,29 +1022,25 @@
       "count": 2,
       "change_pct": -6.7
     },
+    "负胜": {
+      "count": 1,
+      "change_pct": 7.1
+    },
     "平负": {
       "count": 2,
       "change_pct": 7.3
-    },
-    "胜负": {
-      "count": 1,
-      "change_pct": 3.8
     },
     "平平": {
       "count": 3,
       "change_pct": -8.2
     },
-    "负胜": {
+    "胜胜": {
       "count": 1,
-      "change_pct": 7.1
+      "change_pct": 5.7
     },
     "负负": {
       "count": 0,
       "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 5.7
     }
   },
   "exclusion_list": [

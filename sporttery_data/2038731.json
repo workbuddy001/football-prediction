@@ -1,6 +1,6 @@
 {
   "match_id": "2038731",
-  "fetch_time": "2026-04-25 19:38:13",
+  "fetch_time": "2026-04-26 11:56:05",
   "match_info": {
     "home_team": "科索沃",
     "away_team": "土耳其",
@@ -718,23 +718,27 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 1,
-      "change_pct": -10.7
-    },
-    "5球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "2球": {
       "count": 1,
       "change_pct": 1.5
     },
-    "3球": {
+    "0球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "0球": {
+    "6球": {
+      "count": 1,
+      "change_pct": -8.3
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 2.1
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": -10.7
+    },
+    "3球": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -742,50 +746,46 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "1球": {
-      "count": 1,
-      "change_pct": 2.1
-    },
-    "6球": {
-      "count": 1,
-      "change_pct": -8.3
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {
-    "胜胜": {
-      "count": 4,
-      "change_pct": -2.5
-    },
     "胜负": {
       "count": 1,
       "change_pct": 4.3
     },
-    "负胜": {
-      "count": 1,
-      "change_pct": -6.7
-    },
-    "负负": {
-      "count": 4,
+    "胜平": {
+      "count": 0,
       "change_pct": 0.0
     },
     "平胜": {
       "count": 3,
       "change_pct": 6.7
     },
-    "平平": {
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
       "count": 1,
-      "change_pct": 2.8
+      "change_pct": -6.7
     },
     "平负": {
       "count": 3,
       "change_pct": -4.2
     },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
+    "平平": {
+      "count": 1,
+      "change_pct": 2.8
     },
-    "胜平": {
-      "count": 0,
+    "胜胜": {
+      "count": 4,
+      "change_pct": -2.5
+    },
+    "负负": {
+      "count": 4,
       "change_pct": 0.0
     }
   },

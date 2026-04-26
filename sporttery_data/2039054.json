@@ -1,6 +1,6 @@
 {
   "match_id": "2039054",
-  "fetch_time": "2026-04-21 11:29:23",
+  "fetch_time": "2026-04-26 11:59:06",
   "match_info": {
     "home_team": "斯图加特",
     "away_team": "汉堡",
@@ -332,25 +332,25 @@
             "uniformNo": "15"
           },
           {
-            "appearanceCnt": 22,
+            "appearanceCnt": 23,
             "injuryFlag": 1,
             "personId": 462600,
             "personName": "A.洛贡加",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 17,
-            "substituteMatchCnt": 5,
+            "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "6"
           },
           {
-            "appearanceCnt": 22,
+            "appearanceCnt": 23,
             "injuryFlag": 1,
             "personId": 592360,
             "personName": "N. Capaldo",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 20,
+            "startedMatchCnt": 21,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "24"
@@ -803,7 +803,7 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 25,
+            "appearanceCnt": 26,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
             "assistProbability": "22%",
@@ -815,13 +815,13 @@
             "personName": "Fabio Vieira",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 21,
+            "startedMatchCnt": 22,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "20"
           },
           {
-            "appearanceCnt": 25,
+            "appearanceCnt": 26,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -834,12 +834,12 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 12,
-            "substituteMatchCnt": 13,
+            "substituteMatchCnt": 14,
             "suspensionFlag": 0,
             "uniformNo": "14"
           },
           {
-            "appearanceCnt": 22,
+            "appearanceCnt": 23,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -852,7 +852,7 @@
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 17,
-            "substituteMatchCnt": 5,
+            "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "6"
           }
@@ -937,71 +937,71 @@
       "count": 3,
       "change_pct": 17.6
     },
-    "1球": {
-      "count": 3,
-      "change_pct": 28.6
-    },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "0球": {
       "count": 3,
       "change_pct": 42.9
-    },
-    "4球": {
-      "count": 2,
-      "change_pct": -8.0
     },
     "6球": {
       "count": 2,
       "change_pct": -13.6
     },
-    "5球": {
-      "count": 2,
-      "change_pct": -13.0
+    "1球": {
+      "count": 3,
+      "change_pct": 28.6
     },
     "7球": {
       "count": 3,
       "change_pct": -25.0
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": -8.0
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -13.0
     }
   },
   "hafu_change": {
-    "负胜": {
-      "count": 1,
-      "change_pct": -9.5
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "胜平": {
       "count": 1,
       "change_pct": 11.8
     },
-    "负负": {
-      "count": 3,
-      "change_pct": 38.1
-    },
-    "平负": {
-      "count": 4,
-      "change_pct": 42.9
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
+    "平胜": {
+      "count": 1,
+      "change_pct": 2.4
     },
     "负平": {
       "count": 1,
       "change_pct": 11.8
     },
+    "负胜": {
+      "count": 1,
+      "change_pct": -9.5
+    },
+    "平负": {
+      "count": 4,
+      "change_pct": 42.9
+    },
     "平平": {
       "count": 4,
       "change_pct": 31.2
     },
-    "平胜": {
-      "count": 1,
-      "change_pct": 2.4
-    },
     "胜胜": {
       "count": 4,
       "change_pct": -14.4
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": 38.1
     }
   },
   "exclusion_list": [

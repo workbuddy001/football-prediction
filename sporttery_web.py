@@ -2454,6 +2454,7 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     form_diff = None
     combined_avg = None
     form_away = None  # 客近况（用于条件2判断）
+    is_cond2 = False  # 初始化条件2标志（避免引用前未赋值）
     if recent_form and recent_form.get('home_avg') is not None:
         form_diff = recent_form['home_avg'] - recent_form['away_avg']
         combined_avg = recent_form['combined_avg']

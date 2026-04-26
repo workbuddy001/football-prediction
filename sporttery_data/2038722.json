@@ -1,6 +1,6 @@
 {
   "match_id": "2038722",
-  "fetch_time": "2026-04-23 00:30:01",
+  "fetch_time": "2026-04-26 17:08:23",
   "match_info": {
     "home_team": "黑山",
     "away_team": "斯洛文尼亚",
@@ -653,19 +653,19 @@
       "count": 1,
       "change_pct": -9.5
     },
-    "1球": {
+    "4球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "6球": {
-      "count": 1,
-      "change_pct": -7.1
+    "1球": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "2球": {
       "count": 1,
       "change_pct": 1.6
     },
-    "4球": {
+    "0球": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -673,11 +673,11 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
+    "6球": {
+      "count": 1,
+      "change_pct": -7.1
     },
-    "0球": {
+    "3球": {
       "count": 0,
       "change_pct": 0.0
     }

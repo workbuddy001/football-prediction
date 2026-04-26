@@ -1,6 +1,6 @@
 {
   "match_id": "2038725",
-  "fetch_time": "2026-04-23 00:29:37",
+  "fetch_time": "2026-04-26 07:52:57",
   "match_info": {
     "home_team": "摩洛哥",
     "away_team": "巴拉圭",
@@ -635,53 +635,41 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 1,
-      "change_pct": 9.8
-    },
-    "1球": {
+    "3球": {
       "count": 2,
-      "change_pct": 8.1
-    },
-    "6球": {
-      "count": 1,
-      "change_pct": 3.7
-    },
-    "2球": {
-      "count": 2,
-      "change_pct": -4.9
-    },
-    "4球": {
-      "count": 0,
-      "change_pct": 0.0
+      "change_pct": -5.2
     },
     "5球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "3球": {
+    "6球": {
+      "count": 1,
+      "change_pct": 3.7
+    },
+    "1球": {
       "count": 2,
-      "change_pct": -5.2
+      "change_pct": 8.1
     },
     "0球": {
       "count": 1,
       "change_pct": 6.2
-    }
-  },
-  "hafu_change": {
-    "负胜": {
-      "count": 1,
-      "change_pct": 9.1
     },
-    "平平": {
+    "4球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "负负": {
-      "count": 2,
-      "change_pct": 9.6
+    "7球": {
+      "count": 1,
+      "change_pct": 9.8
     },
-    "负平": {
+    "2球": {
+      "count": 2,
+      "change_pct": -4.9
+    }
+  },
+  "hafu_change": {
+    "平平": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -693,10 +681,6 @@
       "count": 2,
       "change_pct": -1.6
     },
-    "胜负": {
-      "count": 1,
-      "change_pct": 2.9
-    },
     "平胜": {
       "count": 3,
       "change_pct": -9.1
@@ -704,6 +688,22 @@
     "平负": {
       "count": 2,
       "change_pct": 7.6
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 9.1
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 9.6
     }
   },
   "exclusion_list": [

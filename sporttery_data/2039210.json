@@ -1,6 +1,6 @@
 {
   "match_id": "2039210",
-  "fetch_time": "2026-04-20 20:23:59",
+  "fetch_time": "2026-04-26 12:04:52",
   "match_info": {
     "home_team": "摩雷伦斯",
     "away_team": "埃斯托里尔",
@@ -8,76 +8,76 @@
     "time": ""
   },
   "score_odds": {
-    "05:00": "400.0",
-    "01:00": "9.00",
-    "05:02": "400.0",
+    "05:00": "350.0",
+    "01:00": "10.50",
+    "05:02": "250.0",
     "05:01": "250.0",
-    "02:04": "80.00",
-    "02:05": "350.0",
-    "02:02": "11.00",
-    "02:03": "25.00",
-    "02:00": "14.50",
-    "02:01": "8.25",
-    "03:03": "45.00",
-    "03:01": "20.00",
-    "03:02": "27.00",
-    "03:00": "30.00",
-    "00:01": "7.50",
-    "00:00": "12.00",
+    "02:04": "60.00",
+    "02:05": "175.0",
+    "02:02": "9.50",
+    "02:03": "23.00",
+    "02:00": "16.00",
+    "02:01": "8.50",
+    "03:03": "35.00",
+    "03:01": "21.00",
+    "03:02": "28.00",
+    "03:00": "32.00",
+    "00:01": "8.25",
+    "00:00": "13.00",
     "00:03": "23.00",
     "00:02": "11.00",
-    "00:05": "250.0",
+    "00:05": "200.0",
     "00:04": "60.00",
-    "04:02": "100.0",
+    "04:02": "80.00",
     "04:01": "60.00",
     "04:00": "100.0",
     "01:02": "7.50",
     "01:01": "6.20",
     "01:04": "50.00",
-    "01:03": "17.00",
-    "01:05": "200.0"
+    "01:03": "16.00",
+    "01:05": "150.0"
   },
   "total_goals": {
-    "3球": "3.45",
-    "4球": "5.10",
+    "3球": "3.30",
+    "4球": "4.85",
     "5球": "9.50",
     "6球": "17.00",
-    "7球": "25.00",
-    "0球": "12.00",
-    "1球": "4.95",
-    "2球": "3.60"
+    "7球": "27.00",
+    "0球": "13.00",
+    "1球": "5.20",
+    "2球": "3.65"
   },
   "had": {
-    "胜": "2.99",
-    "平": "2.94",
-    "负": "2.20"
+    "胜": "3.05",
+    "平": "3.00",
+    "负": "2.14"
   },
   "ttg": {
-    "3球": "3.45",
-    "4球": "5.10",
+    "3球": "3.30",
+    "4球": "4.85",
     "5球": "9.50",
     "6球": "17.00",
-    "7球": "25.00",
-    "0球": "12.00",
-    "1球": "4.95",
-    "2球": "3.60"
+    "7球": "27.00",
+    "0球": "13.00",
+    "1球": "5.20",
+    "2球": "3.65"
   },
   "hafu": {
-    "负负": "3.85",
-    "平平": "4.80",
-    "胜胜": "4.55",
+    "负负": "3.60",
+    "平平": "5.00",
+    "胜胜": "4.65",
     "负平": "13.00",
-    "平胜": "6.20",
-    "负胜": "28.00",
+    "平胜": "6.50",
+    "负胜": "31.00",
     "胜负": "25.00",
     "胜平": "13.00",
-    "平负": "5.70"
+    "平负": "5.50"
   },
   "hhad": {
     "让球": "+1",
-    "让胜": "1.52",
-    "让平": "3.75",
-    "让负": "4.90"
+    "让胜": "1.54",
+    "让平": "3.65",
+    "让负": "4.85"
   },
   "preview": {
     "feature": {
@@ -308,25 +308,25 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 7,
+            "appearanceCnt": 8,
             "injuryFlag": 1,
             "personId": 306990,
             "personName": "谢卡",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 3,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "8"
           },
           {
-            "appearanceCnt": 19,
+            "appearanceCnt": 20,
             "injuryFlag": 1,
             "personId": 562057,
             "personName": "A.汤吉",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 11,
+            "startedMatchCnt": 12,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "5"
@@ -658,31 +658,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 13,
           "phaseName": "",
-          "points": "36",
-          "ranking": "9",
+          "points": "39",
+          "ranking": "7",
           "sportteryTeamId": 874,
           "teamId": 0,
           "teamShortName": "摩雷伦斯",
-          "totalLegCnt": 29,
+          "totalLegCnt": 30,
           "uniformTeamId": 456,
-          "winGoalMatchCnt": 10,
-          "winProbability": "34%"
+          "winGoalMatchCnt": 11,
+          "winProbability": "37%"
         },
         {
           "drawMatchCnt": 7,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 12,
+          "lossGoalMatchCnt": 13,
           "phaseName": "",
           "points": "37",
-          "ranking": "8",
+          "ranking": "10",
           "sportteryTeamId": 273,
           "teamId": 0,
           "teamShortName": "埃斯托里",
-          "totalLegCnt": 29,
+          "totalLegCnt": 30,
           "uniformTeamId": 665,
           "winGoalMatchCnt": 10,
-          "winProbability": "34%"
+          "winProbability": "33%"
         }
       ],
       "tournamentId": 140,
@@ -694,11 +694,11 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "3%",
-            "goalAvgCnt": "0.7",
+            "goalAvgCnt": "0.6",
             "goalCnt": 19,
             "goalProbability": "40%",
             "injuryFlag": 0,
@@ -706,13 +706,13 @@
             "personName": "Y.贝格劳伊",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 26,
+            "startedMatchCnt": 27,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "14"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.4",
             "assistCnt": 11,
             "assistProbability": "29%",
@@ -725,12 +725,12 @@
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 28,
-            "substituteMatchCnt": 0,
+            "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "12"
           },
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 24,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -743,7 +743,7 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 13,
-            "substituteMatchCnt": 10,
+            "substituteMatchCnt": 11,
             "suspensionFlag": 0,
             "uniformNo": "9"
           }
@@ -762,7 +762,7 @@
             "assistProbability": "4%",
             "goalAvgCnt": "0.6",
             "goalCnt": 9,
-            "goalProbability": "28%",
+            "goalProbability": "26%",
             "injuryFlag": 0,
             "personId": 293150,
             "personName": "吉列尔梅·斯切蒂内",
@@ -774,37 +774,37 @@
             "uniformNo": "95"
           },
           {
-            "appearanceCnt": 24,
+            "appearanceCnt": 26,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "12%",
+            "assistProbability": "11%",
             "goalAvgCnt": "0.2",
-            "goalCnt": 4,
-            "goalProbability": "13%",
+            "goalCnt": 5,
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 697586,
             "personName": "Diogo Travassos",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 22,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "2"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
-            "assistProbability": "19%",
+            "assistProbability": "18%",
             "goalAvgCnt": "0.1",
-            "goalCnt": 3,
-            "goalProbability": "9%",
+            "goalCnt": 4,
+            "goalProbability": "12%",
             "injuryFlag": 0,
             "personId": 475118,
             "personName": "Alan Souza",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 30,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "11"
@@ -824,106 +824,96 @@
     }
   },
   "ttg_change": {
-    "5球": {
-      "count": 0,
-      "change_pct": 0.0
+    "2球": {
+      "count": 4,
+      "change_pct": 9.0
     },
     "0球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "2球": {
-      "count": 3,
-      "change_pct": 7.5
-    },
-    "1球": {
       "count": 1,
-      "change_pct": 5.3
+      "change_pct": 8.3
     },
     "6球": {
-      "count": 1,
+      "count": 3,
       "change_pct": -5.6
     },
-    "3球": {
-      "count": 1,
-      "change_pct": -2.8
-    },
-    "4球": {
-      "count": 1,
-      "change_pct": -7.3
+    "1球": {
+      "count": 2,
+      "change_pct": 10.6
     },
     "7球": {
-      "count": 1,
-      "change_pct": -10.7
+      "count": 3,
+      "change_pct": -3.6
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -7.0
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": -11.8
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {
-    "负负": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
-    },
-    "平负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平平": {
-      "count": 2,
-      "change_pct": -4.0
-    },
-    "负胜": {
-      "count": 1,
-      "change_pct": 3.7
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 5.8
-    },
-    "平胜": {
-      "count": 1,
-      "change_pct": 3.3
-    },
-    "负平": {
-      "count": 2,
-      "change_pct": -7.1
     },
     "胜平": {
       "count": 2,
       "change_pct": -7.1
     },
-    "胜负": {
-      "count": 0,
+    "平胜": {
+      "count": 2,
+      "change_pct": 8.3
+    },
+    "负平": {
+      "count": 2,
+      "change_pct": -7.1
+    },
+    "负胜": {
+      "count": 2,
+      "change_pct": 14.8
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -3.5
+    },
+    "平平": {
+      "count": 3,
       "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 8.1
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -6.5
     }
   },
   "exclusion_list": [
     {
-      "goal": "3球",
-      "ttg_odds": "3.45",
+      "goal": "1球",
+      "ttg_odds": "5.20",
       "ttg_special": false,
       "scores": [
         {
-          "score": "02:01",
+          "score": "01:00",
+          "odds": "10.50",
+          "special": false
+        },
+        {
+          "score": "00:01",
           "odds": "8.25",
           "special": true
-        },
-        {
-          "score": "03:00",
-          "odds": "30.00",
-          "special": false
-        },
-        {
-          "score": "00:03",
-          "odds": "23.00",
-          "special": false
-        },
-        {
-          "score": "01:02",
-          "odds": "7.50",
-          "special": false
         }
       ],
       "level": "仅比分排除",
-      "reason": "进球数赔率3.45（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+      "reason": "进球数赔率5.20（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "match_id": "2039010",
-  "fetch_time": "2026-04-21 16:09:41",
+  "fetch_time": "2026-04-26 11:58:21",
   "match_info": {
     "home_team": "诺维奇",
     "away_team": "伊普斯维奇",
@@ -332,25 +332,25 @@
             "uniformNo": "22"
           },
           {
-            "appearanceCnt": 41,
+            "appearanceCnt": 43,
             "injuryFlag": 1,
             "personId": 381099,
             "personName": "A. Matusiwa",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 41,
+            "startedMatchCnt": 43,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "5"
           },
           {
-            "appearanceCnt": 34,
+            "appearanceCnt": 36,
             "injuryFlag": 1,
             "personId": 638129,
             "personName": "Ivan Azón",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 17,
+            "startedMatchCnt": 19,
             "substituteMatchCnt": 17,
             "suspensionFlag": 0,
             "uniformNo": "31"
@@ -798,35 +798,35 @@
       "seasonName": "2025/2026",
       "tables": [
         {
-          "drawMatchCnt": 7,
+          "drawMatchCnt": 8,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 18,
           "phaseName": "",
-          "points": "61",
+          "points": "65",
           "ranking": "9",
           "sportteryTeamId": 16,
           "teamId": 0,
           "teamShortName": "诺维奇",
-          "totalLegCnt": 43,
+          "totalLegCnt": 45,
           "uniformTeamId": 215,
-          "winGoalMatchCnt": 18,
+          "winGoalMatchCnt": 19,
           "winProbability": "42%"
         },
         {
-          "drawMatchCnt": 13,
+          "drawMatchCnt": 14,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 8,
           "phaseName": "",
-          "points": "76",
+          "points": "80",
           "ranking": "2",
           "sportteryTeamId": 48,
           "teamId": 0,
           "teamShortName": "伊普斯",
-          "totalLegCnt": 42,
+          "totalLegCnt": 44,
           "uniformTeamId": 507,
-          "winGoalMatchCnt": 21,
+          "winGoalMatchCnt": 22,
           "winProbability": "50%"
         }
       ],
@@ -839,11 +839,11 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 42,
+            "appearanceCnt": 44,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "2%",
-            "goalAvgCnt": "0.4",
+            "goalAvgCnt": "0.3",
             "goalCnt": 15,
             "goalProbability": "17%",
             "injuryFlag": 0,
@@ -851,13 +851,31 @@
             "personName": "J.克拉克",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 22,
-            "substituteMatchCnt": 20,
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 21,
             "suspensionFlag": 0,
             "uniformNo": "47"
           },
           {
-            "appearanceCnt": 43,
+            "appearanceCnt": 33,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 11,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 604413,
+            "personName": "J. Philogene-Bidace",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 11,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 45,
             "assistAvgCnt": "0.2",
             "assistCnt": 7,
             "assistProbability": "13%",
@@ -869,28 +887,10 @@
             "personName": "A. Mehmeti",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 37,
+            "startedMatchCnt": 39,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "33"
-          },
-          {
-            "appearanceCnt": 31,
-            "assistAvgCnt": "0.1",
-            "assistCnt": 2,
-            "assistProbability": "4%",
-            "goalAvgCnt": "0.3",
-            "goalCnt": 10,
-            "goalProbability": "11%",
-            "injuryFlag": 0,
-            "personId": 604413,
-            "personName": "J. Philogene-Bidace",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 21,
-            "substituteMatchCnt": 10,
-            "suspensionFlag": 0,
-            "uniformNo": "11"
           }
         ],
         "sportteryTeamId": 48,
@@ -919,19 +919,19 @@
             "uniformNo": "24"
           },
           {
-            "appearanceCnt": 8,
-            "assistAvgCnt": "0.4",
+            "appearanceCnt": 10,
+            "assistAvgCnt": "0.3",
             "assistCnt": 3,
-            "assistProbability": "7%",
-            "goalAvgCnt": "0.9",
-            "goalCnt": 7,
-            "goalProbability": "11%",
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.8",
+            "goalCnt": 8,
+            "goalProbability": "13%",
             "injuryFlag": 0,
             "personId": 643752,
             "personName": "M·图雷",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 4,
+            "startedMatchCnt": 6,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "37"
@@ -940,7 +940,7 @@
             "appearanceCnt": 23,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "7%",
+            "assistProbability": "6%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
             "goalProbability": "11%",
@@ -969,37 +969,37 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 2,
-      "change_pct": 24.0
-    },
     "2球": {
       "count": 2,
       "change_pct": -5.7
-    },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "0球": {
       "count": 2,
       "change_pct": -19.2
     },
-    "5球": {
-      "count": 2,
-      "change_pct": 16.7
-    },
     "6球": {
       "count": 2,
       "change_pct": 18.8
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": -7.0
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": 24.0
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "4球": {
       "count": 2,
       "change_pct": 9.6
     },
-    "1球": {
+    "5球": {
       "count": 2,
-      "change_pct": -7.0
+      "change_pct": 16.7
     }
   },
   "hafu_change": {},

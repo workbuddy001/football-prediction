@@ -1,6 +1,6 @@
 {
   "match_id": "2039187",
-  "fetch_time": "2026-04-19 18:35:48",
+  "fetch_time": "2026-04-26 16:12:08",
   "match_info": {
     "home_team": "AIK索尔纳",
     "away_team": "卡尔马",
@@ -48,9 +48,9 @@
     "2球": "3.40"
   },
   "had": {
-    "胜": "1.50",
-    "平": "3.80",
-    "负": "5.00"
+    "胜": "1.52",
+    "平": "3.74",
+    "负": "4.90"
   },
   "ttg": {
     "3球": "3.55",
@@ -63,21 +63,21 @@
     "2球": "3.40"
   },
   "hafu": {
-    "负负": "9.00",
-    "平平": "5.80",
-    "胜胜": "2.15",
-    "负平": "18.00",
-    "平胜": "4.10",
+    "负负": "8.75",
+    "平平": "5.75",
+    "胜胜": "2.20",
+    "负平": "16.50",
+    "平胜": "4.25",
     "负胜": "24.00",
     "胜负": "45.00",
-    "胜平": "18.00",
-    "平负": "11.50"
+    "胜平": "16.50",
+    "平负": "11.00"
   },
   "hhad": {
     "让球": "-1",
-    "让胜": "2.72",
+    "让胜": "2.81",
     "让平": "3.25",
-    "让负": "2.20"
+    "让负": "2.15"
   },
   "preview": {
     "feature": {
@@ -403,7 +403,7 @@
           },
           {
             "awayTeamFullCourtGoalCnt": "1",
-            "awayTeamId": 602,
+            "awayTeamId": 0,
             "awayTeamShortName": "卡尔马",
             "fullCourtGoal": "1:1",
             "halfTimeGoal": "",
@@ -435,7 +435,7 @@
             "halfTimeGoal": "",
             "homeMatchResult": "",
             "homeTeamFullCourtGoalCnt": "0",
-            "homeTeamId": 0,
+            "homeTeamId": 609,
             "homeTeamShortName": "哈尔姆斯",
             "matchDate": "2026-03-13",
             "matchId": 2509198,
@@ -631,30 +631,30 @@
           "drawMatchCnt": 1,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 0,
+          "lossGoalMatchCnt": 1,
           "phaseName": "",
-          "points": "4",
-          "ranking": "7",
+          "points": "7",
+          "ranking": "6",
           "sportteryTeamId": 788,
           "teamId": 0,
           "teamShortName": "索尔纳",
-          "totalLegCnt": 2,
+          "totalLegCnt": 4,
           "uniformTeamId": 433,
-          "winGoalMatchCnt": 1,
+          "winGoalMatchCnt": 2,
           "winProbability": "50%"
         },
         {
-          "drawMatchCnt": 0,
+          "drawMatchCnt": 1,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 2,
+          "lossGoalMatchCnt": 3,
           "phaseName": "",
-          "points": "0",
+          "points": "1",
           "ranking": "15",
           "sportteryTeamId": 602,
           "teamId": 0,
           "teamShortName": "卡尔马",
-          "totalLegCnt": 2,
+          "totalLegCnt": 4,
           "uniformTeamId": 435,
           "winGoalMatchCnt": 0,
           "winProbability": "0%"
@@ -669,58 +669,58 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 2,
+            "appearanceCnt": 4,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.5",
-            "goalCnt": 1,
-            "goalProbability": "50%",
-            "injuryFlag": 0,
-            "personId": 515612,
-            "personName": "达里",
-            "playerPositionCode": "Defender",
-            "playerPositionDesc": "后卫",
-            "startedMatchCnt": 2,
-            "substituteMatchCnt": 0,
-            "suspensionFlag": 0,
-            "uniformNo": "20"
-          },
-          {
-            "appearanceCnt": 2,
-            "assistAvgCnt": "0",
-            "assistCnt": 0,
-            "assistProbability": "0%",
-            "goalAvgCnt": "0.5",
-            "goalCnt": 1,
-            "goalProbability": "50%",
+            "goalCnt": 2,
+            "goalProbability": "67%",
             "injuryFlag": 0,
             "personId": 881972,
             "personName": "C. Rosenqvist",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "13"
           },
           {
-            "appearanceCnt": 2,
-            "assistAvgCnt": "0.5",
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 515612,
+            "personName": "达里",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0.3",
             "assistCnt": 1,
-            "assistProbability": "50%",
+            "assistProbability": "33%",
             "goalAvgCnt": "0",
             "goalCnt": 0,
             "goalProbability": "0%",
             "injuryFlag": 0,
-            "personId": 190245,
-            "personName": "R. Gojani",
+            "personId": 209820,
+            "personName": "M. Hallberg",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 1,
-            "substituteMatchCnt": 1,
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 2,
             "suspensionFlag": 0,
-            "uniformNo": "23"
+            "uniformNo": "5"
           }
         ],
         "sportteryTeamId": 602,
@@ -731,58 +731,58 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 2,
-            "assistAvgCnt": "0.5",
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0.3",
             "assistCnt": 1,
-            "assistProbability": "33%",
+            "assistProbability": "25%",
             "goalAvgCnt": "0.5",
+            "goalCnt": 2,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 444353,
+            "personName": "J·霍夫",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 1,
+            "assistProbability": "25%",
+            "goalAvgCnt": "0.3",
             "goalCnt": 1,
-            "goalProbability": "25%",
+            "goalProbability": "17%",
             "injuryFlag": 0,
             "personId": 889932,
             "personName": "Z. Yohanna",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "36"
           },
           {
-            "appearanceCnt": 2,
+            "appearanceCnt": 3,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "0.5",
+            "goalAvgCnt": "0.3",
             "goalCnt": 1,
-            "goalProbability": "25%",
+            "goalProbability": "17%",
             "injuryFlag": 0,
             "personId": 693384,
             "personName": "V. Andersson",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 0,
+            "startedMatchCnt": 1,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "11"
-          },
-          {
-            "appearanceCnt": 2,
-            "assistAvgCnt": "0",
-            "assistCnt": 0,
-            "assistProbability": "0%",
-            "goalAvgCnt": "0.5",
-            "goalCnt": 1,
-            "goalProbability": "25%",
-            "injuryFlag": 0,
-            "personId": 239987,
-            "personName": "塞林纳",
-            "playerPositionCode": "Midfielder",
-            "playerPositionDesc": "中场",
-            "startedMatchCnt": 2,
-            "substituteMatchCnt": 0,
-            "suspensionFlag": 0,
-            "uniformNo": "10"
           }
         ],
         "sportteryTeamId": 788,
@@ -799,15 +799,11 @@
     }
   },
   "ttg_change": {
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "2球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "7球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "0球": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -815,23 +811,64 @@
       "count": 2,
       "change_pct": -7.4
     },
+    "7球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "3球": {
       "count": 1,
       "change_pct": 1.4
     },
-    "6球": {
-      "count": 1,
-      "change_pct": 2.9
-    },
-    "5球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "1球": {
       "count": 1,
       "change_pct": 4.2
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 2.9
     }
   },
-  "hafu_change": {},
+  "hafu_change": {
+    "胜平": {
+      "count": 1,
+      "change_pct": -8.3
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 3.7
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 2.3
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -4.3
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -2.8
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -8.3
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -0.9
+    }
+  },
   "exclusion_list": []
 }

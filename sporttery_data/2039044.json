@@ -1,6 +1,6 @@
 {
   "match_id": "2039044",
-  "fetch_time": "2026-04-21 12:40:19",
+  "fetch_time": "2026-04-26 11:58:47",
   "match_info": {
     "home_team": "水晶宫",
     "away_team": "纽卡斯尔联",
@@ -332,13 +332,13 @@
             "uniformNo": "37"
           },
           {
-            "appearanceCnt": 21,
+            "appearanceCnt": 22,
             "injuryFlag": 1,
             "personId": 695528,
             "personName": "L. Miley",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 13,
+            "startedMatchCnt": 14,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "67"
@@ -364,13 +364,13 @@
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 24,
             "injuryFlag": 1,
             "personId": 473447,
             "personName": "穆尼奥斯",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "2"
@@ -714,36 +714,36 @@
       "seasonName": "2025/2026",
       "tables": [
         {
-          "drawMatchCnt": 9,
+          "drawMatchCnt": 10,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 11,
+          "lossGoalMatchCnt": 12,
           "phaseName": "",
-          "points": "42",
+          "points": "43",
           "ranking": "13",
           "sportteryTeamId": 8,
           "teamId": 0,
           "teamShortName": "水晶宫",
-          "totalLegCnt": 31,
+          "totalLegCnt": 33,
           "uniformTeamId": 25,
           "winGoalMatchCnt": 11,
-          "winProbability": "35%"
+          "winProbability": "33%"
         },
         {
           "drawMatchCnt": 6,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 15,
+          "lossGoalMatchCnt": 16,
           "phaseName": "",
           "points": "42",
           "ranking": "14",
           "sportteryTeamId": 15,
           "teamId": 0,
           "teamShortName": "纽卡斯尔",
-          "totalLegCnt": 33,
+          "totalLegCnt": 34,
           "uniformTeamId": 359,
           "winGoalMatchCnt": 12,
-          "winProbability": "36%"
+          "winProbability": "35%"
         }
       ],
       "tournamentId": 127,
@@ -755,7 +755,7 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 24,
+            "appearanceCnt": 25,
             "assistAvgCnt": "0.2",
             "assistCnt": 4,
             "assistProbability": "15%",
@@ -767,13 +767,13 @@
             "personName": "Bruno Guimarães",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 22,
+            "startedMatchCnt": 23,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "39"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "11%",
@@ -786,7 +786,7 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 21,
-            "substituteMatchCnt": 8,
+            "substituteMatchCnt": 9,
             "suspensionFlag": 0,
             "uniformNo": "27"
           },
@@ -817,58 +817,58 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.4",
             "goalCnt": 10,
-            "goalProbability": "23%",
+            "goalProbability": "22%",
             "injuryFlag": 0,
             "personId": 395193,
             "personName": "J. Mateta",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "14"
           },
           {
-            "appearanceCnt": 22,
-            "assistAvgCnt": "0",
-            "assistCnt": 1,
-            "assistProbability": "4%",
-            "goalAvgCnt": "0.3",
-            "goalCnt": 7,
-            "goalProbability": "16%",
-            "injuryFlag": 0,
-            "personId": 453991,
-            "personName": "萨尔",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 20,
-            "substituteMatchCnt": 2,
-            "suspensionFlag": 0,
-            "uniformNo": "7"
-          },
-          {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
             "assistProbability": "8%",
             "goalAvgCnt": "0.2",
-            "goalCnt": 6,
-            "goalProbability": "14%",
+            "goalCnt": 7,
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 471115,
             "personName": "埃泽",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 18,
+            "startedMatchCnt": 19,
             "substituteMatchCnt": 10,
             "suspensionFlag": 0,
             "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 23,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 453991,
+            "personName": "萨尔",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
           }
         ],
         "sportteryTeamId": 8,
@@ -889,37 +889,37 @@
       "count": 2,
       "change_pct": -4.2
     },
-    "1球": {
-      "count": 2,
-      "change_pct": -12.3
-    },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "0球": {
       "count": 2,
       "change_pct": -14.3
-    },
-    "4球": {
-      "count": 3,
-      "change_pct": 8.2
     },
     "6球": {
       "count": 2,
       "change_pct": 13.3
     },
-    "5球": {
-      "count": 3,
-      "change_pct": 17.6
+    "1球": {
+      "count": 2,
+      "change_pct": -12.3
     },
     "7球": {
       "count": 2,
       "change_pct": 21.7
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": 8.2
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 17.6
     }
   },
   "hafu_change": {
-    "负胜": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -927,15 +927,7 @@
       "count": 1,
       "change_pct": -3.6
     },
-    "负负": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "平负": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "胜负": {
+    "平胜": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -943,17 +935,25 @@
       "count": 1,
       "change_pct": -3.6
     },
-    "平平": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平胜": {
+    "平负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "平平": {
       "count": 0,
       "change_pct": 0.0
     },
     "胜胜": {
       "count": 2,
       "change_pct": 2.2
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 0.0
     }
   },
   "exclusion_list": [

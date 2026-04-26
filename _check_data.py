@@ -1,40 +1,33 @@
-import re
-import os
+import json, glob
 
-# 检查 page_raw 文件
-folder = '分析模板/2026.04.17'
-files = sorted(os.listdir(folder))
-html_files = [f for f in files if f.startswith('page_raw')]
-print(f"HTML文件数: {len(html_files)}")
+scores = json.load(open('分析模板/_scores.json', encoding='utf-8'))
 
-# 检查第一个文件
-if html_files:
-    path = os.path.join(folder, html_files[0])
-    with open(path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # 查找日期、时间等
-    patterns = [
-        ('日期', r'"date"[:\s]+"([^"]+)"'),
-        ('时间', r'"time"[:\s]+"([^"]+)"'),
-        ('联赛', r'"league"[:\s]+"([^"]+)"'),
-        ('编号', r'"match_num"[:\s]+"([^"]+)"'),
-        ('主队', r'"home"[:\s]+"([^"]+)"'),
-        ('客队', r'"away"[:\s]+"([^"]+)"'),
-    ]
-    
-    for name, pattern in patterns:
-        m = re.search(pattern, content)
-        print(f"{name}: {m.group(1)[:30] if m else 'N/A'}")
+cnt_total = 0
+cnt_with_scores = 0
+cnt_with_had = 0
+cnt_with_recent = 0
 
-print("\n检查 matches_full 数据:")
-import json
-with open('分析模板/matches_full_2026-04-17.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
+for f in sorted(glob.glob('sporttery_data/*.json')):
+    try:
+        d = json.load(open(f, encoding='utf-8'))
+        mid = d.get('match_id', '')
+        if not mid: continue
+        if mid not in scores: continue
+        
+        cnt_total += 1
+        cnt_with_scores += 1
+        
+        had = d.get('had', {})
+        if had and '主胜' in had:
+            cnt_with_had += 1
+        
+        recent = d.get('preview', {}).get('recent', {})
+        if recent and recent.get('home') and recent.get('away'):
+            cnt_with_recent += 1
+    except:
+        pass
 
-m = data[0]
-print(f"字段: {list(m.keys())}")
-print(f"date: {m.get('date')}")
-print(f"time: {m.get('time')}")
-print(f"league: {m.get('league')}")
-print(f"match_num: {m.get('match_num')}")
+print('Total matches with scores:', cnt_total)
+print('  + has had data:', cnt_with_had)
+print('  + has recent data:', cnt_with_recent)
+print('  + has both:', min(cnt_with_had, cnt_with_recent))

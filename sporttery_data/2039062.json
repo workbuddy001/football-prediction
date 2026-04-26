@@ -1,6 +1,6 @@
 {
   "match_id": "2039062",
-  "fetch_time": "2026-04-21 11:18:33",
+  "fetch_time": "2026-04-26 11:59:46",
   "match_info": {
     "home_team": "天狼星",
     "away_team": "哈马比",
@@ -633,31 +633,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 0,
           "phaseName": "",
-          "points": "9",
+          "points": "12",
           "ranking": "1",
           "sportteryTeamId": 1917,
           "teamId": 0,
           "teamShortName": "天狼星",
-          "totalLegCnt": 3,
+          "totalLegCnt": 4,
           "uniformTeamId": 312,
-          "winGoalMatchCnt": 3,
+          "winGoalMatchCnt": 4,
           "winProbability": "100%"
         },
         {
-          "drawMatchCnt": 0,
+          "drawMatchCnt": 1,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 1,
           "phaseName": "",
-          "points": "6",
-          "ranking": "6",
+          "points": "7",
+          "ranking": "4",
           "sportteryTeamId": 352,
           "teamId": 0,
           "teamShortName": "哈马比",
-          "totalLegCnt": 3,
+          "totalLegCnt": 4,
           "uniformTeamId": 429,
           "winGoalMatchCnt": 2,
-          "winProbability": "67%"
+          "winProbability": "50%"
         }
       ],
       "tournamentId": 132,
@@ -669,55 +669,55 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 3,
+            "appearanceCnt": 4,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "1.3",
+            "goalAvgCnt": "1.0",
             "goalCnt": 4,
-            "goalProbability": "36%",
+            "goalProbability": "33%",
             "injuryFlag": 0,
             "personId": 651862,
             "personName": "P·亚伯拉罕",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "7"
           },
           {
-            "appearanceCnt": 1,
+            "appearanceCnt": 2,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "3.0",
+            "goalAvgCnt": "1.5",
             "goalCnt": 3,
-            "goalProbability": "27%",
+            "goalProbability": "25%",
             "injuryFlag": 0,
             "personId": 415493,
             "personName": "N.瓦西奇",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 0,
-            "substituteMatchCnt": 1,
+            "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 3,
-            "assistAvgCnt": "1.3",
+            "appearanceCnt": 4,
+            "assistAvgCnt": "1.0",
             "assistCnt": 4,
             "assistProbability": "44%",
             "goalAvgCnt": "0.3",
             "goalCnt": 1,
-            "goalProbability": "9%",
+            "goalProbability": "8%",
             "injuryFlag": 0,
             "personId": 30513,
             "personName": "贝萨拉",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 3,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "20"
@@ -731,58 +731,58 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 3,
+            "appearanceCnt": 4,
             "assistAvgCnt": "0.3",
             "assistCnt": 1,
-            "assistProbability": "20%",
+            "assistProbability": "14%",
             "goalAvgCnt": "1.3",
-            "goalCnt": 4,
-            "goalProbability": "44%",
+            "goalCnt": 5,
+            "goalProbability": "42%",
             "injuryFlag": 0,
             "personId": 692785,
             "personName": "I. Bjerkebo",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 3,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 3,
+            "appearanceCnt": 4,
             "assistAvgCnt": "0.3",
             "assistCnt": 1,
-            "assistProbability": "20%",
-            "goalAvgCnt": "0.7",
-            "goalCnt": 2,
-            "goalProbability": "22%",
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.8",
+            "goalCnt": 3,
+            "goalProbability": "25%",
             "injuryFlag": 0,
             "personId": 651858,
             "personName": "R. Ure",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 3,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 3,
+            "appearanceCnt": 4,
             "assistAvgCnt": "0.3",
             "assistCnt": 1,
-            "assistProbability": "20%",
+            "assistProbability": "14%",
             "goalAvgCnt": "0.3",
             "goalCnt": 1,
-            "goalProbability": "11%",
+            "goalProbability": "8%",
             "injuryFlag": 0,
-            "personId": 462658,
-            "personName": "T. Anker",
-            "playerPositionCode": "Defender",
-            "playerPositionDesc": "后卫",
+            "personId": 817944,
+            "personName": "N. Jönsson",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
             "startedMatchCnt": 3,
-            "substituteMatchCnt": 0,
+            "substituteMatchCnt": 1,
             "suspensionFlag": 0,
-            "uniformNo": "4"
+            "uniformNo": "17"
           }
         ],
         "sportteryTeamId": 1917,
@@ -803,37 +803,37 @@
       "count": 2,
       "change_pct": 6.7
     },
-    "1球": {
-      "count": 2,
-      "change_pct": 5.2
-    },
-    "3球": {
-      "count": 3,
-      "change_pct": -8.6
-    },
     "0球": {
       "count": 1,
       "change_pct": 6.7
-    },
-    "4球": {
-      "count": 3,
-      "change_pct": -7.3
     },
     "6球": {
       "count": 1,
       "change_pct": 7.7
     },
-    "5球": {
-      "count": 1,
-      "change_pct": 2.5
+    "1球": {
+      "count": 2,
+      "change_pct": 5.2
     },
     "7球": {
       "count": 1,
       "change_pct": 10.5
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -8.6
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": -7.3
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 2.5
     }
   },
   "hafu_change": {
-    "负胜": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -841,31 +841,31 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "负负": {
+    "平胜": {
       "count": 2,
-      "change_pct": 0.0
-    },
-    "平负": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "胜负": {
-      "count": 0,
       "change_pct": 0.0
     },
     "负平": {
       "count": 0,
       "change_pct": 0.0
     },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
     "平平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平胜": {
+    "胜胜": {
       "count": 2,
       "change_pct": 0.0
     },
-    "胜胜": {
+    "负负": {
       "count": 2,
       "change_pct": 0.0
     }

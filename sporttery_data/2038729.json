@@ -1,6 +1,6 @@
 {
   "match_id": "2038729",
-  "fetch_time": "2026-04-22 00:54:20",
+  "fetch_time": "2026-04-26 08:13:07",
   "match_info": {
     "home_team": "英格兰",
     "away_team": "日本",
@@ -576,40 +576,60 @@
     }
   },
   "ttg_change": {
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "5球": {
       "count": 1,
       "change_pct": -5.6
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -11.1
     },
     "1球": {
       "count": 2,
       "change_pct": 9.8
     },
-    "2球": {
+    "0球": {
       "count": 1,
-      "change_pct": 4.4
-    },
-    "7球": {
-      "count": 1,
-      "change_pct": -14.3
+      "change_pct": 7.1
     },
     "4球": {
       "count": 2,
       "change_pct": -6.9
     },
-    "0球": {
+    "7球": {
       "count": 1,
-      "change_pct": 7.1
+      "change_pct": -14.3
     },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "6球": {
+    "2球": {
       "count": 1,
-      "change_pct": -11.1
+      "change_pct": 4.4
     }
   },
   "hafu_change": {
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -5.3
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 4.2
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": 5.3
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -10.7
+    },
     "负胜": {
       "count": 0,
       "change_pct": 0.0
@@ -618,33 +638,13 @@
       "count": 2,
       "change_pct": -25.0
     },
-    "胜平": {
-      "count": 1,
-      "change_pct": -5.3
-    },
-    "平负": {
-      "count": 2,
-      "change_pct": -10.7
-    },
-    "负负": {
-      "count": 2,
-      "change_pct": -13.6
-    },
-    "平平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 4.2
-    },
     "负平": {
       "count": 1,
       "change_pct": -5.3
     },
-    "平胜": {
-      "count": 3,
-      "change_pct": 5.3
+    "负负": {
+      "count": 2,
+      "change_pct": -13.6
     }
   },
   "exclusion_list": [

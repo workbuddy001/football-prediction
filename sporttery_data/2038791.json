@@ -1,6 +1,6 @@
 {
   "match_id": "2038791",
-  "fetch_time": "2026-04-21 21:38:23",
+  "fetch_time": "2026-04-26 16:10:48",
   "match_info": {
     "home_team": "巴黎圣日尔曼",
     "away_team": "图卢兹",
@@ -308,13 +308,13 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 25,
+            "appearanceCnt": 26,
             "injuryFlag": 0,
             "personId": 688935,
             "personName": "S. Hidalgo",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 11,
+            "startedMatchCnt": 12,
             "substituteMatchCnt": 14,
             "suspensionFlag": 1,
             "uniformNo": "11"
@@ -332,13 +332,13 @@
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "injuryFlag": 1,
             "personId": 441064,
             "personName": "麦肯齐",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "3"
@@ -356,13 +356,13 @@
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "injuryFlag": 1,
             "personId": 592306,
             "personName": "C. Cresswell",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 25,
+            "startedMatchCnt": 26,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "4"
@@ -392,13 +392,13 @@
             "uniformNo": "22"
           },
           {
-            "appearanceCnt": 24,
+            "appearanceCnt": 25,
             "injuryFlag": 1,
             "personId": 837185,
             "personName": "D. Methalie",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 19,
+            "startedMatchCnt": 20,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "24"
@@ -412,38 +412,38 @@
       "home": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 24,
             "injuryFlag": 1,
             "personId": 528977,
             "personName": "李刚仁",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 15,
+            "startedMatchCnt": 16,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 25,
             "injuryFlag": 1,
             "personId": 607382,
             "personName": "巴尔科拉",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 16,
-            "substituteMatchCnt": 7,
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "29"
           },
           {
-            "appearanceCnt": 20,
+            "appearanceCnt": 22,
             "injuryFlag": 1,
             "personId": 723750,
             "personName": "S. Mayulu",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 17,
-            "substituteMatchCnt": 3,
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "24"
           }
@@ -767,15 +767,15 @@
           "groupName": "",
           "lossGoalMatchCnt": 5,
           "phaseName": "",
-          "points": "63",
+          "points": "66",
           "ranking": "1",
           "sportteryTeamId": 187,
           "teamId": 0,
           "teamShortName": "巴黎圣曼",
-          "totalLegCnt": 28,
+          "totalLegCnt": 29,
           "uniformTeamId": 178,
-          "winGoalMatchCnt": 20,
-          "winProbability": "71%"
+          "winGoalMatchCnt": 21,
+          "winProbability": "72%"
         },
         {
           "drawMatchCnt": 7,
@@ -784,7 +784,7 @@
           "lossGoalMatchCnt": 13,
           "phaseName": "",
           "points": "37",
-          "ranking": "11",
+          "ranking": "12",
           "sportteryTeamId": 192,
           "teamId": 0,
           "teamShortName": "图卢兹",
@@ -809,7 +809,7 @@
             "assistProbability": "7%",
             "goalAvgCnt": "0.3",
             "goalCnt": 8,
-            "goalProbability": "20%",
+            "goalProbability": "19%",
             "injuryFlag": 0,
             "personId": 542647,
             "personName": "Y.博霍",
@@ -821,13 +821,31 @@
             "uniformNo": "10"
           },
           {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 675994,
+            "personName": "Emersonn",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
             "appearanceCnt": 17,
             "assistAvgCnt": "0.1",
             "assistCnt": 1,
             "assistProbability": "4%",
             "goalAvgCnt": "0.3",
             "goalCnt": 5,
-            "goalProbability": "13%",
+            "goalProbability": "12%",
             "injuryFlag": 1,
             "personId": 462163,
             "personName": "F. Magri",
@@ -837,24 +855,6 @@
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "9"
-          },
-          {
-            "appearanceCnt": 25,
-            "assistAvgCnt": "0.2",
-            "assistCnt": 5,
-            "assistProbability": "19%",
-            "goalAvgCnt": "0.2",
-            "goalCnt": 4,
-            "goalProbability": "10%",
-            "injuryFlag": 0,
-            "personId": 688935,
-            "personName": "S. Hidalgo",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 11,
-            "substituteMatchCnt": 14,
-            "suspensionFlag": 1,
-            "uniformNo": "11"
           }
         ],
         "sportteryTeamId": 192,
@@ -865,58 +865,58 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 18,
+            "appearanceCnt": 19,
             "assistAvgCnt": "0.3",
-            "assistCnt": 5,
-            "assistProbability": "11%",
-            "goalAvgCnt": "0.6",
+            "assistCnt": 6,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.5",
             "goalCnt": 10,
-            "goalProbability": "16%",
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 320112,
             "personName": "O. Dembélé",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 8,
+            "startedMatchCnt": 9,
             "substituteMatchCnt": 10,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 25,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "2%",
             "goalAvgCnt": "0.4",
             "goalCnt": 10,
-            "goalProbability": "16%",
+            "goalProbability": "15%",
             "injuryFlag": 1,
             "personId": 607382,
             "personName": "巴尔科拉",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 16,
-            "substituteMatchCnt": 7,
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "29"
           },
           {
-            "appearanceCnt": 26,
-            "assistAvgCnt": "0",
-            "assistCnt": 1,
-            "assistProbability": "2%",
-            "goalAvgCnt": "0.2",
-            "goalCnt": 6,
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
             "goalProbability": "10%",
             "injuryFlag": 0,
-            "personId": 540749,
-            "personName": "拉莫斯",
+            "personId": 463156,
+            "personName": "克瓦拉茨赫利亚",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 11,
-            "substituteMatchCnt": 15,
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 9,
             "suspensionFlag": 0,
-            "uniformNo": "9"
+            "uniformNo": "7"
           }
         ],
         "sportteryTeamId": 187,
@@ -933,9 +933,13 @@
     }
   },
   "ttg_change": {
-    "6球": {
+    "5球": {
       "count": 1,
-      "change_pct": -4.5
+      "change_pct": -3.6
+    },
+    "2球": {
+      "count": 4,
+      "change_pct": 13.3
     },
     "4球": {
       "count": 3,
@@ -945,45 +949,29 @@
       "count": 1,
       "change_pct": -7.7
     },
-    "5球": {
-      "count": 1,
-      "change_pct": -3.6
-    },
     "3球": {
       "count": 2,
       "change_pct": -5.6
+    },
+    "1球": {
+      "count": 4,
+      "change_pct": 22.4
     },
     "0球": {
       "count": 3,
       "change_pct": 23.8
     },
-    "2球": {
-      "count": 4,
-      "change_pct": 13.3
-    },
-    "1球": {
-      "count": 4,
-      "change_pct": 22.4
+    "6球": {
+      "count": 1,
+      "change_pct": -4.5
     }
   },
   "hafu_change": {
-    "负负": {
-      "count": 1,
-      "change_pct": 11.1
-    },
-    "平负": {
-      "count": 1,
-      "change_pct": 8.7
-    },
     "胜平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平平": {
-      "count": 2,
-      "change_pct": 13.5
-    },
-    "负胜": {
+    "平胜": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -991,9 +979,17 @@
       "count": 2,
       "change_pct": -3.2
     },
-    "平胜": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": 8.7
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": 11.1
     },
     "负平": {
       "count": 0,
@@ -1002,6 +998,10 @@
     "胜负": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": 13.5
     }
   },
   "exclusion_list": [

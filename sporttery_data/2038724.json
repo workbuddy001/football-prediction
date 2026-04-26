@@ -1,6 +1,6 @@
 {
   "match_id": "2038724",
-  "fetch_time": "2026-04-22 00:57:42",
+  "fetch_time": "2026-04-26 08:12:16",
   "match_info": {
     "home_team": "南非",
     "away_team": "巴拿马",
@@ -640,40 +640,60 @@
     }
   },
   "ttg_change": {
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "5球": {
       "count": 1,
       "change_pct": -7.1
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -9.1
     },
     "1球": {
       "count": 1,
       "change_pct": 2.6
     },
-    "2球": {
-      "count": 1,
-      "change_pct": 1.6
-    },
-    "7球": {
-      "count": 1,
-      "change_pct": -16.0
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "4球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "0球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "6球": {
+    "7球": {
       "count": 1,
-      "change_pct": -9.1
+      "change_pct": -16.0
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 1.6
     }
   },
   "hafu_change": {
+    "平平": {
+      "count": 2,
+      "change_pct": -9.5
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 1.5
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 6.9
+    },
     "负胜": {
       "count": 0,
       "change_pct": 0.0
@@ -682,33 +702,13 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平负": {
-      "count": 2,
-      "change_pct": 6.9
-    },
-    "负负": {
-      "count": 2,
-      "change_pct": 5.1
-    },
-    "平平": {
-      "count": 2,
-      "change_pct": -9.5
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 1.5
-    },
     "负平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "平胜": {
-      "count": 0,
-      "change_pct": 0.0
+    "负负": {
+      "count": 2,
+      "change_pct": 5.1
     }
   },
   "exclusion_list": [
