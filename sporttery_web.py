@@ -247,27 +247,44 @@ def _build_pattern_hitrate():
     pattern_stats = {}
 
     for key, record in scores.items():
+        # 处理 big3_signal_type（原有逻辑）
         signal_type = record.get('big3_signal_type')
         prediction = record.get('big3_prediction')
         result = record.get('big3_result')
         actual = record.get('big3_actual', '')
 
-        if not signal_type or not result or result == 'unknown' or not actual:
+        if not result or result == 'unknown' or not actual:
             continue
 
-        if signal_type not in pattern_stats:
-            pattern_stats[signal_type] = {
-                'prediction': prediction,
-                '小3球': [0, 0],    # [hits, total]
-                '恰好3球': [0, 0],
-                '大3球': [0, 0],
-            }
+        # 统计 big3_signal_type
+        if signal_type:
+            if signal_type not in pattern_stats:
+                pattern_stats[signal_type] = {
+                    'prediction': prediction,
+                    '小3球': [0, 0],
+                    '恰好3球': [0, 0],
+                    '大3球': [0, 0],
+                }
+            if actual in ['小3球', '恰好3球', '大3球']:
+                pattern_stats[signal_type][actual][1] += 1
+                if result == 'hit':
+                    pattern_stats[signal_type][actual][0] += 1
 
-        # 统计实际结果分布
-        if actual in ['小3球', '恰好3球', '大3球']:
-            pattern_stats[signal_type][actual][1] += 1  # total
-            if result == 'hit':
-                pattern_stats[signal_type][actual][0] += 1  # hits
+        # 也处理 final_signal_type（最终推荐的signal_type）
+        final_signal_type = record.get('final_signal_type')
+        final_prediction = record.get('final_prediction')
+        if final_signal_type and final_prediction:
+            if final_signal_type not in pattern_stats:
+                pattern_stats[final_signal_type] = {
+                    'prediction': final_prediction,
+                    '小3球': [0, 0],
+                    '恰好3球': [0, 0],
+                    '大3球': [0, 0],
+                }
+            if actual in ['小3球', '恰好3球', '大3球']:
+                pattern_stats[final_signal_type][actual][1] += 1
+                if result == 'hit':
+                    pattern_stats[final_signal_type][actual][0] += 1
 
     # 计算命中率
     result = {}
@@ -1453,8 +1470,8 @@ HTML_TEMPLATE = '''
                             <button class="btn-save-score" onclick="saveScore('${m.match_id}')">💾 保存</button>
                             <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
                             <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
-                            ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.signal_type ? `
-                            <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.big3_vs_small3.signal_type}')">📊 命中率</button>
+                            ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type ? `
+                            <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.signal_type}')">📊 命中率</button>
                             ` : ''}
                         </div>
                     <div id="score-msg-${m.match_id}" class="score-msg"></div>
@@ -3173,7 +3190,7 @@ def save_score(match_id):
 
                 # 判断命中
                 prediction = big3_pred.get('prediction', '不确定')
-                signal_type = big3_pred.get('signal_type')  # 前置条件/规律名称
+                signal_type = big3_pred.get('signal_type')  # 前置条件/规律名称（来自big3_vs_small3）
 
                 if prediction == '不确定':
                     big3_result = 'unknown'
@@ -3184,8 +3201,13 @@ def save_score(match_id):
                 else:
                     big3_result = 'miss'
 
+                # 获取最终推荐的signal_type
+                final_rec = data.get('g3_prediction', {}).get('final_rec', {})
+                final_signal_type = final_rec.get('signal_type', '')  # 最终推荐的signal_type
+
                 # 保存到记录
-                record['big3_signal_type'] = signal_type  # 前置条件/规律名称
+                record['big3_signal_type'] = signal_type  # 前置条件/规律名称（来自big3_vs_small3）
+                record['final_signal_type'] = final_signal_type  # 最终推荐的signal_type
                 record['big3_prediction'] = prediction
                 record['big3_confidence'] = big3_pred.get('confidence', 0)
                 record['big3_actual'] = big3_actual
