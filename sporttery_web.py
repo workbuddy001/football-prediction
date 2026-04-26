@@ -2147,26 +2147,29 @@ HTML_TEMPLATE = '''
             html += '<tr><th>前置条件</th><th>预判</th><th>样本</th><th>小3球(0-2)</th><th>恰好3球</th><th>大3球(4+)</th></tr>';
 
             for (const [signalType, data] of Object.entries(stats)) {
-                // 小3球命中率
+                // 小3球：显示 实际小3球场次/总样本数
                 const s = data['小3球'] || {};
-                const sRate = s.rate || 0;
-                const sClass = sRate >= 70 ? 'pattern-rate-high' : 
+                const sActual = s.total || 0;
+                const sRate = data.total > 0 ? (sActual / data.total * 100).toFixed(1) : 0;
+                const sClass = sRate >= 70 ? 'pattern-rate-high' :
                               sRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
-                const sText = s.total > 0 ? `${s.hits}场/${s.total}场(${sRate}%)` : '-';
+                const sText = data.total > 0 ? `${sActual}场/${data.total}场(${sRate}%)` : '-';
 
-                // 恰好3球命中率
+                // 恰好3球：显示 实际恰好3球场次/总样本数
                 const m = data['恰好3球'] || {};
-                const mRate = m.rate || 0;
-                const mClass = mRate >= 70 ? 'pattern-rate-high' : 
+                const mActual = m.total || 0;
+                const mRate = data.total > 0 ? (mActual / data.total * 100).toFixed(1) : 0;
+                const mClass = mRate >= 70 ? 'pattern-rate-high' :
                               mRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
-                const mText = m.total > 0 ? `${m.hits}场/${m.total}场(${mRate}%)` : '-';
+                const mText = data.total > 0 ? `${mActual}场/${data.total}场(${mRate}%)` : '-';
 
-                // 大3球命中率
+                // 大3球：显示 实际大3球场次/总样本数
                 const b = data['大3球'] || {};
-                const bRate = b.rate || 0;
-                const bClass = bRate >= 70 ? 'pattern-rate-high' : 
+                const bActual = b.total || 0;
+                const bRate = data.total > 0 ? (bActual / data.total * 100).toFixed(1) : 0;
+                const bClass = bRate >= 70 ? 'pattern-rate-high' :
                               bRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
-                const bText = b.total > 0 ? `${b.hits}场/${b.total}场(${bRate}%)` : '-';
+                const bText = data.total > 0 ? `${bActual}场/${data.total}场(${bRate}%)` : '-';
 
                 html += '<tr>' +
                     '<td>' + signalType + '</td>' +
@@ -2301,26 +2304,29 @@ HTML_TEMPLATE = '''
                 if (!stats) {
                     container.innerHTML = '<div class="pattern-no-stats">无统计</div>';
                 } else {
-                    // 小3球
+                    // 小3球：显示 实际小3球场次/总样本数
                     const s = stats['小3球'] || {};
-                    const sRate = s.rate || 0;
+                    const sActual = s.total || 0;  // 实际小3球的场次
+                    const sRate = stats.total > 0 ? (sActual / stats.total * 100).toFixed(1) : 0;
                     const sClass = sRate >= 70 ? 'pattern-rate-high' :
                                   sRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
-                    const sText = s.total > 0 ? `${s.hits}场/${s.total}场(${sRate}%)` : '-';
+                    const sText = stats.total > 0 ? `${sActual}场/${stats.total}场(${sRate}%)` : '-';
 
-                    // 恰好3球
+                    // 恰好3球：显示 实际恰好3球场次/总样本数
                     const m = stats['恰好3球'] || {};
-                    const mRate = m.rate || 0;
+                    const mActual = m.total || 0;  // 实际恰好3球的场次
+                    const mRate = stats.total > 0 ? (mActual / stats.total * 100).toFixed(1) : 0;
                     const mClass = mRate >= 70 ? 'pattern-rate-high' :
                                   mRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
-                    const mText = m.total > 0 ? `${m.hits}场/${m.total}场(${mRate}%)` : '-';
+                    const mText = stats.total > 0 ? `${mActual}场/${stats.total}场(${mRate}%)` : '-';
 
-                    // 大3球
+                    // 大3球：显示 实际大3球场次/总样本数
                     const b = stats['大3球'] || {};
-                    const bRate = b.rate || 0;
+                    const bActual = b.total || 0;  // 实际大3球的场次
+                    const bRate = stats.total > 0 ? (bActual / stats.total * 100).toFixed(1) : 0;
                     const bClass = bRate >= 70 ? 'pattern-rate-high' :
                                   bRate >= 50 ? 'pattern-rate-mid' : 'pattern-rate-low';
-                    const bText = b.total > 0 ? `${b.hits}场/${b.total}场(${bRate}%)` : '-';
+                    const bText = stats.total > 0 ? `${bActual}场/${stats.total}场(${bRate}%)` : '-';
 
                     container.innerHTML = `
                         <div class="pattern-single-stats">
