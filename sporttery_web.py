@@ -2453,9 +2453,11 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     # 计算近况差（提前，中赔需要判断客队近况是否更好）
     form_diff = None
     combined_avg = None
+    form_away = None  # 客近况（用于条件2判断）
     if recent_form and recent_form.get('home_avg') is not None:
         form_diff = recent_form['home_avg'] - recent_form['away_avg']
         combined_avg = recent_form['combined_avg']
+        form_away = recent_form.get('away_avg')  # 获取客近况
 
     # 触发条件 — 各区间
     is_low = hhad_draw < 3.3                       # 极低/低区间
@@ -2499,7 +2501,8 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
     is_high_match = is_high and is_home_let and form_diff is not None and form_diff < -0.5 and hhad_lose < hhad_win - 0.05
 
     # 移除debug输出，改用/test_law3路由查看
-    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match and not is_law1 and not is_law2 and not is_law3:
+    # 条件2: 让平3.6-3.9 + 客近况<2.5 → 激活hhad_hint
+    if not is_low and not is_mid_match and not is_midlow_match and not is_high_match and not is_law1 and not is_law2 and not is_law3 and not is_cond2:
         return None
 
     hints = []
@@ -2594,7 +2597,16 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
 
     # ── Step 5: 中赔细分提醒（前置条件: 主受让+客队近况好+让平3.65~3.95）──
     mid_hints = []
-    if is_mid_match:
+    
+    # 条件2: 让平3.6-3.9(中赔区间) + 客近况<2.5 → 推荐让胜(60.5%) 反向信号
+    is_cond2 = is_mid and form_away is not None and form_away < 2.5
+    
+    if is_cond2:
+        hhad_pick = '让胜'
+        hhad_confidence = 61
+        mid_hints.append(f'⭐⭐ 条件2反向信号: 让平3.6-3.9+客近况<2.5, 让胜率60.5%(23/38场)')
+        mid_hints.append(f'  推荐策略: 买让胜(60.5%), 可考虑小2.5球(平均2.35球), 主队零封(60.9%)')
+    elif is_mid_match:
         # 优先级1: 让胜赔更低 → 让胜88.2%(17场) ⭐⭐⭐
         if hhad_win < hhad_lose - 0.05:
             hhad_pick = '让胜'
@@ -2650,6 +2662,7 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
         'is_mid': is_mid,              # 是否中赔区间(3.65~3.95)
         'is_midlow': is_midlow_match,  # 是否中低区间(3.3~3.64)
         'is_high': is_high_match,       # 是否高区间(4.0~4.5)
+        'is_cond2': is_cond2,          # 是否条件2触发(让平3.6-3.9+客近况<2.5)
         'hhad_draw': round(hhad_draw, 2),
         'handicap': handicap,
         'direction': direction,
