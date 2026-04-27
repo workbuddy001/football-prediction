@@ -1,6 +1,6 @@
 {
   "match_id": "2039338",
-  "fetch_time": "2026-04-26 17:28:03",
+  "fetch_time": "2026-04-27 01:52:02",
   "match_info": {
     "home_team": "墨尔本城",
     "away_team": "阿德莱德联",
@@ -873,13 +873,13 @@
     }
   },
   "ttg_change": {
-    "3球": {
-      "count": 2,
-      "change_pct": 0.0
+    "7球": {
+      "count": 4,
+      "change_pct": -18.8
     },
-    "2球": {
-      "count": 3,
-      "change_pct": 7.6
+    "6球": {
+      "count": 4,
+      "change_pct": -8.3
     },
     "1球": {
       "count": 3,
@@ -889,59 +889,59 @@
       "count": 1,
       "change_pct": 11.8
     },
-    "7球": {
-      "count": 4,
-      "change_pct": -18.8
-    },
-    "5球": {
-      "count": 3,
-      "change_pct": -4.0
-    },
     "4球": {
       "count": 2,
       "change_pct": -5.4
     },
-    "6球": {
-      "count": 4,
-      "change_pct": -8.3
+    "3球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": 7.6
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": -4.0
     }
   },
   "hafu_change": {
-    "负平": {
-      "count": 2,
-      "change_pct": -7.4
+    "平平": {
+      "count": 3,
+      "change_pct": -2.3
     },
     "胜负": {
       "count": 1,
       "change_pct": -4.2
     },
-    "平负": {
-      "count": 3,
-      "change_pct": -8.8
-    },
-    "平胜": {
-      "count": 3,
-      "change_pct": 8.3
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "胜平": {
       "count": 2,
       "change_pct": -7.4
-    },
-    "平平": {
-      "count": 3,
-      "change_pct": -2.3
     },
     "负负": {
       "count": 3,
       "change_pct": -9.2
     },
+    "负平": {
+      "count": 2,
+      "change_pct": -7.4
+    },
     "胜胜": {
       "count": 4,
       "change_pct": 9.1
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": 8.3
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": -8.8
     }
   },
   "exclusion_list": [
