@@ -1,6 +1,6 @@
 {
   "match_id": "2039373",
-  "fetch_time": "2026-04-27 21:44:44",
+  "fetch_time": "2026-04-27 23:34:10",
   "match_info": {
     "home_team": "西班牙人",
     "away_team": "莱万特",
@@ -861,59 +861,63 @@
     }
   },
   "ttg_change": {
+    "7球": {
+      "count": 4,
+      "change_pct": 50.0
+    },
     "6球": {
       "count": 3,
       "change_pct": 30.0
-    },
-    "3球": {
-      "count": 1,
-      "change_pct": -2.9
-    },
-    "5球": {
-      "count": 3,
-      "change_pct": 14.3
     },
     "2球": {
       "count": 2,
       "change_pct": -1.5
     },
-    "1球": {
+    "5球": {
       "count": 3,
-      "change_pct": -10.0
-    },
-    "4球": {
-      "count": 2,
-      "change_pct": 1.8
+      "change_pct": 14.3
     },
     "0球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "7球": {
-      "count": 4,
-      "change_pct": 50.0
+    "1球": {
+      "count": 3,
+      "change_pct": -10.0
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 1.8
     }
   },
   "hafu_change": {
-    "负胜": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
-    "负负": {
+    "负平": {
       "count": 1,
-      "change_pct": 4.2
+      "change_pct": 7.1
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -9.1
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "平胜": {
       "count": 2,
       "change_pct": -10.6
     },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 6.9
-    },
-    "平平": {
+    "负负": {
       "count": 1,
-      "change_pct": -9.1
+      "change_pct": 4.2
     },
     "平负": {
       "count": 1,
@@ -923,13 +927,24 @@
       "count": 1,
       "change_pct": 7.1
     },
-    "负平": {
+    "胜胜": {
+      "count": 2,
+      "change_pct": 6.9
+    }
+  },
+  "had_change": {},
+  "hhad_change": {
+    "让平": {
       "count": 1,
-      "change_pct": 7.1
+      "change_pct": -2.0
     },
-    "胜负": {
+    "让负": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "让胜": {
+      "count": 1,
+      "change_pct": 1.9
     }
   },
   "exclusion_list": [

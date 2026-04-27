@@ -1,6 +1,6 @@
 {
   "match_id": "2039374",
-  "fetch_time": "2026-04-27 21:46:21",
+  "fetch_time": "2026-04-27 23:34:42",
   "match_info": {
     "home_team": "吉维森特",
     "away_team": "卡萨皮亚",
@@ -799,59 +799,63 @@
     }
   },
   "ttg_change": {
+    "7球": {
+      "count": 3,
+      "change_pct": 23.3
+    },
     "6球": {
       "count": 3,
       "change_pct": 20.0
-    },
-    "3球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "5球": {
-      "count": 2,
-      "change_pct": 13.6
     },
     "2球": {
       "count": 3,
       "change_pct": -9.2
     },
+    "5球": {
+      "count": 2,
+      "change_pct": 13.6
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "1球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "3球": {
       "count": 0,
       "change_pct": 0.0
     },
     "4球": {
       "count": 2,
       "change_pct": 2.6
-    },
-    "0球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "7球": {
-      "count": 3,
-      "change_pct": 23.3
     }
   },
   "hafu_change": {
+    "胜负": {
+      "count": 1,
+      "change_pct": -10.0
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -5.6
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
       "count": 0,
       "change_pct": 0.0
     },
     "负负": {
       "count": 1,
       "change_pct": -5.0
-    },
-    "平胜": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 4.8
-    },
-    "平平": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平负": {
       "count": 1,
@@ -861,13 +865,37 @@
       "count": 1,
       "change_pct": -5.6
     },
-    "负平": {
+    "胜胜": {
       "count": 1,
-      "change_pct": -5.6
+      "change_pct": 4.8
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 3,
+      "change_pct": -5.5
     },
-    "胜负": {
-      "count": 1,
-      "change_pct": -10.0
+    "负": {
+      "count": 3,
+      "change_pct": -8.0
+    },
+    "胜": {
+      "count": 3,
+      "change_pct": 4.7
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 3,
+      "change_pct": -3.1
+    },
+    "让负": {
+      "count": 5,
+      "change_pct": -6.7
+    },
+    "让胜": {
+      "count": 5,
+      "change_pct": 11.9
     }
   },
   "exclusion_list": []

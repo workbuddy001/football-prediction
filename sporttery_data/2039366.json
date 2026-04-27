@@ -1,11 +1,19 @@
 {
   "match_id": "2039366",
-  "fetch_time": "2026-04-27 21:36:02",
+  "fetch_time": "2026-04-27 23:51:30",
   "match_info": {
     "home_team": "卡利亚里",
     "away_team": "亚特兰大",
     "league": "意大利甲级联赛",
-    "time": ""
+    "time": "2026-04-28 00:30",
+    "match_num_str": "周一001",
+    "match_week": "周一",
+    "match_date": "2026-04-28",
+    "match_time": "00:30:00",
+    "match_status": "Selling",
+    "home_rank": "[意甲16]",
+    "away_rank": "[意甲7]",
+    "league_abbr": "意甲"
   },
   "score_odds": {
     "05:00": "700.0",
@@ -885,21 +893,25 @@
     }
   },
   "ttg_change": {
-    "6球": {
-      "count": 2,
-      "change_pct": 21.1
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": -5.6
-    },
     "5球": {
       "count": 1,
       "change_pct": 4.8
     },
-    "2球": {
+    "7球": {
+      "count": 1,
+      "change_pct": 16.7
+    },
+    "6球": {
       "count": 2,
-      "change_pct": 0.0
+      "change_pct": 21.1
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -9.1
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -5.6
     },
     "1球": {
       "count": 3,
@@ -909,16 +921,28 @@
       "count": 0,
       "change_pct": 0.0
     },
-    "0球": {
-      "count": 1,
-      "change_pct": -9.1
-    },
-    "7球": {
-      "count": 1,
-      "change_pct": 16.7
+    "2球": {
+      "count": 2,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {
+    "平负": {
+      "count": 2,
+      "change_pct": -11.1
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 10.0
+    },
     "负胜": {
       "count": 0,
       "change_pct": 0.0
@@ -927,33 +951,45 @@
       "count": 1,
       "change_pct": -1.9
     },
-    "平胜": {
-      "count": 2,
-      "change_pct": 7.8
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 10.0
-    },
-    "平平": {
-      "count": 2,
-      "change_pct": 7.4
-    },
-    "平负": {
-      "count": 2,
-      "change_pct": -11.1
-    },
     "胜平": {
       "count": 0,
       "change_pct": 0.0
     },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
+    "平胜": {
+      "count": 2,
+      "change_pct": 7.8
     },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
+    "平平": {
+      "count": 2,
+      "change_pct": 7.4
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 4,
+      "change_pct": 4.9
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": 13.7
+    },
+    "负": {
+      "count": 4,
+      "change_pct": -6.6
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 3,
+      "change_pct": -9.3
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": 7.7
+    },
+    "让负": {
+      "count": 1,
+      "change_pct": -2.2
     }
   },
   "exclusion_list": [

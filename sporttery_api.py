@@ -37,6 +37,59 @@ class SportteryAPI:
             pass
         return None
 
+    # ==================== 比赛列表（编号/时间/排名） ====================
+    def get_match_list(self, begin_date=None, end_date=None):
+        """获取比赛列表，包含竞彩编号、比赛时间、排名等
+        返回格式: {match_id: {matchNumStr, matchWeek, matchDate, matchTime,
+                               matchStatus, homeRank, awayRank, leagueAbbName, ...}}
+        """
+        if not begin_date:
+            begin_date = datetime.now().strftime('%Y-%m-%d')
+        if not end_date:
+            end_date = (datetime.now().replace(day=datetime.now().day) ).strftime('%Y-%m-%d')
+            # 查询当天到后一天
+            from datetime import timedelta
+            end_date = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
+
+        url = f"{self.base_api}/getMatchCalculatorV1.qry"
+        params = {
+            'matchPage': 1,
+            'matchBeginDate': begin_date,
+            'matchEndDate': end_date,
+            'leagueIds': '',
+            'pageSize': 100,
+            'isFix': 0,
+            'pcOrWap': 1,
+            'clientCode': self.client_code,
+        }
+        try:
+            r = requests.get(url, params=params, headers=self.headers, timeout=15)
+            r.encoding = 'utf-8'
+            if r.status_code == 200:
+                data = r.json()
+                if data.get('success'):
+                    result = {}
+                    for day_info in data.get('value', {}).get('matchInfoList', []):
+                        for sub in day_info.get('subMatchList', []):
+                            mid = str(sub.get('matchId', ''))
+                            if mid:
+                                result[mid] = {
+                                    'matchNumStr': sub.get('matchNumStr', ''),
+                                    'matchWeek': sub.get('matchWeek', ''),
+                                    'matchNum': sub.get('matchNum', ''),
+                                    'matchDate': sub.get('matchDate', ''),
+                                    'matchTime': sub.get('matchTime', ''),
+                                    'matchStatus': sub.get('matchStatus', ''),
+                                    'homeRank': sub.get('homeRank', ''),
+                                    'awayRank': sub.get('awayRank', ''),
+                                    'leagueAbbName': sub.get('leagueAbbName', ''),
+                                    'sellStatus': sub.get('sellStatus', 0),
+                                }
+                    return result
+        except Exception:
+            pass
+        return {}
+
     # ==================== 原始赔率数据 ====================
     def get_match_data(self, match_id):
         """获取比赛赔率数据"""
@@ -126,12 +179,35 @@ class SportteryAPI:
         hafu = self._parse_hafu(odds_data)
         hhad = self._parse_hhad(odds_data)
         
+        # 从列表接口补充竞彩编号、比赛时间、排名等
+        try:
+            list_data = self.get_match_list()
+            mid_str = str(match_id)
+            if mid_str in list_data:
+                extra = list_data[mid_str]
+                match_info['match_num_str'] = extra.get('matchNumStr', '')
+                match_info['match_week'] = extra.get('matchWeek', '')
+                match_info['match_date'] = extra.get('matchDate', '')
+                match_info['match_time'] = extra.get('matchTime', '')
+                match_info['match_status'] = extra.get('matchStatus', '')
+                match_info['home_rank'] = extra.get('homeRank', '')
+                match_info['away_rank'] = extra.get('awayRank', '')
+                match_info['league_abbr'] = extra.get('leagueAbbName', '')
+                # 如果原 match_info 里 time 为空，用列表的日期+时间补充
+                if not match_info.get('time') and extra.get('matchDate'):
+                    t = extra.get('matchTime', '00:00:00')[:5]
+                    match_info['time'] = extra['matchDate'] + ' ' + t
+        except Exception:
+            pass
+        
         # 获取前瞻数据
         preview = self.get_preview_data(match_id)
 
         # 计算赔率变化统计
         ttg_change_stats = self._calc_ttg_change_stats(odds_data)
         hafu_change_stats = self._calc_hafu_change_stats(odds_data)
+        had_change_stats = self._calc_had_change_stats(odds_data)
+        hhad_change_stats = self._calc_hhad_change_stats(odds_data)
 
         # 计算进球数-比分联动排除列表
         exclusion_list = self._calc_exclusion_list(score_odds, total_goals)
@@ -149,6 +225,8 @@ class SportteryAPI:
             'preview': preview,
             'ttg_change': ttg_change_stats,
             'hafu_change': hafu_change_stats,
+            'had_change': had_change_stats,
+            'hhad_change': hhad_change_stats,
             'exclusion_list': exclusion_list
         }
         
@@ -350,6 +428,96 @@ class SportteryAPI:
                     'count': changes,
                     'change_pct': round(change_pct, 1)
                 }
+
+        return stats
+
+    def _calc_had_change_stats(self, data):
+        """计算胜平负赔率变化统计
+        返回格式: {"胜": {"count": 变化次数, "change_pct": 变化百分比}, ...}
+        """
+        had_list = data.get('hadList', [])
+        if len(had_list) < 2:
+            return {}
+
+        had_names = {'h': '胜', 'd': '平', 'a': '负'}
+        all_keys = set(had_names.keys())
+
+        stats = {}
+        for key in all_keys:
+            values = []
+            for item in had_list:
+                if isinstance(item, dict) and key in item:
+                    try:
+                        v = float(item[key])
+                        if v > 0:
+                            values.append(v)
+                    except (ValueError, TypeError):
+                        pass
+
+            if len(values) < 2:
+                continue
+
+            changes = 0
+            for i in range(1, len(values)):
+                if abs(values[i] - values[i-1]) > 0.001:
+                    changes += 1
+
+            first_val = values[0]
+            last_val = values[-1]
+            if first_val > 0:
+                change_pct = ((last_val - first_val) / first_val) * 100
+            else:
+                change_pct = 0
+
+            stats[had_names[key]] = {
+                'count': changes,
+                'change_pct': round(change_pct, 1)
+            }
+
+        return stats
+
+    def _calc_hhad_change_stats(self, data):
+        """计算让球胜平负赔率变化统计
+        返回格式: {"让胜": {"count": 变化次数, "change_pct": 变化百分比}, ...}
+        """
+        hhad_list = data.get('hhadList', [])
+        if len(hhad_list) < 2:
+            return {}
+
+        hhad_names = {'h': '让胜', 'd': '让平', 'a': '让负'}
+        all_keys = set(hhad_names.keys())
+
+        stats = {}
+        for key in all_keys:
+            values = []
+            for item in hhad_list:
+                if isinstance(item, dict) and key in item:
+                    try:
+                        v = float(item[key])
+                        if v > 0:
+                            values.append(v)
+                    except (ValueError, TypeError):
+                        pass
+
+            if len(values) < 2:
+                continue
+
+            changes = 0
+            for i in range(1, len(values)):
+                if abs(values[i] - values[i-1]) > 0.001:
+                    changes += 1
+
+            first_val = values[0]
+            last_val = values[-1]
+            if first_val > 0:
+                change_pct = ((last_val - first_val) / first_val) * 100
+            else:
+                change_pct = 0
+
+            stats[hhad_names[key]] = {
+                'count': changes,
+                'change_pct': round(change_pct, 1)
+            }
 
         return stats
 

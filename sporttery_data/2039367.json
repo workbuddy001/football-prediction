@@ -1,11 +1,19 @@
 {
   "match_id": "2039367",
-  "fetch_time": "2026-04-27 21:36:44",
+  "fetch_time": "2026-04-27 23:53:50",
   "match_info": {
     "home_team": "米亚尔比",
     "away_team": "哈尔姆斯塔德",
     "league": "瑞典超级联赛",
-    "time": ""
+    "time": "2026-04-28 01:00",
+    "match_num_str": "周一002",
+    "match_week": "周一",
+    "match_date": "2026-04-28",
+    "match_time": "01:00:00",
+    "match_status": "Selling",
+    "home_rank": "[瑞超11]",
+    "away_rank": "[瑞超15]",
+    "league_abbr": "瑞超"
   },
   "score_odds": {
     "05:00": "32.00",
@@ -799,40 +807,42 @@
     }
   },
   "ttg_change": {
-    "6球": {
-      "count": 3,
-      "change_pct": 17.9
+    "1球": {
+      "count": 1,
+      "change_pct": -3.6
     },
     "3球": {
       "count": 1,
       "change_pct": -2.9
     },
-    "5球": {
-      "count": 1,
-      "change_pct": 6.2
-    },
-    "2球": {
-      "count": 2,
-      "change_pct": 1.4
-    },
-    "1球": {
-      "count": 1,
-      "change_pct": -3.6
-    },
     "4球": {
       "count": 2,
       "change_pct": -5.0
+    },
+    "7球": {
+      "count": 3,
+      "change_pct": 20.0
     },
     "0球": {
       "count": 1,
       "change_pct": -6.7
     },
-    "7球": {
+    "2球": {
+      "count": 2,
+      "change_pct": 1.4
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "6球": {
       "count": 3,
-      "change_pct": 20.0
+      "change_pct": 17.9
     }
   },
   "hafu_change": {},
+  "had_change": {},
+  "hhad_change": {},
   "exclusion_list": [
     {
       "goal": "4球",

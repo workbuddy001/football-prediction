@@ -1218,8 +1218,15 @@ HTML_TEMPLATE = '''
                 return `
                 <div class="match-card">
                     <div class="match-header">
-                        <span class="match-id">#${m.match_id}</span>
-                        <span style="color:#666;font-size:12px">${m.fetch_time || ''}</span>
+                        <span class="match-id">${m.match_info.match_num_str || ''}${m.match_info.match_num_str ? ' <span style="color:#666;font-size:11px;font-weight:normal">#' + m.match_id + '</span>' : '#' + m.match_id}</span>
+                        <span style="color:#666;font-size:12px">${m.match_info.match_date ? m.match_info.match_date + ' ' : ''}${m.match_info.match_time || ''} ${m.match_info.match_status === 'Selling' ? '<span style="color:#22c55e;font-size:11px">●在售</span>' : ''}</span>
+                    </div>
+                    
+                    <div style="text-align:center;margin-bottom:8px;font-size:13px;color:#aaa">
+                        <span style="background:#1a1a3e;padding:2px 8px;border-radius:3px;margin-right:8px">${m.match_info.league_abbr || m.match_info.league || ''}</span>
+                        ${m.match_info.home_rank ? '<span style="color:#f59e0b">' + m.match_info.home_rank + '</span>' : ''}
+                        <span style="margin:0 6px;color:#555">vs</span>
+                        ${m.match_info.away_rank ? '<span style="color:#f59e0b">' + m.match_info.away_rank + '</span>' : ''}
                     </div>
                     
                     <div class="teams">
@@ -1502,9 +1509,9 @@ HTML_TEMPLATE = '''
                     <div class="odds-section">
                         <div class="odds-title">胜平负</div>
                         <div class="odds-grid">
-                            <div class="odds-item ${getOddsClass(m.had['胜'])}"><div class="label">主胜</div><div class="value">${m.had['胜'] || '-'}</div></div>
-                            <div class="odds-item ${getOddsClass(m.had['平'])}"><div class="label">平局</div><div class="value">${m.had['平'] || '-'}</div></div>
-                            <div class="odds-item ${getOddsClass(m.had['负'])}"><div class="label">客胜</div><div class="value">${m.had['负'] || '-'}</div></div>
+                            <div class="odds-item ${getOddsClass(m.had['胜'])}"><div class="label">主胜</div><div class="value">${m.had['胜'] || '-'}${_getHADChangeTag(m, '胜')}</div></div>
+                            <div class="odds-item ${getOddsClass(m.had['平'])}"><div class="label">平局</div><div class="value">${m.had['平'] || '-'}${_getHADChangeTag(m, '平')}</div></div>
+                            <div class="odds-item ${getOddsClass(m.had['负'])}"><div class="label">客胜</div><div class="value">${m.had['负'] || '-'}${_getHADChangeTag(m, '负')}</div></div>
                         </div>
                     </div>
                     ` : ''}
@@ -1560,9 +1567,9 @@ HTML_TEMPLATE = '''
                     <div class="odds-section">
                         <div class="odds-title">让球(${m.hhad.让球})胜平负</div>
                         <div class="odds-grid">
-                            <div class="odds-item ${getOddsClass(m.hhad.让胜)}"><div class="label">让胜</div><div class="value">${m.hhad.让胜 || '-'}</div></div>
-                            <div class="odds-item ${getOddsClass(m.hhad.让平)}"><div class="label">让平</div><div class="value">${m.hhad.让平 || '-'}</div></div>
-                            <div class="odds-item ${getOddsClass(m.hhad.让负)}"><div class="label">让负</div><div class="value">${m.hhad.让负 || '-'}</div></div>
+                            <div class="odds-item ${getOddsClass(m.hhad.让胜)}"><div class="label">让胜</div><div class="value">${m.hhad.让胜 || '-'}${_getHHADChangeTag(m, '让胜')}</div></div>
+                            <div class="odds-item ${getOddsClass(m.hhad.让平)}"><div class="label">让平</div><div class="value">${m.hhad.让平 || '-'}${_getHHADChangeTag(m, '让平')}</div></div>
+                            <div class="odds-item ${getOddsClass(m.hhad.让负)}"><div class="label">让负</div><div class="value">${m.hhad.让负 || '-'}${_getHHADChangeTag(m, '让负')}</div></div>
                         </div>
                         ${m.hhad_hint && m.hhad_hint.active ? (() => {
                             const h = m.hhad_hint;
@@ -1644,7 +1651,7 @@ HTML_TEMPLATE = '''
                     ` : ''}
 
                     <!-- 赔率变化统计 -->
-                    ${(m.ttg_change && Object.keys(m.ttg_change).length > 0) || (m.hafu_change && Object.keys(m.hafu_change).length > 0) ? `
+                    ${(m.ttg_change && Object.keys(m.ttg_change).length > 0) || (m.hafu_change && Object.keys(m.hafu_change).length > 0) || (m.had_change && Object.keys(m.had_change).length > 0) || (m.hhad_change && Object.keys(m.hhad_change).length > 0) ? `
                     <div class="odds-section">
                         <div class="odds-title">赔率变化统计</div>
                         <div class="change-stats">
@@ -1653,6 +1660,40 @@ HTML_TEMPLATE = '''
                                 <div class="change-subtitle">总进球变化</div>
                                 <div class="change-grid">
                                     ${Object.entries(m.ttg_change || {}).map(([k, v]) => {
+                                        const up = v.change_pct > 0;
+                                        const down = v.change_pct < 0;
+                                        const cls = up ? 'change-up' : (down ? 'change-down' : 'change-neutral');
+                                        const arrow = up ? '↑' : (down ? '↓' : '→');
+                                        return `<div class="change-item ${cls}">
+                                            <div class="change-label">${k}</div>
+                                            <div class="change-value">${v.count}次 ${arrow}${Math.abs(v.change_pct)}%</div>
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>
+                            ` : ''}
+                            ${m.had_change && Object.keys(m.had_change).length > 0 ? `
+                            <div class="change-category">
+                                <div class="change-subtitle">胜平负变化</div>
+                                <div class="change-grid">
+                                    ${Object.entries(m.had_change || {}).map(([k, v]) => {
+                                        const up = v.change_pct > 0;
+                                        const down = v.change_pct < 0;
+                                        const cls = up ? 'change-up' : (down ? 'change-down' : 'change-neutral');
+                                        const arrow = up ? '↑' : (down ? '↓' : '→');
+                                        return `<div class="change-item ${cls}">
+                                            <div class="change-label">${k}</div>
+                                            <div class="change-value">${v.count}次 ${arrow}${Math.abs(v.change_pct)}%</div>
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>
+                            ` : ''}
+                            ${m.hhad_change && Object.keys(m.hhad_change).length > 0 ? `
+                            <div class="change-category">
+                                <div class="change-subtitle">让球胜平负变化</div>
+                                <div class="change-grid">
+                                    ${Object.entries(m.hhad_change || {}).map(([k, v]) => {
                                         const up = v.change_pct > 0;
                                         const down = v.change_pct < 0;
                                         const cls = up ? 'change-up' : (down ? 'change-down' : 'change-neutral');
@@ -1885,6 +1926,24 @@ HTML_TEMPLATE = '''
             if (v < 3) return 'odds-item low';
             if (v < 6) return 'odds-item medium';
             return 'odds-item high';
+        }
+
+        function _getHADChangeTag(m, key) {
+            if (!m.had_change || !m.had_change[key] || m.had_change[key].count === 0) return '';
+            const c = m.had_change[key];
+            const up = c.change_pct > 0;
+            const color = up ? '#ef4444' : '#22c55e';
+            const arrow = up ? '↑' : '↓';
+            return '<span class="odds-change-tag" style="color:' + color + '">' + arrow + Math.abs(c.change_pct) + '%</span>';
+        }
+
+        function _getHHADChangeTag(m, key) {
+            if (!m.hhad_change || !m.hhad_change[key] || m.hhad_change[key].count === 0) return '';
+            const c = m.hhad_change[key];
+            const up = c.change_pct > 0;
+            const color = up ? '#ef4444' : '#22c55e';
+            const arrow = up ? '↑' : '↓';
+            return '<span class="odds-change-tag" style="color:' + color + '">' + arrow + Math.abs(c.change_pct) + '%</span>';
         }
         
         function getLowestScores(odds) {
@@ -2969,7 +3028,15 @@ def _build_match_card(data, api):
                 'home_team': match_info.get('home_team', '未知'),
                 'away_team': match_info.get('away_team', '未知'),
                 'league': match_info.get('league', ''),
+                'league_abbr': match_info.get('league_abbr', ''),
                 'time': match_info.get('time', ''),
+                'match_num_str': match_info.get('match_num_str', ''),
+                'match_week': match_info.get('match_week', ''),
+                'match_date': match_info.get('match_date', ''),
+                'match_time': match_info.get('match_time', ''),
+                'match_status': match_info.get('match_status', ''),
+                'home_rank': match_info.get('home_rank', ''),
+                'away_rank': match_info.get('away_rank', ''),
             },
             # 进球数赔率（列表展示用）
             'total_goals': data.get('total_goals', {}),
@@ -3013,7 +3080,9 @@ def _build_match_card(data, api):
             } if hhad else {},
             # 变化数据
             'ttg_change': ttg_change,
-            'hafu_change': {k: v for k, v in hafu_change.items() if isinstance(v, (int, float))},
+            'hafu_change': hafu_change,
+            'had_change': data.get('had_change', {}),
+            'hhad_change': data.get('hhad_change', {}),
             'exclusion_list': exclusion_list,
             # 比分历史命中率推荐（新）
             'score_recommendations': data.get('score_recommendations', []),
