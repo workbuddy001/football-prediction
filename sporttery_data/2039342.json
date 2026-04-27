@@ -1,6 +1,6 @@
 {
   "match_id": "2039342",
-  "fetch_time": "2026-04-27 02:46:57",
+  "fetch_time": "2026-04-27 10:57:20",
   "match_info": {
     "home_team": "帕德博恩",
     "away_team": "沙尔克04",
@@ -669,17 +669,17 @@
           "drawMatchCnt": 7,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 6,
+          "lossGoalMatchCnt": 7,
           "phaseName": "",
           "points": "58",
           "ranking": "2",
           "sportteryTeamId": 169,
           "teamId": 0,
           "teamShortName": "帕德博恩",
-          "totalLegCnt": 30,
+          "totalLegCnt": 31,
           "uniformTeamId": 352,
           "winGoalMatchCnt": 17,
-          "winProbability": "57%"
+          "winProbability": "55%"
         },
         {
           "drawMatchCnt": 7,
@@ -687,15 +687,15 @@
           "groupName": "",
           "lossGoalMatchCnt": 5,
           "phaseName": "",
-          "points": "61",
+          "points": "64",
           "ranking": "1",
           "sportteryTeamId": 151,
           "teamId": 0,
           "teamShortName": "沙尔克04",
-          "totalLegCnt": 30,
+          "totalLegCnt": 31,
           "uniformTeamId": 191,
-          "winGoalMatchCnt": 18,
-          "winProbability": "60%"
+          "winGoalMatchCnt": 19,
+          "winProbability": "61%"
         }
       ],
       "tournamentId": 247,
@@ -707,37 +707,37 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
-            "assistProbability": "17%",
-            "goalAvgCnt": "0.5",
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.4",
             "goalCnt": 13,
-            "goalProbability": "30%",
+            "goalProbability": "28%",
             "injuryFlag": 0,
             "personId": 237023,
             "personName": "K. Karaman",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 27,
+            "startedMatchCnt": 28,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
-            "assistProbability": "7%",
+            "assistProbability": "6%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
-            "goalProbability": "16%",
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 459831,
             "personName": "西拉",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 21,
+            "startedMatchCnt": 22,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "9"
@@ -749,7 +749,7 @@
             "assistProbability": "10%",
             "goalAvgCnt": "0.8",
             "goalCnt": 6,
-            "goalProbability": "14%",
+            "goalProbability": "13%",
             "injuryFlag": 1,
             "personId": 20588,
             "personName": "E. Džeko",
@@ -769,43 +769,43 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 25,
+            "appearanceCnt": 26,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "3%",
-            "goalAvgCnt": "0.6",
+            "goalAvgCnt": "0.5",
             "goalCnt": 14,
-            "goalProbability": "26%",
+            "goalProbability": "25%",
             "injuryFlag": 0,
             "personId": 562431,
             "personName": "F. Bilbija",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 18,
+            "startedMatchCnt": 19,
             "substituteMatchCnt": 7,
             "suspensionFlag": 0,
             "uniformNo": "7"
           },
           {
-            "appearanceCnt": 28,
-            "assistAvgCnt": "0.3",
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.2",
             "assistCnt": 7,
-            "assistProbability": "21%",
+            "assistProbability": "20%",
             "goalAvgCnt": "0.2",
-            "goalCnt": 6,
-            "goalProbability": "11%",
+            "goalCnt": 7,
+            "goalProbability": "13%",
             "injuryFlag": 0,
             "personId": 562508,
             "personName": "L. Curda",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 29,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "17"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "9%",
@@ -818,7 +818,7 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 14,
-            "substituteMatchCnt": 14,
+            "substituteMatchCnt": 15,
             "suspensionFlag": 0,
             "uniformNo": "27"
           }
@@ -838,9 +838,9 @@
   },
   "ttg_change": {},
   "hafu_change": {
-    "平平": {
+    "负胜": {
       "count": 1,
-      "change_pct": -3.6
+      "change_pct": 9.1
     },
     "胜负": {
       "count": 0,
@@ -858,21 +858,21 @@
       "count": 1,
       "change_pct": -3.8
     },
+    "平负": {
+      "count": 1,
+      "change_pct": -4.6
+    },
     "胜胜": {
       "count": 2,
       "change_pct": 7.0
-    },
-    "负胜": {
-      "count": 1,
-      "change_pct": 9.1
     },
     "平胜": {
       "count": 2,
       "change_pct": 7.5
     },
-    "平负": {
+    "平平": {
       "count": 1,
-      "change_pct": -4.6
+      "change_pct": -3.6
     }
   },
   "exclusion_list": [

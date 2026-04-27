@@ -1,0 +1,942 @@
+{
+  "match_id": "2039364",
+  "fetch_time": "2026-04-27 07:26:46",
+  "match_info": {
+    "home_team": "阿维斯SAD",
+    "away_team": "里斯本竞技",
+    "league": "葡萄牙超级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "800.0",
+    "01:00": "48.00",
+    "05:02": "800.0",
+    "05:01": "800.0",
+    "02:04": "40.00",
+    "02:05": "70.00",
+    "02:02": "27.00",
+    "02:03": "30.00",
+    "02:00": "175.0",
+    "02:01": "40.00",
+    "03:03": "125.0",
+    "03:01": "200.0",
+    "03:02": "125.0",
+    "03:00": "400.0",
+    "00:01": "11.50",
+    "00:00": "37.00",
+    "00:03": "6.25",
+    "00:02": "6.70",
+    "00:05": "11.50",
+    "00:04": "7.10",
+    "04:02": "500.0",
+    "04:01": "650.0",
+    "04:00": "800.0",
+    "01:02": "8.75",
+    "01:01": "16.00",
+    "01:04": "12.00",
+    "01:03": "9.30",
+    "01:05": "20.00"
+  },
+  "total_goals": {
+    "3球": "3.65",
+    "4球": "3.70",
+    "5球": "5.60",
+    "6球": "8.00",
+    "7球": "8.25",
+    "0球": "37.00",
+    "1球": "11.00",
+    "2球": "6.00"
+  },
+  "had": {},
+  "ttg": {
+    "3球": "3.65",
+    "4球": "3.70",
+    "5球": "5.60",
+    "6球": "8.00",
+    "7球": "8.25",
+    "0球": "37.00",
+    "1球": "11.00",
+    "2球": "6.00"
+  },
+  "hafu": {
+    "负负": "1.29",
+    "平平": "13.00",
+    "胜胜": "31.00",
+    "负平": "32.00",
+    "平胜": "40.00",
+    "负胜": "150.0",
+    "胜负": "23.00",
+    "胜平": "32.00",
+    "平负": "4.30"
+  },
+  "hhad": {
+    "让球": "+2",
+    "让胜": "3.00",
+    "让平": "4.00",
+    "让负": "1.83"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "里斯本",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "50",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "27",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "63",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "23",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.5",
+        "awayGoalAvgCntRatio": "68.2",
+        "homeGoalAvgCnt": "0.7",
+        "homeGoalAvgCntRatio": "31.8",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "阿维SAD",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "17",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 4
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.1",
+        "awayLossGoalAvgCntRatio": "45.8",
+        "homeLossGoalAvgCnt": "1.3",
+        "homeLossGoalAvgCntRatio": "54.2",
+        "totalLegCnt": 10
+      },
+      "matchId": 2367420,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 1
+      },
+      "sportteryAwayTeamId": 1060,
+      "sportteryHomeTeamId": 1040921,
+      "sportteryMatchId": 2039364,
+      "uniformAwayTeamId": 140,
+      "uniformHomeTeamId": 35111
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 56869,
+          "awayTeamShortName": "阿维SAD",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1680,
+          "homeTeamShortName": "里斯本",
+          "matchDate": "2026-02-06",
+          "matchId": 2471524,
+          "seasonId": 13780,
+          "sportteryAwayTeamId": 1040921,
+          "sportteryHomeTeamId": 1060,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 570,
+          "tournamentShortName": "葡萄牙杯",
+          "uniformAwayTeamId": 35111,
+          "uniformHomeTeamId": 140,
+          "uniformLeagueId": 98,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 56869,
+          "awayTeamShortName": "阿维SAD",
+          "fullCourtGoal": "6:0",
+          "gmLeagueId": 55,
+          "halfTimeGoal": "3:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "6",
+          "homeTeamId": 1680,
+          "homeTeamShortName": "里斯本",
+          "matchDate": "2025-12-14",
+          "matchId": 2367540,
+          "seasonId": 13480,
+          "sportteryAwayTeamId": 1040921,
+          "sportteryHomeTeamId": 1060,
+          "sportteryMatchId": 2036026,
+          "sportteryTournamentId": 55,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 6,
+          "tournamentId": 140,
+          "tournamentShortName": "葡超",
+          "uniformAwayTeamId": 35111,
+          "uniformHomeTeamId": 140,
+          "uniformLeagueId": 78,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1680,
+          "awayTeamShortName": "里斯本",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 56869,
+          "homeTeamShortName": "阿维SAD",
+          "matchDate": "2025-02-24",
+          "matchId": 2147001,
+          "seasonId": 11974,
+          "sportteryAwayTeamId": 1060,
+          "sportteryHomeTeamId": 1040921,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 140,
+          "tournamentShortName": "葡超",
+          "uniformAwayTeamId": 140,
+          "uniformHomeTeamId": 35111,
+          "uniformLeagueId": 78,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 56869,
+          "awayTeamShortName": "阿维SAD",
+          "fullCourtGoal": "3:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 1680,
+          "homeTeamShortName": "里斯本",
+          "matchDate": "2024-09-23",
+          "matchId": 2146879,
+          "seasonId": 11974,
+          "sportteryAwayTeamId": 1040921,
+          "sportteryHomeTeamId": 1060,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 140,
+          "tournamentShortName": "葡超",
+          "uniformAwayTeamId": 35111,
+          "uniformHomeTeamId": 140,
+          "uniformLeagueId": 78,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "50%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "50%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "阿维SAD",
+        "totalLegCnt": 4,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 13,
+            "injuryFlag": 1,
+            "personId": 508528,
+            "personName": "F. Ioannidis",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "89"
+          },
+          {
+            "appearanceCnt": 23,
+            "injuryFlag": 1,
+            "personId": 683864,
+            "personName": "Iván Fresneda",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 9,
+            "injuryFlag": 1,
+            "personId": 774707,
+            "personName": "Luis Guilherme",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "31"
+          }
+        ],
+        "sportteryTeamId": 1060,
+        "teamId": 1680,
+        "teamShortName": "里斯本",
+        "uniformTeamId": 140
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 4,
+            "injuryFlag": 1,
+            "personId": 405691,
+            "personName": "安德烈·格林",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "25"
+          }
+        ],
+        "sportteryTeamId": 1040921,
+        "teamId": 56869,
+        "teamShortName": "阿维SAD",
+        "uniformTeamId": 35111
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1060,
+            "awayTeamShortName": "里斯本",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 937,
+            "homeTeamShortName": "波尔图",
+            "matchDate": "2026-04-23",
+            "matchId": 2486526,
+            "seasonId": 13780,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 570,
+            "tournamentShortName": "葡萄牙杯",
+            "uniformAwayTeamId": 140,
+            "uniformHomeTeamId": 141,
+            "uniformLeagueId": 98,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 267,
+            "awayTeamShortName": "本菲卡",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1060,
+            "homeTeamShortName": "里斯本",
+            "matchDate": "2026-04-20",
+            "matchId": 2367426,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039201,
+            "sportteryTournamentId": 55,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 220,
+            "uniformHomeTeamId": 140,
+            "uniformLeagueId": 78,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1060,
+            "awayTeamShortName": "里斯本",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1,
+            "homeTeamShortName": "阿森纳",
+            "matchDate": "2026-04-16",
+            "matchId": 2511489,
+            "seasonId": 13333,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039112,
+            "sportteryTournamentId": 69,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1096,
+            "tournamentShortName": "欧冠",
+            "uniformAwayTeamId": 140,
+            "uniformHomeTeamId": 1193,
+            "uniformLeagueId": 30,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1060,
+            "awayTeamShortName": "里斯本",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 261,
+            "homeTeamShortName": "阿马多拉",
+            "matchDate": "2026-04-12",
+            "matchId": 2367433,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039030,
+            "sportteryTournamentId": 55,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 140,
+            "uniformHomeTeamId": 35076,
+            "uniformLeagueId": 78,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1,
+            "awayTeamShortName": "阿森纳",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1060,
+            "homeTeamShortName": "里斯本",
+            "matchDate": "2026-04-08",
+            "matchId": 2511404,
+            "seasonId": 13333,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038915,
+            "sportteryTournamentId": 69,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1096,
+            "tournamentShortName": "欧冠",
+            "uniformAwayTeamId": 1193,
+            "uniformHomeTeamId": 140,
+            "uniformLeagueId": 30,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 2,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 1060,
+          "teamShortName": "里斯本",
+          "totalLegCnt": 5,
+          "uniformTeamId": 140,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1040921,
+            "awayTeamShortName": "阿维SAD",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1047,
+            "homeTeamShortName": "里奥阿维",
+            "matchDate": "2026-04-18",
+            "matchId": 2367429,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039145,
+            "sportteryTournamentId": 55,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 35111,
+            "uniformHomeTeamId": 455,
+            "uniformLeagueId": 78,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 538,
+            "awayTeamShortName": "吉马良斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1040921,
+            "homeTeamShortName": "阿维SAD",
+            "matchDate": "2026-04-11",
+            "matchId": 2367435,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 300,
+            "uniformHomeTeamId": 35111,
+            "uniformLeagueId": 78,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1040921,
+            "awayTeamShortName": "阿维SAD",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 393,
+            "homeTeamShortName": "吉维森特",
+            "matchDate": "2026-04-03",
+            "matchId": 2367443,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 35111,
+            "uniformHomeTeamId": 512,
+            "uniformLeagueId": 78,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1040921,
+            "awayTeamShortName": "阿维SAD",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1873,
+            "homeTeamShortName": "通德拉",
+            "matchDate": "2026-03-22",
+            "matchId": 2367450,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 35111,
+            "uniformHomeTeamId": 394,
+            "uniformLeagueId": 78,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1618,
+            "awayTeamShortName": "圣克拉拉",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1040921,
+            "homeTeamShortName": "阿维SAD",
+            "matchDate": "2026-03-15",
+            "matchId": 2367947,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 131,
+            "uniformHomeTeamId": 35111,
+            "uniformLeagueId": 78,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 3,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -4,
+          "sportteryTeamId": 0,
+          "teamId": 1040921,
+          "teamShortName": "阿维SAD",
+          "totalLegCnt": 5,
+          "uniformTeamId": 35111,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47981,
+      "seasonId": 13480,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 10,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 19,
+          "phaseName": "",
+          "points": "13",
+          "ranking": "18",
+          "sportteryTeamId": 1040921,
+          "teamId": 0,
+          "teamShortName": "阿维SAD",
+          "totalLegCnt": 30,
+          "uniformTeamId": 35111,
+          "winGoalMatchCnt": 1,
+          "winProbability": "3%"
+        },
+        {
+          "drawMatchCnt": 5,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 2,
+          "phaseName": "",
+          "points": "71",
+          "ranking": "3",
+          "sportteryTeamId": 1060,
+          "teamId": 0,
+          "teamShortName": "里斯本",
+          "totalLegCnt": 29,
+          "uniformTeamId": 140,
+          "winGoalMatchCnt": 22,
+          "winProbability": "76%"
+        }
+      ],
+      "tournamentId": 140,
+      "tournamentShortName": "葡超",
+      "uniformLeagueId": 78,
+      "uniformMatchId": 2388630
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.9",
+            "goalCnt": 24,
+            "goalProbability": "31%",
+            "injuryFlag": 0,
+            "personId": 424688,
+            "personName": "L. Suárez",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "97"
+          },
+          {
+            "appearanceCnt": 23,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 6,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 13,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 497909,
+            "personName": "Pedro Gonçalves",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 30,
+            "assistAvgCnt": "0.4",
+            "assistCnt": 11,
+            "assistProbability": "19%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "8%",
+            "injuryFlag": 0,
+            "personId": 440079,
+            "personName": "Francisco Trincão",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          }
+        ],
+        "sportteryTeamId": 1060,
+        "teamId": 1680,
+        "teamShortName": "里斯本",
+        "uniformTeamId": 140
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 21,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "18%",
+            "injuryFlag": 0,
+            "personId": 8986,
+            "personName": "内内",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 20,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "18%",
+            "injuryFlag": 0,
+            "personId": 144844,
+            "personName": "Tómané",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 24,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 663408,
+            "personName": "佩德罗 利马",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 19,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          }
+        ],
+        "sportteryTeamId": 1040921,
+        "teamId": 56869,
+        "teamShortName": "阿维SAD",
+        "uniformTeamId": 35111
+      },
+      "seasonId": 13480,
+      "seasonName": "2025/2026",
+      "tournamentId": 140,
+      "tournamentShortName": "葡超",
+      "uniformLeagueId": 78,
+      "uniformMatchId": 2388630
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": 3.1
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 3.2
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 15.8
+    },
+    "0球": {
+      "count": 2,
+      "change_pct": 12.1
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": -9.8
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -7.6
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": 9.1
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 3.7
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 1,
+      "change_pct": -7.1
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": -14.8
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -5.9
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": 3.2
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -5.9
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": -13.9
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": -20.0
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "7球",
+      "ttg_odds": "8.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:02",
+          "odds": "800.0",
+          "special": false
+        },
+        {
+          "score": "02:05",
+          "odds": "70.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(8.25)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "3.65",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "40.00",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "400.0",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "6.25",
+          "special": true
+        },
+        {
+          "score": "01:02",
+          "odds": "8.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.65（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

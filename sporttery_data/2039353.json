@@ -1,0 +1,930 @@
+{
+  "match_id": "2039353",
+  "fetch_time": "2026-04-27 02:01:30",
+  "match_info": {
+    "home_team": "巴黎FC",
+    "away_team": "里尔",
+    "league": "法国甲级联赛",
+    "time": ""
+  },
+  "score_odds": {
+    "05:00": "500.0",
+    "01:00": "14.00",
+    "05:02": "450.0",
+    "05:01": "450.0",
+    "02:04": "40.00",
+    "02:05": "100.0",
+    "02:02": "12.50",
+    "02:03": "20.00",
+    "02:00": "27.00",
+    "02:01": "11.50",
+    "03:03": "50.00",
+    "03:01": "35.00",
+    "03:02": "36.00",
+    "03:00": "65.00",
+    "00:01": "7.50",
+    "00:00": "15.00",
+    "00:03": "14.00",
+    "00:02": "8.25",
+    "00:05": "65.00",
+    "00:04": "30.00",
+    "04:02": "120.0",
+    "04:01": "100.0",
+    "04:00": "175.0",
+    "01:02": "6.75",
+    "01:01": "6.75",
+    "01:04": "24.00",
+    "01:03": "11.00",
+    "01:05": "60.00"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "4.70",
+    "5球": "8.00",
+    "6球": "13.00",
+    "7球": "17.00",
+    "0球": "15.00",
+    "1球": "6.00",
+    "2球": "3.95"
+  },
+  "had": {
+    "胜": "4.45",
+    "平": "3.80",
+    "负": "1.56"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "4.70",
+    "5球": "8.00",
+    "6球": "13.00",
+    "7球": "17.00",
+    "0球": "15.00",
+    "1球": "6.00",
+    "2球": "3.95"
+  },
+  "hafu": {
+    "负负": "2.50",
+    "平平": "5.85",
+    "胜胜": "7.00",
+    "负平": "15.00",
+    "平胜": "9.50",
+    "负胜": "36.00",
+    "胜负": "24.00",
+    "胜平": "15.00",
+    "平负": "4.30"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "2.11",
+    "让平": "3.15",
+    "让负": "2.96"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "里尔",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.4",
+        "awayGoalAvgCntRatio": "50.0",
+        "homeGoalAvgCnt": "1.4",
+        "homeGoalAvgCntRatio": "50.0",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "巴黎FC",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 1
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.6",
+        "awayLossGoalAvgCntRatio": "33.3",
+        "homeLossGoalAvgCnt": "1.2",
+        "homeLossGoalAvgCntRatio": "66.7",
+        "totalLegCnt": 10
+      },
+      "matchId": 2355412,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 180,
+      "sportteryHomeTeamId": 482,
+      "sportteryMatchId": 2039353,
+      "uniformAwayTeamId": 103,
+      "uniformHomeTeamId": 490
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 2568,
+          "awayTeamShortName": "巴黎FC",
+          "fullCourtGoal": "4:2",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 895,
+          "homeTeamShortName": "里尔",
+          "matchDate": "2025-11-24",
+          "matchId": 2355263,
+          "seasonId": 13416,
+          "sportteryAwayTeamId": 482,
+          "sportteryHomeTeamId": 180,
+          "sportteryMatchId": 2035308,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 6,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 490,
+          "uniformHomeTeamId": 103,
+          "uniformLeagueId": 74,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 1,
+        "lossProbability": "100%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "巴黎FC",
+        "totalLegCnt": 1,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 190850,
+            "personName": "卡亚尔",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 24,
+            "injuryFlag": 1,
+            "personId": 232390,
+            "personName": "N. Bentaleb",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 12,
+            "suspensionFlag": 0,
+            "uniformNo": "6"
+          },
+          {
+            "appearanceCnt": 11,
+            "injuryFlag": 1,
+            "personId": 675381,
+            "personName": "M. Broholm",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 13,
+            "injuryFlag": 1,
+            "personId": 701673,
+            "personName": "I. Hamza",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "29"
+          },
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 728870,
+            "personName": "O. Touré",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "36"
+          }
+        ],
+        "sportteryTeamId": 180,
+        "teamId": 895,
+        "teamShortName": "里尔",
+        "uniformTeamId": 103
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 1578,
+            "personName": "R. Riou",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "1"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 298167,
+            "personName": "西蒙",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          },
+          {
+            "appearanceCnt": 25,
+            "injuryFlag": 1,
+            "personId": 394436,
+            "personName": "J. Krasso",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 13,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 429870,
+            "personName": "S. Alakouch",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          }
+        ],
+        "sportteryTeamId": 482,
+        "teamId": 2568,
+        "teamShortName": "巴黎FC",
+        "uniformTeamId": 490
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 186,
+            "awayTeamShortName": "尼斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 180,
+            "homeTeamShortName": "里尔",
+            "matchDate": "2026-04-19",
+            "matchId": 2355212,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039177,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 276,
+            "uniformHomeTeamId": 103,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 180,
+            "awayTeamShortName": "里尔",
+            "fullCourtGoal": "0:4",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 192,
+            "homeTeamShortName": "图卢兹",
+            "matchDate": "2026-04-12",
+            "matchId": 2355416,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039052,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 103,
+            "uniformHomeTeamId": 227,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 179,
+            "awayTeamShortName": "朗斯",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 180,
+            "homeTeamShortName": "里尔",
+            "matchDate": "2026-04-05",
+            "matchId": 2355217,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038833,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 351,
+            "uniformHomeTeamId": 103,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 180,
+            "awayTeamShortName": "里尔",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 182,
+            "homeTeamShortName": "马赛",
+            "matchDate": "2026-03-23",
+            "matchId": 2355323,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038548,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 103,
+            "uniformHomeTeamId": 280,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 180,
+            "awayTeamShortName": "里尔",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 2,
+            "homeTeamShortName": "维拉",
+            "matchDate": "2026-03-20",
+            "matchId": 2505386,
+            "seasonId": 13334,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038439,
+            "sportteryTournamentId": 70,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1103,
+            "tournamentShortName": "欧罗巴",
+            "uniformAwayTeamId": 103,
+            "uniformHomeTeamId": 6,
+            "uniformLeagueId": 23,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 9,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 180,
+          "teamShortName": "里尔",
+          "totalLegCnt": 5,
+          "uniformTeamId": 103,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 482,
+            "awayTeamShortName": "巴黎FC",
+            "fullCourtGoal": "1:3",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 183,
+            "homeTeamShortName": "梅斯",
+            "matchDate": "2026-04-19",
+            "matchId": 2355315,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 490,
+            "uniformHomeTeamId": 277,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 184,
+            "awayTeamShortName": "摩纳哥",
+            "fullCourtGoal": "4:1",
+            "halfTimeGoal": "3:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 482,
+            "homeTeamShortName": "巴黎FC",
+            "matchDate": "2026-04-11",
+            "matchId": 2355417,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038970,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 250,
+            "uniformHomeTeamId": 490,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 482,
+            "awayTeamShortName": "巴黎FC",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 750,
+            "homeTeamShortName": "洛里昂",
+            "matchDate": "2026-04-05",
+            "matchId": 2355320,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038853,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 490,
+            "uniformHomeTeamId": 397,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 194,
+            "awayTeamShortName": "勒阿弗尔",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 482,
+            "homeTeamShortName": "巴黎FC",
+            "matchDate": "2026-03-23",
+            "matchId": 2355422,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 176,
+            "uniformHomeTeamId": 490,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 482,
+            "awayTeamShortName": "巴黎FC",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 191,
+            "homeTeamShortName": "斯特拉斯",
+            "matchDate": "2026-03-15",
+            "matchId": 2355426,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 490,
+            "uniformHomeTeamId": 102,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 11,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 482,
+          "teamShortName": "巴黎FC",
+          "totalLegCnt": 5,
+          "uniformTeamId": 490,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47907,
+      "seasonId": 13416,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 11,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 10,
+          "phaseName": "",
+          "points": "38",
+          "ranking": "11",
+          "sportteryTeamId": 482,
+          "teamId": 0,
+          "teamShortName": "巴黎FC",
+          "totalLegCnt": 30,
+          "uniformTeamId": 490,
+          "winGoalMatchCnt": 9,
+          "winProbability": "30%"
+        },
+        {
+          "drawMatchCnt": 6,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 8,
+          "phaseName": "",
+          "points": "54",
+          "ranking": "4",
+          "sportteryTeamId": 180,
+          "teamId": 0,
+          "teamShortName": "里尔",
+          "totalLegCnt": 30,
+          "uniformTeamId": 103,
+          "winGoalMatchCnt": 16,
+          "winProbability": "53%"
+        }
+      ],
+      "tournamentId": 81,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2388624
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 5,
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 800944,
+            "personName": "M. Fernandez-Pardo",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 59504,
+            "personName": "吉鲁",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 601446,
+            "personName": "H. Haraldsson",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 25,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 180,
+        "teamId": 895,
+        "teamShortName": "里尔",
+        "uniformTeamId": 103
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "17%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 9,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 458617,
+            "personName": "I. Kebbal",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 12,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 4,
+            "goalProbability": "10%",
+            "injuryFlag": 0,
+            "personId": 424336,
+            "personName": "M·芒西",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "13%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "8%",
+            "injuryFlag": 1,
+            "personId": 298167,
+            "personName": "西蒙",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          }
+        ],
+        "sportteryTeamId": 482,
+        "teamId": 2568,
+        "teamShortName": "巴黎FC",
+        "uniformTeamId": 490
+      },
+      "seasonId": 13416,
+      "seasonName": "2025/2026",
+      "tournamentId": 81,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2388624
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 4,
+      "change_pct": -32.0
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": -23.5
+    },
+    "1球": {
+      "count": 4,
+      "change_pct": 20.0
+    },
+    "0球": {
+      "count": 2,
+      "change_pct": 15.4
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": -7.8
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 4,
+      "change_pct": 9.7
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": -11.1
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 1,
+      "change_pct": 4.5
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": -7.4
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 16.7
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 11.8
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -6.5
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.95",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "27.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "8.25",
+          "special": true
+        },
+        {
+          "score": "01:01",
+          "odds": "6.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.95（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "3.40",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "11.50",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "65.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "14.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "6.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.40（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

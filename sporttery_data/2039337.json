@@ -1,6 +1,6 @@
 {
   "match_id": "2039337",
-  "fetch_time": "2026-04-27 01:53:50",
+  "fetch_time": "2026-04-27 10:36:08",
   "match_info": {
     "home_team": "全北现代",
     "away_team": "浦项制铁",
@@ -633,31 +633,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 3,
           "phaseName": "",
-          "points": "12",
-          "ranking": "5",
+          "points": "15",
+          "ranking": "3",
           "sportteryTeamId": 860,
           "teamId": 0,
           "teamShortName": "全北现代",
-          "totalLegCnt": 9,
+          "totalLegCnt": 10,
           "uniformTeamId": 112,
-          "winGoalMatchCnt": 3,
-          "winProbability": "33%"
+          "winGoalMatchCnt": 4,
+          "winProbability": "40%"
         },
         {
           "drawMatchCnt": 3,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 3,
+          "lossGoalMatchCnt": 4,
           "phaseName": "",
           "points": "12",
-          "ranking": "7",
+          "ranking": "9",
           "sportteryTeamId": 1088,
           "teamId": 0,
           "teamShortName": "浦项制铁",
-          "totalLegCnt": 9,
+          "totalLegCnt": 10,
           "uniformTeamId": 388,
           "winGoalMatchCnt": 3,
-          "winProbability": "33%"
+          "winProbability": "30%"
         }
       ],
       "tournamentId": 51,
@@ -669,37 +669,37 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "0.4",
-            "goalCnt": 4,
-            "goalProbability": "80%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 6,
+            "goalProbability": "86%",
             "injuryFlag": 0,
             "personId": 670681,
             "personName": "Lee Ho-Jae",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 9,
+            "startedMatchCnt": 10,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 6,
+            "appearanceCnt": 7,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "0.2",
+            "goalAvgCnt": "0.1",
             "goalCnt": 1,
-            "goalProbability": "20%",
+            "goalProbability": "14%",
             "injuryFlag": 0,
             "personId": 705627,
             "personName": "J. Tranziska",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 1,
+            "startedMatchCnt": 2,
             "substituteMatchCnt": 5,
             "suspensionFlag": 0,
             "uniformNo": "10"
@@ -731,55 +731,55 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.3",
             "goalCnt": 3,
-            "goalProbability": "33%",
+            "goalProbability": "25%",
             "injuryFlag": 0,
             "personId": 465561,
             "personName": "Lee Dong-Jun",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 9,
+            "startedMatchCnt": 10,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "7"
           },
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "assistAvgCnt": "0.1",
             "assistCnt": 1,
-            "assistProbability": "25%",
+            "assistProbability": "17%",
             "goalAvgCnt": "0.2",
             "goalCnt": 2,
-            "goalProbability": "22%",
+            "goalProbability": "17%",
             "injuryFlag": 0,
             "personId": 593531,
             "personName": "Bruno Mota",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 5,
+            "startedMatchCnt": 6,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "99"
           },
           {
-            "appearanceCnt": 7,
+            "appearanceCnt": 8,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "0.3",
             "goalCnt": 2,
-            "goalProbability": "22%",
+            "goalProbability": "17%",
             "injuryFlag": 0,
             "personId": 685357,
             "personName": "Cho Wi-Je",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 7,
+            "startedMatchCnt": 8,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "4"
@@ -799,19 +799,15 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 2,
-      "change_pct": 0.0
-    },
-    "6球": {
-      "count": 2,
-      "change_pct": -3.8
-    },
-    "1球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "0球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "7球": {
       "count": 2,
       "change_pct": 0.0
     },
@@ -819,23 +815,27 @@
       "count": 2,
       "change_pct": 2.9
     },
+    "5球": {
+      "count": 2,
+      "change_pct": -3.4
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": -3.8
+    },
     "3球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "2球": {
-      "count": 2,
+    "1球": {
+      "count": 0,
       "change_pct": 0.0
-    },
-    "5球": {
-      "count": 2,
-      "change_pct": -3.4
     }
   },
   "hafu_change": {
-    "平平": {
-      "count": 2,
-      "change_pct": 5.4
+    "负胜": {
+      "count": 1,
+      "change_pct": -8.0
     },
     "胜负": {
       "count": 0,
@@ -853,21 +853,21 @@
       "count": 1,
       "change_pct": -6.2
     },
+    "平负": {
+      "count": 2,
+      "change_pct": 10.0
+    },
     "胜胜": {
       "count": 1,
       "change_pct": -1.8
-    },
-    "负胜": {
-      "count": 1,
-      "change_pct": -8.0
     },
     "平胜": {
       "count": 1,
       "change_pct": -3.5
     },
-    "平负": {
+    "平平": {
       "count": 2,
-      "change_pct": 10.0
+      "change_pct": 5.4
     }
   },
   "exclusion_list": [

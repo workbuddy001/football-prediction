@@ -12,8 +12,10 @@ import glob
 from sporttery_api import SportteryAPI
 from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, predict_big3_vs_small3, calc_recent_form, _extract_recent_matches, get_final_recommendation
 from _3goals_stats import StatsEngine
+from ai_reasoning import bp as ai_reasoning_bp
 
 app = Flask(__name__)
+app.register_blueprint(ai_reasoning_bp)
 
 # 3球历史统计引擎（延迟加载）
 _stats_engine = None
@@ -701,6 +703,8 @@ HTML_TEMPLATE = '''
         .btn-fetch:hover { background: #00b4d8; }
         .btn-refresh { background: #e94560; color: #fff; }
         .btn-refresh:hover { background: #c73e54; }
+        .btn-ai { background: #8b5cf6; color: #fff; border: 1px solid #7c3aed; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+        .btn-ai:hover { background: #7c3aed; }
         .match-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 20px; }
         .match-card { background: #16213e; border-radius: 12px; padding: 20px; border: 1px solid #0f3460; transition: all 0.3s; }
         .match-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
@@ -1483,6 +1487,7 @@ HTML_TEMPLATE = '''
                             <button class="btn-save-score" onclick="saveScore('${m.match_id}')">💾 保存</button>
                             <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
                             <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
+                            <button class="btn-ai" onclick="generateAIPrompt('${m.match_id}')">🧠 AI推理</button>
                             ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.signal_type ? `
                             <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.big3_vs_small3.signal_type}')">📊 命中率</button>
                             ` : ''}
@@ -1763,6 +1768,78 @@ HTML_TEMPLATE = '''
         }
 
         function goPage(p) { renderPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        // ── 生成AI推理Prompt ─────────────────────────────
+        async function generateAIPrompt(matchId) {
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '⏳ 生成中...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(`/api/ai/generate_prompt/${matchId}`);
+                const data = await res.json();
+
+                if (!data.success) {
+                    alert('生成失败：' + (data.error || '未知错误'));
+                    return;
+                }
+
+                // 创建模态框显示Prompt
+                const overlay = document.createElement('div');
+                overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;';
+                overlay.onclick = (e) => { if (e.target === overlay) document.body.removeChild(overlay); };
+
+                const modal = document.createElement('div');
+                modal.style.cssText = 'background:#1a1a2e;color:#e0e0e0;width:90%;max-width:800px;max-height:85vh;overflow:auto;padding:24px;border-radius:12px;border:1px solid #0f3460;';
+
+                modal.innerHTML = `
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                        <h3 style="margin:0;color:#00d4ff;">🧠 AI推理 Prompt</h3>
+                        <button onclick="document.body.removeChild(this.closest('div').parentElement)" style="background:none;border:none;color:#888;font-size:20px;cursor:pointer;">✕</button>
+                    </div>
+                    <p style="color:#888;font-size:12px;margin-bottom:12px;">复制下方内容，粘贴到AI对话框（如WorkBuddy），AI会按照"推理流水框架"进行推理。</p>
+                    <textarea id="ai-prompt-text" style="width:100%;height:400px;background:#0a0a1a;color:#4ade80;border:1px solid #0f3460;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;resize:vertical;white-space:pre-wrap;">${data.prompt}</textarea>
+                    <div style="margin-top:12px;display:flex;gap:10px;">
+                        <button onclick="copyAIPrompt()" style="background:#00d4ff;color:#1a1a2e;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-weight:bold;">📋 一键复制</button>
+                        <button onclick="downloadAIPrompt()" style="background:#0f3460;color:#00d4ff;border:1px solid #00d4ff;padding:8px 20px;border-radius:6px;cursor:pointer;">💾 下载为文件</button>
+                        <button onclick="document.body.removeChild(this.closest('div').parentElement.parentElement)" style="background:#333;color:#888;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;">关闭</button>
+                    </div>
+                `;
+
+                overlay.appendChild(modal);
+                document.body.appendChild(overlay);
+
+                // 全局函数：复制Prompt
+                window.copyAIPrompt = function() {
+                    const textarea = document.getElementById('ai-prompt-text');
+                    textarea.select();
+                    document.execCommand('copy');
+                    const btn = document.querySelector('button[onclick="copyAIPrompt()"');
+                    const original = btn.innerHTML;
+                    btn.innerHTML = '✅ 已复制！';
+                    setTimeout(() => btn.innerHTML = original, 2000);
+                };
+
+                // 全局函数：下载Prompt为文件
+                window.downloadAIPrompt = function() {
+                    const text = document.getElementById('ai-prompt-text').value;
+                    const blob = new Blob([text], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `AI推理Prompt_${matchId}.txt`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                };
+
+            } catch (err) {
+                alert('生成失败：' + err.message);
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
 
         async function loadMatches() {
             // 并行加载：精简比赛列表 + 已保存比分（加时间戳防缓存）
