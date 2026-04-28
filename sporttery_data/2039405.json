@@ -1,0 +1,847 @@
+{
+  "match_id": "2039405",
+  "fetch_time": "2026-04-28 23:28:17",
+  "match_info": {
+    "home_team": "拉努斯",
+    "away_team": "基多体育大学",
+    "league": "南美解放者杯",
+    "time": "2026-04-29 06:00",
+    "match_num_str": "周二005",
+    "match_week": "周二",
+    "match_date": "2026-04-29",
+    "match_time": "06:00:00",
+    "match_status": "Selling",
+    "home_rank": "[Group G3]",
+    "away_rank": "[Group G1]",
+    "league_abbr": "解放者杯"
+  },
+  "score_odds": {
+    "05:00": "60.00",
+    "01:00": "5.30",
+    "05:02": "200.0",
+    "05:01": "70.00",
+    "02:04": "200.0",
+    "02:05": "600.0",
+    "02:02": "20.00",
+    "02:03": "60.00",
+    "02:00": "6.00",
+    "02:01": "7.00",
+    "03:03": "100.0",
+    "03:01": "14.00",
+    "03:02": "30.00",
+    "03:00": "12.00",
+    "00:01": "9.25",
+    "00:00": "8.00",
+    "00:03": "80.00",
+    "00:02": "32.00",
+    "00:05": "600.0",
+    "00:04": "300.0",
+    "04:02": "70.00",
+    "04:01": "35.00",
+    "04:00": "25.00",
+    "01:02": "20.00",
+    "01:01": "7.00",
+    "01:04": "200.0",
+    "01:03": "60.00",
+    "01:05": "500.0"
+  },
+  "total_goals": {
+    "3球": "3.85",
+    "4球": "7.75",
+    "5球": "16.00",
+    "6球": "35.00",
+    "7球": "45.00",
+    "0球": "8.00",
+    "1球": "3.40",
+    "2球": "3.00"
+  },
+  "had": {
+    "胜": "1.50",
+    "平": "3.45",
+    "负": "5.80"
+  },
+  "ttg": {
+    "3球": "3.85",
+    "4球": "7.75",
+    "5球": "16.00",
+    "6球": "35.00",
+    "7球": "45.00",
+    "0球": "8.00",
+    "1球": "3.40",
+    "2球": "3.00"
+  },
+  "hafu": {
+    "负负": "10.50",
+    "平平": "4.80",
+    "胜胜": "2.36",
+    "负平": "19.00",
+    "平胜": "3.50",
+    "负胜": "28.00",
+    "胜负": "60.00",
+    "胜平": "19.00",
+    "平负": "12.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "2.95",
+    "让平": "3.00",
+    "让负": "2.19"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "基多体大",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "70",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.9",
+        "awayGoalAvgCntRatio": "47.4",
+        "homeGoalAvgCnt": "1.0",
+        "homeGoalAvgCntRatio": "52.6",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "拉努斯",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "0",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "100",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 2
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.5",
+        "awayLossGoalAvgCntRatio": "55.6",
+        "homeLossGoalAvgCnt": "0.4",
+        "homeLossGoalAvgCntRatio": "44.4",
+        "totalLegCnt": 10
+      },
+      "matchId": 2512173,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "0",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "100",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 1
+      },
+      "sportteryAwayTeamId": 625,
+      "sportteryHomeTeamId": 1092,
+      "sportteryMatchId": 2039405,
+      "uniformAwayTeamId": 887,
+      "uniformHomeTeamId": 1496
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 647,
+          "awayTeamShortName": "基多体大",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 101,
+          "homeTeamShortName": "拉努斯",
+          "matchDate": "2024-08-22",
+          "matchId": 2120091,
+          "seasonId": 11147,
+          "sportteryAwayTeamId": 625,
+          "sportteryHomeTeamId": 1092,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 1142,
+          "tournamentShortName": "俱乐部杯",
+          "uniformAwayTeamId": 887,
+          "uniformHomeTeamId": 1496,
+          "uniformLeagueId": 108,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 101,
+          "awayTeamShortName": "拉努斯",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:2",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 647,
+          "homeTeamShortName": "基多体大",
+          "matchDate": "2024-08-15",
+          "matchId": 2172516,
+          "seasonId": 11147,
+          "sportteryAwayTeamId": 1092,
+          "sportteryHomeTeamId": 625,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1142,
+          "tournamentShortName": "俱乐部杯",
+          "uniformAwayTeamId": 1496,
+          "uniformHomeTeamId": 887,
+          "uniformLeagueId": 108,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "拉努斯",
+        "totalLegCnt": 2,
+        "winGoalMatchCnt": 2,
+        "winProbability": "100%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 625,
+        "teamId": 647,
+        "teamShortName": "基多体大",
+        "uniformTeamId": 887
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1092,
+        "teamId": 101,
+        "teamShortName": "拉努斯",
+        "uniformTeamId": 1496
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "基多体大",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "埃梅莱克",
+            "matchDate": "2026-04-26",
+            "matchId": 2496073,
+            "seasonId": 14384,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 114,
+            "tournamentShortName": "厄甲",
+            "uniformAwayTeamId": 887,
+            "uniformHomeTeamId": 1551,
+            "uniformLeagueId": 570,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "奥卡斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 0,
+            "homeTeamShortName": "基多体大",
+            "matchDate": "2026-04-23",
+            "matchId": 2496080,
+            "seasonId": 14384,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 114,
+            "tournamentShortName": "厄甲",
+            "uniformAwayTeamId": 1841,
+            "uniformHomeTeamId": 887,
+            "uniformLeagueId": 570,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 0,
+            "awayTeamShortName": "基多体大",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 0,
+            "homeTeamShortName": "德尔瓦耶",
+            "matchDate": "2026-04-20",
+            "matchId": 2496088,
+            "seasonId": 14384,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 114,
+            "tournamentShortName": "厄甲",
+            "uniformAwayTeamId": 887,
+            "uniformHomeTeamId": 1617,
+            "uniformLeagueId": 570,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2469,
+            "awayTeamShortName": "米拉索尔",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 625,
+            "homeTeamShortName": "基多体大",
+            "matchDate": "2026-04-15",
+            "matchId": 2512188,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039107,
+            "sportteryTournamentId": 49,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 2048,
+            "uniformHomeTeamId": 887,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "基多体大",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "曼塔",
+            "matchDate": "2026-04-11",
+            "matchId": 2496097,
+            "seasonId": 14384,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 114,
+            "tournamentShortName": "厄甲",
+            "uniformAwayTeamId": 887,
+            "uniformHomeTeamId": 1621,
+            "uniformLeagueId": 570,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 4,
+          "lossGoalCnt": 2,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": 2,
+          "sportteryTeamId": 0,
+          "teamId": 625,
+          "teamShortName": "基多体大",
+          "totalLegCnt": 5,
+          "uniformTeamId": 887,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Córdoba SdE",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1092,
+            "homeTeamShortName": "拉努斯",
+            "matchDate": "2026-04-25",
+            "matchId": 2467910,
+            "seasonId": 14282,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 98,
+            "tournamentShortName": "阿甲",
+            "uniformAwayTeamId": 2623,
+            "uniformHomeTeamId": 1496,
+            "uniformLeagueId": 2,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1092,
+            "awayTeamShortName": "拉努斯",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "Gim Mendoza",
+            "matchDate": "2026-04-21",
+            "matchId": 2467919,
+            "seasonId": 14282,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 98,
+            "tournamentShortName": "阿甲",
+            "uniformAwayTeamId": 1496,
+            "uniformHomeTeamId": 7490,
+            "uniformLeagueId": 2,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "时刻准备",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "拉努斯",
+            "matchDate": "2026-04-17",
+            "matchId": 2512217,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 2063,
+            "uniformHomeTeamId": 1496,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 637,
+            "awayTeamShortName": "班菲尔德",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1092,
+            "homeTeamShortName": "拉努斯",
+            "matchDate": "2026-04-14",
+            "matchId": 2467934,
+            "seasonId": 14282,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 98,
+            "tournamentShortName": "阿甲",
+            "uniformAwayTeamId": 1164,
+            "uniformHomeTeamId": 1496,
+            "uniformLeagueId": 2,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "拉努斯",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "米拉索尔",
+            "matchDate": "2026-04-09",
+            "matchId": 2512204,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 1496,
+            "uniformHomeTeamId": 2048,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 2,
+          "lossGoalCnt": 2,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": 0,
+          "sportteryTeamId": 0,
+          "teamId": 1092,
+          "teamShortName": "拉努斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1496,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48189,
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13566,
+          "groupName": "Group G",
+          "lossGoalMatchCnt": 1,
+          "phaseName": "",
+          "points": "3",
+          "ranking": "3",
+          "sportteryTeamId": 1092,
+          "teamId": 0,
+          "teamShortName": "拉努斯",
+          "totalLegCnt": 2,
+          "uniformTeamId": 1496,
+          "winGoalMatchCnt": 1,
+          "winProbability": "50%"
+        },
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13566,
+          "groupName": "Group G",
+          "lossGoalMatchCnt": 0,
+          "phaseName": "",
+          "points": "6",
+          "ranking": "1",
+          "sportteryTeamId": 625,
+          "teamId": 0,
+          "teamShortName": "基多体大",
+          "totalLegCnt": 2,
+          "uniformTeamId": 887,
+          "winGoalMatchCnt": 2,
+          "winProbability": "100%"
+        }
+      ],
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2388950
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 717905,
+            "personName": "Y. Quiñónez",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "23"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 288890,
+            "personName": "J. Quinteros",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 582347,
+            "personName": "比利亚米尔",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          }
+        ],
+        "sportteryTeamId": 625,
+        "teamId": 647,
+        "teamShortName": "基多体大",
+        "uniformTeamId": 887
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "100%",
+            "injuryFlag": 0,
+            "personId": 853593,
+            "personName": "Y. Valois",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          }
+        ],
+        "sportteryTeamId": 1092,
+        "teamId": 101,
+        "teamShortName": "拉努斯",
+        "uniformTeamId": 1496
+      },
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2388950
+    }
+  },
+  "ttg_change": {
+    "2球": {
+      "count": 1,
+      "change_pct": -3.2
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -11.1
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 19.2
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": 23.1
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": 28.6
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": 52.2
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": -15.0
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": 2.7
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 2,
+      "change_pct": -7.9
+    },
+    "负负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -4.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 7.3
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "平": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "负": {
+      "count": 3,
+      "change_pct": 0.0
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 4,
+      "change_pct": 6.1
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": -4.8
+    },
+    "让负": {
+      "count": 4,
+      "change_pct": -1.4
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "4球",
+      "ttg_odds": "7.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "20.00",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "14.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "300.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "25.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "60.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(7.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "3.40",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "5.30",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "9.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.40（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

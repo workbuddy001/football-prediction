@@ -1,11 +1,18 @@
 {
   "match_id": "2039355",
-  "fetch_time": "2026-04-27 02:04:17",
+  "fetch_time": "2026-04-28 15:32:39",
   "match_info": {
     "home_team": "多特蒙德",
     "away_team": "弗赖堡",
     "league": "德国甲级联赛",
-    "time": ""
+    "time": "2026-04-26 23:30:00",
+    "match_status": "已截止",
+    "match_num_str": "周日019",
+    "match_date": "2026-04-26",
+    "match_time": "23:30:00",
+    "league_abbr": "25/26德甲第31轮",
+    "home_rank": "[德甲2]",
+    "away_rank": "[德甲8]"
   },
   "score_odds": {
     "05:00": "35.00",
@@ -344,14 +351,14 @@
             "uniformNo": "33"
           },
           {
-            "appearanceCnt": 9,
+            "appearanceCnt": 10,
             "injuryFlag": 1,
             "personId": 804034,
             "personName": "C. Irié",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 3,
-            "substituteMatchCnt": 6,
+            "substituteMatchCnt": 7,
             "suspensionFlag": 0,
             "uniformNo": "22"
           }
@@ -376,13 +383,13 @@
             "uniformNo": "25"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "injuryFlag": 1,
             "personId": 296914,
             "personName": "S. Guirassy",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "9"
@@ -719,31 +726,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 4,
           "phaseName": "",
-          "points": "64",
+          "points": "67",
           "ranking": "2",
           "sportteryTeamId": 140,
           "teamId": 0,
           "teamShortName": "多特蒙德",
-          "totalLegCnt": 30,
+          "totalLegCnt": 31,
           "uniformTeamId": 121,
-          "winGoalMatchCnt": 19,
-          "winProbability": "63%"
+          "winGoalMatchCnt": 20,
+          "winProbability": "65%"
         },
         {
           "drawMatchCnt": 7,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 11,
+          "lossGoalMatchCnt": 12,
           "phaseName": "",
           "points": "43",
           "ranking": "8",
           "sportteryTeamId": 141,
           "teamId": 0,
           "teamShortName": "弗赖堡",
-          "totalLegCnt": 30,
+          "totalLegCnt": 31,
           "uniformTeamId": 196,
           "winGoalMatchCnt": 12,
-          "winProbability": "40%"
+          "winProbability": "39%"
         }
       ],
       "tournamentId": 78,
@@ -755,25 +762,25 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "4%",
             "goalAvgCnt": "0.3",
             "goalCnt": 8,
-            "goalProbability": "19%",
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 562237,
             "personName": "I. Matanović",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 11,
+            "startedMatchCnt": 12,
             "substituteMatchCnt": 16,
             "suspensionFlag": 0,
             "uniformNo": "31"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "12%",
@@ -785,7 +792,7 @@
             "personName": "V. Grifo",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 18,
+            "startedMatchCnt": 19,
             "substituteMatchCnt": 11,
             "suspensionFlag": 0,
             "uniformNo": "32"
@@ -797,7 +804,7 @@
             "assistProbability": "8%",
             "goalAvgCnt": "0.2",
             "goalCnt": 5,
-            "goalProbability": "12%",
+            "goalProbability": "11%",
             "injuryFlag": 0,
             "personId": 777192,
             "personName": "J. Manzambi",
@@ -817,58 +824,58 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "2%",
             "goalAvgCnt": "0.5",
-            "goalCnt": 14,
+            "goalCnt": 15,
             "goalProbability": "23%",
             "injuryFlag": 1,
             "personId": 296914,
             "personName": "S. Guirassy",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 23,
+            "startedMatchCnt": 24,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "9%",
             "goalAvgCnt": "0.3",
-            "goalCnt": 8,
-            "goalProbability": "13%",
+            "goalCnt": 9,
+            "goalProbability": "14%",
             "injuryFlag": 0,
             "personId": 560397,
             "personName": "拜尔",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 20,
+            "startedMatchCnt": 21,
             "substituteMatchCnt": 8,
             "suspensionFlag": 0,
             "uniformNo": "14"
           },
           {
             "appearanceCnt": 26,
-            "assistAvgCnt": "0.1",
-            "assistCnt": 3,
-            "assistProbability": "7%",
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "9%",
             "goalAvgCnt": "0.3",
             "goalCnt": 7,
-            "goalProbability": "12%",
+            "goalProbability": "11%",
             "injuryFlag": 0,
-            "personId": 540856,
-            "personName": "阿德耶米",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
+            "personId": 235441,
+            "personName": "勃兰特",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
             "startedMatchCnt": 15,
             "substituteMatchCnt": 11,
             "suspensionFlag": 0,
-            "uniformNo": "27"
+            "uniformNo": "10"
           }
         ],
         "sportteryTeamId": 140,
@@ -885,6 +892,14 @@
     }
   },
   "ttg_change": {
+    "2球": {
+      "count": 1,
+      "change_pct": 3.6
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -2.9
+    },
     "7球": {
       "count": 2,
       "change_pct": 0.0
@@ -893,59 +908,35 @@
       "count": 2,
       "change_pct": 0.0
     },
-    "1球": {
+    "4球": {
       "count": 1,
-      "change_pct": 2.9
+      "change_pct": -3.4
     },
     "0球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "4球": {
-      "count": 1,
-      "change_pct": -3.4
-    },
     "3球": {
       "count": 2,
       "change_pct": 0.0
     },
-    "2球": {
+    "1球": {
       "count": 1,
-      "change_pct": 3.6
-    },
-    "5球": {
-      "count": 2,
-      "change_pct": -2.9
+      "change_pct": 2.9
     }
   },
   "hafu_change": {
-    "平平": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜平": {
+    "负平": {
       "count": 0,
       "change_pct": 0.0
     },
     "负负": {
       "count": 1,
       "change_pct": 16.7
-    },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": -2.8
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 0,
@@ -954,6 +945,50 @@
     "平负": {
       "count": 1,
       "change_pct": 13.3
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": -2.8
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": 0.0
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "让平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": 0.0
     }
   },
   "exclusion_list": [

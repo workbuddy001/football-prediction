@@ -1,11 +1,18 @@
 {
   "match_id": "2039349",
-  "fetch_time": "2026-04-27 01:25:37",
+  "fetch_time": "2026-04-28 13:46:44",
   "match_info": {
     "home_team": "切尔西",
     "away_team": "利兹联",
     "league": "英格兰足总杯",
-    "time": ""
+    "time": "2026-04-26 22:00:00",
+    "match_status": "已截止",
+    "match_num_str": "周日013",
+    "match_date": "2026-04-26",
+    "match_time": "22:00:00",
+    "league_abbr": "25/26英足总杯半决赛",
+    "home_rank": "",
+    "away_rank": ""
   },
   "score_odds": {
     "05:00": "100.0",
@@ -308,14 +315,14 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 3,
+            "appearanceCnt": 4,
             "injuryFlag": 1,
             "personId": 454303,
             "personName": "A. Stach",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 1,
-            "substituteMatchCnt": 2,
+            "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "18"
           },
@@ -352,13 +359,13 @@
       "home": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 2,
+            "appearanceCnt": 3,
             "injuryFlag": 1,
             "personId": 551665,
             "personName": "凯塞多",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "25"
@@ -376,13 +383,13 @@
             "uniformNo": "12"
           },
           {
-            "appearanceCnt": 2,
+            "appearanceCnt": 3,
             "injuryFlag": 1,
             "personId": 591522,
             "personName": "João Pedro",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 1,
+            "startedMatchCnt": 2,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "20"
@@ -758,11 +765,11 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 4,
+            "appearanceCnt": 5,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "0.5",
+            "goalAvgCnt": "0.4",
             "goalCnt": 2,
             "goalProbability": "22%",
             "injuryFlag": 0,
@@ -770,17 +777,17 @@
             "personName": "田中青",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 4,
+            "startedMatchCnt": 5,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "22"
           },
           {
-            "appearanceCnt": 4,
-            "assistAvgCnt": "0.5",
+            "appearanceCnt": 5,
+            "assistAvgCnt": "0.4",
             "assistCnt": 2,
             "assistProbability": "29%",
-            "goalAvgCnt": "0.3",
+            "goalAvgCnt": "0.2",
             "goalCnt": 1,
             "goalProbability": "11%",
             "injuryFlag": 0,
@@ -789,16 +796,16 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 4,
-            "substituteMatchCnt": 0,
+            "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "14"
           },
           {
-            "appearanceCnt": 2,
-            "assistAvgCnt": "0.5",
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0.3",
             "assistCnt": 1,
             "assistProbability": "14%",
-            "goalAvgCnt": "0.5",
+            "goalAvgCnt": "0.3",
             "goalCnt": 1,
             "goalProbability": "11%",
             "injuryFlag": 0,
@@ -806,7 +813,7 @@
             "personName": "G. Gudmundsson",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "3"
@@ -820,19 +827,19 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 4,
-            "assistAvgCnt": "0.3",
-            "assistCnt": 1,
-            "assistProbability": "9%",
-            "goalAvgCnt": "1.0",
+            "appearanceCnt": 5,
+            "assistAvgCnt": "0.4",
+            "assistCnt": 2,
+            "assistProbability": "17%",
+            "goalAvgCnt": "0.8",
             "goalCnt": 4,
-            "goalProbability": "22%",
+            "goalProbability": "21%",
             "injuryFlag": 0,
             "personId": 477582,
             "personName": "内托",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 3,
+            "startedMatchCnt": 4,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "7"
@@ -841,7 +848,25 @@
             "appearanceCnt": 3,
             "assistAvgCnt": "0.3",
             "assistCnt": 1,
-            "assistProbability": "9%",
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.7",
+            "goalCnt": 2,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 547472,
+            "personName": "E. Fernández",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 1,
+            "assistProbability": "8%",
             "goalAvgCnt": "0.7",
             "goalCnt": 2,
             "goalProbability": "11%",
@@ -854,24 +879,6 @@
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "41"
-          },
-          {
-            "appearanceCnt": 2,
-            "assistAvgCnt": "0",
-            "assistCnt": 0,
-            "assistProbability": "0%",
-            "goalAvgCnt": "1.0",
-            "goalCnt": 2,
-            "goalProbability": "11%",
-            "injuryFlag": 1,
-            "personId": 591522,
-            "personName": "João Pedro",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 1,
-            "substituteMatchCnt": 1,
-            "suspensionFlag": 0,
-            "uniformNo": "20"
           }
         ],
         "sportteryTeamId": 7,
@@ -888,6 +895,14 @@
     }
   },
   "ttg_change": {
+    "2球": {
+      "count": 4,
+      "change_pct": 8.8
+    },
+    "5球": {
+      "count": 5,
+      "change_pct": -13.2
+    },
     "7球": {
       "count": 5,
       "change_pct": -34.6
@@ -896,59 +911,35 @@
       "count": 5,
       "change_pct": -29.4
     },
-    "1球": {
+    "4球": {
       "count": 3,
-      "change_pct": 13.7
+      "change_pct": -8.7
     },
     "0球": {
       "count": 2,
       "change_pct": 25.0
     },
-    "4球": {
-      "count": 3,
-      "change_pct": -8.7
-    },
     "3球": {
       "count": 3,
       "change_pct": 5.7
     },
-    "2球": {
-      "count": 4,
-      "change_pct": 8.8
-    },
-    "5球": {
-      "count": 5,
-      "change_pct": -13.2
+    "1球": {
+      "count": 3,
+      "change_pct": 13.7
     }
   },
   "hafu_change": {
-    "平平": {
-      "count": 2,
-      "change_pct": 6.9
-    },
-    "胜负": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜平": {
+    "负平": {
       "count": 0,
       "change_pct": 0.0
     },
     "负负": {
       "count": 2,
       "change_pct": 9.1
-    },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": -8.1
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 2,
@@ -957,6 +948,50 @@
     "平负": {
       "count": 2,
       "change_pct": 6.9
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": 6.9
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": -8.1
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 5,
+      "change_pct": 1.5
+    },
+    "平": {
+      "count": 3,
+      "change_pct": 6.2
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": -4.1
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 4,
+      "change_pct": 4.8
+    },
+    "让平": {
+      "count": 1,
+      "change_pct": -1.3
+    },
+    "让胜": {
+      "count": 4,
+      "change_pct": -8.4
     }
   },
   "exclusion_list": [

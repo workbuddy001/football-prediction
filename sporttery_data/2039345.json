@@ -1,11 +1,12 @@
 {
   "match_id": "2039345",
-  "fetch_time": "2026-04-27 01:41:04",
+  "fetch_time": "2026-04-28 13:27:20",
   "match_info": {
     "home_team": "莫尔德",
     "away_team": "瓦勒伦加",
     "league": "挪威超级联赛",
-    "time": ""
+    "time": "",
+    "match_status": "已截止"
   },
   "score_odds": {
     "05:00": "75.00",
@@ -308,14 +309,14 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 1,
+            "appearanceCnt": 2,
             "injuryFlag": 1,
             "personId": 595782,
             "personName": "O. Holm",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
             "startedMatchCnt": 0,
-            "substituteMatchCnt": 1,
+            "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "15"
           }
@@ -646,31 +647,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 2,
           "phaseName": "",
-          "points": "7",
+          "points": "10",
           "ranking": "4",
           "sportteryTeamId": 330,
           "teamId": 0,
           "teamShortName": "莫尔德",
-          "totalLegCnt": 5,
+          "totalLegCnt": 6,
           "uniformTeamId": 467,
-          "winGoalMatchCnt": 2,
-          "winProbability": "40%"
+          "winGoalMatchCnt": 3,
+          "winProbability": "50%"
         },
         {
           "drawMatchCnt": 1,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 2,
+          "lossGoalMatchCnt": 3,
           "phaseName": "",
           "points": "7",
-          "ranking": "6",
+          "ranking": "11",
           "sportteryTeamId": 341,
           "teamId": 0,
           "teamShortName": "瓦勒伦加",
-          "totalLegCnt": 5,
+          "totalLegCnt": 6,
           "uniformTeamId": 310,
           "winGoalMatchCnt": 2,
-          "winProbability": "40%"
+          "winProbability": "33%"
         }
       ],
       "tournamentId": 133,
@@ -682,37 +683,37 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 5,
+            "appearanceCnt": 6,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
-            "goalAvgCnt": "0.4",
+            "goalAvgCnt": "0.3",
             "goalCnt": 2,
-            "goalProbability": "50%",
+            "goalProbability": "40%",
             "injuryFlag": 0,
             "personId": 558638,
             "personName": "C. Lange",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 5,
+            "startedMatchCnt": 6,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 5,
-            "assistAvgCnt": "0",
-            "assistCnt": 0,
-            "assistProbability": "0%",
+            "appearanceCnt": 6,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 1,
+            "assistProbability": "33%",
             "goalAvgCnt": "0.2",
             "goalCnt": 1,
-            "goalProbability": "25%",
+            "goalProbability": "20%",
             "injuryFlag": 0,
             "personId": 546782,
             "personName": "M. Grundetjern",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 4,
+            "startedMatchCnt": 5,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "17"
@@ -724,16 +725,16 @@
             "assistProbability": "0%",
             "goalAvgCnt": "0.2",
             "goalCnt": 1,
-            "goalProbability": "25%",
+            "goalProbability": "20%",
             "injuryFlag": 0,
-            "personId": 270647,
-            "personName": "I. Näsberg",
-            "playerPositionCode": "Defender",
-            "playerPositionDesc": "后卫",
-            "startedMatchCnt": 5,
-            "substituteMatchCnt": 0,
+            "personId": 473343,
+            "personName": "L. Ravn-Haren",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 2,
             "suspensionFlag": 0,
-            "uniformNo": "37"
+            "uniformNo": "77"
           }
         ],
         "sportteryTeamId": 341,
@@ -744,58 +745,58 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 5,
+            "appearanceCnt": 6,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
             "goalAvgCnt": "1.0",
-            "goalCnt": 5,
-            "goalProbability": "63%",
+            "goalCnt": 6,
+            "goalProbability": "46%",
             "injuryFlag": 0,
             "personId": 509694,
             "personName": "E. Breivik",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 5,
+            "startedMatchCnt": 6,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
             "appearanceCnt": 5,
-            "assistAvgCnt": "0.4",
-            "assistCnt": 2,
-            "assistProbability": "33%",
-            "goalAvgCnt": "0.2",
-            "goalCnt": 1,
-            "goalProbability": "13%",
-            "injuryFlag": 0,
-            "personId": 335706,
-            "personName": "K. Eriksen",
-            "playerPositionCode": "Midfielder",
-            "playerPositionDesc": "中场",
-            "startedMatchCnt": 4,
-            "substituteMatchCnt": 1,
-            "suspensionFlag": 0,
-            "uniformNo": "20"
-          },
-          {
-            "appearanceCnt": 4,
-            "assistAvgCnt": "0",
-            "assistCnt": 0,
-            "assistProbability": "0%",
-            "goalAvgCnt": "0.3",
-            "goalCnt": 1,
-            "goalProbability": "13%",
+            "assistAvgCnt": "0.2",
+            "assistCnt": 1,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 2,
+            "goalProbability": "15%",
             "injuryFlag": 0,
             "personId": 217953,
             "personName": "E. Hestad",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 2,
+            "startedMatchCnt": 3,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "5"
+          },
+          {
+            "appearanceCnt": 6,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 78434,
+            "personName": "F. Gulbrandsen",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
           }
         ],
         "sportteryTeamId": 330,
@@ -812,6 +813,14 @@
     }
   },
   "ttg_change": {
+    "2球": {
+      "count": 1,
+      "change_pct": 2.4
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -5.8
+    },
     "7球": {
       "count": 1,
       "change_pct": -6.7
@@ -820,59 +829,35 @@
       "count": 1,
       "change_pct": -4.3
     },
-    "1球": {
+    "4球": {
       "count": 1,
-      "change_pct": 3.1
+      "change_pct": -2.2
     },
     "0球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "4球": {
-      "count": 1,
-      "change_pct": -2.2
-    },
     "3球": {
       "count": 1,
       "change_pct": 4.3
     },
-    "2球": {
+    "1球": {
       "count": 1,
-      "change_pct": 2.4
-    },
-    "5球": {
-      "count": 1,
-      "change_pct": -5.8
+      "change_pct": 3.1
     }
   },
   "hafu_change": {
-    "平平": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜平": {
+    "负平": {
       "count": 0,
       "change_pct": 0.0
     },
     "负负": {
       "count": 3,
       "change_pct": -11.0
-    },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 3,
-      "change_pct": 1.8
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "平胜": {
       "count": 2,
@@ -881,6 +866,50 @@
     "平负": {
       "count": 3,
       "change_pct": -3.5
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 1.8
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 5,
+      "change_pct": -7.2
+    },
+    "平": {
+      "count": 5,
+      "change_pct": -1.3
+    },
+    "胜": {
+      "count": 5,
+      "change_pct": 4.6
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 5,
+      "change_pct": -4.9
+    },
+    "让平": {
+      "count": 4,
+      "change_pct": 5.9
+    },
+    "让胜": {
+      "count": 5,
+      "change_pct": 4.4
     }
   },
   "exclusion_list": [

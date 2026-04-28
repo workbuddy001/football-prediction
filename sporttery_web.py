@@ -223,6 +223,89 @@ def _build_odds_hitrate():
     _odds_hitrate_cache = {'overall': overall_stats, 'exact': exact_stats}
     return _odds_hitrate_cache
 
+# ─────────────────────────────────────────────────────────────────
+# 进球数赔率变化命中率统计（带缓存）
+# 统计每个进球数在各"幅度+方向"组合下的历史命中率
+# ─────────────────────────────────────────────────────────────────
+_change_hitrate_cache = None
+
+def _build_change_hitrate():
+    """
+    遍历所有有比分+ttg_change的历史记录，计算各进球数在各幅度+方向组合的历史命中率。
+    返回格式: change[goal][bucket_label] = {total, hits, rate}
+    bucket_label = "0%不变", "1-2%涨", "1-2%降", ">20%涨", ...
+    """
+    global _change_hitrate_cache
+    if _change_hitrate_cache is not None:
+        return _change_hitrate_cache
+
+    scores = load_scores()
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sporttery_data')
+
+    def pct_bucket(a):
+        if a == 0:
+            return "0%"
+        lo = int(a)
+        if a == lo:
+            lo = lo - 1  # 整数如20.0 → 19-20%
+        return f"{lo}-{lo+1}%"
+
+    def make_label(change_pct):
+        if change_pct == 0:
+            return "0%不变"
+        a = abs(change_pct)
+        d = "涨" if change_pct > 0 else "降"
+        return f"{pct_bucket(a)}{d}"
+
+    change = {}  # change[goal][label] = [total, hits]
+
+    for key, record in scores.items():
+        mid = record.get('match_id', '')
+        hs = record.get('home_score')
+        as_ = record.get('away_score')
+        if hs is None or as_ is None or mid == 'test':
+            continue
+        if not (mid.isdigit() or (mid.startswith('2') and len(mid) == 7)):
+            continue
+        total_goals = hs + as_
+        fp = os.path.join(data_dir, f'{mid}.json')
+        if not os.path.exists(fp):
+            continue
+        try:
+            data = json.load(open(fp, encoding='utf-8'))
+        except:
+            continue
+        ttg_chg = data.get('ttg_change')
+        if not ttg_chg:
+            continue
+
+        for goal in range(0, 8):
+            gl = f"{goal}球"
+            actual = ttg_chg.get(gl)
+            if not actual:
+                continue
+            bl = make_label(actual.get('change_pct', 0))
+            if goal not in change:
+                change[goal] = {}
+            if bl not in change[goal]:
+                change[goal][bl] = [0, 0]
+            change[goal][bl][0] += 1
+            if total_goals == goal:
+                change[goal][bl][1] += 1
+
+    def rate(total, hits):
+        return round(hits / total * 100, 1) if total > 0 else None
+
+    change_stats = {}
+    for g, bl_data in change.items():
+        change_stats[g] = {
+            bl: {'total': v[0], 'hits': v[1], 'rate': rate(v[0], v[1])}
+            for bl, v in bl_data.items() if v[0] > 0
+        }
+
+    _change_hitrate_cache = change_stats
+    return _change_hitrate_cache
+
 # ────────────────────────────────────────────────────────────
 # 规律命中率统计（带缓存）
 # ────────────────────────────────────────────────────────────
@@ -1149,6 +1232,7 @@ HTML_TEMPLATE = '''
         let _patternStats = {};
         // 进球数赔率命中率统计
         const _ODDS_HITRATE = __ODDS_STATS_JSON__;
+        let _CHANGE_HITRATE = __CHANGE_HITRATE_JSON__;
         const _HITRATE_COLORS = {green:'#4ade80', yellow:'#facc15', red:'#f87171', gray:'#888'};
         function _getHitRateLabel(goalNum, oddsVal) {
             // 直接精确匹配：找历史上有相同赔率的比赛
@@ -1172,8 +1256,7 @@ HTML_TEMPLATE = '''
             const tagTitle = rate === null ? '无历史数据'
                 : `${goalNum}球赔率${oddsVal}，历史${total}场中${found.hits}场打出`;
             if (rate === null) return '';
-            const sampleHint = total < 3 ? `(${total}场)` : '';
-            return `<span class="hitrate-badge" style="font-size:10px;padding:1px 5px;border-radius:4px;margin-left:3px;background:${_HITRATE_COLORS[color]}22;color:${_HITRATE_COLORS[color]};border:1px solid ${_HITRATE_COLORS[color]}55" title="${tagTitle}">${rate}%${sampleHint}</span>`;
+            return `<span class="hitrate-badge" style="font-size:10px;padding:1px 5px;border-radius:4px;margin-left:3px;background:${_HITRATE_COLORS[color]}22;color:${_HITRATE_COLORS[color]};border:1px solid ${_HITRATE_COLORS[color]}55" title="${tagTitle}">${rate}%</span>`;
         }
         // 获取命中率数值（供其他逻辑使用）
         function _getHitRateValue(goalNum, oddsVal) {
@@ -1186,6 +1269,46 @@ HTML_TEMPLATE = '''
                 }
             }
             return null;
+        }
+        // 获取精确赔率匹配的场次数（供总进球区域显示"xx场"）
+        function _getHitRateTotal(goalNum, oddsVal) {
+            const exact = _ODDS_HITRATE.exact || {};
+            const goalExact = exact[goalNum] || {};
+            for (const [ekStr, d] of Object.entries(goalExact)) {
+                const ek = parseFloat(ekStr);
+                if (Math.abs(oddsVal - ek) < 0.01) {
+                    return d.total;
+                }
+            }
+            return null;
+        }
+        // 获取变化命中率标签（赔率变化统计区域用）
+        function _getChangeHitRateLabel(goalNum, changePct) {
+            if (!_CHANGE_HITRATE) return '';
+            const goalData = _CHANGE_HITRATE[goalNum];
+            if (!goalData) return '';
+            // 计算bucket label
+            let bl;
+            if (changePct === 0) {
+                bl = '0%不变';
+            } else {
+                const a = Math.abs(changePct);
+                let lo = Math.floor(a);
+                if (a === lo && lo > 0) lo -= 1; // 整数如25.0 → 24-25%
+                const bucket = lo + '-' + (lo+1) + '%';
+                bl = bucket + (changePct > 0 ? '涨' : '降');
+            }
+            const d = goalData[bl];
+            if (!d || d.total < 1) return '';
+            const rate = d.rate;
+            const total = d.total;
+            const hits = d.hits;
+            let color;
+            if (rate >= 40) color = 'green';
+            else if (rate >= 25) color = 'yellow';
+            else if (rate >= 15) color = 'gray';
+            else color = 'red';
+            return `<span class="change-hitrate-badge" style="font-size:10px;padding:1px 4px;border-radius:3px;display:block;margin-top:2px;background:${_HITRATE_COLORS[color]}22;color:${_HITRATE_COLORS[color]};border:1px solid ${_HITRATE_COLORS[color]}55;cursor:help" title="历史${total}场: ${goalNum}球命中${hits}次">${rate}%(${total}场)</span>`;
         }
 
         // ── 分页配置 ──────────────────────────────────────
@@ -1528,11 +1651,12 @@ HTML_TEMPLATE = '''
                                 const odds = parseFloat(v);
                                 const rateLabel = _getHitRateLabel(goalNum, odds);
                                 const hitRate = _getHitRateValue(goalNum, odds);  // 获取命中率数值
+                                const hitTotal = _getHitRateTotal(goalNum, odds); // 获取精确赔率匹配的场次数
                                 const change = m.ttg_change && m.ttg_change[k];
                                 let changeTag = '';
-                                let excludeTag = '';
-                                let focusTag = '';
+                                let sampleTag = '';
                                 let goldTag = '';
+                                // 变化方向+幅度
                                 if (change && change.count > 0) {
                                     const pct = change.change_pct;
                                     const isUp = pct > 0;
@@ -1540,25 +1664,25 @@ HTML_TEMPLATE = '''
                                     const arrow = isUp ? '↑' : '↓';
                                     changeTag = `<span class="odds-change-tag" style="color:${color}">${arrow}${Math.abs(pct)}%</span>`;
                                 }
-                                // 排除/关注判断
-                                // 排除：赔率>3.5 且 升赔>=5%（0球不排除，升赔显示警惕）
-                                const isExclude = goalNum !== 0 && odds > 3.5 && change && change.change_pct >= 5;
-                                const isFocus = odds >= 2.5 && odds <= 3.5 && change && change.change_pct < 0;
-                                // 0球升赔警惕：显示"警惕"而不是排除
-                                const isAlert0 = goalNum === 0 && change && change.change_pct > 0;
+                                // 样本场次数（精确赔率匹配：该进球数在此赔率下的历史比赛数）
+                                if (hitTotal !== null && hitTotal > 0) {
+                                    // 颜色分级：≥10场醒目，3-9场中等，<3场灰色
+                                    let sColor, sBg, sBorder;
+                                    if (hitTotal >= 10) {
+                                        sColor = '#4ade80'; sBg = '#4ade8022'; sBorder = '#4ade8055';
+                                    } else if (hitTotal >= 3) {
+                                        sColor = '#facc15'; sBg = '#facc1522'; sBorder = '#facc1555';
+                                    } else {
+                                        sColor = '#888'; sBg = '#88822222'; sBorder = '#88855555';
+                                    }
+                                    sampleTag = `<span class="change-hitrate-badge" style="font-size:10px;padding:1px 4px;border-radius:3px;display:block;margin-top:2px;background:${sBg};color:${sColor};border:1px solid ${sBorder};cursor:help" title="历史${hitTotal}场比赛中，${goalNum}球赔率为${odds}">(${hitTotal}场)</span>`;
+                                }
                                 // 黄金信号：命中率>=50%
                                 if (hitRate !== null && hitRate >= 50) {
                                     goldTag = '<span class="odds-tag gold">&#9733;黄金</span>';
                                 }
-                                if (isExclude) {
-                                    excludeTag = '<span class="odds-tag exclude">&#10005;排除</span>';
-                                } else if (isFocus) {
-                                    focusTag = '<span class="odds-tag focus">&#9733;关注</span>';
-                                } else if (isAlert0) {
-                                    excludeTag = '<span class="odds-tag alert">&#9888;警惕</span>';
-                                }
-                                const tagClass = isExclude ? 'exclude' : (isFocus ? 'focus' : '') + (goldTag ? ' gold-highlight' : '');
-                                return `<div class="odds-item ${getOddsClass(v)} ${tagClass}"><div class="label">${k}</div><div class="value">${v}${rateLabel}${changeTag}</div><div class="odds-tags">${goldTag}${excludeTag}${focusTag}</div></div>`;
+                                const tagClass = (goldTag ? ' gold-highlight' : '');
+                                return `<div class="odds-item ${getOddsClass(v)} ${tagClass}"><div class="label">${k}</div><div class="value">${v}${rateLabel}${changeTag}</div><div class="odds-tags">${goldTag}${sampleTag}</div></div>`;
                             }).join('')}
                         </div>
                     </div>
@@ -1673,9 +1797,11 @@ HTML_TEMPLATE = '''
                                         const down = v.change_pct < 0;
                                         const cls = up ? 'change-up' : (down ? 'change-down' : 'change-neutral');
                                         const arrow = up ? '↑' : (down ? '↓' : '→');
+                                        const goalNum = parseInt(k.replace('球',''));
+                                        const chgRateLabel = _getChangeHitRateLabel(goalNum, v.change_pct);
                                         return `<div class="change-item ${cls}">
                                             <div class="change-label">${k}</div>
-                                            <div class="change-value">${v.count}次 ${arrow}${Math.abs(v.change_pct)}%</div>
+                                            <div class="change-value">${v.count}次 ${arrow}${Math.abs(v.change_pct)}%${chgRateLabel}</div>
                                         </div>`;
                                     }).join('')}
                                 </div>
@@ -2283,6 +2409,15 @@ HTML_TEMPLATE = '''
                 const r2 = await fetch('/api/odds_hitrate');
                 const data = await r2.json();
                 window._ODDS_HITRATE = data;
+                // 同时刷新变化命中率统计
+                const r3 = await fetch('/api/change_hitrate');
+                const chgData = await r3.json();
+                window._CHANGE_HITRATE = chgData;
+                // 重新渲染当前展开的比赛详情（更新变化命中率标签）
+                const detailEl = document.getElementById('match-detail-' + matchId);
+                if (detailEl && detailEl.style.display !== 'none') {
+                    renderMatchDetail(matchId);
+                }
                 // 如果相似面板已打开，自动刷新赔率显示
                 const panelEl = document.getElementById('similar-panel-' + matchId);
                 if (panelEl && panelEl.style.display !== 'none') {
@@ -2773,6 +2908,10 @@ def index():
     # 序列化成 JS 字面量嵌入页面（用字符串替换避免 Jinja2 转义）
     stats_js = json.dumps(stats, ensure_ascii=False)
     html = HTML_TEMPLATE.replace('__ODDS_STATS_JSON__', stats_js)
+    # 注入变化命中率统计
+    chg_stats = _build_change_hitrate()
+    chg_js = json.dumps(chg_stats, ensure_ascii=False)
+    html = html.replace('__CHANGE_HITRATE_JSON__', chg_js)
     return html
 
 def _analyze_hhad_low_draw(hhad, recent_form, data=None):
@@ -4221,11 +4360,19 @@ def patch_match_info(match_id):
 @app.route('/api/odds_hitrate')
 def get_odds_hitrate():
     """返回赔率命中率统计（供复盘后动态刷新）"""
-    global _odds_hitrate_cache, _score_hitrate_cache
+    global _odds_hitrate_cache, _score_hitrate_cache, _change_hitrate_cache
     _odds_hitrate_cache = None   # 清除进球数赔率缓存
     _score_hitrate_cache = None  # 同时清除比分赔率缓存
+    _change_hitrate_cache = None # 同时清除变化命中率缓存
     stats = _build_odds_hitrate()
     return jsonify(stats)
+
+@app.route('/api/change_hitrate')
+def get_change_hitrate():
+    """返回进球数变化命中率统计（供复盘后动态刷新）"""
+    global _change_hitrate_cache
+    _change_hitrate_cache = None
+    return jsonify(_build_change_hitrate())
 
 @app.route('/api/pattern_hitrate')
 def get_pattern_hitrate():
