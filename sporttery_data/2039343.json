@@ -1,11 +1,18 @@
 {
   "match_id": "2039343",
-  "fetch_time": "2026-04-27 01:43:47",
+  "fetch_time": "2026-04-28 12:15:03",
   "match_info": {
     "home_team": "巴列卡诺",
     "away_team": "皇家社会",
     "league": "西班牙甲级联赛",
-    "time": ""
+    "time": "2026-04-26 20:00:00",
+    "match_status": "已截止",
+    "match_num_str": "周日007",
+    "match_date": "2026-04-26",
+    "match_time": "20:00:00",
+    "league_abbr": "25/26西甲第32轮",
+    "home_rank": "[西甲12]",
+    "away_rank": "[西甲8]"
   },
   "score_odds": {
     "05:00": "175.0",
@@ -308,13 +315,13 @@
       "away": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 23,
+            "appearanceCnt": 24,
             "injuryFlag": 0,
             "personId": 266051,
             "personName": "D. Ćaleta-Car",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 20,
+            "startedMatchCnt": 21,
             "substituteMatchCnt": 3,
             "suspensionFlag": 1,
             "uniformNo": "16"
@@ -344,13 +351,13 @@
             "uniformNo": "20"
           },
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "injuryFlag": 1,
             "personId": 404347,
             "personName": "Carlos Soler",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 21,
+            "startedMatchCnt": 22,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "18"
@@ -472,13 +479,13 @@
             "uniformNo": "11"
           },
           {
-            "appearanceCnt": 19,
+            "appearanceCnt": 20,
             "injuryFlag": 1,
             "personId": 654095,
             "personName": "伊利亚斯 查库尔",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 8,
+            "startedMatchCnt": 9,
             "substituteMatchCnt": 11,
             "suspensionFlag": 0,
             "uniformNo": "12"
@@ -810,36 +817,36 @@
       "seasonName": "2025/2026",
       "tables": [
         {
-          "drawMatchCnt": 11,
+          "drawMatchCnt": 12,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 12,
           "phaseName": "",
-          "points": "38",
+          "points": "39",
           "ranking": "11",
           "sportteryTeamId": 849,
           "teamId": 0,
           "teamShortName": "巴列卡诺",
-          "totalLegCnt": 32,
+          "totalLegCnt": 33,
           "uniformTeamId": 1546,
           "winGoalMatchCnt": 9,
-          "winProbability": "28%"
+          "winProbability": "27%"
         },
         {
-          "drawMatchCnt": 9,
+          "drawMatchCnt": 10,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 12,
           "phaseName": "",
-          "points": "42",
+          "points": "43",
           "ranking": "8",
           "sportteryTeamId": 675,
           "teamId": 0,
           "teamShortName": "皇家社会",
-          "totalLegCnt": 32,
+          "totalLegCnt": 33,
           "uniformTeamId": 248,
           "winGoalMatchCnt": 11,
-          "winProbability": "34%"
+          "winProbability": "33%"
         }
       ],
       "tournamentId": 128,
@@ -851,19 +858,19 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "9%",
-            "goalAvgCnt": "0.4",
-            "goalCnt": 12,
-            "goalProbability": "24%",
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 14,
+            "goalProbability": "26%",
             "injuryFlag": 0,
             "personId": 390151,
             "personName": "Mikel Oyarzabal",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 26,
+            "startedMatchCnt": 27,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "10"
@@ -872,10 +879,10 @@
             "appearanceCnt": 31,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
-            "assistProbability": "12%",
+            "assistProbability": "11%",
             "goalAvgCnt": "0.3",
             "goalCnt": 8,
-            "goalProbability": "16%",
+            "goalProbability": "15%",
             "injuryFlag": 1,
             "personId": 270357,
             "personName": "Gonçalo Guedes",
@@ -893,7 +900,7 @@
             "assistProbability": "6%",
             "goalAvgCnt": "0.2",
             "goalCnt": 6,
-            "goalProbability": "12%",
+            "goalProbability": "11%",
             "injuryFlag": 0,
             "personId": 335229,
             "personName": "Brais Méndez",
@@ -913,20 +920,20 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "5%",
             "goalAvgCnt": "0.3",
             "goalCnt": 10,
-            "goalProbability": "33%",
+            "goalProbability": "30%",
             "injuryFlag": 0,
             "personId": 455627,
             "personName": "Jorge De Frutos",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 28,
-            "substituteMatchCnt": 2,
+            "substituteMatchCnt": 3,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
@@ -934,10 +941,10 @@
             "appearanceCnt": 31,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
-            "assistProbability": "24%",
+            "assistProbability": "23%",
             "goalAvgCnt": "0.1",
             "goalCnt": 4,
-            "goalProbability": "13%",
+            "goalProbability": "12%",
             "injuryFlag": 0,
             "personId": 282853,
             "personName": "Álvaro García",
@@ -949,19 +956,19 @@
             "uniformNo": "18"
           },
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "14%",
             "goalAvgCnt": "0.1",
             "goalCnt": 3,
-            "goalProbability": "10%",
+            "goalProbability": "9%",
             "injuryFlag": 0,
             "personId": 393726,
             "personName": "Isi Palazón",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 26,
+            "startedMatchCnt": 27,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "7"
@@ -981,6 +988,14 @@
     }
   },
   "ttg_change": {
+    "2球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -2.9
+    },
     "7球": {
       "count": 2,
       "change_pct": -4.2
@@ -989,59 +1004,35 @@
       "count": 2,
       "change_pct": -6.2
     },
-    "1球": {
+    "4球": {
       "count": 2,
-      "change_pct": 3.8
+      "change_pct": 0.0
     },
     "0球": {
       "count": 2,
       "change_pct": 3.6
     },
-    "4球": {
-      "count": 2,
-      "change_pct": 0.0
-    },
     "3球": {
       "count": 0,
       "change_pct": 0.0
     },
-    "2球": {
+    "1球": {
       "count": 2,
-      "change_pct": 0.0
-    },
-    "5球": {
-      "count": 2,
-      "change_pct": -2.9
+      "change_pct": 3.8
     }
   },
   "hafu_change": {
-    "平平": {
-      "count": 2,
-      "change_pct": -10.0
-    },
-    "胜负": {
+    "负胜": {
       "count": 3,
-      "change_pct": -4.5
+      "change_pct": 4.8
     },
-    "胜平": {
+    "负平": {
       "count": 1,
       "change_pct": -7.1
     },
     "负负": {
       "count": 5,
       "change_pct": -2.5
-    },
-    "负平": {
-      "count": 1,
-      "change_pct": -7.1
-    },
-    "胜胜": {
-      "count": 6,
-      "change_pct": 7.9
-    },
-    "负胜": {
-      "count": 3,
-      "change_pct": 4.8
     },
     "平胜": {
       "count": 5,
@@ -1050,6 +1041,50 @@
     "平负": {
       "count": 4,
       "change_pct": 2.5
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -7.1
+    },
+    "胜负": {
+      "count": 3,
+      "change_pct": -4.5
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": -10.0
+    },
+    "胜胜": {
+      "count": 6,
+      "change_pct": 7.9
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 5,
+      "change_pct": 0.0
+    },
+    "平": {
+      "count": 4,
+      "change_pct": -5.5
+    },
+    "胜": {
+      "count": 6,
+      "change_pct": 4.6
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 6,
+      "change_pct": -2.8
+    },
+    "让平": {
+      "count": 5,
+      "change_pct": 7.3
+    },
+    "让胜": {
+      "count": 6,
+      "change_pct": 1.8
     }
   },
   "exclusion_list": [

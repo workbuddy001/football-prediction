@@ -1,11 +1,18 @@
 {
   "match_id": "2039342",
-  "fetch_time": "2026-04-27 10:57:20",
+  "fetch_time": "2026-04-28 11:59:20",
   "match_info": {
     "home_team": "帕德博恩",
     "away_team": "沙尔克04",
     "league": "德国乙级联赛",
-    "time": ""
+    "time": "",
+    "match_num_str": "周日006",
+    "match_date": "2026-04-26",
+    "match_time": "19:30:00",
+    "home_rank": "[德乙2]",
+    "away_rank": "[德乙1]",
+    "league_abbr": "25/26德乙第31轮",
+    "match_status": "已截止"
   },
   "score_odds": {
     "05:00": "200.0",
@@ -842,11 +849,7 @@
       "count": 1,
       "change_pct": 9.1
     },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜平": {
+    "负平": {
       "count": 1,
       "change_pct": -3.8
     },
@@ -854,25 +857,57 @@
       "count": 1,
       "change_pct": -6.4
     },
-    "负平": {
-      "count": 1,
-      "change_pct": -3.8
+    "平胜": {
+      "count": 2,
+      "change_pct": 7.5
     },
     "平负": {
       "count": 1,
       "change_pct": -4.6
     },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 7.0
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.8
     },
-    "平胜": {
-      "count": 2,
-      "change_pct": 7.5
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "平平": {
       "count": 1,
       "change_pct": -3.6
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 7.0
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "平": {
+      "count": 4,
+      "change_pct": -8.5
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": 9.3
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 3,
+      "change_pct": -4.6
+    },
+    "让平": {
+      "count": 3,
+      "change_pct": 5.8
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": 8.8
     }
   },
   "exclusion_list": [

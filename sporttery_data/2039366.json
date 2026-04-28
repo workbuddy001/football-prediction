@@ -1,11 +1,18 @@
 {
   "match_id": "2039366",
-  "fetch_time": "2026-04-28 01:16:10",
+  "fetch_time": "2026-04-28 09:41:11",
   "match_info": {
     "home_team": "卡利亚里",
     "away_team": "亚特兰大",
     "league": "意大利甲级联赛",
-    "time": ""
+    "time": "2026-04-28 00:30:00",
+    "match_status": "已截止",
+    "match_num_str": "周一001",
+    "match_date": "2026-04-28",
+    "match_time": "00:30:00",
+    "league_abbr": "意大利甲级联赛",
+    "home_rank": "[意甲16]",
+    "away_rank": "[意甲7]"
   },
   "score_odds": {
     "05:00": "700.0",
@@ -719,31 +726,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 16,
           "phaseName": "",
-          "points": "33",
+          "points": "36",
           "ranking": "16",
           "sportteryTeamId": 120,
           "teamId": 0,
           "teamShortName": "卡利亚里",
-          "totalLegCnt": 33,
+          "totalLegCnt": 34,
           "uniformTeamId": 123,
-          "winGoalMatchCnt": 8,
-          "winProbability": "24%"
+          "winGoalMatchCnt": 9,
+          "winProbability": "26%"
         },
         {
           "drawMatchCnt": 12,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 7,
+          "lossGoalMatchCnt": 8,
           "phaseName": "",
           "points": "54",
           "ranking": "7",
           "sportteryTeamId": 117,
           "teamId": 0,
           "teamShortName": "亚特兰大",
-          "totalLegCnt": 33,
+          "totalLegCnt": 34,
           "uniformTeamId": 200,
           "winGoalMatchCnt": 14,
-          "winProbability": "42%"
+          "winProbability": "41%"
         }
       ],
       "tournamentId": 79,
@@ -755,46 +762,46 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
-            "assistProbability": "13%",
+            "assistProbability": "12%",
             "goalAvgCnt": "0.3",
             "goalCnt": 10,
-            "goalProbability": "21%",
+            "goalProbability": "20%",
             "injuryFlag": 0,
             "personId": 443318,
             "personName": "N. Krstović",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 15,
-            "substituteMatchCnt": 14,
+            "substituteMatchCnt": 15,
             "suspensionFlag": 0,
             "uniformNo": "90"
           },
           {
-            "appearanceCnt": 21,
+            "appearanceCnt": 22,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "3%",
-            "goalAvgCnt": "0.4",
-            "goalCnt": 8,
-            "goalProbability": "17%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 10,
+            "goalProbability": "20%",
             "injuryFlag": 0,
             "personId": 377105,
             "personName": "斯卡马卡",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 14,
+            "startedMatchCnt": 15,
             "substituteMatchCnt": 7,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 26,
+            "appearanceCnt": 27,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
-            "assistProbability": "16%",
+            "assistProbability": "15%",
             "goalAvgCnt": "0.1",
             "goalCnt": 3,
             "goalProbability": "6%",
@@ -803,7 +810,7 @@
             "personName": "C·德 凯特莱尔",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 22,
+            "startedMatchCnt": 23,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "17"
@@ -817,22 +824,40 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 31,
+            "appearanceCnt": 32,
             "assistAvgCnt": "0.2",
             "assistCnt": 5,
             "assistProbability": "17%",
             "goalAvgCnt": "0.2",
             "goalCnt": 6,
-            "goalProbability": "18%",
+            "goalProbability": "17%",
             "injuryFlag": 0,
             "personId": 571792,
             "personName": "S. Esposito",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 29,
+            "startedMatchCnt": 30,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "94"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 600817,
+            "personName": "G.博雷利",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 14,
+            "suspensionFlag": 0,
+            "uniformNo": "29"
           },
           {
             "appearanceCnt": 22,
@@ -841,7 +866,7 @@
             "assistProbability": "0%",
             "goalAvgCnt": "0.2",
             "goalCnt": 4,
-            "goalProbability": "12%",
+            "goalProbability": "11%",
             "injuryFlag": 0,
             "personId": 763119,
             "personName": "克勒奇索伊",
@@ -851,24 +876,6 @@
             "substituteMatchCnt": 11,
             "suspensionFlag": 0,
             "uniformNo": "9"
-          },
-          {
-            "appearanceCnt": 25,
-            "assistAvgCnt": "0",
-            "assistCnt": 1,
-            "assistProbability": "3%",
-            "goalAvgCnt": "0.1",
-            "goalCnt": 3,
-            "goalProbability": "9%",
-            "injuryFlag": 0,
-            "personId": 600817,
-            "personName": "G.博雷利",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 12,
-            "substituteMatchCnt": 13,
-            "suspensionFlag": 0,
-            "uniformNo": "29"
           }
         ],
         "sportteryTeamId": 120,
@@ -885,33 +892,33 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 1,
-      "change_pct": 16.7
-    },
     "5球": {
       "count": 1,
       "change_pct": 4.8
-    },
-    "4球": {
-      "count": 0,
-      "change_pct": 0.0
     },
     "3球": {
       "count": 2,
       "change_pct": -5.6
     },
-    "1球": {
-      "count": 3,
-      "change_pct": 3.3
+    "7球": {
+      "count": 1,
+      "change_pct": 16.7
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -9.1
     },
     "6球": {
       "count": 2,
       "change_pct": 21.1
     },
-    "0球": {
-      "count": 1,
-      "change_pct": -9.1
+    "1球": {
+      "count": 3,
+      "change_pct": 3.3
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "2球": {
       "count": 2,
@@ -919,27 +926,11 @@
     }
   },
   "hafu_change": {
-    "平平": {
-      "count": 2,
-      "change_pct": 7.4
-    },
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 2,
-      "change_pct": 10.0
-    },
-    "平负": {
-      "count": 2,
-      "change_pct": -11.1
-    },
     "平胜": {
       "count": 2,
       "change_pct": 7.8
     },
-    "负胜": {
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -947,23 +938,39 @@
       "count": 1,
       "change_pct": -1.9
     },
-    "胜负": {
+    "胜胜": {
+      "count": 2,
+      "change_pct": 10.0
+    },
+    "胜平": {
       "count": 0,
       "change_pct": 0.0
     },
     "负平": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": 7.4
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -11.1
     }
   },
   "had_change": {
-    "平": {
-      "count": 4,
-      "change_pct": 4.9
-    },
     "胜": {
       "count": 4,
       "change_pct": 13.7
+    },
+    "平": {
+      "count": 4,
+      "change_pct": 4.9
     },
     "负": {
       "count": 4,
@@ -971,13 +978,13 @@
     }
   },
   "hhad_change": {
-    "让平": {
-      "count": 3,
-      "change_pct": -9.3
-    },
     "让胜": {
       "count": 3,
       "change_pct": 7.7
+    },
+    "让平": {
+      "count": 3,
+      "change_pct": -9.3
     },
     "让负": {
       "count": 1,

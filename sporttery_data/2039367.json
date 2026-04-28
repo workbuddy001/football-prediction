@@ -5,8 +5,14 @@
     "home_team": "米亚尔比",
     "away_team": "哈尔姆斯塔德",
     "league": "瑞典超级联赛",
-    "time": "",
-    "match_status": "已截止"
+    "time": "2026-04-28 01:01:00",
+    "match_status": "已截止",
+    "match_num_str": "周一002",
+    "match_date": "2026-04-28",
+    "match_time": "01:01:00",
+    "league_abbr": "26瑞典超第5轮",
+    "home_rank": "[瑞超11]",
+    "away_rank": "[瑞超15]"
   },
   "score_odds": {
     "05:00": "32.00",

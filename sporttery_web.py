@@ -1215,11 +1215,13 @@ HTML_TEMPLATE = '''
             container.innerHTML = pageMatches.map(m => {
                 const analysis = analyzeMatch(m);
                 const confClass = analysis.confidence >= 3 ? 'conf-high' : analysis.confidence >= 2 ? 'conf-medium' : 'conf-low';
+                const _missingHeader = !m.match_info.match_num_str;
                 return `
                 <div class="match-card">
                     <div class="match-header">
                         <span class="match-id">${m.match_info.match_num_str || ''}${m.match_info.match_num_str ? ' <span style="color:#666;font-size:11px;font-weight:normal">#' + m.match_id + '</span>' : '#' + m.match_id}</span>
                         <span style="color:#666;font-size:12px">${m.match_info.match_date ? m.match_info.match_date + ' ' : ''}${m.match_info.match_time || ''} ${m.match_info.match_status === 'Selling' ? '<span style="color:#22c55e;font-size:11px">●在售</span>' : ''}</span>
+                        ${_missingHeader ? `<span onclick="openEditHeader(${m.match_id})" style="cursor:pointer;font-size:11px;color:#f59e0b;margin-left:6px;border:1px solid #f59e0b;border-radius:3px;padding:1px 5px">✏️补全</span>` : `<span onclick="openEditHeader(${m.match_id})" style="cursor:pointer;font-size:11px;color:#555;margin-left:6px;border:1px solid #333;border-radius:3px;padding:1px 5px" title="编辑抬头">✏️</span>`}
                     </div>
                     
                     <div style="text-align:center;margin-bottom:8px;font-size:13px;color:#aaa">
@@ -2194,6 +2196,59 @@ HTML_TEMPLATE = '''
             }
         }
 
+        // ── 手动补全比赛抬头 ──────────────────────────────────
+        function openEditHeader(matchId) {
+            // 取当前数据
+            const m = (window._allMatches || []).find(x => x.match_id == matchId);
+            const mi = (m && m.match_info) || {};
+            document.getElementById('edit-header-mid').value = matchId;
+            document.getElementById('edit-header-num').value = mi.match_num_str || '';
+            document.getElementById('edit-header-date').value = mi.match_date || '';
+            document.getElementById('edit-header-time').value = mi.match_time || '';
+            document.getElementById('edit-header-league').value = mi.league_abbr || mi.league || '';
+            document.getElementById('edit-header-home-rank').value = mi.home_rank || '';
+            document.getElementById('edit-header-away-rank').value = mi.away_rank || '';
+            document.getElementById('edit-header-msg').textContent = '';
+            document.getElementById('edit-header-modal').style.display = 'flex';
+        }
+
+        function closeEditHeader() {
+            document.getElementById('edit-header-modal').style.display = 'none';
+        }
+
+        async function saveEditHeader() {
+            const matchId = document.getElementById('edit-header-mid').value;
+            const body = {
+                match_num_str: document.getElementById('edit-header-num').value.trim(),
+                match_date:    document.getElementById('edit-header-date').value.trim(),
+                match_time:    document.getElementById('edit-header-time').value.trim(),
+                league_abbr:   document.getElementById('edit-header-league').value.trim(),
+                home_rank:     document.getElementById('edit-header-home-rank').value.trim(),
+                away_rank:     document.getElementById('edit-header-away-rank').value.trim(),
+            };
+            const msgEl = document.getElementById('edit-header-msg');
+            msgEl.textContent = '保存中...';
+            try {
+                const res = await fetch('/api/match-info/' + matchId, {
+                    method: 'PATCH',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    msgEl.style.color = '#22c55e';
+                    msgEl.textContent = '✅ 保存成功，页面将刷新...';
+                    setTimeout(() => { closeEditHeader(); loadMatches(); }, 800);
+                } else {
+                    msgEl.style.color = '#ef4444';
+                    msgEl.textContent = '❌ ' + (data.error || '保存失败');
+                }
+            } catch(e) {
+                msgEl.style.color = '#ef4444';
+                msgEl.textContent = '❌ 请求失败: ' + e.message;
+            }
+        }
+
         // ── 复盘：检验3球预测 ──────────────────────────────────
         async function doReview(matchId) {
             const homeInput = document.getElementById('home-' + matchId);
@@ -2614,14 +2669,18 @@ HTML_TEMPLATE = '''
                 html += '</div>';
             }
 
-            // 冷门/陷阱/掩护 警告区域
-            if (hasColdAlert || hasHeatTrap || hasCoverMode) {
+            // 分歧警告单独检测（strength=0 但需显示）
+            const hasConflict = signals.some(s => s.rule && s.rule.indexOf('分歧') >= 0);
+
+            // 冷门/陷阱/掩护/分歧 警告区域
+            if (hasColdAlert || hasHeatTrap || hasCoverMode || hasConflict) {
                 html += '<div style="background:rgba(239,68,68,0.08);border-left:3px solid #f87171;padding:6px 8px;margin:4px 0;border-radius:0 4px 4px 0;">';
-                const warnSignals = activeSignals.filter(s =>
+                // 特殊信号：从全量 signals 中取（不受 activeSignals 的 action 过滤限制）
+                const warnSignals = signals.filter(s =>
                     s.rule && (s.rule.indexOf('R8') >= 0 || s.rule.indexOf('R6') >= 0 || s.rule.indexOf('R5a') >= 0 || s.rule.indexOf('分歧') >= 0)
                 );
                 warnSignals.forEach(s => {
-                    const wColor = s.strength >= 6 ? '#f87171' : s.strength >= 5 ? '#fb923c' : '#fbbf24';
+                    const wColor = s.strength >= 6 ? '#f87171' : s.strength >= 5 ? '#fb923c' : s.strength >= 1 ? '#fbbf24' : '#f97316';
                     html += '<div style="color:' + wColor + ';font-size:11px;line-height:1.6;">';
                     html += s.rule + ' ' + s.detail;
                     if (s.action) html += ' → <b>' + s.action + '</b>';
@@ -2631,7 +2690,9 @@ HTML_TEMPLATE = '''
             }
 
             // 常规信号列表（排除特殊信号后最多显示8条）
+            // 注意：30家公司共识 action=''，单独渲染避免丢失
             const specialRules = ['R8-冷门', 'R8-预警', 'R6-掩护', 'R5a-造热陷阱', '分歧警告'];
+            // 先渲染有 action 的常规信号
             const normalSignals = activeSignals.filter(s =>
                 !specialRules.some(r => s.rule && s.rule.indexOf(r) >= 0)
             ).slice(0, 8);
@@ -2643,6 +2704,13 @@ HTML_TEMPLATE = '''
                 if (s.action && s.strength < 6) html += ' → <b>' + s.action + '</b>';
                 html += '</div>';
             });
+            // 单独渲染 30家公司共识（无 action，但有价值）
+            const consensus = signals.find(s => s.rule && s.rule.indexOf('30家') >= 0);
+            if (consensus) {
+                html += '<div style="color:#6b7280;font-size:11px;line-height:1.6;margin-top:3px;border-top:1px solid rgba(255,255,255,0.06);padding-top:3px;">';
+                html += '· [' + consensus.rule + '] ' + consensus.detail;
+                html += '</div>';
+            }
 
             const totalNormal = activeSignals.filter(s => !specialRules.some(r => s.rule && s.rule.indexOf(r) >= 0)).length;
             if (totalNormal > 8) {
@@ -2654,6 +2722,46 @@ HTML_TEMPLATE = '''
         }
 
     </script>
+
+<!-- ── 手动补全比赛抬头 弹窗 ─────────────────────────────── -->
+<div id="edit-header-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center">
+  <div style="background:#1a1a2e;border:1px solid #333;border-radius:10px;padding:20px;width:320px;max-width:92vw">
+    <div style="font-size:15px;font-weight:bold;color:#f59e0b;margin-bottom:14px">✏️ 补全比赛抬头信息</div>
+    <input type="hidden" id="edit-header-mid">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;color:#ccc">
+      <tr>
+        <td style="padding:5px 6px;white-space:nowrap;color:#888">竞彩编号</td>
+        <td><input id="edit-header-num" placeholder="如：周一004" style="width:100%;background:#0d0d1a;border:1px solid #333;color:#fff;padding:5px 8px;border-radius:4px;font-size:13px"></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;white-space:nowrap;color:#888">比赛日期</td>
+        <td><input id="edit-header-date" placeholder="2026-04-28" style="width:100%;background:#0d0d1a;border:1px solid #333;color:#fff;padding:5px 8px;border-radius:4px;font-size:13px"></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;white-space:nowrap;color:#888">比赛时间</td>
+        <td><input id="edit-header-time" placeholder="01:00:00" style="width:100%;background:#0d0d1a;border:1px solid #333;color:#fff;padding:5px 8px;border-radius:4px;font-size:13px"></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;white-space:nowrap;color:#888">联赛简称</td>
+        <td><input id="edit-header-league" placeholder="如：瑞超" style="width:100%;background:#0d0d1a;border:1px solid #333;color:#fff;padding:5px 8px;border-radius:4px;font-size:13px"></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;white-space:nowrap;color:#888">主队排名</td>
+        <td><input id="edit-header-home-rank" placeholder="如：[瑞超7]" style="width:100%;background:#0d0d1a;border:1px solid #333;color:#fff;padding:5px 8px;border-radius:4px;font-size:13px"></td>
+      </tr>
+      <tr>
+        <td style="padding:5px 6px;white-space:nowrap;color:#888">客队排名</td>
+        <td><input id="edit-header-away-rank" placeholder="如：[瑞超6]" style="width:100%;background:#0d0d1a;border:1px solid #333;color:#fff;padding:5px 8px;border-radius:4px;font-size:13px"></td>
+      </tr>
+    </table>
+    <div id="edit-header-msg" style="font-size:12px;margin-top:8px;min-height:16px"></div>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <button onclick="saveEditHeader()" style="flex:1;background:#f59e0b;color:#000;border:none;padding:8px;border-radius:5px;font-size:14px;font-weight:bold;cursor:pointer">💾 保存</button>
+      <button onclick="closeEditHeader()" style="flex:1;background:#333;color:#ccc;border:none;padding:8px;border-radius:5px;font-size:14px;cursor:pointer">取消</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
 '''
@@ -4080,6 +4188,35 @@ def get_all_saved_scores():
         return jsonify({'success': True, 'scores': filtered})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/match-info/<match_id>', methods=['PATCH'])
+def patch_match_info(match_id):
+    """
+    手动补全 / 修正比赛抬头信息（对旧数据缺失 match_num_str 等字段时使用）
+    Body JSON 支持字段：match_num_str, match_date, match_time, home_rank, away_rank, league_abbr
+    直接写回 sporttery_data/<match_id>.json 的 match_info 段。
+    """
+    try:
+        filepath = os.path.join(DATA_DIR, f'{match_id}.json')
+        if not os.path.exists(filepath):
+            return jsonify({'success': False, 'error': '文件不存在'})
+        body = request.get_json(force=True, silent=True) or {}
+        allowed = {'match_num_str', 'match_date', 'match_time', 'home_rank', 'away_rank', 'league_abbr', 'match_status', 'match_week'}
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        mi = data.setdefault('match_info', {})
+        for k, v in body.items():
+            if k in allowed:
+                mi[k] = v
+        # 同步 time 字段（给旧数据兼容）
+        if mi.get('match_date') and mi.get('match_time'):
+            mi['time'] = mi['match_date'] + ' ' + mi['match_time']
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        return jsonify({'success': True, 'match_info': mi})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
 
 @app.route('/api/odds_hitrate')
 def get_odds_hitrate():

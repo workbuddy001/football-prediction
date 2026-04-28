@@ -1,16 +1,16 @@
 {
   "match_id": "2039372",
-  "fetch_time": "2026-04-28 00:45:11",
+  "fetch_time": "2026-04-28 11:03:18",
   "match_info": {
     "home_team": "曼彻斯特联",
     "away_team": "布伦特福德",
     "league": "英格兰超级联赛",
-    "time": "2026-04-28 03:00",
+    "time": "",
     "match_num_str": "周一007",
     "match_week": "周一",
     "match_date": "2026-04-28",
     "match_time": "03:00:00",
-    "match_status": "Selling",
+    "match_status": "已截止",
     "home_rank": "[英超3]",
     "away_rank": "[英超9]",
     "league_abbr": "英超"
@@ -420,13 +420,13 @@
             "uniformNo": "4"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "injuryFlag": 1,
             "personId": 457466,
             "personName": "姆贝乌莫",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 27,
+            "startedMatchCnt": 28,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "19"
@@ -444,14 +444,14 @@
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 29,
+            "appearanceCnt": 30,
             "injuryFlag": 1,
             "personId": 689819,
             "personName": "L. Yoro",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
             "startedMatchCnt": 18,
-            "substituteMatchCnt": 11,
+            "substituteMatchCnt": 12,
             "suspensionFlag": 0,
             "uniformNo": "15"
           },
@@ -480,13 +480,13 @@
             "uniformNo": "41"
           },
           {
-            "appearanceCnt": 15,
+            "appearanceCnt": 16,
             "injuryFlag": 1,
             "personId": 772050,
             "personName": "A. Heaven",
             "playerPositionCode": "Defender",
             "playerPositionDesc": "后卫",
-            "startedMatchCnt": 9,
+            "startedMatchCnt": 10,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "26"
@@ -811,31 +811,31 @@
           "groupName": "",
           "lossGoalMatchCnt": 7,
           "phaseName": "",
-          "points": "58",
+          "points": "61",
           "ranking": "3",
           "sportteryTeamId": 13,
           "teamId": 0,
           "teamShortName": "曼联",
-          "totalLegCnt": 33,
+          "totalLegCnt": 34,
           "uniformTeamId": 360,
-          "winGoalMatchCnt": 16,
-          "winProbability": "48%"
+          "winGoalMatchCnt": 17,
+          "winProbability": "50%"
         },
         {
           "drawMatchCnt": 9,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 11,
+          "lossGoalMatchCnt": 12,
           "phaseName": "",
           "points": "48",
           "ranking": "9",
           "sportteryTeamId": 69,
           "teamId": 0,
           "teamShortName": "布伦特",
-          "totalLegCnt": 33,
+          "totalLegCnt": 34,
           "uniformTeamId": 421,
           "winGoalMatchCnt": 13,
-          "winProbability": "39%"
+          "winProbability": "38%"
         }
       ],
       "tournamentId": 127,
@@ -847,25 +847,25 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 33,
+            "appearanceCnt": 34,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "3%",
             "goalAvgCnt": "0.6",
             "goalCnt": 21,
-            "goalProbability": "45%",
+            "goalProbability": "44%",
             "injuryFlag": 0,
             "personId": 649618,
             "personName": "蒂亚戈",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 32,
+            "startedMatchCnt": 33,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "10%",
@@ -877,25 +877,25 @@
             "personName": "K. Schade",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 28,
+            "startedMatchCnt": 29,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "7"
           },
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
             "assistProbability": "10%",
             "goalAvgCnt": "0.2",
             "goalCnt": 5,
-            "goalProbability": "11%",
+            "goalProbability": "10%",
             "injuryFlag": 0,
             "personId": 671029,
             "personName": "D. Ouattara",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 21,
+            "startedMatchCnt": 22,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "19"
@@ -909,10 +909,28 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "2%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 10,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 578376,
+            "personName": "舍什科",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 13,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "8%",
+            "assistProbability": "7%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
             "goalProbability": "16%",
@@ -921,46 +939,28 @@
             "personName": "姆贝乌莫",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 27,
+            "startedMatchCnt": 28,
             "substituteMatchCnt": 1,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 28,
-            "assistAvgCnt": "0",
-            "assistCnt": 1,
-            "assistProbability": "3%",
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "5%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
             "goalProbability": "16%",
             "injuryFlag": 0,
-            "personId": 578376,
-            "personName": "舍什科",
-            "playerPositionCode": "Forward",
-            "playerPositionDesc": "前锋",
-            "startedMatchCnt": 15,
-            "substituteMatchCnt": 13,
-            "suspensionFlag": 0,
-            "uniformNo": "30"
-          },
-          {
-            "appearanceCnt": 30,
-            "assistAvgCnt": "0.6",
-            "assistCnt": 18,
-            "assistProbability": "45%",
-            "goalAvgCnt": "0.3",
-            "goalCnt": 8,
-            "goalProbability": "14%",
-            "injuryFlag": 0,
-            "personId": 276371,
-            "personName": "费尔南德斯",
+            "personId": 102688,
+            "personName": "Casemiro",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 30,
-            "substituteMatchCnt": 0,
+            "startedMatchCnt": 31,
+            "substituteMatchCnt": 1,
             "suspensionFlag": 0,
-            "uniformNo": "8"
+            "uniformNo": "18"
           }
         ],
         "sportteryTeamId": 13,
@@ -977,61 +977,41 @@
     }
   },
   "ttg_change": {
-    "3球": {
-      "count": 3,
-      "change_pct": -7.1
-    },
-    "4球": {
-      "count": 3,
-      "change_pct": -11.1
+    "2球": {
+      "count": 2,
+      "change_pct": 3.7
     },
     "5球": {
       "count": 2,
       "change_pct": 9.3
     },
-    "2球": {
-      "count": 2,
-      "change_pct": 3.7
-    },
-    "0球": {
-      "count": 1,
-      "change_pct": 5.6
+    "7球": {
+      "count": 4,
+      "change_pct": 20.0
     },
     "6球": {
       "count": 3,
       "change_pct": 13.0
     },
+    "4球": {
+      "count": 3,
+      "change_pct": -11.1
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 5.6
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -7.1
+    },
     "1球": {
       "count": 2,
       "change_pct": 2.9
-    },
-    "7球": {
-      "count": 4,
-      "change_pct": 20.0
     }
   },
   "hafu_change": {
-    "负负": {
-      "count": 1,
-      "change_pct": -2.3
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 3.9
-    },
-    "胜平": {
-      "count": 1,
-      "change_pct": -3.6
-    },
-    "平平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平胜": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -1039,20 +1019,36 @@
       "count": 1,
       "change_pct": -3.6
     },
+    "负负": {
+      "count": 1,
+      "change_pct": -2.3
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "平负": {
       "count": 1,
       "change_pct": -5.6
     },
-    "负胜": {
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.6
+    },
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 3.9
     }
   },
   "had_change": {
-    "胜": {
-      "count": 5,
-      "change_pct": 4.2
-    },
     "负": {
       "count": 5,
       "change_pct": -7.2
@@ -1060,13 +1056,13 @@
     "平": {
       "count": 4,
       "change_pct": -1.9
+    },
+    "胜": {
+      "count": 5,
+      "change_pct": 4.2
     }
   },
   "hhad_change": {
-    "让胜": {
-      "count": 4,
-      "change_pct": 12.8
-    },
     "让负": {
       "count": 5,
       "change_pct": -5.6
@@ -1074,6 +1070,10 @@
     "让平": {
       "count": 1,
       "change_pct": -2.7
+    },
+    "让胜": {
+      "count": 4,
+      "change_pct": 12.8
     }
   },
   "exclusion_list": [

@@ -1,11 +1,18 @@
 {
   "match_id": "2039373",
-  "fetch_time": "2026-04-27 23:34:10",
+  "fetch_time": "2026-04-28 11:21:59",
   "match_info": {
     "home_team": "西班牙人",
     "away_team": "莱万特",
     "league": "西班牙甲级联赛",
-    "time": ""
+    "time": "2026-4-28 03:00:00",
+    "match_status": "已截止",
+    "match_num_str": "周一008",
+    "match_date": "2026-4-28",
+    "match_time": "03:00:00",
+    "league_abbr": "25/26西甲第32轮",
+    "home_rank": "[西甲14]",
+    "away_rank": "[西甲19]"
   },
   "score_odds": {
     "05:00": "100.0",
@@ -690,36 +697,36 @@
       "seasonName": "2025/2026",
       "tables": [
         {
-          "drawMatchCnt": 8,
+          "drawMatchCnt": 9,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 14,
           "phaseName": "",
-          "points": "38",
-          "ranking": "14",
+          "points": "39",
+          "ranking": "13",
           "sportteryTeamId": 510,
           "teamId": 0,
           "teamShortName": "西班牙人",
-          "totalLegCnt": 32,
+          "totalLegCnt": 33,
           "uniformTeamId": 244,
           "winGoalMatchCnt": 10,
-          "winProbability": "31%"
+          "winProbability": "30%"
         },
         {
-          "drawMatchCnt": 8,
+          "drawMatchCnt": 9,
           "groupId": 0,
           "groupName": "",
           "lossGoalMatchCnt": 16,
           "phaseName": "",
-          "points": "32",
+          "points": "33",
           "ranking": "19",
           "sportteryTeamId": 33,
           "teamId": 0,
           "teamShortName": "莱万特",
-          "totalLegCnt": 32,
+          "totalLegCnt": 33,
           "uniformTeamId": 129,
           "winGoalMatchCnt": 8,
-          "winProbability": "25%"
+          "winProbability": "24%"
         }
       ],
       "tournamentId": 128,
@@ -731,7 +738,7 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 19,
+            "appearanceCnt": 20,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -743,7 +750,7 @@
             "personName": "Carlos Espí",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 7,
+            "startedMatchCnt": 8,
             "substituteMatchCnt": 12,
             "suspensionFlag": 0,
             "uniformNo": "19"
@@ -767,7 +774,7 @@
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 4,
             "assistProbability": "17%",
@@ -780,7 +787,7 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 18,
-            "substituteMatchCnt": 10,
+            "substituteMatchCnt": 11,
             "suspensionFlag": 0,
             "uniformNo": "21"
           }
@@ -793,7 +800,7 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 32,
+            "appearanceCnt": 33,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
             "assistProbability": "8%",
@@ -806,12 +813,12 @@
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 21,
-            "substituteMatchCnt": 11,
+            "substituteMatchCnt": 12,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 31,
+            "appearanceCnt": 32,
             "assistAvgCnt": "0",
             "assistCnt": 1,
             "assistProbability": "4%",
@@ -823,13 +830,13 @@
             "personName": "Kike",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 15,
+            "startedMatchCnt": 16,
             "substituteMatchCnt": 16,
             "suspensionFlag": 0,
             "uniformNo": "19"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0",
             "assistCnt": 0,
             "assistProbability": "0%",
@@ -841,7 +848,7 @@
             "personName": "Pere Milla",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 22,
+            "startedMatchCnt": 23,
             "substituteMatchCnt": 6,
             "suspensionFlag": 0,
             "uniformNo": "11"
@@ -861,14 +868,6 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 4,
-      "change_pct": 50.0
-    },
-    "6球": {
-      "count": 3,
-      "change_pct": 30.0
-    },
     "2球": {
       "count": 2,
       "change_pct": -1.5
@@ -877,25 +876,33 @@
       "count": 3,
       "change_pct": 14.3
     },
+    "7球": {
+      "count": 4,
+      "change_pct": 50.0
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": 30.0
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 1.8
+    },
     "0球": {
       "count": 0,
       "change_pct": 0.0
-    },
-    "1球": {
-      "count": 3,
-      "change_pct": -10.0
     },
     "3球": {
       "count": 1,
       "change_pct": -2.9
     },
-    "4球": {
-      "count": 2,
-      "change_pct": 1.8
+    "1球": {
+      "count": 3,
+      "change_pct": -10.0
     }
   },
   "hafu_change": {
-    "胜负": {
+    "负胜": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -903,21 +910,13 @@
       "count": 1,
       "change_pct": 7.1
     },
-    "平平": {
+    "负负": {
       "count": 1,
-      "change_pct": -9.1
-    },
-    "负胜": {
-      "count": 0,
-      "change_pct": 0.0
+      "change_pct": 4.2
     },
     "平胜": {
       "count": 2,
       "change_pct": -10.6
-    },
-    "负负": {
-      "count": 1,
-      "change_pct": 4.2
     },
     "平负": {
       "count": 1,
@@ -927,6 +926,14 @@
       "count": 1,
       "change_pct": 7.1
     },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -9.1
+    },
     "胜胜": {
       "count": 2,
       "change_pct": 6.9
@@ -934,13 +941,13 @@
   },
   "had_change": {},
   "hhad_change": {
-    "让平": {
-      "count": 1,
-      "change_pct": -2.0
-    },
     "让负": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "让平": {
+      "count": 1,
+      "change_pct": -2.0
     },
     "让胜": {
       "count": 1,

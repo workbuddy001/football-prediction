@@ -1,16 +1,16 @@
 {
   "match_id": "2039371",
-  "fetch_time": "2026-04-28 00:44:30",
+  "fetch_time": "2026-04-28 11:03:05",
   "match_info": {
     "home_team": "布洛涅",
     "away_team": "敦刻尔克",
     "league": "法国乙级联赛",
-    "time": "2026-04-28 02:45",
+    "time": "",
     "match_num_str": "周一006",
     "match_week": "周一",
     "match_date": "2026-04-28",
     "match_time": "02:45:00",
-    "match_status": "Selling",
+    "match_status": "已截止",
     "home_rank": "[法乙12]",
     "away_rank": "[法乙10]",
     "league_abbr": "法乙"
@@ -323,13 +323,13 @@
       "home": {
         "injuriesAndSuspensionsList": [
           {
-            "appearanceCnt": 16,
+            "appearanceCnt": 17,
             "injuryFlag": 1,
             "personId": 138313,
             "personName": "J. Martin",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 9,
+            "startedMatchCnt": 10,
             "substituteMatchCnt": 7,
             "suspensionFlag": 0,
             "uniformNo": "90"
@@ -652,17 +652,17 @@
           "drawMatchCnt": 9,
           "groupId": 0,
           "groupName": "",
-          "lossGoalMatchCnt": 13,
+          "lossGoalMatchCnt": 14,
           "phaseName": "",
           "points": "36",
           "ranking": "12",
           "sportteryTeamId": 472,
           "teamId": 0,
           "teamShortName": "布洛涅",
-          "totalLegCnt": 31,
+          "totalLegCnt": 32,
           "uniformTeamId": 1582,
           "winGoalMatchCnt": 9,
-          "winProbability": "29%"
+          "winProbability": "28%"
         },
         {
           "drawMatchCnt": 10,
@@ -670,15 +670,15 @@
           "groupName": "",
           "lossGoalMatchCnt": 11,
           "phaseName": "",
-          "points": "40",
+          "points": "43",
           "ranking": "10",
           "sportteryTeamId": 1190,
           "teamId": 0,
           "teamShortName": "敦刻尔克",
-          "totalLegCnt": 31,
+          "totalLegCnt": 32,
           "uniformTeamId": 165,
-          "winGoalMatchCnt": 10,
-          "winProbability": "32%"
+          "winGoalMatchCnt": 11,
+          "winProbability": "34%"
         }
       ],
       "tournamentId": 250,
@@ -690,37 +690,37 @@
       "away": {
         "playerList": [
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
-            "assistProbability": "6%",
-            "goalAvgCnt": "0.4",
-            "goalCnt": 12,
+            "assistProbability": "5%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 14,
             "goalProbability": "27%",
             "injuryFlag": 0,
             "personId": 312659,
             "personName": "T. Robinet",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 25,
+            "startedMatchCnt": 26,
             "substituteMatchCnt": 2,
             "suspensionFlag": 0,
             "uniformNo": "9"
           },
           {
-            "appearanceCnt": 30,
+            "appearanceCnt": 31,
             "assistAvgCnt": "0.2",
-            "assistCnt": 5,
-            "assistProbability": "14%",
+            "assistCnt": 6,
+            "assistProbability": "15%",
             "goalAvgCnt": "0.3",
             "goalCnt": 9,
-            "goalProbability": "20%",
+            "goalProbability": "18%",
             "injuryFlag": 0,
             "personId": 632351,
             "personName": "E. Bardeli",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 30,
+            "startedMatchCnt": 31,
             "substituteMatchCnt": 0,
             "suspensionFlag": 0,
             "uniformNo": "20"
@@ -729,10 +729,10 @@
             "appearanceCnt": 30,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "8%",
+            "assistProbability": "7%",
             "goalAvgCnt": "0.3",
             "goalCnt": 8,
-            "goalProbability": "18%",
+            "goalProbability": "16%",
             "injuryFlag": 0,
             "personId": 811298,
             "personName": "Y. Sekongo",
@@ -752,55 +752,55 @@
       "home": {
         "playerList": [
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
             "assistCnt": 2,
-            "assistProbability": "9%",
+            "assistProbability": "8%",
             "goalAvgCnt": "0.2",
             "goalCnt": 6,
-            "goalProbability": "22%",
+            "goalProbability": "21%",
             "injuryFlag": 0,
             "personId": 458936,
             "personName": "C. Fatou",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
             "startedMatchCnt": 13,
-            "substituteMatchCnt": 14,
+            "substituteMatchCnt": 15,
             "suspensionFlag": 0,
             "uniformNo": "17"
           },
           {
-            "appearanceCnt": 28,
+            "appearanceCnt": 29,
             "assistAvgCnt": "0.1",
             "assistCnt": 3,
-            "assistProbability": "14%",
+            "assistProbability": "13%",
             "goalAvgCnt": "0.1",
             "goalCnt": 4,
-            "goalProbability": "15%",
+            "goalProbability": "14%",
             "injuryFlag": 0,
             "personId": 461942,
             "personName": "A. El Farissi",
             "playerPositionCode": "Midfielder",
             "playerPositionDesc": "中场",
-            "startedMatchCnt": 24,
+            "startedMatchCnt": 25,
             "substituteMatchCnt": 4,
             "suspensionFlag": 0,
             "uniformNo": "10"
           },
           {
-            "appearanceCnt": 27,
+            "appearanceCnt": 28,
             "assistAvgCnt": "0.1",
-            "assistCnt": 2,
-            "assistProbability": "9%",
+            "assistCnt": 3,
+            "assistProbability": "13%",
             "goalAvgCnt": "0.1",
             "goalCnt": 3,
-            "goalProbability": "11%",
+            "goalProbability": "10%",
             "injuryFlag": 0,
             "personId": 623717,
             "personName": "N. Fatar",
             "playerPositionCode": "Forward",
             "playerPositionDesc": "前锋",
-            "startedMatchCnt": 16,
+            "startedMatchCnt": 17,
             "substituteMatchCnt": 11,
             "suspensionFlag": 0,
             "uniformNo": "23"
@@ -821,23 +821,15 @@
   },
   "ttg_change": {},
   "hafu_change": {
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
     "负负": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 2.3
-    },
-    "胜平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "平平": {
-      "count": 2,
-      "change_pct": -8.3
-    },
-    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -845,24 +837,28 @@
       "count": 1,
       "change_pct": 4.2
     },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "平负": {
       "count": 2,
       "change_pct": 3.8
     },
-    "负胜": {
+    "胜平": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": -8.3
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 2.3
     }
   },
   "had_change": {
-    "胜": {
-      "count": 5,
-      "change_pct": 7.7
-    },
     "负": {
       "count": 4,
       "change_pct": 2.1
@@ -870,13 +866,13 @@
     "平": {
       "count": 6,
       "change_pct": -10.3
+    },
+    "胜": {
+      "count": 5,
+      "change_pct": 7.7
     }
   },
   "hhad_change": {
-    "让胜": {
-      "count": 2,
-      "change_pct": 0.0
-    },
     "让负": {
       "count": 2,
       "change_pct": 8.7
@@ -884,6 +880,10 @@
     "让平": {
       "count": 3,
       "change_pct": -5.1
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": 0.0
     }
   },
   "exclusion_list": []
