@@ -1,11 +1,19 @@
 {
   "match_id": "2039368",
-  "fetch_time": "2026-04-27 21:37:12",
+  "fetch_time": "2026-04-28 01:38:17",
   "match_info": {
     "home_team": "赫根",
     "away_team": "天狼星",
     "league": "瑞典超级联赛",
-    "time": ""
+    "time": "",
+    "match_num_str": "周一003",
+    "match_week": "周一",
+    "match_date": "2026-04-28",
+    "match_time": "01:00:00",
+    "match_status": "已截止",
+    "home_rank": "[瑞超4]",
+    "away_rank": "[瑞超1]",
+    "league_abbr": "瑞超"
   },
   "score_odds": {
     "05:00": "300.0",
@@ -38,11 +46,11 @@
     "01:05": "100.0"
   },
   "total_goals": {
-    "3球": "3.20",
+    "3球": "3.40",
     "4球": "4.20",
-    "5球": "7.80",
-    "6球": "14.00",
-    "7球": "22.00",
+    "5球": "7.30",
+    "6球": "13.00",
+    "7球": "20.00",
     "0球": "17.50",
     "1球": "6.60",
     "2球": "4.00"
@@ -53,11 +61,11 @@
     "负": "1.94"
   },
   "ttg": {
-    "3球": "3.20",
+    "3球": "3.40",
     "4球": "4.20",
-    "5球": "7.80",
-    "6球": "14.00",
-    "7球": "22.00",
+    "5球": "7.30",
+    "6球": "13.00",
+    "7球": "20.00",
     "0球": "17.50",
     "1球": "6.60",
     "2球": "4.00"
@@ -813,16 +821,8 @@
   },
   "ttg_change": {
     "6球": {
-      "count": 3,
-      "change_pct": 0.0
-    },
-    "3球": {
-      "count": 2,
-      "change_pct": -8.6
-    },
-    "5球": {
-      "count": 3,
-      "change_pct": 0.0
+      "count": 4,
+      "change_pct": -7.1
     },
     "2球": {
       "count": 3,
@@ -832,27 +832,39 @@
       "count": 3,
       "change_pct": 20.0
     },
-    "4球": {
+    "7球": {
+      "count": 4,
+      "change_pct": 0.0
+    },
+    "3球": {
       "count": 3,
-      "change_pct": -12.5
+      "change_pct": -2.9
     },
     "0球": {
       "count": 2,
       "change_pct": 9.4
     },
-    "7球": {
+    "5球": {
+      "count": 4,
+      "change_pct": -6.4
+    },
+    "4球": {
       "count": 3,
-      "change_pct": 10.0
+      "change_pct": -12.5
     }
   },
   "hafu_change": {
+    "胜负": {
+      "count": 1,
+      "change_pct": -4.3
+    },
+    "平平": {
+      "count": 4,
+      "change_pct": 16.4
+    },
     "负胜": {
       "count": 0,
       "change_pct": 0.0
-    },
-    "负负": {
-      "count": 6,
-      "change_pct": -24.4
     },
     "平胜": {
       "count": 6,
@@ -862,31 +874,55 @@
       "count": 5,
       "change_pct": 19.2
     },
-    "平平": {
-      "count": 4,
-      "change_pct": 16.4
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "平负": {
       "count": 3,
       "change_pct": -11.0
     },
+    "负负": {
+      "count": 6,
+      "change_pct": -24.4
+    },
     "胜平": {
       "count": 0,
       "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 8,
+      "change_pct": 23.4
     },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
+    "负": {
+      "count": 8,
+      "change_pct": -18.8
     },
-    "胜负": {
-      "count": 1,
-      "change_pct": -4.3
+    "平": {
+      "count": 6,
+      "change_pct": 6.1
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 7,
+      "change_pct": 22.6
+    },
+    "让负": {
+      "count": 7,
+      "change_pct": -9.2
+    },
+    "让平": {
+      "count": 7,
+      "change_pct": 17.6
     }
   },
   "exclusion_list": [
     {
       "goal": "3球",
-      "ttg_odds": "3.20",
+      "ttg_odds": "3.40",
       "ttg_special": false,
       "scores": [
         {
@@ -911,7 +947,7 @@
         }
       ],
       "level": "仅比分排除",
-      "reason": "进球数赔率3.20（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+      "reason": "进球数赔率3.40（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
     }
   ]
 }

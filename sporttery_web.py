@@ -1628,6 +1628,13 @@ HTML_TEMPLATE = '''
                     </div>
                     ` : ''}
 
+                    <!-- 排除平局分析（football_web逻辑） -->
+                    ${m.draw_exclusion && m.draw_exclusion.active ? `
+                    <div class="odds-section">
+                        ${drawExclusionHtml(m.draw_exclusion)}
+                    </div>
+                    ` : ''}
+
                     <!-- 半全场 -->
                     ${Object.keys(m.hafu || {}).length > 0 ? `
                     <div class="odds-section">
@@ -2539,6 +2546,113 @@ HTML_TEMPLATE = '''
             '</div>';
         }
 
+        function drawExclusionHtml(d) {
+            if (!d || !d.active) return '';
+            const signals = d.signals || [];
+            const excl = d.exclusions || [];
+            const warns = d.warnings || [];
+            const pred = d.prediction || '';
+            const conf = d.confidence || 1;
+            const confText = d.confidence_text || '';
+
+            // 信号按strength排序
+            const activeSignals = signals.filter(s => s.action).sort((a, b) => b.strength - a.strength);
+            const dirMap = {'home': '主胜', 'draw': '平局', 'away': '客胜'};
+            const exclNames = excl.map(e => dirMap[e] || e);
+
+            // 检测特殊状态
+            const hasColdAlert = warns.some(w => w && (w.indexOf('R8') >= 0 || w.indexOf('冷门') >= 0));
+            const hasHeatTrap = warns.some(w => w && (w.indexOf('造热陷阱') >= 0 || w.indexOf('R5a') >= 0));
+            const hasCoverMode = warns.some(w => w && (w.indexOf('掩护') >= 0 || w.indexOf('R6') >= 0));
+
+            // 背景色 - 冷门/陷阱时用警告色
+            let bgColor, borderColor, tagBg, tagColor, label;
+            if (hasColdAlert) {
+                bgColor = 'rgba(239,68,68,0.15)'; borderColor = 'rgba(239,68,68,0.5)';
+                tagBg = 'rgba(239,68,68,0.25)'; tagColor = '#fca5a5';
+                label = '🧊 冷门预警';
+            } else if (hasHeatTrap) {
+                bgColor = 'rgba(249,115,22,0.12)'; borderColor = 'rgba(249,115,22,0.4)';
+                tagBg = 'rgba(249,115,22,0.20)'; tagColor = '#fb923c';
+                label = '🔴 造热陷阱';
+            } else if (conf >= 5) {
+                bgColor = 'rgba(239,68,68,0.12)'; borderColor = 'rgba(239,68,68,0.4)';
+                tagBg = 'rgba(239,68,68,0.20)'; tagColor = '#fca5a5';
+                label = '🔥 强排除';
+            } else if (conf >= 4) {
+                bgColor = 'rgba(234,179,8,0.10)'; borderColor = 'rgba(234,179,8,0.35)';
+                tagBg = 'rgba(234,179,8,0.18)'; tagColor = '#fbbf24';
+                label = '⚡ 排除信号';
+            } else if (conf >= 3) {
+                bgColor = 'rgba(59,130,246,0.08)'; borderColor = 'rgba(59,130,246,0.25)';
+                tagBg = 'rgba(59,130,246,0.12)'; tagColor = '#93c5fd';
+                label = '📊 排除参考';
+            } else {
+                bgColor = 'rgba(100,116,139,0.06)'; borderColor = 'rgba(100,116,139,0.18)';
+                tagBg = 'rgba(100,116,139,0.10)'; tagColor = '#94a3b8';
+                label = '📋 30家统计';
+            }
+
+            let html = '<div style="background:' + bgColor + ';border:1px solid ' + borderColor + ';border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12px;">';
+
+            // 标题行
+            html += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap;">';
+            html += '<span style="background:' + tagBg + ';color:' + tagColor + ';padding:2px 8px;border-radius:4px;font-weight:bold;font-size:11px;">' + label + '</span>';
+            if (pred && conf >= 3) {
+                html += '<span style="color:' + tagColor + ';font-weight:bold;font-size:13px;">预测: ' + pred + '</span>';
+                if (confText) html += '<span style="color:#94a3b8;font-size:11px;">' + confText + '</span>';
+            }
+            if (d.macao_tip && d.macao_tip.length > 1 && !['|', '-', '—', '/'].includes(d.macao_tip)) {
+                html += '<span style="color:#94a3b8;font-size:11px;margin-left:auto;">澳门推荐: ' + d.macao_tip + '</span>';
+            }
+            html += '</div>';
+
+            // 排除方向
+            if (exclNames.length > 0) {
+                html += '<div style="margin-bottom:4px;color:#fca5a5;font-weight:bold;font-size:11px;">';
+                html += '✗ 排除: ' + exclNames.join('、');
+                html += '</div>';
+            }
+
+            // 冷门/陷阱/掩护 警告区域
+            if (hasColdAlert || hasHeatTrap || hasCoverMode) {
+                html += '<div style="background:rgba(239,68,68,0.08);border-left:3px solid #f87171;padding:6px 8px;margin:4px 0;border-radius:0 4px 4px 0;">';
+                const warnSignals = activeSignals.filter(s =>
+                    s.rule && (s.rule.indexOf('R8') >= 0 || s.rule.indexOf('R6') >= 0 || s.rule.indexOf('R5a') >= 0 || s.rule.indexOf('分歧') >= 0)
+                );
+                warnSignals.forEach(s => {
+                    const wColor = s.strength >= 6 ? '#f87171' : s.strength >= 5 ? '#fb923c' : '#fbbf24';
+                    html += '<div style="color:' + wColor + ';font-size:11px;line-height:1.6;">';
+                    html += s.rule + ' ' + s.detail;
+                    if (s.action) html += ' → <b>' + s.action + '</b>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+
+            // 常规信号列表（排除特殊信号后最多显示8条）
+            const specialRules = ['R8-冷门', 'R8-预警', 'R6-掩护', 'R5a-造热陷阱', '分歧警告'];
+            const normalSignals = activeSignals.filter(s =>
+                !specialRules.some(r => s.rule && s.rule.indexOf(r) >= 0)
+            ).slice(0, 8);
+            normalSignals.forEach(s => {
+                const sColor = s.strength >= 5 ? '#fca5a5' : s.strength >= 4 ? '#fbbf24' : s.strength >= 3 ? '#93c5fd' : '#94a3b8';
+                const sIcon = s.strength >= 5 ? '▸' : s.strength >= 4 ? '▸' : '·';
+                html += '<div style="color:' + sColor + ';font-size:11px;line-height:1.6;margin-top:2px;">';
+                html += sIcon + ' [' + s.rule + '] ' + s.detail;
+                if (s.action && s.strength < 6) html += ' → <b>' + s.action + '</b>';
+                html += '</div>';
+            });
+
+            const totalNormal = activeSignals.filter(s => !specialRules.some(r => s.rule && s.rule.indexOf(r) >= 0)).length;
+            if (totalNormal > 8) {
+                html += '<div style="color:#94a3b8;font-size:10px;margin-top:2px;">...还有' + (totalNormal - 8) + '条信号</div>';
+            }
+
+            html += '</div>';
+            return html;
+        }
+
     </script>
 </body>
 </html>
@@ -2834,6 +2948,529 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
 
 
 
+# ==================== 排除平局分析（基于分析模板源数据） ====================
+
+_ANALYSIS_TEMPLATE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '分析模板')
+
+
+def _find_source_md(match_num_str, match_date):
+    """
+    根据竞彩编号和比赛日期查找分析模板源数据文件。
+    match_date: "2026-04-28" → 先找 "2026.04.28"，再找 "2026.04.27"
+    match_num_str: "周一001" → 文件前缀 "周一001_*_源数据.md"
+    返回文件路径或 None。
+    """
+    if not match_num_str or not match_date:
+        return None
+    try:
+        from datetime import datetime, timedelta
+        dt = datetime.strptime(match_date, '%Y-%m-%d')
+        # 竞彩match_date可能是比赛日，分析模板按采集日（可能是前一天）组织
+        date_dirs = [
+            dt.strftime('%Y.%m.%d'),
+            (dt - timedelta(days=1)).strftime('%Y.%m.%d'),
+        ]
+    except (ValueError, TypeError):
+        return None
+
+    prefix = match_num_str + '_'
+    for dir_name in date_dirs:
+        date_dir = os.path.join(_ANALYSIS_TEMPLATE_DIR, dir_name)
+        if not os.path.isdir(date_dir):
+            continue
+        pattern = os.path.join(date_dir, prefix + '*_源数据.md')
+        matches = glob.glob(pattern)
+        if matches:
+            return matches[0]
+    return None
+
+
+def _parse_source_md(filepath):
+    """
+    解析分析模板源数据md文件，提取：
+    - initial_odds: list of (主胜, 平局, 客胜) 30家
+    - realtime_odds: list of (主胜, 平局, 客胜) 30家
+    - macao_tip: 澳门推荐方向字符串
+    - home_team, away_team: 队名
+    返回dict或None（解析失败时）
+    """
+    if not filepath or not os.path.isfile(filepath):
+        return None
+
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except Exception:
+        return None
+
+    import re
+
+    result = {
+        'initial_odds': [],
+        'realtime_odds': [],
+        'macao_tip': '',
+        'home_team': '',
+        'away_team': '',
+    }
+
+    # 提取主客队名
+    m_home = re.search(r'\|\s*主队\s*\|\s*(.+?)\s*\|', content)
+    m_away = re.search(r'\|\s*客队\s*\|\s*(.+?)\s*\|', content)
+    if m_home:
+        result['home_team'] = m_home.group(1).strip()
+    if m_away:
+        result['away_team'] = m_away.group(1).strip()
+
+    # 提取澳门推荐
+    m_tip = re.search(r'\|\s*澳门推荐\s*\|\s*(.+?)\s*\|', content)
+    if m_tip:
+        result['macao_tip'] = m_tip.group(1).strip()
+
+    # 提取 initial_odds
+    m_init = re.search(r'initial_odds\s*=\s*\[(.*?)\]', content, re.DOTALL)
+    if m_init:
+        result['initial_odds'] = _parse_odds_block(m_init.group(1))
+
+    # 提取 realtime_odds
+    m_real = re.search(r'realtime_odds\s*=\s*\[(.*?)\]', content, re.DOTALL)
+    if m_real:
+        result['realtime_odds'] = _parse_odds_block(m_real.group(1))
+
+    if not result['initial_odds'] or not result['realtime_odds']:
+        return None
+
+    return result
+
+
+def _parse_odds_block(block_text):
+    """
+    解析赔率数组文本，提取每行的 (主胜, 平局, 客胜) 元组。
+    格式: (4.22, 3.45, 1.66),  # 公司名
+    """
+    import re
+    odds_list = []
+    # 匹配每一行的元组 (x.xx, y.yy, z.zz)
+    for m in re.finditer(r'\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*\)', block_text):
+        try:
+            odds_list.append((float(m.group(1)), float(m.group(2)), float(m.group(3))))
+        except ValueError:
+            continue
+    return odds_list
+
+
+def _calc_pct(init_val, real_val):
+    """计算变化百分比"""
+    if init_val is None or real_val is None or init_val == 0:
+        return 0.0
+    return (real_val - init_val) / init_val * 100
+
+
+def _run_draw_exclusion(source_data):
+    """
+    基于分析模板源数据运行排除平局分析（同步football_web.py最新逻辑）。
+    包含：心水排除、绝对值检查、不怕/不跟标签、推离排除、30家共识、
+    分歧检测、低赔排除、冷门预警(R8)、掩护模式(R6)、造热陷阱(R5a)。
+    返回dict。
+    """
+    if not source_data:
+        return {'active': False}
+
+    init_odds = source_data.get('initial_odds', [])
+    real_odds = source_data.get('realtime_odds', [])
+    macao_tip = source_data.get('macao_tip', '').strip()
+    # 过滤无效的澳门推荐
+    if macao_tip and macao_tip not in ('|', '-', '—', '/', '\\') and len(macao_tip) > 1:
+        pass
+    else:
+        macao_tip = ''
+
+    if not init_odds or not real_odds:
+        return {'active': False}
+
+    # 竞彩=idx0, 澳门=idx2
+    jc_init = init_odds[0] if len(init_odds) > 0 else None
+    jc_real = real_odds[0] if len(real_odds) > 0 else None
+    macao_init = init_odds[2] if len(init_odds) > 2 else None
+    macao_real = real_odds[2] if len(real_odds) > 2 else None
+
+    if not jc_init or not jc_real:
+        return {'active': False}
+
+    # 计算竞彩赔率变化
+    jc_h_chg = _calc_pct(jc_init[0], jc_real[0])
+    jc_d_chg = _calc_pct(jc_init[1], jc_real[1])
+    jc_a_chg = _calc_pct(jc_init[2], jc_real[2])
+
+    # 澳门赔率变化
+    macao_h_chg = _calc_pct(macao_init[0], macao_real[0]) if macao_init and macao_real else 0
+    macao_d_chg = _calc_pct(macao_init[1], macao_real[1]) if macao_init and macao_real else 0
+    macao_a_chg = _calc_pct(macao_init[2], macao_real[2]) if macao_init and macao_real else 0
+
+    current_h = jc_real[0]
+    current_d = jc_real[1]
+    current_a = jc_real[2]
+
+    excluded = set()
+    signals = []
+    warnings = []  # 冷门预警/警告
+
+    def _dir_name(d):
+        return {'home': '主胜', 'draw': '平局', 'away': '客胜'}.get(d, d)
+
+    def _parse_macao_dir(tip):
+        if not tip:
+            return 'unknown'
+        if '主' in tip or '胜' in tip:
+            return 'home'
+        elif '客' in tip:
+            return 'away'
+        elif '和' in tip or '平' in tip or '局' in tip:
+            return 'draw'
+        return 'unknown'
+
+    def _get_tip_odds(tip_dir):
+        if tip_dir == 'home': return current_h
+        elif tip_dir == 'draw': return current_d
+        elif tip_dir == 'away': return current_a
+        return 0
+
+    def _get_tip_jc_chg(tip_dir):
+        if tip_dir == 'home': return jc_h_chg
+        elif tip_dir == 'draw': return jc_d_chg
+        elif tip_dir == 'away': return jc_a_chg
+        return 0
+
+    # ========== Step 1: 心水排除法（最高优先级） ==========
+    if macao_tip:
+        tip_dir = _parse_macao_dir(macao_tip)
+        if tip_dir and tip_dir != 'unknown':
+            tip_odds = _get_tip_odds(tip_dir)
+
+            if tip_odds >= 5.0:
+                excluded.add(tip_dir)
+                signals.append({'rule': '心水排除①', 'detail': f"澳门推荐'{macao_tip}'，方向赔率{tip_odds:.2f}≥5.0",
+                                'action': f"排除{_dir_name(tip_dir)}", 'strength': 5})
+            elif tip_odds >= 3.5:
+                excluded.add(tip_dir)
+                signals.append({'rule': '心水排除②', 'detail': f"澳门推荐'{macao_tip}'，方向赔率{tip_odds:.2f}≥3.5",
+                                'action': f"排除{_dir_name(tip_dir)}", 'strength': 4})
+            elif tip_odds >= 3.0:
+                tip_jc_chg = _get_tip_jc_chg(tip_dir)
+                if tip_jc_chg > 3:
+                    excluded.add(tip_dir)
+                    signals.append({'rule': '规则B', 'detail': f"澳门推{_dir_name(tip_dir)}+竞彩推离{tip_jc_chg:.1f}%>3%",
+                                    'action': f"排除{_dir_name(tip_dir)}", 'strength': 5})
+                elif abs(tip_jc_chg) <= 2:
+                    signals.append({'rule': '规则A（降级）', 'detail': f"澳门推{_dir_name(tip_dir)}赔率{tip_odds:.2f}，竞彩无明显信号",
+                                    'action': f"可能排除{_dir_name(tip_dir)}（50%命中率）", 'strength': 2})
+                elif tip_jc_chg < -2:
+                    signals.append({'rule': '实盘信号', 'detail': f"澳门推{_dir_name(tip_dir)}+竞彩造热{abs(tip_jc_chg):.1f}%",
+                                    'action': f"不排除{_dir_name(tip_dir)}（实盘）", 'strength': 3})
+
+    # ========== Step 2: 赔率绝对值检查 ==========
+    if current_h > 5.0:
+        excluded.add('home')
+        signals.append({'rule': '绝对值排除', 'detail': f"主胜赔率{current_h:.2f}>5.0",
+                        'action': '排除主胜', 'strength': 4})
+    elif current_h > 3.5:
+        signals.append({'rule': '绝对值参考', 'detail': f"主胜赔率{current_h:.2f}>3.5（大概率排除，友谊赛除外）",
+                        'action': '倾向排除主胜', 'strength': 3})
+
+    if current_d > 5.0:
+        excluded.add('draw')
+        signals.append({'rule': '绝对值排除', 'detail': f"平局赔率{current_d:.2f}>5.0",
+                        'action': '排除平局', 'strength': 4})
+    elif current_d > 3.5:
+        signals.append({'rule': '绝对值参考', 'detail': f"平局赔率{current_d:.2f}>3.5（大概率排除，友谊赛除外）",
+                        'action': '倾向排除平局', 'strength': 3})
+
+    if current_a > 5.0:
+        excluded.add('away')
+        signals.append({'rule': '绝对值排除', 'detail': f"客胜赔率{current_a:.2f}>5.0",
+                        'action': '排除客胜', 'strength': 4})
+    elif current_a > 3.5:
+        signals.append({'rule': '绝对值参考', 'detail': f"客胜赔率{current_a:.2f}>3.5（大概率排除，友谊赛除外）",
+                        'action': '倾向排除客胜', 'strength': 3})
+
+    # 低赔排除：主胜<1.5时庄家高度自信
+    if current_h < 1.5:
+        signals.append({'rule': '低赔排除', 'detail': f"主胜赔率{current_h:.2f}<1.5，庄家高度自信",
+                        'action': '排除另外两方向可能性高', 'strength': 4})
+
+    # ========== Step 3: 竞彩×澳门互动检查 ==========
+    if macao_init and macao_real:
+        # [不怕]标签 / [不可靠的不怕]标签
+        for dn, di, jcc, mcc in [('home', 0, jc_h_chg, macao_h_chg),
+                                  ('draw', 1, jc_d_chg, macao_d_chg),
+                                  ('away', 2, jc_a_chg, macao_a_chg)]:
+            dir_odds = [current_h, current_d, current_a][di]
+
+            if jcc > 1.0 and abs(mcc) < 0.5:
+                if dir_odds >= 3.5:
+                    excluded.add(dn)
+                    signals.append({'rule': '[不怕]标签',
+                                    'detail': f"竞彩升{_dir_name(dn)}{jcc:+.1f}%+澳门不动，{_dir_name(dn)}赔率≥3.5",
+                                    'action': f"排除{_dir_name(dn)}", 'strength': 4})
+                else:
+                    signals.append({'rule': '[不可靠的不怕]',
+                                    'detail': f"竞彩升{_dir_name(dn)}+澳门不动，但{_dir_name(dn)}赔率<3.5",
+                                    'action': f"不可靠排除{_dir_name(dn)}", 'strength': 1})
+
+            # [不跟]标签：竞彩降+澳门不动=造热假象
+            if jcc < -1.0 and abs(mcc) < 0.5:
+                signals.append({'rule': '[不跟]标签',
+                                'detail': f"竞彩降{_dir_name(dn)}{jcc:+.1f}%+澳门不动",
+                                'action': f"{_dir_name(dn)}造热是假象", 'strength': 4})
+
+        # 推离排除：竞彩升>5%
+        for dn, jcc in [('home', jc_h_chg), ('draw', jc_d_chg), ('away', jc_a_chg)]:
+            if jcc > 5:
+                excluded.add(dn)
+                signals.append({'rule': '推离排除',
+                                'detail': f"竞彩{_dir_name(dn)}升{jcc:+.1f}%>5%",
+                                'action': f"排除{_dir_name(dn)}", 'strength': 4})
+
+    # ========== Step 4: 30家公司共识检查 ==========
+    total = len(init_odds)
+    h_down = h_up = d_down = d_up = a_down = a_up = 0
+    for ini, real in zip(init_odds, real_odds):
+        for i, (iv, rv) in enumerate(zip(ini, real)):
+            pct = (rv - iv) / iv * 100 if iv != 0 else 0
+            if i == 0:
+                if pct < -0.5: h_down += 1
+                elif pct > 0.5: h_up += 1
+            elif i == 1:
+                if pct < -0.5: d_down += 1
+                elif pct > 0.5: d_up += 1
+            else:
+                if pct < -0.5: a_down += 1
+                elif pct > 0.5: a_up += 1
+
+    signals.append({'rule': '30家公司共识',
+                    'detail': f"主降{h_down}升{h_up} / 平降{d_down}升{d_up} / 客降{a_down}升{a_up}",
+                    'action': '', 'strength': 3})
+
+    if a_up >= total * 0.85:
+        signals.append({'rule': '强共识推离客', 'detail': f"{a_up}/{total}家公司升客胜（>{int(total*0.85)}家阈值）",
+                        'action': '强烈推离客胜', 'strength': 4})
+    if h_up >= total * 0.85:
+        signals.append({'rule': '强共识推离主', 'detail': f"{h_up}/{total}家公司升主胜（>{int(total*0.85)}家阈值）",
+                        'action': '强烈推离主胜', 'strength': 4})
+    if a_down >= total * 0.85:
+        signals.append({'rule': '强共识造热客', 'detail': f"{a_down}/{total}家公司降客胜（>{int(total*0.85)}家阈值）",
+                        'action': '全面造热客（需判断出口结构）', 'strength': 4})
+    if h_down >= total * 0.85:
+        signals.append({'rule': '强共识造热主', 'detail': f"{h_down}/{total}家公司降主胜（>{int(total*0.85)}家阈值）",
+                        'action': '全面造热主（需判断出口结构）', 'strength': 4})
+
+    # ========== Step 5: 竞彩×澳门分歧检测 ==========
+    if macao_init and macao_real:
+        conflicts = []
+        for dir_label, jcc, mcc in [("主", jc_h_chg, macao_h_chg), ("平", jc_d_chg, macao_d_chg), ("客", jc_a_chg, macao_a_chg)]:
+            if abs(jcc) > 2 and abs(mcc) > 2 and ((jcc > 0) != (mcc > 0)):
+                conflicts.append(dir_label)
+        if conflicts:
+            signals.append({'rule': '⚠️ 分歧警告',
+                            'detail': f"竞彩与澳门在{'/'.join(conflicts)}方向相反",
+                            'action': '信号降级', 'strength': 0})
+            warnings.append(f"竞彩×澳门在{','.join(conflicts)}方向分歧")
+
+    # ========== Step 6: R8 冷门检测器 ==========
+    # 核心逻辑：当"赔率变化信号"足够强时，可以覆盖"赔率绝对值排除"
+    # 适用场景：庄家主动引导筹码去低赔方向，掩护高赔方向打出
+    if len(real_odds) >= 20:
+        cold_exclusions_to_remove = set()  # R8覆盖的排除
+        for dn, di, jcc in [('home', 0, jc_h_chg), ('draw', 1, jc_d_chg), ('away', 2, jc_a_chg)]:
+            dir_odds = [current_h, current_d, current_a][di]
+            if dir_odds < 3.5:
+                continue  # 只检测被绝对值排除的高赔方向
+
+            if dn not in excluded:
+                continue  # 没被排除的不需要R8覆盖
+
+            # 计算竞彩变化
+            chg_pct = jcc
+            jc_dropping = chg_pct < -2
+            jc_strong_drop = chg_pct < -5
+
+            # 计算30家公司降赔数量
+            dir_down_count = 0
+            dir_up_count = 0
+            for ini, real in zip(init_odds, real_odds):
+                pct = _calc_pct(ini[di], real[di])
+                if pct < -0.5:
+                    dir_down_count += 1
+                elif pct > 0.5:
+                    dir_up_count += 1
+
+            consensus_drop = dir_down_count >= total * 0.7
+            strong_consensus = dir_down_count >= total * 0.85
+
+            # 澳门同向
+            macao_chg = [macao_h_chg, macao_d_chg, macao_a_chg][di]
+            macao_agrees = macao_chg < -1.0 if macao_init and macao_real else False
+
+            # 心水同向
+            tip_match = False
+            if macao_tip:
+                tip_dir = _parse_macao_dir(macao_tip)
+                if tip_dir == dn:
+                    tip_match = True
+
+            # R8评分
+            r8_score = 0
+            r8_reasons = []
+            if jc_strong_drop:
+                r8_score += 40
+                r8_reasons.append(f'竞彩强降{chg_pct:.1f}%')
+            elif jc_dropping:
+                r8_score += 25
+                r8_reasons.append(f'竞彩降{chg_pct:.1f}%')
+            if strong_consensus:
+                r8_score += 30
+                r8_reasons.append(f'{dir_down_count}/30家强共识')
+            elif consensus_drop:
+                r8_score += 18
+                r8_reasons.append(f'{dir_down_count}/30家同向降')
+            if macao_agrees:
+                r8_score += 15
+                r8_reasons.append('澳门同向降')
+            if tip_match:
+                r8_score += 10
+                r8_reasons.append(f'心水同向({macao_tip})')
+
+            if r8_score >= 65:
+                bonus = min(r8_score, 90)
+                cold_exclusions_to_remove.add(dn)
+                signals.append({'rule': '🧊 R8-冷门检测⚡',
+                                'detail': f"{_dir_name(dn)}: {'+'.join(r8_reasons)}, 极端变化信号强力覆盖绝对值",
+                                'action': f"⚠️ 取消排除{_dir_name(dn)}! 冷门风险极高",
+                                'strength': 6})
+                warnings.append(f"R8-极端冷门: {_dir_name(dn)}被绝对值排除但{'+'.join(r8_reasons)}")
+            elif r8_score >= 50:
+                cold_exclusions_to_remove.add(dn)
+                signals.append({'rule': '🧊 R8-冷门检测',
+                                'detail': f"{_dir_name(dn)}: {'+'.join(r8_reasons)}, 变化信号覆盖绝对值",
+                                'action': f"⚠️ 取消排除{_dir_name(dn)}! 可能冷门",
+                                'strength': 5})
+                warnings.append(f"R8-冷门: {_dir_name(dn)}被排除但{'+'.join(r8_reasons)}")
+            elif r8_score >= 30:
+                signals.append({'rule': '🧊 R8-冷门预警',
+                                'detail': f"{_dir_name(dn)}: {'+'.join(r8_reasons)}, 存在冷门可能",
+                                'action': f"降低排除{_dir_name(dn)}置信度",
+                                'strength': 4})
+                warnings.append(f"R8-预警: {_dir_name(dn)}有冷门风险({'+'.join(r8_reasons)})")
+
+        # 移除被R8覆盖的排除
+        for dn in cold_exclusions_to_remove:
+            excluded.discard(dn)
+
+    # ========== Step 7: R6 掩护模式检测 ==========
+    # 平赔不动（竞彩降平+澳门不动）可能掩护平局
+    quiet_draw = False
+    if macao_init and macao_real:
+        if jc_d_chg < -1.0 and abs(macao_d_chg) < 0.5:
+            quiet_draw = True
+    if quiet_draw:
+        signals.append({'rule': '🛡️ R6-掩护模式',
+                        'detail': f"竞彩降平{jc_d_chg:+.1f}%+澳门平不动，庄家掩护平局",
+                        'action': '⚠️ 平局被掩护，排除平局需谨慎',
+                        'strength': 4})
+        warnings.append("R6-掩护模式: 平赔不动，庄家可能在掩护平局")
+
+    # ========== Step 8: R5a 造热陷阱检测 ==========
+    # 单出口全面造热：三方向同向≠可靠，可能是陷阱
+    has_dual_heat = False
+    if macao_init and macao_real:
+        for dn, jcc, mcc in [('home', jc_h_chg, macao_h_chg), ('away', jc_a_chg, macao_a_chg)]:
+            if jcc < -2 and mcc < -2:  # 竞彩和澳门同时降赔某方向
+                has_dual_heat = True
+                break
+    if has_dual_heat:
+        signals.append({'rule': '🔴 R5a-造热陷阱',
+                        'detail': '竞彩×澳门同向造热某方向，三方向同向≠可靠',
+                        'action': '当前预测可能是陷阱，建议降低置信度',
+                        'strength': 4})
+        warnings.append("R5a-造热陷阱: 竞彩×澳门同向造热")
+
+    # ========== 综合结果 ==========
+    signals.sort(key=lambda s: s.get('strength', 0), reverse=True)
+
+    n_excluded = len(excluded)
+    remaining = set(['home', 'draw', 'away']) - excluded
+    prediction = ''
+    confidence = 1
+    confidence_text = ''
+    has_cold = any('冷门' in w or 'R8' in w for w in warnings)
+    has_heat_trap = any('造热陷阱' in w or 'R5a' in w for w in warnings)
+
+    if n_excluded >= 2 and remaining:
+        final = remaining.pop()
+        prediction = _dir_name(final)
+        if has_cold:
+            confidence = 3
+            confidence_text = '★★★ 排除2个，但有冷门预警⚠️'
+            warnings.append('存在冷门预警信号，排除2方向的置信度降为★★★')
+        else:
+            confidence = 5
+            confidence_text = '★★★★★ 排除2个方向'
+    elif n_excluded == 1:
+        remaining_dirs = list(remaining)
+        if len(remaining_dirs) == 2:
+            odds_r = {d: [current_h, current_d, current_a][['home', 'draw', 'away'].index(d)] for d in remaining_dirs}
+            low_dir = min(odds_r.keys(), key=lambda x: odds_r[x])
+            high_dir = max(odds_r.keys(), key=lambda x: odds_r[x])
+            diff = abs(odds_r[low_dir] - odds_r[high_dir])
+
+            if has_cold:
+                confidence = 3
+                confidence_text = f"★★★ 排除1个+冷门预警⚠️"
+            elif has_heat_trap:
+                confidence = 3
+                confidence_text = f"★★★ 排除1个+造热陷阱⚠️"
+            elif diff > 0.5:
+                prediction = _dir_name(low_dir)
+                confidence = 4
+                confidence_text = f"★★★★ 排除1个，选低赔({odds_r[low_dir]:.2f})"
+            else:
+                prediction = '平局'
+                confidence = 3
+                confidence_text = f"★★★ 排除1个，赔率接近优先考虑平局"
+        else:
+            prediction = _dir_name(remaining_dirs[0]) if remaining_dirs else '无法判断'
+            confidence = 3
+    else:
+        prediction = '观望'
+        confidence_text = '★ 无法有效排除'
+
+    return {
+        'active': True,
+        'draw_excluded': 'draw' in excluded,
+        'exclusions': list(excluded),
+        'signals': signals,
+        'warnings': warnings,
+        'prediction': prediction,
+        'confidence': confidence,
+        'confidence_text': confidence_text,
+        'source': f"{source_data.get('home_team', '')} vs {source_data.get('away_team', '')}",
+        'macao_tip': macao_tip,
+    }
+
+
+def _get_draw_exclusion(match_num_str, match_date):
+    """
+    便捷函数：查找分析模板 → 解析 → 运行排除平局分析。
+    任何一步失败都返回 {'active': False}。
+    """
+    filepath = _find_source_md(match_num_str, match_date)
+    if not filepath:
+        return {'active': False}
+    source_data = _parse_source_md(filepath)
+    if not source_data:
+        return {'active': False}
+    return _run_draw_exclusion(source_data)
+
+
 def _analyze_draw_signal(had, hhad):
     """
     平局信号分析（结合HAD平局赔率 + HHD让平赔率，基于361场回测）
@@ -2990,16 +3627,37 @@ def _analyze_draw_signal(had, hhad):
     return result
 
 
-def _build_match_card(data, api):
+def _build_match_card(data, api, match_list_cache=None):
     """
     提取比赛数据中卡片展示所需的字段，构建轻量化对象。
     完整版返回全部字段（兼容旧逻辑），精简版只返回卡片需要的内容。
+    match_list_cache: 预加载的比赛列表缓存，避免重复调用API。
     """
     is_light = request.args.get('light') == '1'
 
+    # ── 自动补充旧数据缺失的 match_info 字段（使用缓存）──
+    match_info = data.get('match_info', {})
+    if not match_info.get('match_num_str') and api:
+        try:
+            list_data = match_list_cache or api.get_match_list()
+            mid_str = str(data.get('match_id', ''))
+            if mid_str in list_data:
+                extra = list_data[mid_str]
+                for k, v in [('match_num_str', 'matchNumStr'), ('match_week', 'matchWeek'),
+                             ('match_date', 'matchDate'), ('match_time', 'matchTime'),
+                             ('match_status', 'matchStatus'), ('home_rank', 'homeRank'),
+                             ('away_rank', 'awayRank'), ('league_abbr', 'leagueAbbName')]:
+                    if not match_info.get(k) and extra.get(v):
+                        match_info[k] = extra[v]
+                if not match_info.get('time') and extra.get('matchDate'):
+                    t = extra.get('matchTime', '00:00:00')[:5]
+                    match_info['time'] = extra['matchDate'] + ' ' + t
+                data['match_info'] = match_info  # 回写到 data，后续完整版也能用
+        except Exception:
+            pass
+
     if is_light:
         # ── 精简版：只包含卡片和分页需要的数据 ──
-        match_info = data.get('match_info', {})
         g3_pred = data.get('g3_prediction', {})
         hhad = data.get('hhad', {})
         had = data.get('had', {})
@@ -3020,6 +3678,12 @@ def _build_match_card(data, api):
 
         # 平局信号分析（所有had.平区间均显示）
         draw_hint = _analyze_draw_signal(had, hhad)
+
+        # 排除平局分析（基于分析模板源数据，football_web逻辑）
+        draw_exclusion = _get_draw_exclusion(
+            match_info.get('match_num_str', ''),
+            match_info.get('match_date', '')
+        )
 
         return {
             'match_id': data.get('match_id'),
@@ -3096,6 +3760,8 @@ def _build_match_card(data, api):
             'hhad_hint': hhad_hint,
             # 平局信号（所有had.平区间）
             'draw_hint': draw_hint,
+            # 排除平局分析（football_web逻辑）
+            'draw_exclusion': draw_exclusion,
         }
     else:
         # ── 完整版：返回全部字段 ──
@@ -3112,6 +3778,9 @@ def get_matches():
     matches = []
     api = SportteryAPI()
     is_light = api is not None  # always True, just for readability
+
+    # ── 预加载比赛列表（一次请求，供所有旧数据补充字段）──
+    _match_list_cache = None
 
     for filepath in glob.glob(os.path.join(DATA_DIR, '*.json')):
         try:
@@ -3193,7 +3862,13 @@ def get_matches():
                         }
                     except Exception as ex:
                         pass
-                    matches.append(_build_match_card(data, api))
+                    # 懒加载：只有旧数据才触发一次 get_match_list
+                    if not data.get('match_info', {}).get('match_num_str') and _match_list_cache is None:
+                        try:
+                            _match_list_cache = api.get_match_list()
+                        except Exception:
+                            pass
+                    matches.append(_build_match_card(data, api, match_list_cache=_match_list_cache))
         except:
             pass
 

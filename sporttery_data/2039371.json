@@ -1,11 +1,19 @@
 {
   "match_id": "2039371",
-  "fetch_time": "2026-04-27 21:38:37",
+  "fetch_time": "2026-04-28 00:44:30",
   "match_info": {
     "home_team": "布洛涅",
     "away_team": "敦刻尔克",
     "league": "法国乙级联赛",
-    "time": ""
+    "time": "2026-04-28 02:45",
+    "match_num_str": "周一006",
+    "match_week": "周一",
+    "match_date": "2026-04-28",
+    "match_time": "02:45:00",
+    "match_status": "Selling",
+    "home_rank": "[法乙12]",
+    "away_rank": "[法乙10]",
+    "league_abbr": "法乙"
   },
   "score_odds": {
     "05:00": "350.0",
@@ -813,11 +821,23 @@
   },
   "ttg_change": {},
   "hafu_change": {
-    "负胜": {
+    "负负": {
       "count": 0,
       "change_pct": 0.0
     },
-    "负负": {
+    "胜胜": {
+      "count": 1,
+      "change_pct": 2.3
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": -8.3
+    },
+    "胜负": {
       "count": 0,
       "change_pct": 0.0
     },
@@ -825,29 +845,45 @@
       "count": 1,
       "change_pct": 4.2
     },
-    "胜胜": {
-      "count": 1,
-      "change_pct": 2.3
-    },
-    "平平": {
-      "count": 2,
-      "change_pct": -8.3
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
     },
     "平负": {
       "count": 2,
       "change_pct": 3.8
     },
-    "胜平": {
+    "负胜": {
       "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 5,
+      "change_pct": 7.7
+    },
+    "负": {
+      "count": 4,
+      "change_pct": 2.1
+    },
+    "平": {
+      "count": 6,
+      "change_pct": -10.3
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 2,
       "change_pct": 0.0
     },
-    "负平": {
-      "count": 0,
-      "change_pct": 0.0
+    "让负": {
+      "count": 2,
+      "change_pct": 8.7
     },
-    "胜负": {
-      "count": 0,
-      "change_pct": 0.0
+    "让平": {
+      "count": 3,
+      "change_pct": -5.1
     }
   },
   "exclusion_list": []

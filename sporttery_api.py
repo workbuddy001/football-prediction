@@ -179,6 +179,16 @@ class SportteryAPI:
         hafu = self._parse_hafu(odds_data)
         hhad = self._parse_hhad(odds_data)
         
+        # 读取旧文件中已有的 match_info（保护已有字段不被覆盖）
+        old_match_info = {}
+        filepath = os.path.join('sporttery_data', f'{match_id}.json')
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                old_data = json.load(f)
+                old_match_info = old_data.get('match_info', {})
+        except Exception:
+            pass
+        
         # 从列表接口补充竞彩编号、比赛时间、排名等
         try:
             list_data = self.get_match_list()
@@ -197,8 +207,22 @@ class SportteryAPI:
                 if not match_info.get('time') and extra.get('matchDate'):
                     t = extra.get('matchTime', '00:00:00')[:5]
                     match_info['time'] = extra['matchDate'] + ' ' + t
+            else:
+                # 比赛不在列表中（可能已截止），保留旧文件中已有的编号/排名字段
+                preserved_fields = ['match_num_str', 'match_week', 'match_date', 'match_time',
+                                    'match_status', 'home_rank', 'away_rank', 'league_abbr']
+                for field in preserved_fields:
+                    if not match_info.get(field) and old_match_info.get(field):
+                        match_info[field] = old_match_info[field]
+                # 更新在售状态
+                match_info['match_status'] = '已截止'
         except Exception:
-            pass
+            # API 调用失败，也尝试保留旧字段
+            preserved_fields = ['match_num_str', 'match_week', 'match_date', 'match_time',
+                                'match_status', 'home_rank', 'away_rank', 'league_abbr']
+            for field in preserved_fields:
+                if not match_info.get(field) and old_match_info.get(field):
+                    match_info[field] = old_match_info[field]
         
         # 获取前瞻数据
         preview = self.get_preview_data(match_id)

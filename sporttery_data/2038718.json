@@ -1,6 +1,6 @@
 {
   "match_id": "2038718",
-  "fetch_time": "2026-04-22 01:01:58",
+  "fetch_time": "2026-04-28 01:27:24",
   "match_info": {
     "home_team": "",
     "away_team": "",
@@ -23,5 +23,7 @@
   },
   "ttg_change": {},
   "hafu_change": {},
+  "had_change": {},
+  "hhad_change": {},
   "exclusion_list": []
 }

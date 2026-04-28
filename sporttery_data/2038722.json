@@ -1,6 +1,6 @@
 {
   "match_id": "2038722",
-  "fetch_time": "2026-04-26 17:08:23",
+  "fetch_time": "2026-04-28 01:27:37",
   "match_info": {
     "home_team": "黑山",
     "away_team": "斯洛文尼亚",
@@ -649,30 +649,6 @@
     }
   },
   "ttg_change": {
-    "7球": {
-      "count": 1,
-      "change_pct": -9.5
-    },
-    "4球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "1球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "2球": {
-      "count": 1,
-      "change_pct": 1.6
-    },
-    "0球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
-    "5球": {
-      "count": 0,
-      "change_pct": 0.0
-    },
     "6球": {
       "count": 1,
       "change_pct": -7.1
@@ -680,9 +656,61 @@
     "3球": {
       "count": 0,
       "change_pct": 0.0
+    },
+    "1球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": -9.5
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 1.6
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
     }
   },
   "hafu_change": {},
+  "had_change": {
+    "负": {
+      "count": 2,
+      "change_pct": -4.1
+    },
+    "平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": 5.5
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "让平": {
+      "count": 1,
+      "change_pct": -1.4
+    },
+    "让胜": {
+      "count": 1,
+      "change_pct": 1.3
+    }
+  },
   "exclusion_list": [
     {
       "goal": "2球",
