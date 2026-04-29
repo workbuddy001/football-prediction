@@ -18433,5 +18433,196 @@
       "⚠️0球<=12区间（反向信号）",
       "庄家造热0球，实际大3球仅18.8%"
     ]
+  },
+  "2039405": {
+    "match_id": "2039405",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-04-29 07:58",
+    "total_goals_odds": {
+      "0球": "8.00",
+      "1球": "3.40",
+      "2球": "3.00",
+      "3球": "3.85",
+      "4球": "7.75",
+      "5球": "16.00",
+      "6球": "35.00",
+      "7球": "45.00"
+    },
+    "hhad_odds": {
+      "让平": "3.00",
+      "让球": "-1",
+      "让胜": "2.95",
+      "让负": "2.19"
+    },
+    "home_team": "拉努斯",
+    "away_team": "基多体育大学",
+    "league": "南美解放者杯",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039403": {
+    "match_id": "2039403",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-04-29 07:59",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "5.90",
+      "2球": "3.35",
+      "3球": "3.20",
+      "4球": "4.90",
+      "5球": "9.00",
+      "6球": "18.00",
+      "7球": "28.00"
+    },
+    "hhad_odds": {
+      "让平": "3.88",
+      "让球": "-1",
+      "让胜": "4.20",
+      "让负": "1.58"
+    },
+    "home_team": "南安普敦",
+    "away_team": "伊普斯维奇",
+    "league": "英格兰冠军联赛",
+    "big3_signal_type": "0球13-16+3球黄金区间",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "🎯0球13-16 + 3球3.2-3.4组合",
+      "历史56.5%大3球(+27.6% vs基准)"
+    ]
+  },
+  "2039401": {
+    "match_id": "2039401",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-04-29 08:02",
+    "total_goals_odds": {
+      "0球": "20.00",
+      "1球": "7.00",
+      "2球": "4.00",
+      "3球": "3.40",
+      "4球": "4.50",
+      "5球": "7.10",
+      "6球": "11.50",
+      "7球": "15.00"
+    },
+    "hhad_odds": {
+      "让平": "3.25",
+      "让球": "-1",
+      "让胜": "2.42",
+      "让负": "2.45"
+    },
+    "home_team": "新未来SC",
+    "away_team": "拉斯决心",
+    "league": "沙特职业联赛",
+    "big3_signal_type": "关注3球+0=20-21",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 40,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "关注3球 + 0球=20.0",
+      "历史数据：倾向小3球"
+    ]
+  },
+  "2039402": {
+    "match_id": "2039402",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-04-29 08:05",
+    "total_goals_odds": {
+      "0球": "43.00",
+      "1球": "12.00",
+      "2球": "6.20",
+      "3球": "4.00",
+      "4球": "3.85",
+      "5球": "5.20",
+      "6球": "7.50",
+      "7球": "6.60"
+    },
+    "hhad_odds": {
+      "让平": "3.90",
+      "让球": "-2",
+      "让胜": "1.92",
+      "让负": "2.85"
+    },
+    "home_team": "利雅得新月",
+    "away_team": "达马克",
+    "league": "沙特职业联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039404": {
+    "match_id": "2039404",
+    "home_score": 5,
+    "away_score": 4,
+    "score_str": "5:4",
+    "total_goals": 9,
+    "tg_result": "5+球",
+    "record_time": "2026-04-29 08:17",
+    "total_goals_odds": {
+      "0球": "25.00",
+      "1球": "8.50",
+      "2球": "4.70",
+      "3球": "3.70",
+      "4球": "4.20",
+      "5球": "5.70",
+      "6球": "9.20",
+      "7球": "11.00"
+    },
+    "hhad_odds": {
+      "让平": "4.20",
+      "让球": "-1",
+      "让胜": "4.55",
+      "让负": "1.49"
+    },
+    "home_team": "巴黎圣日尔曼",
+    "away_team": "拜仁慕尼黑",
+    "league": "欧洲冠军联赛",
+    "big3_signal_type": "关注3球+0>=22",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "关注3球 + 0球=25.0>=22区间",
+      "历史数据：倾向大3球(4+球)，小3球概率较低"
+    ]
   }
 }

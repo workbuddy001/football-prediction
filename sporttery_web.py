@@ -194,7 +194,7 @@ def _build_odds_hitrate():
             if goal not in overall:
                 overall[goal] = [0, 0]
             overall[goal][0] += 1
-            if tg == goal:
+            if tg == goal or (goal == 7 and tg >= 7):
                 overall[goal][1] += 1
 
             # exact: 按精确赔率值统计
@@ -203,7 +203,7 @@ def _build_odds_hitrate():
             if val not in exact[goal]:
                 exact[goal][val] = [0, 0]
             exact[goal][val][0] += 1
-            if tg == goal:
+            if tg == goal or (goal == 7 and tg >= 7):
                 exact[goal][val][1] += 1
 
     # 计算命中率
@@ -290,7 +290,7 @@ def _build_change_hitrate():
             if bl not in change[goal]:
                 change[goal][bl] = [0, 0]
             change[goal][bl][0] += 1
-            if total_goals == goal:
+            if total_goals == goal or (goal == 7 and total_goals >= 7):
                 change[goal][bl][1] += 1
 
     def rate(total, hits):
