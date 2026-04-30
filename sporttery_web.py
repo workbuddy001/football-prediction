@@ -612,10 +612,11 @@ def get_score_recommendations_for_match(score_odds, min_rate=9.0, min_sample=5):
     return recs
 
 
-def find_similar_matches(current_data, top_n=5):
+def find_similar_matches(current_data, top_n=8):
     """
     在已记录比分的比赛中找相似场次
     只处理有赔率数据的记录（复盘附带 or 有源文件），避免全量遍历。
+    排序优先级：近况之和接近 > 0球赔率差值小 > 0球变化涨跌一致 > 相似度高
     """
     scores = load_scores()
     results = []
@@ -681,6 +682,27 @@ def find_similar_matches(current_data, top_n=5):
                 except Exception:
                     pass
 
+            # 0球赔率变化数据（从历史源文件的ttg_change提取）
+            g0_change = None
+            if pd:
+                tc = pd.get('ttg_change', {})
+                if tc and '0球' in tc:
+                    g0_change = tc['0球']
+
+            # 当前比赛的0球赔率变化（用于计算变化幅度差异）
+            cur_g0_change = None
+            cur_tc = current_data.get('ttg_change', {})
+            if cur_tc and '0球' in cur_tc:
+                cur_g0_change = cur_tc['0球']
+
+            # 计算排序用的0球变化幅度差异
+            g0_change_diff = None
+            if g0_change and cur_g0_change:
+                try:
+                    g0_change_diff = round(abs(g0_change.get('change_pct', 0) - cur_g0_change.get('change_pct', 0)), 1)
+                except:
+                    pass
+
             results.append({
                 'record': record,
                 'similarity': sim,
@@ -692,10 +714,56 @@ def find_similar_matches(current_data, top_n=5):
                 'goal_odds': odds_normalized,
                 'recent_form': recent_form,
                 'g0_diff': details.get('g0_diff'),   # 0球赔率与历史的差值，排序用
+                'g0_change': g0_change,               # 历史0球赔率变化 {count, change_pct}
+                'g0_change_diff': g0_change_diff,     # 0球变化幅度差异（与当前比赛）
             })
 
-    # 排序：相似度高的排前；相似度相同时，0球赔率差值小的排前
-    results.sort(key=lambda x: (-x['similarity'], x['g0_diff'] if x['g0_diff'] is not None else 9999))
+    # 计算当前比赛的近况之和（combined_avg）
+    cur_combined_avg = None
+    try:
+        cur_rd = _extract_recent_matches(current_data)
+        cur_rf = calc_recent_form(cur_rd)
+        if cur_rf:
+            cur_combined_avg = cur_rf.get('combined_avg')
+    except Exception:
+        pass
+
+    # 提取当前比赛的0球变化供排序闭包使用
+    cur_g0_change_ref = None
+    cur_tc_tmp = current_data.get('ttg_change', {})
+    if cur_tc_tmp and '0球' in cur_tc_tmp:
+        cur_g0_change_ref = cur_tc_tmp['0球']
+
+        # 排序：近况之和接近 > 0球赔率差值小 > 0球变化涨跌一致 > 相似度高
+    def _sort_key(x):
+        sim = x['similarity']
+        g0_diff = x['g0_diff'] if x['g0_diff'] is not None else 9999
+
+        # 维度1：近况之和差异（越小越优先，无数据排后面）
+        his_rf = x.get('recent_form')
+        his_avg = his_rf.get('combined_avg') if his_rf else None
+        if cur_combined_avg is not None and his_avg is not None:
+            form_diff = abs(cur_combined_avg - his_avg)
+        else:
+            form_diff = 9999
+
+        # 维度3：赔率变化方向匹配
+        g0_cur_chg = cur_g0_change_ref
+        g0_his_chg = x.get('g0_change')
+        cur_count = g0_cur_chg.get('count', 0) if g0_cur_chg else 0
+        his_count = g0_his_chg.get('count', 0) if g0_his_chg else 0
+        if cur_count == 0 and his_count == 0:
+            dir_match = 0  # 双方都无变化，最一致
+        elif cur_count == 0 or his_count == 0:
+            dir_match = 1  # 一方有变化一方无，不一致
+        else:
+            cur_dir = (g0_cur_chg.get('change_pct', 0) > 0) - (g0_cur_chg.get('change_pct', 0) < 0)
+            his_dir = (g0_his_chg.get('change_pct', 0) > 0) - (g0_his_chg.get('change_pct', 0) < 0)
+            dir_match = 0 if cur_dir == his_dir else 1
+
+        return (form_diff, g0_diff, dir_match, -sim)
+
+    results.sort(key=_sort_key)
     return results[:top_n]
 
 # 比分预测分析函数
@@ -1423,6 +1491,26 @@ HTML_TEMPLATE = '''
                         ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('考虑0球')) ? `
                         <div class="g3-exclude-banner" style="border-color:#64748b;background:linear-gradient(135deg,rgba(100,116,139,0.20),rgba(71,85,105,0.10));">
                             <div class="g3-exclude-banner-text" style="color:#cbd5e1;">⚠️ 考虑0球 - 近况偏低+高球多降+0球≥13</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负+3球黄金' ? `
+                        <div class="g3-exclude-banner" style="border-color:#ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.22),rgba(184,134,11,0.12));">
+                            <div class="g3-exclude-banner-text" style="color:#ffd700;">🎯 让负1.50-1.70+3球3.3-3.5 → 历史55.6%(10/18) | 比分:2:1/1:2/3:0</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负区间3球' ? `
+                        <div class="g3-exclude-banner" style="border-color:#fbbf24;background:linear-gradient(135deg,rgba(251,191,36,0.18),rgba(217,119,6,0.1));">
+                            <div class="g3-exclude-banner-text" style="color:#fde68a;">🎯 让负1.50-1.70+主让-1 → 通用3球信号 历史35.7%(25/70)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '排除3球(客近况极低)' ? `
+                        <div class="g3-exclude-banner">
+                            <div class="g3-exclude-banner-text">🚫 排除3球 - 客近况<2.0 历史3球率仅6.2%(1/16)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '排除3球(平赔降)' ? `
+                        <div class="g3-exclude-banner">
+                            <div class="g3-exclude-banner-text">🚫 排除3球 - HAD平赔降>3% 历史3球率9.1%(1/11)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '排除3球(0球高+客近况低)' ? `
+                        <div class="g3-exclude-banner">
+                            <div class="g3-exclude-banner-text">🚫 排除3球 - 0球>=15+客近况<2.5 历史3球率11.1%(2/18)</div>
                         </div>` : ''}
                         ${m.g3_prediction.features['3球'] ? `
                         <div class="g3-odds-info">
@@ -2562,12 +2650,24 @@ HTML_TEMPLATE = '''
                         panelEl.innerHTML = '<div class="similar-header">🔍 相似比赛</div><div class="similar-empty">暂无已记录比分的相似比赛<br><small>（需先保存比分才能匹配）</small></div>';
                         return;
                     }
-                    let html = '<div class="similar-header">🔍 相似比赛（3球赔率相同，0球赔率相近优先，最多5场）</div>';
+                    let html = '<div class="similar-header">🔍 相似比赛（3球赔率相同，按近况接近>0球赔率接近>变化方向一致排序，最多8场）</div>';
                     data.similar.forEach((item, idx) => {
                         const tg = item.record.total_goals;
                         const tgClass = tg === 3 ? 'tg-3' : tg === 0 ? 'tg-0' : 'tg-other';
                         const tgDisplay = tg + '球';
                         const det = item.details || {};
+                        // 0球赔率变化信息
+                        const g0ch = item.g0_change || {};
+                        const g0chCount = g0ch.count;
+                        const g0chPct = g0ch.change_pct;
+                        let g0chTag = '';
+                        if (g0chCount > 0 && g0chPct !== undefined) {
+                            const chDir = g0chPct > 0 ? '↑' : (g0chPct < 0 ? '↓' : '→');
+                            const chColor = g0chPct > 0 ? '#ef4444' : (g0chPct < 0 ? '#22c55e' : '#888');
+                            g0chTag = '<span style="color:' + chColor + '">' + chDir + Math.abs(g0chPct) + '%</span><span style="color:#555">(' + g0chCount + '次)</span>';
+                        } else {
+                            g0chTag = '<span style="color:#555">无变化</span>';
+                        }
                         html += `<div class="similar-item">
                             <span class="similar-rank">#${idx + 1}</span>
                             <div class="similar-teams">${item.record.home_team || item.home_team} vs ${item.record.away_team || item.away_team}</div>
@@ -2575,6 +2675,8 @@ HTML_TEMPLATE = '''
                             <div class="similar-tg-label">${tgDisplay}</div>
                             <div class="similar-similarity">相似 ${item.similarity}%${item.g0_diff != null ? ' | 0球差' + item.g0_diff : ''}</div>
                         </div>`;
+                        // 0球变化信息单独一行
+                        html += `<div style="padding:1px 12px 1px 42px;font-size:11px"><span style="color:#888">0球变化:</span>${g0chTag}</div>`;
                         // 0-7球赔率表格
                         const odds = item.goal_odds || {};
                         const goalLabels = [0,1,2,3,4,5,6,7];
@@ -4408,7 +4510,7 @@ def get_similar(match_id):
             return jsonify({'success': False, 'error': '比赛数据不存在，请先抓取'}), 404
         with open(filepath, 'r', encoding='utf-8') as f:
             current_data = json.load(f)
-        similar = find_similar_matches(current_data, top_n=5)
+        similar = find_similar_matches(current_data, top_n=8)
         return jsonify({'success': True, 'match_id': match_id, 'similar': similar})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
@@ -4427,7 +4529,7 @@ def get_similar_by_odds():
             'total_goals': body.get('total_goals', {}),
             'hhad': body.get('hhad', {}),
         }
-        similar = find_similar_matches(current_data, top_n=5)
+        similar = find_similar_matches(current_data, top_n=8)
         return jsonify({'success': True, 'similar': similar})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})

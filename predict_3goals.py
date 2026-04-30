@@ -250,6 +250,19 @@ def extract_features(data: dict) -> Dict[str, Any]:
     else:
         f['胜平负_最低'] = None; f['胜平负_差值'] = None
 
+    # ── 让球盘数据（用于5.1+新规律） ──
+    hhad = data.get('hhad', {})
+    if hhad:
+        f['让球'] = str(hhad.get('让球', ''))
+        try: f['让负'] = float(hhad.get('让负', 0))
+        except: f['让负'] = None
+        try: f['让胜'] = float(hhad.get('让胜', 0))
+        except: f['让胜'] = None
+        try: f['让平'] = float(hhad.get('让平', 0))
+        except: f['让平'] = None
+    else:
+        f['让球'] = None; f['让负'] = None; f['让胜'] = None; f['让平'] = None
+
     # ── 比赛信息 ──
     mi = data.get('match_info', {})
     f['主队'] = mi.get('home_team', '')
@@ -2435,7 +2448,47 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
             'is_bet': True,
         })
 
-    # ── 优先级2: 黄金3球（4定律同时满足）→ 历史40.8%命中率 ──
+    # ── 新规律P3.5: 让负1.50-1.70 + 主让-1 + 3球3.3-3.5 → 55.6%命中率 ──
+    rq = features.get('让球')
+    hh_l = features.get('让负')
+    if (rq == '-1' and hh_l is not None and 1.50 <= hh_l < 1.70
+        and g3 is not None and 3.3 <= g3 < 3.5):
+        return _make_result({
+            'recommendation': '3球',
+            'confidence': 80,
+            'hit_rate': 55.6,
+            'sample_size': 18,
+            'reason': f'让负{hh_l}+3球{g3}(3.3-3.5黄金)，命中率55.6%(10/18)，比分集中于2:1/1:2/3:0',
+            'signal_type': '让负+3球黄金',
+            'is_bet': True,
+        })
+
+    # ── 新规律P3.6: 让负1.50-1.70 + 主让-1 → 35.7%命中率 (通用强信号) ──
+    if (rq == '-1' and hh_l is not None and 1.50 <= hh_l < 1.70):
+        return _make_result({
+            'recommendation': '3球',
+            'confidence': 65,
+            'hit_rate': 35.7,
+            'sample_size': 70,
+            'reason': f'让负{hh_l}(1.50-1.70)+主让-1，通用3球信号，命中率35.7%(25/70)',
+            'signal_type': '让负区间3球',
+            'is_bet': True,
+        })
+
+    # ── 新规律P4: 客近况<2.0 → 排除3球，历史6.2% ──
+    away_form = features.get('近况', {}).get('away_avg') if features.get('近况') else None
+    if (away_form is not None and away_form < 2.0):
+        return _make_result({
+            'recommendation': '排除3球',
+            'confidence': 50,
+            'hit_rate': 6.2,
+            'sample_size': 16,
+            'reason': f'客近况{away_form:.1f}<2.0，历史3球率仅6.2%(1/16)',
+            'signal_type': '排除3球(客近况极低)',
+            'is_bet': False,
+        })
+
+    # ── 已有规律: 黄金3球（4定律同时满足）→ 历史40.8%命中率 ──
     if g3_pred.get('golden_3goals') and g3_pred.get('golden_reason'):
         # 检查近况条件：combined 2.5-3.0 是最佳区间
         if combined_avg is not None and 2.5 <= combined_avg <= 3.0:
@@ -2512,7 +2565,38 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
             'is_bet': False,
         })
 
-    # ── 优先级7: 近况偏低(<2.5) + 高球多降 → 关注2球，历史37.9% ──
+    # ── 新排除规律: HAD平赔降>3% → 排除3球，历史9.1% ──
+    had_changes = data.get('had_change', {})
+    draw_change = None
+    if isinstance(had_changes, dict):
+        for key in ['平', 'draw']:
+            if key in had_changes and isinstance(had_changes[key], dict):
+                draw_change = had_changes[key].get('change_pct')
+                break
+    if (draw_change is not None and draw_change < -3):
+        return _make_result({
+            'recommendation': '排除3球',
+            'confidence': 45,
+            'hit_rate': 9.1,
+            'sample_size': 11,
+            'reason': f'HAD平赔降{draw_change:.0f}%(造热平局)，历史3球率9.1%(1/11)',
+            'signal_type': '排除3球(平赔降)',
+            'is_bet': False,
+        })
+
+    # ── 新排除规律: 0球>=15 + 客近况<2.5 → 排除3球，历史11.1% ──
+    if (g0 is not None and g0 >= 15 and away_form is not None and away_form < 2.5):
+        return _make_result({
+            'recommendation': '排除3球',
+            'confidence': 40,
+            'hit_rate': 11.1,
+            'sample_size': 18,
+            'reason': f'0球{g0}>=15+客近况{away_form:.1f}<2.5，历史3球率11.1%(2/18)',
+            'signal_type': '排除3球(0球高+客近况低)',
+            'is_bet': False,
+        })
+
+    # ── 已有规律: 近况偏低(<2.5) + 高球多降 → 关注2球，历史37.9% ──
     if (combined_avg is not None and combined_avg < 2.5 and drop_count):
         # 检查黄金2球条件
         if g2_pred and g2_pred.get('is_golden_2'):
