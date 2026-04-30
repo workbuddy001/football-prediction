@@ -10,7 +10,7 @@ import os
 import json
 import glob
 from sporttery_api import SportteryAPI
-from predict_3goals import extract_features, predict_3goals, predict_2goals, predict_4goals, predict_big3_vs_small3, calc_recent_form, _extract_recent_matches, get_final_recommendation
+from predict_3goals import extract_features, predict_3goals, predict_1goals, predict_2goals, predict_4goals, predict_big3_vs_small3, calc_recent_form, _extract_recent_matches, get_final_recommendation
 from _3goals_stats import StatsEngine
 from ai_reasoning import bp as ai_reasoning_bp
 
@@ -1524,6 +1524,14 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(220,38,38,0.12));">
                             <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除4球 - 4球赔率>6.0，历史4球率6.7%(5/75)</div>
                         </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除1球') && w.includes('近况均值')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(220,38,38,0.12));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除1球 - 近况均值>=3.5，历史1球率7.6%(79场)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除1球') && w.includes('1球赔率=')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(220,38,38,0.12));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除1球 - 1球赔率>8.0，历史1球率8.9%(45场)</div>
+                        </div>` : ''}
                         ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负+3球黄金' ? `
                         <div class="g3-exclude-banner" style="border-color:#ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.22),rgba(184,134,11,0.12));">
                             <div class="g3-exclude-banner-text" style="color:#ffd700;">🎯 让负1.50-1.70+3球3.3-3.5 → 历史55.6%(10/18) | 比分:2:1/1:2/3:0</div>
@@ -1695,9 +1703,21 @@ HTML_TEMPLATE = '''
                     ` : ''}
 
                     <!-- 黄金2球/4球 -->
-                    ${(m.g3_prediction.golden_2goals && m.g3_prediction.golden_2goals.is_golden_2) || (m.g3_prediction.golden_4goals && m.g3_prediction.golden_4goals.is_golden_4) ? `
+                    ${(m.g3_prediction.golden_1goals && m.g3_prediction.golden_1goals.is_golden_1) || (m.g3_prediction.golden_2goals && m.g3_prediction.golden_2goals.is_golden_2) || (m.g3_prediction.golden_4goals && m.g3_prediction.golden_4goals.is_golden_4) ? `
                     <div class="g3-prediction-box">
                         <div class="g3-prediction-title">🎯 黄金进球信号</div>
+                        ${m.g3_prediction.golden_1goals && m.g3_prediction.golden_1goals.is_golden_1 ? `
+                        <div class="golden-recommendation">⭐ 黄金1球信号</div>
+                        <div class="golden-detail">
+                            ${m.g3_prediction.golden_1goals.reason || ''}
+                        </div>
+                        ${m.g3_prediction.golden_1goals.hit_rate !== null ? `
+                        <div class="golden-hitrate">
+                            <span class="hit-rate-high">历史命中率: ${m.g3_prediction.golden_1goals.hit_rate}%</span>
+                            ${m.g3_prediction.golden_1goals.sample_size ? `(样本${m.g3_prediction.golden_1goals.sample_size}场)` : ''}
+                        </div>` : ''}
+                        <div style="font-size:11px;color:#94a3b8;margin-top:4px">比分: 1:0 / 0:1</div>
+                        ` : ''}
                         ${m.g3_prediction.golden_2goals && m.g3_prediction.golden_2goals.is_golden_2 ? `
                         <div class="golden-2-box">
                             <div class="golden-recommendation">⭐ 黄金2球信号</div>
@@ -4103,6 +4123,7 @@ def _build_match_card(data, api, match_list_cache=None):
                 'hist_stats': g3_pred.get('hist_stats'),
                 'double_pick': g3_pred.get('double_pick'),
                 'exclude_pick': g3_pred.get('exclude_pick'),
+                'golden_1goals': g3_pred.get('golden_1goals'),
                 'golden_2goals': g3_pred.get('golden_2goals'),
                 'golden_4goals': g3_pred.get('golden_4goals'),
                 # 最终推荐（基于最严谨的方法）
@@ -4195,6 +4216,8 @@ def get_matches():
                             macao_pattern=features.get('macao_pattern', ''),
                             min_records=2,
                         )
+                        # 黄金1球预测
+                        g1_pred = predict_1goals(features)
                         # 黄金2球预测
                         g2_pred = predict_2goals(features)
                         # 黄金4球预测
@@ -4234,6 +4257,7 @@ def get_matches():
                             # 历史相似比赛统计
                             'hist_stats': g3_hist,
                             # 黄金2球/4球
+                            'golden_1goals': g1_pred,
                             'golden_2goals': g2_pred,
                             'golden_4goals': g4_pred,
                             # 最终推荐（基于最严谨的方法）
@@ -4278,6 +4302,8 @@ def fetch_match(match_id):
                 pass
             hhad_hint = _analyze_hhad_low_draw(_hhad, _recent_form, result)
             result['had_hint'] = hhad_hint
+            # 黄金1球预测
+            g1_pred = predict_1goals(features)
             # 黄金2球预测
             g2_pred = predict_2goals(features)
             # 黄金4球预测

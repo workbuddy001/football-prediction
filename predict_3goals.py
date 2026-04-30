@@ -593,6 +593,23 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             signals.append(('🚫排除4球', '-8', f'4球={g4_val}>6.0，历史4球率6.7%(5/75)'))
             warnings.append(f'🚫 排除4球！4球赔率={g4_val}>6.0')
 
+    # ══════════════════════════════════════════════════════════════
+    # Step 11: 排除1球（2026-05-01新增，403场回测）
+    # ══════════════════════════════════════════════════════════════
+    if form is not None:
+        combined_avg = form.get('combined_avg', 0)
+        g1_val = features.get('1球')
+        
+        # 近况均值>=3.5 → 排除1球 (6/79=7.6%)
+        if combined_avg >= 3.5:
+            signals.append(('🚫排除1球', '-8', f'近况均值{combined_avg}>=3.5，历史1球率7.6%(6/79)'))
+            warnings.append(f'🚫 排除1球！近况均值{combined_avg}>=3.5')
+        
+        # 1球赔率>8.0 → 排除1球 (4/45=8.9%)
+        if g1_val is not None and g1_val > 8.0:
+            signals.append(('🚫排除1球', '-5', f'1球赔率={g1_val}>8.0，历史1球率8.9%(4/45)'))
+            warnings.append(f'🚫 排除1球！1球赔率={g1_val}>8.0')
+
     # 综合评分
     def ps(s):
         s = s.strip()
@@ -1332,6 +1349,67 @@ GOLDEN_2GOAL_STATS = {
         (4.0, 4.4): (50.0, 4),    # 0=23 + 2球4.0-4.4 → 2球率50%
     },
 }
+
+# ============================================================
+# 黄金1球预测函数（2026-05-01新增，403场回测）
+# 核心规律：1球赔率越低命中率越高
+# ============================================================
+
+def predict_1goals(features: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    黄金1球预测函数
+    核心规律（403场回测）:
+    - 1球3.0-4.0 → 37.2%（43场）
+    - 1球3.0-4.0+0球<10+主让-1 → 44.8%（29场）
+    - 近况均值>=3.5 → 7.6%（79场）排除
+    """
+    g1 = features.get('1球')
+    g0 = features.get('0球')
+    form = features.get('近况')
+    rq = features.get('让球')
+    
+    result = {
+        'is_golden_1': False,
+        'recommendation': '观望',
+        'reason': None,
+        'features': {'1球': g1, '0球': g0},
+        'hit_rate': None,
+        'sample_size': None,
+        'warnings': [],
+        'signals': [],
+    }
+    
+    combined_avg = form.get('combined_avg') if form else None
+    
+    # ── 黄金1球：1球赔率3.0-4.0 ──
+    golden_1 = False
+    if g1 is not None and 3.0 <= g1 < 4.0:
+        golden_1 = True
+        result['hit_rate'] = 37.2
+        result['sample_size'] = 43
+        result['reason'] = f'1球赔率={g1}(3.0-4.0黄金区间)'
+        
+        # 增强：0球<10 + 主让-1
+        if g0 is not None and g0 < 10 and rq == '-1':
+            result['hit_rate'] = 44.8
+            result['sample_size'] = 29
+            result['reason'] += f' +0球{g0}<10+主让-1(增强44.8%)'
+            result['signals'].append(f'1球黄金+增强：44.8%命中率，比分1:0为主')
+    
+    if golden_1:
+        result['is_golden_1'] = True
+        result['recommendation'] = '关注1球'
+    else:
+        # ── 排除1球规则 ──
+        if combined_avg is not None and combined_avg >= 3.5:
+            result['recommendation'] = '排除1球'
+            result['reason'] = f'近况均值{combined_avg}>=3.5，历史1球率7.6%(79场)'
+        elif g1 is not None and g1 > 8.0:
+            result['recommendation'] = '排除1球'
+            result['reason'] = f'1球赔率={g1}>8.0，历史1球率8.9%(45场)'
+    
+    return result
+
 
 def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
     """
