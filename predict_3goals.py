@@ -247,8 +247,16 @@ def extract_features(data: dict) -> Dict[str, Any]:
         vals = list(had.values())
         f['胜平负_最低'] = min(vals)
         f['胜平负_差值'] = max(vals) - min(vals)
+        # 各方向独立赔率（需要单独字段）
+        try: f['had_胜'] = float(had.get('胜', had.get('win', 0)))
+        except: f['had_胜'] = None
+        try: f['had_平'] = float(had.get('平', had.get('draw', 0)))
+        except: f['had_平'] = None
+        try: f['had_负'] = float(had.get('负', had.get('lose', 0)))
+        except: f['had_负'] = None
     else:
         f['胜平负_最低'] = None; f['胜平负_差值'] = None
+        f['had_胜'] = None; f['had_平'] = None; f['had_负'] = None
 
     # ── 让球盘数据（用于5.1+新规律） ──
     hhad = data.get('hhad', {})
@@ -382,14 +390,10 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             warnings.append('排除3球');
             reasons.append(f'3球{g3}，排除')
 
-    # Step 2: 0球整数尾数（规律10核心）
+    # Step 2: 0球整数尾数
     if features.get('0球_整数高赔'):
         signals.append(('0球整数高赔', '+10', f'0球={g0}，X.0整数+高赔'));
         reasons.append(f'0球{g0}整数，历史3球打出率92.9%')
-    elif features.get('0球_整数中赔'):
-        signals.append(('0球整数中赔', '-5', f'0球={g0}，可能陷阱'));
-        warnings.append('0球整数中赔，可能是诱导陷阱');
-        reasons.append(f'0球{g0}整数+中赔，谨慎')
 
     # Step 3: 2球 vs 1球关系
     if g2 and g1 and g1 > 0:
@@ -483,25 +487,7 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
                 reasons.append(f'排除3球：初始3球{initial_g3:.2f}>3.50，被降赔诱导到{g3_val}，是诱导降赔陷阱')
 
     # ══════════════════════════════════════════════════════════════
-    # Step 7.5: 近况正常 + 0球<10 + 3球<3.7 → 排除3球（历史3球率9.1%）
-    # 原理：0球<10说明市场认为0球概率不低，但3球赔率也不高 → 庄家在两边都不想要3球
-    # ══════════════════════════════════════════════════════════════
-    if form is not None:
-        combined_avg = form.get('combined_avg', 0)
-        g0 = features.get('0球')
-        g3_val = features.get('3球')
-        
-        if (2.5 <= combined_avg <= 3.5 and 
-            g0 is not None and g0 < 10 and
-            g3_val is not None and g3_val < 3.7):
-            signals.append(('排除3球', '-15', f'近况正常+0球{g0}<10+3球{g3_val}<3.7，历史3球率9.1%'));
-            warnings.append(f'🚫 排除3球！近况正常+0球{g0}<10+3球{g3_val}<3.7，历史3球率9.1%');
-            reasons.append(f'排除3球：近况正常+0球{g0}<10+3球{g3_val}<3.7，历史3球率9.1%')
-
-    # ══════════════════════════════════════════════════════════════
-    # Step 8: 排除2球（新增）
-    # 条件: 近况2.0~2.5 + 0球13~18 + 2球3.5~4.0
-    # 历史准确率: 87.5%
+    # Step 8: 排除2球（v2.4增强，2026-05-01回测）
     # ══════════════════════════════════════════════════════════════
     if form is not None:
         combined_avg = form.get('combined_avg', 0)
@@ -510,27 +496,34 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         g2_ch = features.get('2球变化')
         g4 = features.get('4球')
         g4_ch = features.get('4球变化')
+        hh_l = features.get('让负')  # 让负赔率
+        rq = features.get('让球')
         
-        # 规则A: 近况2.0~2.5 + 0球13~18 + 2球3.5~4.0
+        # 规则A(宽版): 近况2.0~2.5 + 0球13~18 → 排除2球 (0/11, 100%准确)
         if (2.0 <= combined_avg < 2.5 and 
-            g0 is not None and 13 <= g0 < 18 and
-            g2 is not None and 3.5 <= g2 < 4.0):
-            signals.append(('🚫排除2球', '-10', f'近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率'));
-            warnings.append(f'🚫 排除2球！近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率');
-            reasons.append(f'排除2球：近况{combined_avg:.1f}+0球{g0:.0f}+2球{g2}，历史87.5%准确率')
+            g0 is not None and 13 <= g0 < 18):
+            signals.append(('🚫排除2球', '-10', f'近况{combined_avg:.1f}+0球{g0:.0f}(13-18)，历史100%准确(0/11)'));
+            warnings.append(f'🚫 排除2球！近况{combined_avg:.1f}+0球{g0:.0f}(13-18)，历史0%命中');
+            reasons.append(f'排除2球：近况{combined_avg:.1f}+0球{g0:.0f}(13-18)，100%准确')
         
         # 规则B: 近况<2.5 + 0球<10 + 初始2球<3.3 + 初始4球>=6.5 → 排除2球
         if g0 is not None and g0 < 10 and g2 is not None and g4 is not None:
-            # 计算初始2球和初始4球
             g2_ini = g2 / (1 + g2_ch / 100) if g2_ch else g2
             g4_ini = g4 / (1 + g4_ch / 100) if g4_ch else g4
             
             if (combined_avg < 2.5 and 
                 g2_ini < 3.3 and 
                 g4_ini >= 6.5):
-                signals.append(('🚫排除2球', '-10', f'黄金2球+初始4球{g4_ini:.1f}≥6.5，近况{combined_avg:.1f}+0球{g0:.0f}+初始2球{g2_ini:.2f}，历史75%准确率'));
-                warnings.append(f'🚫 排除2球！黄金2球+初始4球{g4_ini:.1f}≥6.5，历史75%准确率');
-                reasons.append(f'排除2球：黄金2球+初始4球{g4_ini:.1f}≥6.5，历史75%准确率')
+                signals.append(('🚫排除2球', '-10', f'初始2球{g2_ini:.2f}<3.3+初始4球{g4_ini:.1f}≥6.5，历史17.6%命中'))
+                warnings.append(f'🚫 排除2球！初始2球{g2_ini:.2f}<3.3+初始4球{g4_ini:.1f}≥6.5')
+                reasons.append(f'排除2球：初始2球{g2_ini:.2f}<3.3+初始4球{g4_ini:.1f}≥6.5，2球率17.6%')
+        
+        # 规则C: 主让-1 + 让负>=2.0 + 0球10~15 → 排除2球 (3/30=10%)
+        if (rq == '-1' and hh_l is not None and hh_l >= 2.0 and
+            g0 is not None and 10 <= g0 < 15):
+            signals.append(('🚫排除2球', '-8', f'主让-1+让负{hh_l:.1f}+0球{g0:.0f}，历史2球率10%(3/30)'))
+            warnings.append(f'🚫 排除2球！主让-1+让负>={hh_l:.1f}+0球{g0:.0f}')
+            reasons.append(f'排除2球：主让-1+让负>=2.0+0球10-15，2球率仅10%')
 
     # ══════════════════════════════════════════════════════════════
     # Step 9: 近况偏高 + 高球数多个下降 → 关注3球（最强组合：近况3.0~3.5 + 3球3.5~3.7 = 50%命中率）
@@ -577,6 +570,29 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             if g0 is not None and g0 >= 13:
                 signals.append(('⚠️考虑0球', '+3', f'近况{combined_avg:.1f}+0球{g0}≥13，历史0球率14%'));
 
+    # ══════════════════════════════════════════════════════════════
+    # Step 10: 排除4球（2026-05-01新增，403场回测）
+    # ══════════════════════════════════════════════════════════════
+    if form is not None:
+        combined_avg = form.get('combined_avg', 0)
+        g0_val = features.get('0球')
+        g4_val = features.get('4球')
+        
+        # 规则A: 近况均值<2.0 → 排除4球 (0/12=0%)
+        if combined_avg < 2.0:
+            signals.append(('🚫排除4球', '-10', f'近况{combined_avg:.1f}<2.0，历史4球率0%(0/12)'))
+            warnings.append(f'🚫 排除4球！近况{combined_avg:.1f}<2.0，历史0%命中')
+        
+        # 规则B: 0球>30 → 排除4球 (1/19=5.3%)
+        if g0_val is not None and g0_val > 30:
+            signals.append(('🚫排除4球', '-8', f'0球={g0_val}>30，历史4球率5.3%(1/19)'))
+            warnings.append(f'🚫 排除4球！0球={g0_val}>30极高')
+        
+        # 规则C: 4球赔率>6.0 → 排除4球 (5/75=6.7%)
+        if g4_val is not None and g4_val > 6.0:
+            signals.append(('🚫排除4球', '-8', f'4球={g4_val}>6.0，历史4球率6.7%(5/75)'))
+            warnings.append(f'🚫 排除4球！4球赔率={g4_val}>6.0')
+
     # 综合评分
     def ps(s):
         s = s.strip()
@@ -589,49 +605,11 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     if has_exclude_signal:
         score = -15  # 确保分数为负，用于置信度显示
 
-    # ── 黄金3球筛选器（4条定律同时满足） ──
-    # 定律①: 评分达标（≥15）
-    # 定律②: 近况正常（合并均值2.5~3.5）
-    # 定律③: 3球C级（3.00~3.50）
-    # 定律④: 2球>3球<4球（完美梯度）
+    # ── 黄金3球筛选器（已废弃，2026-05-01回测29.6%不足42.9%声明） ──
     golden = False
     golden_reason = []
-    g4_val = features.get('4球')
-    cond1 = score >= 15                                             # ①评分达标
-    cond2 = (form is not None and 2.5 <= form['combined_avg'] <= 3.5)  # ②近况正常
-    cond3 = (g3 is not None and 3.00 <= g3 < 3.50)                # ③3球C级
-    cond4 = (g2 is not None and g3 is not None and g4_val is not None
-             and g2 > g3 and g3 < g4_val)                         # ④2球>3球<4球
-    super_golden = False    # 超级3球：黄金3球 + 0球=13
+    super_golden = False
     super_golden_reason = []
-
-    if cond1 and cond2 and cond3 and cond4:
-        golden = True
-        golden_reason = [
-            f'①评分{score}≥15',
-            f'②近况均值{form["combined_avg"]}在[2.5,3.5]',
-            f'③3球{g3}(C级)',
-            f'④梯度:2球{g2}>3球{g3}<4球{g4_val}',
-        ]
-        signals.append(('⭐黄金3球', '+0', ' | '.join(golden_reason)))
-
-        # 超级3球检测：黄金3球 + 0球=13（历史75%命中率）
-        g0 = features.get('0球')
-        if g0 is not None and g0 == 13:
-            super_golden = True
-            super_golden_reason = [
-                f'黄金3球 ✓',
-                f'0球=13 ✓ ({g0})',
-            ]
-            # 进一步判断3球是否在3.25-3.5（历史83.3%命中率）
-            if g3 is not None and 3.25 <= g3 <= 3.5:
-                super_golden_reason.append(f'3球{g3}在3.25-3.5 ✓ (83.3%命中)')
-            signals.append(('🌟超级3球', '+5', ' | '.join(super_golden_reason)))
-            warnings.append('🌟超级3球信号！历史75%命中率')
-
-        # 4球预警：黄金3球 + 4球赔率在4.95~6之间
-        if g4_val is not None and 4.95 <= g4_val <= 6.0:
-            warnings.append(f'⚠️ 4球预警：4球赔率{g4_val}在4.95~6区间，需预防4球打出')
 
     # 推荐
     if score >= 15:
@@ -1381,6 +1359,10 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
     g0 = features.get('0球')
     g2 = features.get('2球')
     form = features.get('近况')
+    hw = features.get('had_胜')   # HAD主胜赔
+    hd = features.get('had_平')   # HAD平赔
+    rq = features.get('让球')     # 让球
+    away_avg = form.get('away_avg') if form else None  # 客近况
     
     result = {
         'is_golden_2': False,
@@ -1441,9 +1423,44 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
         result['is_golden_2'] = True
         result['recommendation'] = '关注2球'
         result['reason'] = ' | '.join(golden_reason)
-        if combined_avg is not None and combined_avg >= 2.5:
-            result['recommendation'] = '观望'
-            result['warnings'].append('近况偏高，2球不可靠')
+        
+        # ── v2.4增强: 黄金2球情境化判断 (2026-05-01回测) ──
+        # 0球=10子组: HAD主胜<2.0 → 排除2球 (0/3)
+        if g0 == 10 and hw is not None and hw < 2.0:
+            result['recommendation'] = '排除2球'
+            result['reason'] = f'黄金2球+HAD主胜{hw}<2.0，主队过强，历史2球率0%(0/3)'
+            result['warnings'].append(f'排除2球：黄金2球+HAD主胜{hw}<2.0')
+            result['hit_rate'] = 0.0
+            result['sample_size'] = 3
+        # 0球=10子组: HAD胜2.0-2.5 + 客近况>3.0 → 排除2球 (0/3)
+        elif g0 == 10 and hw is not None and 2.0 <= hw < 2.5 and away_avg is not None and away_avg > 3.0:
+            result['recommendation'] = '排除2球'
+            result['reason'] = f'黄金2球+HAD胜{hw}+客近况{away_avg:.1f}>3.0，历史2球率0%(0/3)'
+            result['warnings'].append(f'排除2球：客近况{away_avg:.1f}>3.0')
+            result['hit_rate'] = 0.0
+            result['sample_size'] = 3
+        # 0球=10子组: HAD胜2.0-2.5 + 客近况<=3.0 → 增强100% (3/3)
+        elif g0 == 10 and hw is not None and 2.0 <= hw < 2.5 and away_avg is not None and away_avg <= 3.0:
+            result['reason'] = result.get('reason','') + f' +客近况{away_avg:.1f}≤3.0(增强100%)'
+            result['hit_rate'] = 100.0
+            result['sample_size'] = 3
+            result['signals'].append(f'增强：客近况{away_avg:.1f}≤3.0，历史100%命中')
+        # 0球=23子组: 2球=4.4 + 受让+1 → 排除 (0/2)
+        elif g0 == 23 and g2 is not None and g2 == 4.4 and rq == '+1':
+            result['recommendation'] = '排除2球'
+            result['reason'] = f'黄金2球+0球=23+2球=4.4+受让+1，历史2球率0%(0/2)'
+            result['warnings'].append(f'排除2球：0球=23+2球=4.4+受让+1')
+            result['hit_rate'] = 0.0
+            result['sample_size'] = 2
+        # 0球=23子组: 增强 (4/4 when not excluded)
+        elif g0 == 23:
+            result['reason'] = result.get('reason','') + ' (0球=23子组增强)'
+            result['hit_rate'] = 66.7
+            result['sample_size'] = 6
+            result['signals'].append('0球=23子组，历史66.7%命中')
+        # 默认保留黄金2球信号，不再因近况降级
+        else:
+            result['signals'].append(f'黄金2球整体命中率40%(20场)')
     else:
         # 非黄金2球，检查是否应排除
         if combined_avg is not None and combined_avg >= 2.5:
@@ -1512,54 +1529,43 @@ def predict_4goals(features: Dict[str, Any]) -> Dict[str, Any]:
     # 近况分析
     combined_avg = form.get('combined_avg') if form else None
     
-    # ── 黄金4球判断 ──
+    # ── 黄金4球判断（2026-05-01 回测更新） ──
     golden_4 = False
     golden_reason = []
     
-    # 条件1: 0球=30
+    # 条件1: 0球=30 (任何4球区间都强，6场中4场=66.7%)
     if g0 == 30:
-        # 0=30 + 4球各区间
-        if g4 is not None and 4.1 <= g4 <= 4.5:
-            golden_4 = True
-            golden_reason.append(f'0球={g0} + 4球={g4}(4.1-4.5区间)')
-            result['hit_rate'] = 66.7
-            result['sample_size'] = 3
-        elif g4 is not None and 3.4 <= g4 < 4.1:
-            golden_4 = True
-            golden_reason.append(f'0球={g0} + 4球={g4}(3.4-4.1区间)')
-            result['hit_rate'] = 66.7 if g4 >= 3.7 else 100.0
-            result['sample_size'] = 1 if g4 < 3.7 else 3
-        elif g4 is not None and 4.5 < g4 <= 5.0:
-            golden_4 = True
-            golden_reason.append(f'0球={g0} + 4球={g4}(4.5-5.0区间)')
-            result['hit_rate'] = 50.0
-            result['sample_size'] = 2
+        golden_4 = True
+        golden_reason.append(f'0球={g0} + 4球={g4}')
+        result['hit_rate'] = 66.7
+        result['sample_size'] = 6
     
-    # 条件2: 近况判断（关键！）
+    # 条件2: 近况判断
     if combined_avg is not None:
-        if 1.5 <= combined_avg <= 2.5:
-            result['signals'].append(f'近况均值={combined_avg}在[1.5,2.5]，支持4球（历史75%命中）')
-            golden_reason.append(f'近况{combined_avg}在[1.5,2.5]，加分')
-        elif combined_avg < 1.5:
-            result['signals'].append(f'近况均值={combined_avg}<1.5，4球中性')
-        elif combined_avg > 2.5:
-            result['warnings'].append(f'近况均值={combined_avg}>2.5，4球概率降低')
-            golden_reason.append(f'近况{combined_avg}>2.5，减分')
+        if combined_avg >= 2.5:
+            result['signals'].append(f'近况{combined_avg}≥2.5，支持4球(20.8%)')
+            golden_reason.append(f'近况{combined_avg}≥2.5，加分')
+        elif combined_avg >= 1.5:
+            result['signals'].append(f'近况均值={combined_avg}在[1.5,2.5)，4球中性')
+        else:
+            result['warnings'].append(f'近况{combined_avg}<1.5，4球率低(0/12)')
     
     if golden_4:
         result['is_golden_4'] = True
         result['recommendation'] = '关注4球'
         result['reason'] = ' | '.join(golden_reason)
-        if combined_avg is not None and combined_avg > 2.5:
-            result['recommendation'] = '观望'
-            result['warnings'].append('近况偏高，4球不可靠')
+        result['signals'].append(f'黄金4球命中率66.7%(4/6场，样本小)')
     else:
-        # 非黄金4球，检查是否应排除
-        if combined_avg is not None and combined_avg > 2.5:
+        # 排除4球规则（2026-05-01回测）
+        if combined_avg is not None and combined_avg < 2.0:
             result['recommendation'] = '排除4球'
-            result['reason'] = f'近况均值{combined_avg}>2.5，4球概率低'
-        elif g0 == 30:
-            result['reason'] = f'0球=30但4球赔率不在合适区间'
+            result['reason'] = f'近况均值{combined_avg}<2.0，历史4球率0%(0/12)'
+        elif g0 is not None and g0 > 30:
+            result['recommendation'] = '排除4球'
+            result['reason'] = f'0球={g0}>30极高，历史4球率5.3%(1/19)'
+        elif g4 is not None and g4 > 6.0:
+            result['recommendation'] = '排除4球'
+            result['reason'] = f'4球赔率={g4}>6.0，历史4球率6.7%(5/75)'
     
     return result
 
@@ -2406,32 +2412,10 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
         rec_dict['big3_vs_small3'] = big3_vs_small3
         return rec_dict
 
-    # ── 优先级1: 黄金3球+0球20-21 → 历史70.0%命中率 ──
-    # 条件：黄金3球(4条件) + 0球赔率20-21
-    is_golden = g3_pred.get('golden_3goals', False) if g3_pred else False
-    g0 = features.get('0球') or features.get('odds0', 0)
-    if is_golden and g0 and 20 <= g0 <= 21:
-        return _make_result({
-            'recommendation': '3球',
-            'confidence': 90,  # 最高置信度
-            'hit_rate': 70.0,
-            'sample_size': 10,
-            'reason': '黄金3球+0球20-21：命中率70.0%(7/10)',
-            'signal_type': '黄金3球+0球20-21',
-            'is_bet': True,
-        })
-
-    # ── 优先级2: 超级3球（黄金3球 + 0球=13）→ 历史60.0%命中率 ──
-    if g3_pred.get('super_golden') and g3_pred.get('super_golden_reason'):
-        return _make_result({
-            'recommendation': '3球',
-            'confidence': 85,
-            'hit_rate': 60.0,  # 更新：60.0%(6/10)
-            'sample_size': 10,     # 更新：10场
-            'reason': '超级3球信号：' + ' | '.join(g3_pred.get('super_golden_reason', [])),
-            'signal_type': '超级3球',
-            'is_bet': True,
-        })
+    # ── 黄金3球规则已废弃（2026-05-01: 回测29.6%, 声明42.9%严重高估） ──
+    # 原优先级1: 黄金3球+0球20-21 → 已移除
+    # 原优先级2: 超级3球 → 已移除
+    # 原: 黄金3球 → 已移除
 
     # ── 优先级3: 0球20-21+近况2.5-3.5 → 历史53.3%命中率 ──
     form = features.get('近况')
@@ -2488,29 +2472,8 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
             'is_bet': False,
         })
 
-    # ── 已有规律: 黄金3球（4定律同时满足）→ 历史40.8%命中率 ──
-    if g3_pred.get('golden_3goals') and g3_pred.get('golden_reason'):
-        # 检查近况条件：combined 2.5-3.0 是最佳区间
-        if combined_avg is not None and 2.5 <= combined_avg <= 3.0:
-            return _make_result({
-                'recommendation': '3球',
-                'confidence': 70,
-                'hit_rate': 42.9,
-                'sample_size': 28,
-                'reason': '黄金3球信号：' + ' | '.join(g3_pred.get('golden_reason', [])),
-                'signal_type': '黄金3球',
-                'is_bet': True,
-            })
-        else:
-            return _make_result({
-                'recommendation': '3球',
-                'confidence': 55,
-                'hit_rate': 40.8,
-                'sample_size': 49,
-                'reason': '黄金3球信号：' + ' | '.join(g3_pred.get('golden_reason', [])),
-                'signal_type': '黄金3球',
-                'is_bet': True,
-            })
+    # ── 已有规律: 黄金3球（已废弃 → 29.6%回测, 42.9%声明） ──
+    # 该规则已移除，golden_3goals恒False
 
     # ── 优先级3: 近况3.0-3.5 + 高球多降 + 3球3.5-3.7 → 历史50%命中率 ──
     if (combined_avg is not None and 3.0 <= combined_avg <= 3.5 and
@@ -2538,51 +2501,21 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
             'is_bet': False,
         })
 
-    # ── 优先级5: 三条件排除3球 → 排除3球，历史9.1%命中率 ──
+    # ── 优先级5: 三条件排除3球 → 排除3球，历史18.9%命中率 ──
     # 条件：近况正常(2.5~3.5) + 0球>13 + 初始3球>3.50
     if (combined_avg is not None and 2.5 <= combined_avg <= 3.5 and
         g0 is not None and g0 > 13 and initial_g3 is not None and initial_g3 > 3.50):
         return _make_result({
             'recommendation': '排除3球',
-            'confidence': 45,
-            'hit_rate': 9.1,
-            'sample_size': 11,
+            'confidence': 35,
+            'hit_rate': 18.9,
+            'sample_size': 37,
             'reason': f'三条件排除3球：近况{combined_avg}+0球{g0}>13+初始3球{initial_g3:.2f}>3.50',
             'signal_type': '排除3球',
             'is_bet': False,
         })
 
-    # ── 优先级6: 近况正常 + 0球<10 + 3球<3.7 → 排除3球，历史9.1% ──
-    if (combined_avg is not None and 2.5 <= combined_avg <= 3.5 and
-        g0 is not None and g0 < 10 and g3 is not None and g3 < 3.7):
-        return _make_result({
-            'recommendation': '排除3球',
-            'confidence': 40,
-            'hit_rate': 9.1,
-            'sample_size': 11,
-            'reason': f'近况正常+0球{g0}<10+3球{g3}<3.7，排除3球',
-            'signal_type': '排除3球',
-            'is_bet': False,
-        })
-
-    # ── 新排除规律: HAD平赔降>3% → 排除3球，历史9.1% ──
-    had_changes = data.get('had_change', {})
-    draw_change = None
-    if isinstance(had_changes, dict):
-        for key in ['平', 'draw']:
-            if key in had_changes and isinstance(had_changes[key], dict):
-                draw_change = had_changes[key].get('change_pct')
-                break
-    if (draw_change is not None and draw_change < -3):
-        return _make_result({
-            'recommendation': '排除3球',
-            'confidence': 45,
-            'hit_rate': 9.1,
-            'sample_size': 11,
-            'reason': f'HAD平赔降{draw_change:.0f}%(造热平局)，历史3球率9.1%(1/11)',
-            'signal_type': '排除3球(平赔降)',
-            'is_bet': False,
-        })
+    # ── HAD平赔降排除已在Step 7信号中处理, get_final_recommendation不重复 ──
 
     # ── 新排除规律: 0球>=15 + 客近况<2.5 → 排除3球，历史11.1% ──
     if (g0 is not None and g0 >= 15 and away_form is not None and away_form < 2.5):
@@ -2621,14 +2554,14 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
                 'is_bet': True,
             })
 
-    # ── 优先级8: 黄金4球 → 推荐4球，历史67%命中率 ──
+    # ── 优先级8: 黄金4球 → 推荐4球，历史66.7%命中率(6场样本小) ──
     if g4_pred and g4_pred.get('is_golden_4'):
         return _make_result({
             'recommendation': '4球',
-            'confidence': 75,
-            'hit_rate': g4_pred.get('hit_rate', 67),
-            'sample_size': g4_pred.get('sample_size', 3),
-            'reason': f'黄金4球：{g4_pred.get("reason", "")}',
+            'confidence': 70,
+            'hit_rate': 66.7,
+            'sample_size': 6,
+            'reason': f'黄金4球({g4_pred.get("reason","")})，样本仅6场仅供参���',
             'signal_type': '黄金4球',
             'is_bet': True,
         })

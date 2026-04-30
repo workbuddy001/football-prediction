@@ -1456,17 +1456,13 @@ HTML_TEMPLATE = '''
                                 <div class="g3-warning-item">${w}</div>
                             `).join('')}
                         </div>` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球') && s[2].includes('历史3球率9.1%')) ? `
-                        <div class="g3-exclude-banner" style="border-color:#a855f7;background:linear-gradient(135deg,rgba(168,85,247,0.25),rgba(147,51,234,0.15));">
-                            <div class="g3-exclude-banner-text" style="color:#d8b4fe;">🚫 排除3球 - 近况正常+0球<10+3球<3.7</div>
-                        </div>` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球') && !s[2].includes('历史3球率9.1%')) ? `
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除3球')) ? `
                         <div class="g3-exclude-banner">
-                            <div class="g3-exclude-banner-text">🚫 排除3球 - 三条件全满足</div>
+                            <div class="g3-exclude-banner-text">🚫 排除3球 - 三条件全满足，历史3球率18.9%(7/37)</div>
                         </div>` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('初始4球')) ? `
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('初始4球') && !s[2].includes('初始2球')) ? `
                         <div class="g3-exclude-banner" style="border-color:#f59e0b;background:linear-gradient(135deg,rgba(245,158,11,0.25),rgba(234,88,12,0.15));">
-                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🚫 排除2球 - 黄金2球+初始4球≥6.5</div>
+                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🚫 排除2球 - 初始4球>=6.5（黄金2球排除B）</div>
                         </div>` : ''}
                         ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('87.5%')) ? `
                         <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
@@ -1488,9 +1484,45 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner" style="border-color:#06b6d4;background:linear-gradient(135deg,rgba(6,182,212,0.25),rgba(14,116,144,0.15));">
                             <div class="g3-exclude-banner-text" style="color:#67e8f9;">⭐ 关注2球 - 近况偏低+高球多降为诱导，历史2球37.9%最高</div>
                         </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('100%准确')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#86efac;">🚫 排除2球 - 近况2.0-2.5+0球13-18，历史100%准确(0/11)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('初始2球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#f59e0b;background:linear-gradient(135deg,rgba(245,158,11,0.25),rgba(234,88,12,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🚫 排除2球 - 初始2球<3.3+初始4球>=6.5，历史17.6%命中</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('主让-1+让负')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#a855f7;background:linear-gradient(135deg,rgba(168,85,247,0.25),rgba(147,51,234,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#d8b4fe;">🚫 排除2球 - 主让-1+让负>=2.0+0球10-15，历史2球率10%(3/30)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除2球') && w.includes('HAD主胜')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除2球 - 黄金2球+HAD主胜<2.0，主队过强，历史0%(0/3)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除2球') && w.includes('客近况')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除2球 - 黄金2球+客近况>3.0，历史0%(0/3)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除2球') && w.includes('0球=23+2球=4.4')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除2球 - 0球=23+2球=4.4+受让+1，历史0%(0/2)</div>
+                        </div>` : ''}
                         ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('考虑0球')) ? `
                         <div class="g3-exclude-banner" style="border-color:#64748b;background:linear-gradient(135deg,rgba(100,116,139,0.20),rgba(71,85,105,0.10));">
                             <div class="g3-exclude-banner-text" style="color:#cbd5e1;">⚠️ 考虑0球 - 近况偏低+高球多降+0球≥13</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除4球') && w.includes('近况')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(220,38,38,0.12));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除4球 - 近况<2.0，历史4球率0%(0/12)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除4球') && w.includes('0球=')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(220,38,38,0.12));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除4球 - 0球>30极高，历史4球率5.3%(1/19)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除4球') && w.includes('4球赔率')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(220,38,38,0.12));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除4球 - 4球赔率>6.0，历史4球率6.7%(5/75)</div>
                         </div>` : ''}
                         ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负+3球黄金' ? `
                         <div class="g3-exclude-banner" style="border-color:#ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.22),rgba(184,134,11,0.12));">
