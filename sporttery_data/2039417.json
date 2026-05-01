@@ -1,0 +1,959 @@
+{
+  "match_id": "2039417",
+  "fetch_time": "2026-04-30 07:24:21",
+  "match_info": {
+    "home_team": "波特诺山丘",
+    "away_team": "帕尔梅拉斯",
+    "league": "南美解放者杯",
+    "time": "2026-04-30 08:30",
+    "match_num_str": "周三012",
+    "match_week": "周三",
+    "match_date": "2026-04-30",
+    "match_time": "08:30:00",
+    "match_status": "Selling",
+    "home_rank": "[Group F3]",
+    "away_rank": "[Group F2]",
+    "league_abbr": "解放者杯"
+  },
+  "score_odds": {
+    "05:00": "700.0",
+    "01:00": "10.50",
+    "05:02": "700.0",
+    "05:01": "600.0",
+    "02:04": "70.00",
+    "02:05": "200.0",
+    "02:02": "17.50",
+    "02:03": "29.00",
+    "02:00": "20.00",
+    "02:01": "14.00",
+    "03:03": "75.00",
+    "03:01": "45.00",
+    "03:02": "55.00",
+    "03:00": "65.00",
+    "00:01": "5.50",
+    "00:00": "9.00",
+    "00:03": "12.50",
+    "00:02": "6.50",
+    "00:05": "80.00",
+    "00:04": "32.00",
+    "04:02": "250.0",
+    "04:01": "150.0",
+    "04:00": "250.0",
+    "01:02": "7.00",
+    "01:01": "6.50",
+    "01:04": "35.00",
+    "01:03": "15.00",
+    "01:05": "80.00"
+  },
+  "total_goals": {
+    "3球": "3.75",
+    "4球": "7.00",
+    "5球": "14.00",
+    "6球": "30.00",
+    "7球": "48.00",
+    "0球": "9.00",
+    "1球": "3.80",
+    "2球": "2.90"
+  },
+  "had": {
+    "胜": "4.90",
+    "平": "3.30",
+    "负": "1.61"
+  },
+  "ttg": {
+    "3球": "3.75",
+    "4球": "7.00",
+    "5球": "14.00",
+    "6球": "30.00",
+    "7球": "48.00",
+    "0球": "9.00",
+    "1球": "3.80",
+    "2球": "2.90"
+  },
+  "hafu": {
+    "负负": "2.62",
+    "平平": "4.85",
+    "胜胜": "8.50",
+    "负平": "16.00",
+    "平胜": "10.50",
+    "负胜": "45.00",
+    "胜负": "28.00",
+    "胜平": "16.00",
+    "平负": "3.70"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "2.00",
+    "让平": "2.96",
+    "让负": "3.43"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "帕梅拉斯",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "87",
+        "awayWinGoalMatchCnt": 8,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.5",
+        "awayGoalAvgCntRatio": "50.0",
+        "homeGoalAvgCnt": "1.5",
+        "homeGoalAvgCntRatio": "50.0",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "波特诺",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "88",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 7,
+        "homeScoreRatio": "13",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 8
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.5",
+        "awayLossGoalAvgCntRatio": "35.7",
+        "homeLossGoalAvgCnt": "0.9",
+        "homeLossGoalAvgCntRatio": "64.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2512175,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 4
+      },
+      "sportteryAwayTeamId": 577,
+      "sportteryHomeTeamId": 629,
+      "sportteryMatchId": 2039417,
+      "uniformAwayTeamId": 10,
+      "uniformHomeTeamId": 847
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 310,
+          "awayTeamShortName": "帕梅拉斯",
+          "fullCourtGoal": "0:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1620,
+          "homeTeamShortName": "波特诺",
+          "matchDate": "2025-05-08",
+          "matchId": 2319048,
+          "seasonId": 12764,
+          "sportteryAwayTeamId": 577,
+          "sportteryHomeTeamId": 629,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 10,
+          "uniformHomeTeamId": 847,
+          "uniformLeagueId": 77,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1620,
+          "awayTeamShortName": "波特诺",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 310,
+          "homeTeamShortName": "帕梅拉斯",
+          "matchDate": "2025-04-10",
+          "matchId": 2319064,
+          "seasonId": 12764,
+          "sportteryAwayTeamId": 629,
+          "sportteryHomeTeamId": 577,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 847,
+          "uniformHomeTeamId": 10,
+          "uniformLeagueId": 77,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 310,
+          "awayTeamShortName": "帕梅拉斯",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 49,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1620,
+          "homeTeamShortName": "波特诺",
+          "matchDate": "2023-05-25",
+          "matchId": 1892832,
+          "seasonId": 10030,
+          "sportteryAwayTeamId": 577,
+          "sportteryHomeTeamId": 629,
+          "sportteryMatchId": 1019603,
+          "sportteryTournamentId": 49,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 10,
+          "uniformHomeTeamId": 847,
+          "uniformLeagueId": 77,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1620,
+          "awayTeamShortName": "波特诺",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 49,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 310,
+          "homeTeamShortName": "帕梅拉斯",
+          "matchDate": "2023-04-21",
+          "matchId": 1892856,
+          "seasonId": 10030,
+          "sportteryAwayTeamId": 629,
+          "sportteryHomeTeamId": 577,
+          "sportteryMatchId": 1019068,
+          "sportteryTournamentId": 49,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 847,
+          "uniformHomeTeamId": 10,
+          "uniformLeagueId": 77,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1620,
+          "awayTeamShortName": "波特诺",
+          "fullCourtGoal": "5:0",
+          "gmLeagueId": 49,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "5",
+          "homeTeamId": 310,
+          "homeTeamShortName": "帕梅拉斯",
+          "matchDate": "2022-07-07",
+          "matchId": 1596202,
+          "seasonId": 8664,
+          "sportteryAwayTeamId": 629,
+          "sportteryHomeTeamId": 577,
+          "sportteryMatchId": 1013667,
+          "sportteryTournamentId": 49,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 847,
+          "uniformHomeTeamId": 10,
+          "uniformLeagueId": 77,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 5,
+        "lossProbability": "100%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "波特诺",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 397880,
+            "personName": "J. Piquerez",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 475123,
+            "personName": "Paulinho",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 679965,
+            "personName": "Vitor Roque",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 577,
+        "teamId": 310,
+        "teamShortName": "帕梅拉斯",
+        "uniformTeamId": 10
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 629,
+        "teamId": 1620,
+        "teamShortName": "波特诺",
+        "uniformTeamId": 847
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 577,
+            "awayTeamShortName": "帕梅拉斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2734,
+            "homeTeamShortName": "布拉干RB",
+            "matchDate": "2026-04-27",
+            "matchId": 2469032,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 10,
+            "uniformHomeTeamId": 18,
+            "uniformLeagueId": 31,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Jacuipense",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 577,
+            "homeTeamShortName": "帕梅拉斯",
+            "matchDate": "2026-04-24",
+            "matchId": 2513070,
+            "seasonId": 14428,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 489,
+            "tournamentShortName": "巴西杯",
+            "uniformAwayTeamId": 9345,
+            "uniformHomeTeamId": 10,
+            "uniformLeagueId": 95,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 564,
+            "awayTeamShortName": "巴竞技",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 577,
+            "homeTeamShortName": "帕梅拉斯",
+            "matchDate": "2026-04-20",
+            "matchId": 2469035,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 53,
+            "uniformHomeTeamId": 10,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 645,
+            "awayTeamShortName": "水晶体育",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 577,
+            "homeTeamShortName": "帕梅拉斯",
+            "matchDate": "2026-04-17",
+            "matchId": 2512189,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039123,
+            "sportteryTournamentId": 49,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 1378,
+            "uniformHomeTeamId": 10,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 577,
+            "awayTeamShortName": "帕梅拉斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 567,
+            "homeTeamShortName": "科林蒂安",
+            "matchDate": "2026-04-13",
+            "matchId": 2468805,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 10,
+            "uniformHomeTeamId": 85,
+            "uniformLeagueId": 31,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 7,
+          "lossGoalCnt": 1,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 577,
+          "teamShortName": "帕梅拉斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 10,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Sportivo Amel.",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 629,
+            "homeTeamShortName": "波特诺",
+            "matchDate": "2026-04-25",
+            "matchId": 2482256,
+            "seasonId": 14214,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 110,
+            "tournamentShortName": "巴拉甲",
+            "uniformAwayTeamId": 25759,
+            "uniformHomeTeamId": 847,
+            "uniformLeagueId": 572,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "巴兰基亚",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 629,
+            "homeTeamShortName": "波特诺",
+            "matchDate": "2026-04-15",
+            "matchId": 2512190,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 731,
+            "uniformHomeTeamId": 847,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 629,
+            "awayTeamShortName": "波特诺",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1200,
+            "homeTeamShortName": "亚国民",
+            "matchDate": "2026-04-12",
+            "matchId": 2482268,
+            "seasonId": 14214,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 110,
+            "tournamentShortName": "巴拉甲",
+            "uniformAwayTeamId": 847,
+            "uniformHomeTeamId": 859,
+            "uniformLeagueId": 572,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 629,
+            "awayTeamShortName": "波特诺",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "水晶体育",
+            "matchDate": "2026-04-09",
+            "matchId": 2512206,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 847,
+            "uniformHomeTeamId": 1378,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "2 de Mayo",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 629,
+            "homeTeamShortName": "波特诺",
+            "matchDate": "2026-04-05",
+            "matchId": 2482278,
+            "seasonId": 14214,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 110,
+            "tournamentShortName": "巴拉甲",
+            "uniformAwayTeamId": 7435,
+            "uniformHomeTeamId": 847,
+            "uniformLeagueId": 572,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 5,
+          "lossGoalCnt": 2,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 3,
+          "sportteryTeamId": 0,
+          "teamId": 629,
+          "teamShortName": "波特诺",
+          "totalLegCnt": 5,
+          "uniformTeamId": 847,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48189,
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13565,
+          "groupName": "Group F",
+          "lossGoalMatchCnt": 1,
+          "phaseName": "",
+          "points": "3",
+          "ranking": "3",
+          "sportteryTeamId": 629,
+          "teamId": 0,
+          "teamShortName": "波特诺",
+          "totalLegCnt": 2,
+          "uniformTeamId": 847,
+          "winGoalMatchCnt": 1,
+          "winProbability": "50%"
+        },
+        {
+          "drawMatchCnt": 1,
+          "groupId": 13565,
+          "groupName": "Group F",
+          "lossGoalMatchCnt": 0,
+          "phaseName": "",
+          "points": "4",
+          "ranking": "2",
+          "sportteryTeamId": 577,
+          "teamId": 0,
+          "teamShortName": "帕梅拉斯",
+          "totalLegCnt": 2,
+          "uniformTeamId": 10,
+          "winGoalMatchCnt": 1,
+          "winProbability": "50%"
+        }
+      ],
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2388962
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0.5",
+            "assistCnt": 1,
+            "assistProbability": "50%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 667565,
+            "personName": "J. López",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "42"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 648749,
+            "personName": "索萨",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 472694,
+            "personName": "Murilo",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "26"
+          }
+        ],
+        "sportteryTeamId": 577,
+        "teamId": 310,
+        "teamShortName": "帕梅拉斯",
+        "uniformTeamId": 10
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "100%",
+            "injuryFlag": 0,
+            "personId": 411326,
+            "personName": "霍纳坦·托雷斯",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          },
+          {
+            "appearanceCnt": 1,
+            "assistAvgCnt": "1.0",
+            "assistCnt": 1,
+            "assistProbability": "100%",
+            "goalAvgCnt": "0",
+            "goalCnt": 0,
+            "goalProbability": "0%",
+            "injuryFlag": 0,
+            "personId": 619539,
+            "personName": "M. Pérez",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          }
+        ],
+        "sportteryTeamId": 629,
+        "teamId": 1620,
+        "teamShortName": "波特诺",
+        "uniformTeamId": 847
+      },
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2388962
+    }
+  },
+  "ttg_change": {
+    "6球": {
+      "count": 2,
+      "change_pct": 20.0
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": -2.6
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -6.5
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": 26.3
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 7.7
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": 7.7
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 1,
+      "change_pct": 1.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 0.8
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 3.7
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 10.5
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -8.6
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 1,
+      "change_pct": 1.5
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": 5.4
+    },
+    "负": {
+      "count": 2,
+      "change_pct": -2.4
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 3,
+      "change_pct": -8.9
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": 2.6
+    },
+    "让负": {
+      "count": 2,
+      "change_pct": 5.5
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "3球",
+      "ttg_odds": "3.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "14.00",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "65.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "12.50",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "7.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(3.75)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "match_id": "周三002",
+  "date_folder": "2026.04.29",
+  "home_team": "京都",
+  "away_team": "大阪钢巴",
+  "league": "日职",
+  "handicap": "-1",
+  "home_form": "LWLDWL",
+  "away_form": "DLDWLL",
+  "prediction": "观望",
+  "confidence": 1,
+  "actual_score": "1:1",
+  "actual_result": "draw",
+  "result_cn": "平局",
+  "is_correct": false,
+  "exclusions": [],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "实盘信号",
+      "detail": "澳门推平局+竞彩造热2.9%",
+      "strength": 3
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降平局-2.9%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降1升21 / 平降9升6 / 客降7升15",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "❌ 预测观望错误！实际比分为1:1(平局)",
+    "⚠️ 当时选择了观望，实际有明确结果"
+  ],
+  "review_time": "2026-04-29 16:25",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": -2.9,
+    "jc_away_chg": 2.28,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      2.18,
+      3.45,
+      2.63
+    ],
+    "jc_real_odds": [
+      2.18,
+      3.35,
+      2.69
+    ],
+    "macao_init_odds": [
+      2.27,
+      3.41,
+      2.65
+    ],
+    "macao_real_odds": [
+      2.27,
+      3.41,
+      2.65
+    ],
+    "jc_pattern": "NDU",
+    "macao_pattern": "NNN"
+  }
+}

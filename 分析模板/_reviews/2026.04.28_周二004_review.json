@@ -1,0 +1,102 @@
+{
+  "match_id": "周二004",
+  "date_folder": "2026.04.28",
+  "home_team": "巴黎圣曼",
+  "away_team": "拜仁",
+  "league": "欧冠",
+  "handicap": "-1",
+  "home_form": "WWLWWW",
+  "away_form": "WWWWWW",
+  "prediction": "客胜",
+  "confidence": 5,
+  "actual_score": "5:4",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": false,
+  "exclusions": [
+    "home",
+    "draw"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "心水排除②",
+      "detail": "澳门推荐'和局'，方向赔率3.90≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值参考",
+      "detail": "平局赔率3.90>3.5（大概率排除，友谊赛除外）",
+      "strength": 3
+    },
+    {
+      "rule": "[不怕]标签",
+      "detail": "竞彩升平局+5.4%+澳门不动，平局赔率≥3.5",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩主胜升+10.1%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "推离排除",
+      "detail": "竞彩平局升+5.4%>5%",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降0升30 / 平降15升7 / 客降29升0",
+      "strength": 3
+    },
+    {
+      "rule": "强共识推离主",
+      "detail": "30/30家公司升主胜（>25家阈值）",
+      "strength": 4
+    },
+    {
+      "rule": "强共识造热客",
+      "detail": "29/30家公司降客胜（>25家阈值）",
+      "strength": 4
+    }
+  ],
+  "lessons": [
+    "❌ 预测客胜错误！实际比分为5:4(主胜)",
+    "❌ 预测客胜但实际是主胜，需要反思原因",
+    "📝 心水推荐为「和局」，可作为复盘参考"
+  ],
+  "review_time": "2026-04-29 16:24",
+  "macao_tip": "和局",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 10.1,
+    "jc_draw_chg": 5.41,
+    "jc_away_chg": -13.58,
+    "mcao_home_chg": 2.68,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": -3.23,
+    "jc_init_odds": [
+      2.08,
+      3.7,
+      2.65
+    ],
+    "jc_real_odds": [
+      2.29,
+      3.9,
+      2.29
+    ],
+    "macao_init_odds": [
+      2.24,
+      3.8,
+      2.48
+    ],
+    "macao_real_odds": [
+      2.3,
+      3.8,
+      2.4
+    ],
+    "jc_pattern": "UUD",
+    "macao_pattern": "UND"
+  }
+}

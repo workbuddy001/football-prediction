@@ -1,0 +1,90 @@
+{
+  "match_id": "周二002",
+  "date_folder": "2026.04.28",
+  "home_team": "利雅得新月",
+  "away_team": "达马克",
+  "league": "沙特职业联赛",
+  "handicap": "-2",
+  "home_form": "DWDDWW",
+  "away_form": "WDLWWD",
+  "prediction": "主胜",
+  "confidence": 5,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "draw",
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "平局赔率8.50>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率11.00>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "低赔排除",
+      "detail": "主胜赔率1.13<1.5，庄家高度自信",
+      "strength": 4
+    },
+    {
+      "rule": "[不跟]标签",
+      "detail": "竞彩降客胜-15.4%+澳门不动",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降4升17 / 平降10升12 / 客降9升8",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 多重排除（平局/客胜）策略有效",
+    "📈 关键信号「绝对值排除」有效：平局赔率8.50>5.0",
+    "📈 关键信号「绝对值排除」有效：客胜赔率11.00>5.0",
+    "📈 关键信号「低赔排除」有效：主胜赔率1.13<1.5，庄家高度自信"
+  ],
+  "review_time": "2026-04-29 16:22",
+  "macao_tip": "利雅得新月爾 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": -15.38,
+    "mcao_home_chg": 0.0,
+    "mcao_draw_chg": 5.88,
+    "mcao_away_chg": 0.0,
+    "jc_init_odds": [
+      1.13,
+      8.5,
+      13.0
+    ],
+    "jc_real_odds": [
+      1.13,
+      8.5,
+      11.0
+    ],
+    "macao_init_odds": [
+      1.17,
+      8.5,
+      12.0
+    ],
+    "macao_real_odds": [
+      1.17,
+      9.0,
+      12.0
+    ],
+    "jc_pattern": "NND",
+    "macao_pattern": "NUN"
+  }
+}

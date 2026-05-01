@@ -1,0 +1,71 @@
+{
+  "match_id": "周二005",
+  "date_folder": "2026.04.28",
+  "home_team": "拉努斯",
+  "away_team": "基多体大",
+  "league": "解放者杯",
+  "handicap": "-1",
+  "home_form": "DLWWLD",
+  "away_form": "LDWWLL",
+  "prediction": "主胜",
+  "confidence": 4,
+  "actual_score": "1:0",
+  "actual_result": "home",
+  "result_cn": "主胜",
+  "is_correct": true,
+  "exclusions": [
+    "away"
+  ],
+  "warnings": [],
+  "key_signals": [
+    {
+      "rule": "绝对值排除",
+      "detail": "客胜赔率5.80>5.0",
+      "strength": 4
+    },
+    {
+      "rule": "30家公司共识",
+      "detail": "主降17升10 / 平降19升8 / 客降1升25",
+      "strength": 3
+    }
+  ],
+  "lessons": [
+    "✅ 预测主胜正确！实际比分为1:0(主胜)",
+    "📈 高置信度预测命中，验证了排除法的可靠性",
+    "📈 关键信号「绝对值排除」有效：客胜赔率5.80>5.0"
+  ],
+  "review_time": "2026-04-29 16:24",
+  "macao_tip": "拉努斯 贏",
+  "odds_fingerprint": {
+    "jc_change_dir": "",
+    "macao_change_dir": "",
+    "jc_home_chg": 0.0,
+    "jc_draw_chg": 0.0,
+    "jc_away_chg": 0.0,
+    "mcao_home_chg": -7.06,
+    "mcao_draw_chg": 0.0,
+    "mcao_away_chg": 23.53,
+    "jc_init_odds": [
+      1.5,
+      3.45,
+      5.8
+    ],
+    "jc_real_odds": [
+      1.5,
+      3.45,
+      5.8
+    ],
+    "macao_init_odds": [
+      1.7,
+      3.33,
+      4.25
+    ],
+    "macao_real_odds": [
+      1.58,
+      3.33,
+      5.25
+    ],
+    "jc_pattern": "NNN",
+    "macao_pattern": "DNU"
+  }
+}
