@@ -461,8 +461,8 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     # ══════════════════════════════════════════════════════════════
     if form is not None:
         combined_avg = form.get('combined_avg', 0)
-        g0 = features.get('0球')
-        g3_val = features.get('3球')
+        g0 = features.get('0球')  # 用初盘
+        g3_val = features.get('3球')  # 用初盘
         g3_change = features.get('3球_变化', 0)
         
         # 计算初始3球赔率
@@ -478,12 +478,12 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             if g3_val > 3.50:
                 # 升赔推离
                 signals.append(('排除3球', '-15', f'初始3球{initial_g3:.2f}>3.50→当前升至{g3_val}↑+0球{g0}>13'));
-                warnings.append(f'🚫 排除3球！初始{initial_g3:.2f}>3.50，当前升至{g3_val}（升赔推离）');
+                warnings.append(f'🚫 排除3球！初盘{initial_g3:.2f}>3.50，当前升至{g3_val}（升赔推离）');
                 reasons.append(f'排除3球：初始3球{initial_g3:.2f}>3.50，庄家不想要3球')
             else:
                 # 降赔诱导到黄金区间
                 signals.append(('排除3球', '-15', f'初始3球{initial_g3:.2f}>3.50→当前降至{g3_val}↓+0球{g0}>13'));
-                warnings.append(f'🚫 排除3球！初始{initial_g3:.2f}>3.50，被降赔到{g3_val}（诱导降赔）');
+                warnings.append(f'🚫 排除3球！初盘{initial_g3:.2f}>3.50，被降赔到{g3_val}（诱导降赔）');
                 reasons.append(f'排除3球：初始3球{initial_g3:.2f}>3.50，被降赔诱导到{g3_val}，是诱导降赔陷阱')
 
     # ══════════════════════════════════════════════════════════════
@@ -491,12 +491,12 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     # ══════════════════════════════════════════════════════════════
     if form is not None:
         combined_avg = form.get('combined_avg', 0)
-        g0 = features.get('0球')
-        g2 = features.get('2球')
+        g0 = features.get('0球')  # 用初盘
+        g2 = features.get('2球')  # 用初盘
+        g4 = features.get('4球')  # 用初盘
         g2_ch = features.get('2球变化')
-        g4 = features.get('4球')
         g4_ch = features.get('4球变化')
-        hh_l = features.get('让负')  # 让负赔率
+        hh_l = features.get('让负')
         rq = features.get('让球')
         
         # 规则A(宽版): 近况2.0~2.5 + 0球13~18 → 排除2球 (0/11, 100%准确)
@@ -506,17 +506,15 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
             warnings.append(f'🚫 排除2球！近况{combined_avg:.1f}+0球{g0:.0f}(13-18)，历史0%命中');
             reasons.append(f'排除2球：近况{combined_avg:.1f}+0球{g0:.0f}(13-18)，100%准确')
         
-        # 规则B: 近况<2.5 + 0球<10 + 初始2球<3.3 + 初始4球>=6.5 → 排除2球
+        # 规则B: 近况<2.5 + 0球<10 + 2球<3.3 + 4球>=6.5 + 主让-1 → 排除2球 (1/12=8.3%)
         if g0 is not None and g0 < 10 and g2 is not None and g4 is not None:
-            g2_ini = g2 / (1 + g2_ch / 100) if g2_ch else g2
-            g4_ini = g4 / (1 + g4_ch / 100) if g4_ch else g4
-            
-            if (combined_avg < 2.5 and 
-                g2_ini < 3.3 and 
-                g4_ini >= 6.5):
-                signals.append(('🚫排除2球', '-10', f'初始2球{g2_ini:.2f}<3.3+初始4球{g4_ini:.1f}≥6.5，历史17.6%命中'))
-                warnings.append(f'🚫 排除2球！初始2球{g2_ini:.2f}<3.3+初始4球{g4_ini:.1f}≥6.5')
-                reasons.append(f'排除2球：初始2球{g2_ini:.2f}<3.3+初始4球{g4_ini:.1f}≥6.5，2球率17.6%')
+            if (combined_avg < 2.5 and
+                g2 < 3.3 and
+                g4 >= 6.5 and
+                rq == '-1'):
+                signals.append(('🚫排除2球', '-10', f'2球{g2:.2f}<3.3+4球{g4:.1f}≥6.5+主让-1，历史2球率8.3%'))
+                warnings.append(f'🚫 排除2球！2球{g2:.2f}<3.3+4球{g4:.1f}≥6.5+主让-1')
+                reasons.append(f'排除2球：2球{g2:.2f}<3.3+4球{g4:.1f}≥6.5+主让-1，2球率仅8.3%')
         
         # 规则C: 主让-1 + 让负>=2.0 + 0球10~15 → 排除2球 (3/30=10%)
         if (rq == '-1' and hh_l is not None and hh_l >= 2.0 and
@@ -575,8 +573,8 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     # ══════════════════════════════════════════════════════════════
     if form is not None:
         combined_avg = form.get('combined_avg', 0)
-        g0_val = features.get('0球')
-        g4_val = features.get('4球')
+        g0_val = features.get('0球')  # 用初盘
+        g4_val = features.get('4球')  # 用初盘
         
         # 规则A: 近况均值<2.0 → 排除4球 (0/12=0%)
         if combined_avg < 2.0:
@@ -585,12 +583,13 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         
         # 规则B: 0球>30 → 排除4球 (1/19=5.3%)
         if g0_val is not None and g0_val > 30:
-            signals.append(('🚫排除4球', '-8', f'0球={g0_val}>30，历史4球率5.3%(1/19)'))
-            warnings.append(f'🚫 排除4球！0球={g0_val}>30极高')
+            signals.append(('🚫排除4球', '-8', f'0球初盘={g0_val}>30，历史4球率5.3%(1/19)'))
+            warnings.append(f'🚫 排除4球！0球初盘={g0_val}>30极高')
         
         # 规则C: 4球赔率>6.0 → 排除4球 (5/75=6.7%)
         if g4_val is not None and g4_val > 6.0:
-            signals.append(('🚫排除4球', '-8', f'4球={g4_val}>6.0，历史4球率6.7%(5/75)'))
+            signals.append(('🚫排除4球', '-8', f'4球赔率={g4_val}>6.0，历史4球率6.7%(5/75)'))
+            warnings.append(f'🚫 排除4球！4球赔率={g4_val}>6.0')
             warnings.append(f'🚫 排除4球！4球赔率={g4_val}>6.0')
 
     # ══════════════════════════════════════════════════════════════
@@ -598,7 +597,7 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     # ══════════════════════════════════════════════════════════════
     if form is not None:
         combined_avg = form.get('combined_avg', 0)
-        g1_val = features.get('1球')
+        g1_val = features.get('1球')  # 用初盘
         
         # 近况均值>=3.5 → 排除1球 (6/79=7.6%)
         if combined_avg >= 3.5:
@@ -607,8 +606,8 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         
         # 1球赔率>8.0 → 排除1球 (4/45=8.9%)
         if g1_val is not None and g1_val > 8.0:
-            signals.append(('🚫排除1球', '-5', f'1球赔率={g1_val}>8.0，历史1球率8.9%(4/45)'))
-            warnings.append(f'🚫 排除1球！1球赔率={g1_val}>8.0')
+            signals.append(('🚫排除1球', '-5', f'1球={g1_val}>8.0，历史1球率8.9%(4/45)'))
+            warnings.append(f'🚫 排除1球！1球={g1_val}>8.0')
 
     # 综合评分
     def ps(s):
@@ -1332,7 +1331,7 @@ def recommend_exclude_double_pick(features, match_data=None):
 
 
 # ============================================================
-# 黄金2球预测函数（基于0=10规律）
+# 参考2球预测函数（基于0=10规律）
 # 条件：0球=10 + 2球赔率区间 + 近况特征
 # ============================================================
 
@@ -1363,8 +1362,8 @@ def predict_1goals(features: Dict[str, Any]) -> Dict[str, Any]:
     - 1球3.0-4.0+0球<10+主让-1 → 44.8%（29场）
     - 近况均值>=3.5 → 7.6%（79场）排除
     """
-    g1 = features.get('1球')
-    g0 = features.get('0球')
+    g1 = features.get('1球')  # 用初盘
+    g0 = features.get('0球')  # 用初盘
     form = features.get('近况')
     rq = features.get('让球')
     
@@ -1387,7 +1386,7 @@ def predict_1goals(features: Dict[str, Any]) -> Dict[str, Any]:
         golden_1 = True
         result['hit_rate'] = 37.2
         result['sample_size'] = 43
-        result['reason'] = f'1球赔率={g1}(3.0-4.0黄金区间)'
+        result['reason'] = f'1球={g1}(3.0-4.0黄金区间)'
         
         # 增强：0球<10 + 主让-1
         if g0 is not None and g0 < 10 and rq == '-1':
@@ -1413,7 +1412,7 @@ def predict_1goals(features: Dict[str, Any]) -> Dict[str, Any]:
 
 def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
     """
-    黄金2球预测函数
+    参考2球预测函数
     
     核心规律（基于262场回测）:
     - 0=10 + 2球3.1-3.3 → 2球率 43%（21场验证）
@@ -1434,8 +1433,8 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
         'sample_size': 样本数,
     }
     """
-    g0 = features.get('0球')
-    g2 = features.get('2球')
+    g0 = features.get('0球')  # 用初盘
+    g2 = features.get('2球')  # 用初盘
     form = features.get('近况')
     hw = features.get('had_胜')   # HAD主胜赔
     hd = features.get('had_平')   # HAD平赔
@@ -1460,18 +1459,21 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
     # 近况分析
     combined_avg = form.get('combined_avg') if form else None
     
-    # ── 黄金2球判断 ──
+    # ── 参考2球判断 ──
     golden_2 = False
     golden_reason = []
     
     # 条件1: 0球=10 或 0球=23
     if g0 == 10:
-        # 0=10 + 2球3.1-3.3
+        # 0=10 + 2球3.1-3.3 + HAD主胜筛选
         if g2 is not None and 3.1 <= g2 <= 3.3:
-            golden_2 = True
-            golden_reason.append(f'0球={g0} + 2球={g2}(3.1-3.3区间)')
-            result['hit_rate'] = 43.0
-            result['sample_size'] = 9
+            if hw is not None and 1.8 <= hw < 2.5:  # 仅均衡实力有效
+                golden_2 = True
+                golden_reason.append(f'0球={g0} + 2球={g2}(3.1-3.3区间)')
+                result['hit_rate'] = 42.9
+                result['sample_size'] = 7
+            elif hw is not None and hw < 1.8:  # 极强队排除
+                result['warnings'].append(f'排除2球：0球=10+2球3.1-3.3+HAD主胜{hw}<1.8(0/2)')
         elif g2 is not None and 2.9 <= g2 < 3.1:
             # 稍宽区间
             golden_2 = True
@@ -1502,18 +1504,18 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
         result['recommendation'] = '关注2球'
         result['reason'] = ' | '.join(golden_reason)
         
-        # ── v2.4增强: 黄金2球情境化判断 (2026-05-01回测) ──
-        # 0球=10子组: HAD主胜<2.0 → 排除2球 (0/3)
-        if g0 == 10 and hw is not None and hw < 2.0:
+        # ── v2.4增强: 参考2球情境化判断 ──
+        # HAD主胜<1.8 → 排除2球 (0/2)
+        if g0 == 10 and hw is not None and hw < 1.8:
             result['recommendation'] = '排除2球'
-            result['reason'] = f'黄金2球+HAD主胜{hw}<2.0，主队过强，历史2球率0%(0/3)'
-            result['warnings'].append(f'排除2球：黄金2球+HAD主胜{hw}<2.0')
+            result['reason'] = f'参考2球+HAD主胜{hw}<1.8，主队过强，历史2球率0%(0/2)'
+            result['warnings'].append(f'排除2球：参考2球+HAD主胜{hw}<1.8')
             result['hit_rate'] = 0.0
-            result['sample_size'] = 3
+            result['sample_size'] = 2
         # 0球=10子组: HAD胜2.0-2.5 + 客近况>3.0 → 排除2球 (0/3)
         elif g0 == 10 and hw is not None and 2.0 <= hw < 2.5 and away_avg is not None and away_avg > 3.0:
             result['recommendation'] = '排除2球'
-            result['reason'] = f'黄金2球+HAD胜{hw}+客近况{away_avg:.1f}>3.0，历史2球率0%(0/3)'
+            result['reason'] = f'参考2球+HAD胜{hw}+客近况{away_avg:.1f}>3.0，历史2球率0%(0/3)'
             result['warnings'].append(f'排除2球：客近况{away_avg:.1f}>3.0')
             result['hit_rate'] = 0.0
             result['sample_size'] = 3
@@ -1526,7 +1528,7 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
         # 0球=23子组: 2球=4.4 + 受让+1 → 排除 (0/2)
         elif g0 == 23 and g2 is not None and g2 == 4.4 and rq == '+1':
             result['recommendation'] = '排除2球'
-            result['reason'] = f'黄金2球+0球=23+2球=4.4+受让+1，历史2球率0%(0/2)'
+            result['reason'] = f'参考2球+0球=23+2球=4.4+受让+1，历史2球率0%(0/2)'
             result['warnings'].append(f'排除2球：0球=23+2球=4.4+受让+1')
             result['hit_rate'] = 0.0
             result['sample_size'] = 2
@@ -1536,11 +1538,11 @@ def predict_2goals(features: Dict[str, Any]) -> Dict[str, Any]:
             result['hit_rate'] = 66.7
             result['sample_size'] = 6
             result['signals'].append('0球=23子组，历史66.7%命中')
-        # 默认保留黄金2球信号，不再因近况降级
+        # 默认保留参考2球信号，不再因近况降级
         else:
-            result['signals'].append(f'黄金2球整体命中率40%(20场)')
+            result['signals'].append(f'参考2球整体命中率40%(20场)')
     else:
-        # 非黄金2球，检查是否应排除
+        # 非参考2球，检查是否应排除
         if combined_avg is not None and combined_avg >= 2.5:
             result['recommendation'] = '排除2球'
             result['reason'] = f'近况均值{combined_avg}≥2.5，2球概率低'
@@ -1585,8 +1587,8 @@ def predict_4goals(features: Dict[str, Any]) -> Dict[str, Any]:
         'sample_size': 样本数,
     }
     """
-    g0 = features.get('0球')
-    g4 = features.get('4球')
+    g0 = features.get('0球')  # 用初盘
+    g4 = features.get('4球')  # 用初盘
     form = features.get('近况')
     
     result = {
@@ -2442,7 +2444,7 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
     2. 黄金3球（4定律同时满足）→ 推荐3球，历史40.8%命中率
     3. 近况3.0-3.5 + 高球多降 + 3球3.5-3.7 → 推荐3球，历史50%命中率
     4. 三条件排除3球 → 排除3球，历史9.1%命中率
-    5. 黄金2球（0球=10 + 2球3.1-3.3）→ 推荐2球，历史43%命中率
+    5. 参考2球（0球=10 + 2球3.1-3.3）→ 推荐2球，历史43%命中率
     6. 黄金4球（0球=30 + 4球4.1-4.5）→ 推荐4球，历史67%命中率
     7. 无高置信度信号 → 建议不投注
 
@@ -2453,7 +2455,7 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
         'hit_rate': 历史命中率%,
         'sample_size': 样本数,
         'reason': 理由,
-        'signal_type': '超级3球' / '黄金3球' / '近况+高球降' / '排除3球' / '黄金2球' / '黄金4球' / '无信号',
+        'signal_type': '超级3球' / '黄金3球' / '近况+高球降' / '排除3球' / '参考2球' / '黄金4球' / '无信号',
         'is_bet': True / False,  # 是否建议投注
     }
     """
@@ -2609,15 +2611,15 @@ def get_final_recommendation(features: Dict[str, Any], g3_pred: Dict[str, Any],
 
     # ── 已有规律: 近况偏低(<2.5) + 高球多降 → 关注2球，历史37.9% ──
     if (combined_avg is not None and combined_avg < 2.5 and drop_count):
-        # 检查黄金2球条件
+        # 检查参考2球条件
         if g2_pred and g2_pred.get('is_golden_2'):
             return _make_result({
                 'recommendation': '2球',
                 'confidence': 60,
                 'hit_rate': g2_pred.get('hit_rate', 43),
                 'sample_size': g2_pred.get('sample_size', 9),
-                'reason': f'黄金2球：{g2_pred.get("reason", "")}',
-                'signal_type': '黄金2球',
+                'reason': f'参考2球：{g2_pred.get("reason", "")}',
+                'signal_type': '参考2球',
                 'is_bet': True,
             })
         else:

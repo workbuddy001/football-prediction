@@ -28,6 +28,70 @@ def get_stats_engine():
     return _stats_engine
 DATA_DIR = 'sporttery_data'
 SCORES_FILE = '分析模板/_scores.json'
+REC_STATS_FILE = '分析模板/_rec_stats.json'
+
+def load_rec_stats():
+    try:
+        with open(REC_STATS_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return {}
+
+def save_rec_stats(stats):
+    with open(REC_STATS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(stats, f, ensure_ascii=False, indent=2)
+
+def get_accumulated_stats():
+    """从_rec_stats.json计算各规则的实盘验证数据（仅统计按钮点击的场次）"""
+    stats = load_rec_stats()
+    acc = {}
+    for mid, entry in stats.items():
+        tg = entry.get('total_goals', -1)
+        for rule in entry.get('rules', []):
+            t = rule['type']
+            target = rule.get('target_goals', -1) if 'target_goals' in rule else 0
+            is_hit = (tg == target)
+            if t not in acc:
+                acc[t] = {'hits': 0, 'total': 0}
+            acc[t]['total'] += 1
+            if is_hit:
+                acc[t]['hits'] += 1
+    return acc
+
+def apply_accumulated_stats(match_data):
+    """在match数据中追加推荐统计摘要（不覆盖现有命中率）"""
+    acc_stats = get_accumulated_stats()
+    pd = match_data.get('g3_prediction', {})
+    
+    summaries = {}
+    for key, rt in [('golden_1goals', 'golden_1goals'), ('golden_2goals', 'golden_2goals'), ('golden_4goals', 'golden_4goals')]:
+        gold = pd.get(key)
+        if gold and isinstance(gold, dict) and rt in acc_stats:
+            s = acc_stats[rt]
+            pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
+            summaries[key] = f'实盘验证: {s["hits"]}/{s["total"]} ({pct}%)'
+
+    def _fmt_stats(s, name=''):
+        pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
+        label = f'({name})' if name else ''
+        return f'实盘验证{label}: {s["hits"]}/{s["total"]} ({pct}%)'
+    
+    # 排除规则统计
+    exclude_map = {
+        'exclude_2ball_A': 'exclude_2ball_A', 'exclude_2ball_B': 'exclude_2ball_B', 'exclude_2ball_C': 'exclude_2ball_C',
+        'exclude_3ball_A': 'exclude_3ball_A',
+        'exclude_4ball_A': 'exclude_4ball_A', 'exclude_4ball_B': 'exclude_4ball_B', 'exclude_4ball_C': 'exclude_4ball_C',
+        'exclude_1ball_A': 'exclude_1ball_A', 'exclude_1ball_B': 'exclude_1ball_B',
+        'final_3gold': 'final_3gold', 'final_3gen': 'final_3gen',
+    }
+    exclude_summaries = {}
+    for ek, rt in exclude_map.items():
+        if rt in acc_stats:
+            s = acc_stats[rt]
+            exclude_summaries[ek] = _fmt_stats(s)
+    
+    if summaries or exclude_summaries:
+        pd['_rec_stats'] = {'golden': summaries, 'exclude': exclude_summaries}
 
 # ─────────────────────────────────────────────────────────────
 #  比分记录文件读写
@@ -856,6 +920,9 @@ HTML_TEMPLATE = '''
         .btn-refresh:hover { background: #c73e54; }
         .btn-ai { background: #8b5cf6; color: #fff; border: 1px solid #7c3aed; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
         .btn-ai:hover { background: #7c3aed; }
+        .btn-rec-stats { background: #059669; color: #fff; border: 1px solid #047857; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+        .btn-rec-stats:hover { background: #047857; }
+        .btn-rec-stats.done { background: #166534; border-color: #15803d; cursor: default; }
         .match-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 20px; }
         .match-card { background: #16213e; border-radius: 12px; padding: 20px; border: 1px solid #0f3460; transition: all 0.3s; }
         .match-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
@@ -1428,23 +1495,21 @@ HTML_TEMPLATE = '''
                         ${m.match_info.away_team || '未知'}
                     </div>
                     
-                    ${analysis.prediction !== '未知' ? `
-                    <div class="prediction-box">
-                        <div class="prediction-title">预测推荐</div>
-                        <div class="prediction-value">
-                            ${analysis.prediction}
-                            <span class="confidence ${confClass}">${analysis.confidence === 3 ? '高' : analysis.confidence === 2 ? '中' : '低'}置信</span>
-                        </div>
-                    </div>
-                    ` : ''}
-
                     <!-- 3球预测 -->
                     ${m.g3_prediction ? `
                     <div class="g3-prediction-box${m.g3_prediction.golden_3goals ? ' golden-box' : ''}">
-                        <div class="g3-prediction-title">⚽ 总进球预测${m.g3_prediction.golden_3goals ? ' <span class="golden-badge">⭐ 黄金3球</span>' : ''}</div>
-                        <div class="g3-prediction-value ${m.g3_prediction.recommendation === '关注3球' ? 'rec-focus' : m.g3_prediction.recommendation === '排除3球' ? 'rec-exclude' : 'rec-watch'}">
-                            ${m.g3_prediction.recommendation}
-                            <span class="g3-score">评分: ${m.g3_prediction.score > 0 ? '+' : ''}${m.g3_prediction.score}</span>
+                        ${m.near_form && m.near_form.home !== null ? `
+                        <div style="font-size:13px;color:#e0e0e0;margin-bottom:6px;text-align:center;font-weight:bold">📊 近况: 主${m.near_form.home.toFixed(1)}/客${m.near_form.away.toFixed(1)}球 (近5场)</div>
+                        ` : ''}
+                        <div class="g3-odds-info">
+                            3球赔率: <strong>${m.g3_prediction.features['3球'] || '-'}</strong>
+                            ${m.g3_prediction.features['区间'] ? `<span class="g3-tier">区间${m.g3_prediction.features['区间']}</span>` : ''}
+                            &nbsp;|&nbsp;
+                            0球: ${m.g3_prediction.features['0球'] || '-'}
+                            &nbsp;|&nbsp;
+                            1球: ${m.g3_prediction.features['1球'] || '-'}
+                            &nbsp;|&nbsp;
+                            2球: ${m.g3_prediction.features['2球'] || '-'}
                         </div>
                         ${m.g3_prediction.golden_3goals && m.g3_prediction.golden_reason ? `
                         <div class="golden-reason">
@@ -1488,9 +1553,9 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
                             <div class="g3-exclude-banner-text" style="color:#86efac;">🚫 排除2球 - 近况2.0-2.5+0球13-18，历史100%准确(0/11)</div>
                         </div>` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('初始2球')) ? `
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('排除2球') && w.includes('2球') && w.includes('4球') && w.includes('主让-1')) ? `
                         <div class="g3-exclude-banner" style="border-color:#f59e0b;background:linear-gradient(135deg,rgba(245,158,11,0.25),rgba(234,88,12,0.15));">
-                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🚫 排除2球 - 初始2球<3.3+初始4球>=6.5，历史17.6%命中</div>
+                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🚫 排除2球 - 2球<3.3+4球>=6.5+主让-1，历史2球率8.3%</div>
                         </div>` : ''}
                         ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('排除2球') && s[2].includes('主让-1+让负')) ? `
                         <div class="g3-exclude-banner" style="border-color:#a855f7;background:linear-gradient(135deg,rgba(168,85,247,0.25),rgba(147,51,234,0.15));">
@@ -1535,10 +1600,14 @@ HTML_TEMPLATE = '''
                         ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负+3球黄金' ? `
                         <div class="g3-exclude-banner" style="border-color:#ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.22),rgba(184,134,11,0.12));">
                             <div class="g3-exclude-banner-text" style="color:#ffd700;">🎯 让负1.50-1.70+3球3.3-3.5 → 历史55.6%(10/18) | 比分:2:1/1:2/3:0</div>
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gold ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gold}</div>` : ''}
                         </div>` : ''}
                         ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负区间3球' ? `
                         <div class="g3-exclude-banner" style="border-color:#fbbf24;background:linear-gradient(135deg,rgba(251,191,36,0.18),rgba(217,119,6,0.1));">
                             <div class="g3-exclude-banner-text" style="color:#fde68a;">🎯 让负1.50-1.70+主让-1 → 通用3球信号 历史35.7%(25/70)</div>
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gen ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gen}</div>` : ''}
                         </div>` : ''}
                         ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '排除3球(客近况极低)' ? `
                         <div class="g3-exclude-banner">
@@ -1552,38 +1621,6 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner">
                             <div class="g3-exclude-banner-text">🚫 排除3球 - 0球>=15+客近况<2.5 历史3球率11.1%(2/18)</div>
                         </div>` : ''}
-                        ${m.g3_prediction.features['3球'] ? `
-                        <div class="g3-odds-info">
-                            3球赔率: <strong>${m.g3_prediction.features['3球']}</strong>
-                            ${m.g3_prediction.features['区间'] ? `<span class="g3-tier">区间${m.g3_prediction.features['区间']}</span>` : ''}
-                            &nbsp;|&nbsp;
-                            0球: ${m.g3_prediction.features['0球'] || '-'}
-                            &nbsp;|&nbsp;
-                            1球: ${m.g3_prediction.features['1球'] || '-'}
-                            &nbsp;|&nbsp;
-                            2球: ${m.g3_prediction.features['2球'] || '-'}
-                        </div>
-                        ` : ''}
-                        ${m.g3_prediction.signals && m.g3_prediction.signals.length > 0 ? `
-                        <div class="g3-signals">
-                            ${m.g3_prediction.signals.map(s => {
-                                let cls = 'signal-neutral';
-                                if (s[0].includes('超级3球')) cls = 'signal-super';
-                                else if (s[0].includes('黄金3球')) cls = 'signal-golden';
-                                else if (s[0].includes('主强客弱') || s[0].includes('客强主弱') || s[0].includes('均衡偏弱')) cls = 'signal-warning';
-                                else if (s[0].includes('关注3球') && s[2].includes('50%')) cls = 'signal-high-form';
-                                else if (s[0].includes('关注3球')) cls = 'signal-high-form';
-                                else if (s[0].includes('关注2球') || s[0].includes('考虑0球')) cls = 'signal-low-form';
-                                else if (s[1].startsWith('+')) cls = 'signal-plus';
-                                else if (s[1].startsWith('-')) cls = 'signal-minus';
-                                return `<div class="g3-signal-item ${cls}">
-                                    <span class="g3-signal-tag">${s[0]}</span>
-                                    <span class="g3-signal-score">${s[1]}</span>
-                                    <span class="g3-signal-reason">${s[2]}</span>
-                                </div>`;
-                            }).join('')}
-                        </div>
-                        ` : ''}
                         ${m.g3_prediction.hist_stats && m.g3_prediction.hist_stats.matched_count >= 2 ? `
                         <div class="g3-hist-stats">
                             <div class="hist-stats-header">
@@ -1618,7 +1655,7 @@ HTML_TEMPLATE = '''
                     ` : ''}
 
                     <!-- 最终推荐 -->
-                    ${m.g3_prediction && m.g3_prediction.final_rec ? `
+                    ${m.g3_prediction && m.g3_prediction.final_rec && (m.g3_prediction.final_rec.is_bet || (m.g3_prediction.final_rec.signal_type && m.g3_prediction.final_rec.signal_type !== '关注3球(观望)' && !m.g3_prediction.final_rec.signal_type.includes('观望'))) ? `
                     <div class="final-rec-box ${m.g3_prediction.final_rec.signal_type === '黄金3球+0球20-21' ? 'final-rec-golden-3-20-21' :
                       m.g3_prediction.final_rec.signal_type === '超级3球' ? 'final-rec-super-3' :
                       m.g3_prediction.final_rec.signal_type === '0球20-21+近况2.5-3.5' ? 'final-rec-0-20-21-form' :
@@ -1640,15 +1677,14 @@ HTML_TEMPLATE = '''
                             </div>
                             ${m.g3_prediction.final_rec.hit_rate !== null ? `
                             <div class="final-rec-stats">
-                                历史命中率: <span class="${m.g3_prediction.final_rec.hit_rate >= 50 ? 'hit-rate-high' : m.g3_prediction.final_rec.hit_rate >= 35 ? 'hit-rate-mid' : 'hit-rate-low'}">${m.g3_prediction.final_rec.hit_rate}%</span>
-                                ${m.g3_prediction.final_rec.sample_size ? `(样本${m.g3_prediction.final_rec.sample_size}场)` : '(基于历史统计)'}
+                                回测命中率: <span class="${m.g3_prediction.final_rec.hit_rate >= 50 ? 'hit-rate-high' : m.g3_prediction.final_rec.hit_rate >= 35 ? 'hit-rate-mid' : 'hit-rate-low'}">${m.g3_prediction.final_rec.hit_rate}%</span>
+                                ${m.g3_prediction.final_rec.sample_size ? `(${Math.round(m.g3_prediction.final_rec.hit_rate/100*m.g3_prediction.final_rec.sample_size)}/${m.g3_prediction.final_rec.sample_size}场)` : ''}
                             </div>
                             ` : ''}
-                            ${m.g3_prediction.final_rec.confidence ? `
-                            <div class="final-rec-confidence">
-                                信心指数: ${m.g3_prediction.final_rec.confidence}%
-                            </div>
-                            ` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gold && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负+3球黄金' ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gold}</div>` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gen && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负区间3球' ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gen}</div>` : ''}
                         </div>
                     </div>
                     ` : ''}
@@ -1716,11 +1752,13 @@ HTML_TEMPLATE = '''
                             <span class="hit-rate-high">历史命中率: ${m.g3_prediction.golden_1goals.hit_rate}%</span>
                             ${m.g3_prediction.golden_1goals.sample_size ? `(样本${m.g3_prediction.golden_1goals.sample_size}场)` : ''}
                         </div>` : ''}
+                        ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.golden && m.g3_prediction._rec_stats.golden.golden_1goals ? `
+                        <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.golden.golden_1goals}</div>` : ''}
                         <div style="font-size:11px;color:#94a3b8;margin-top:4px">比分: 1:0 / 0:1</div>
                         ` : ''}
                         ${m.g3_prediction.golden_2goals && m.g3_prediction.golden_2goals.is_golden_2 ? `
                         <div class="golden-2-box">
-                            <div class="golden-recommendation">⭐ 黄金2球信号</div>
+                            <div class="golden-recommendation" style="color:#94a3b8;">📋 参考2球信号</div>
                             <div class="golden-reason">
                                 ${m.g3_prediction.golden_2goals.reason || ''}
                             </div>
@@ -1730,6 +1768,8 @@ HTML_TEMPLATE = '''
                                 ${m.g3_prediction.golden_2goals.sample_size ? `(样本${m.g3_prediction.golden_2goals.sample_size}场)` : ''}
                             </div>
                             ` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.golden && m.g3_prediction._rec_stats.golden.golden_2goals ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.golden.golden_2goals}</div>` : ''}
                         </div>
                         ` : ''}
                         ${m.g3_prediction.golden_4goals && m.g3_prediction.golden_4goals.is_golden_4 ? `
@@ -1744,6 +1784,8 @@ HTML_TEMPLATE = '''
                                 ${m.g3_prediction.golden_4goals.sample_size ? `(样本${m.g3_prediction.golden_4goals.sample_size}场)` : ''}
                             </div>
                             ` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.golden && m.g3_prediction._rec_stats.golden.golden_4goals ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.golden.golden_4goals}</div>` : ''}
                         </div>
                         ` : ''}
                     </div>
@@ -1760,6 +1802,7 @@ HTML_TEMPLATE = '''
                             <button class="btn-review" onclick="doReview('${m.match_id}')">📋 复盘</button>
                             <button class="btn-similar" onclick="showSimilar('${m.match_id}')">🔍 相似</button>
                             <button class="btn-ai" onclick="generateAIPrompt('${m.match_id}')">🧠 AI推理</button>
+                            <button class="btn-rec-stats" id="btn-stats-${m.match_id}" onclick="updateRecStats('${m.match_id}')">📊 推荐统计</button>
                             ${m.g3_prediction && m.g3_prediction.final_rec && m.g3_prediction.final_rec.big3_vs_small3 && m.g3_prediction.final_rec.big3_vs_small3.signal_type ? `
                             <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.big3_vs_small3.signal_type}')">📊 命中率</button>
                             ` : ''}
@@ -2153,6 +2196,144 @@ HTML_TEMPLATE = '''
                 alert('生成失败：' + err.message);
             } finally {
                 btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        // ── 推荐统计（v2.6新增）─────────────────────────────
+        async function updateRecStats(matchId) {
+            const btn = document.getElementById('btn-stats-' + matchId);
+            const homeEl = document.getElementById('home-' + matchId);
+            const awayEl = document.getElementById('away-' + matchId);
+            const homeScore = parseInt(homeEl.value);
+            const awayScore = parseInt(awayEl.value);
+            
+            if (isNaN(homeScore) || isNaN(awayScore)) {
+                alert('请先输入比分再点击推荐统计');
+                return;
+            }
+
+            // 找到对应的match对象
+            const m = window._allMatches ? window._allMatches.find(x => x.match_id == matchId) : null;
+            if (!m || !m.g3_prediction) {
+                alert('数据未加载');
+                return;
+            }
+
+            // 收集触发的规则
+            const rules = [];
+            const pred = m.g3_prediction;
+
+            // 黄金信号
+            if (pred.golden_1goals && pred.golden_1goals.is_golden_1) {
+                rules.push({type: 'golden_1goals', target_goals: 1, hit_rate: pred.golden_1goals.hit_rate || 44.8, sample: pred.golden_1goals.sample_size || 29});
+            }
+            if (pred.golden_2goals && pred.golden_2goals.is_golden_2) {
+                rules.push({type: 'golden_2goals', target_goals: 2, hit_rate: pred.golden_2goals.hit_rate || 40, sample: pred.golden_2goals.sample_size || 20});
+            }
+            if (pred.golden_4goals && pred.golden_4goals.is_golden_4) {
+                rules.push({type: 'golden_4goals', target_goals: 4, hit_rate: pred.golden_4goals.hit_rate || 66.7, sample: pred.golden_4goals.sample_size || 6});
+            }
+
+            // 排除信号（从signals中提取）
+            if (pred.signals) {
+                for (const s of pred.signals) {
+                    const label = s[0]; const desc = s[2] || '';
+                    if (label.includes('排除2球')) {
+                        if (desc.includes('100%准确') || desc.includes('13-18'))
+                            rules.push({type: 'exclude_2ball_A', target_goals: 2, hit_rate: 0.0, sample: 11});
+                        else if (desc.includes('17.6%'))
+                            rules.push({type: 'exclude_2ball_B', target_goals: 2, hit_rate: 17.6, sample: 17});
+                        else if (desc.includes('10%'))
+                            rules.push({type: 'exclude_2ball_C', target_goals: 2, hit_rate: 10.0, sample: 30});
+                    }
+                    if (label.includes('排除3球') && desc.includes('18.9%'))
+                        rules.push({type: 'exclude_3ball_A', target_goals: 3, hit_rate: 18.9, sample: 37});
+                }
+            }
+            // 排除4球（从warnings提取）
+            if (pred.warnings) {
+                for (const w of pred.warnings) {
+                    if (w.includes('排除4球') && w.includes('近况')) {
+                        rules.push({type: 'exclude_4ball_A', target_goals: 4, hit_rate: 0.0, sample: 12});
+                    }
+                    if (w.includes('排除4球') && w.includes('0球=')) {
+                        rules.push({type: 'exclude_4ball_B', target_goals: 4, hit_rate: 5.3, sample: 19});
+                    }
+                    if (w.includes('排除4球') && w.includes('4球赔率')) {
+                        rules.push({type: 'exclude_4ball_C', target_goals: 4, hit_rate: 6.7, sample: 75});
+                    }
+                    if (w.includes('排除1球') && w.includes('近况均值')) {
+                        rules.push({type: 'exclude_1ball_A', target_goals: 1, hit_rate: 7.6, sample: 79});
+                    }
+                    if (w.includes('排除1球') && w.includes('1球赔率=')) {
+                        rules.push({type: 'exclude_1ball_B', target_goals: 1, hit_rate: 8.9, sample: 45});
+                    }
+                }
+            }
+            // 最终推荐信号（建议投注板块）
+            if (pred.final_rec && pred.final_rec.signal_type) {
+                if (pred.final_rec.signal_type === '让负+3球黄金') {
+                    rules.push({type: 'final_3gold', target_goals: 3, hit_rate: pred.final_rec.hit_rate || 55.6, sample: pred.final_rec.sample_size || 18});
+                } else if (pred.final_rec.signal_type === '让负区间3球') {
+                    rules.push({type: 'final_3gen', target_goals: 3, hit_rate: pred.final_rec.hit_rate || 35.7, sample: pred.final_rec.sample_size || 70});
+                }
+            }
+
+            if (rules.length === 0) {
+                alert('未检测到触发的推荐规律');
+                return;
+            }
+
+            // 去重
+            const seen = new Set();
+            const uniqueRules = rules.filter(r => {
+                const k = r.type;
+                if (seen.has(k)) return false;
+                seen.add(k);
+                return true;
+            });
+
+            btn.innerHTML = '⏳ 统计中...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/update-rec-stats/' + encodeURIComponent(matchId), {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({home_score: homeScore, away_score: awayScore, rules: uniqueRules})
+                });
+                const data = await res.json();
+                
+                if (!data.success) {
+                    if (data.error && data.error.includes('重复')) {
+                        btn.innerHTML = '✅ 已统计';
+                        btn.classList.add('done');
+                        btn.disabled = true;
+                    } else {
+                        alert('统计失败：' + (data.error || '未知错误'));
+                        btn.innerHTML = '📊 推荐统计';
+                        btn.disabled = false;
+                    }
+                    return;
+                }
+
+                // 显示更新结果
+                let msg = '推荐统计结果:\\n\\n';
+                for (const r of data.updated_rules) {
+                    const typeName = r.type.replace(/_/g, ' ').replace(/([A-D])$/, '');
+                    const dir = r.is_hit ? '✅命中' : '❌不中';
+                    msg += typeName + ': ' + r.old_hit_rate + '%→' + r.new_hit_rate + '% (' + r.old_sample + '→' + r.new_sample + ') ' + dir + '\\n';
+                }
+                msg += '\\n实际比分: ' + homeScore + ':' + awayScore + ' (总' + (homeScore+awayScore) + '球)';
+                alert(msg);
+
+                btn.innerHTML = '✅ 已统计';
+                btn.classList.add('done');
+                btn.disabled = true;
+            } catch (err) {
+                alert('统计失败：' + err.message);
+                btn.innerHTML = '📊 推荐统计';
                 btn.disabled = false;
             }
         }
@@ -4057,6 +4238,14 @@ def _build_match_card(data, api, match_list_cache=None):
         except Exception:
             pass
 
+    # 计算近况数据（精简版和完整版共用）
+    recent_form = None
+    try:
+        rd = _extract_recent_matches(data)
+        recent_form = calc_recent_form(rd)
+    except Exception:
+        pass
+
     if is_light:
         # ── 精简版：只包含卡片和分页需要的数据 ──
         g3_pred = data.get('g3_prediction', {})
@@ -4065,14 +4254,6 @@ def _build_match_card(data, api, match_list_cache=None):
         ttg_change = data.get('ttg_change', {})
         hafu_change = data.get('hafu_change', {})
         exclusion_list = data.get('exclusion_list', [])
-
-        # 计算近况数据
-        recent_form = None
-        try:
-            rd = _extract_recent_matches(data)
-            recent_form = calc_recent_form(rd)
-        except Exception:
-            pass
 
         # 让球平低赔规律分析
         hhad_hint = _analyze_hhad_low_draw(hhad, recent_form, data)
@@ -4158,6 +4339,11 @@ def _build_match_card(data, api, match_list_cache=None):
                 'away_avg': recent_form['away_avg'],
                 'combined_avg': recent_form['combined_avg'],
             } if recent_form else None,
+            # 近况简显
+            'near_form': {
+                'home': recent_form['home_avg'] if recent_form else None,
+                'away': recent_form['away_avg'] if recent_form else None,
+            } if recent_form else None,
             # 让球平低赔规律提示
             'hhad_hint': hhad_hint,
             # 平局信号（所有had.平区间）
@@ -4167,7 +4353,18 @@ def _build_match_card(data, api, match_list_cache=None):
         }
     else:
         # ── 完整版：返回全部字段 ──
-        # 平局信号分析（所有had.平区间均显示）
+        # 近况简显
+        _full_rf = None
+        try:
+            _full_rd = _extract_recent_matches(data)
+            _full_rf = calc_recent_form(_full_rd)
+        except Exception:
+            pass
+        data['near_form'] = {
+            'home': _full_rf['home_avg'] if _full_rf else None,
+            'away': _full_rf['away_avg'] if _full_rf else None,
+        } if _full_rf else None
+        # 平局信号分析
         _full_had = data.get('had', {})
         _full_hhad = data.get('hhad', {})
         data['draw_hint'] = _analyze_draw_signal(_full_had, _full_hhad)
@@ -4278,6 +4475,9 @@ def get_matches():
             pass
 
     matches.sort(key=lambda x: x.get('fetch_time', ''), reverse=True)
+    # 应用累积统计数据覆盖硬编码命中率
+    for m in matches:
+        apply_accumulated_stats(m)
     return jsonify(matches)
 
 @app.route('/api/fetch/<match_id>')
@@ -4474,6 +4674,71 @@ def save_score(match_id):
 
         save_score_record(record)
         return jsonify({'success': True, 'record': record})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/update-rec-stats/<match_id>', methods=['POST'])
+def update_rec_stats(match_id):
+    """更新推荐统计数据（v2.6新增）
+    Body: {
+        "home_score": 1, "away_score": 0,
+        "rules": [
+            {"type": "golden_1goals", "target_goals": 1, "hit_rate": 44.8, "sample": 29},
+            {"type": "exclude_2ball_B", "target_goals": 2, "hit_rate": 17.6, "sample": 17},
+            {"type": "exclude_4ball_A", "target_goals": 4, "hit_rate": 0.0, "sample": 12}
+        ]
+    }
+    返回: updated rules with new hit_rate and sample
+    """
+    try:
+        body = request.get_json() or {}
+        home = int(body.get('home_score', -1))
+        away = int(body.get('away_score', -1))
+        rules = body.get('rules', [])
+        if home < 0 or away < 0:
+            return jsonify({'success': False, 'error': '比分格式错误'}), 400
+
+        total_goals = home + away
+        stats = load_rec_stats()
+
+        # 防止重复统计
+        if match_id in stats:
+            return jsonify({'success': False, 'error': '该比赛已统计过，不能重复提交'}), 400
+
+        updated_rules = []
+        for rule in rules:
+            rule_type = rule.get('type', '')
+            target_goals = rule.get('target_goals', 0)
+            old_hit_rate = rule.get('hit_rate', 0)
+            old_sample = rule.get('sample', 0)
+
+            # 判断：实际总进球是否等于目标进球数（统一逻辑）
+            is_hit = (total_goals == target_goals)
+            
+            new_hit_rate = round((old_hit_rate * old_sample / 100 + (1 if is_hit else 0)) / (old_sample + 1) * 100, 1)
+            new_sample = old_sample + 1
+
+            updated_rules.append({
+                'type': rule_type,
+                'old_hit_rate': old_hit_rate,
+                'new_hit_rate': new_hit_rate,
+                'old_sample': old_sample,
+                'new_sample': new_sample,
+                'is_hit': is_hit,
+                'target_goals': target_goals,  # 用于后续实盘统计
+            })
+
+        # 保存记录
+        stats[match_id] = {
+            'home_score': home,
+            'away_score': away,
+            'total_goals': total_goals,
+            'rules': updated_rules,
+            'time': __import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M'),
+        }
+        save_rec_stats(stats)
+
+        return jsonify({'success': True, 'updated_rules': updated_rules})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 

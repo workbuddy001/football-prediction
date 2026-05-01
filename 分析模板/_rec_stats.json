@@ -1,0 +1,45 @@
+{
+  "2039420": {
+    "home_score": 2,
+    "away_score": 1,
+    "total_goals": 3,
+    "rules": [
+      {
+        "type": "exclude_4ball_C",
+        "old_hit_rate": 6.7,
+        "new_hit_rate": 6.6,
+        "old_sample": 75,
+        "new_sample": 76,
+        "is_hit": false,
+        "target_goals": 4
+      },
+      {
+        "type": "final_3gold",
+        "old_hit_rate": 55.6,
+        "new_hit_rate": 57.9,
+        "old_sample": 18,
+        "new_sample": 19,
+        "is_hit": true,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-01 11:56"
+  },
+  "2039421": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "golden_2goals",
+        "old_hit_rate": 43,
+        "new_hit_rate": 38.7,
+        "old_sample": 9,
+        "new_sample": 10,
+        "is_hit": false,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-01 12:02"
+  }
+}
