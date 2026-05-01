@@ -66,24 +66,46 @@ def apply_accumulated_stats(match_data):
     summaries = {}
     for key, rt in [('golden_1goals', 'golden_1goals'), ('golden_2goals', 'golden_2goals'), ('golden_4goals', 'golden_4goals')]:
         gold = pd.get(key)
-        if gold and isinstance(gold, dict) and rt in acc_stats:
-            s = acc_stats[rt]
-            pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
-            summaries[key] = f'实盘验证: {s["hits"]}/{s["total"]} ({pct}%)'
+        if gold and isinstance(gold, dict):
+            # golden_1goals支持增强/基础两个子类型
+            if key == 'golden_1goals':
+                is_enh = (gold.get('reason', '') or '').find('增强') >= 0
+                rt_key = 'golden_1goals_enhanced' if is_enh else 'golden_1goals_base'
+                if rt_key in acc_stats:
+                    s = acc_stats[rt_key]
+                    pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
+                    summaries[key] = f'实盘验证: {s["hits"]}/{s["total"]} ({pct}%)'
+            # golden_2goals支持多个子类型
+            elif key == 'golden_2goals':
+                reason = gold.get('reason', '') or ''
+                g2type = 'golden_2goals'
+                if reason.find('2.9') >= 0: g2type = 'golden_2goals_29'
+                elif reason.find('0球=23') >= 0: g2type = 'golden_2goals_g023'
+                elif reason.find('3.1') >= 0: g2type = 'golden_2goals_31'
+                if g2type in acc_stats:
+                    s = acc_stats[g2type]
+                    pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
+                    summaries[key] = f'实盘验证: {s["hits"]}/{s["total"]} ({pct}%)'
+            elif rt in acc_stats:
+                s = acc_stats[rt]
+                pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
+                summaries[key] = f'实盘验证: {s["hits"]}/{s["total"]} ({pct}%)'
 
     def _fmt_stats(s, name=''):
         pct = round(s['hits']/s['total']*100, 1) if s['total'] else 0
         label = f'({name})' if name else ''
         return f'实盘验证{label}: {s["hits"]}/{s["total"]} ({pct}%)'
     
-    # 排除规则统计
+    # 排除规则统计 - 固定规则 + 动态final_*规则
     exclude_map = {
         'exclude_2ball_A': 'exclude_2ball_A', 'exclude_2ball_B': 'exclude_2ball_B', 'exclude_2ball_C': 'exclude_2ball_C',
         'exclude_3ball_A': 'exclude_3ball_A',
         'exclude_4ball_A': 'exclude_4ball_A', 'exclude_4ball_B': 'exclude_4ball_B', 'exclude_4ball_C': 'exclude_4ball_C',
         'exclude_1ball_A': 'exclude_1ball_A', 'exclude_1ball_B': 'exclude_1ball_B',
-        'final_3gold': 'final_3gold', 'final_3gen': 'final_3gen',
     }
+    for k in acc_stats:
+        if k.startswith('final_'):
+            exclude_map[k] = k
     exclude_summaries = {}
     for ek, rt in exclude_map.items():
         if rt in acc_stats:
@@ -1608,6 +1630,12 @@ HTML_TEMPLATE = '''
                             <div class="g3-exclude-banner-text" style="color:#fde68a;">🎯 让负1.50-1.70+主让-1 → 通用3球信号 历史35.7%(25/70)</div>
                             ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gen ? `
                             <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gen}</div>` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_0_20_21 && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '0球20-21+近况2.5-3.5' ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_0_20_21}</div>` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_golden_3_20_21 && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '黄金3球+0球20-21' ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_golden_3_20_21}</div>` : ''}
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_form_high_drop && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '近况+高球降' ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_form_high_drop}</div>` : ''}
                         </div>` : ''}
                         ${m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '排除3球(客近况极低)' ? `
                         <div class="g3-exclude-banner">
@@ -1681,10 +1709,13 @@ HTML_TEMPLATE = '''
                                 ${m.g3_prediction.final_rec.sample_size ? `(${Math.round(m.g3_prediction.final_rec.hit_rate/100*m.g3_prediction.final_rec.sample_size)}/${m.g3_prediction.final_rec.sample_size}场)` : ''}
                             </div>
                             ` : ''}
-                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gold && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负+3球黄金' ? `
-                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gold}</div>` : ''}
-                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.exclude && m.g3_prediction._rec_stats.exclude.final_3gen && m.g3_prediction.final_rec && m.g3_prediction.final_rec.signal_type === '让负区间3球' ? `
-                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.exclude.final_3gen}</div>` : ''}
+                            ${(() => {
+                                if (!m.g3_prediction._rec_stats || !m.g3_prediction._rec_stats.exclude || !m.g3_prediction.final_rec) return '';
+                                const st = m.g3_prediction.final_rec.signal_type || '';
+                                const key = 'final_' + (st || 'x').replace(/[^\w\u4e00-\u9fff+\-]/g, '_').replace(/_+/g, '_');
+                                const val = m.g3_prediction._rec_stats.exclude[key];
+                                return val ? `<div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${val}</div>` : '';
+                            })()}
                         </div>
                     </div>
                     ` : ''}
@@ -2224,59 +2255,31 @@ HTML_TEMPLATE = '''
             const rules = [];
             const pred = m.g3_prediction;
 
-            // 黄金信号
+            // 黄金信号 - 区分增强版和基础版
             if (pred.golden_1goals && pred.golden_1goals.is_golden_1) {
-                rules.push({type: 'golden_1goals', target_goals: 1, hit_rate: pred.golden_1goals.hit_rate || 44.8, sample: pred.golden_1goals.sample_size || 29});
+                const isEnh = (pred.golden_1goals.reason || '').includes('增强');
+                const type = isEnh ? 'golden_1goals_enhanced' : 'golden_1goals_base';
+                rules.push({type: type, target_goals: 1, hit_rate: pred.golden_1goals.hit_rate || (isEnh ? 44.8 : 37.2), sample: pred.golden_1goals.sample_size || (isEnh ? 29 : 43)});
             }
             if (pred.golden_2goals && pred.golden_2goals.is_golden_2) {
-                rules.push({type: 'golden_2goals', target_goals: 2, hit_rate: pred.golden_2goals.hit_rate || 40, sample: pred.golden_2goals.sample_size || 20});
+                const reason = pred.golden_2goals.reason || '';
+                let g2type = 'golden_2goals'; // default
+                if (reason.includes('2.9')) g2type = 'golden_2goals_29';
+                else if (reason.includes('0球=23')) g2type = 'golden_2goals_g023';
+                else if (reason.includes('3.1')) g2type = 'golden_2goals_31';
+                rules.push({type: g2type, target_goals: 2, hit_rate: pred.golden_2goals.hit_rate || 40, sample: pred.golden_2goals.sample_size || 20});
             }
             if (pred.golden_4goals && pred.golden_4goals.is_golden_4) {
                 rules.push({type: 'golden_4goals', target_goals: 4, hit_rate: pred.golden_4goals.hit_rate || 66.7, sample: pred.golden_4goals.sample_size || 6});
             }
 
-            // 排除信号（从signals中提取）
-            if (pred.signals) {
-                for (const s of pred.signals) {
-                    const label = s[0]; const desc = s[2] || '';
-                    if (label.includes('排除2球')) {
-                        if (desc.includes('100%准确') || desc.includes('13-18'))
-                            rules.push({type: 'exclude_2ball_A', target_goals: 2, hit_rate: 0.0, sample: 11});
-                        else if (desc.includes('17.6%'))
-                            rules.push({type: 'exclude_2ball_B', target_goals: 2, hit_rate: 17.6, sample: 17});
-                        else if (desc.includes('10%'))
-                            rules.push({type: 'exclude_2ball_C', target_goals: 2, hit_rate: 10.0, sample: 30});
-                    }
-                    if (label.includes('排除3球') && desc.includes('18.9%'))
-                        rules.push({type: 'exclude_3ball_A', target_goals: 3, hit_rate: 18.9, sample: 37});
-                }
-            }
-            // 排除4球（从warnings提取）
-            if (pred.warnings) {
-                for (const w of pred.warnings) {
-                    if (w.includes('排除4球') && w.includes('近况')) {
-                        rules.push({type: 'exclude_4ball_A', target_goals: 4, hit_rate: 0.0, sample: 12});
-                    }
-                    if (w.includes('排除4球') && w.includes('0球=')) {
-                        rules.push({type: 'exclude_4ball_B', target_goals: 4, hit_rate: 5.3, sample: 19});
-                    }
-                    if (w.includes('排除4球') && w.includes('4球赔率')) {
-                        rules.push({type: 'exclude_4ball_C', target_goals: 4, hit_rate: 6.7, sample: 75});
-                    }
-                    if (w.includes('排除1球') && w.includes('近况均值')) {
-                        rules.push({type: 'exclude_1ball_A', target_goals: 1, hit_rate: 7.6, sample: 79});
-                    }
-                    if (w.includes('排除1球') && w.includes('1球赔率=')) {
-                        rules.push({type: 'exclude_1ball_B', target_goals: 1, hit_rate: 8.9, sample: 45});
-                    }
-                }
-            }
-            // 最终推荐信号（建议投注板块）
-            if (pred.final_rec && pred.final_rec.signal_type) {
-                if (pred.final_rec.signal_type === '让负+3球黄金') {
-                    rules.push({type: 'final_3gold', target_goals: 3, hit_rate: pred.final_rec.hit_rate || 55.6, sample: pred.final_rec.sample_size || 18});
-                } else if (pred.final_rec.signal_type === '让负区间3球') {
-                    rules.push({type: 'final_3gen', target_goals: 3, hit_rate: pred.final_rec.hit_rate || 35.7, sample: pred.final_rec.sample_size || 70});
+            // 最终推荐信号（建议投注板块）- 通用收集所有is_bet信号
+            if (pred.final_rec) {
+                const st = pred.final_rec.signal_type || '';
+                if (pred.final_rec.is_bet) {
+                    // 保留中文、字母、数字、+、-，其余替换为_
+                    const typeKey = 'final_' + (st || 'unknown').replace(/[^\w\u4e00-\u9fff+\-]/g, '_').replace(/_+/g, '_');
+                    rules.push({type: typeKey, target_goals: 3, hit_rate: pred.final_rec.hit_rate || 50, sample: pred.final_rec.sample_size || 10});
                 }
             }
 
@@ -2331,6 +2334,12 @@ HTML_TEMPLATE = '''
                 btn.innerHTML = '✅ 已统计';
                 btn.classList.add('done');
                 btn.disabled = true;
+                // 重新加载比赛列表以更新实盘验证显示
+                const ts2 = Date.now();
+                const fres = await fetch('/api/matches?light=1&t=' + ts2);
+                const fdata = await fres.json();
+                window._allMatches = fdata;
+                renderPage(window._currentPage || 1);
             } catch (err) {
                 alert('统计失败：' + err.message);
                 btn.innerHTML = '📊 推荐统计';
