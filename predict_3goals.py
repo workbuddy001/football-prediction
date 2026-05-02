@@ -672,6 +672,53 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
         warnings.append(f'👍 实操规律：推荐2球！0球<12+HAD>=2.8+3球>=3.8，历史100%【只有2球变化命中率排第一时参考】')
         reasons.append(f'实操规律：推荐2球（0球{g0_val:.1f}+HAD胜{had_win:.2f}+3球{g3_val:.2f}）【只有2球变化命中率排第一时参考】')
     
+    # ════════════════════════════════════════════════════════
+    # 新增：排除1球规律（2026-05-02新增，与变化无关）
+    # ════════════════════════════════════════════════════════
+    
+    # 获取更多特征值
+    had_draw = features.get('had_平')
+    g4_val = features.get('4球')
+    
+    # 1球规律#1：3球<3.5 + 1球>5.0 → 排除1球 (0/23, 0%)
+    if (g3_val is not None and g1_val is not None and
+        g3_val < 3.5 and g1_val > 5.0):
+        signals.append(('实操规律-排除1球', '-10', f'3球{g3_val:.2f}<3.5+1球{g1_val:.2f}>5.0'))
+        warnings.append(f'🔥 实操规律：排除1球！3球<3.5+1球>5.0，历史0%(0/23)')
+        reasons.append(f'实操规律：排除1球（3球{g3_val:.2f}<3.5+1球{g1_val:.2f}>5.0）')
+    
+    # 1球规律#2：1球>4.5 + 2球<3.5 → 排除1球 (0/10, 0%)
+    if (g1_val is not None and g2_val is not None and
+        g1_val > 4.5 and g2_val < 3.5):
+        signals.append(('实操规律-排除1球', '-10', f'1球{g1_val:.2f}>4.5+2球{g2_val:.2f}<3.5'))
+        warnings.append(f'🔥 实操规律：排除1球！1球>4.5+2球<3.5，历史0%(0/10)')
+        reasons.append(f'实操规律：排除1球（1球{g1_val:.2f}>4.5+2球{g2_val:.2f}<3.5）')
+    
+    # ════════════════════════════════════════════════════════
+    # 新增：排除4球规律（2026-05-02新增，与变化无关）
+    # ════════════════════════════════════════════════════════
+    
+    # 4球规律#1：0球<10 + 4球>6.0 → 排除4球 (0/9, 0%)
+    if (g0_val is not None and g4_val is not None and
+        g0_val < 10 and g4_val > 6.0):
+        signals.append(('实操规律-排除4球', '-10', f'0球{g0_val:.1f}<10+4球{g4_val:.2f}>6.0'))
+        warnings.append(f'🔥 实操规律：排除4球！0球<10+4球>6.0，历史0%(0/9)')
+        reasons.append(f'实操规律：排除4球（0球{g0_val:.1f}<10+4球{g4_val:.2f}>6.0）')
+    
+    # 4球规律#2：HAD平赔<3.0 + 4球>6.0 → 排除4球 (0/5, 0%)
+    if (had_draw is not None and g4_val is not None and
+        had_draw < 3.0 and g4_val > 6.0):
+        signals.append(('实操规律-排除4球', '-10', f'HAD平{had_draw:.2f}<3.0+4球{g4_val:.2f}>6.0'))
+        warnings.append(f'🔥 实操规律：排除4球！HAD平<3.0+4球>6.0，历史0%(0/5)')
+        reasons.append(f'实操规律：排除4球（HAD平{had_draw:.2f}<3.0+4球{g4_val:.2f}>6.0）')
+    
+    # 4球规律#3：0球<10 + 2球<3.5 + 4球>6.0 → 排除4球 (0/9, 0%)
+    if (g0_val is not None and g2_val is not None and g4_val is not None and
+        g0_val < 10 and g2_val < 3.5 and g4_val > 6.0):
+        signals.append(('实操规律-排除4球', '-10', f'0球{g0_val:.1f}<10+2球{g2_val:.2f}<3.5+4球{g4_val:.2f}>6.0'))
+        warnings.append(f'🔥 实操规律：排除4球！0球<10+2球<3.5+4球>6.0，历史0%(0/9)')
+        reasons.append(f'实操规律：排除4球（0球{g0_val:.1f}<10+2球{g2_val:.2f}<3.5+4球{g4_val:.2f}>6.0）')
+    
     # 推荐
     if score >= 15:
         rec, conf = '关注3球', min(85, 55 + score)

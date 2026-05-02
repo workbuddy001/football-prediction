@@ -1654,6 +1654,14 @@ HTML_TEMPLATE = '''
                             ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.practical && m.g3_prediction._rec_stats.practical.practical_recommend_2 ? `
                             <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.practical.practical_recommend_2}</div>` : ''}
                         </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('实操规律') && w.includes('排除1球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🔥 实操规律 - 排除1球 (3球<3.5 + 1球>5.0)</div>
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('实操规律') && w.includes('排除4球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🔥 实操规律 - 排除4球 (0球<10 + 4球>6.0)</div>
+                        </div>` : ''}
                         ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('考虑0球')) ? `
                         <div class="g3-exclude-banner" style="border-color:#64748b;background:linear-gradient(135deg,rgba(100,116,139,0.20),rgba(71,85,105,0.10));">
                             <div class="g3-exclude-banner-text" style="color:#cbd5e1;">⚠️ 考虑0球 - 近况偏低+高球多降+0球≥13</div>
