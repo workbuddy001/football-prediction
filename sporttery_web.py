@@ -112,8 +112,21 @@ def apply_accumulated_stats(match_data):
             s = acc_stats[rt]
             exclude_summaries[ek] = _fmt_stats(s)
     
-    if summaries or exclude_summaries:
-        pd['_rec_stats'] = {'golden': summaries, 'exclude': exclude_summaries}
+    # 实操规律统计（2026-05-02新增）
+    practical_map = {
+        'practical_exclude_3': 'practical_exclude_3',
+        'practical_recommend_3': 'practical_recommend_3',
+        'practical_exclude_2': 'practical_exclude_2',
+        'practical_recommend_2': 'practical_recommend_2',
+    }
+    practical_summaries = {}
+    for pk, rt in practical_map.items():
+        if rt in acc_stats:
+            s = acc_stats[rt]
+            practical_summaries[pk] = _fmt_stats(s)
+    
+    if summaries or exclude_summaries or practical_summaries:
+        pd['_rec_stats'] = {'golden': summaries, 'exclude': exclude_summaries, 'practical': practical_summaries}
 
 # ─────────────────────────────────────────────────────────────
 #  比分记录文件读写
@@ -390,6 +403,28 @@ def _build_change_hitrate():
         }
 
     _change_hitrate_cache = change_stats
+    
+    # 保存变化命中率排名（供predict_3goals.py使用）
+    try:
+        # 计算每个进球数的最高命中率
+        goal_max_rate = {}
+        for g, bl_data in change_stats.items():
+            max_rate = 0
+            for bl, stats in bl_data.items():
+                if stats.get('rate'):
+                    max_rate = max(max_rate, stats['rate'])
+            goal_max_rate[g] = max_rate
+        
+        # 按命中率排序，第1名是命中率最高的进球数
+        sorted_goals = sorted(goal_max_rate.items(), key=lambda x: x[1], reverse=True)
+        ranking = {g: {'rank': idx+1, 'rate': rate} for idx, (g, rate) in enumerate(sorted_goals)}
+        
+        ranking_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'change_hit_rate_ranking.json')
+        with open(ranking_file, 'w', encoding='utf-8') as f:
+            json.dump(ranking, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f'保存变化命中率排名失败: {e}')
+    
     return _change_hitrate_cache
 
 # ────────────────────────────────────────────────────────────
@@ -1595,6 +1630,30 @@ HTML_TEMPLATE = '''
                         <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
                             <div class="g3-exclude-banner-text" style="color:#fca5a5;">🚫 排除2球 - 0球=23+2球=4.4+受让+1，历史0%(0/2)</div>
                         </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('实操规律') && w.includes('排除3球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#f59e0b;background:linear-gradient(135deg,rgba(245,158,11,0.25),rgba(234,88,12,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fcd34d;">🔥 实操规律 - 排除3球 (让负1.7-2 + HAD<2 + 3球<2球)</div>
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.practical && m.g3_prediction._rec_stats.practical.practical_exclude_3 ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.practical.practical_exclude_3}</div>` : ''}
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('实操规律') && w.includes('推荐3球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#8b5cf6;background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(109,40,217,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#c4b5fd;">👍 实操规律 - 推荐3球 (让负<1.7 + 3球3.3-3.5 + 3球<2球)</div>
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.practical && m.g3_prediction._rec_stats.practical.practical_recommend_3 ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.practical.practical_recommend_3}</div>` : ''}
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('实操规律') && w.includes('排除2球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#ef4444;background:linear-gradient(135deg,rgba(239,68,68,0.25),rgba(220,38,38,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#fca5a5;">🔥 实操规律 - 排除2球 (HAD<1.8 + 2球<3.3)</div>
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.practical && m.g3_prediction._rec_stats.practical.practical_exclude_2 ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.practical.practical_exclude_2}</div>` : ''}
+                        </div>` : ''}
+                        ${m.g3_prediction.warnings && m.g3_prediction.warnings.some(w => w.includes('实操规律') && w.includes('推荐2球')) ? `
+                        <div class="g3-exclude-banner" style="border-color:#22c55e;background:linear-gradient(135deg,rgba(34,197,94,0.25),rgba(22,163,74,0.15));">
+                            <div class="g3-exclude-banner-text" style="color:#86efac;">👍 实操规律 - 推荐2球 (0球<12 + HAD>=2.8 + 3球>=3.8)</div>
+                            ${m.g3_prediction._rec_stats && m.g3_prediction._rec_stats.practical && m.g3_prediction._rec_stats.practical.practical_recommend_2 ? `
+                            <div style="font-size:11px;color:#4ade80;margin-top:2px">📊 ${m.g3_prediction._rec_stats.practical.practical_recommend_2}</div>` : ''}
+                        </div>` : ''}
                         ${m.g3_prediction.signals && m.g3_prediction.signals.some(s => s[0].includes('考虑0球')) ? `
                         <div class="g3-exclude-banner" style="border-color:#64748b;background:linear-gradient(135deg,rgba(100,116,139,0.20),rgba(71,85,105,0.10));">
                             <div class="g3-exclude-banner-text" style="color:#cbd5e1;">⚠️ 考虑0球 - 近况偏低+高球多降+0球≥13</div>
@@ -2270,6 +2329,50 @@ HTML_TEMPLATE = '''
                     // 保留中文、字母、数字、+、-，其余替换为_
                     const typeKey = 'final_' + (st || 'unknown').replace(/[^\w\u4e00-\u9fff+\-]/g, '_').replace(/_+/g, '_');
                     rules.push({type: typeKey, target_goals: 3, hit_rate: pred.final_rec.hit_rate || 50, sample: pred.final_rec.sample_size || 10});
+                }
+            }
+
+            // 收集实操规律（2026-05-02新增）
+            if (pred.signals && Array.isArray(pred.signals)) {
+                for (const sig of pred.signals) {
+                    const sigName = Array.isArray(sig) ? sig[0] : sig;
+                    if (typeof sigName === 'string' && sigName.includes('实操规律')) {
+                        let pType = '';
+                        let targetGoals = 0;
+                        let hitRate = 50;
+                        let sampleSize = 10;
+                        
+                        if (sigName.includes('排除3球')) {
+                            pType = 'practical_exclude_3';
+                            targetGoals = 3;
+                            hitRate = 0;  // 0%（0/13）
+                            sampleSize = 13;
+                        } else if (sigName.includes('推荐3球')) {
+                            pType = 'practical_recommend_3';
+                            targetGoals = 3;
+                            hitRate = 50;  // 50%
+                            sampleSize = 10;
+                        } else if (sigName.includes('排除2球')) {
+                            pType = 'practical_exclude_2';
+                            targetGoals = 2;
+                            hitRate = 0;  // 0%（0/9）
+                            sampleSize = 9;
+                        } else if (sigName.includes('推荐2球')) {
+                            pType = 'practical_recommend_2';
+                            targetGoals = 2;
+                            hitRate = 100;  // 100%
+                            sampleSize = 5;
+                        }
+                        
+                        if (pType && !rules.some(r => r.type === pType)) {
+                            rules.push({
+                                type: pType,
+                                target_goals: targetGoals,
+                                hit_rate: hitRate,
+                                sample_size: sampleSize
+                            });
+                        }
+                    }
                 }
             }
 

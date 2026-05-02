@@ -626,7 +626,52 @@ def predict_3goals(features: Dict[str, Any]) -> Dict[str, Any]:
     golden_reason = []
     super_golden = False
     super_golden_reason = []
-
+    
+    # ════════════════════════════════════════════════════════════
+    # 实操规律卡片（2026-05-02新增）
+    # 基于实战观察的规律
+    # ════════════════════════════════════════════════════════════
+    
+    # 先获取所有需要的特征值（确保在所有条件判断之前定义）
+    hhad_l = features.get('让负')
+    had_win = features.get('had_胜')
+    g0_val = features.get('0球')
+    g1_val = features.get('1球')
+    g2_val = features.get('2球')
+    g3_val = features.get('3球')
+    g4_val = features.get('4球')
+    
+    # 规律1: 3球变化#1 - 让负1.7-2 + HAD<2 + 3球<2球 → 排除3球 (0/13)
+    if (hhad_l is not None and 1.7 <= hhad_l <= 2.0 and
+        had_win is not None and had_win < 2.0 and
+        g3_val is not None and g2_val is not None and g3_val < g2_val):
+        signals.append(('实操规律-排除3球', '-15', f'让负{hhad_l:.2f}(1.7-2)+HAD胜{had_win:.2f}<2+3球{g3_val:.2f}<2球{g2_val:.2f}'))
+        warnings.append(f'🔥 实操规律：排除3球！让负1.7-2+HAD<2+3球<2球，历史0%(0/13)【只有3球变化命中率排第一时参考】')
+        reasons.append(f'实操规律：排除3球（让负{hhad_l:.2f}+HAD胜{had_win:.2f}+3球<2球）【只有3球变化命中率排第一时参考】')
+    
+    # 规律2: 3球变化#1 - 让负<1.7 + 3球3.3-3.5 + 3球<2球 → 推荐3球 (50%)
+    elif (hhad_l is not None and hhad_l < 1.7 and
+          g3_val is not None and 3.3 <= g3_val <= 3.5 and
+          g2_val is not None and g3_val < g2_val):
+        signals.append(('实操规律-推荐3球', '+12', f'让负{hhad_l:.2f}<1.7+3球{g3_val:.2f}(3.3-3.5)+3球<2球'))
+        warnings.append(f'👍 实操规律：推荐3球！让负<1.7+3球3.3-3.5+3球<2球，历史50%【只有3球变化命中率排第一时参考】')
+        reasons.append(f'实操规律：推荐3球（让负{hhad_l:.2f}+3球{g3_val:.2f}+3球<2球）【只有3球变化命中率排第一时参考】')
+    
+    # 规律3: 2球变化#1 - HAD<1.8 + 2球<3.3 → 排除2球 (0/9)
+    if (had_win is not None and had_win < 1.8 and
+        g2_val is not None and g2_val < 3.3):
+        signals.append(('实操规律-排除2球', '-10', f'HAD胜{had_win:.2f}<1.8+2球{g2_val:.2f}<3.3'))
+        warnings.append(f'🔥 实操规律：排除2球！HAD胜{had_win:.2f}<1.8+2球{g2_val:.2f}<3.3，历史0%(0/9)【只有2球变化命中率排第一时参考】')
+        reasons.append(f'实操规律：排除2球（HAD胜{had_win:.2f}<1.8+2球{g2_val:.2f}<3.3）【只有2球变化命中率排第一时参考】')
+    
+    # 规律4: 2球变化#1 - 0球<12 + HAD>=2.8 + 3球>=3.8 → 推荐2球 (100%)
+    if (g0_val is not None and g0_val < 12 and
+        had_win is not None and had_win >= 2.8 and
+        g3_val is not None and g3_val >= 3.8):
+        signals.append(('实操规律-推荐2球', '+15', f'0球{g0_val:.1f}<12+HAD胜{had_win:.2f}>=2.8+3球{g3_val:.2f}>=3.8'))
+        warnings.append(f'👍 实操规律：推荐2球！0球<12+HAD>=2.8+3球>=3.8，历史100%【只有2球变化命中率排第一时参考】')
+        reasons.append(f'实操规律：推荐2球（0球{g0_val:.1f}+HAD胜{had_win:.2f}+3球{g3_val:.2f}）【只有2球变化命中率排第一时参考】')
+    
     # 推荐
     if score >= 15:
         rec, conf = '关注3球', min(85, 55 + score)
