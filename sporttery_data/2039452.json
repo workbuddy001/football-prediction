@@ -1,0 +1,888 @@
+{
+  "match_id": "2039452",
+  "fetch_time": "2026-05-02 18:34:03",
+  "match_info": {
+    "home_team": "雷克斯汉姆",
+    "away_team": "米德尔斯堡",
+    "league": "英格兰冠军联赛",
+    "time": "2026-05-02 19:30",
+    "match_num_str": "周六006",
+    "match_week": "周六",
+    "match_date": "2026-05-02",
+    "match_time": "19:30:00",
+    "match_status": "Selling",
+    "home_rank": "[英冠6]",
+    "away_rank": "[英冠4]",
+    "league_abbr": "英冠"
+  },
+  "score_odds": {
+    "05:00": "200.0",
+    "01:00": "12.00",
+    "05:02": "200.0",
+    "05:01": "150.0",
+    "02:04": "45.00",
+    "02:05": "100.0",
+    "02:02": "11.00",
+    "02:03": "20.00",
+    "02:00": "14.00",
+    "02:01": "9.00",
+    "03:03": "45.00",
+    "03:01": "20.00",
+    "03:02": "23.00",
+    "03:00": "28.00",
+    "00:01": "9.50",
+    "00:00": "14.00",
+    "00:03": "24.00",
+    "00:02": "12.00",
+    "00:05": "100.0",
+    "00:04": "50.00",
+    "04:02": "60.00",
+    "04:01": "50.00",
+    "04:00": "75.00",
+    "01:02": "8.00",
+    "01:01": "6.70",
+    "01:04": "36.00",
+    "01:03": "16.00",
+    "01:05": "90.00"
+  },
+  "total_goals": {
+    "3球": "3.50",
+    "4球": "4.40",
+    "5球": "8.05",
+    "6球": "15.00",
+    "7球": "22.00",
+    "0球": "14.00",
+    "1球": "5.85",
+    "2球": "3.80"
+  },
+  "had": {
+    "胜": "2.84",
+    "平": "3.40",
+    "负": "2.07"
+  },
+  "ttg": {
+    "3球": "3.50",
+    "4球": "4.40",
+    "5球": "8.05",
+    "6球": "15.00",
+    "7球": "22.00",
+    "0球": "14.00",
+    "1球": "5.85",
+    "2球": "3.80"
+  },
+  "hafu": {
+    "负负": "3.65",
+    "平平": "5.60",
+    "胜胜": "4.25",
+    "负平": "13.50",
+    "平胜": "6.25",
+    "负胜": "25.00",
+    "胜负": "21.00",
+    "胜平": "13.50",
+    "平负": "5.85"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.58",
+    "让平": "3.75",
+    "让负": "4.35"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "米堡",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "60",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.6",
+        "awayGoalAvgCntRatio": "55.2",
+        "homeGoalAvgCnt": "1.3",
+        "homeGoalAvgCntRatio": "44.8",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "雷克斯",
+      "last": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 1
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.0",
+        "awayLossGoalAvgCntRatio": "35.7",
+        "homeLossGoalAvgCnt": "1.8",
+        "homeLossGoalAvgCntRatio": "64.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2353349,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 14,
+      "sportteryHomeTeamId": 88,
+      "sportteryMatchId": 2039452,
+      "uniformAwayTeamId": 216,
+      "uniformHomeTeamId": 1335
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 715,
+          "awayTeamShortName": "雷克斯",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 671,
+          "homeTeamShortName": "米堡",
+          "matchDate": "2025-10-25",
+          "matchId": 2352808,
+          "seasonId": 13401,
+          "sportteryAwayTeamId": 88,
+          "sportteryHomeTeamId": 14,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 278,
+          "tournamentShortName": "英冠",
+          "uniformAwayTeamId": 1335,
+          "uniformHomeTeamId": 216,
+          "uniformLeagueId": 71,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "100%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "雷克斯",
+        "totalLegCnt": 1,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 22,
+            "injuryFlag": 1,
+            "personId": 454238,
+            "personName": "A. Jones",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 494213,
+            "personName": "L.英格尔",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "0"
+          },
+          {
+            "appearanceCnt": 38,
+            "injuryFlag": 1,
+            "personId": 505365,
+            "personName": "H.哈克尼",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 38,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 14,
+        "teamId": 671,
+        "teamShortName": "米堡",
+        "uniformTeamId": 216
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 28,
+            "injuryFlag": 1,
+            "personId": 372903,
+            "personName": "希夫",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 35,
+            "injuryFlag": 1,
+            "personId": 432302,
+            "personName": "维纳",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 32,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "26"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 441250,
+            "personName": "T. O'Connor",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 38,
+            "injuryFlag": 1,
+            "personId": 531032,
+            "personName": "L.奥'布赖恩",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          }
+        ],
+        "sportteryTeamId": 88,
+        "teamId": 715,
+        "teamShortName": "雷克斯",
+        "uniformTeamId": 1335
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 61,
+            "awayTeamShortName": "沃特福德",
+            "fullCourtGoal": "5:1",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "5",
+            "homeTeamId": 14,
+            "homeTeamShortName": "米堡",
+            "matchDate": "2026-04-25",
+            "matchId": 2352733,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 354,
+            "uniformHomeTeamId": 216,
+            "uniformLeagueId": 71,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 82,
+            "awayTeamShortName": "谢周三",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 14,
+            "homeTeamShortName": "米堡",
+            "matchDate": "2026-04-23",
+            "matchId": 2352736,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 503,
+            "uniformHomeTeamId": 216,
+            "uniformLeagueId": 71,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 14,
+            "awayTeamShortName": "米堡",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 48,
+            "homeTeamShortName": "伊普斯",
+            "matchDate": "2026-04-19",
+            "matchId": 2352737,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039185,
+            "sportteryTournamentId": 20,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 216,
+            "uniformHomeTeamId": 507,
+            "uniformLeagueId": 71,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 17,
+            "awayTeamShortName": "朴次茅斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 14,
+            "homeTeamShortName": "米堡",
+            "matchDate": "2026-04-11",
+            "matchId": 2352739,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 392,
+            "uniformHomeTeamId": 216,
+            "uniformLeagueId": 71,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 14,
+            "awayTeamShortName": "米堡",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 110,
+            "homeTeamShortName": "斯旺西",
+            "matchDate": "2026-04-07",
+            "matchId": 2353375,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038872,
+            "sportteryTournamentId": 20,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 216,
+            "uniformHomeTeamId": 201,
+            "uniformLeagueId": 71,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 10,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 4,
+          "sportteryTeamId": 0,
+          "teamId": 14,
+          "teamShortName": "米堡",
+          "totalLegCnt": 5,
+          "uniformTeamId": 216,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 88,
+            "awayTeamShortName": "雷克斯",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 44,
+            "homeTeamShortName": "考文垂",
+            "matchDate": "2026-04-26",
+            "matchId": 2352636,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039341,
+            "sportteryTournamentId": 20,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 1335,
+            "uniformHomeTeamId": 450,
+            "uniformLeagueId": 71,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 88,
+            "awayTeamShortName": "雷克斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 104,
+            "homeTeamShortName": "牛津联",
+            "matchDate": "2026-04-22",
+            "matchId": 2352846,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039245,
+            "sportteryTournamentId": 20,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 1335,
+            "uniformHomeTeamId": 272,
+            "uniformLeagueId": 71,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 59,
+            "awayTeamShortName": "斯托克城",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 88,
+            "homeTeamShortName": "雷克斯",
+            "matchDate": "2026-04-18",
+            "matchId": 2353360,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 510,
+            "uniformHomeTeamId": 1335,
+            "uniformLeagueId": 71,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 88,
+            "awayTeamShortName": "雷克斯",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 3,
+            "homeTeamShortName": "伯明翰",
+            "matchDate": "2026-04-12",
+            "matchId": 2352599,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039038,
+            "sportteryTournamentId": 20,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 1335,
+            "uniformHomeTeamId": 27,
+            "uniformLeagueId": 71,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "5",
+            "awayTeamId": 18,
+            "awayTeamShortName": "南安普敦",
+            "fullCourtGoal": "1:5",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 88,
+            "homeTeamShortName": "雷克斯",
+            "matchDate": "2026-04-08",
+            "matchId": 2353373,
+            "seasonId": 13401,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038917,
+            "sportteryTournamentId": 20,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 278,
+            "tournamentShortName": "英冠",
+            "uniformAwayTeamId": 358,
+            "uniformHomeTeamId": 1335,
+            "uniformLeagueId": 71,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 5,
+          "lossGoalCnt": 10,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -5,
+          "sportteryTeamId": 0,
+          "teamId": 88,
+          "teamShortName": "雷克斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1335,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47892,
+      "seasonId": 13401,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 13,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 13,
+          "phaseName": "",
+          "points": "70",
+          "ranking": "6",
+          "sportteryTeamId": 88,
+          "teamId": 0,
+          "teamShortName": "雷克斯",
+          "totalLegCnt": 45,
+          "uniformTeamId": 1335,
+          "winGoalMatchCnt": 19,
+          "winProbability": "42%"
+        },
+        {
+          "drawMatchCnt": 13,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 10,
+          "phaseName": "",
+          "points": "79",
+          "ranking": "4",
+          "sportteryTeamId": 14,
+          "teamId": 0,
+          "teamShortName": "米堡",
+          "totalLegCnt": 45,
+          "uniformTeamId": 216,
+          "winGoalMatchCnt": 22,
+          "winProbability": "49%"
+        }
+      ],
+      "tournamentId": 278,
+      "tournamentShortName": "英冠",
+      "uniformLeagueId": 71,
+      "uniformMatchId": 2389756
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 39,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 7,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 14,
+            "goalProbability": "18%",
+            "injuryFlag": 0,
+            "personId": 458850,
+            "personName": "M. Whittaker",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 34,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 45,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 5,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 12,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 591488,
+            "personName": "康韦",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 42,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 41,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 8,
+            "assistProbability": "13%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 11,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 453137,
+            "personName": "F. Azaz",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 36,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          }
+        ],
+        "sportteryTeamId": 14,
+        "teamId": 671,
+        "teamShortName": "米堡",
+        "uniformTeamId": 216
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 40,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 5,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 15,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 306058,
+            "personName": "温达斯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 13,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 38,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 11,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 260764,
+            "personName": "摩尔",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 37,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 7,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 386237,
+            "personName": "N. Broadhead",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 17,
+            "suspensionFlag": 0,
+            "uniformNo": "33"
+          }
+        ],
+        "sportteryTeamId": 88,
+        "teamId": 715,
+        "teamShortName": "雷克斯",
+        "uniformTeamId": 1335
+      },
+      "seasonId": 13401,
+      "seasonName": "2025/2026",
+      "tournamentId": 278,
+      "tournamentShortName": "英冠",
+      "uniformLeagueId": 71,
+      "uniformMatchId": 2389756
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 3,
+      "change_pct": 2.9
+    },
+    "0球": {
+      "count": 3,
+      "change_pct": -12.5
+    },
+    "1球": {
+      "count": 4,
+      "change_pct": -4.1
+    },
+    "4球": {
+      "count": 5,
+      "change_pct": -5.4
+    },
+    "6球": {
+      "count": 4,
+      "change_pct": 15.4
+    },
+    "5球": {
+      "count": 4,
+      "change_pct": 7.3
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": -2.6
+    },
+    "7球": {
+      "count": 4,
+      "change_pct": 15.8
+    }
+  },
+  "hafu_change": {
+    "负负": {
+      "count": 1,
+      "change_pct": -2.7
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": -4.5
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -2.5
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 2.5
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -3.6
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 3.7
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 8.7
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 1.8
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.6
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 5,
+      "change_pct": -10.8
+    },
+    "胜": {
+      "count": 5,
+      "change_pct": 15.9
+    },
+    "平": {
+      "count": 4,
+      "change_pct": -1.4
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 5,
+      "change_pct": -11.2
+    },
+    "让胜": {
+      "count": 5,
+      "change_pct": 9.0
+    },
+    "让平": {
+      "count": 5,
+      "change_pct": -11.8
+    }
+  },
+  "exclusion_list": []
+}
