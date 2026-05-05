@@ -679,6 +679,26 @@ def analyze_match(data):
     if a_att >= 2.0 and hcap > 0:
         profile_rules.append('🛡️客火爆+主受让→主队不败81%')
     
+    # ============== V3.7: 盘口偏差规律（攻防预期 vs OU线） ==============
+    # 预期 = 主攻 + 客失
+    ou_expected = h_att + a_def
+    ou_deviation = (ou_line - ou_expected) if ou_line > 0 else 0
+    if abs(ou_deviation) >= 0.2:
+        if -0.5 <= ou_deviation <= -0.2:
+            # 轻度低开 → 大球
+            if ou_over >= 0.85:
+                profile_rules.append(f'📉轻度低开{ou_deviation:+.1f}+中高水→大球91%')
+            else:
+                profile_rules.append(f'📉轻度低开{ou_deviation:+.1f}→大球88%')
+        elif ou_deviation < -0.8:
+            # 深度低开
+            if ou_over >= 0.9:
+                profile_rules.append(f'📉深度低开{ou_deviation:+.1f}+高水→大球75%')
+            else:
+                profile_rules.append(f'📉深度低开{ou_deviation:+.1f}+低水→小球67%')
+        elif ou_deviation > 0.2 and (h_att + a_def) < 2.5:
+            profile_rules.append(f'📈预期低+盘口高开{ou_deviation:+.1f}→小球77%')
+    
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
     top_score = '?'
