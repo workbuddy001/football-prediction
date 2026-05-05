@@ -998,5 +998,56 @@
       }
     ],
     "time": "2026-05-05 09:34"
+  },
+  "2039514": {
+    "home_score": 4,
+    "away_score": 0,
+    "total_goals": 4,
+    "rules": [
+      {
+        "type": "practical_exclude_2",
+        "old_hit_rate": 0,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-05 12:40"
+  },
+  "2039513": {
+    "home_score": 0,
+    "away_score": 0,
+    "total_goals": 0,
+    "rules": [
+      {
+        "type": "final_0球20-21+近况2_5-3_5",
+        "old_hit_rate": 53.3,
+        "new_hit_rate": 50.0,
+        "old_sample": 15,
+        "new_sample": 16,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-05 12:50"
+  },
+  "2039517": {
+    "home_score": 5,
+    "away_score": 1,
+    "total_goals": 6,
+    "rules": [
+      {
+        "type": "final_近况+高球降_关注2球_",
+        "old_hit_rate": 37.9,
+        "new_hit_rate": 36.6,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-05 14:39"
   }
 }

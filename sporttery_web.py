@@ -1558,6 +1558,33 @@ HTML_TEMPLATE = '''
                         ${m.near_form && m.near_form.home !== null ? `
                         <div style="font-size:13px;color:#e0e0e0;margin-bottom:6px;text-align:center;font-weight:bold">📊 近况: 主${m.near_form.home.toFixed(1)}/客${m.near_form.away.toFixed(1)}球 (近5场)</div>
                         ` : ''}
+                        ${m.recent_matches ? `
+                        <details style="font-size:11px;color:#aaa;margin-bottom:6px">
+                          <summary style="cursor:pointer;color:#ccc;font-weight:bold">📋 近5场赛果</summary>
+                          <div style="display:flex;gap:10px;margin-top:4px">
+                            <!-- 主队 -->
+                            <div style="flex:1;min-width:0">
+                              <div style="color:#4fc3f7;margin-bottom:2px">▲ ${m.match_info.home_team}</div>
+                              ${m.recent_matches.home.map(r => {
+                                const cls = r.result === 'home' ? 'color:#4caf50' : r.result === 'away' ? 'color:#f44336' : 'color:#ff9800';
+                                const lbl = r.result === 'home' ? 'W' : r.result === 'away' ? 'L' : 'D';
+                                const venueTag = r.venue === '主' ? '<span style=\"color:#4fc3f7\">主</span>' : '<span style=\"color:#888\">客</span>';
+                                return '<div style=\"white-space:nowrap;font-size:10px\">'+venueTag+' <span style=\"'+cls+'\">'+lbl+'</span> '+r.date.slice(5)+' '+r.score+' vs'+r.opponent+'</div>';
+                              }).join('')}
+                            </div>
+                            <!-- 客队 -->
+                            <div style="flex:1;min-width:0">
+                              <div style="color:#ff9800;margin-bottom:2px">▼ ${m.match_info.away_team}</div>
+                              ${m.recent_matches.away.map(r => {
+                                const cls = r.result === 'home' ? 'color:#4caf50' : r.result === 'away' ? 'color:#f44336' : 'color:#ff9800';
+                                const lbl = r.result === 'home' ? 'W' : r.result === 'away' ? 'L' : 'D';
+                                const venueTag = r.venue === '主' ? '<span style=\"color:#4fc3f7\">主</span>' : '<span style=\"color:#888\">客</span>';
+                                return '<div style=\"white-space:nowrap;font-size:10px\">'+venueTag+' <span style=\"'+cls+'\">'+lbl+'</span> '+r.date.slice(5)+' '+r.score+' vs'+r.opponent+'</div>';
+                              }).join('')}
+                            </div>
+                          </div>
+                        </details>
+                        ` : ''}
                         <div class="g3-odds-info">
                             3球赔率: <strong>${m.g3_prediction.features['3球'] || '-'}</strong>
                             ${m.g3_prediction.features['区间'] ? `<span class="g3-tier">区间${m.g3_prediction.features['区间']}</span>` : ''}
@@ -4402,8 +4429,13 @@ def _build_match_card(data, api, match_list_cache=None):
 
     # 计算近况数据（精简版和完整版共用）
     recent_form = None
+    rd = None
     try:
-        rd = _extract_recent_matches(data)
+        team_names = {
+            'home': match_info.get('home_team', ''),
+            'away': match_info.get('away_team', ''),
+        }
+        rd = _extract_recent_matches(data, team_names)
         recent_form = calc_recent_form(rd)
     except Exception:
         pass
@@ -4508,6 +4540,8 @@ def _build_match_card(data, api, match_list_cache=None):
                 'home': recent_form['home_avg'] if recent_form else None,
                 'away': recent_form['away_avg'] if recent_form else None,
             } if recent_form else None,
+            # 近5场赛果（比分反推验证用）
+            'recent_matches': rd if recent_form else {'home': [], 'away': []},
             # 让球平低赔规律提示
             'hhad_hint': hhad_hint,
             # 平局信号（所有had.平区间）
