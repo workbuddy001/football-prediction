@@ -2438,6 +2438,7 @@ HTML_TEMPLATE = '''
                     + '近况锚定: ' + a.new_rules.anchor + '<br>'
                     + '攻击力阈值: ' + a.new_rules.attack_threshold + '<br>'
                     + '大胜评估: ' + a.new_rules.attack_vs_defense
+                    + (a.new_rules.profiles && a.new_rules.profiles.length > 0 ? '<br><br><strong>🎯 画像规律触发:</strong><br>' + a.new_rules.profiles.map(p => '&nbsp;&nbsp;' + p).join('<br>') : '')
                     + '</div>'
                     + '<div class="v36-section">'
                     + '<h4>7.8 比分反推</h4>'

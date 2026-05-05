@@ -109,9 +109,14 @@ def _extract_recent_matches(data: dict, team_names: dict = None) -> dict:
             home_short = m.get('homeTeamShortName', '') or ''
             away_short = m.get('awayTeamShortName', '') or ''
             if not team_short and target_team:
-                is_home = (target_team in home_short or home_short in target_team)
-                if not is_home and not (target_team in away_short or away_short in target_team):
+                def _fz_score(a, b):
+                    if a in b or b in a: return max(len(a), len(b)) + 10
+                    return sum(1 for c in a if c in b)
+                hs = _fz_score(target_team, home_short)
+                aws = _fz_score(target_team, away_short)
+                if hs == 0 and aws == 0:
                     continue
+                is_home = (hs >= aws)
             else:
                 is_home = (home_short == team_short)
 

@@ -40,11 +40,22 @@ def _extract_recent_matches(data):
             if team_short:
                 is_home = (home_short == team_short)
             elif target_name:
-                is_home = (target_name in home_short or home_short in target_name)
-                if not is_home:
-                    is_away = (target_name in away_short or away_short in target_name)
-                    if not is_away:
-                        continue  # can't identify team
+                # Fuzzy match: contains OR partial match >= 2 chars
+                def _fuzzy(a, b):
+                    if a in b or b in a: return True
+                    shared = sum(1 for c in a if c in b)
+                    if shared < 1: return False
+                    if shared >= 2: return True
+                    la, lb = len(a), len(b)
+                    return max(la, lb) >= 4 and shared / max(la, 1) >= 0.25
+                def _fz_score(a, b):
+                    if a in b or b in a: return max(len(a), len(b)) + 10
+                    return sum(1 for c in a if c in b)
+                hs = _fz_score(target_name, home_short)
+                aws = _fz_score(target_name, away_short)
+                if hs == 0 and aws == 0:
+                    continue
+                is_home = (hs >= aws)
             else:
                 continue
             
@@ -651,6 +662,23 @@ def analyze_match(data):
                 if best_hit >= 0.2:
                     review_warnings.append(f'⚠️ {best_goal}球迎合+压力→陷阱可能')
     
+    # ============== V3.7: 攻防画像规律 ==============
+    profile_rules = []
+    if h_def >= 2.0 and a_def >= 2.0:
+        profile_rules.append('🔥双方漏勺→大球91%/3-4球55%/0-1球=0%')
+    elif h_att >= 2.0 and a_def >= 2.0:
+        profile_rules.append('🔥主攻vs客漏→大球91%/3球41%')
+    if h_att >= 2.0 and a_att >= 2.0:
+        profile_rules.append('🔥双方攻击火爆→大球80%/3球40%')
+    if h_def < 1.0 and a_def < 1.0:
+        profile_rules.append('🛡️双方铁壁→小球58%/2球50%')
+    if h_att < 1.5 and a_att < 1.5 and h_def < 1.5 and a_def < 1.5:
+        profile_rules.append('😴双方沉闷→小球46%/2球43%')
+    try: hcap = int(hhad_handicap)
+    except: hcap = 0
+    if a_att >= 2.0 and hcap > 0:
+        profile_rules.append('🛡️客火爆+主受让→主队不败81%')
+    
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
     top_score = '?'
@@ -686,6 +714,7 @@ def analyze_match(data):
             'anchor': anchor_rule,
             'attack_threshold': f'主攻{h_att:.1f}(\'≥1.5\'→{att_threshold})',
             'attack_vs_defense': f'主攻{h_att:.1f}+客失{a_def:.1f}',
+            'profiles': profile_rules,
         },
         'score_candidates': score_candidates,
         'final_review': final_review,

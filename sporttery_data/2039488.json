@@ -988,5 +988,11 @@
       "change_pct": 5.0
     }
   },
-  "exclusion_list": []
+  "exclusion_list": [],
+  "over_under": {
+    "over_odds": 0.86,
+    "ou_line": 2.75,
+    "under_odds": 0.84,
+    "save_time": "2026-05-05 21:52"
+  }
 }
