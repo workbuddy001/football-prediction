@@ -1,0 +1,9524 @@
+[
+  {
+    "mid": "2039004",
+    "league": "日本职业联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.84,
+    "had_draw": 3.3,
+    "had_lose": 3.55,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 25.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      2,
+      3,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      7,
+      3,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039005",
+    "league": "澳大利亚超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.02,
+    "had_draw": 3.85,
+    "had_lose": 2.67,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 9.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      3,
+      3,
+      3,
+      0
+    ],
+    "away_recent_goals": [
+      2,
+      6,
+      2,
+      2,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039006",
+    "league": "韩国职业联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.8,
+    "had_draw": 2.95,
+    "had_lose": 2.31,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      4,
+      2,
+      5
+    ],
+    "away_recent_goals": [
+      2,
+      0,
+      2,
+      3,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039009",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.35,
+    "had_draw": 4.35,
+    "had_lose": 6.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 17.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      2,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      0,
+      0,
+      2,
+      0
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 1.6
+  },
+  {
+    "mid": "2039011",
+    "league": "西班牙甲级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 1.63,
+    "had_draw": 3.6,
+    "had_lose": 4.2,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 65.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      4,
+      5,
+      1
+    ],
+    "away_recent_goals": [
+      4,
+      7,
+      2,
+      5,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.6
+  },
+  {
+    "mid": "2039013",
+    "league": "意大利甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.77,
+    "had_draw": 3.1,
+    "had_lose": 4.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      5,
+      5,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      1,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039015",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 2.6,
+    "had_draw": 3.2,
+    "had_lose": 2.32,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 23.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      6,
+      1,
+      6,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      4,
+      1,
+      5,
+      1
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039018",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.4,
+    "had_draw": 3.33,
+    "had_lose": 2.43,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 8.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      9,
+      1,
+      2,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      1,
+      0,
+      2
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039019",
+    "league": "英格兰超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.05,
+    "had_draw": 3.05,
+    "had_lose": 3.2,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      4,
+      4,
+      0,
+      7
+    ],
+    "away_recent_goals": [
+      3,
+      2,
+      2,
+      5,
+      1
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039021",
+    "league": "荷兰甲级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.41,
+    "had_draw": 4.25,
+    "had_lose": 5.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 19.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      2,
+      2,
+      0,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      4,
+      3,
+      5,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039022",
+    "league": "沙特职业联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 4.9,
+    "had_draw": 4.16,
+    "had_lose": 1.46,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      4,
+      4,
+      4,
+      5
+    ],
+    "away_recent_goals": [
+      7,
+      1,
+      4,
+      1,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 4.0
+  },
+  {
+    "mid": "2039026",
+    "league": "西班牙甲级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.23,
+    "had_draw": 5.45,
+    "had_lose": 7.5,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 14.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      1,
+      9,
+      7
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      3,
+      2,
+      4
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039028",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.14,
+    "had_draw": 3.2,
+    "had_lose": 2.86,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      2,
+      7,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      5,
+      5,
+      1
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039029",
+    "league": "法国甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.21,
+    "had_draw": 5.15,
+    "had_lose": 9.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      0,
+      3,
+      4,
+      1
+    ],
+    "away_recent_goals": [
+      0,
+      6,
+      2,
+      1,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039031",
+    "league": "美国职业大联盟",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.32,
+    "had_draw": 3.25,
+    "had_lose": 2.56,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      7,
+      0,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      0,
+      1,
+      5,
+      2,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039034",
+    "league": "韩国职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.19,
+    "had_draw": 2.9,
+    "had_lose": 3.05,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 5.8,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      0,
+      2,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      1,
+      3,
+      2,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.0
+  },
+  {
+    "mid": "2039035",
+    "league": "澳大利亚超级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 3.3,
+    "had_draw": 3.75,
+    "had_lose": 1.79,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 23.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      2,
+      2,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      5,
+      3,
+      5,
+      4,
+      4
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039036",
+    "league": "荷兰甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.59,
+    "had_draw": 3.3,
+    "had_lose": 2.27,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 6.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      5,
+      5
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      6,
+      6,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.6
+  },
+  {
+    "mid": "2039037",
+    "league": "意大利甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.02,
+    "had_draw": 2.98,
+    "had_lose": 3.35,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      2,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      2,
+      1,
+      3,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039039",
+    "league": "德国乙级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.98,
+    "had_draw": 3.3,
+    "had_lose": 3.11,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 9.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      8,
+      4,
+      2,
+      1
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      2,
+      4,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039040",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.08,
+    "had_draw": 3.2,
+    "had_lose": 2.98,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "away",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 6.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      4,
+      4,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      0,
+      3,
+      4,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039041",
+    "league": "瑞典超级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.52,
+    "had_draw": 3.7,
+    "had_lose": 5.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 24.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      6,
+      3,
+      1,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      5,
+      2,
+      4,
+      4
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039042",
+    "league": "荷兰甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.9,
+    "had_draw": 3.7,
+    "had_lose": 3.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      5,
+      3,
+      5
+    ],
+    "away_recent_goals": [
+      0,
+      2,
+      3,
+      6,
+      2
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039043",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.24,
+    "had_draw": 3.15,
+    "had_lose": 2.74,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 5.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      2,
+      2,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039044",
+    "league": "英格兰超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.85,
+    "had_draw": 3.33,
+    "had_lose": 2.09,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      0,
+      0,
+      4
+    ],
+    "away_recent_goals": [
+      3,
+      9,
+      1,
+      2,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039046",
+    "league": "意大利甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 5.6,
+    "had_draw": 3.52,
+    "had_lose": 1.5,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 6.3,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      5,
+      0,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      1,
+      3,
+      3,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039047",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 2.05,
+    "had_draw": 3.35,
+    "had_lose": 2.92,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 14.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      6,
+      2,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      2,
+      5,
+      2
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039049",
+    "league": "瑞典超级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.56,
+    "had_draw": 3.75,
+    "had_lose": 4.5,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 12.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      2,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      3,
+      3,
+      5
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039051",
+    "league": "挪威超级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.33,
+    "had_draw": 4.6,
+    "had_lose": 6.25,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 17.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      5,
+      2,
+      3,
+      5
+    ],
+    "away_recent_goals": [
+      6,
+      3,
+      2,
+      4,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.3
+  },
+  {
+    "mid": "2039058",
+    "league": "意大利甲级联赛",
+    "hs": 3,
+    "aws": 4,
+    "total": 7,
+    "had_win": 2.94,
+    "had_draw": 3.25,
+    "had_lose": 2.08,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      5,
+      3,
+      3,
+      0
+    ],
+    "away_recent_goals": [
+      7,
+      2,
+      2,
+      1,
+      0
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039059",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.95,
+    "had_draw": 3.25,
+    "had_lose": 3.25,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 10.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      1,
+      1
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      2,
+      3,
+      5
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039060",
+    "league": "葡萄牙超级联赛",
+    "hs": 1,
+    "aws": 3,
+    "total": 4,
+    "had_win": 7.75,
+    "had_draw": 4.7,
+    "had_lose": 1.27,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 10.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      3,
+      1,
+      0,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      4,
+      3,
+      2,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039061",
+    "league": "美国职业大联盟",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.3,
+    "had_draw": 5.0,
+    "had_lose": 6.25,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 10.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      1,
+      0,
+      4
+    ],
+    "away_recent_goals": [
+      6,
+      5,
+      3,
+      5,
+      6
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039063",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 3.95,
+    "had_draw": 3.6,
+    "had_lose": 1.67,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      4,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      5,
+      4,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039065",
+    "league": "法国乙级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 3.37,
+    "had_draw": 3.36,
+    "had_lose": 1.87,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 10.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      3,
+      1,
+      0
+    ],
+    "away_recent_goals": [
+      4,
+      6,
+      3,
+      3,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039068",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 4.0,
+    "had_draw": 3.18,
+    "had_lose": 1.77,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 15.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      0,
+      1,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      4,
+      4,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039101",
+    "league": "沙特职业联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.42,
+    "had_draw": 4.48,
+    "had_lose": 4.95,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 11.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      5,
+      5,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      2,
+      8,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.6
+  },
+  {
+    "mid": "2039102",
+    "league": "欧洲冠军联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 3.95,
+    "had_draw": 4.58,
+    "had_lose": 1.52,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      3,
+      5,
+      5
+    ],
+    "away_recent_goals": [
+      5,
+      2,
+      3,
+      1,
+      9
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039116",
+    "league": "欧罗巴联赛",
+    "hs": 1,
+    "aws": 3,
+    "total": 4,
+    "had_win": 1.8,
+    "had_draw": 3.65,
+    "had_lose": 3.35,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 28.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      5,
+      7,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      5,
+      3,
+      6
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039118",
+    "league": "欧罗巴联赛",
+    "hs": 2,
+    "aws": 4,
+    "total": 6,
+    "had_win": 1.62,
+    "had_draw": 3.4,
+    "had_lose": 4.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "draw",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 175.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      0,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      1,
+      3,
+      4
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039120",
+    "league": "欧洲协会联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.9,
+    "had_draw": 3.32,
+    "had_lose": 2.07,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      1,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      3,
+      2,
+      0,
+      0
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 1.8
+  },
+  {
+    "mid": "2039121",
+    "league": "欧洲协会联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.79,
+    "had_draw": 3.55,
+    "had_lose": 3.46,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 13.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      3,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      3,
+      3,
+      1,
+      1,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039135",
+    "league": "澳大利亚超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.1,
+    "had_draw": 3.72,
+    "had_lose": 2.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 9.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      5,
+      5,
+      4
+    ],
+    "away_recent_goals": [
+      2,
+      5,
+      3,
+      3,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039137",
+    "league": "意大利甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 5.2,
+    "had_draw": 4.3,
+    "had_lose": 1.42,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 16.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      2,
+      1,
+      3
+    ],
+    "away_recent_goals": [
+      7,
+      0,
+      5,
+      3,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039140",
+    "league": "荷兰乙级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.75,
+    "had_draw": 3.75,
+    "had_lose": 3.45,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 24.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      5,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      3,
+      4,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039141",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.82,
+    "had_draw": 3.0,
+    "had_lose": 2.27,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 6.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      2,
+      3,
+      2,
+      0
+    ],
+    "away_recent_goals": [
+      4,
+      4,
+      6,
+      2,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039143",
+    "league": "法国甲级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.32,
+    "had_draw": 4.55,
+    "had_lose": 6.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 21.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      6,
+      3,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      4,
+      4,
+      1,
+      7,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.6
+  },
+  {
+    "mid": "2039144",
+    "league": "英格兰冠军联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.52,
+    "had_draw": 3.32,
+    "had_lose": 1.84,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 6.2,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      0,
+      1,
+      0
+    ],
+    "away_recent_goals": [
+      0,
+      0,
+      5,
+      3,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 1.7
+  },
+  {
+    "mid": "2039145",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.54,
+    "had_draw": 3.6,
+    "had_lose": 4.95,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 15.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      3,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      0,
+      1,
+      0
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 1.8
+  },
+  {
+    "mid": "2039153",
+    "league": "澳大利亚超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.97,
+    "had_draw": 3.88,
+    "had_lose": 2.75,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      3,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      6,
+      4,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039155",
+    "league": "韩国职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.05,
+    "had_draw": 2.88,
+    "had_lose": 2.2,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 5.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      2,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      0,
+      2,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 1.9
+  },
+  {
+    "mid": "2039162",
+    "league": "瑞典超级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.44,
+    "had_draw": 3.9,
+    "had_lose": 5.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 22.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      1,
+      4,
+      0
+    ],
+    "away_recent_goals": [
+      4,
+      1,
+      4,
+      4,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039163",
+    "league": "芬兰超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 5.15,
+    "had_draw": 4.15,
+    "had_lose": 1.44,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 8.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      0,
+      1,
+      5,
+      3
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      0,
+      1,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.0
+  },
+  {
+    "mid": "2039164",
+    "league": "德国甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.31,
+    "had_draw": 3.67,
+    "had_lose": 2.36,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 7.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      8,
+      5,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      5,
+      2,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039165",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.78,
+    "had_draw": 3.4,
+    "had_lose": 3.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "away",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 12.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      1,
+      2,
+      5
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      5,
+      2,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039166",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.96,
+    "had_draw": 3.35,
+    "had_lose": 3.12,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 9.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      2,
+      4,
+      1,
+      5
+    ],
+    "away_recent_goals": [
+      3,
+      9,
+      1,
+      2,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039167",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.27,
+    "had_draw": 4.95,
+    "had_lose": 7.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 17.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      9,
+      6,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      7,
+      2,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039169",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.96,
+    "had_draw": 3.52,
+    "had_lose": 2.98,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 9.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      9,
+      1,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      0,
+      0,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039178",
+    "league": "美国职业大联盟",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.63,
+    "had_draw": 3.7,
+    "had_lose": 4.07,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      2,
+      2,
+      5,
+      4
+    ],
+    "away_recent_goals": [
+      6,
+      3,
+      3,
+      7,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.9
+  },
+  {
+    "mid": "2039179",
+    "league": "韩国职业联赛",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 1.39,
+    "had_draw": 3.85,
+    "had_lose": 6.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 75.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      3,
+      2,
+      0,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      5,
+      2,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039180",
+    "league": "澳大利亚超级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.64,
+    "had_draw": 4.2,
+    "had_lose": 3.55,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 10.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      6,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      5,
+      3,
+      5,
+      4
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039181",
+    "league": "日本职业联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.58,
+    "had_draw": 3.52,
+    "had_lose": 4.7,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 13.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      1,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      6,
+      5,
+      1,
+      3,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039182",
+    "league": "日本职业联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.57,
+    "had_draw": 3.42,
+    "had_lose": 5.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 16.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      5,
+      7,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      5,
+      1,
+      0,
+      4
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039185",
+    "league": "英格兰冠军联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.01,
+    "had_draw": 3.4,
+    "had_lose": 2.96,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 11.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      3,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      3,
+      0,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.1
+  },
+  {
+    "mid": "2039186",
+    "league": "德国乙级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 3.2,
+    "had_draw": 3.55,
+    "had_lose": 1.87,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 24.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      2,
+      1,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      6,
+      2,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039189",
+    "league": "英格兰超级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.37,
+    "had_draw": 4.15,
+    "had_lose": 6.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 21.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      2,
+      2,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      4,
+      0,
+      2,
+      7
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039190",
+    "league": "英格兰超级联赛",
+    "hs": 4,
+    "aws": 3,
+    "total": 7,
+    "had_win": 1.57,
+    "had_draw": 3.5,
+    "had_lose": 4.85,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      2,
+      4,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      1,
+      1,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039191",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.94,
+    "had_draw": 3.2,
+    "had_lose": 2.1,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 7.2,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      2,
+      2,
+      5
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      2,
+      4,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039193",
+    "league": "德国甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.53,
+    "had_draw": 3.9,
+    "had_lose": 4.55,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      3,
+      5,
+      3
+    ],
+    "away_recent_goals": [
+      4,
+      4,
+      6,
+      1,
+      6
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039194",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.91,
+    "had_draw": 3.4,
+    "had_lose": 3.21,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      4,
+      4,
+      4
+    ],
+    "away_recent_goals": [
+      4,
+      1,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039197",
+    "league": "英格兰超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.73,
+    "had_draw": 3.4,
+    "had_lose": 3.88,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 6.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      4,
+      2,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      1,
+      3,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039198",
+    "league": "德国甲级联赛",
+    "hs": 4,
+    "aws": 2,
+    "total": 6,
+    "had_win": 1.3,
+    "had_draw": 5.32,
+    "had_lose": 5.8,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 18.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      5,
+      3,
+      5,
+      4
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      7,
+      2,
+      1
+    ],
+    "home_win_pct": 1.0,
+    "recent_total_avg": 4.0
+  },
+  {
+    "mid": "2039199",
+    "league": "意大利甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.98,
+    "had_draw": 2.8,
+    "had_lose": 2.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      5,
+      4,
+      4
+    ],
+    "away_recent_goals": [
+      3,
+      2,
+      2,
+      2,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039200",
+    "league": "荷兰杯",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 2.32,
+    "had_draw": 3.25,
+    "had_lose": 2.56,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 90.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      3,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      4,
+      5,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039201",
+    "league": "葡萄牙超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.02,
+    "had_draw": 3.02,
+    "had_lose": 3.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      1,
+      1,
+      6,
+      5
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      3,
+      3,
+      4
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039202",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.15,
+    "had_draw": 3.13,
+    "had_lose": 2.9,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 6.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      4,
+      6,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      1,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039204",
+    "league": "法国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.19,
+    "had_draw": 5.65,
+    "had_lose": 8.9,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 26.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      4,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      0,
+      3,
+      2,
+      0
+    ],
+    "home_win_pct": 1.0,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039205",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.86,
+    "had_draw": 3.25,
+    "had_lose": 3.55,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 13.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      6,
+      1,
+      2,
+      1,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      4,
+      1,
+      3,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039206",
+    "league": "美国职业大联盟",
+    "hs": 1,
+    "aws": 4,
+    "total": 5,
+    "had_win": 1.52,
+    "had_draw": 4.1,
+    "had_lose": 4.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 100.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      6,
+      0
+    ],
+    "away_recent_goals": [
+      2,
+      4,
+      3,
+      1,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039207",
+    "league": "意大利甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.42,
+    "had_draw": 3.12,
+    "had_lose": 1.94,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 5.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      1,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      3,
+      1,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039239",
+    "league": "亚洲冠军精英联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 4.08,
+    "had_draw": 3.55,
+    "had_lose": 1.66,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      6,
+      5,
+      5,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      0,
+      2,
+      3,
+      2
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039243",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.13,
+    "had_draw": 3.15,
+    "had_lose": 2.92,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 6.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      3,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      1,
+      5,
+      2,
+      1,
+      5
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039246",
+    "league": "意大利杯",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.7,
+    "had_draw": 3.51,
+    "had_lose": 3.9,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "draw",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 20.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      7,
+      7,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      7,
+      0,
+      5,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.9
+  },
+  {
+    "mid": "2039247",
+    "league": "法国杯",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 1.38,
+    "had_draw": 4.2,
+    "had_lose": 6.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 20.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      3,
+      6,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      5,
+      4,
+      4,
+      1,
+      7
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 4.1
+  },
+  {
+    "mid": "2039248",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.14,
+    "had_draw": 6.2,
+    "had_lose": 11.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      2,
+      3,
+      3,
+      5
+    ],
+    "away_recent_goals": [
+      6,
+      4,
+      7,
+      2,
+      5
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 4.4
+  },
+  {
+    "mid": "2039249",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 3,
+    "total": 5,
+    "had_win": 2.41,
+    "had_draw": 2.95,
+    "had_lose": 2.66,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 24.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      1,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      6,
+      2,
+      2,
+      0,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039250",
+    "league": "日本职业联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.75,
+    "had_draw": 3.3,
+    "had_lose": 3.95,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      1,
+      1,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      1,
+      5,
+      1,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039252",
+    "league": "芬兰超级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.84,
+    "had_draw": 3.55,
+    "had_lose": 3.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 19.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      4,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      1,
+      6,
+      5
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039253",
+    "league": "西班牙甲级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 2.34,
+    "had_draw": 3.5,
+    "had_lose": 2.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 20.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      1,
+      3,
+      3,
+      5
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      3,
+      2,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039255",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.72,
+    "had_draw": 3.15,
+    "had_lose": 2.25,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      2,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      1,
+      5,
+      1,
+      6,
+      3
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039257",
+    "league": "荷兰甲级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 2.1,
+    "had_draw": 3.43,
+    "had_lose": 2.78,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 36.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      2,
+      4,
+      3,
+      5
+    ],
+    "away_recent_goals": [
+      2,
+      0,
+      2,
+      4,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039258",
+    "league": "英格兰冠军联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 5.95,
+    "had_draw": 3.9,
+    "had_lose": 1.42,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      2,
+      3,
+      1
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      2,
+      3,
+      2
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039261",
+    "league": "英格兰超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.73,
+    "had_draw": 3.62,
+    "had_lose": 3.64,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 11.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      4,
+      0,
+      0
+    ],
+    "away_recent_goals": [
+      3,
+      3,
+      4,
+      0,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.0
+  },
+  {
+    "mid": "2039262",
+    "league": "意大利杯",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.65,
+    "had_draw": 3.4,
+    "had_lose": 4.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "draw",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 6.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      3,
+      1,
+      5
+    ],
+    "away_recent_goals": [
+      2,
+      1,
+      2,
+      2,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.0
+  },
+  {
+    "mid": "2039266",
+    "league": "沙特职业联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 5.35,
+    "had_draw": 4.2,
+    "had_lose": 1.42,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 6.8,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      7,
+      4,
+      4,
+      4
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      4,
+      5,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 4.0
+  },
+  {
+    "mid": "2039269",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 3,
+    "total": 5,
+    "had_win": 2.27,
+    "had_draw": 3.3,
+    "had_lose": 2.59,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 24.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      2,
+      1,
+      2
+    ],
+    "away_recent_goals": [
+      5,
+      2,
+      3,
+      1,
+      4
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039272",
+    "league": "德国杯",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.54,
+    "had_draw": 3.92,
+    "had_lose": 4.45,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 7.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      6,
+      4,
+      2,
+      7,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      1,
+      3,
+      5
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039273",
+    "league": "荷兰甲级联赛",
+    "hs": 6,
+    "aws": 1,
+    "total": 7,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      7,
+      4,
+      5,
+      3
+    ],
+    "away_recent_goals": [
+      4,
+      5,
+      3,
+      2,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039274",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.57,
+    "had_draw": 3.3,
+    "had_lose": 1.83,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 6.2,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      6,
+      1,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      4,
+      2,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039279",
+    "league": "亚洲冠军乙级联赛",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 20.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      2,
+      7,
+      5
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      4,
+      5,
+      2
+    ],
+    "home_win_pct": 1.0,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039290",
+    "league": "芬兰超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.16,
+    "had_draw": 3.3,
+    "had_lose": 2.75,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 6.3,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      2,
+      1
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      6,
+      2,
+      2
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039291",
+    "league": "沙特职业联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.46,
+    "had_draw": 3.3,
+    "had_lose": 2.38,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      3,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      5,
+      2,
+      4,
+      3,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039293",
+    "league": "德国乙级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 2.17,
+    "had_draw": 3.35,
+    "had_lose": 2.7,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 14.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      7,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      1,
+      3,
+      6
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039296",
+    "league": "荷兰乙级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 2.7,
+    "had_draw": 3.75,
+    "had_lose": 2.04,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 19.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      6,
+      1,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      5,
+      3,
+      3,
+      5,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039297",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.3,
+    "had_draw": 4.6,
+    "had_lose": 7.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "draw",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 8.9,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      3,
+      5,
+      1
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      2,
+      4,
+      1
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039299",
+    "league": "法国甲级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 5.75,
+    "had_draw": 4.25,
+    "had_lose": 1.39,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 60.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      7,
+      3,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      5,
+      5,
+      3,
+      6,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039301",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.65,
+    "had_draw": 3.85,
+    "had_lose": 1.68,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 7.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      6,
+      2,
+      2,
+      0
+    ],
+    "away_recent_goals": [
+      3,
+      7,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.3
+  },
+  {
+    "mid": "2039302",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.13,
+    "had_draw": 2.94,
+    "had_lose": 3.13,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      3,
+      5,
+      4
+    ],
+    "away_recent_goals": [
+      1,
+      1,
+      5,
+      1,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039307",
+    "league": "韩国职业联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.62,
+    "had_draw": 2.9,
+    "had_lose": 2.48,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "home",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      2,
+      3,
+      1
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      5,
+      1,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039308",
+    "league": "日本职业联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.5,
+    "had_draw": 3.85,
+    "had_lose": 4.95,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 6.6,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      5,
+      2,
+      5
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      5,
+      3,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039311",
+    "league": "德国乙级联赛",
+    "hs": 2,
+    "aws": 3,
+    "total": 5,
+    "had_win": 3.12,
+    "had_draw": 3.25,
+    "had_lose": 2.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 20.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      0,
+      0,
+      4,
+      6
+    ],
+    "away_recent_goals": [
+      2,
+      5,
+      3,
+      5,
+      4
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039314",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.95,
+    "had_draw": 3.0,
+    "had_lose": 3.53,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      6,
+      4,
+      7,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.6
+  },
+  {
+    "mid": "2039317",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 3.45,
+    "had_draw": 3.6,
+    "had_lose": 1.78,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      4,
+      6,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      1,
+      9,
+      6
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.9
+  },
+  {
+    "mid": "2039319",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 4,
+    "total": 7,
+    "had_win": 4.15,
+    "had_draw": 4.25,
+    "had_lose": 1.53,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      1,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      6,
+      7,
+      5,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039320",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.4,
+    "had_draw": 3.35,
+    "had_lose": 2.42,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "draw",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      4,
+      2,
+      7,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      4,
+      3,
+      1
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.3
+  },
+  {
+    "mid": "2039321",
+    "league": "英格兰超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.3,
+    "had_draw": 3.08,
+    "had_lose": 2.7,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      4,
+      4,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      3,
+      2,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039323",
+    "league": "英格兰超级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.39,
+    "had_draw": 4.3,
+    "had_lose": 5.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 9.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      2,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      3,
+      3,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039325",
+    "league": "荷兰甲级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.52,
+    "had_draw": 4.1,
+    "had_lose": 4.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 10.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      0,
+      2,
+      3,
+      6
+    ],
+    "away_recent_goals": [
+      0,
+      2,
+      3,
+      2,
+      4
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039328",
+    "league": "英格兰足总杯",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      3,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      3,
+      3,
+      6
+    ],
+    "home_win_pct": 1.0,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039330",
+    "league": "德国甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 4.25,
+    "had_draw": 4.1,
+    "had_lose": 1.54,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      4,
+      2,
+      5,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      3,
+      8,
+      5
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 4.0
+  },
+  {
+    "mid": "2039331",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.03,
+    "had_draw": 3.1,
+    "had_lose": 3.2,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      5,
+      2,
+      1
+    ],
+    "away_recent_goals": [
+      5,
+      2,
+      1,
+      1,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039333",
+    "league": "葡萄牙超级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      2,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      1,
+      1,
+      3
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 2.1
+  },
+  {
+    "mid": "2039335",
+    "league": "西班牙甲级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.93,
+    "had_draw": 3.35,
+    "had_lose": 3.2,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 23.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      4,
+      3,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039336",
+    "league": "美国职业大联盟",
+    "hs": 4,
+    "aws": 2,
+    "total": 6,
+    "had_win": 1.43,
+    "had_draw": 4.05,
+    "had_lose": 5.45,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 50.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      3,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      5,
+      3,
+      6,
+      3,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039337",
+    "league": "韩国职业联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 1.66,
+    "had_draw": 3.18,
+    "had_lose": 4.7,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 28.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      1,
+      2,
+      1
+    ],
+    "away_recent_goals": [
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 1.5
+  },
+  {
+    "mid": "2039338",
+    "league": "澳大利亚超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.03,
+    "had_draw": 3.54,
+    "had_lose": 2.82,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 10.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      2,
+      3,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      2,
+      6,
+      2
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039341",
+    "league": "英格兰冠军联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.82,
+    "had_draw": 3.62,
+    "had_lose": 3.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      6,
+      2,
+      0,
+      0,
+      5
+    ],
+    "away_recent_goals": [
+      1,
+      2,
+      2,
+      6,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039342",
+    "league": "德国乙级联赛",
+    "hs": 2,
+    "aws": 3,
+    "total": 5,
+    "had_win": 2.35,
+    "had_draw": 3.0,
+    "had_lose": 2.7,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 23.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      7,
+      2,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      5,
+      3,
+      1,
+      2,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039343",
+    "league": "西班牙甲级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 2.52,
+    "had_draw": 3.12,
+    "had_lose": 2.43,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 40.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      3,
+      3,
+      1
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      6,
+      2,
+      4
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039344",
+    "league": "瑞典超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.15,
+    "had_draw": 3.45,
+    "had_lose": 1.92,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 6.2,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      5,
+      1,
+      6
+    ],
+    "away_recent_goals": [
+      2,
+      9,
+      2,
+      3,
+      6
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039345",
+    "league": "挪威超级联赛",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 1.82,
+    "had_draw": 3.75,
+    "had_lose": 3.2,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "away",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 60.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      5,
+      1,
+      5,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      1,
+      6,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039347",
+    "league": "法国甲级联赛",
+    "hs": 2,
+    "aws": 3,
+    "total": 5,
+    "had_win": 1.93,
+    "had_draw": 3.5,
+    "had_lose": 3.08,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 27.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      2,
+      1,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      4,
+      2,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039348",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.4,
+    "had_draw": 4.3,
+    "had_lose": 5.47,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      6,
+      4,
+      2,
+      7
+    ],
+    "away_recent_goals": [
+      4,
+      4,
+      3,
+      1,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039350",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.18,
+    "had_draw": 3.0,
+    "had_lose": 2.96,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 8.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      1,
+      6,
+      1
+    ],
+    "away_recent_goals": [
+      5,
+      1,
+      1,
+      3,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039351",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.5,
+    "had_draw": 3.05,
+    "had_lose": 2.49,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "away",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 11.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      2,
+      2,
+      6
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      4,
+      1,
+      2
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039352",
+    "league": "法国甲级联赛",
+    "hs": 4,
+    "aws": 4,
+    "total": 8,
+    "had_win": 1.43,
+    "had_draw": 3.95,
+    "had_lose": 5.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      2,
+      5,
+      0
+    ],
+    "away_recent_goals": [
+      4,
+      4,
+      0,
+      0,
+      7
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039354",
+    "league": "法国甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.33,
+    "had_draw": 4.4,
+    "had_lose": 6.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      7,
+      0,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      2,
+      0,
+      0,
+      5
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039356",
+    "league": "意大利甲级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 7.2,
+    "had_draw": 4.65,
+    "had_lose": 1.29,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 17.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      3,
+      1,
+      5,
+      5
+    ],
+    "away_recent_goals": [
+      5,
+      3,
+      7,
+      7,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039357",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.92,
+    "had_draw": 2.9,
+    "had_lose": 3.8,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 7.1,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      2,
+      4,
+      1,
+      4
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      1,
+      2,
+      7
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039358",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 3.35,
+    "had_draw": 2.92,
+    "had_lose": 2.05,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 11.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      2,
+      6,
+      1,
+      1
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      6,
+      1,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039359",
+    "league": "葡萄牙超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 11.5,
+    "had_draw": 5.15,
+    "had_lose": 1.18,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 7.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      1,
+      2,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      0,
+      2,
+      1,
+      4,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.0
+  },
+  {
+    "mid": "2039362",
+    "league": "法国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.43,
+    "had_draw": 4.3,
+    "had_lose": 5.05,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 9.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      3,
+      3,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      0,
+      2,
+      4,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.5
+  },
+  {
+    "mid": "2039363",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.67,
+    "had_draw": 3.65,
+    "had_lose": 3.9,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      1,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      3,
+      3,
+      5
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039364",
+    "league": "葡萄牙超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "away",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 16.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      2,
+      3,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      0,
+      1,
+      1
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 1.5
+  },
+  {
+    "mid": "2039365",
+    "league": "美国职业大联盟",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.28,
+    "had_draw": 3.6,
+    "had_lose": 2.42,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      4,
+      3,
+      3,
+      6
+    ],
+    "away_recent_goals": [
+      2,
+      6,
+      4,
+      4,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.8
+  },
+  {
+    "mid": "2039366",
+    "league": "意大利甲级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 4.8,
+    "had_draw": 3.62,
+    "had_lose": 1.55,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 50.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      3,
+      1,
+      4
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      1,
+      3,
+      1
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.1
+  },
+  {
+    "mid": "2039368",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.95,
+    "had_draw": 3.63,
+    "had_lose": 1.94,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 11.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      6,
+      3,
+      2,
+      4,
+      4
+    ],
+    "away_recent_goals": [
+      5,
+      5,
+      2,
+      3,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039370",
+    "league": "意大利甲级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 1.94,
+    "had_draw": 2.9,
+    "had_lose": 3.72,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 85.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      1,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      0,
+      2,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 1.6
+  },
+  {
+    "mid": "2039371",
+    "league": "法国乙级联赛",
+    "hs": 2,
+    "aws": 6,
+    "total": 8,
+    "had_win": 2.8,
+    "had_draw": 2.78,
+    "had_lose": 2.43,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      2,
+      6,
+      1
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 1.6
+  },
+  {
+    "mid": "2039372",
+    "league": "英格兰超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.73,
+    "had_draw": 3.65,
+    "had_lose": 3.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "draw",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      4,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      0,
+      4,
+      0,
+      4,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039374",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 1.55,
+    "had_draw": 3.45,
+    "had_lose": 5.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "home",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "away",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      3,
+      1,
+      4
+    ],
+    "away_recent_goals": [
+      1,
+      0,
+      4,
+      2,
+      4
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039401",
+    "league": "沙特职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.42,
+    "had_draw": 4.2,
+    "had_lose": 5.35,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      7,
+      1,
+      4,
+      1
+    ],
+    "away_recent_goals": [
+      3,
+      2,
+      1,
+      3,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039403",
+    "league": "英格兰冠军联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.04,
+    "had_draw": 3.1,
+    "had_lose": 3.16,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 10.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      4,
+      2,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039404",
+    "league": "欧洲冠军联赛",
+    "hs": 5,
+    "aws": 4,
+    "total": 9,
+    "had_win": 2.22,
+    "had_draw": 3.8,
+    "had_lose": 2.41,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": null,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      3,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      7,
+      2,
+      6,
+      7,
+      5
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 4.0
+  },
+  {
+    "mid": "2039407",
+    "league": "日本职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.27,
+    "had_draw": 3.05,
+    "had_lose": 2.77,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 5.9,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      6,
+      2,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      4,
+      3,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039409",
+    "league": "日本职业联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 3.5,
+    "had_draw": 2.98,
+    "had_lose": 1.97,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 15.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      7,
+      2,
+      2,
+      5,
+      2
+    ],
+    "away_recent_goals": [
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.1
+  },
+  {
+    "mid": "2039410",
+    "league": "日本职业联赛",
+    "hs": 1,
+    "aws": 3,
+    "total": 4,
+    "had_win": 2.6,
+    "had_draw": 3.23,
+    "had_lose": 2.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 19.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      2,
+      1,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      7,
+      4,
+      0,
+      3,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039411",
+    "league": "芬兰超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.13,
+    "had_draw": 2.93,
+    "had_lose": 3.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 6.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      2,
+      3,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      1,
+      3,
+      6
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039414",
+    "league": "欧洲冠军联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.87,
+    "had_draw": 3.1,
+    "had_lose": 2.18,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "draw",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 6.4,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      5,
+      4,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      0,
+      3,
+      1
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039415",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 33.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      0,
+      3,
+      0,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      4,
+      5,
+      0
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 1.9
+  },
+  {
+    "mid": "2039416",
+    "league": "南美解放者杯",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.62,
+    "had_draw": 2.85,
+    "had_lose": 1.99,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 5.4,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      1,
+      3,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      2,
+      5,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039417",
+    "league": "南美解放者杯",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 4.9,
+    "had_draw": 3.3,
+    "had_lose": 1.61,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      0,
+      1,
+      3
+    ],
+    "away_recent_goals": [
+      1,
+      3,
+      1,
+      3,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 1.5
+  },
+  {
+    "mid": "2039419",
+    "league": "沙特职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.43,
+    "had_draw": 3.06,
+    "had_lose": 2.56,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "away",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 6.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      6,
+      4,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      1,
+      1,
+      5
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039420",
+    "league": "欧罗巴联赛",
+    "hs": 2,
+    "aws": 1,
+    "total": 3,
+    "had_win": 2.09,
+    "had_draw": 3.0,
+    "had_lose": 3.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "draw",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 7.6,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      4,
+      6,
+      1
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      3,
+      4,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039438",
+    "league": "荷兰乙级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.79,
+    "had_draw": 3.5,
+    "had_lose": 3.52,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      5,
+      6,
+      5,
+      4
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      4,
+      4,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039439",
+    "league": "意大利甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 3.55,
+    "had_draw": 2.78,
+    "had_lose": 2.05,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 8.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      3,
+      1,
+      5
+    ],
+    "away_recent_goals": [
+      0,
+      2,
+      2,
+      3,
+      1
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.1
+  },
+  {
+    "mid": "2039440",
+    "league": "英格兰超级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.25,
+    "had_draw": 4.8,
+    "had_lose": 8.25,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 10.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      3,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      1,
+      5,
+      2,
+      4,
+      0
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039447",
+    "league": "澳大利亚超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.05,
+    "had_draw": 3.1,
+    "had_lose": 3.13,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 6.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      4,
+      2,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      5,
+      2,
+      3,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.0
+  },
+  {
+    "mid": "2039452",
+    "league": "英格兰冠军联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.84,
+    "had_draw": 3.4,
+    "had_lose": 2.07,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 11.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      1,
+      2,
+      2,
+      6
+    ],
+    "away_recent_goals": [
+      6,
+      1,
+      4,
+      1,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039453",
+    "league": "西班牙甲级联赛",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 1.55,
+    "had_draw": 3.9,
+    "had_lose": 4.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 50.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      3,
+      1,
+      4
+    ],
+    "away_recent_goals": [
+      0,
+      2,
+      1,
+      2,
+      6
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039455",
+    "league": "瑞典超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.02,
+    "had_draw": 3.3,
+    "had_lose": 2.02,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      1,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      4,
+      6,
+      3,
+      2,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039456",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 3,
+    "total": 4,
+    "had_win": 1.84,
+    "had_draw": 3.53,
+    "had_lose": 3.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 23.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      4,
+      3,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      4,
+      2,
+      7
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039457",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 1.16,
+    "had_draw": 6.6,
+    "had_lose": 8.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 41.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      9,
+      7,
+      2,
+      6,
+      7
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      4,
+      4,
+      6
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 5.0
+  },
+  {
+    "mid": "2039458",
+    "league": "德国甲级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 2.1,
+    "had_draw": 3.75,
+    "had_lose": 2.59,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 22.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      4,
+      3,
+      8
+    ],
+    "away_recent_goals": [
+      2,
+      2,
+      6,
+      4,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039459",
+    "league": "德国甲级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.57,
+    "had_draw": 3.05,
+    "had_lose": 2.43,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 11.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      3,
+      4,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      3,
+      2,
+      4,
+      4,
+      6
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.6
+  },
+  {
+    "mid": "2039460",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 1.54,
+    "had_draw": 4.05,
+    "had_lose": 4.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      3,
+      4,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      4,
+      2,
+      5
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039461",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.8,
+    "had_draw": 3.25,
+    "had_lose": 1.79,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 5.7,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      4,
+      4,
+      4
+    ],
+    "away_recent_goals": [
+      5,
+      7,
+      1,
+      3,
+      1
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 3.3
+  },
+  {
+    "mid": "2039464",
+    "league": "法国甲级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 1.22,
+    "had_draw": 5.45,
+    "had_lose": 7.9,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "draw",
+      "away"
+    ],
+    "actual_score_odds": 18.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      9,
+      3,
+      3,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      5,
+      2,
+      2,
+      2,
+      1
+    ],
+    "home_win_pct": 0.8,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039468",
+    "league": "德国甲级联赛",
+    "hs": 4,
+    "aws": 1,
+    "total": 5,
+    "had_win": 2.06,
+    "had_draw": 3.75,
+    "had_lose": 2.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 27.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      3,
+      1,
+      9
+    ],
+    "away_recent_goals": [
+      4,
+      4,
+      1,
+      3,
+      5
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039469",
+    "league": "西班牙甲级联赛",
+    "hs": 2,
+    "aws": 4,
+    "total": 6,
+    "had_win": 2.72,
+    "had_draw": 3.0,
+    "had_lose": 2.34,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 90.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      6,
+      4,
+      7
+    ],
+    "away_recent_goals": [
+      5,
+      1,
+      3,
+      2,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039470",
+    "league": "葡萄牙超级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 5.25,
+    "had_draw": 4.02,
+    "had_lose": 1.45,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 14.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      4,
+      2,
+      4,
+      1
+    ],
+    "away_recent_goals": [
+      5,
+      3,
+      2,
+      2,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039472",
+    "league": "法国乙级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.43,
+    "had_draw": 2.7,
+    "had_lose": 2.88,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 6.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      1,
+      0,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      5,
+      4,
+      0,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.2
+  },
+  {
+    "mid": "2039473",
+    "league": "荷兰甲级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.24,
+    "had_draw": 3.8,
+    "had_lose": 2.38,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 9.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      3,
+      3,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      7,
+      2,
+      7,
+      4,
+      5
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.9
+  },
+  {
+    "mid": "2039475",
+    "league": "西班牙甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 4.15,
+    "had_draw": 3.8,
+    "had_lose": 1.6,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      2,
+      4,
+      1
+    ],
+    "away_recent_goals": [
+      2,
+      1,
+      3,
+      5,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039476",
+    "league": "法国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 4.1,
+    "had_draw": 3.96,
+    "had_lose": 1.58,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 7.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      0,
+      2,
+      4
+    ],
+    "away_recent_goals": [
+      6,
+      5,
+      5,
+      3,
+      6
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039477",
+    "league": "日本职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.6,
+    "had_draw": 3.45,
+    "had_lose": 4.65,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "away",
+      "home",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 6.25,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      3,
+      3,
+      1,
+      3
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      3,
+      4,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039478",
+    "league": "日本职业联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.05,
+    "had_draw": 2.98,
+    "had_lose": 3.27,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 5.7,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      1,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      4,
+      0,
+      1,
+      1,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 1.6
+  },
+  {
+    "mid": "2039482",
+    "league": "德国乙级联赛",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 2.1,
+    "had_draw": 3.24,
+    "had_lose": 2.9,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "draw",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 80.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      6,
+      3,
+      3,
+      2,
+      8
+    ],
+    "away_recent_goals": [
+      5,
+      2,
+      7,
+      2,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 4.1
+  },
+  {
+    "mid": "2039483",
+    "league": "西班牙甲级联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 1.55,
+    "had_draw": 3.8,
+    "had_lose": 4.55,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 12.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      4,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      5,
+      1,
+      1,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.7
+  },
+  {
+    "mid": "2039484",
+    "league": "瑞典超级联赛",
+    "hs": 2,
+    "aws": 3,
+    "total": 5,
+    "had_win": 2.4,
+    "had_draw": 3.15,
+    "had_lose": 2.53,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "home",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 28.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      5,
+      1,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      2,
+      0,
+      3,
+      2,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039485",
+    "league": "荷兰甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 5.35,
+    "had_draw": 4.4,
+    "had_lose": 1.4,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "draw",
+      "draw",
+      "home"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      2,
+      2,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      4,
+      2,
+      0,
+      2,
+      3
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.4
+  },
+  {
+    "mid": "2039491",
+    "league": "英格兰超级联赛",
+    "hs": 3,
+    "aws": 2,
+    "total": 5,
+    "had_win": 2.15,
+    "had_draw": 3.4,
+    "had_lose": 2.7,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "away",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 16.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      1,
+      3,
+      4,
+      4
+    ],
+    "away_recent_goals": [
+      4,
+      3,
+      2,
+      2,
+      2
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.8
+  },
+  {
+    "mid": "2039492",
+    "league": "荷兰甲级联赛",
+    "hs": 2,
+    "aws": 2,
+    "total": 4,
+    "had_win": 2.1,
+    "had_draw": 3.35,
+    "had_lose": 2.82,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 9.7,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      6,
+      4,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      2,
+      3,
+      3,
+      3,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039493",
+    "league": "挪威超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.32,
+    "had_draw": 3.28,
+    "had_lose": 2.54,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 6.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      2,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      3,
+      4,
+      5,
+      6,
+      3
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.4
+  },
+  {
+    "mid": "2039494",
+    "league": "法国甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.85,
+    "had_draw": 3.45,
+    "had_lose": 2.05,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "home",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      5,
+      2,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      4,
+      5,
+      5,
+      4,
+      4
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.7
+  },
+  {
+    "mid": "2039496",
+    "league": "意大利甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.1,
+    "had_draw": 6.7,
+    "had_lose": 14.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "draw",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 12.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      0,
+      2,
+      1,
+      2,
+      2
+    ],
+    "away_recent_goals": [
+      0,
+      1,
+      3,
+      1,
+      1
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 1.3
+  },
+  {
+    "mid": "2039498",
+    "league": "葡萄牙超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 1.59,
+    "had_draw": 3.85,
+    "had_lose": 4.15,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "home",
+      "draw",
+      "home"
+    ],
+    "away_results": [
+      "away",
+      "away",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      1,
+      4,
+      6
+    ],
+    "away_recent_goals": [
+      1,
+      1,
+      4,
+      5,
+      3
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 3.1
+  },
+  {
+    "mid": "2039499",
+    "league": "德国甲级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 2.33,
+    "had_draw": 3.5,
+    "had_lose": 2.41,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "draw",
+      "home",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "home",
+      "away",
+      "away",
+      "away"
+    ],
+    "actual_score_odds": 7.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      4,
+      2,
+      3,
+      4
+    ],
+    "away_recent_goals": [
+      0,
+      3,
+      3,
+      9,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.2
+  },
+  {
+    "mid": "2039500",
+    "league": "沙特职业联赛",
+    "hs": 3,
+    "aws": 1,
+    "total": 4,
+    "had_win": 3.25,
+    "had_draw": 3.8,
+    "had_lose": 1.79,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "draw",
+      "draw",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 24.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      4,
+      2,
+      5,
+      5
+    ],
+    "away_recent_goals": [
+      2,
+      6,
+      4,
+      1,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 3.5
+  },
+  {
+    "mid": "2039501",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 2.05,
+    "had_draw": 3.4,
+    "had_lose": 2.88,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "home",
+      "home",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "draw",
+      "away",
+      "away",
+      "home"
+    ],
+    "actual_score_odds": 8.75,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      1,
+      7,
+      4,
+      2
+    ],
+    "away_recent_goals": [
+      1,
+      4,
+      1,
+      3,
+      5
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039503",
+    "league": "法国甲级联赛",
+    "hs": 4,
+    "aws": 2,
+    "total": 6,
+    "had_win": 1.96,
+    "had_draw": 3.5,
+    "had_lose": 3.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "home",
+      "home",
+      "draw",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 40.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      5,
+      3,
+      2,
+      0,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      3,
+      3,
+      7,
+      0
+    ],
+    "home_win_pct": 0.6,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039506",
+    "league": "葡萄牙超级联赛",
+    "hs": 1,
+    "aws": 1,
+    "total": 2,
+    "had_win": 3.95,
+    "had_draw": 2.9,
+    "had_lose": 1.88,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "home",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "away",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 6.2,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      4,
+      2,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      4,
+      3,
+      1
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.6
+  },
+  {
+    "mid": "2039507",
+    "league": "英格兰超级联赛",
+    "hs": 1,
+    "aws": 3,
+    "total": 4,
+    "had_win": 1.36,
+    "had_draw": 4.25,
+    "had_lose": 6.3,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "home",
+      "away",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "draw"
+    ],
+    "actual_score_odds": 36.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      1,
+      3,
+      1,
+      3,
+      7
+    ],
+    "away_recent_goals": [
+      1,
+      5,
+      5,
+      1,
+      2
+    ],
+    "home_win_pct": 0.4,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039509",
+    "league": "意大利甲级联赛",
+    "hs": 1,
+    "aws": 2,
+    "total": 3,
+    "had_win": 3.04,
+    "had_draw": 3.0,
+    "had_lose": 2.14,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "away",
+      "away",
+      "home"
+    ],
+    "away_results": [
+      "draw",
+      "draw",
+      "home",
+      "away",
+      "draw"
+    ],
+    "actual_score_odds": 7.5,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      0,
+      1,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      6,
+      2,
+      2,
+      1,
+      2
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.3
+  },
+  {
+    "mid": "2039511",
+    "league": "瑞典超级联赛",
+    "hs": 1,
+    "aws": 3,
+    "total": 4,
+    "had_win": 2.91,
+    "had_draw": 2.9,
+    "had_lose": 2.27,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "draw",
+      "draw",
+      "away",
+      "away"
+    ],
+    "away_results": [
+      "away",
+      "home",
+      "away",
+      "draw",
+      "draw"
+    ],
+    "actual_score_odds": 17.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      2,
+      2,
+      2,
+      3,
+      3
+    ],
+    "away_recent_goals": [
+      3,
+      3,
+      3,
+      4,
+      4
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039515",
+    "league": "英格兰超级联赛",
+    "hs": 3,
+    "aws": 3,
+    "total": 6,
+    "had_win": 6.55,
+    "had_draw": 4.58,
+    "had_lose": 1.32,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "away",
+      "away",
+      "draw",
+      "home",
+      "away"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "home",
+      "home",
+      "home"
+    ],
+    "actual_score_odds": 60.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      3,
+      3,
+      4,
+      3,
+      2
+    ],
+    "away_recent_goals": [
+      3,
+      1,
+      3,
+      3,
+      4
+    ],
+    "home_win_pct": 0.2,
+    "recent_total_avg": 2.9
+  },
+  {
+    "mid": "2039517",
+    "league": "葡萄牙超级联赛",
+    "hs": 5,
+    "aws": 1,
+    "total": 6,
+    "had_win": 999.0,
+    "had_draw": 999.0,
+    "had_lose": 999.0,
+    "h_scored_avg": 0.0,
+    "h_conceded_avg": 0.0,
+    "a_scored_avg": 0.0,
+    "a_conceded_avg": 0.0,
+    "home_results": [
+      "draw",
+      "draw",
+      "draw",
+      "away",
+      "draw"
+    ],
+    "away_results": [
+      "home",
+      "home",
+      "draw",
+      "home",
+      "away"
+    ],
+    "actual_score_odds": 28.0,
+    "score_odds_count": 28,
+    "home_recent_goals": [
+      4,
+      2,
+      0,
+      3,
+      0
+    ],
+    "away_recent_goals": [
+      2,
+      1,
+      2,
+      5,
+      3
+    ],
+    "home_win_pct": 0.0,
+    "recent_total_avg": 2.2
+  }
+]

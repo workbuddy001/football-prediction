@@ -329,3 +329,29 @@ def ai_reasoning_api():
         return jsonify({'success': True, 'file': output_file})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
+
+
+# ── V3.6 自动推理分析 ──
+@bp.route('/v36/analyze/<match_id>', methods=['GET', 'POST'])
+def v36_analyze(match_id):
+    """执行V3.6完整推理流程。POST时优先使用请求体中的ttg_hitrates。"""
+    try:
+        data_file = os.path.join(DATA_DIR, f'{match_id}.json')
+        if not os.path.exists(data_file):
+            return jsonify({'success': False, 'error': f'比赛{match_id}数据不存在'}), 404
+        
+        with open(data_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # If POST, merge ttg_hitrates and other UI data from request body
+        if request.method == 'POST' and request.is_json:
+            body = request.get_json(silent=True) or {}
+            if 'ttg_hitrates' in body:
+                data['_change_hitrate'] = body['ttg_hitrates']
+        
+        from v36_analyzer import analyze_match
+        result = analyze_match(data)
+        return jsonify({'success': True, 'analysis': result})
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500

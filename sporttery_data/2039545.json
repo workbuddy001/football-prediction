@@ -1,0 +1,919 @@
+{
+  "match_id": "2039545",
+  "fetch_time": "2026-05-05 20:50:34",
+  "match_info": {
+    "home_team": "水晶体育",
+    "away_team": "帕尔梅拉斯",
+    "league": "南美解放者杯",
+    "time": "2026-05-06 06:00",
+    "match_num_str": "周二008",
+    "match_week": "周二",
+    "match_date": "2026-05-06",
+    "match_time": "06:00:00",
+    "match_status": "Selling",
+    "home_rank": "[Group F1]",
+    "away_rank": "[Group F2]",
+    "league_abbr": "解放者杯"
+  },
+  "score_odds": {
+    "05:00": "1000",
+    "01:00": "13.00",
+    "05:02": "900.0",
+    "05:01": "800.0",
+    "02:04": "60.00",
+    "02:05": "150.0",
+    "02:02": "19.00",
+    "02:03": "29.00",
+    "02:00": "30.00",
+    "02:01": "17.00",
+    "03:03": "90.00",
+    "03:01": "65.00",
+    "03:02": "70.00",
+    "03:00": "100.0",
+    "00:01": "5.50",
+    "00:00": "10.00",
+    "00:03": "9.50",
+    "00:02": "6.25",
+    "00:05": "50.00",
+    "00:04": "20.00",
+    "04:02": "250.0",
+    "04:01": "250.0",
+    "04:00": "400.0",
+    "01:02": "7.00",
+    "01:01": "7.00",
+    "01:04": "26.00",
+    "01:03": "12.00",
+    "01:05": "60.00"
+  },
+  "total_goals": {
+    "3球": "3.45",
+    "4球": "6.30",
+    "5球": "13.00",
+    "6球": "25.00",
+    "7球": "36.00",
+    "0球": "10.00",
+    "1球": "4.40",
+    "2球": "3.00"
+  },
+  "had": {
+    "胜": "6.10",
+    "平": "3.75",
+    "负": "1.43"
+  },
+  "ttg": {
+    "3球": "3.45",
+    "4球": "6.30",
+    "5球": "13.00",
+    "6球": "25.00",
+    "7球": "36.00",
+    "0球": "10.00",
+    "1球": "4.40",
+    "2球": "3.00"
+  },
+  "hafu": {
+    "负负": "2.10",
+    "平平": "5.30",
+    "胜胜": "11.00",
+    "负平": "19.00",
+    "平胜": "13.00",
+    "负胜": "60.00",
+    "胜负": "27.00",
+    "胜平": "19.00",
+    "平负": "3.80"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "2.40",
+    "让平": "2.92",
+    "让负": "2.70"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "帕梅拉斯",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "73",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "70",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "60",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.4",
+        "awayGoalAvgCntRatio": "46.7",
+        "homeGoalAvgCnt": "1.6",
+        "homeGoalAvgCntRatio": "53.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "水晶体育",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 3
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.6",
+        "awayLossGoalAvgCntRatio": "27.3",
+        "homeLossGoalAvgCnt": "1.6",
+        "homeLossGoalAvgCntRatio": "72.7",
+        "totalLegCnt": 10
+      },
+      "matchId": 2512158,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 1
+      },
+      "sportteryAwayTeamId": 577,
+      "sportteryHomeTeamId": 645,
+      "sportteryMatchId": 2039545,
+      "uniformAwayTeamId": 10,
+      "uniformHomeTeamId": 1378
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1637,
+          "awayTeamShortName": "水晶体育",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 49,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 310,
+          "homeTeamShortName": "帕梅拉斯",
+          "matchDate": "2026-04-17",
+          "matchId": 2512189,
+          "seasonId": 14216,
+          "sportteryAwayTeamId": 645,
+          "sportteryHomeTeamId": 577,
+          "sportteryMatchId": 2039123,
+          "sportteryTournamentId": 49,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 1378,
+          "uniformHomeTeamId": 10,
+          "uniformLeagueId": 77,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1637,
+          "awayTeamShortName": "水晶体育",
+          "fullCourtGoal": "6:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "3:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "6",
+          "homeTeamId": 310,
+          "homeTeamShortName": "帕梅拉斯",
+          "matchDate": "2025-05-29",
+          "matchId": 2319029,
+          "seasonId": 12764,
+          "sportteryAwayTeamId": 645,
+          "sportteryHomeTeamId": 577,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 6,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 1378,
+          "uniformHomeTeamId": 10,
+          "uniformLeagueId": 77,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 310,
+          "awayTeamShortName": "帕梅拉斯",
+          "fullCourtGoal": "2:3",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1637,
+          "homeTeamShortName": "水晶体育",
+          "matchDate": "2025-04-04",
+          "matchId": 2319072,
+          "seasonId": 12764,
+          "sportteryAwayTeamId": 577,
+          "sportteryHomeTeamId": 645,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 10,
+          "uniformHomeTeamId": 1378,
+          "uniformLeagueId": 77,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 3,
+        "lossProbability": "100%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "水晶体育",
+        "totalLegCnt": 3,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 397880,
+            "personName": "J. Piquerez",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 679965,
+            "personName": "Vitor Roque",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 577,
+        "teamId": 310,
+        "teamShortName": "帕梅拉斯",
+        "uniformTeamId": 10
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 7,
+            "injuryFlag": 1,
+            "personId": 434545,
+            "personName": "Felipe Vizeu",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 645,
+        "teamId": 1637,
+        "teamShortName": "水晶体育",
+        "uniformTeamId": 1378
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 581,
+            "awayTeamShortName": "桑托斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 577,
+            "homeTeamShortName": "帕梅拉斯",
+            "matchDate": "2026-05-03",
+            "matchId": 2469029,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 45,
+            "uniformHomeTeamId": 10,
+            "uniformLeagueId": 31,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 577,
+            "awayTeamShortName": "帕梅拉斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 629,
+            "homeTeamShortName": "波特诺",
+            "matchDate": "2026-04-30",
+            "matchId": 2512175,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039417,
+            "sportteryTournamentId": 49,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 10,
+            "uniformHomeTeamId": 847,
+            "uniformLeagueId": 77,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 577,
+            "awayTeamShortName": "帕梅拉斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2734,
+            "homeTeamShortName": "布拉干RB",
+            "matchDate": "2026-04-27",
+            "matchId": 2469032,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 10,
+            "uniformHomeTeamId": 18,
+            "uniformLeagueId": 31,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Jacuipense",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 577,
+            "homeTeamShortName": "帕梅拉斯",
+            "matchDate": "2026-04-24",
+            "matchId": 2513070,
+            "seasonId": 14428,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 489,
+            "tournamentShortName": "巴西杯",
+            "uniformAwayTeamId": 9345,
+            "uniformHomeTeamId": 10,
+            "uniformLeagueId": 95,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 564,
+            "awayTeamShortName": "巴竞技",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 577,
+            "homeTeamShortName": "帕梅拉斯",
+            "matchDate": "2026-04-20",
+            "matchId": 2469035,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 53,
+            "uniformHomeTeamId": 10,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 7,
+          "lossGoalCnt": 2,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 5,
+          "sportteryTeamId": 0,
+          "teamId": 577,
+          "teamShortName": "帕梅拉斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 10,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1776,
+            "awayTeamShortName": "库斯科",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 645,
+            "homeTeamShortName": "水晶体育",
+            "matchDate": "2026-05-04",
+            "matchId": 2489598,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 570,
+            "uniformHomeTeamId": 1378,
+            "uniformLeagueId": 1360,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "巴兰基亚",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 645,
+            "homeTeamShortName": "水晶体育",
+            "matchDate": "2026-04-29",
+            "matchId": 2512174,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 731,
+            "uniformHomeTeamId": 1378,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 645,
+            "awayTeamShortName": "水晶体育",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2477,
+            "homeTeamShortName": "卡哈商联",
+            "matchDate": "2026-04-26",
+            "matchId": 2489489,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 1378,
+            "uniformHomeTeamId": 809,
+            "uniformLeagueId": 1360,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 645,
+            "awayTeamShortName": "水晶体育",
+            "fullCourtGoal": "4:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 0,
+            "homeTeamShortName": "Atlético Grau",
+            "matchDate": "2026-04-23",
+            "matchId": 2489512,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 1378,
+            "uniformHomeTeamId": 5546,
+            "uniformLeagueId": 1360,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1967,
+            "awayTeamShortName": "卡哈大学",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 645,
+            "homeTeamShortName": "水晶体育",
+            "matchDate": "2026-04-20",
+            "matchId": 2489500,
+            "seasonId": 14344,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 111,
+            "tournamentShortName": "秘鲁甲",
+            "uniformAwayTeamId": 1287,
+            "uniformHomeTeamId": 1378,
+            "uniformLeagueId": 1360,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 8,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 645,
+          "teamShortName": "水晶体育",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1378,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48189,
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13565,
+          "groupName": "Group F",
+          "lossGoalMatchCnt": 1,
+          "phaseName": "",
+          "points": "6",
+          "ranking": "1",
+          "sportteryTeamId": 645,
+          "teamId": 0,
+          "teamShortName": "水晶体育",
+          "totalLegCnt": 3,
+          "uniformTeamId": 1378,
+          "winGoalMatchCnt": 2,
+          "winProbability": "67%"
+        },
+        {
+          "drawMatchCnt": 2,
+          "groupId": 13565,
+          "groupName": "Group F",
+          "lossGoalMatchCnt": 0,
+          "phaseName": "",
+          "points": "5",
+          "ranking": "2",
+          "sportteryTeamId": 577,
+          "teamId": 0,
+          "teamShortName": "帕梅拉斯",
+          "totalLegCnt": 3,
+          "uniformTeamId": 10,
+          "winGoalMatchCnt": 1,
+          "winProbability": "33%"
+        }
+      ],
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2390270
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 1,
+            "assistProbability": "33%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 667565,
+            "personName": "J. López",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "42"
+          },
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 648749,
+            "personName": "索萨",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 449822,
+            "personName": "阿里亚斯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          }
+        ],
+        "sportteryTeamId": 577,
+        "teamId": 310,
+        "teamShortName": "帕梅拉斯",
+        "uniformTeamId": 10
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "20%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "29%",
+            "injuryFlag": 0,
+            "personId": 31571,
+            "personName": "Y. Yotún",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 6,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 1,
+            "assistProbability": "20%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 1,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 437152,
+            "personName": "J. González",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 6,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 1,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 702690,
+            "personName": "C. Cabellos",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "21"
+          }
+        ],
+        "sportteryTeamId": 645,
+        "teamId": 1637,
+        "teamShortName": "水晶体育",
+        "uniformTeamId": 1378
+      },
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2390270
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 2,
+      "change_pct": 20.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 4.8
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 5.0
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -5.5
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": 19.0
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -7.7
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": 13.0
+    }
+  },
+  "hafu_change": {
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 9.1
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -2.6
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 8.3
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 10.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -2.3
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 1,
+      "change_pct": 2.7
+    },
+    "胜": {
+      "count": 1,
+      "change_pct": 4.3
+    },
+    "负": {
+      "count": 1,
+      "change_pct": -2.1
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 3,
+      "change_pct": -8.8
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": 3.4
+    },
+    "让负": {
+      "count": 2,
+      "change_pct": 3.8
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.00",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "30.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "6.25",
+          "special": true
+        },
+        {
+          "score": "01:01",
+          "odds": "7.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.00（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

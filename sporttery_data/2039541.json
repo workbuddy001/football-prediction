@@ -1,0 +1,980 @@
+{
+  "match_id": "2039541",
+  "fetch_time": "2026-05-05 20:30:53",
+  "match_info": {
+    "home_team": "赫尔辛基火花",
+    "away_team": "国际图尔库",
+    "league": "芬兰超级联赛",
+    "time": "2026-05-06 00:00",
+    "match_num_str": "周二004",
+    "match_week": "周二",
+    "match_date": "2026-05-06",
+    "match_time": "00:00:00",
+    "match_status": "Selling",
+    "home_rank": "[芬超12]",
+    "away_rank": "[芬超3]",
+    "league_abbr": "芬超"
+  },
+  "score_odds": {
+    "05:00": "500.0",
+    "01:00": "13.00",
+    "05:02": "400.0",
+    "05:01": "400.0",
+    "02:04": "45.00",
+    "02:05": "100.0",
+    "02:02": "13.50",
+    "02:03": "22.00",
+    "02:00": "25.00",
+    "02:01": "13.00",
+    "03:03": "55.00",
+    "03:01": "35.00",
+    "03:02": "35.00",
+    "03:00": "50.00",
+    "00:01": "7.00",
+    "00:00": "14.00",
+    "00:03": "13.00",
+    "00:02": "8.25",
+    "00:05": "55.00",
+    "00:04": "27.00",
+    "04:02": "120.0",
+    "04:01": "100.0",
+    "04:00": "150.0",
+    "01:02": "7.00",
+    "01:01": "7.00",
+    "01:04": "27.00",
+    "01:03": "12.50",
+    "01:05": "60.00"
+  },
+  "total_goals": {
+    "3球": "3.30",
+    "4球": "5.00",
+    "5球": "9.75",
+    "6球": "18.00",
+    "7球": "27.00",
+    "0球": "14.00",
+    "1球": "5.50",
+    "2球": "3.30"
+  },
+  "had": {
+    "胜": "5.00",
+    "平": "3.80",
+    "负": "1.50"
+  },
+  "ttg": {
+    "3球": "3.30",
+    "4球": "5.00",
+    "5球": "9.75",
+    "6球": "18.00",
+    "7球": "27.00",
+    "0球": "14.00",
+    "1球": "5.50",
+    "2球": "3.30"
+  },
+  "hafu": {
+    "负负": "2.25",
+    "平平": "5.60",
+    "胜胜": "8.50",
+    "负平": "17.00",
+    "平胜": "11.00",
+    "负胜": "40.00",
+    "胜负": "24.00",
+    "胜平": "17.00",
+    "平负": "4.20"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "2.19",
+    "让平": "3.40",
+    "让负": "2.64"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "国际图尔",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "77",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 6,
+        "homeScoreRatio": "20",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "63",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 6,
+        "homeScoreRatio": "20",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.4",
+        "awayGoalAvgCntRatio": "66.7",
+        "homeGoalAvgCnt": "0.7",
+        "homeGoalAvgCntRatio": "33.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "赫尔火花",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 6,
+        "homeScoreRatio": "27",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.7",
+        "awayLossGoalAvgCntRatio": "26.9",
+        "homeLossGoalAvgCnt": "1.9",
+        "homeLossGoalAvgCntRatio": "73.1",
+        "totalLegCnt": 10
+      },
+      "matchId": 2472838,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "58",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 4
+      },
+      "sportteryAwayTeamId": 588,
+      "sportteryHomeTeamId": 2064951,
+      "sportteryMatchId": 2039541,
+      "uniformAwayTeamId": 584,
+      "uniformHomeTeamId": 57195
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 808,
+          "awayTeamShortName": "国际图尔",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:3",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 845,
+          "homeTeamShortName": "赫尔火花",
+          "matchDate": "2026-01-17",
+          "matchId": 2469955,
+          "seasonId": 14330,
+          "sportteryAwayTeamId": 588,
+          "sportteryHomeTeamId": 2064951,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1695,
+          "tournamentShortName": "联赛杯",
+          "uniformAwayTeamId": 584,
+          "uniformHomeTeamId": 57195,
+          "uniformLeagueId": 351,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 845,
+          "awayTeamShortName": "赫尔火花",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 2064839,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 808,
+          "homeTeamShortName": "国际图尔",
+          "matchDate": "2025-10-22",
+          "matchId": 2441576,
+          "seasonId": 12872,
+          "sportteryAwayTeamId": 2064951,
+          "sportteryHomeTeamId": 588,
+          "sportteryMatchId": 2034250,
+          "sportteryTournamentId": 2064839,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 57195,
+          "uniformHomeTeamId": 584,
+          "uniformLeagueId": 1073,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 808,
+          "awayTeamShortName": "国际图尔",
+          "fullCourtGoal": "0:2",
+          "gmLeagueId": 2064839,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 845,
+          "homeTeamShortName": "赫尔火花",
+          "matchDate": "2025-09-13",
+          "matchId": 2441606,
+          "seasonId": 12872,
+          "sportteryAwayTeamId": 588,
+          "sportteryHomeTeamId": 2064951,
+          "sportteryMatchId": 2033552,
+          "sportteryTournamentId": 2064839,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 584,
+          "uniformHomeTeamId": 57195,
+          "uniformLeagueId": 1073,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 808,
+          "awayTeamShortName": "国际图尔",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 2064839,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 845,
+          "homeTeamShortName": "赫尔火花",
+          "matchDate": "2025-06-27",
+          "matchId": 2289241,
+          "seasonId": 12872,
+          "sportteryAwayTeamId": 588,
+          "sportteryHomeTeamId": 2064951,
+          "sportteryMatchId": 2032386,
+          "sportteryTournamentId": 2064839,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 584,
+          "uniformHomeTeamId": 57195,
+          "uniformLeagueId": 1073,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 845,
+          "awayTeamShortName": "赫尔火花",
+          "fullCourtGoal": "3:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 808,
+          "homeTeamShortName": "国际图尔",
+          "matchDate": "2025-04-12",
+          "matchId": 2289192,
+          "seasonId": 12872,
+          "sportteryAwayTeamId": 2064951,
+          "sportteryHomeTeamId": 588,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 57195,
+          "uniformHomeTeamId": 584,
+          "uniformLeagueId": 1073,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 4,
+        "lossProbability": "80%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "赫尔火花",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 588,
+        "teamId": 808,
+        "teamShortName": "国际图尔",
+        "uniformTeamId": 584
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 2064951,
+        "teamId": 845,
+        "teamShortName": "赫尔火花",
+        "uniformTeamId": 57195
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 297,
+            "awayTeamShortName": "赫尔辛基",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 588,
+            "homeTeamShortName": "国际图尔",
+            "matchDate": "2026-04-30",
+            "matchId": 2472844,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039411,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1821,
+            "uniformHomeTeamId": 584,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 594,
+            "awayTeamShortName": "玛丽港",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 588,
+            "homeTeamShortName": "国际图尔",
+            "matchDate": "2026-04-25",
+            "matchId": 2472846,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 831,
+            "uniformHomeTeamId": 584,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 588,
+            "awayTeamShortName": "国际图尔",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 592,
+            "homeTeamShortName": "拉赫蒂",
+            "matchDate": "2026-04-18",
+            "matchId": 2472855,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 584,
+            "uniformHomeTeamId": 1696,
+            "uniformLeagueId": 1073,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1040076,
+            "awayTeamShortName": "坦山猫",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 588,
+            "homeTeamShortName": "国际图尔",
+            "matchDate": "2026-04-12",
+            "matchId": 2472858,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57200,
+            "uniformHomeTeamId": 584,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1957,
+            "awayTeamShortName": "瓦萨",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 588,
+            "homeTeamShortName": "国际图尔",
+            "matchDate": "2026-04-04",
+            "matchId": 2472869,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038811,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1704,
+            "uniformHomeTeamId": 584,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 6,
+          "lossGoalCnt": 2,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 4,
+          "sportteryTeamId": 0,
+          "teamId": 588,
+          "teamShortName": "国际图尔",
+          "totalLegCnt": 5,
+          "uniformTeamId": 584,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2064951,
+            "awayTeamShortName": "赫尔火花",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 591,
+            "homeTeamShortName": "TPS图尔",
+            "matchDate": "2026-04-24",
+            "matchId": 2472850,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039290,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57195,
+            "uniformHomeTeamId": 57393,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 297,
+            "awayTeamShortName": "赫尔辛基",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2064951,
+            "homeTeamShortName": "赫尔火花",
+            "matchDate": "2026-04-18",
+            "matchId": 2472857,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1821,
+            "uniformHomeTeamId": 57195,
+            "uniformLeagueId": 1073,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2064951,
+            "awayTeamShortName": "赫尔火花",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 586,
+            "homeTeamShortName": "库奥皮奥",
+            "matchDate": "2026-04-11",
+            "matchId": 2472860,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039008,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57195,
+            "uniformHomeTeamId": 166,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "5",
+            "awayTeamId": 1040074,
+            "awayTeamShortName": "AC奥卢",
+            "fullCourtGoal": "1:5",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2064951,
+            "homeTeamShortName": "赫尔火花",
+            "matchDate": "2026-04-05",
+            "matchId": 2472864,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57199,
+            "uniformHomeTeamId": 57195,
+            "uniformLeagueId": 1073,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2064951,
+            "awayTeamShortName": "赫尔火花",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1042689,
+            "homeTeamShortName": "科特卡",
+            "matchDate": "2026-03-28",
+            "matchId": 2486145,
+            "seasonId": 14345,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1014,
+            "tournamentShortName": "俱乐部赛",
+            "uniformAwayTeamId": 57195,
+            "uniformHomeTeamId": 57201,
+            "uniformLeagueId": 719,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 3,
+          "lossGoalCnt": 11,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -8,
+          "sportteryTeamId": 0,
+          "teamId": 2064951,
+          "teamShortName": "赫尔火花",
+          "totalLegCnt": 5,
+          "uniformTeamId": 57195,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48275,
+      "seasonId": 14374,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 1,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "1",
+          "ranking": "12",
+          "sportteryTeamId": 2064951,
+          "teamId": 0,
+          "teamShortName": "赫尔火花",
+          "totalLegCnt": 4,
+          "uniformTeamId": 57195,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        },
+        {
+          "drawMatchCnt": 2,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 0,
+          "phaseName": "",
+          "points": "11",
+          "ranking": "3",
+          "sportteryTeamId": 588,
+          "teamId": 0,
+          "teamShortName": "国际图尔",
+          "totalLegCnt": 5,
+          "uniformTeamId": 584,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      ],
+      "tournamentId": 130,
+      "tournamentShortName": "芬超",
+      "uniformLeagueId": 1073,
+      "uniformMatchId": 2390269
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 5,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 2,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 701543,
+            "personName": "A. Conteh",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 5,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 1,
+            "assistProbability": "25%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 578650,
+            "personName": "J. Niska",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "2"
+          },
+          {
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 574544,
+            "personName": "J. Yli-Kokko",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          }
+        ],
+        "sportteryTeamId": 588,
+        "teamId": 808,
+        "teamShortName": "国际图尔",
+        "uniformTeamId": 584
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 477118,
+            "personName": "A. Akinyemi",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 4,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 347955,
+            "personName": "S. Eremenko",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "26"
+          },
+          {
+            "appearanceCnt": 1,
+            "assistAvgCnt": "1.0",
+            "assistCnt": 1,
+            "assistProbability": "100%",
+            "goalAvgCnt": "0",
+            "goalCnt": 0,
+            "goalProbability": "0%",
+            "injuryFlag": 0,
+            "personId": 235270,
+            "personName": "A. Craninx",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "1"
+          }
+        ],
+        "sportteryTeamId": 2064951,
+        "teamId": 845,
+        "teamShortName": "赫尔火花",
+        "uniformTeamId": 57195
+      },
+      "seasonId": 14374,
+      "seasonName": "2026",
+      "tournamentId": 130,
+      "tournamentShortName": "芬超",
+      "uniformLeagueId": 1073,
+      "uniformMatchId": 2390269
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": 3.8
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 7.7
+    },
+    "1球": {
+      "count": 3,
+      "change_pct": 12.2
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -3.8
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -4.3
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 5.9
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -5.7
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 2.6
+    }
+  },
+  "hafu_change": {
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -4.5
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 15.8
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 21.4
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": -8.2
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 4,
+      "change_pct": 7.0
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": 16.3
+    },
+    "负": {
+      "count": 4,
+      "change_pct": -8.0
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "让胜": {
+      "count": 4,
+      "change_pct": 9.5
+    },
+    "让负": {
+      "count": 4,
+      "change_pct": -12.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "5球",
+      "ttg_odds": "9.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "500.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "35.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "55.00",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "100.0",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "27.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(9.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "3.30",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "25.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "8.25",
+          "special": true
+        },
+        {
+          "score": "01:01",
+          "odds": "7.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.30（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.81,
+    "ou_line": 2.5,
+    "under_odds": 0.89,
+    "save_time": "2026-05-05 20:32"
+  }
+}
