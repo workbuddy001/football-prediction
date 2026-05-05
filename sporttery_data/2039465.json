@@ -5,8 +5,14 @@
     "home_team": "科莫",
     "away_team": "那不勒斯",
     "league": "意大利甲级联赛",
-    "time": "",
-    "match_status": "已截止"
+    "time": "2026-05-03 00:00:00",
+    "match_status": "已截止",
+    "match_num_str": "周六019",
+    "match_date": "2026-05-03",
+    "match_time": "00:00:00",
+    "league_abbr": "25/26意甲第35轮",
+    "home_rank": "[意甲5]",
+    "away_rank": "[意甲2]"
   },
   "score_odds": {
     "05:00": "175.0",
@@ -1028,5 +1034,11 @@
       "level": "仅比分排除",
       "reason": "进球数赔率3.35（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
     }
-  ]
+  ],
+  "over_under": {
+    "over_odds": 0.93,
+    "ou_line": 2.25,
+    "under_odds": 0.77,
+    "save_time": "2026-05-03 10:28"
+  }
 }

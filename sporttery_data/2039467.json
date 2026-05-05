@@ -5,8 +5,14 @@
     "home_team": "阿森纳",
     "away_team": "富勒姆",
     "league": "英格兰超级联赛",
-    "time": "",
-    "match_status": "已截止"
+    "time": "2026-05-03 00:30:00",
+    "match_status": "已截止",
+    "match_num_str": "周六021",
+    "match_date": "2026-05-03",
+    "match_time": "00:30:00",
+    "league_abbr": "25/26英超第35轮",
+    "home_rank": "[英超1]",
+    "away_rank": "[英超10]"
   },
   "score_odds": {
     "05:00": "36.00",
@@ -1032,5 +1038,11 @@
       "level": "普通排除",
       "reason": "进球数赔率(5.15)含特殊尾数，排除该进球数及其所有比分"
     }
-  ]
+  ],
+  "over_under": {
+    "over_odds": 0.93,
+    "ou_line": 2.75,
+    "under_odds": 0.77,
+    "save_time": "2026-05-03 11:11"
+  }
 }

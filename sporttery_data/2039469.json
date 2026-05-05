@@ -5,8 +5,14 @@
     "home_team": "阿拉维斯",
     "away_team": "毕尔巴鄂竞技",
     "league": "西班牙甲级联赛",
-    "time": "",
-    "match_status": "已截止"
+    "time": "2026-05-03 00:30:00",
+    "match_status": "已截止",
+    "match_num_str": "周六023",
+    "match_date": "2026-05-03",
+    "match_time": "00:30:00",
+    "league_abbr": "25/26西甲第34轮",
+    "home_rank": "[西甲17]",
+    "away_rank": "[西甲10]"
   },
   "score_odds": {
     "05:00": "300.0",
@@ -973,5 +979,11 @@
       "change_pct": -5.3
     }
   },
-  "exclusion_list": []
+  "exclusion_list": [],
+  "over_under": {
+    "over_odds": 0.81,
+    "ou_line": 2.25,
+    "under_odds": 0.89,
+    "save_time": "2026-05-03 09:34"
+  }
 }

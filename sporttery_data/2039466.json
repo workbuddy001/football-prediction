@@ -5,8 +5,14 @@
     "home_team": "AC奥卢",
     "away_team": "库奥皮奥",
     "league": "芬兰超级联赛",
-    "time": "",
-    "match_status": "已截止"
+    "time": "2026-05-03 00:00:00",
+    "match_status": "已截止",
+    "match_num_str": "周六020",
+    "match_date": "2026-05-03",
+    "match_time": "00:00:00",
+    "league_abbr": "26芬超第5轮",
+    "home_rank": "[芬超3]",
+    "away_rank": "[芬超1]"
   },
   "score_odds": {
     "05:00": "300.0",
@@ -928,5 +934,11 @@
       "level": "仅比分排除",
       "reason": "进球数赔率3.45（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
     }
-  ]
+  ],
+  "over_under": {
+    "over_odds": 0.91,
+    "ou_line": 2.75,
+    "under_odds": 0.79,
+    "save_time": "2026-05-03 10:23"
+  }
 }

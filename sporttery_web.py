@@ -1895,6 +1895,14 @@ HTML_TEMPLATE = '''
                             <button class="btn-pattern" onclick="togglePatternStats('${m.match_id}', '${m.g3_prediction.final_rec.big3_vs_small3.signal_type}')">📊 命中率</button>
                             ` : ''}
                         </div>
+                        <!-- 大小球输入行 -->
+                        <div class="score-input-row" style="margin-top:8px">
+                            <span class="score-label">大小球:</span>
+                            <input type="number" class="score-input" id="over-odds-${m.match_id}" min="0" max="10" step="0.01" placeholder="大球水位" value="${m.over_under && m.over_under.over_odds ? m.over_under.over_odds : ''}" style="width:90px;padding:4px;border:1px solid #ccc;border-radius:3px">
+                            <input type="number" class="score-input" id="ou-line-${m.match_id}" min="0" max="10" step="0.1" placeholder="大小球数值" value="${m.over_under && m.over_under.ou_line ? m.over_under.ou_line : ''}" style="width:90px;padding:4px;border:1px solid #ccc;border-radius:3px;margin-left:5px">
+                            <input type="number" class="score-input" id="under-odds-${m.match_id}" min="0" max="10" step="0.01" placeholder="小球水位" value="${m.over_under && m.over_under.under_odds ? m.over_under.under_odds : ''}" style="width:90px;padding:4px;border:1px solid #ccc;border-radius:3px;margin-left:5px">
+                            <button class="btn-save-score" onclick="saveOverUnder('${m.match_id}')" style="margin-left:5px">💾 保存</button>
+                        </div>
                     <div id="score-msg-${m.match_id}" class="score-msg"></div>
                     <div id="pattern-stats-${m.match_id}" class="pattern-stats" style="display:none"></div>
                     <div id="similar-panel-${m.match_id}" class="similar-panel" style="display:none"></div>
@@ -2753,6 +2761,47 @@ HTML_TEMPLATE = '''
             }
         }
 
+        // ── 大小球保存 ──────────────────────────────
+        async function saveOverUnder(matchId) {
+            const overOddsInput = document.getElementById('over-odds-' + matchId);
+            const ouLineInput = document.getElementById('ou-line-' + matchId);
+            const underOddsInput = document.getElementById('under-odds-' + matchId);
+            const msgEl = document.getElementById('score-msg-' + matchId);
+            
+            const overOdds = parseFloat(overOddsInput.value);
+            const ouLine = parseFloat(ouLineInput.value);
+            const underOdds = parseFloat(underOddsInput.value);
+            
+            if (isNaN(overOdds) || isNaN(ouLine) || isNaN(underOdds) || overOdds <= 0 || ouLine < 0 || underOdds <= 0) {
+                msgEl.className = 'score-msg error';
+                msgEl.textContent = '请输入有效的大小球数据';
+                return;
+            }
+            
+            try {
+                const res = await fetch('/api/over_under/' + matchId, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        over_odds: overOdds,
+                        ou_line: ouLine,
+                        under_odds: underOdds
+                    })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    msgEl.className = 'score-msg saved';
+                    msgEl.innerHTML = `<span class="saved-score-display">已保存大小球: 大${overOdds} / ${ouLine} / 小${underOdds}</span>`;
+                } else {
+                    msgEl.className = 'score-msg error';
+                    msgEl.textContent = '保存失败: ' + (data.error || '');
+                }
+            } catch(e) {
+                msgEl.className = 'score-msg error';
+                msgEl.textContent = '请求失败: ' + e.message;
+            }
+        }
+
         // ── 手动补全比赛抬头 ──────────────────────────────────
         function openEditHeader(matchId) {
             // 取当前数据
@@ -3348,6 +3397,8 @@ HTML_TEMPLATE = '''
 
 @app.route('/')
 def index():
+    import time
+    print(f'=== INDEX() CALLED: {time.strftime("%H:%M:%S")} ===')
     # 注入命中率统计到 JS 全局变量
     stats = _build_odds_hitrate()
     # 序列化成 JS 字面量嵌入页面（用字符串替换避免 Jinja2 转义）
@@ -3357,6 +3408,7 @@ def index():
     chg_stats = _build_change_hitrate()
     chg_js = json.dumps(chg_stats, ensure_ascii=False)
     html = html.replace('__CHANGE_HITRATE_JSON__', chg_js)
+    
     return html
 
 def _analyze_hhad_low_draw(hhad, recent_form, data=None):
@@ -4443,6 +4495,8 @@ def _build_match_card(data, api, match_list_cache=None):
             'exclusion_list': exclusion_list,
             # 比分历史命中率推荐（新）
             'score_recommendations': data.get('score_recommendations', []),
+            # 大小球数据（用户手动保存）
+            'over_under': data.get('over_under', {}),
             # 近况数据（让球平规律用）
             'recent_form': {
                 'home_avg': recent_form['home_avg'],
@@ -4851,6 +4905,49 @@ def update_rec_stats(match_id):
         return jsonify({'success': True, 'updated_rules': updated_rules})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
+
+# ────────────────────────────────────────────────────────────
+#  大小球保存
+# ────────────────────────────────────────────────────────────
+@app.route('/api/over_under/<match_id>', methods=['POST'])
+def save_over_under(match_id):
+    """保存大小球赔率数据
+    Body: { "over_odds": 1.85, "ou_line": 2.5, "under_odds": 2.05 }
+    """
+    try:
+        from flask import request
+        body = request.get_json() or {}
+        over_odds = float(body.get('over_odds', 0))
+        ou_line = float(body.get('ou_line', -1))
+        under_odds = float(body.get('under_odds', 0))
+        
+        if over_odds <= 0 or ou_line < 0 or under_odds <= 0:
+            return jsonify({'success': False, 'error': '大小球数据格式错误'}), 400
+        
+        # 保存到比赛的JSON文件
+        filepath = os.path.join(DATA_DIR, f'{match_id}.json')
+        if not os.path.exists(filepath):
+            return jsonify({'success': False, 'error': '比赛数据不存在'}), 404
+        
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # 添加/更新大小球数据
+        if 'over_under' not in data:
+            data['over_under'] = {}
+        data['over_under'] = {
+            'over_odds': over_odds,
+            'ou_line': ou_line,
+            'under_odds': under_odds,
+            'save_time': __import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M')
+        }
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({'success': True, 'data': data['over_under']})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/saved-scores')
 def get_all_saved_scores():

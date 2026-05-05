@@ -5,8 +5,14 @@
     "home_team": "勒沃库森",
     "away_team": "莱比锡红牛",
     "league": "德国甲级联赛",
-    "time": "",
-    "match_status": "已截止"
+    "time": "2026-05-03 00:30:00",
+    "match_status": "已截止",
+    "match_num_str": "周六022",
+    "match_date": "2026-05-03",
+    "match_time": "00:30:00",
+    "league_abbr": "25/26德甲第32轮",
+    "home_rank": "[德甲6]",
+    "away_rank": "[德甲3]"
   },
   "score_odds": {
     "05:00": "100.0",
@@ -997,5 +1003,11 @@
       "level": "仅比分排除",
       "reason": "进球数赔率5.20（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
     }
-  ]
+  ],
+  "over_under": {
+    "over_odds": 0.91,
+    "ou_line": 3.5,
+    "under_odds": 0.79,
+    "save_time": "2026-05-03 09:37"
+  }
 }

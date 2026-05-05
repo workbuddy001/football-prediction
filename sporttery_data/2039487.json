@@ -1,0 +1,1047 @@
+{
+  "match_id": "2039487",
+  "fetch_time": "2026-05-03 21:09:30",
+  "match_info": {
+    "home_team": "萨索洛",
+    "away_team": "AC米兰",
+    "league": "意大利甲级联赛",
+    "time": "2026-05-03 21:00:00",
+    "match_status": "已截止",
+    "match_num_str": "周日011",
+    "match_date": "2026-05-03",
+    "match_time": "21:00:00",
+    "league_abbr": "25/26意甲第35轮",
+    "home_rank": "[意甲11]",
+    "away_rank": "[意甲3]"
+  },
+  "score_odds": {
+    "05:00": "700.0",
+    "01:00": "12.50",
+    "05:02": "500.0",
+    "05:01": "500.0",
+    "02:04": "50.00",
+    "02:05": "150.0",
+    "02:02": "13.00",
+    "02:03": "20.00",
+    "02:00": "24.00",
+    "02:01": "12.00",
+    "03:03": "60.00",
+    "03:01": "35.00",
+    "03:02": "35.00",
+    "03:00": "75.00",
+    "00:01": "7.25",
+    "00:00": "14.00",
+    "00:03": "12.00",
+    "00:02": "7.75",
+    "00:05": "75.00",
+    "00:04": "26.00",
+    "04:02": "150.0",
+    "04:01": "150.0",
+    "04:00": "300.0",
+    "01:02": "6.75",
+    "01:01": "6.70",
+    "01:04": "26.00",
+    "01:03": "12.00",
+    "01:05": "75.00"
+  },
+  "total_goals": {
+    "3球": "3.50",
+    "4球": "4.85",
+    "5球": "8.20",
+    "6球": "12.50",
+    "7球": "20.00",
+    "0球": "14.00",
+    "1球": "5.70",
+    "2球": "3.80"
+  },
+  "had": {
+    "胜": "4.70",
+    "平": "3.80",
+    "负": "1.53"
+  },
+  "ttg": {
+    "3球": "3.50",
+    "4球": "4.85",
+    "5球": "8.20",
+    "6球": "12.50",
+    "7球": "20.00",
+    "0球": "14.00",
+    "1球": "5.70",
+    "2球": "3.80"
+  },
+  "hafu": {
+    "负负": "2.30",
+    "平平": "5.90",
+    "胜胜": "8.00",
+    "负平": "16.00",
+    "平胜": "11.00",
+    "负胜": "35.00",
+    "胜负": "21.00",
+    "胜平": "16.00",
+    "平负": "4.30"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "2.14",
+    "让平": "3.25",
+    "让负": "2.82"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "AC米兰",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "47",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.8",
+        "awayGoalAvgCntRatio": "36.4",
+        "homeGoalAvgCnt": "1.4",
+        "homeGoalAvgCntRatio": "63.6",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "萨索洛",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "44",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "44",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 9
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.9",
+        "awayLossGoalAvgCntRatio": "47.4",
+        "homeLossGoalAvgCnt": "1.0",
+        "homeLossGoalAvgCntRatio": "52.6",
+        "totalLegCnt": 10
+      },
+      "matchId": 2341121,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "74",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 6,
+        "homeScoreRatio": "19",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 9
+      },
+      "sportteryAwayTeamId": 116,
+      "sportteryHomeTeamId": 1509,
+      "sportteryMatchId": 2039487,
+      "uniformAwayTeamId": 125,
+      "uniformHomeTeamId": 132
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 5681,
+          "awayTeamShortName": "萨索洛",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1240,
+          "homeTeamShortName": "AC米兰",
+          "matchDate": "2025-12-14",
+          "matchId": 2341181,
+          "seasonId": 13290,
+          "sportteryAwayTeamId": 1509,
+          "sportteryHomeTeamId": 116,
+          "sportteryMatchId": 2036028,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 132,
+          "uniformHomeTeamId": 125,
+          "uniformLeagueId": 73,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 5681,
+          "awayTeamShortName": "萨索洛",
+          "fullCourtGoal": "6:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "4:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "6",
+          "homeTeamId": 1240,
+          "homeTeamShortName": "AC米兰",
+          "matchDate": "2024-12-04",
+          "matchId": 2202769,
+          "seasonId": 11978,
+          "sportteryAwayTeamId": 1509,
+          "sportteryHomeTeamId": 116,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 7,
+          "tournamentId": 734,
+          "tournamentShortName": "意大利杯",
+          "uniformAwayTeamId": 132,
+          "uniformHomeTeamId": 125,
+          "uniformLeagueId": 26,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 1240,
+          "awayTeamShortName": "AC米兰",
+          "fullCourtGoal": "3:3",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 5681,
+          "homeTeamShortName": "萨索洛",
+          "matchDate": "2024-04-14",
+          "matchId": 2011716,
+          "seasonId": 10955,
+          "sportteryAwayTeamId": 116,
+          "sportteryHomeTeamId": 1509,
+          "sportteryMatchId": 1024776,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 6,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 125,
+          "uniformHomeTeamId": 132,
+          "uniformLeagueId": 73,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 5681,
+          "awayTeamShortName": "萨索洛",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1240,
+          "homeTeamShortName": "AC米兰",
+          "matchDate": "2023-12-31",
+          "matchId": 2011554,
+          "seasonId": 10955,
+          "sportteryAwayTeamId": 1509,
+          "sportteryHomeTeamId": 116,
+          "sportteryMatchId": 1022707,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 132,
+          "uniformHomeTeamId": 125,
+          "uniformLeagueId": 73,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "50%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "50%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "萨索洛",
+        "totalLegCnt": 4,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 33,
+            "injuryFlag": 1,
+            "personId": 365,
+            "personName": "L. Modrić",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 32,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 27,
+            "injuryFlag": 1,
+            "personId": 413835,
+            "personName": "普利希奇",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          }
+        ],
+        "sportteryTeamId": 116,
+        "teamId": 1240,
+        "teamShortName": "AC米兰",
+        "uniformTeamId": 125
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 12,
+            "injuryFlag": 1,
+            "personId": 475327,
+            "personName": "Fali Candé",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          },
+          {
+            "appearanceCnt": 32,
+            "injuryFlag": 1,
+            "personId": 477415,
+            "personName": "瓦卢凯维奇",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 31,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "6"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 485254,
+            "personName": "D. Boloca",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 684125,
+            "personName": "E. Pieragnolo",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          },
+          {
+            "appearanceCnt": 4,
+            "injuryFlag": 1,
+            "personId": 840188,
+            "personName": "D. Bakola",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "50"
+          }
+        ],
+        "sportteryTeamId": 1509,
+        "teamId": 5681,
+        "teamShortName": "萨索洛",
+        "uniformTeamId": 132
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 124,
+            "awayTeamShortName": "尤文图斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 116,
+            "homeTeamShortName": "AC米兰",
+            "matchDate": "2026-04-27",
+            "matchId": 2341126,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039361,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 293,
+            "uniformHomeTeamId": 125,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 116,
+            "awayTeamShortName": "AC米兰",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1639,
+            "homeTeamShortName": "维罗纳",
+            "matchDate": "2026-04-19",
+            "matchId": 2341012,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039192,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 125,
+            "uniformHomeTeamId": 533,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 135,
+            "awayTeamShortName": "乌迪内斯",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 116,
+            "homeTeamShortName": "AC米兰",
+            "matchDate": "2026-04-12",
+            "matchId": 2341134,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039023,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 202,
+            "uniformHomeTeamId": 125,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 116,
+            "awayTeamShortName": "AC米兰",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 744,
+            "homeTeamShortName": "那不勒斯",
+            "matchDate": "2026-04-07",
+            "matchId": 2341137,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038873,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 125,
+            "uniformHomeTeamId": 136,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 136,
+            "awayTeamShortName": "都灵",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 116,
+            "homeTeamShortName": "AC米兰",
+            "matchDate": "2026-03-22",
+            "matchId": 2341141,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038518,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 126,
+            "uniformHomeTeamId": 125,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 4,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 116,
+          "teamShortName": "AC米兰",
+          "totalLegCnt": 5,
+          "uniformTeamId": 125,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1509,
+            "awayTeamShortName": "萨索洛",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 122,
+            "homeTeamShortName": "佛罗伦萨",
+            "matchDate": "2026-04-26",
+            "matchId": 2341009,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039340,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 132,
+            "uniformHomeTeamId": 198,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1040070,
+            "awayTeamShortName": "科莫",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1509,
+            "homeTeamShortName": "萨索洛",
+            "matchDate": "2026-04-18",
+            "matchId": 2341128,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039137,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 51033,
+            "uniformHomeTeamId": 132,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1509,
+            "awayTeamShortName": "萨索洛",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 26,
+            "homeTeamShortName": "热那亚",
+            "matchDate": "2026-04-12",
+            "matchId": 2341013,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039037,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 132,
+            "uniformHomeTeamId": 130,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 120,
+            "awayTeamShortName": "卡利亚里",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1509,
+            "homeTeamShortName": "萨索洛",
+            "matchDate": "2026-04-04",
+            "matchId": 2341135,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038815,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 123,
+            "uniformHomeTeamId": 132,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1509,
+            "awayTeamShortName": "萨索洛",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 124,
+            "homeTeamShortName": "尤文图斯",
+            "matchDate": "2026-03-22",
+            "matchId": 2341019,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038525,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 132,
+            "uniformHomeTeamId": 293,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 6,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 1,
+          "sportteryTeamId": 0,
+          "teamId": 1509,
+          "teamShortName": "萨索洛",
+          "totalLegCnt": 5,
+          "uniformTeamId": 132,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47781,
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 7,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 14,
+          "phaseName": "",
+          "points": "46",
+          "ranking": "11",
+          "sportteryTeamId": 1509,
+          "teamId": 0,
+          "teamShortName": "萨索洛",
+          "totalLegCnt": 34,
+          "uniformTeamId": 132,
+          "winGoalMatchCnt": 13,
+          "winProbability": "38%"
+        },
+        {
+          "drawMatchCnt": 10,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 5,
+          "phaseName": "",
+          "points": "67",
+          "ranking": "3",
+          "sportteryTeamId": 116,
+          "teamId": 0,
+          "teamShortName": "AC米兰",
+          "totalLegCnt": 34,
+          "uniformTeamId": 125,
+          "winGoalMatchCnt": 19,
+          "winProbability": "56%"
+        }
+      ],
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2389787
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "18%",
+            "injuryFlag": 0,
+            "personId": 421589,
+            "personName": "Rafael Leão",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "16%",
+            "injuryFlag": 1,
+            "personId": 413835,
+            "personName": "普利希奇",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 242768,
+            "personName": "拉比奥",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "12"
+          }
+        ],
+        "sportteryTeamId": 116,
+        "teamId": 1240,
+        "teamShortName": "AC米兰",
+        "uniformTeamId": 125
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "19%",
+            "injuryFlag": 0,
+            "personId": 426569,
+            "personName": "A. Pinamonti",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "99"
+          },
+          {
+            "appearanceCnt": 22,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "13%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 246415,
+            "personName": "D. Berardi",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 677759,
+            "personName": "I. Koné",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "90"
+          }
+        ],
+        "sportteryTeamId": 1509,
+        "teamId": 5681,
+        "teamShortName": "萨索洛",
+        "uniformTeamId": 132
+      },
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2389787
+    }
+  },
+  "ttg_change": {
+    "2球": {
+      "count": 2,
+      "change_pct": 4.1
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -3.0
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": -13.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -3.5
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": -16.7
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 10.7
+    }
+  },
+  "hafu_change": {
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -2.1
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 4.8
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": 6.7
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 7.3
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -6.5
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 2,
+      "change_pct": -3.8
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": 6.8
+    },
+    "平": {
+      "count": 2,
+      "change_pct": 3.5
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": 3.4
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": -5.8
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "5.70",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "12.50",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "7.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率5.70（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "3.80",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "24.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "7.75",
+          "special": true
+        },
+        {
+          "score": "01:01",
+          "odds": "6.70",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.80（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "3.50",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "75.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "6.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.50（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.84,
+    "ou_line": 3.25,
+    "under_odds": 0.86,
+    "save_time": "2026-05-03 23:00"
+  }
+}
