@@ -679,6 +679,27 @@ def analyze_match(data):
     if a_att >= 2.0 and hcap > 0:
         profile_rules.append('🛡️客火爆+主受让→主队不败81%')
     
+    # ============== V3.7: 让球盘+近况联合规律 ==============
+    # 计算主/客近5场胜场数
+    h_win_count = sum(1 for r in recent.get('home', []) if r.get('result', '') in ('home', 'win'))
+    a_win_count = sum(1 for r in recent.get('away', []) if r.get('result', '') in ('home', 'win'))
+    hhad_lose_odds = _safe_float(hhad.get('让负', 0))
+    hhad_win_odds = _safe_float(hhad.get('让胜', 0))
+    
+    # 规律1: 让负2.50-3.00 + 主队不胜 → 让胜80%/0%让负
+    if 2.50 <= hhad_lose_odds <= 3.00 and h_win_count <= 1:
+        profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主不胜→反弹让胜80%')
+    # 规律1b: 让负2.50-3.00 + 主受让 → 让胜69%/0%让负
+    if 2.50 <= hhad_lose_odds <= 3.00 and hcap >= 1:
+        profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主受让→让胜69%/0%让负')
+    
+    # 规律2: 让胜1.50-1.70 + 主队1-2胜 → 让胜89-100%
+    if 1.50 <= hhad_win_odds <= 1.70:
+        if 1 <= h_win_count <= 2:
+            profile_rules.append('🔥让胜'+str(round(hhad_win_odds,2))+'且主1-2胜→让胜89%+')
+        elif h_win_count >= 3:
+            profile_rules.append('⚠️让胜'+str(round(hhad_win_odds,2))+'但主3+胜→陷阱!让胜仅30-50%')
+    
     # ============== V3.7: 盘口偏差规律（攻防预期 vs OU线） ==============
     # 预期 = 主攻 + 客失
     ou_expected = h_att + a_def
