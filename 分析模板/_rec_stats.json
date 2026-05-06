@@ -1161,5 +1161,22 @@
       }
     ],
     "time": "2026-05-05 21:54"
+  },
+  "2039545": {
+    "home_score": 0,
+    "away_score": 2,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "golden_2goals_29",
+        "old_hit_rate": 42.9,
+        "new_hit_rate": 45.5,
+        "old_sample": 21,
+        "new_sample": 22,
+        "is_hit": true,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-06 09:50"
   }
 }

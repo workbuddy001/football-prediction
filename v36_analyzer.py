@@ -689,9 +689,12 @@ def analyze_match(data):
     # 规律1: 让负2.50-3.00 + 主队不胜 → 让胜80%/0%让负
     if 2.50 <= hhad_lose_odds <= 3.00 and h_win_count <= 1:
         profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主不胜→反弹让胜80%')
-    # 规律1b: 让负2.50-3.00 + 主受让 → 让胜69%/0%让负
+    # 规律1b: 让负2.50-3.00 + 主受让 → 双层细分(攻力差+防守差)
     if 2.50 <= hhad_lose_odds <= 3.00 and hcap >= 1:
-        profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主受让→让胜69%/0%让负')
+        if h_att >= a_att and h_def >= 1.5 and a_def < 1.0:
+            profile_rules.append('⚠️让负'+str(round(hhad_lose_odds,2))+'且主受让但主防弱客防强→警惕(1/14翻车)')
+        else:
+            profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主受让→让胜69%+让平31%(14场仅1翻车)')
     
     # 规律2: 让胜1.50-1.70 + 主队1-2胜 → 让胜89-100%
     if 1.50 <= hhad_win_odds <= 1.70:
