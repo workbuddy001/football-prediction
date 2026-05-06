@@ -558,7 +558,29 @@ def analyze_match(data):
     
     candidate_goals.sort()
     
-    # 比分推导
+    # ============== V3.7: 攻防匹配分析 ==============
+    score_analysis = []
+    if h_att >= 2.0:
+        score_analysis.append(f'主攻强({h_att:.1f}),能撕破客防({a_def:.1f})')
+    elif h_att >= 1.5:
+        score_analysis.append(f'主攻一般({h_att:.1f}),尚能威胁客防({a_def:.1f})')
+    else:
+        if a_def < 1.0:
+            score_analysis.append(f'主攻弱({h_att:.1f})难破客防强盾({a_def:.1f})→主队进球期望低')
+        else:
+            score_analysis.append(f'主攻弱({h_att:.1f})但客防也松({a_def:.1f})→主队有机会')
+    if a_att >= 2.0:
+        if h_def < 1.0:
+            score_analysis.append(f'客攻强({a_att:.1f})vs主防铁壁({h_def:.1f})→矛盾之争')
+        else:
+            score_analysis.append(f'客攻强({a_att:.1f})能击穿主防({h_def:.1f})→客队进球概率高')
+    else:
+        if h_def < 1.0:
+            score_analysis.append(f'客攻弱({a_att:.1f})vs主防强({h_def:.1f})→客队难进球')
+        else:
+            score_analysis.append(f'客攻弱({a_att:.1f})但主防也松({h_def:.1f})→双方都可能丢球')
+    
+    # 比分推导（增强版）
     score_candidates = []
     for total in candidate_goals[:3]:  # Max 3 goal totals
         scores = []
@@ -573,9 +595,11 @@ def analyze_match(data):
             elif a > h: tag = '客胜'
             else: tag = '平局'
             
-            # Capability assessment (V3.6)
-            h_capable = (h_att >= h * 0.5) if h > 0 else True
-            a_capable = (a_att >= a * 0.5) if a > 0 else True
+            # V3.7: plausibility by attack-defense match
+            h_dev = abs(h - h_att) / max(h_att, 0.5)
+            a_dev = abs(a - a_att) / max(a_att, 0.5)
+            dev = max(h_dev, a_dev)
+            plausibility = '🔥' if dev <= 1.5 else ('✅' if dev <= 3.0 else '⚠️')
             
             # Score odds
             so_key = f'{h:02d}:{a:02d}'
@@ -584,8 +608,8 @@ def analyze_match(data):
             scores.append({
                 'score': f'{h}-{a}',
                 'tag': tag,
-                'h_capable': '✅' if h_capable else '⚠️',
-                'a_capable': '✅' if a_capable else '⚠️',
+                'h_capable': plausibility,
+                'a_capable': '',
                 'score_odds': so_val,
             })
         
@@ -825,6 +849,7 @@ def analyze_match(data):
             'profiles': profile_rules,
         },
         'score_candidates': score_candidates,
+        'score_analysis': score_analysis,
         'final_review': final_review,
         'review_warnings': review_warnings,
         'recommended': {

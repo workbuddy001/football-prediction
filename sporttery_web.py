@@ -2442,6 +2442,7 @@ HTML_TEMPLATE = '''
                     + '</div>'
                     + '<div class="v36-section">'
                     + '<h4>7.8 比分反推</h4>'
+                    + (a.score_analysis ? '<div style=\"margin-bottom:8px;color:#b0b0b0;font-size:12px\">' + a.score_analysis.map(s => '• ' + s).join('<br>') + '</div>' : '')
                     + scoreHtml
                     + '</div>'
                     + (function() {
