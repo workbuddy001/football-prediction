@@ -2518,6 +2518,52 @@ HTML_TEMPLATE = '''
                         return h;
                     })()
                     + (function() {
+                        // ── V3.8: 大小球总结 ──
+                        try {
+                        const s0 = a.step0;
+                        const dir = s0.direction;
+                        const conf = s0.direction_conf;
+                        let h = '<div class="v36-section" style="border:2px solid ' + (dir === '大球' ? '#e65100' : dir === '小球' ? '#1565c0' : '#666') + ';background:#1a1a1a;border-radius:8px">';
+                        h += '<h4 style="color:#4fc3f7">🎯 大小球总结</h4>';
+                        
+                        if (dir === '模糊') {
+                            h += '<div style="color:#888;font-size:16px"><strong>❓ 方向模糊 → 观望</strong></div>';
+                        } else if (conf.includes('强')) {
+                            h += '<div style="color:#4caf50;font-size:18px"><strong>✅ 推荐: ' + dir + '</strong></div>';
+                            h += '<div style="color:#8bc34a;font-size:14px;margin-top:4px">置信: ' + conf + '</div>';
+                        } else if (conf.includes('中')) {
+                            h += '<div style="color:#ff9800;font-size:18px"><strong>👁️ 倾向: ' + dir + '</strong></div>';
+                            h += '<div style="color:#ffb74d;font-size:14px;margin-top:4px">置信: ' + conf + '</div>';
+                        } else {
+                            h += '<div style="color:#888;font-size:16px"><strong>⚠️ 弱信号(' + dir + ') → 观望为主</strong></div>';
+                            h += '<div style="color:#aaa;font-size:14px;margin-top:4px">置信: ' + conf + '</div>';
+                        }
+                        
+                        // 防守一致性
+                        if (s0.def_consistency === '一致强化') {
+                            h += '<div style="color:#4caf50;font-size:13px;margin-top:4px">🛡️ 水位+防守同向(强化): 大球低水+主防劣=60%, 小球低水+主防优=48%</div>';
+                        } else if (s0.def_trap) {
+                            h += '<div style="color:#ff9800;font-size:13px;margin-top:4px">⚠️ 水位+防守反向 → 诱盘嫌疑, 谨慎!</div>';
+                        }
+                        
+                        // 分析范围
+                        const range = s0.analysis_range || '';
+                        if (range) {
+                            h += '<div style="color:#b0b0b0;font-size:13px;margin-top:4px">📐 分析范围: ' + range + '</div>';
+                        }
+                        
+                        // 候选进球数
+                        const rec = a.recommended;
+                        if (rec && rec.goals && rec.goals.length > 0) {
+                            h += '<div style="color:#ffcc80;font-size:13px;margin-top:4px">🎯 候选总进球: ' + rec.goals.join('球 / ') + '球</div>';
+                        }
+                        
+                        h += '<div style="font-size:10px;color:#888;margin-top:6px">方向判断基于0球+线位+水位+HAD+防守多维信号投票 | V3.8防守一致性修正</div>';
+                        h += '</div>';
+                        return h;
+                        } catch(e) { return '<div class="v36-section v36-warn">大小球总结错误: ' + e.message + '</div>'; }
+                    })()
+                    + (function() {
                         // ── V3.8: 让球盘总结 ──
                         try {
                         const hc = a.handicap_conclusion;
