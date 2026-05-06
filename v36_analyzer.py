@@ -583,7 +583,7 @@ def analyze_match(data):
     # V3.7: BTS信号 (both teams score)
     bts_likely = (h_att >= 1.5 and a_def >= 1.0) or (a_att >= 1.5 and h_def >= 1.0)
     if bts_likely:
-        score_analysis.append('⚠️双方都可能丢球→大概率双方进球(BTS 71.8%/234场)')
+        score_analysis.append('⚠️双方都可能丢球→大概率双方进球(75%/164场,失败全因主队遭零封)')
     
     # 比分推导（增强版）
     score_candidates = []
