@@ -757,15 +757,19 @@ def analyze_match(data):
     ou_deviation = (ou_line - ou_expected) if ou_line > 0 else 0
     if abs(ou_deviation) >= 0.2:
         if -0.5 <= ou_deviation <= -0.2:
-            # 轻度低开 → 大球 (but suppressed when both teams attack-weak)
+            # 轻度低开 → 大球 (suppressed when attack+defense mismatch)
             if ou_over >= 0.85:
                 if h_att < 1.5 and a_att < 1.5:
-                    profile_rules.append(f'⚠️轻度低开{ou_deviation:+.1f}+中高水但双方攻弱→降权(阿森纳1-0翻车)')
+                    profile_rules.append(f'⚠️轻度低开{ou_deviation:+.1f}+中高水但双方攻弱→降权')
+                elif h_def < 1.0 and h_att < 1.5:
+                    profile_rules.append(f'⚠️轻度低开{ou_deviation:+.1f}但主防强攻弱→降权(阿森纳1-0翻车)')
                 else:
                     profile_rules.append(f'📉轻度低开{ou_deviation:+.1f}+中高水→大球91%')
             else:
                 if h_att < 1.5 and a_att < 1.5:
                     profile_rules.append(f'⚠️轻度低开{ou_deviation:+.1f}但双方攻弱→降权')
+                elif h_def < 1.0 and h_att < 1.5:
+                    profile_rules.append(f'⚠️轻度低开{ou_deviation:+.1f}但主防强攻弱→降权')
                 else:
                     profile_rules.append(f'📉轻度低开{ou_deviation:+.1f}→大球88%')
         elif ou_deviation < -0.8:
