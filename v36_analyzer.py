@@ -567,6 +567,8 @@ def analyze_match(data):
             'change_pct': pc,
             'change_hit': ch,
             'change_sample': cs,
+            'odds_hit': oh,
+            'odds_sample': os,
             'status': status,
             'reason': reason,
         })
@@ -1024,8 +1026,17 @@ def analyze_match(data):
         'veto': {'triggered': veto_triggered, 'reason': veto_reason} if veto_triggered else None,
         'heat_check': {'triggered': heat_triggered, 'goal': '3球'} if heat_triggered else None,
         'exclusion': {
-            'kept': [{'goal': e['goal'], 'hit': f"{e['change_hit']:.0%}", 'status': e['status']} for e in kept],
-            'excluded': [{'goal': e['goal'], 'reason': e['reason']} for e in excluded if '排除' in e['status']],
+            'kept': [{
+                'goal': e['goal'], 
+                'hit': f"{e['change_hit']:.0%}" if e['change_hit'] > 0 else '-',
+                'status': e['status'],
+                'detail': f'变{e["change_hit"]:.0%}(n={e["change_sample"]}) 赔{e["odds_hit"]:.0%}(n={e["odds_sample"]})' if (e.get('change_sample',0)+e.get('odds_sample',0)) > 0 else '无变化数据',
+            } for e in kept],
+            'excluded': [{
+                'goal': e['goal'], 
+                'reason': e['reason'],
+                'detail': f'变{e["change_hit"]:.0%}(n={e["change_sample"]}) 赔{e["odds_hit"]:.0%}(n={e["odds_sample"]})' if (e.get('change_sample',0)+e.get('odds_sample',0)) > 0 else '无变化数据',
+            } for e in excluded if '排除' in e['status']],
         },
         'new_rules': {
             'anchor': anchor_rule,

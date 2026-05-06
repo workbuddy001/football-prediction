@@ -2429,10 +2429,10 @@ HTML_TEMPLATE = '''
                 let exclRows = '';
                 for (let e of a.exclusion.kept) {
                     const cls = e.status.includes('铁保留') ? 'v36-iron' : 'v36-keep';
-                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge ' + cls + '">' + e.status + '</span></td><td>' + e.hit + '</td></tr>';
+                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge ' + cls + '">' + e.status + '</span></td><td>' + (e.detail || e.hit || '-') + '</td></tr>';
                 }
                 for (let e of a.exclusion.excluded) {
-                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge v36-exclude">排除</span></td><td>' + e.reason + '</td></tr>';
+                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge v36-exclude">排除</span></td><td>' + e.reason + (e.detail ? ' (' + e.detail + ')' : '') + '</td></tr>';
                 }
 
                 let scoreHtml = '';
