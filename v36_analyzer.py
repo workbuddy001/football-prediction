@@ -580,10 +580,13 @@ def analyze_match(data):
         else:
             score_analysis.append(f'客攻弱({a_att:.1f})但主防也松({h_def:.1f})→双方都可能丢球')
     
-    # V3.7: BTS信号 — 与"双方都可能丢球"条件一致
-    bts_likely = (h_att < 2.0 and a_def >= 1.0) or (a_att < 2.0 and h_def >= 1.0)
-    if bts_likely:
+    # V3.7: BTS信号 — 需防范一方防守铁壁导致零封
+    bts_weak_def = (h_att < 2.0 and a_def >= 1.0) or (a_att < 2.0 and h_def >= 1.0)
+    bts_blocked = (a_att >= 2.0 and h_def < 1.0) or (h_att >= 2.0 and a_def < 1.0)
+    if bts_weak_def and not bts_blocked:
         score_analysis.append('⚠️双方都可能丢球→大概率双方进球(75%/164场,失败全因主队遭零封)')
+    elif bts_weak_def and bts_blocked:
+        score_analysis.append('⚠️双方防守均有漏洞但一方防线铁壁→BTS信号不可靠')
     
     # 比分推导（增强版）
     score_candidates = []
