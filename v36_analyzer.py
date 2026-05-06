@@ -1129,6 +1129,35 @@ def analyze_match(data):
     if top_score == '?' and score_candidates and score_candidates[0]['scores']:
         top_score = score_candidates[0]['scores'][0]['score']
     
+    # ===== V3.8: 根据让球盘结论过滤比分 =====
+    hhad_pick = None
+    # 不矛盾时取P1推荐方向
+    has_contra = (p0_win and p1_win) or (p0_lose and p1_lose) or (p1_lose and has_home_unbeaten) or (p1_win and has_trap_win)
+    if not has_contra:
+        if p1_win and not p0_win:
+            hhad_pick = '让胜'
+        elif p1_lose and not p0_lose:
+            hhad_pick = '让负'
+    
+    # 过滤比分: 只保留让球盘推荐方向的比分
+    filtered_scores = []
+    for sc_group in score_candidates:
+        for s in sc_group['scores']:
+            tag = s['tag']
+            keep = True
+            if hhad_pick == '让胜' and '主胜' not in tag:
+                keep = False
+            elif hhad_pick == '让负' and '主负' not in tag and '客胜' not in tag:
+                keep = False
+            if keep:
+                filtered_scores.append({
+                    'goals': sc_group['total_goals'],
+                    'score': s['score'],
+                    'tag': tag
+                })
+    # 过滤后首选比分
+    filtered_top = filtered_scores[0]['score'] if filtered_scores else top_score
+    
     return {
         'match_id': data.get('match_id', ''),
         'match_info': mi,
@@ -1177,6 +1206,8 @@ def analyze_match(data):
             'confidence': direction_conf,
             'goals': candidate_goals[:3],
             'top_score': top_score,
+            'hhad_pick': hhad_pick,
+            'filtered_scores': filtered_scores[:6],
         } if candidate_goals else None,
     }
 # V3.6 FIX v2 - Tue May  5 17:00:32     2026

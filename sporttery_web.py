@@ -2613,7 +2613,32 @@ HTML_TEMPLATE = '''
                     + '<h4>7.9/7.10 终审 & 反审</h4>'
                     + reviewHtml + warnHtml
                     + '</div>'
-                    + (rec ? '<div class="v36-rec"><strong>' + a.step0.direction + '</strong> | 总进球: ' + rec.goals.join('/') + '球 | 首选比分: ' + rec.top_score + '</div>' : '')
+                    + (function() {
+                        const rec = a.recommended;
+                        if (!rec) return '';
+                        let r = '<div class="v36-rec">';
+                        r += '<strong>' + a.step0.direction + '</strong>';
+                        if (rec.hhad_pick) r += ' ' + rec.hhad_pick;
+                        r += ' | 总进球: ' + rec.goals.join('/') + '球';
+                        if (rec.filtered_scores && rec.filtered_scores.length > 0) {
+                            // Group by goals
+                            let byGoal = {};
+                            for (let fs of rec.filtered_scores) {
+                                if (!byGoal[fs.goals]) byGoal[fs.goals] = [];
+                                byGoal[fs.goals].push(fs.score);
+                            }
+                            r += '<br><span style=\"font-size:12px;color:#ffcc80\">推荐比分(' + rec.hhad_pick + '): ';
+                            let parts = [];
+                            for (let [g, scores] of Object.entries(byGoal)) {
+                                parts.push(scores.join('/') + '(' + g + '球)');
+                            }
+                            r += parts.join(' | ') + '</span>';
+                        } else {
+                            r += ' | 首选比分: ' + rec.top_score;
+                        }
+                        r += '</div>';
+                        return r;
+                    })()
                     + '</div>';
 
                 document.body.appendChild(overlay);
