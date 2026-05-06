@@ -95,24 +95,19 @@ def _get_change_info(data, goal_key):
     sample = 0
     
     if hr_data:
-        goal_buckets = hr_data.get(goal_key, {})
+        g_num_key = int(goal_key.replace('球', ''))
+        goal_buckets = hr_data.get(goal_key, hr_data.get(g_num_key, {}))
         if goal_buckets:
-            # Find the matching bucket for this change
+            # Build same bucket label as _build_change_hitrate
             abs_pct = abs(pct)
             if abs_pct == 0:
                 bucket = '0%不变'
-            elif abs_pct <= 2:
-                direction = '涨' if pct > 0 else '降'
-                bucket = f'0-2%{direction}'
-            elif abs_pct <= 5:
-                direction = '涨' if pct > 0 else '降'
-                bucket = f'2-5%{direction}'
-            elif abs_pct <= 10:
-                direction = '涨' if pct > 0 else '降'
-                bucket = f'5-10%{direction}'
             else:
                 direction = '涨' if pct > 0 else '降'
-                bucket = f'>20%{direction}'
+                lo = int(abs_pct)
+                if abs_pct == lo:
+                    lo = lo - 1
+                bucket = f'{lo}-{lo+1}%{direction}'
             
             bd = goal_buckets.get(bucket, {})
             if bd:

@@ -343,11 +343,21 @@ def v36_analyze(match_id):
         with open(data_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        # If POST, merge ttg_hitrates and other UI data from request body
+        # If POST, merge ttg_hitrates and odds hitrate from request body
         if request.method == 'POST' and request.is_json:
             body = request.get_json(silent=True) or {}
             if 'ttg_hitrates' in body:
                 data['_change_hitrate'] = body['ttg_hitrates']
+        
+        # V3.6 fix: 独立加载命中率数据（不依赖前端传递）
+        try:
+            from sporttery_web import _build_odds_hitrate, _build_change_hitrate
+            if '_odds_hitrate' not in data:
+                data['_odds_hitrate'] = _build_odds_hitrate()
+            if '_change_hitrate' not in data:
+                data['_change_hitrate'] = _build_change_hitrate()
+        except:
+            pass
         
         import importlib, sys
         if 'v36_analyzer' in sys.modules:
