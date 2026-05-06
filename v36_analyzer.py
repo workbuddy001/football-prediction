@@ -676,6 +676,12 @@ def analyze_match(data):
     # 排除4球: 0球<10 + 双方攻弱(<1.5) + 4球>4.0 → 0%命中(20场)
     if g0_val < 10 and h_att < 1.5 and a_att < 1.5 and g4_val > 4.0:
         profile_rules.append('🚫排除4球:0球<10+攻弱+4球>4→0%(20场)')
+    # 排除4球强化: 原有规律(0球<10+4球>6.0) + 双方攻弱 → 4球率0%(19场)
+    if g0_val < 10 and g4_val > 6.0 and h_att < 1.5 and a_att < 1.5:
+        profile_rules.append('🚫排除4球强化:旧规律+双方攻弱→0%(19场)')
+    # 排除1球强化: 原有规律(1球>5.0) + 主失>=1.5 → 1球率2.9%(70场)
+    if g1_val > 5.0 and h_def >= 1.5:
+        profile_rules.append('🚫排除1球强化:1球>5+主失≥1.5→仅2.9%(70场)')
     # 排除6球: 主攻>=2 + 客失>=2 + 6球>5.0 → 0%命中(14场)
     if h_att >= 2.0 and a_def >= 2.0 and g6_val > 5.0:
         profile_rules.append('🚫排除6球:主攻强+客漏+6球>5→0%(14场)')
