@@ -2469,6 +2469,12 @@ HTML_TEMPLATE = '''
                     + '线位=' + a.step0.ou_line + ' vs 标准=' + a.step0.std_line + ' 偏差=' + (a.step0.line_deviation>0?'+':'') + a.step0.line_deviation.toFixed(2) + '<br>'
                     + '信号: ' + (a.step0.signals.length ? a.step0.signals.join(' | ') : '无明确信号') + '<br>'
                     + '分析范围: <strong>' + a.step0.analysis_range + '</strong>'
+                    + (a.step0.def_dir && a.step0.def_dir !== '中性' 
+                        ? '<br>🛡️防守: 主失' + a.step0.h_def.toFixed(1) + ' vs 客失' + a.step0.a_def.toFixed(1) 
+                          + ' (差' + (a.step0.def_diff>0?'+':'') + a.step0.def_diff.toFixed(1) + '→' + a.step0.def_dir + ')'
+                          + (a.step0.def_consistency === '一致强化' ? ' <span style=\"color:#4caf50\">✅水位一致</span>' : '')
+                          + (a.step0.def_trap ? ' <span style=\"color:#ff9800\">⚠️诱盘嫌疑</span>' : '')
+                        : '')
                     + vetoHtml
                     + '</div>'
                     + '<div class="v36-section">'

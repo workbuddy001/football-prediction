@@ -235,6 +235,31 @@ def analyze_match(data):
     line_dir = '大球' if line_deviation > 0.5 else ('小球' if line_deviation < -0.5 else '中性')
     water_dir = '大球' if ou_over < 0.85 else ('小球' if ou_under < 0.85 else '中性')
     
+    # ===== V3.8: 防守维度方向信号 =====
+    def_diff = h_def - a_def  # <0=主防好, >0=主防差
+    def_dir = '中性'
+    def_strength = 0
+    if def_diff > 0.3:
+        def_dir = '大球'
+        def_strength = 1  # 主防劣→倾向大球
+    elif def_diff < -0.3:
+        def_dir = '小球'
+        def_strength = 1  # 主防优→倾向小球
+    
+    # 水位-防守一致性检查 (V3.8: 525场回测验证)
+    def_consistency = '中性'
+    def_trap = False
+    if water_dir == '大球' and def_dir == '大球':
+        def_consistency = '一致强化'  # 大球低水+主防劣→60%(+8pp)
+    elif water_dir == '小球' and def_dir == '小球':
+        def_consistency = '一致强化'  # 小球低水+主防优→48%(+5pp)
+    elif water_dir == '大球' and def_dir == '小球':
+        def_consistency = '矛盾'       # 低水吹大但防守好→庄家可能在诱盘
+        def_trap = True
+    elif water_dir == '小球' and def_dir == '大球':
+        def_consistency = '矛盾'       # 低水吹小但防守差→庄家可能在诱盘
+        def_trap = True
+    
     # V3.7: HAD赔率方向信号
     had_dir = '中性'
     had_strength = 0  # 0=不用, 1=弱, 2=强
@@ -289,11 +314,19 @@ def analyze_match(data):
     if water_dir != '中性': step0_signals.append(f'水位→{water_dir}')
     if had_dir != '中性' and had_strength >= 1: step0_signals.append(had_signal)
     if hafu_signal: step0_signals.append(hafu_name)
+    # V3.8: 防守维度信号
+    if def_dir != '中性': step0_signals.append(f'防守→{def_dir}(主失{round(h_def,1)}vs客失{round(a_def,1)})')
+    if def_consistency == '一致强化':
+        step0_signals.append(f'🛡️水位+防守同向→强化信号')
+    elif def_trap:
+        step0_signals.append(f'⚠️水位{water_dir}但防守{def_dir}→诱盘嫌疑')
     
-    # 信号计数（HAD强信号计1票，弱信号不计）
+    # 信号计数（HAD强信号计1票，V3.8防御信号计1票）
     all_dirs = [g0_dir, line_dir, water_dir]
     if had_strength >= 1:
         all_dirs.append(had_dir)
+    if def_strength >= 1:
+        all_dirs.append(def_dir)
     big_signals = sum(1 for d in all_dirs if d == '大球')
     small_signals = sum(1 for d in all_dirs if d == '小球')
     
@@ -318,6 +351,14 @@ def analyze_match(data):
     elif small_signals == 1 and big_signals == 0:
         direction = '小球'; direction_conf = '弱'
     
+    # V3.8: 防守一致性修正（水位+防守同向→升置信，矛盾→降置信）
+    if def_consistency == '一致强化' and direction == water_dir:
+        if direction_conf == '弱': direction_conf = '中(防守强化)'
+        elif direction_conf == '中': direction_conf = '强(防守强化)'
+        elif direction_conf == '强': direction_conf = '强(防守一致)'
+    elif def_trap and direction == water_dir and direction_conf in ('弱', '中'):
+        direction_conf = f'{direction_conf}(防守矛盾⚠️)'
+    
     # 优先级3: 0球区间铁律（模糊时打破僵局/中方向矛盾时留自救空间）
     if direction == '模糊' and g0_rule_dir:
         direction = g0_rule_dir
@@ -333,6 +374,12 @@ def analyze_match(data):
     
     step0 = {
         'combined_avg': combined_avg,
+        'h_def': round(h_def, 2),
+        'a_def': round(a_def, 2),
+        'def_diff': round(def_diff, 2),
+        'def_dir': def_dir,
+        'def_consistency': def_consistency,
+        'def_trap': def_trap,
         'std_line': std_line,
         'g0_val': g0_val,
         'g0_theo': f'[{theo_g0_lo:.1f},{theo_g0_hi:.1f}]',
