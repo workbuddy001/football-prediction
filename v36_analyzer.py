@@ -746,6 +746,18 @@ def analyze_match(data):
         profile_rules.append('🔥主攻vs客漏→大球91%/3球41%')
     if h_att >= 2.0 and a_att >= 2.0:
         profile_rules.append('🔥双方攻击火爆→大球80%/3球40%')
+    # ============== V3.8: 高命中比分实时信号 ==============
+    # 0:0信号: 庄家推离0球(高赔+大球线+升水) → 反向出0:0
+    g0_change = tc.get('0球', {}).get('change_pct', 0) if tc else 0
+    if g0_val > 14 and ou_line > 2.5 and g0_change > 1 and h_def >= 1.0 and a_def >= 1.0:
+        profile_rules.append('🎯0:0强:0球>14+大球线+升水+双方防≥1→庄家全面推离反向')
+    elif g0_val > 14 and ou_line > 2.5:
+        profile_rules.append('👁️0:0候选:0球>14+大球线→庄家看大球,警惕0:0')
+    # 1:1信号: 主防好+近况温和+庄家不极端看大球
+    g2_change = tc.get('2球', {}).get('change_pct', 0) if tc else 0
+    if h_def < 1.0 and 10 <= g0_val <= 18 and combined_avg < 3.5 and h_att >= 0.8 and a_att >= 0.8:
+        profile_rules.append('👁️1:1候选:主铁壁(失'+str(round(h_def,1))+')+0球适中+近况温和→关注1:1')
+    
     if h_def < 1.0 and a_def < 1.0:
         profile_rules.append('🛡️双方铁壁→小球58%/2球50%')
     if h_att < 1.5 and a_att < 1.5 and h_def < 1.5 and a_def < 1.5:
@@ -755,34 +767,55 @@ def analyze_match(data):
             profile_rules.append('😴双方沉闷→小球46%/2球43%')
     try: hcap = int(hhad_handicap)
     except: hcap = 0
-    if a_att >= 2.0 and hcap > 0:
+    is_home_give = hcap < 0   # 主让球 (让球=-1)
+    is_home_recv = hcap > 0   # 主受让 (让球=+1)
+    if a_att >= 2.0 and is_home_recv:
         profile_rules.append('🛡️客火爆+主受让→主队不败81%')
     
-    # ============== V3.7: 让球盘+近况联合规律 ==============
+    # ============== V3.8: 让球盘系统推荐 (120场回测) ==============
     # 计算主/客近5场胜场数
     h_win_count = sum(1 for r in recent.get('home', []) if r.get('result', '') in ('home', 'win'))
     a_win_count = sum(1 for r in recent.get('away', []) if r.get('result', '') in ('home', 'win'))
     hhad_lose_odds = _safe_float(hhad.get('让负', 0))
     hhad_win_odds = _safe_float(hhad.get('让胜', 0))
+    hhad_draw_odds = _safe_float(hhad.get('让平', 0))
     
-    # 规律1: 让负2.50-3.00 + 主队不胜 → 让胜80%/0%让负
-    if 2.50 <= hhad_lose_odds <= 3.00 and h_win_count <= 1:
-        profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主不胜→反弹让胜80%')
-    # 规律1b: 让负2.50-3.00 + 主受让 → 双层细分(攻力差+防守差)
-    if 2.50 <= hhad_lose_odds <= 3.00 and hcap >= 1:
-        if h_att >= a_att and h_def >= 1.5 and a_def < 1.0:
-            profile_rules.append('⚠️让负'+str(round(hhad_lose_odds,2))+'且主受让但主防弱客防强→观望(1/14翻车)')
-        else:
-            profile_rules.append('🔥让负'+str(round(hhad_lose_odds,2))+'且主受让→推荐让胜/让平(14场仅1翻)')
+    # 数据: 主让(-1)85场 让胜75%/让平19%/让负6% | 主受让(+1)35场 让胜17%/让平29%/让负54%
     
-    # 规律2: 让胜1.50-1.70 + 主队1-2胜 → 让胜89-100%
-    if 1.50 <= hhad_win_odds <= 1.70:
-        if 1 <= h_win_count <= 2:
-            profile_rules.append('🔥让胜'+str(round(hhad_win_odds,2))+'且主1-2胜→让胜89%+')
-        elif h_win_count >= 3:
-            profile_rules.append('⚠️让胜'+str(round(hhad_win_odds,2))+'但主3+胜→陷阱!让胜仅30-50%')
+    # P0 排除层 (命中率≤10% → 直接排除)
+    if hhad_win_odds >= 3.0 and hhad_win_odds < 5.0:
+        profile_rules.append('🚫排除让负:让胜3.0-5.0→让负仅0%(40场)')
+    if 1.0 <= hhad_lose_odds < 2.0:
+        profile_rules.append(f'🚫排除让负:让负{round(hhad_lose_odds,2)}<2.0→让负仅4%(51场)')
+    if 2.0 <= hhad_lose_odds < 3.0:
+        profile_rules.append('🚫排除让平:让负2.0-3.0→让平仅10%(40场)')
+    if 2.0 <= hhad_win_odds < 3.0:
+        profile_rules.append('🚫排除让平:让胜2.0-3.0→让平仅10%(39场)')
+    if hhad_win_odds >= 5.0:
+        profile_rules.append(f'🚫排除让负:让胜{round(hhad_win_odds,2)}≥5→让负仅8%(12场)')
+    if hhad_lose_odds >= 5.0:
+        profile_rules.append(f'🚫排除让胜:让负{round(hhad_lose_odds,2)}≥5→让胜仅12%(8场)')
     
-    # 规律3: 让胜/让负>=4.0 → 高赔几乎不打出的0%规律
+    # P1 强推层 (命中率≥70% → 直接推荐)
+    # 让胜规律 (主让方向, 让胜赔率<4.0才适用)
+    if is_home_give and hhad_win_odds < 4.0:
+        profile_rules.append('🔥主让球→让胜75%(85场)')
+        if 2.5 <= hhad_draw_odds < 3.3 and h_att > a_att:
+            profile_rules.append(f'🔥主让+让平{round(hhad_draw_odds,2)}+主攻>客攻→让胜92%(12场)')
+        if 2.0 <= hhad_lose_odds < 3.0 and h_att > a_att:
+            profile_rules.append(f'🔥主让+让负{round(hhad_lose_odds,2)}+主攻>客攻→让胜85%(20场)')
+        if 2.0 <= hhad_lose_odds < 3.0:
+            profile_rules.append(f'🔥主让+让负{round(hhad_lose_odds,2)}→让胜80%(30场)')
+        if 4.0 <= hhad_draw_odds < 5.0:
+            profile_rules.append(f'🔥主让+让平{round(hhad_draw_odds,2)}→让胜80%(20场)')
+    
+    # 让负规律 (主受让方向)
+    if is_home_recv and 2.0 <= hhad_win_odds < 3.0:
+        profile_rules.append(f'🔥主受让+让胜{round(hhad_win_odds,2)}→让负69%(13场)')
+    
+    # 让平: 无≥65%规律, 仅当让胜+让负都被排除时推荐
+    
+    # 让胜≥4.0 高赔规则 (保持原有)
     if hhad_win_odds >= 4.0:
         if h_win_count >= 3:
             profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'且主3+胜→让胜0%(21场)')
@@ -795,10 +828,33 @@ def analyze_match(data):
     if hhad_lose_odds >= 4.0:
         if a_win_count >= 3:
             profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'且客3+胜→让负0%(11场)')
-        if h_att < 1.5:
+        if h_att < 1.5 and hhad_lose_odds < 5.0:
             profile_rules.append('🔥让负≥4.0且主攻弱→让胜80%(20场)')
+        elif hhad_lose_odds >= 5.0:
+            profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥5→让胜仅12%(8场)')
         else:
             profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥4.0→让负仅9%,选让胜')
+    
+    # V3.8: 矛盾检测 (P0排除X + P1推荐X → X大概率打不出)
+    p0_win = any('🚫排除让胜' in p or '🚫让胜' in p for p in profile_rules)
+    p0_lose = any('🚫排除让负' in p or '🚫让负' in p for p in profile_rules)
+    p1_win = any('🔥' in p and '→让胜' in p for p in profile_rules)
+    p1_lose = any('🔥' in p and '→让负' in p for p in profile_rules)
+    if p0_win and p1_win:
+        profile_rules.append('⚠️矛盾:推荐让胜但P0排除→仅20%命中(5场仅1中),选让平/让负')
+    if p0_lose and p1_lose:
+        profile_rules.append('⚠️矛盾:推荐让负但P0排除→仅50%命中,观望')
+    
+    # 特殊: 让胜1.50-1.70
+    if 1.50 <= hhad_win_odds <= 1.70:
+        if 1 <= h_win_count <= 2:
+            profile_rules.append('🔥让胜'+str(round(hhad_win_odds,2))+'且主1-2胜→让胜89%+')
+        elif h_win_count >= 3:
+            profile_rules.append('⚠️让胜'+str(round(hhad_win_odds,2))+'但主3+胜→陷阱!让胜仅30-50%')
+    
+    # 特殊: 客火爆+主受让
+    if a_att >= 2.0 and is_home_recv:
+        profile_rules.append('🛡️客火爆+主受让→主队不败81%')
     
     # ============== V3.7: 盘口偏差规律（攻防预期 vs OU线） ==============
     # 预期 = 主攻 + 客失
@@ -872,6 +928,10 @@ def analyze_match(data):
             'attack_threshold': f'主攻{h_att:.1f}(\'≥1.5\'→{att_threshold})',
             'attack_vs_defense': f'主攻{h_att:.1f}+客失{a_def:.1f}',
             'profiles': profile_rules,
+        },
+        'handicap_conclusion': {
+            'p1_win': p1_win, 'p1_lose': p1_lose, 'p1_draw': False,
+            'p0_win': p0_win, 'p0_lose': p0_lose, 'p0_draw': False,
         },
         'score_candidates': score_candidates,
         'score_analysis': score_analysis,

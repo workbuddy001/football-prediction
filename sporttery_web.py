@@ -2468,6 +2468,40 @@ HTML_TEMPLATE = '''
                         h += '<div style="font-size:10px;color:#888;margin-top:4px">回测355场:首选命中7%,前2排除准确率81%</div></div>';
                         return h;
                     })()
+                    + (function() {
+                        // ── V3.8: 让球盘总结 ──
+                        try {
+                        const hc = a.handicap_conclusion;
+                        if (!hc) return '';
+                        let h = '<div class="v36-section" style="border:2px solid #ff9800;background:#1a1a0a;border-radius:8px">';
+                        h += '<h4 style="color:#ff9800">🎯 让球盘总结</h4>';
+                        
+                        let excl = [];
+                        if (hc.p0_win === true) excl.push('让胜');
+                        if (hc.p0_lose === true) excl.push('让负');
+                        if (hc.p0_draw === true) excl.push('让平');
+                        
+                        let recs = [];
+                        if (hc.p1_win === true && hc.p0_win !== true) recs.push('让胜');
+                        if (hc.p1_lose === true && hc.p0_lose !== true) recs.push('让负');
+                        
+                        let contra = [];
+                        if (hc.p1_win === true && hc.p0_win === true) contra.push('让胜');
+                        if (hc.p1_lose === true && hc.p0_lose === true) contra.push('让负');
+                        
+                        if (contra.length > 0) {
+                            h += '<div style="color:#f44336;font-size:14px"><strong>⚠️ 矛盾: ' + contra.join('+') + '推荐但被排除→放弃，观望</strong></div>';
+                        } else if (recs.length > 0) {
+                            h += '<div style="color:#4caf50;font-size:16px"><strong>✅ 推荐: ' + recs.join(' / ') + '</strong></div>';
+                            if (excl.length > 0) h += '<div style="color:#f44336;font-size:13px;margin-top:4px">🚫 排除: ' + excl.join('、') + '</div>';
+                        } else {
+                            h += '<div style="color:#888;font-size:14px">❌ 无明确信号 → 观望</div>';
+                        }
+                        h += '<div style="font-size:10px;color:#888;margin-top:4px">基于120场回测:让胜66%/让负67%(不矛盾时)</div>';
+                        h += '</div>';
+                        return h;
+                        } catch(e) { return '<div class="v36-section v36-warn">让球盘总结错误: ' + e.message + '</div>'; }
+                    })()
                     + '<div class="v36-section">'
                     + '<h4>7.9/7.10 终审 & 反审</h4>'
                     + reviewHtml + warnHtml
