@@ -783,18 +783,41 @@ def analyze_match(data):
     # 数据: 主让(-1)85场 让胜75%/让平19%/让负6% | 主受让(+1)35场 让胜17%/让平29%/让负54%
     
     # P0 排除层 (命中率≤10% → 直接排除)
-    if hhad_win_odds >= 3.0 and hhad_win_odds < 5.0:
-        profile_rules.append('🚫排除让负:让胜3.0-5.0→让负仅0%(40场)')
-    if 1.0 <= hhad_lose_odds < 2.0:
-        profile_rules.append(f'🚫排除让负:让负{round(hhad_lose_odds,2)}<2.0→让负仅4%(51场)')
+    # 注1: "主让+让负<2.0"已由 _analyze_hhad_lose_low() 决策树(S/A/B/C/D/E)完全接管
+    # 注2: "让胜≥3.0→排除让负"已由 _analyze_hhad_low_draw() Step4覆盖(让胜>3.0→让负53.8%), 旧数据(0%/8%)与新数据矛盾, 删除
+
+    # 调用 _analyze_hhad_lose_low() 决策树（主让+让负<2.0）
+    _hhad_lose_low_result = None
+    try:
+        from sporttery_web import _analyze_hhad_lose_low
+        home_avg = sum(r['total'] for r in recent.get('home', [])) / max(len(recent.get('home', [])), 1) if recent.get('home') else None
+        away_avg = sum(r['total'] for r in recent.get('away', [])) / max(len(recent.get('away', [])), 1) if recent.get('away') else None
+        recent_form = {'home_avg': home_avg, 'away_avg': away_avg, 'combined_avg': combined_avg}
+        _hhad_lose_low_result = _analyze_hhad_lose_low(hhad, recent_form)
+    except ImportError:
+        pass
+
+    if _hhad_lose_low_result and _hhad_lose_low_result.get('active'):
+        tier = _hhad_lose_low_result.get('tier', '?')
+        pick = _hhad_lose_low_result.get('pick', '')
+        confidence = _hhad_lose_low_result.get('confidence', 0)
+        reasons = _hhad_lose_low_result.get('reasons', [])
+        # 将决策树结果作为ACTIVE画像规律写入
+        for reason in reasons:
+            profile_rules.append(f'🔍决策树{tier}级: {reason}')
+        # 标记决策树结论用于active判定
+        if pick == '排除让负':
+            profile_rules.append(f'🚫决策树→排除让负({tier}级,{confidence}%)')
+
     if 2.0 <= hhad_lose_odds < 3.0:
         profile_rules.append('🚫排除让平:让负2.0-3.0→让平仅10%(40场)')
     if 2.0 <= hhad_win_odds < 3.0:
         profile_rules.append('🚫排除让平:让胜2.0-3.0→让平仅10%(39场)')
-    if hhad_win_odds >= 5.0:
-        profile_rules.append(f'🚫排除让负:让胜{round(hhad_win_odds,2)}≥5→让负仅8%(12场)')
     if hhad_lose_odds >= 5.0:
-        profile_rules.append(f'🚫排除让胜:让负{round(hhad_lose_odds,2)}≥5→让胜仅12%(8场)')
+        if is_home_give:
+            profile_rules.append(f'🚫排除让胜:主让+让负{round(hhad_lose_odds,2)}≥5→让胜仅12%(8场)')
+        else:
+            profile_rules.append(f'👁️让负{round(hhad_lose_odds,2)}极高→客大胜概率极低,让胜可能性增大')
     
     # P1 强推层 (命中率≥70% → 直接推荐)
     # 让胜规律 (主让方向, 让胜赔率<4.0才适用)
@@ -812,6 +835,9 @@ def analyze_match(data):
     # 让负规律 (主受让方向)
     if is_home_recv and 2.0 <= hhad_win_odds < 3.0:
         profile_rules.append(f'🔥主受让+让胜{round(hhad_win_odds,2)}→让负69%(13场)')
+    # 让负极高 → 反向推荐让胜 (主受让时客队大胜概率极低)
+    if is_home_recv and hhad_lose_odds >= 5.0:
+        profile_rules.append(f'🔥主受让+让负{round(hhad_lose_odds,2)}极高→让胜75%(8场仅1翻)')
     
     # 让平: 无≥65%规律, 仅当让胜+让负都被排除时推荐
     
@@ -831,7 +857,9 @@ def analyze_match(data):
         if h_att < 1.5 and hhad_lose_odds < 5.0:
             profile_rules.append('🔥让负≥4.0且主攻弱→让胜80%(20场)')
         elif hhad_lose_odds >= 5.0:
-            profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥5→让胜仅12%(8场)')
+            if is_home_give:
+                profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥5→让胜仅12%(8场)')
+            # 主受让时已在P0/P1处理
         else:
             profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥4.0→让负仅9%,选让胜')
     
@@ -844,6 +872,14 @@ def analyze_match(data):
         profile_rules.append('⚠️矛盾:推荐让胜但P0排除→仅20%命中(5场仅1中),选让平/让负')
     if p0_lose and p1_lose:
         profile_rules.append('⚠️矛盾:推荐让负但P0排除→仅50%命中,观望')
+    # 跨框架矛盾: 让球盘推荐 vs 攻防画像
+    has_home_unbeaten = any('主队不败' in p for p in profile_rules)
+    # 陷阱信号直接判断(在profile_rules之前,因为陷阱规则在后面)
+    has_trap_win = (1.50 <= hhad_win_odds <= 1.70 and h_win_count >= 3)
+    if p1_lose and has_home_unbeaten:
+        profile_rules.append('⚠️矛盾:让球盘推荐让负,但攻防画像提示主队不败81%→观望')
+    if p1_win and has_trap_win:
+        profile_rules.append('⚠️矛盾:推荐让胜但触发陷阱信号(让胜低赔+主3+胜)→让胜仅30-50%,观望')
     
     # 特殊: 让胜1.50-1.70
     if 1.50 <= hhad_win_odds <= 1.70:
@@ -892,6 +928,27 @@ def analyze_match(data):
             else:
                 profile_rules.append(f'📈高开{ou_deviation:+.1f}+预期低→小球仅37%,观望')
     
+    # ============== 标注画像规律: 已生效 vs 仅参考 ==============
+    # 排除规则: 检查对应球数是否在三维排除中真正被排除
+    excluded_goals = {e['goal'] for e in excluded if '排除' in e['status']}
+    profile_items = []
+    for rule in profile_rules:
+        active = False
+        # 检查 🚫排除X球 规则是否在三维排除中被执行
+        import re
+        m = re.search(r'排除(\d+)球', rule)
+        if m:
+            goal_key = m.group(1) + '球'
+            if goal_key in excluded_goals:
+                active = True
+        # 🔥让胜/让负推荐 → 已被handicap_conclusion引用
+        if ('→让胜' in rule or '→让负' in rule) and '🚫' not in rule:
+            if ('→让胜' in rule and (p1_win or (not p0_win))) or \
+               ('→让负' in rule and (p1_lose or (not p0_lose))):
+                active = True
+        # 盘口偏差方向规律（高开/低开→大小球）: 仅参考
+        profile_items.append({'text': rule, 'active': active})
+
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
     top_score = '?'
@@ -927,11 +984,12 @@ def analyze_match(data):
             'anchor': anchor_rule,
             'attack_threshold': f'主攻{h_att:.1f}(\'≥1.5\'→{att_threshold})',
             'attack_vs_defense': f'主攻{h_att:.1f}+客失{a_def:.1f}',
-            'profiles': profile_rules,
+            'profiles': profile_items,
         },
         'handicap_conclusion': {
             'p1_win': p1_win, 'p1_lose': p1_lose, 'p1_draw': False,
             'p0_win': p0_win, 'p0_lose': p0_lose, 'p0_draw': False,
+            'contra': (p0_win and p1_win) or (p0_lose and p1_lose) or (p1_lose and has_home_unbeaten) or (p1_win and has_trap_win),
         },
         'score_candidates': score_candidates,
         'score_analysis': score_analysis,

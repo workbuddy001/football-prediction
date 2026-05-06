@@ -2076,6 +2076,49 @@ HTML_TEMPLATE = '''
                     </div>
                     ` : ''}
 
+                    <!-- 主让+让负低赔规律（217场回测） -->
+                    ${m.hhad_lose_hint && m.hhad_lose_hint.active ? (() => {
+                        const h = m.hhad_lose_hint;
+                        const isExclude = h.pick === '排除让负';
+                        const isRecommend = h.pick === '让负';
+                        const isWatch = h.pick === '观望';
+                        const tierColors = {
+                            'S': { bg: 'rgba(239,68,68,0.15)', border: 'rgba(239,68,68,0.5)', title: '#ef4444' },
+                            'A': { bg: 'rgba(249,115,22,0.15)', border: 'rgba(249,115,22,0.5)', title: '#f97316' },
+                            'B': { bg: 'rgba(234,179,8,0.12)', border: 'rgba(234,179,8,0.4)', title: '#eab308' },
+                            'C': { bg: 'rgba(100,116,139,0.12)', border: 'rgba(100,116,139,0.3)', title: '#94a3b8' },
+                            'D': { bg: 'rgba(100,116,139,0.10)', border: 'rgba(100,116,139,0.25)', title: '#64748b' },
+                            'E': { bg: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.4)', title: '#a855f7' },
+                        };
+                        const tc = tierColors[h.tier] || tierColors['D'];
+                        const pickBg = isExclude ? 'rgba(168,85,247,0.25)' : isRecommend ? 'rgba(34,197,94,0.25)' : 'rgba(100,116,139,0.2)';
+                        const pickColor = isExclude ? '#a855f7' : isRecommend ? '#22c55e' : '#94a3b8';
+                        const pickIcon = isExclude ? '🚫' : isRecommend ? '✅' : '👀';
+                        return `
+                    <div class="odds-section">
+                        <div style="background:${tc.bg};border:1px solid ${tc.border};border-radius:8px;padding:10px 12px;font-size:12px;">
+                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                <span style="background:${tc.bg};color:${tc.title};padding:2px 6px;border-radius:4px;font-weight:bold;font-size:11px;border:1px solid ${tc.border};">${h.tier}级</span>
+                                <span style="color:${tc.title};font-weight:bold;font-size:13px;">让负低赔规律</span>
+                                <span style="color:#64748b;font-size:11px;">让负${h.lose_odds}</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                <span style="background:${pickBg};color:${pickColor};padding:2px 8px;border-radius:4px;font-weight:bold;font-size:12px;">${pickIcon} ${h.pick}</span>
+                                <span style="color:#94a3b8;">置信度 ${h.confidence}%</span>
+                            </div>
+                            ${h.reasons.map(r => {
+                                const isWarn = r.includes('✖');
+                                const isUp = r.includes('★') || r.includes('↑');
+                                const clr = isWarn ? '#f43f5e' : isUp ? '#22c55e' : '#cbd5e1';
+                                return `<div style="color:${clr};margin:2px 0 2px 4px;font-size:11px;line-height:1.5;">${r}</div>`;
+                            }).join('')}
+                            <div style="color:#475569;font-size:10px;margin-top:6px;border-top:1px solid rgba(100,116,139,0.15);padding-top:4px;">
+                                主让+让负<2.0 | 217场回测 | 近况细分决策树
+                            </div>
+                        </div>
+                    </div>`;
+                    })() : ''}
+
                     <!-- 平局信号（所有had.平区间） -->
                     ${m.draw_hint && m.draw_hint.active ? `
                     <div class="odds-section">
@@ -2438,7 +2481,7 @@ HTML_TEMPLATE = '''
                     + '近况锚定: ' + a.new_rules.anchor + '<br>'
                     + '攻击力阈值: ' + a.new_rules.attack_threshold + '<br>'
                     + '大胜评估: ' + a.new_rules.attack_vs_defense
-                    + (a.new_rules.profiles && a.new_rules.profiles.length > 0 ? '<br><br><strong>🎯 画像规律触发:</strong><br>' + a.new_rules.profiles.map(p => '&nbsp;&nbsp;' + p).join('<br>') : '')
+                    + (a.new_rules.profiles && a.new_rules.profiles.length > 0 ? '<br><br><strong>🎯 画像规律触发:</strong><br>' + a.new_rules.profiles.map(p => '&nbsp;&nbsp;' + (typeof p === 'object' ? (p.active ? '<span style="color:#4caf50">✅</span> ' : '<span style="color:#9e9e9e;font-size:11px">[仅参考]</span> ') + p.text : p)).join('<br>') : '')
                     + '</div>'
                     + '<div class="v36-section">'
                     + '<h4>7.8 比分反推</h4>'
@@ -2489,8 +2532,8 @@ HTML_TEMPLATE = '''
                         if (hc.p1_win === true && hc.p0_win === true) contra.push('让胜');
                         if (hc.p1_lose === true && hc.p0_lose === true) contra.push('让负');
                         
-                        if (contra.length > 0) {
-                            h += '<div style="color:#f44336;font-size:14px"><strong>⚠️ 矛盾: ' + contra.join('+') + '推荐但被排除→放弃，观望</strong></div>';
+                        if (hc.contra) {
+                            h += '<div style="color:#f44336;font-size:14px"><strong>⚠️ 矛盾信号→放弃，观望</strong></div>';
                         } else if (recs.length > 0) {
                             h += '<div style="color:#4caf50;font-size:16px"><strong>✅ 推荐: ' + recs.join(' / ') + '</strong></div>';
                             if (excl.length > 0) h += '<div style="color:#f44336;font-size:13px;margin-top:4px">🚫 排除: ' + excl.join('、') + '</div>';
@@ -3916,6 +3959,175 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
 
 
 
+
+
+def _analyze_hhad_lose_low(hhad, recent_form):
+    """
+    主让+让负低赔规律分析（基于217场回测，含近况细分决策树）
+
+    触发条件: 主让球 + 让负赔率 < 2.0
+    核心规律: 让负低赔 = 庄家防范让负方向（真实方向）
+
+    参数:
+        hhad: {"让球": str, "让胜": float, "让平": float, "让负": float}
+        recent_form: {"home_avg": float, "away_avg": float, "combined_avg": float} 或 None
+
+    返回:
+        {
+            "active": bool,
+            "lose_odds": float,
+            "handicap": float,
+            "pick": str,        # "让负" / "观望" / "排除让负"
+            "confidence": int,
+            "tier": str,        # "S/A/B/C/D/E"
+            "reasons": list,
+        } 或 None
+    """
+    if not hhad or not hhad.get("让负"):
+        return None
+
+    try:
+        hhad_win = float(hhad["让胜"])
+        hhad_lose = float(hhad["让负"])
+    except (ValueError, TypeError):
+        return None
+
+    # 解析让球方向
+    h_str = str(hhad.get("让球", ""))
+    try:
+        raw = float(h_str)
+        handicap = -raw  # "-1" -> handicap=1 (主让1球)
+    except:
+        return None
+
+    is_home_let = handicap > 0
+    if not is_home_let or hhad_lose >= 2.0:
+        return None
+
+    # 近况数据
+    home_avg = None
+    away_avg = None
+    combined_avg = None
+    if recent_form and recent_form.get("home_avg") is not None:
+        home_avg = recent_form["home_avg"]
+        away_avg = recent_form.get("away_avg")
+        combined_avg = recent_form.get("combined_avg")
+
+    reasons = []
+    pick = "观望"
+    confidence = 0
+    tier = "D"
+
+    if hhad_lose < 1.45:
+        tier = "S"
+        pick = "让负"
+        confidence = 83
+        reasons.append(f"S级: 让负赔率<1.45(当前{hhad_lose:.2f}), 24场回测让负率83.3%, 让胜率0%")
+        if home_avg is not None:
+            if home_avg < 1.5:
+                reasons.append(f"  主队近况{home_avg:.1f}(低迷)→让负78.6%(14场)")
+            elif home_avg < 2.0:
+                reasons.append(f"  主队近况{home_avg:.1f}(一般)→让负83.3%(6场)")
+            else:
+                reasons.append(f"  主队近况{home_avg:.1f}(较好)→让负80.0%(10场)")
+            reasons.append("  近况不敏感，无论近况好坏均强推让负")
+
+    elif hhad_lose < 1.50:
+        tier = "A"
+        pick = "让负"
+        confidence = 62
+        reasons.append(f"A级: 让负赔率1.45-1.50(当前{hhad_lose:.2f}), 34场回测让负率61.8%")
+        if home_avg is not None:
+            if home_avg < 1.5:
+                confidence = 67
+                reasons.append(f"  主队近况{home_avg:.1f}(<1.5)→让负66.7%(12场)↑升级")
+            elif home_avg < 2.0:
+                confidence = 64
+                reasons.append(f"  主队近况{home_avg:.1f}(1.5-2.0)→让负63.6%(11场)")
+            else:
+                reasons.append(f"  主队近况{home_avg:.1f}(≥2.0)→让负50%(6场), 信号减弱")
+
+    elif hhad_lose < 1.55:
+        tier = "B"
+        reasons.append(f"B级: 让负赔率1.50-1.55(当前{hhad_lose:.2f}), 基础让负率55.0%, 需近况确认")
+        if home_avg is not None:
+            if home_avg < 1.5:
+                pick = "让负"
+                confidence = 67
+                reasons.append(f"  主队近况{home_avg:.1f}(<1.5)→让负66.7%(9场)★升级")
+            elif home_avg < 2.0:
+                pick = "排除让负"
+                confidence = 67
+                reasons.append(f"  主队近况{home_avg:.1f}(1.5-2.0)→让负仅33.3%(6场)✖排除让负")
+            else:
+                reasons.append(f"  主队近况{home_avg:.1f}(≥2.0), 样本不足, 观望")
+        if away_avg is not None and 1.0 <= away_avg < 1.5:
+            if pick != "排除让负":
+                pick = "让负"
+                confidence = max(confidence, 67)
+                reasons.append(f"  客队近况{away_avg:.1f}(1.0-1.5)→让负66.7%(9场)★升级")
+        if combined_avg is not None and 1.5 <= combined_avg < 2.0:
+            if pick != "排除让负":
+                pick = "让负"
+                confidence = max(confidence, 83)
+                reasons.append(f"  双方平均近况{combined_avg:.1f}(1.5-2.0)→让负83.3%(6场)★★强升级")
+
+    elif hhad_lose < 1.65:
+        tier = "C"
+        reasons.append(f"C级: 让负赔率1.55-1.65(当前{hhad_lose:.2f}), 基础让负率56.5%, 强依赖近况")
+        if home_avg is not None and 2.0 <= home_avg < 2.5:
+            pick = "让负"
+            confidence = 70
+            reasons.append(f"  主队近况{home_avg:.1f}(2.0-2.5)→让负70.0%(10场)★升级")
+        elif away_avg is not None and away_avg < 1.0:
+            pick = "让负"
+            confidence = 75
+            reasons.append(f"  客队近况{away_avg:.1f}(<1.0)→让负75.0%(12场)★升级")
+        else:
+            reasons.append(f"  近况条件不满足, 保持观望(让负率47-54%)")
+
+    elif hhad_lose < 1.80:
+        tier = "D"
+        reasons.append(f"D级: 让负赔率1.65-1.80(当前{hhad_lose:.2f}), 基础让负率49.6%, 中性")
+        if home_avg is not None:
+            if 1.5 <= home_avg < 2.0:
+                pick = "让负"
+                confidence = 63
+                reasons.append(f"  主队近况{home_avg:.1f}(1.5-2.0)→让负63.2%(19场)★升级")
+            elif home_avg < 1.5:
+                pick = "让负"
+                confidence = 62
+                reasons.append(f"  双方低迷区间(主{home_avg:.1f})→让负61.5%(26场)★升级")
+            elif home_avg >= 2.0:
+                pick = "排除让负"
+                confidence = 70
+                reasons.append(f"  主队近况{home_avg:.1f}(≥2.0)→让负仅30.4%(13场)✖排除让负")
+        else:
+            reasons.append(f"  无近况数据, 观望")
+
+    else:
+        tier = "E"
+        pick = "排除让负"
+        confidence = 62
+        reasons.append(f"E级(排除): 让负赔率≥1.80(当前{hhad_lose:.2f}), 19场回测让负率仅31.6%")
+        if home_avg is not None and 1.5 <= home_avg < 2.0:
+            confidence = 67
+            reasons.append(f"  主队近况{home_avg:.1f}(1.5-2.0)→让负仅33.3%(9场)✖确认排除")
+        if combined_avg is not None and 1.5 <= combined_avg < 2.0:
+            confidence = 77
+            reasons.append(f"  双方平均近况{combined_avg:.1f}(1.5-2.0)→让负仅23.1%(13场)✖✖强排除")
+        reasons.append("  建议: 让负方向是陷阱，庄家引导性开盘")
+
+    return {
+        "active": True,
+        "lose_odds": round(hhad_lose, 2),
+        "handicap": handicap,
+        "pick": pick,
+        "confidence": confidence,
+        "tier": tier,
+        "reasons": reasons,
+    }
+
 # ==================== 排除平局分析（基于分析模板源数据） ====================
 
 _ANALYSIS_TEMPLATE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '分析模板')
@@ -4649,6 +4861,9 @@ def _build_match_card(data, api, match_list_cache=None):
         # 让球平低赔规律分析
         hhad_hint = _analyze_hhad_low_draw(hhad, recent_form, data)
 
+        # 主让+让负低赔规律分析（217场回测，含近况决策树）
+        hhad_lose_hint = _analyze_hhad_lose_low(hhad, recent_form)
+
         # 平局信号分析（所有had.平区间均显示）
         draw_hint = _analyze_draw_signal(had, hhad)
 
@@ -4743,6 +4958,8 @@ def _build_match_card(data, api, match_list_cache=None):
             'ttg_hitrates': _build_change_hitrate() if recent_form else {},
             # 让球平低赔规律提示
             'hhad_hint': hhad_hint,
+            # 主让+让负低赔规律（217场回测）
+            'hhad_lose_hint': hhad_lose_hint,
             # 平局信号（所有had.平区间）
             'draw_hint': draw_hint,
             # 排除平局分析（football_web逻辑）
@@ -4899,6 +5116,9 @@ def fetch_match(match_id):
                 pass
             hhad_hint = _analyze_hhad_low_draw(_hhad, _recent_form, result)
             result['had_hint'] = hhad_hint
+            # 主让+让负低赔规律（217场回测）
+            hhad_lose_hint = _analyze_hhad_lose_low(_hhad, _recent_form)
+            result['hhad_lose_hint'] = hhad_lose_hint
             # 黄金1球预测
             g1_pred = predict_1goals(features)
             # 黄金2球预测
