@@ -580,6 +580,11 @@ def analyze_match(data):
         else:
             score_analysis.append(f'客攻弱({a_att:.1f})但主防也松({h_def:.1f})→双方都可能丢球')
     
+    # V3.7: BTS信号 (both teams score)
+    bts_likely = (h_att >= 1.5 and a_def >= 1.0) or (a_att >= 1.5 and h_def >= 1.0)
+    if bts_likely:
+        score_analysis.append('⚠️双方都可能丢球→大概率双方进球(BTS 71.8%/234场)')
+    
     # 比分推导（增强版）
     score_candidates = []
     for total in candidate_goals[:3]:  # Max 3 goal totals
