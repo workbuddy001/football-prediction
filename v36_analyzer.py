@@ -672,7 +672,7 @@ def analyze_match(data):
     # ============== V3.7: 新排除规律（赔率+攻防组合） ==============
     # 排除1球: 客队防守强(失<1.0) + 1球赔率>5.0 → 0%命中(33场)
     if a_def < 1.0 and g1_val > 5.0:
-        profile_rules.append('🚫排除1球:客防强(失'+str(round(a_def,1))+')+1球'+str(round(g1_val,1))+'>5→0%(33场)')
+        profile_rules.append('🚫排除1球:客防强(失'+str(round(a_def,1))+')+1球'+str(round(g1_val,1))+'>5→95%(34场仅1翻车)')
     # 排除4球: 0球<10 + 双方攻弱(<1.5) + 4球>4.0 → 0%命中(20场)
     if g0_val < 10 and h_att < 1.5 and a_att < 1.5 and g4_val > 4.0:
         profile_rules.append('🚫排除4球:0球<10+攻弱+4球>4→0%(20场)')

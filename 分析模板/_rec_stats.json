@@ -1178,5 +1178,31 @@
       }
     ],
     "time": "2026-05-06 09:50"
+  },
+  "2039546": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "golden_1goals_base",
+        "old_hit_rate": 37.2,
+        "new_hit_rate": 38.6,
+        "old_sample": 43,
+        "new_sample": 44,
+        "is_hit": true,
+        "target_goals": 1
+      },
+      {
+        "type": "practical_recommend_2",
+        "old_hit_rate": 100,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-06 10:44"
   }
 }
