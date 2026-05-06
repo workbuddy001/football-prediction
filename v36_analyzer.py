@@ -700,6 +700,18 @@ def analyze_match(data):
         elif h_win_count >= 3:
             profile_rules.append('⚠️让胜'+str(round(hhad_win_odds,2))+'但主3+胜→陷阱!让胜仅30-50%')
     
+    # 规律3: 让胜/让负>=4.0 → 高赔几乎不打出的0%规律
+    if hhad_win_odds >= 4.0:
+        if h_win_count >= 3:
+            profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'且主3+胜→让胜0%(21场)')
+        else:
+            profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'≥4.0→让胜仅17%,选让负/让平')
+    if hhad_lose_odds >= 4.0:
+        if a_win_count >= 3:
+            profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'且客3+胜→让负0%(11场)')
+        else:
+            profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥4.0→让负仅9%,选让胜')
+    
     # ============== V3.7: 盘口偏差规律（攻防预期 vs OU线） ==============
     # 预期 = 主攻 + 客失
     ou_expected = h_att + a_def
