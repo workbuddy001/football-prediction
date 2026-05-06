@@ -728,6 +728,18 @@ def analyze_match(data):
     # 排除2球: 客攻>=2.0 + 2球>4.0 → 2球率7.7%(26场)
     if a_att >= 2.0 and g2_val > 4.0:
         profile_rules.append('🚫排除2球:客攻强+2球>4→仅7.7%(26场)')
+    # 排除7球: 双方攻<1.5 + 7球>3.5 → 0%命中(94场)
+    if h_att < 1.5 and a_att < 1.5 and g7_val > 3.5:
+        profile_rules.append('🚫排除7球:双方攻弱+7球>3.5→0%(94场)')
+    # 排除7球: 主攻<1.5 + 客防<1.0 + 7球>3.0 → 0%命中(41场)
+    if h_att < 1.5 and a_def < 1.0 and g7_val > 3.0:
+        profile_rules.append('🚫排除7球:主攻弱+客防强+7球>3→0%(41场)')
+    # 排除5球: 双方攻<1.0 + 5球>4.0 → 0%命中(9场)
+    if h_att < 1.0 and a_att < 1.0 and g5_val > 4.0:
+        profile_rules.append('🚫排除5球:双方攻极弱+5球>4→0%(9场)')
+    # 扩大4球排除: 4球>4.0 + 主防<1.0 → 4球率11.6%(69场)
+    if g4_val > 4.0 and h_def < 1.0:
+        profile_rules.append('🚫排除4球扩大:4球>4+主防强→仅11.6%(69场)')
     if h_def >= 2.0 and a_def >= 2.0:
         profile_rules.append('🔥双方漏勺→大球91%/3-4球55%/0-1球=0%')
     elif h_att >= 2.0 and a_def >= 2.0:
