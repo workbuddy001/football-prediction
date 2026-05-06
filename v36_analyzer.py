@@ -685,6 +685,12 @@ def analyze_match(data):
     # 排除6球: 主攻>=2 + 客失>=2 + 6球>5.0 → 0%命中(14场)
     if h_att >= 2.0 and a_def >= 2.0 and g6_val > 5.0:
         profile_rules.append('🚫排除6球:主攻强+客漏+6球>5→0%(14场)')
+    # 排除2球: 双方攻>=2.0 + 2球>3.5 → 2球率5.9%(17场)
+    if h_att >= 2.0 and a_att >= 2.0 and g2_val > 3.5:
+        profile_rules.append('🚫排除2球:双方攻强+2球>3.5→仅5.9%(17场)')
+    # 排除2球: 客攻>=2.0 + 2球>4.0 → 2球率7.7%(26场)
+    if a_att >= 2.0 and g2_val > 4.0:
+        profile_rules.append('🚫排除2球:客攻强+2球>4→仅7.7%(26场)')
     if h_def >= 2.0 and a_def >= 2.0:
         profile_rules.append('🔥双方漏勺→大球91%/3-4球55%/0-1球=0%')
     elif h_att >= 2.0 and a_def >= 2.0:
