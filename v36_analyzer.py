@@ -662,6 +662,11 @@ def analyze_match(data):
                 if best_hit >= 0.2:
                     review_warnings.append(f'⚠️ {best_goal}球迎合+压力→陷阱可能')
     
+    # ============== V3.7: 防守漏洞检测 ==============
+    h_conc_vals = [r.get('conceded', 0) for r in recent.get('home', [])]
+    a_conc_vals = [r.get('conceded', 0) for r in recent.get('away', [])]
+    has_def_leak = any(c >= 4 for c in h_conc_vals) or (len(a_conc_vals)>0 and sum(a_conc_vals)/max(len(a_conc_vals),1) >= 2.0)
+    
     # ============== V3.7: 攻防画像规律 ==============
     profile_rules = []
     if h_def >= 2.0 and a_def >= 2.0:
@@ -673,7 +678,10 @@ def analyze_match(data):
     if h_def < 1.0 and a_def < 1.0:
         profile_rules.append('🛡️双方铁壁→小球58%/2球50%')
     if h_att < 1.5 and a_att < 1.5 and h_def < 1.5 and a_def < 1.5:
-        profile_rules.append('😴双方沉闷→小球46%/2球43%')
+        if has_def_leak:
+            profile_rules.append('⚠️双方沉闷但防守有漏洞→小球不可靠(65%大球)')
+        else:
+            profile_rules.append('😴双方沉闷→小球46%/2球43%')
     try: hcap = int(hhad_handicap)
     except: hcap = 0
     if a_att >= 2.0 and hcap > 0:
@@ -740,7 +748,10 @@ def analyze_match(data):
                 profile_rules.append(f'📉深度低开{ou_deviation:+.1f}+低水→小球67%')
         elif ou_deviation > 0.2 and (h_att + a_def) < 2.5:
             if h_att < 1.5 and a_att < 1.5:
-                profile_rules.append(f'📈高开{ou_deviation:+.1f}+双方攻弱→小球70%(10场)')
+                if has_def_leak:
+                    profile_rules.append(f'⚠️高开{ou_deviation:+.1f}+双方攻弱但有防守漏洞→大球风险')
+                else:
+                    profile_rules.append(f'📈高开{ou_deviation:+.1f}+双方攻弱→小球70%(10场)')
             else:
                 profile_rules.append(f'📈高开{ou_deviation:+.1f}+预期低→小球仅37%,观望')
     
