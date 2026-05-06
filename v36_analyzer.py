@@ -669,6 +669,16 @@ def analyze_match(data):
     
     # ============== V3.7: 攻防画像规律 ==============
     profile_rules = []
+    # ============== V3.7: 新排除规律（赔率+攻防组合） ==============
+    # 排除1球: 客队防守强(失<1.0) + 1球赔率>5.0 → 0%命中(33场)
+    if a_def < 1.0 and g1_val > 5.0:
+        profile_rules.append('🚫排除1球:客防强(失'+str(round(a_def,1))+')+1球'+str(round(g1_val,1))+'>5→0%(33场)')
+    # 排除4球: 0球<10 + 双方攻弱(<1.5) + 4球>4.0 → 0%命中(20场)
+    if g0_val < 10 and h_att < 1.5 and a_att < 1.5 and g4_val > 4.0:
+        profile_rules.append('🚫排除4球:0球<10+攻弱+4球>4→0%(20场)')
+    # 排除6球: 主攻>=2 + 客失>=2 + 6球>5.0 → 0%命中(14场)
+    if h_att >= 2.0 and a_def >= 2.0 and g6_val > 5.0:
+        profile_rules.append('🚫排除6球:主攻强+客漏+6球>5→0%(14场)')
     if h_def >= 2.0 and a_def >= 2.0:
         profile_rules.append('🔥双方漏勺→大球91%/3-4球55%/0-1球=0%')
     elif h_att >= 2.0 and a_def >= 2.0:
