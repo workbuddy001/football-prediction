@@ -482,85 +482,207 @@ def analyze_match(data):
         if signals >= 5:
             heat_triggered = True
     
-    # ============== Step 4: 三维排除 ==============
+    # ============== Step 4: 三维排除（V3.6完整版 = 文档4.7节） ==============
+    # 三维 = 热度(系统排除信号) × 变化命中率(ch) × 赔率命中率(oh)
+    # 决策矩阵（9格）→ 黄金法则覆盖 → 特殊规则(0球/5-7球) → 数据缺失降级
     exclusion_results = []
     for gk, gd in goal_data.items():
         g_num = int(gk.replace('球', ''))
         odds = gd['odds']
-        ch = gd['change_hit']
-        cs = gd['change_sample']
-        pc = gd['change_pct']
-        oh = gd['odds_hit']  # V3.7: 赔率命中率
-        os = gd['odds_sample']  # V3.7: 赔率样本量
-        
+        ch = gd['change_hit']       # 变化命中率
+        cs = gd['change_sample']    # 变化样本量
+        pc = gd['change_pct']       # 变化幅度%
+        oh = gd['odds_hit']         # 赔率命中率
+        os = gd['odds_sample']      # 赔率样本量
+
         status = '保留'
         reason = ''
-        
+
         # System exclusions
         exc_list = data.get('exclusion_list', []) or []
         sys_exclude = any(gk in str(e) for e in exc_list)
-        
-        # ===== V3.7 精细化排除 =====
-        # 0球: 赔率>18 or 变化↑>8% → 强排除
-        if g_num == 0 and odds > 18:
-            status = '排除'
-            reason = f'0球极高({odds})'
-        elif g_num == 0 and pc > 8 and cs >= 5:
-            status = '排除'
-            reason = f'0球推离{pc:.0f}%'
-        elif g_num == 0 and cs >= 5 and ch < 0.1:
-            status = '排除'
-            reason = '变化命中率<10%'
-        
-        # 1球: 系统排除 or 赔率>5+推离 → 排除
-        elif g_num == 1 and sys_exclude and odds > 4.5:
+
+        # ===== 第一步: 分类命中率档位 =====
+        # 变化命中率档位 (文档: 高≥25% / 中10-25% / 低<10%)
+        if cs < 5:
+            ch_tier = 'N/A'    # 样本不足，不参与判断(文档4.7节)
+        elif ch >= 0.25:
+            ch_tier = '高'
+        elif ch >= 0.10:
+            ch_tier = '中'
+        else:
+            ch_tier = '低'
+
+        # 赔率命中率档位 (文档: 高≥20% / 中10-20% / 低<10%)
+        if os < 10:
+            oh_tier = 'N/A'    # 样本<10，标记不可用(文档数据完整性规则)
+        elif oh >= 0.20:
+            oh_tier = '高'
+        elif oh >= 0.10:
+            oh_tier = '中'
+        else:
+            oh_tier = '低'
+
+        # ===== 第二步: 三维决策矩阵 (文档4.7节) =====
+        # 仅在双维度都可用时应用矩阵
+        if ch_tier != 'N/A' and oh_tier != 'N/A':
+            # ── 9格矩阵 ──
+            if oh_tier == '高' and ch_tier == '高':
+                # 🔥大热+双高 → 有排除信号=排除，无=警惕造热
+                if sys_exclude:
+                    if pc < 0:
+                        status = '排除'
+                        reason = f'🔥大热必死:双高(变{ch:.0%}+赔{oh:.0%})+↓+系统排除'
+                    else:
+                        status = '排除'
+                        reason = f'🔥大热+双高+系统排除→排除'
+                else:
+                    status = '⚠️警惕造热'
+                    reason = f'双高(变{ch:.0%}+赔{oh:.0%})但无排除→警惕诱盘'
+
+            elif oh_tier == '高' and ch_tier == '中':
+                # 🔥热+变中 → 警惕造热
+                status = '⚠️警惕造热'
+                reason = f'赔高({oh:.0%})+变中({ch:.0%})→可能造热'
+
+            elif oh_tier == '高' and ch_tier == '低':
+                # ⚡矛盾 → 排除
+                status = '排除'
+                reason = f'⚡矛盾:赔高({oh:.0%})+变低({ch:.0%})→排除'
+
+            elif oh_tier == '中' and ch_tier == '高':
+                # ⭐变高共振 → 强保留
+                status = '⭐变高共振'
+                reason = f'变高({ch:.0%})+赔中({oh:.0%})→强保留'
+
+            elif oh_tier == '中' and ch_tier == '中':
+                # ✅保留
+                status = '✅观察保留'
+                reason = f'双中(变{ch:.0%}+赔{oh:.0%})→保留'
+
+            elif oh_tier == '中' and ch_tier == '低':
+                # → 弱排除
+                status = '弱排除'
+                reason = f'变低({ch:.0%})+赔中({oh:.0%})→弱排除'
+                if sys_exclude or ch < 0.05:
+                    status = '排除'
+                    reason = f'变低({ch:.0%})<5%+赔中→排除'
+
+            elif oh_tier == '低' and ch_tier == '高':
+                # 🔄矛盾保留 → 保留
+                status = '🔄矛盾保留'
+                reason = f'变高({ch:.0%})+赔低({oh:.0%})→矛盾但保留(变尊)'
+
+            elif oh_tier == '低' and ch_tier == '中':
+                # ✅保留
+                status = '✅观察保留'
+                reason = f'双中偏低(变{ch:.0%}+赔{oh:.0%})→保留'
+
+            elif oh_tier == '低' and ch_tier == '低':
+                # 🚫 双低 → 排除
+                status = '排除'
+                reason = f'🚫双低(变{ch:.0%}+赔{oh:.0%})→强排除'
+
+        elif ch_tier != 'N/A' and oh_tier == 'N/A':
+            # 单维度: 变化命中率可用，赔率不可用
+            if ch_tier == '高':
+                status = '⭐变高共振'
+                reason = f'变化高({ch:.0%},n={cs})→强保留(赔率数据不足)'
+            elif ch_tier == '中':
+                status = '✅保留'
+                reason = f'变化中({ch:.0%},n={cs})→保留(赔率数据不足)'
+            elif ch_tier == '低' and cs >= 10:
+                if ch == 0:
+                    status = '排除'
+                    reason = f'变化0%({cs}场)→绝对排除'
+                else:
+                    status = '弱排除'
+                    reason = f'变化低({ch:.0%},n={cs})→弱排除(赔率数据不足)'
+
+        elif ch_tier == 'N/A' and oh_tier != 'N/A':
+            # 单维度: 赔率命中率可用，变化不可用
+            if oh_tier == '高':
+                status = '⚠️警惕造热'
+                reason = f'赔率高({oh:.0%},n={os})→警惕造热(变化数据不足)'
+            elif oh_tier == '中':
+                status = '✅保留'
+                reason = f'赔率中({oh:.0%},n={os})→保留(变化数据不足)'
+            elif oh_tier == '低':
+                if oh == 0 and os >= 10:
+                    status = '排除'
+                    reason = f'赔率0%({os}场)→绝对排除'
+                else:
+                    status = '弱排除'
+                    reason = f'赔率低({oh:.0%},n={os})→弱排除(变化数据不足)'
+
+        else:
+            # 双维度都不可用 → 回退到赔率位置+推离判断(文档数据完整性规则)
+            status = '⚠️数据不足'
+            reason = f'变n={cs}赔n={os}→双维度不可用'
+            # 大球(5-7)在数据不足时保留，小球(0-2)看赔率极值
+            if g_num >= 5 and ch_tier == 'N/A' and oh_tier == 'N/A':
+                if oh == 0 and os >= 5:
+                    status = '排除'
+                    reason = f'赔率0%({os}场)+无变化数据→排除'
+                elif oh > 0 and oh <= 0.05 and os >= 5:
+                    status = '弱排除'
+                    reason = f'赔率≤5%({oh:.0%})+无变化→弱排除(文档收紧阈值)'
+                else:
+                    status = '⚠️样本不足'
+                    reason = f'无足够数据(n={max(cs,os)})→保守保留'
+
+        # ===== 第三步: 黄金法则覆盖 (文档4.7节排除黄金法则) =====
+        # 法则1: 变化命中率≥15%+样本≥10 → 🚫绝对不可排除
+        if cs >= 10 and ch >= 0.15 and '排除' in status:
+            status = '🛡️铁保留'
+            reason = f'黄金法则1:变化{ch:.0%}≥15%(n={cs})→🚫绝对不可排除'
+
+        # 法则2: 双高(都≥20%)+↓+系统排除 → 🔥大热必死
+        if cs >= 5 and os >= 5 and ch >= 0.20 and oh >= 0.20 and pc < 0 and sys_exclude:
+            if '排除' not in status:
+                status = '排除'
+                reason = f'🔥大热必死:双高(变{ch:.0%}+赔{oh:.0%})+↓+系统排除'
+
+        # 法则3: 双低(都<10%)且都有样本(≥5) → 排除
+        if cs >= 5 and os >= 5 and ch < 0.10 and oh < 0.10:
+            if '排除' not in status:
+                status = '排除'
+                reason = f'🚫双低(变{ch:.0%}+赔{oh:.0%})→强排除'
+
+        # 法则4: 任一命中率=0%+样本≥5 → 绝对排除
+        if (cs >= 5 and ch == 0) or (os >= 5 and oh == 0):
+            if '排除' not in status and '保留' in status:
+                status = '排除'
+                reason = f'⛔1率0%:变{ch:.0%}(n={cs})赔{oh:.0%}(n={os})→绝对排除'
+
+        # ===== 第四步: 特殊规则 =====
+        # 0球特殊: 赔率>18 or 高赔推离
+        if g_num == 0:
+            if odds > 18:
+                status = '排除'
+                reason = f'0球赔率极高({odds})→排除'
+            elif pc > 8 and cs >= 5:
+                if '排除' not in status:
+                    status = '排除'
+                    reason = f'0球↑推离{pc:.0f}%(n={cs})'
+
+        # 5-7球特殊: 文档收紧阈值
+        if g_num >= 5 and ch_tier == 'N/A' and oh_tier == 'N/A' and '排除' not in status:
+            if cs < 3 and os < 3:
+                status = '排除'
+                reason = f'大球({g_num}球)双维度无数据→保守排除'
+
+        # 1球特殊: 系统排除+高赔
+        if g_num == 1 and sys_exclude and odds > 4.5 and '排除' not in status:
             status = '排除'
             reason = '系统排除+高赔'
-        elif g_num == 1 and ch < 0.1 and cs >= 10:
-            status = '排除'
-            reason = f'变化命中率{ch:.0%}<10%'
-        
-        # 2球: 双低(<10%)+↑推离 → 排除
-        elif g_num == 2 and ch < 0.1 and cs >= 10 and pc > 0:
-            status = '排除'
-            reason = '双低+推离'
-        
-        # 5-7球
-        elif g_num >= 5 and cs < 5:
-            status = '排除'
-            reason = '样本不足'
-        elif g_num >= 5 and ch < 0.1 and cs >= 5:
-            status = '排除'
-            reason = '双低'
-        
-        # ===== 保留条件 =====
-        if '排除' not in status:
-            # V3.7: 双命中率铁保留 (变化≥15% + 赔率≥15% + 各自样本≥10)
-            if ch >= 0.15 and cs >= 10 and oh >= 0.15 and os >= 10:
-                status = '🛡️双高铁保留'
-                reason = f'变{ch:.0%}+赔{oh:.0%}双高'
-            elif ch >= 0.15 and cs >= 10:
-                status = '🛡️铁保留'
-                reason = f'变化命中率{ch:.0%}≥15%'
-            elif oh >= 0.15 and os >= 10:
-                status = '🛡️铁保留'
-                reason = f'赔率命中率{oh:.0%}≥15%'
-            # V3.7: 双低排除 (变化<10%+赔率<10%, 均有样本)
-            elif ch < 0.1 and cs >= 10 and oh < 0.1 and os >= 10:
-                status = '排除'
-                reason = f'双低(变{ch:.0%}+赔{oh:.0%})'
-            # 赔率命中率0%+大样本(≥10) = 强排除
-            elif oh == 0 and os >= 10:
-                status = '排除'
-                reason = f'赔率命中率0%({os}场)'
-            elif ch >= 0.2 and cs >= 10 and pc < 0 and sys_exclude:
-                status = '🔥大热排除'
-                reason = '双高+↓+系统排除'
-            elif sys_exclude and ch < 0.1 and cs >= 5:
-                if g_num != 2:
-                    status = '排除'
-                    reason = '系统排除+低命中率'
-        
+
+        # ===== 最终fallback: 无数据全部保留 =====
+        if '排除' not in status and ch_tier == 'N/A' and oh_tier == 'N/A':
+            if g_num <= 4:
+                status = '保留'
+                reason = f'无变化数据(n={max(cs,os)})→保守保留'
+
         exclusion_results.append({
             'goal': gk,
             'odds': odds,
@@ -572,10 +694,10 @@ def analyze_match(data):
             'status': status,
             'reason': reason,
         })
-    
-    kept = [e for e in exclusion_results if '保留' in e['status'] or '铁保留' in e['status']]
+
+    kept = [e for e in exclusion_results if '排除' not in e['status']]
     excluded = [e for e in exclusion_results if '排除' in e['status']]
-    
+
     # ============== 新规律: 近况锚定 ==============
     if combined_avg < 2.0:
         anchor_rule = '近况<2.0→2球50%大概率'
@@ -686,6 +808,8 @@ def analyze_match(data):
         })
     
     # If all scores excluded, fallback
+    if not candidate_goals:
+        candidate_goals = [1, 2, 3]  # 绝对兜底
     if not score_candidates or not any(s['scores'] for s in score_candidates):
         score_candidates = [{'total_goals': candidate_goals[0], 'scores': [
             {'score': f'{candidate_goals[0]}-{0}', 'tag': '主胜', 'h_capable': '⚠️', 'a_capable': '⚠️', 'note': '兜底'},

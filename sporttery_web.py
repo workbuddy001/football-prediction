@@ -996,6 +996,9 @@ HTML_TEMPLATE = '''
         .v36-keep { background: #1b5e20; color: #fff; }
         .v36-exclude { background: #b71c1c; color: #fff; }
         .v36-iron { background: #0d47a1; color: #4fc3f7; }
+        .v36-warn-badge { background: #e65100; color: #fff; }
+        .v36-fuzzy-badge { background: #555; color: #aaa; }
+        .v36-exclude-hot { background: #d32f2f; color: #ffcc80; }
         .v36-table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 8px 0; }
         .v36-table th { background: #2a2a4a; color: #ccc; padding: 4px 8px; text-align: left; }
         .v36-table td { padding: 4px 8px; border-bottom: 1px solid #333; }
@@ -2428,11 +2431,20 @@ HTML_TEMPLATE = '''
 
                 let exclRows = '';
                 for (let e of a.exclusion.kept) {
-                    const cls = e.status.includes('铁保留') ? 'v36-iron' : 'v36-keep';
-                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge ' + cls + '">' + e.status + '</span></td><td>' + (e.detail || e.hit || '-') + '</td></tr>';
+                    const s = e.status || '';
+                    let cls = 'v36-keep';
+                    if (s.includes('铁保留') || s.includes('共振')) cls = 'v36-iron';
+                    else if (s.includes('警惕')) cls = 'v36-warn-badge';
+                    else if (s.includes('矛盾保留')) cls = 'v36-keep';
+                    else if (s.includes('观察')) cls = 'v36-keep';
+                    else if (s.includes('数据不足') || s.includes('样本不足')) cls = 'v36-fuzzy-badge';
+                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge ' + cls + '">' + s + '</span></td><td>' + (e.detail || e.hit || '-') + '</td></tr>';
                 }
                 for (let e of a.exclusion.excluded) {
-                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge v36-exclude">排除</span></td><td>' + e.reason + (e.detail ? ' (' + e.detail + ')' : '') + '</td></tr>';
+                    const s = e.status || '排除';
+                    let cls = 'v36-exclude';
+                    if (s.includes('大热必死')) cls = 'v36-exclude-hot';
+                    exclRows += '<tr><td>' + e.goal + '</td><td><span class="v36-badge ' + cls + '">' + s + '</span></td><td>' + e.reason + (e.detail ? ' (' + e.detail + ')' : '') + '</td></tr>';
                 }
 
                 let scoreHtml = '';
