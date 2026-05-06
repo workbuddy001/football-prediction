@@ -704,11 +704,17 @@ def analyze_match(data):
     if hhad_win_odds >= 4.0:
         if h_win_count >= 3:
             profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'且主3+胜→让胜0%(21场)')
+        if h_win_count >= 3 and a_att < 2.0:
+            profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'且主3+胜+客攻弱→让负70%(20场)')
+        elif a_win_count <= 1:
+            profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'且客不胜→让负59%(22场)')
         else:
             profile_rules.append('🚫让胜'+str(round(hhad_win_odds,2))+'≥4.0→让胜仅17%,选让负/让平')
     if hhad_lose_odds >= 4.0:
         if a_win_count >= 3:
             profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'且客3+胜→让负0%(11场)')
+        if h_att < 1.5:
+            profile_rules.append('🔥让负≥4.0且主攻弱→让胜80%(20场)')
         else:
             profile_rules.append('🚫让负'+str(round(hhad_lose_odds,2))+'≥4.0→让负仅9%,选让胜')
     
