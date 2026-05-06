@@ -349,6 +349,9 @@ def v36_analyze(match_id):
             if 'ttg_hitrates' in body:
                 data['_change_hitrate'] = body['ttg_hitrates']
         
+        import importlib, sys
+        if 'v36_analyzer' in sys.modules:
+            importlib.reload(sys.modules['v36_analyzer'])
         from v36_analyzer import analyze_match
         result = analyze_match(data)
         return jsonify({'success': True, 'analysis': result})
