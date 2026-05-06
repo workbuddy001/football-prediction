@@ -582,9 +582,9 @@ def analyze_match(data):
     
     # V3.7: BTS信号 — 需防范一方防守铁壁导致零封
     if h_def < 1.0 and a_att < 1.0:
-        score_analysis.append('主铁壁+客攻弱→大球仅22%(9场)→强小球信号')
+        score_analysis.append('🟢主铁壁+客攻弱→小球78%(9场)→强小球信号')
     elif a_def < 1.0 and h_att >= 2.0:
-        score_analysis.append('客铁壁+主攻强→大球87%(15场)→强大球信号')
+        score_analysis.append('🔴客铁壁+主攻强→大球87%(15场)→强大球信号')
 
     bts_weak_def = (h_att < 2.0 and a_def >= 1.0) or (a_att < 2.0 and h_def >= 1.0)
     bts_blocked = (a_def < 1.0 or h_def < 1.0)  # 任何一方防守铁壁都能阻挡BTS
