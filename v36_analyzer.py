@@ -1145,20 +1145,45 @@ def analyze_match(data):
             g = int(e['goal'].replace('球', ''))
             if g in cand:
                 wt = 0.5 if '警惕造热' in e['status'] else 1.0
-                goal_scores.append((g, e['change_hit'] * wt, e['status']))
+                # 样本门槛: n<5不计入单选竞争
+                valid_single = e.get('change_sample', 0) >= 5
+                goal_scores.append((g, e['change_hit'] * wt, e['status'], valid_single, e.get('change_sample',0)))
         goal_scores.sort(key=lambda x: -x[1])
         
-        if goal_scores:
-            sp = goal_scores[0][0]
-            final_goal_pick['single'] = sp
-            raw_pct = goal_scores[0][1] * 100
-            final_goal_pick['reason'].append(f'首选{sp}球(变{int(raw_pct)}%)')
-            if len(goal_scores) >= 2:
-                g2 = goal_scores[1][0]
+        # 方向约束: 单选必须匹配Step0方向
+        dir_filtered = [gs for gs in goal_scores if 
+            (direction == '大球' and gs[0] >= 3 and gs[3]) or
+            (direction == '小球' and gs[0] <= 2 and gs[3]) or
+            (direction == '模糊' and gs[3])]
+        
+        if not dir_filtered:
+            # 无合格单选 → 降级：只要n≥5不分方向
+            dir_filtered = [gs for gs in goal_scores if gs[3]]
+        if not dir_filtered:
+            # 再降级：全部候选
+            dir_filtered = goal_scores
+        
+        # 单选 = 方向内最高分
+        sp = dir_filtered[0][0]
+        final_goal_pick['single'] = sp
+        final_goal_pick['reason'].append(f'首选{sp}球(变{int(dir_filtered[0][1]*100)}%,n={dir_filtered[0][4]})')
+        
+        # 双选 = 单选 + 次优（允许跨方向但优先同方向）
+        if len(dir_filtered) >= 2:
+            g2 = dir_filtered[1][0]
+            final_goal_pick['double'] = [sp, g2]
+            final_goal_pick['reason'].append(f'双选{sp}球+{g2}球')
+        elif len(goal_scores) >= 2:
+            # 方向内只有1个，从全候选取第二个
+            remaining = [gs for gs in goal_scores if gs[0] != sp]
+            if remaining:
+                g2 = remaining[0][0]
                 final_goal_pick['double'] = [sp, g2]
-                final_goal_pick['reason'].append(f'双选{sp}球+{g2}球')
+                final_goal_pick['reason'].append(f'双选{sp}球+{g2}球(跨方向取次优)')
             else:
                 final_goal_pick['double'] = [sp]
+        else:
+            final_goal_pick['double'] = [sp]
 
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
