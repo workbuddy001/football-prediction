@@ -1239,15 +1239,32 @@ def analyze_match(data):
             hhad_pick = '让负'
     
     # 过滤比分: 只保留让球盘推荐方向的比分
+    # V3.8 fix: 用实际比分差 vs 让球数判断, 而非仅凭tag标签
+    abs_handicap = abs(hcap_number) if 'hcap_number' in dir() else 0
+    try: abs_handicap = abs(int(hhad_handicap))
+    except: abs_handicap = 0
+    
     filtered_scores = []
     for sc_group in score_candidates:
         for s in sc_group['scores']:
             tag = s['tag']
+            score_parts = s['score'].split('-')
+            try:
+                s_h = int(score_parts[0])
+                s_a = int(score_parts[1])
+            except:
+                s_h = s_a = 0
+            
             keep = True
-            if hhad_pick == '让胜' and '主胜' not in tag:
-                keep = False
-            elif hhad_pick == '让负' and '主负' not in tag and '客胜' not in tag:
-                keep = False
+            if hhad_pick == '让胜':
+                # 让胜: 主队净胜球 > 让球绝对值
+                keep = (s_h - s_a) > abs_handicap
+            elif hhad_pick == '让负':
+                # 让负: 客队净胜球 > 让球绝对值 (主受让时) 或 主队+让球仍输
+                if abs_handicap > 0:
+                    keep = (s_a - s_h) > abs_handicap
+            elif hhad_pick == '让平':
+                keep = (s_h - s_a) == abs_handicap
             if keep:
                 filtered_scores.append({
                     'goals': sc_group['total_goals'],
