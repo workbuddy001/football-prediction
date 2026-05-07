@@ -867,7 +867,8 @@ def analyze_match(data):
                 if best_hit >= 0.2:
                     review_warnings.append(f'⚠️ {best_goal}球迎合+压力→陷阱可能')
     
-    # ============== V3.7: 防守漏洞检测 ==============
+    # ============== V3.8: 最终进球数推荐（在profile_items完成后填充） ==============
+    final_goal_pick = {'single': None, 'double': [], 'reason': [], 'all_kept': []}
     h_conc_vals = [r.get('conceded', 0) for r in recent.get('home', [])]
     a_conc_vals = [r.get('conceded', 0) for r in recent.get('away', [])]
     has_def_leak = any(c >= 4 for c in h_conc_vals) or (len(a_conc_vals)>0 and sum(a_conc_vals)/max(len(a_conc_vals),1) >= 2.0)
@@ -1117,6 +1118,48 @@ def analyze_match(data):
         # 盘口偏差方向规律（高开/低开→大小球）: 仅参考
         profile_items.append({'text': rule, 'active': active})
 
+    # ===== V3.8: 填充最终进球数推荐（在profile_items完成后） =====
+    if kept:
+        kept_goals = [int(e['goal'].replace('球', '')) for e in kept]
+        final_goal_pick['all_kept'] = kept_goals
+        
+        # ACTIVE画像排除规则
+        profile_excluded = set()
+        for item in profile_items:
+            if item.get('active') and '排除' in item.get('text', ''):
+                m = re.search(r'排除(\d+)球', item['text'])
+                if m:
+                    g = int(m.group(1))
+                    if g in kept_goals:
+                        profile_excluded.add(g)
+                        final_goal_pick['reason'].append(f'画像规律→排除{g}球')
+        
+        # 候选: kept中排除画像排除的
+        cand = [g for g in kept_goals if g not in profile_excluded]
+        if not cand:
+            cand = kept_goals
+        
+        # 按change_hit排序(警惕造热状态降权)
+        goal_scores = []
+        for e in kept:
+            g = int(e['goal'].replace('球', ''))
+            if g in cand:
+                wt = 0.5 if '警惕造热' in e['status'] else 1.0
+                goal_scores.append((g, e['change_hit'] * wt, e['status']))
+        goal_scores.sort(key=lambda x: -x[1])
+        
+        if goal_scores:
+            sp = goal_scores[0][0]
+            final_goal_pick['single'] = sp
+            raw_pct = goal_scores[0][1] * 100
+            final_goal_pick['reason'].append(f'首选{sp}球(变{int(raw_pct)}%)')
+            if len(goal_scores) >= 2:
+                g2 = goal_scores[1][0]
+                final_goal_pick['double'] = [sp, g2]
+                final_goal_pick['reason'].append(f'双选{sp}球+{g2}球')
+            else:
+                final_goal_pick['double'] = [sp]
+
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
     top_score = '?'
@@ -1201,6 +1244,7 @@ def analyze_match(data):
         'score_analysis': score_analysis,
         'final_review': final_review,
         'review_warnings': review_warnings,
+        'final_goal_pick': final_goal_pick,
         'recommended': {
             'direction': direction,
             'confidence': direction_conf,

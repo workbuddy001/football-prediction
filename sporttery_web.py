@@ -2612,6 +2612,20 @@ HTML_TEMPLATE = '''
                     + '<div class="v36-section">'
                     + '<h4>7.9/7.10 终审 & 反审</h4>'
                     + reviewHtml + warnHtml
+                    + (a.final_goal_pick && a.final_goal_pick.single ? (function() {
+                        const fgp = a.final_goal_pick;
+                        let g = '<div style="margin-top:8px;padding:8px;background:#1a2a1a;border-radius:6px;border-left:3px solid #4caf50">';
+                        g += '<strong style="color:#4caf50">🎯 进球数推荐</strong><br>';
+                        g += '<span style="color:#ffcc80;font-size:15px">单选: <strong>' + fgp.single + '球</strong></span>';
+                        if (fgp.double && fgp.double.length >= 2) {
+                            g += ' | <span style="color:#ffb74d;font-size:14px">双选: <strong>' + fgp.double.join('球+') + '球</strong></span>';
+                        }
+                        if (fgp.reason && fgp.reason.length > 0) {
+                            g += '<br><span style="color:#888;font-size:11px">' + fgp.reason.map(r => '• ' + r).join('<br>') + '</span>';
+                        }
+                        g += '</div>';
+                        return g;
+                    })() : '')
                     + '</div>'
                     + (function() {
                         const rec = a.recommended;
