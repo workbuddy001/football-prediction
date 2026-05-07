@@ -1168,6 +1168,21 @@ def analyze_match(data):
         final_goal_pick['single'] = sp
         final_goal_pick['reason'].append(f'首选{sp}球(变{int(dir_filtered[0][1]*100)}%,n={dir_filtered[0][4]})')
         
+        # V3.8: 方向冲突检测（Step0方向 vs 单选进球是否跨2.5边界）
+        is_big = sp >= 3
+        dir_conflict = (direction == '小球' and is_big) or (direction == '大球' and not is_big)
+        final_goal_pick['conflict'] = dir_conflict
+        if dir_conflict:
+            # 检查是否方向内所有进球都被排除
+            small_kept = [g for g in kept_goals if g <= 2]
+            big_kept = [g for g in kept_goals if g >= 3]
+            if direction == '小球' and not small_kept:
+                final_goal_pick['reason'].append('⚠️单侧空空: 方向小球但0/1/2球全被排除, 只剩大球→方向存疑')
+            elif direction == '大球' and not big_kept:
+                final_goal_pick['reason'].append('⚠️单侧空空: 方向大球但3+球全被排除, 只剩小球→方向存疑')
+            else:
+                final_goal_pick['reason'].append(f'⚠️方向冲突: Step0={direction}但推荐{sp}球(反方向)→谨慎')
+        
         # 双选 = 单选 + 次优（允许跨方向但优先同方向）
         if len(dir_filtered) >= 2:
             g2 = dir_filtered[1][0]

@@ -2614,8 +2614,10 @@ HTML_TEMPLATE = '''
                     + reviewHtml + warnHtml
                     + (a.final_goal_pick && a.final_goal_pick.single ? (function() {
                         const fgp = a.final_goal_pick;
-                        let g = '<div style="margin-top:8px;padding:8px;background:#1a2a1a;border-radius:6px;border-left:3px solid #4caf50">';
-                        g += '<strong style="color:#4caf50">🎯 进球数推荐</strong><br>';
+                        const conflictCls = fgp.conflict ? 'border-left:3px solid #f44336;background:#2a1a1a' : 'border-left:3px solid #4caf50;background:#1a2a1a';
+                        const titleClr = fgp.conflict ? 'color:#f44336' : 'color:#4caf50';
+                        let g = '<div style="margin-top:8px;padding:8px;border-radius:6px;' + conflictCls + '">';
+                        g += '<strong style="' + titleClr + '">🎯 进球数推荐' + (fgp.conflict ? ' ⚠️方向冲突' : '') + '</strong><br>';
                         g += '<span style="color:#ffcc80;font-size:15px">单选: <strong>' + fgp.single + '球</strong></span>';
                         if (fgp.double && fgp.double.length >= 2) {
                             g += ' | <span style="color:#ffb74d;font-size:14px">双选: <strong>' + fgp.double.join('球+') + '球</strong></span>';
