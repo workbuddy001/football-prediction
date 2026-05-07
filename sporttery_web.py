@@ -2635,22 +2635,31 @@ HTML_TEMPLATE = '''
                         let r = '<div class="v36-rec">';
                         r += '<strong>' + a.step0.direction + '</strong>';
                         if (rec.hhad_pick) r += ' ' + rec.hhad_pick;
-                        r += ' | 总进球: ' + rec.goals.join('/') + '球';
+                        
+                        // V3.8: 对齐进球数推荐, 只显示单选+双选比分的球数
+                        const fgp = a.final_goal_pick || {};
+                        const pickGoals = fgp.single ? [fgp.single] : [];
+                        if (fgp.double && fgp.double.length >= 2 && fgp.double[1] !== pickGoals[0]) {
+                            if (!pickGoals.includes(fgp.double[1])) pickGoals.push(fgp.double[1]);
+                        }
+                        r += ' | 推荐: ' + (pickGoals.length > 0 ? pickGoals.join('球/') + '球' : rec.goals.join('/') + '球');
+                        
                         if (rec.filtered_scores && rec.filtered_scores.length > 0) {
-                            // Group by goals
                             let byGoal = {};
                             for (let fs of rec.filtered_scores) {
-                                if (!byGoal[fs.goals]) byGoal[fs.goals] = [];
-                                byGoal[fs.goals].push(fs.score);
+                                if (pickGoals.length === 0 || pickGoals.includes(fs.goals)) {
+                                    if (!byGoal[fs.goals]) byGoal[fs.goals] = [];
+                                    byGoal[fs.goals].push(fs.score);
+                                }
                             }
-                            r += '<br><span style=\"font-size:12px;color:#ffcc80\">推荐比分(' + rec.hhad_pick + '): ';
-                            let parts = [];
-                            for (let [g, scores] of Object.entries(byGoal)) {
-                                parts.push(scores.join('/') + '(' + g + '球)');
+                            if (Object.keys(byGoal).length > 0) {
+                                r += '<br><span style=\"font-size:12px;color:#ffcc80\">比分(' + (rec.hhad_pick||'') + '): ';
+                                let parts = [];
+                                for (let [g, scores] of Object.entries(byGoal)) {
+                                    parts.push(scores.join('/') + '(' + g + '球)');
+                                }
+                                r += parts.join(' | ') + '</span>';
                             }
-                            r += parts.join(' | ') + '</span>';
-                        } else {
-                            r += ' | 首选比分: ' + rec.top_score;
                         }
                         r += '</div>';
                         return r;
