@@ -1287,7 +1287,9 @@ def analyze_match(data):
     
     # ===== V3.8: 单选比分投注推荐 =====
     score_bet = None
-    if filtered_scores and candidate_goals:
+    # 观望时不推荐比分
+    skip_reasons = final_goal_pick.get('skip_reason', []) if isinstance(final_goal_pick, dict) else []
+    if filtered_scores and candidate_goals and not skip_reasons:
         # 取单选进球数的第一个比分（已排序: 让胜过滤后/无推荐🔥+低赔排序）
         fg = final_goal_pick.get('single') if isinstance(final_goal_pick, dict) else None
         if fg:
