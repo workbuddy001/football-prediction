@@ -1200,6 +1200,22 @@ def analyze_match(data):
         else:
             final_goal_pick['double'] = [sp]
 
+    # ===== V3.8: 观望建议 =====
+    skip_direction = final_goal_pick.get('conflict', False) or \
+                     direction_conf.startswith('弱') or \
+                     direction == '模糊'
+    skip_3ball = (final_goal_pick.get('single') == 3)
+    final_goal_pick['skip_reason'] = []
+    if skip_direction:
+        reason_parts = []
+        if final_goal_pick.get('conflict'): reason_parts.append('方向冲突')
+        if direction_conf.startswith('弱'): reason_parts.append('方向弱信号')
+        if direction == '模糊': reason_parts.append('方向模糊')
+        sep = '+'
+        final_goal_pick['skip_reason'].append(f'💡建议观望: {sep.join(reason_parts)}(历史ROI -4%)')
+    if skip_3ball:
+        final_goal_pick['skip_reason'].append('💡建议观望: 单选3球历史ROI -19%(517场回测)')
+
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
     top_score = '?'

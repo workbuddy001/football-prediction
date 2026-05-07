@@ -2625,6 +2625,9 @@ HTML_TEMPLATE = '''
                         if (fgp.reason && fgp.reason.length > 0) {
                             g += '<br><span style="color:#888;font-size:11px">' + fgp.reason.map(r => '• ' + r).join('<br>') + '</span>';
                         }
+                        if (fgp.skip_reason && fgp.skip_reason.length > 0) {
+                            g += '<br><span style="color:#ff9800;font-size:12px;font-weight:bold">' + fgp.skip_reason.join('<br>') + '</span>';
+                        }
                         g += '</div>';
                         return g;
                     })() : '')
