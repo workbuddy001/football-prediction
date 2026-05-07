@@ -1297,18 +1297,22 @@ def analyze_match(data):
             if match_scores:
                 best = match_scores[0]
                 strategy = '让胜推荐' if hhad_pick == '让胜' else ('让负推荐' if hhad_pick == '让负' else '无推荐博冷')
-                # 获取赔率
-                parts = best['score'].split('-')
-                so_key = best['score'].replace('-', ':')
-                so_key_fmt = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
-                odds_val = _safe_float(score_odds.get(so_key, score_odds.get(so_key_fmt, 0)))
-                score_bet = {
-                    'score': best['score'],
-                    'goals': fg,
-                    'tag': best.get('tag', ''),
-                    'strategy': strategy,
-                    'odds': round(odds_val, 1) if odds_val < 900 else None,
-                }
+                # 让负7场全亏，不推荐(样本太小且无一命中)
+                if strategy == '让负推荐':
+                    strategy = None
+                if strategy:
+                    # 获取赔率
+                    parts = best['score'].split('-')
+                    so_key = best['score'].replace('-', ':')
+                    so_key_fmt = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
+                    odds_val = _safe_float(score_odds.get(so_key, score_odds.get(so_key_fmt, 0)))
+                    score_bet = {
+                        'score': best['score'],
+                        'goals': fg,
+                        'tag': best.get('tag', ''),
+                        'strategy': strategy,
+                        'odds': round(odds_val, 1) if odds_val < 900 else None,
+                    }
     
     return {
         'match_id': data.get('match_id', ''),
