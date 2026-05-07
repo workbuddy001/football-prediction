@@ -797,6 +797,17 @@ def analyze_match(data):
         if not plausible:
             plausible = scores  # all if none clearly capable
         
+        # V3.8: 按合理性+赔率排序(🔥>✅>⚠️, 同档内赔率低优先)
+        def _score_sort_key(s):
+            cap = s.get('h_capable', '⚠️')
+            tier = 0 if '🔥' in cap else (1 if '✅' in cap else 2)
+            odds = s.get('score_odds', 999) or 999
+            if isinstance(odds, str):
+                try: odds = float(odds)
+                except: odds = 999
+            return (tier, odds)
+        plausible.sort(key=_score_sort_key)
+        
         score_candidates.append({
             'total_goals': total,
             'scores': plausible,
@@ -1274,6 +1285,29 @@ def analyze_match(data):
     # 过滤后首选比分
     filtered_top = filtered_scores[0]['score'] if filtered_scores else top_score
     
+    # ===== V3.8: 单选比分投注推荐 =====
+    score_bet = None
+    if filtered_scores and candidate_goals:
+        # 取单选进球数的第一个比分（已排序: 让胜过滤后/无推荐🔥+低赔排序）
+        fg = final_goal_pick.get('single') if isinstance(final_goal_pick, dict) else None
+        if fg:
+            match_scores = [s for s in filtered_scores if s['goals'] == fg]
+            if match_scores:
+                best = match_scores[0]
+                strategy = '让胜推荐' if hhad_pick == '让胜' else ('让负推荐' if hhad_pick == '让负' else '无推荐博冷')
+                # 获取赔率
+                parts = best['score'].split('-')
+                so_key = best['score'].replace('-', ':')
+                so_key_fmt = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
+                odds_val = _safe_float(score_odds.get(so_key, score_odds.get(so_key_fmt, 0)))
+                score_bet = {
+                    'score': best['score'],
+                    'goals': fg,
+                    'tag': best.get('tag', ''),
+                    'strategy': strategy,
+                    'odds': round(odds_val, 1) if odds_val < 900 else None,
+                }
+    
     return {
         'match_id': data.get('match_id', ''),
         'match_info': mi,
@@ -1318,6 +1352,7 @@ def analyze_match(data):
         'final_review': final_review,
         'review_warnings': review_warnings,
         'final_goal_pick': final_goal_pick,
+        'score_bet': score_bet,
         'recommended': {
             'direction': direction,
             'confidence': direction_conf,
