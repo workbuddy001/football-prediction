@@ -347,15 +347,17 @@ def v36_analyze(match_id):
         if request.method == 'POST' and request.is_json:
             body = request.get_json(silent=True) or {}
             if 'ttg_hitrates' in body:
-                data['_change_hitrate'] = body['ttg_hitrates']
+                # 前端JSON key是字符串, 转为整数key (兼容_get_change_info查找)
+                raw = body['ttg_hitrates']
+                data['_change_hitrate'] = {int(k) if k.isdigit() else k: v for k, v in raw.items()} if isinstance(raw, dict) else raw
         
-        # V3.6 fix: 独立加载命中率数据（不依赖前端传递）
+        # V3.6 fix: 独立加载命中率数据（优先使用，key保证是整数）
         try:
             from sporttery_web import _build_odds_hitrate, _build_change_hitrate
             if '_odds_hitrate' not in data:
                 data['_odds_hitrate'] = _build_odds_hitrate()
-            if '_change_hitrate' not in data:
-                data['_change_hitrate'] = _build_change_hitrate()
+            # 独立加载覆盖（确保key为整数，避免前端JSON序列化问题）
+            data['_change_hitrate'] = _build_change_hitrate()
         except:
             pass
         

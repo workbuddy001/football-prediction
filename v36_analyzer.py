@@ -96,7 +96,7 @@ def _get_change_info(data, goal_key):
     
     if hr_data:
         g_num_key = int(goal_key.replace('球', ''))
-        goal_buckets = hr_data.get(goal_key, hr_data.get(g_num_key, {}))
+        goal_buckets = hr_data.get(goal_key, hr_data.get(g_num_key, hr_data.get(str(g_num_key), {})))
         if goal_buckets:
             # Build same bucket label as _build_change_hitrate
             abs_pct = abs(pct)
