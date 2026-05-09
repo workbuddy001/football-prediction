@@ -362,16 +362,16 @@ def analyze_match(data):
                 ou_rule_dir = '小球'; ou_rule_strength = 1
                 ou_rule_name = f'深度低开{ou_deviation:+.1f}+低水→小球67%'
         elif ou_deviation > 0.2:
-            # 高开 → 小球倾向
-            if h_att < 1.5 and a_att < 1.5:
+            # 高开 → 小球倾向 (但防线漏洞→大球风险优先)
+            if _has_def_leak_early:
+                ou_rule_dir = '大球'; ou_rule_strength = 1
+                ou_rule_name = f'高开{ou_deviation:+.1f}+防线漏洞→大球风险'
+            elif h_att < 1.5 and a_att < 1.5:
                 ou_rule_dir = '小球'; ou_rule_strength = 1
                 ou_rule_name = f'高开{ou_deviation:+.1f}+双方攻弱→小球77%'
             elif h_def < 1.0:
                 ou_rule_dir = '小球'; ou_rule_strength = 1
                 ou_rule_name = f'高开{ou_deviation:+.1f}+主防强→小球77%'
-            elif _has_def_leak_early:
-                ou_rule_dir = '大球'; ou_rule_strength = 1
-                ou_rule_name = f'高开{ou_deviation:+.1f}+防线漏洞→大球风险'
             elif (h_att + a_def) < 2.5:
                 ou_rule_dir = '小球'; ou_rule_strength = 1
                 ou_rule_name = f'高开{ou_deviation:+.1f}+预期低→小球仅37%'
