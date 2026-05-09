@@ -1216,6 +1216,13 @@ def analyze_match(data):
                      direction_conf.startswith('弱') or \
                      direction == '模糊'
     skip_3ball = (final_goal_pick.get('single') == 3)
+    # V3.8 新增: 防守诱盘 → 强制观望 (周五001/010反例)
+    def_trap_signal = step0.get('def_trap', False)
+    # V3.8 新增: 低近况+高0球 → 信号矛盾, 观望
+    low_form_high_g0 = (combined_avg < 2.5 and g0_val > 12)
+    # V3.8 新增: 单选6球 → 历史0%命中, 观望
+    skip_6ball = (final_goal_pick.get('single') == 6)
+    
     final_goal_pick['skip_reason'] = []
     if skip_direction:
         reason_parts = []
@@ -1224,8 +1231,14 @@ def analyze_match(data):
         if direction == '模糊': reason_parts.append('方向模糊')
         sep = '+'
         final_goal_pick['skip_reason'].append(f'💡建议观望: {sep.join(reason_parts)}(历史ROI -4%)')
+    if def_trap_signal:
+        final_goal_pick['skip_reason'].append('💡建议观望: 防守诱盘信号(水位+防守反向, 回测ROI -9%)')
+    if low_form_high_g0:
+        final_goal_pick['skip_reason'].append(f'💡建议观望: 近况{combined_avg:.1f}<2.5+0球{g0_val}偏高→信号矛盾')
     if skip_3ball:
         final_goal_pick['skip_reason'].append('💡建议观望: 单选3球历史ROI -19%(517场回测)')
+    if skip_6ball:
+        final_goal_pick['skip_reason'].append('💡建议观望: 单选6球历史ROI 0%(13场回测)')
 
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
