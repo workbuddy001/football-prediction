@@ -2627,6 +2627,7 @@ HTML_TEMPLATE = '''
                         }
                         if (fgp.skip_reason && fgp.skip_reason.length > 0) {
                             g += '<br><span style="color:#ff9800;font-size:12px;font-weight:bold">' + fgp.skip_reason.join('<br>') + '</span>';
+                            g += '<br><span style="color:#f44336;font-size:18px;font-weight:bold;letter-spacing:4px">⛔ 慎重投注 ⛔</span>';
                         }
                         g += '</div>';
                         return g;
