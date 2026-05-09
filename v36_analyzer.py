@@ -1348,6 +1348,34 @@ def analyze_match(data):
         elif p1_lose and not p0_lose:
             hhad_pick = '让负'
     
+    # ===== V3.9: 让胜投注分级 =====
+    _is_recv = False
+    try: _is_recv = int(hhad_handicap) > 0
+    except: pass
+    _sp = final_goal_pick.get('single', 0) or 0
+    _dir_correct = ((direction == '大球' and _sp >= 3) or
+                    (direction == '小球' and _sp <= 2))
+    _no_skip = not final_goal_pick['skip_reason']
+    _hhad_confident = (_is_recv and _dir_correct and _sp == 4 and _no_skip)
+    _hhad_good = (_is_recv and _dir_correct and _no_skip)
+    
+    if hhad_pick == '让负':
+        if _no_skip:
+            final_goal_pick['skip_reason'].append('💡建议观望: 让负推荐全维度反向(28场: 让负18%, 让胜54%)')
+    elif hhad_pick == '让胜':
+        if _hhad_confident:
+            final_goal_pick['skip_reason'] = []
+            final_goal_pick['reason'].append('⚠️让胜高置信: 主受让+单选4球(回测50%进球命中)')
+        elif _hhad_good:
+            final_goal_pick['skip_reason'] = []
+            final_goal_pick['reason'].append('⚠️让胜高置信: 主受让+方向正确(回测70%进球命中)')
+        elif _is_recv:
+            if _no_skip:
+                final_goal_pick['skip_reason'].append('💡建议观望: 主受让让胜但信号不达标(历史30%命中)')
+        else:
+            if _no_skip:
+                final_goal_pick['skip_reason'].append('💡建议观望: 主让让胜历史命中仅22%(227场)')
+    
     # 过滤比分: 只保留让球盘推荐方向的比分
     # V3.8 fix: 用实际比分差 vs 让球数判断, 而非仅凭tag标签
     abs_handicap = abs(hcap_number) if 'hcap_number' in dir() else 0
