@@ -2633,16 +2633,13 @@ HTML_TEMPLATE = '''
                     })() : '')
                     + (a.score_bet ? (function() {
                         const sb = a.score_bet;
-                        const strategyColor = sb.strategy === '让胜推荐' ? '#4caf50' : (sb.strategy === '让负推荐' ? '#2196f3' : '#ff9800');
+                        const strategyColor = '#ff9800';
                         let s = '<div style=\"margin-top:8px;padding:8px;background:#1a1a2e;border-radius:6px;border-left:3px solid ' + strategyColor + '\">';
-                        s += '<strong style=\"color:' + strategyColor + '\">💵 单选比分投注</strong><br>';
+                        s += '<strong style=\"color:' + strategyColor + '\">💵 单选比分博冷</strong><br>';
                         s += '<span style=\"color:#ffcc80;font-size:16px\"><strong>' + sb.score + '</strong></span>';
                         s += ' <span style=\"color:#888;font-size:12px\">(' + sb.goals + '球 ' + sb.tag + ')</span>';
                         if (sb.odds) s += ' <span style=\"color:#b0b0b0;font-size:12px\">赔' + sb.odds.toFixed(1) + '倍</span>';
-                        s += '<br><span style=\"font-size:11px;color:#888\">策略: ' + sb.strategy;
-                        if (sb.strategy === '让胜推荐') s += ' | 回测ROI +82%';
-                        if (sb.strategy === '无推荐博冷') s += ' | 回测ROI +297%';
-                        s += '</span></div>';
+                        s += '<br><span style=\"font-size:11px;color:#888\">策略: ' + sb.strategy + ' | 回测ROI +432%</span></div>';
                         return s;
                     })() : '')
                     + '</div>'

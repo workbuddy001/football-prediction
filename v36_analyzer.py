@@ -1396,8 +1396,8 @@ def analyze_match(data):
             if match_scores:
                 best = match_scores[0]
                 strategy = '让胜推荐' if hhad_pick == '让胜' else ('让负推荐' if hhad_pick == '让负' else '无推荐博冷')
-                # 让负7场全亏，不推荐(样本太小且无一命中)
-                if strategy == '让负推荐':
+                # 让负7场全亏, 让胜比分命中率仅3%(-56.7% ROI) → 仅保留无推荐博冷
+                if strategy in ('让负推荐', '让胜推荐'):
                     strategy = None
                 if strategy:
                     # 获取赔率
