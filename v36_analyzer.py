@@ -1375,6 +1375,9 @@ def analyze_match(data):
         else:
             if _no_skip:
                 final_goal_pick['skip_reason'].append('💡建议观望: 主让让胜历史命中仅22%(227场)')
+    # V3.9: 让球盘强制观望时, 进球数推荐也标记
+    if hhad_pick in ('让负', '让胜') and final_goal_pick['skip_reason'] and not any('让球盘' in s for s in final_goal_pick['skip_reason']):
+        pass  # already handled above
     
     # 过滤比分: 只保留让球盘推荐方向的比分
     # V3.8 fix: 用实际比分差 vs 让球数判断, 而非仅凭tag标签
@@ -1479,6 +1482,9 @@ def analyze_match(data):
             'p1_win': p1_win, 'p1_lose': p1_lose, 'p1_draw': False,
             'p0_win': p0_win, 'p0_lose': p0_lose, 'p0_draw': False,
             'contra': (p0_win and p1_win) or (p0_lose and p1_lose) or (p1_lose and has_home_unbeaten) or (p1_win and has_trap_win),
+            # V3.9: 让球盘独立投注判断
+            'can_bet': _hhad_good or _hhad_confident,
+            'hhad_pick': hhad_pick,
         },
         'score_candidates': score_candidates,
         'score_analysis': score_analysis,

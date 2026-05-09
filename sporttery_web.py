@@ -2601,12 +2601,10 @@ HTML_TEMPLATE = '''
                             h += '<div style="color:#f44336;font-size:14px;font-weight:bold;margin-top:4px">⛔ 慎重投注 ⛔</div>';
                         } else if (recs.length > 0) {
                             h += '<div style="color:#4caf50;font-size:16px"><strong>✅ 推荐: ' + recs.join(' / ') + '</strong></div>';
-                            // V3.9: 投注建议标签
-                            const fgp = a.final_goal_pick || {};
-                            if (fgp.skip_reason && fgp.skip_reason.length > 0) {
-                                h += '<div style="color:#f44336;font-size:14px;font-weight:bold;margin-top:4px">⛔ 慎重投注 ⛔</div>';
-                            } else {
+                            if (hc.can_bet) {
                                 h += '<div style="color:#4caf50;font-size:14px;font-weight:bold;margin-top:4px">✅ 建议投注 ✅</div>';
+                            } else {
+                                h += '<div style="color:#f44336;font-size:14px;font-weight:bold;margin-top:4px">⛔ 慎重投注 ⛔</div>';
                             }
                             if (excl.length > 0) h += '<div style="color:#f44336;font-size:13px;margin-top:4px">🚫 排除: ' + excl.join('、') + '</div>';
                         } else {
