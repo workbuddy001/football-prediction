@@ -1355,8 +1355,8 @@ def analyze_match(data):
     _sp = final_goal_pick.get('single', 0) or 0
     _dir_correct = ((direction == '大球' and _sp >= 3) or
                     (direction == '小球' and _sp <= 2))
-    _hhad_confident = (_is_recv and _dir_correct and _sp == 4)
-    _hhad_good = (_is_recv and _dir_correct)
+    _hhad_confident = (_is_recv and hhad_pick == '让胜' and _dir_correct and _sp == 4)
+    _hhad_good = (_is_recv and hhad_pick == '让胜' and _dir_correct)
     
     # 过滤比分: 只保留让球盘推荐方向的比分
     # V3.8 fix: 用实际比分差 vs 让球数判断, 而非仅凭tag标签
