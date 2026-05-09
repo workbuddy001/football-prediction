@@ -322,8 +322,68 @@ def analyze_match(data):
         all_dirs.append(had_dir)
     if def_strength >= 1:
         all_dirs.append(def_dir)
+    
+    # ===== V3.9: 盘口偏差方向信号（攻防预期 vs 亚盘线位） =====
+    ou_expected = h_att + a_def
+    ou_deviation = (ou_line - ou_expected) if ou_line > 0 else 0
+    ou_rule_dir = '中性'
+    ou_rule_name = ''
+    ou_rule_strength = 0
+    # V3.9: 防守漏洞预检(供盘口偏差规律使用, 后续在Step7.10完善)
+    _def_leak_home = any(r.get('conceded', 0) >= 4 for r in recent.get('home', []))
+    _def_leak_away = any(r.get('conceded', 0) >= 4 for r in recent.get('away', []))
+    _has_def_leak_early = _def_leak_home or _def_leak_away
+    
+    if abs(ou_deviation) >= 0.2:
+        if -0.5 <= ou_deviation <= -0.2:
+            # 轻度低开 → 大球倾向
+            if ou_over >= 0.85:
+                if h_att < 1.5 and a_att < 1.5:
+                    ou_rule_dir = '中性'; ou_rule_name = f'低开{ou_deviation:+.1f}+双方攻弱→降权'
+                elif h_def < 1.0 and h_att < 1.5:
+                    ou_rule_dir = '中性'; ou_rule_name = f'低开{ou_deviation:+.1f}+主防强攻弱→降权'
+                else:
+                    ou_rule_dir = '大球'; ou_rule_strength = 1
+                    ou_rule_name = f'低开{ou_deviation:+.1f}+中高水→大球91%'
+            else:
+                if h_att < 1.5 and a_att < 1.5:
+                    ou_rule_dir = '中性'; ou_rule_name = f'低开{ou_deviation:+.1f}+双方攻弱→降权'
+                elif h_def < 1.0 and h_att < 1.5:
+                    ou_rule_dir = '中性'; ou_rule_name = f'低开{ou_deviation:+.1f}+主防强攻弱→降权'
+                else:
+                    ou_rule_dir = '大球'; ou_rule_strength = 1
+                    ou_rule_name = f'低开{ou_deviation:+.1f}→大球88%'
+        elif ou_deviation < -0.8:
+            # 深度低开
+            if ou_over >= 0.9:
+                ou_rule_dir = '大球'; ou_rule_strength = 1
+                ou_rule_name = f'深度低开{ou_deviation:+.1f}+高水→大球75%'
+            else:
+                ou_rule_dir = '小球'; ou_rule_strength = 1
+                ou_rule_name = f'深度低开{ou_deviation:+.1f}+低水→小球67%'
+        elif ou_deviation > 0.2:
+            # 高开 → 小球倾向
+            if h_att < 1.5 and a_att < 1.5:
+                ou_rule_dir = '小球'; ou_rule_strength = 1
+                ou_rule_name = f'高开{ou_deviation:+.1f}+双方攻弱→小球77%'
+            elif h_def < 1.0:
+                ou_rule_dir = '小球'; ou_rule_strength = 1
+                ou_rule_name = f'高开{ou_deviation:+.1f}+主防强→小球77%'
+            elif _has_def_leak_early:
+                ou_rule_dir = '大球'; ou_rule_strength = 1
+                ou_rule_name = f'高开{ou_deviation:+.1f}+防线漏洞→大球风险'
+            elif (h_att + a_def) < 2.5:
+                ou_rule_dir = '小球'; ou_rule_strength = 1
+                ou_rule_name = f'高开{ou_deviation:+.1f}+预期低→小球仅37%'
+    
+    if ou_rule_dir != '中性':
+        all_dirs.append(ou_rule_dir)
     big_signals = sum(1 for d in all_dirs if d == '大球')
     small_signals = sum(1 for d in all_dirs if d == '小球')
+    
+    # V3.9: 盘口偏差规律信号(在方向判定后显示)
+    if ou_rule_dir != '中性' and ou_rule_name:
+        step0_signals.append(f'盘口→{ou_rule_name}')
     
     # ===== V3.7: 方向判定（含0球区间铁律+近况矛盾修正） =====
     direction = '模糊'
@@ -367,6 +427,20 @@ def analyze_match(data):
     elif g0_rule_dir and g0_rule_dir == direction:
         step0_signals.append(g0_rule_name)
     
+    # V3.9: 盘口偏差 vs 方向矛盾检测
+    if ou_rule_dir != '中性' and direction != '模糊' and ou_rule_dir != direction:
+        step0_signals.append(f'⚠️盘口偏差→{ou_rule_dir}(与方向{direction}矛盾)')
+        if direction_conf == '强':
+            direction_conf = '中(盘口矛盾)'
+        elif direction_conf == '中':
+            direction_conf = '弱(盘口矛盾)'
+        elif direction_conf == '弱':
+            direction_conf = '弱(盘口矛盾⚠️)'
+    elif ou_rule_dir != '中性' and direction != '模糊' and ou_rule_dir == direction:
+        step0_signals.append(f'✅盘口偏差→{ou_rule_dir}(与方向一致)')
+        if direction_conf in ('弱', '弱(矛盾留空)', '弱(盘口矛盾)'):
+            direction_conf = '中(盘口支持)'
+    
     step0 = {
         'combined_avg': combined_avg,
         'h_def': round(h_def, 2),
@@ -375,6 +449,9 @@ def analyze_match(data):
         'def_dir': def_dir,
         'def_consistency': def_consistency,
         'def_trap': def_trap,
+        'ou_deviation': round(ou_deviation, 2),
+        'ou_rule_dir': ou_rule_dir,
+        'ou_rule_name': ou_rule_name,
         'std_line': std_line,
         'g0_val': g0_val,
         'g0_theo': f'[{theo_g0_lo:.1f},{theo_g0_hi:.1f}]',
@@ -1220,6 +1297,8 @@ def analyze_match(data):
     def_trap_signal = step0.get('def_trap', False)
     # V3.8 新增: 低近况+高0球 → 信号矛盾, 观望
     low_form_high_g0 = (combined_avg < 2.5 and g0_val > 12)
+    # V3.9 新增: 盘口偏差与方向矛盾 + 有诱盘信号 → 强制观望
+    ou_dir_contra = (ou_rule_dir != '中性' and direction != '模糊' and ou_rule_dir != direction)
     # V3.8 新增: 单选6球 → 历史0%命中, 观望
     skip_6ball = (final_goal_pick.get('single') == 6)
     
@@ -1239,6 +1318,13 @@ def analyze_match(data):
         final_goal_pick['skip_reason'].append('💡建议观望: 单选3球历史ROI -19%(517场回测)')
     if skip_6ball:
         final_goal_pick['skip_reason'].append('💡建议观望: 单选6球历史ROI 0%(13场回测)')
+    if ou_dir_contra and def_trap_signal:
+        final_goal_pick['skip_reason'].append(f'💡建议观望: 盘口偏差+防守诱盘双矛盾(周五010/012反例)')
+    elif ou_dir_contra and direction_conf.startswith('弱'):
+        final_goal_pick['skip_reason'].append(f'💡建议观望: 盘口偏差→{ou_rule_dir}与方向{direction}矛盾, 方向弱')
+    # V3.9: 极端0球+水位防守反向 → 信号内部矛盾 (周五004反例)
+    if g0_val >= 19 and def_consistency == '一致强化' and def_dir != direction:
+        final_goal_pick['skip_reason'].append(f'💡建议观望: 0球={g0_val}极端大球+水位防守一致{def_dir}→矛盾')
 
     # ============== 组装结果 ==============
     # Pick best non-0-0 score
