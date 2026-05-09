@@ -2598,11 +2598,20 @@ HTML_TEMPLATE = '''
                         
                         if (hc.contra) {
                             h += '<div style="color:#f44336;font-size:14px"><strong>⚠️ 矛盾信号→放弃，观望</strong></div>';
+                            h += '<div style="color:#f44336;font-size:14px;font-weight:bold;margin-top:4px">⛔ 慎重投注 ⛔</div>';
                         } else if (recs.length > 0) {
                             h += '<div style="color:#4caf50;font-size:16px"><strong>✅ 推荐: ' + recs.join(' / ') + '</strong></div>';
+                            // V3.9: 投注建议标签
+                            const fgp = a.final_goal_pick || {};
+                            if (fgp.skip_reason && fgp.skip_reason.length > 0) {
+                                h += '<div style="color:#f44336;font-size:14px;font-weight:bold;margin-top:4px">⛔ 慎重投注 ⛔</div>';
+                            } else {
+                                h += '<div style="color:#4caf50;font-size:14px;font-weight:bold;margin-top:4px">✅ 建议投注 ✅</div>';
+                            }
                             if (excl.length > 0) h += '<div style="color:#f44336;font-size:13px;margin-top:4px">🚫 排除: ' + excl.join('、') + '</div>';
                         } else {
                             h += '<div style="color:#888;font-size:14px">❌ 无明确信号 → 观望</div>';
+                            h += '<div style="color:#f44336;font-size:14px;font-weight:bold;margin-top:4px">⛔ 慎重投注 ⛔</div>';
                         }
                         h += '<div style="font-size:10px;color:#888;margin-top:4px">基于120场回测:让胜66%/让负67%(不矛盾时)</div>';
                         h += '</div>';
