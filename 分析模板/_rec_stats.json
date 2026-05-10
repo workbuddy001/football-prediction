@@ -1829,5 +1829,22 @@
       }
     ],
     "time": "2026-05-10 15:05"
+  },
+  "2039626": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 17:40"
   }
 }

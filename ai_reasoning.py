@@ -22,9 +22,11 @@ DATA_DIR = 'sporttery_data'
 def compute_betting(data, analysis):
     """
     投注策略决策：
-    R1: 推荐3:0 + V36+Tree双确认 → 单选3球(60) + 冷门比分(10/注)
-    R2: 不推荐1:1 + 主胜<1.3 + 0球20-35 → 双选3+4球(120) + 冷门比分(10/注)
-    R4: 不推荐1:1 + 0球<10 → 双选0+2球(120) + 冷门比分(10/注)
+    R0: 推荐0:0 → 三层排除 + 双层保底 → 0球50元 + 1:1(10)+小胜(10)
+    R1: 推荐3:0 + V36+Tree双确认 + 让胜<1.80 → 3:0比分20元
+    R2: 推荐2:4 + 让胜<让负 + 让负>2.5 → 2:4比分20元
+    R3: 不推荐1:1 + 主胜<1.3 + 0球20-35 → 双选3+4球120元
+    R4: 不推荐1:1 + 0球<10 → 双选0+2球120元
     """
     tg = data.get('total_goals', {})
     go = {}
@@ -165,12 +167,36 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 50
     elif top_score_rec == '3:0' and agree_count == 2:
+        # R1: 推荐3:0 + 让胜<1.80 → 纯买3:0比分20元
+        try:
+            hhad = data.get('hhad', {})
+            rs = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
+            if rs >= 1.80:
+                return {'action': 'skip', 'reason': f'R1跳过: 让胜{rs:.1f}≥1.80(回测仅10%命中)'}
+        except:
+            pass
+        
         rule = 'R1'
-        bet_goals = [3]
+        bet_goals = []
         bet_type = 'single'
-        goal_stake = 60
-    elif not_11 and strong_over:
+        goal_stake = 0
+    elif top_score_rec == '2:4':
+        # R2: 推荐2:4 + 让胜<让负 + 让负>2.5 → 纯买2:4比分20元
+        try:
+            hhad = data.get('hhad', {})
+            rs = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
+            rf = float(hhad.get('让负', 0)) if isinstance(hhad, dict) and hhad.get('让负') else 0
+            if not (rs < rf and rf > 2.5):
+                return {'action': 'skip', 'reason': f'R2跳过: 让胜{rs:.1f}≥让负{rf:.1f}或让负≤2.5(不符合2:4规律)'}
+        except:
+            return {'action': 'skip', 'reason': 'R2跳过: 让球数据缺失'}
+        
         rule = 'R2'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
+    elif not_11 and strong_over:
+        rule = 'R3'
         bet_goals = [3, 4]
         bet_type = 'dual'
         goal_stake = 120
@@ -214,7 +240,6 @@ def compute_betting(data, analysis):
         home_fav = (h_win is not None and a_win is not None and h_win < a_win)
         fav_odds = h_win if home_fav else a_win
         
-        # 智能选择: 强队(<2.0)→零封小胜, 均势→双方进球小胜
         if fav_odds and fav_odds < 2.0:
             close_score = '1:0' if home_fav else '0:1'
         else:
@@ -228,7 +253,6 @@ def compute_betting(data, analysis):
         if odds_close > 0:
             score_bets.append({'score': close_score, 'odds': round(odds_close, 1), 'stake': 10, 'tag': '1球小胜保底'})
         
-        # 置信度标记（仅显示参考）
         conf_tag = ''
         if pp_boost:
             conf_tag = ' 🔥平平降>5%'
@@ -236,6 +260,13 @@ def compute_betting(data, analysis):
             conf_tag = ' 💚HAD平赔降'
         elif had_weak:
             conf_tag = ' ⚠️HAD主胜升'
+    elif rule in ('R1', 'R2'):
+        # R1: 纯买3:0比分 20元 | R2: 纯买2:4比分 20元
+        score_key = '3:0' if rule == 'R1' else '2:4'
+        ho = _get_score_odds(score_key)
+        if ho > 0:
+            score_bets.append({'score': score_key, 'odds': round(ho, 1), 'stake': 20})
+        conf_tag = ''
     else:
         # 非R0: 每个目标球数取最低赔率2个比分
         for g in bet_goals:
@@ -247,9 +278,10 @@ def compute_betting(data, analysis):
     
     total_score_stake = sum(s['stake'] for s in score_bets)
     
-    summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
+    summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元" if bet_goals else ''
     if score_bets:
-        summary_text += f" + {len(score_bets)}个比分保底{total_score_stake}元"
+        if summary_text: summary_text += ' + '
+        summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
     
     return {
