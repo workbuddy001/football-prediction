@@ -84,7 +84,12 @@ def compute_betting(data, analysis):
     bet_type = None
     goal_stake = 0
     
-    if top_score_rec == '3:0' and agree_count == 2:
+    if top_score_rec == '0:0':
+        rule = 'R0'
+        bet_goals = [0]
+        bet_type = 'single'
+        goal_stake = 60
+    elif top_score_rec == '3:0' and agree_count == 2:
         rule = 'R1'
         bet_goals = [3]
         bet_type = 'single'
