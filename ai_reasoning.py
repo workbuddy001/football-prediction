@@ -16,6 +16,136 @@ FRAMEWORK_FILE = '推理流水框架.md'
 DATA_DIR = 'sporttery_data'
 
 
+DATA_DIR = 'sporttery_data'
+
+
+def compute_betting(data, analysis):
+    """
+    投注策略决策：
+    R1: 推荐3:0 + V36+Tree双确认 → 单选3球(60) + 冷门比分(10/注)
+    R2: 不推荐1:1 + 主胜<1.3 + 0球20-35 → 双选3+4球(120) + 冷门比分(10/注)
+    R4: 不推荐1:1 + 0球<10 → 双选0+2球(120) + 冷门比分(10/注)
+    """
+    tg = data.get('total_goals', {})
+    go = {}
+    for k in ['0球', '1球', '2球', '3球', '4球', '5球', '6球', '7球']:
+        v = tg.get(k)
+        if v:
+            try: go[int(k[0])] = float(v)
+            except: pass
+    
+    g0 = go.get(0)
+    had = data.get('had', {})
+    try: 
+        h_win = float(had.get('胜', 0))
+        a_win = float(had.get('负', 0))
+    except: 
+        h_win = None
+        a_win = None
+    
+    step0 = analysis.get('step0', {})
+    v36_dir = step0.get('direction', '')
+    
+    # 获取系统比分推荐 (从score_odds + hitrate计算)
+    from sporttery_web import _build_score_hitrate_stats, get_score_recommendations_for_match
+    so = data.get('score_odds', {})
+    if so:
+        try:
+            recs = get_score_recommendations_for_match(so)
+        except:
+            _build_score_hitrate_stats()
+            recs = get_score_recommendations_for_match(so)
+    else:
+        recs = []
+    
+    top_score_rec = recs[0]['score'] if recs else None
+    not_11 = (top_score_rec != '1:1') if top_score_rec else None
+    
+    # 决策树信号 (扩展: 主强队 + 客强队)
+    strong_home = h_win and h_win < 1.3 and g0 and 20 <= g0 <= 35
+    strong_over = strong_home  # 仅主强队
+    # R4 temporarily disabled
+    strong_under = False  # g0 and g0 < 10
+    
+    tree_dir = 'over_strong' if strong_over else 'under' if strong_under else None
+    
+    # 一致性
+    score_goals = recs[0]['total_goals'] if recs else 0
+    score_dir = 'over' if score_goals >= 3 else 'under'
+    v36_is_over = ('大球' in v36_dir)
+    
+    agree_v36 = (v36_is_over == (score_dir == 'over'))
+    agree_tree = ((tree_dir and tree_dir.startswith('over')) == (score_dir == 'over'))
+    agree_count = (1 if agree_v36 else 0) + (1 if agree_tree else 0)
+    
+    # 规则判定
+    rule = None
+    bet_goals = []
+    bet_type = None
+    goal_stake = 0
+    
+    if top_score_rec == '3:0' and agree_count == 2:
+        rule = 'R1'
+        bet_goals = [3]
+        bet_type = 'single'
+        goal_stake = 60
+    elif not_11 and strong_over:
+        rule = 'R2'
+        bet_goals = [3, 4]
+        bet_type = 'dual'
+        goal_stake = 120
+    elif not_11 and strong_under:
+        rule = 'R4'
+        bet_goals = [0, 2]
+        bet_type = 'dual'
+        goal_stake = 120
+    
+    if not rule:
+        return {'action': 'skip', 'reason': '无匹配投注规则'}
+    
+    # 进球数投注
+    goal_odds = {g: go.get(g) for g in bet_goals if go.get(g)}
+    
+    # 冷门比分选择：每个目标球数取赔率最高的比分（跳过最低2个）
+    score_bets = []
+    so_data = data.get('score_odds', {})
+    score_by_goals = {}
+    for sk, ov in so_data.items():
+        try: ov = float(ov)
+        except: continue
+        if ov <= 0: continue
+        parts = sk.split(':')
+        if len(parts) != 2: continue
+        try: sh, sa = int(parts[0]), int(parts[1])
+        except: continue
+        g = sh + sa
+        if g not in score_by_goals: score_by_goals[g] = []
+        score_by_goals[g].append((f'{sh}:{sa}', ov))
+    
+    for g in bet_goals:
+        candidates = sorted(score_by_goals.get(g, []), key=lambda x: x[1])
+        hot = candidates[:2]  # 最低赔率2个（热门）
+        for sc, odds in hot:
+            score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10})
+    
+    total_score_stake = sum(s['stake'] for s in score_bets)
+    
+    return {
+        'action': 'bet',
+        'rule': rule,
+        'bet_type': bet_type,
+        'goal_bet': {
+            'goals': bet_goals,
+            'stake': goal_stake,
+            'odds': {str(g): round(o, 1) for g, o in goal_odds.items()},
+        },
+        'score_bets': score_bets,
+        'score_stake': total_score_stake,
+        'total_stake': goal_stake + total_score_stake,
+        'summary': f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元 + {len(score_bets)}个热门比分{total_score_stake}元",
+    }
+
+
 def read_framework():
     """读取推理流水框架文档"""
     try:
@@ -366,6 +496,10 @@ def v36_analyze(match_id):
             importlib.reload(sys.modules['v36_analyzer'])
         from v36_analyzer import analyze_match
         result = analyze_match(data)
+        
+        # ===== 投注策略 =====
+        result['betting'] = compute_betting(data, result)
+        
         return jsonify({'success': True, 'analysis': result})
     except Exception as e:
         import traceback

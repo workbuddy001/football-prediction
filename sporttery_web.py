@@ -2652,6 +2652,45 @@ HTML_TEMPLATE = '''
                         s += '<br><span style=\"font-size:11px;color:#888\">策略: ' + sb.strategy + ' | 回测ROI +432%</span></div>';
                         return s;
                     })() : '')
+                    + (a.betting ? (function() {
+                        const bt = a.betting;
+                        if (bt.action !== 'bet') {
+                            return '<div style=\"margin-top:6px;padding:6px;background:#1a1a1a;border-radius:6px;color:#888;font-size:12px\">💤 ' + bt.reason + '</div>';
+                        }
+                        const goalColors = {'R1':'#4caf50','R2':'#ff9800','R4':'#2196f3'};
+                        const clr = goalColors[bt.rule] || '#888';
+                        let h = '<div style=\"margin-top:8px;padding:10px;background:#0d1b0d;border-radius:8px;border:2px solid ' + clr + '\">';
+                        h += '<strong style=\"color:' + clr + ';font-size:14px\">💰 投注策略 [' + bt.rule + ']</strong>';
+                        h += '<span style=\"color:#888;font-size:10px;margin-left:6px\">回测ROI +56%</span><br>';
+                        
+                        // Goal bet
+                        const gb = bt.goal_bet;
+                        h += '<div style=\"margin:6px 0;padding:6px;background:#1a2a1a;border-radius:4px\">';
+                        h += '<span style=\"color:#ffcc80\">🎯 进球数:</span> ';
+                        h += '<span style=\"color:#fff;font-size:16px;font-weight:bold\">' + gb.goals.join('球+') + '球</span> ';
+                        h += '<span style=\"color:#4caf50;font-weight:bold\">投' + gb.stake + '元</span>';
+                        if (gb.odds) {
+                            let oStr = Object.entries(gb.odds).map(([g,o]) => g+'球赔'+o).join(' / ');
+                            h += '<br><span style=\"color:#888;font-size:11px\">赔率: ' + oStr + '</span>';
+                        }
+                        h += '</div>';
+                        
+                        // Score bets
+                        if (bt.score_bets && bt.score_bets.length > 0) {
+                            h += '<div style=\"margin:4px 0;padding:6px;background:#1a1a2e;border-radius:4px\">';
+                            h += '<span style=\"color:#ff9800\">⚽ 热门比分:</span> ';
+                            let scoreParts = bt.score_bets.map(s => s.score + '(赔' + s.odds + ')投10元');
+                            h += '<span style=\"color:#ffb74d;font-size:11px\">' + scoreParts.join(' | ') + '</span>';
+                            h += '</div>';
+                        }
+                        
+                        h += '<div style=\"margin-top:4px;font-size:11px;color:#888\">';
+                        h += '进球投' + gb.stake + '元 + 比分投' + bt.score_stake + '元 = <strong style=\"color:#fff\">合计' + bt.total_stake + '元</strong>';
+                        h += '</div>';
+                        h += '<div style=\"margin-top:2px;font-size:10px;color:#666\">' + bt.summary + '</div>';
+                        h += '</div>';
+                        return h;
+                    })() : '')
                     + '</div>'
                     + (function() {
                         const rec = a.recommended;
