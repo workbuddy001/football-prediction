@@ -85,6 +85,19 @@ def compute_betting(data, analysis):
     goal_stake = 0
     
     if top_score_rec == '0:0':
+        # R0: 主攻<2.0过滤（强攻队不出0:0）
+        h_att = None
+        try:
+            preview = data.get('preview', {})
+            recent = preview.get('recent', {})
+            hd = recent.get('home', {})
+            hl = hd.get('matchList', []) if isinstance(hd, dict) else []
+            if hl:
+                h_att = sum([float(x.get('homeTeamFullCourtGoalCnt', 0) or 0) for x in hl]) / len(hl)
+        except:
+            pass
+        if h_att is not None and h_att >= 2.0:
+            return {'action': 'skip', 'reason': f'R0跳过: 主攻{h_att:.1f}≥2.0(强攻队不出0:0)'}
         rule = 'R0'
         bet_goals = [0]
         bet_type = 'single'
