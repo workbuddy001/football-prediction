@@ -2678,8 +2678,11 @@ HTML_TEMPLATE = '''
                         // Score bets
                         if (bt.score_bets && bt.score_bets.length > 0) {
                             h += '<div style=\"margin:4px 0;padding:6px;background:#1a1a2e;border-radius:4px\">';
-                            h += '<span style=\"color:#ff9800\">⚽ 热门比分:</span> ';
-                            let scoreParts = bt.score_bets.map(s => s.score + '(赔' + s.odds + ')投10元');
+                            h += '<span style=\"color:#ff9800\">⚽ ' + (bt.rule === 'R0' ? '保底比分' : '热门比分') + ':</span> ';
+                            let scoreParts = bt.score_bets.map(s => {
+                                let tag = s.tag ? ' <span style=\"color:#888;font-size:9px\">[' + s.tag + ']</span>' : '';
+                                return s.score + '(赔' + s.odds + ')投' + s.stake + '元' + tag;
+                            });
                             h += '<span style=\"color:#ffb74d;font-size:11px\">' + scoreParts.join(' | ') + '</span>';
                             h += '</div>';
                         }

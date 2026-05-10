@@ -1812,5 +1812,22 @@
       }
     ],
     "time": "2026-05-10 11:31"
+  },
+  "2039624": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "practical_exclude_2",
+        "old_hit_rate": 0,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-10 15:05"
   }
 }

@@ -116,10 +116,54 @@ def compute_betting(data, analysis):
             except:
                 pass
         
+        # R0: 半全场平平赔率变化信号
+        pp_change = 0
+        try:
+            hafu_change = data.get('hafu_change', {})
+            pp = hafu_change.get('平平', {}) if isinstance(hafu_change, dict) else {}
+            pp_change = pp.get('change_pct', 0) if isinstance(pp, dict) else 0
+        except:
+            pass
+        
+        # R0: g0≥10.5 + 平平下降 → 陷阱信号，排除
+        if g0 and g0 >= 10.5 and pp_change < -0.5:
+            return {'action': 'skip', 'reason': f'R0跳过: g0={g0}≥10.5+平平降{pp_change:.0f}%(陷阱信号,回测0/6)'}
+        
+        # R0: 联赛过滤（西甲/欧联/瑞典超/日职/韩职0球率极低）
+        SKIP_LEAGUES = ['西班牙甲级联赛', '欧罗巴联赛', '瑞典超级联赛', '日本职业联赛', '韩国职业联赛']
+        try:
+            info = data.get('match_info', {})
+            league = info.get('league', '') if isinstance(info, dict) else ''
+            if league in SKIP_LEAGUES:
+                return {'action': 'skip', 'reason': f'R0跳过: {league}(联赛0球率低,回测仅10%)'}
+        except:
+            pass
+        
+        # R0: 平平下降>5% → 高置信(+20)
+        pp_boost = (pp_change < -5)
+        
+        # R0: HAD赔率变化信号（置信分层）
+        had_weak = False  # 弱信号
+        had_boost = False  # 强信号
+        try:
+            had_change = data.get('had_change', {})
+            if isinstance(had_change, dict):
+                hc_w = had_change.get('胜', {})
+                hc_d = had_change.get('平', {})
+                hw_ch = hc_w.get('change_pct', 0) if isinstance(hc_w, dict) else 0
+                draw_ch = hc_d.get('change_pct', 0) if isinstance(hc_d, dict) else 0
+                if draw_ch < -3:
+                    had_boost = True  # HAD平赔降>3% → 庄家压平局,0球概率升
+                elif hw_ch > 10:
+                    had_weak = True  # HAD主胜升>10% → 资金涌向主胜,出球概率升
+        except:
+            pass
+        
+        # R0: 置信度标记（仅供参考，投注额统一50元）
         rule = 'R0'
         bet_goals = [0]
         bet_type = 'single'
-        goal_stake = 60
+        goal_stake = 50
     elif top_score_rec == '3:0' and agree_count == 2:
         rule = 'R1'
         bet_goals = [3]
@@ -142,7 +186,7 @@ def compute_betting(data, analysis):
     # 进球数投注
     goal_odds = {g: go.get(g) for g in bet_goals if go.get(g)}
     
-    # 冷门比分选择：每个目标球数取赔率最高的比分（跳过最低2个）
+    # 比分投注
     score_bets = []
     so_data = data.get('score_odds', {})
     score_by_goals = {}
@@ -158,13 +202,55 @@ def compute_betting(data, analysis):
         if g not in score_by_goals: score_by_goals[g] = []
         score_by_goals[g].append((f'{sh}:{sa}', ov))
     
-    for g in bet_goals:
-        candidates = sorted(score_by_goals.get(g, []), key=lambda x: x[1])
-        hot = candidates[:2]  # 最低赔率2个（热门）
-        for sc, odds in hot:
-            score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10})
+    def _get_score_odds(sc):
+        """从score_odds获取格式化比分的赔率 1:1 -> 01:01"""
+        key = f'{int(sc.split(":")[0]):02d}:{int(sc.split(":")[1]):02d}'
+        v = so_data.get(key, 0)
+        try: return float(v)
+        except: return 0
+    
+    if rule == 'R0':
+        # R0保底比分: 1:1(10元) + 智能小胜(10元)
+        home_fav = (h_win is not None and a_win is not None and h_win < a_win)
+        fav_odds = h_win if home_fav else a_win
+        
+        # 智能选择: 强队(<2.0)→零封小胜, 均势→双方进球小胜
+        if fav_odds and fav_odds < 2.0:
+            close_score = '1:0' if home_fav else '0:1'
+        else:
+            close_score = '2:1' if home_fav else '1:2'
+        
+        odds_11 = _get_score_odds('1:1')
+        odds_close = _get_score_odds(close_score)
+        
+        if odds_11 > 0:
+            score_bets.append({'score': '1:1', 'odds': round(odds_11, 1), 'stake': 10, 'tag': '保底'})
+        if odds_close > 0:
+            score_bets.append({'score': close_score, 'odds': round(odds_close, 1), 'stake': 10, 'tag': '1球小胜保底'})
+        
+        # 置信度标记（仅显示参考）
+        conf_tag = ''
+        if pp_boost:
+            conf_tag = ' 🔥平平降>5%'
+        elif had_boost:
+            conf_tag = ' 💚HAD平赔降'
+        elif had_weak:
+            conf_tag = ' ⚠️HAD主胜升'
+    else:
+        # 非R0: 每个目标球数取最低赔率2个比分
+        for g in bet_goals:
+            candidates = sorted(score_by_goals.get(g, []), key=lambda x: x[1])
+            hot = candidates[:2]
+            for sc, odds in hot:
+                score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10})
+        conf_tag = ''
     
     total_score_stake = sum(s['stake'] for s in score_bets)
+    
+    summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
+    if score_bets:
+        summary_text += f" + {len(score_bets)}个比分保底{total_score_stake}元"
+    summary_text += conf_tag
     
     return {
         'action': 'bet',
@@ -178,7 +264,8 @@ def compute_betting(data, analysis):
         'score_bets': score_bets,
         'score_stake': total_score_stake,
         'total_stake': goal_stake + total_score_stake,
-        'summary': f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元 + {len(score_bets)}个热门比分{total_score_stake}元",
+        'summary': summary_text,
+        'pp_boost': pp_boost if rule == 'R0' else False,
     }
 
 

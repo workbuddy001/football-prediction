@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R0 V2 投注明细 - 4月+5月</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; }
+h1 { text-align: center; color: #e91e63; margin-bottom: 10px; }
+.summary { display: flex; gap: 16px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+.card { background: #161b22; border-radius: 8px; padding: 12px 20px; border: 1px solid #30363d; text-align: center; }
+.card .label { font-size: 11px; color: #8b949e; }
+.card .value { font-size: 22px; font-weight: bold; }
+.card.green .value { color: #3fb950; }
+.card.red .value { color: #e91e63; }
+.card.blue .value { color: #58a6ff; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #161b22; color: #8b949e; padding: 8px 6px; text-align: center; border-bottom: 2px solid #30363d; position: sticky; top: 0; }
+td { padding: 6px; text-align: center; border-bottom: 1px solid #21262d; }
+tr:hover { background: #1c2128; }
+.tag-boost { background: #e91e63; color: #fff; padding: 1px 5px; border-radius: 3px; font-size: 10px; }
+.tag-normal { color: #8b949e; }
+.hit-0 { background: #0d3320; color: #3fb950; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; }
+.hit-11 { background: #1a2a3a; color: #58a6ff; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; }
+.hit-close { background: #332200; color: #ffb74d; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; }
+.hit-none { color: #484f58; }
+.profit-pos { color: #3fb950; font-weight: bold; }
+.profit-neg { color: #f85149; }
+.profit-zero { color: #8b949e; }
+.team { text-align: left; padding-left: 10px; }
+.stake-boost { color: #e91e63; font-weight: bold; }
+.month-divider td { background: #1a1a2e; color: #58a6ff; font-weight: bold; padding: 8px; font-size: 14px; }
+.footer { text-align: center; margin-top: 20px; padding: 12px; background: #161b22; border-radius: 8px; border: 1px solid #30363d; }
+</style>
+</head>
+<body>
+
+<h1>⚽ R0 V2 投注明细（4月+5月 63场）</h1>
+
+<div class="summary">
+  <div class="card green"><div class="label">总命中</div><div class="value">33/63 (52.4%)</div></div>
+  <div class="card green"><div class="label">0球命中</div><div class="value">16 (25.4%)</div></div>
+  <div class="card blue"><div class="label">1:1保底</div><div class="value">9</div></div>
+  <div class="card blue"><div class="label">小胜保底</div><div class="value">8</div></div>
+  <div class="card green"><div class="label">总投入</div><div class="value">4,690元</div></div>
+  <div class="card green"><div class="label">总盈利</div><div class="value">+5,334元</div></div>
+  <div class="card red"><div class="label">ROI</div><div class="value">+113.7%</div></div>
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>月</th><th>球队</th><th>0球赔</th><th>平平</th><th>0球</th><th>1:1</th><th>赔</th><th>小胜</th><th>比分</th><th>赔</th><th>总</th><th>实际</th><th>盈亏</th><th>命中</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>4</td><td class="team">匈牙利vs希腊</td><td>10.0</td><td>-7%</td><td class="stake-boost">70</td><td>10</td><td>6.2</td><td>10</td><td>2:1</td><td>7.8</td><td>90</td><td>0:0</td><td class="profit-pos">+610</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">南非vs巴拿马</td><td>8.2</td><td>-10%</td><td class="stake-boost">70</td><td>10</td><td>6.2</td><td>10</td><td>2:1</td><td>7.0</td><td>90</td><td>1:2</td><td class="profit-neg">-90</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">阿尔及利亚vs乌拉圭</td><td>8.8</td><td>0</td><td>50</td><td>10</td><td>6.5</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>0:0</td><td class="profit-pos">+368</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">加拿大vs突尼斯</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>7.2</td><td>10</td><td>2:1</td><td>6.8</td><td>70</td><td>0:0</td><td class="profit-pos">+455</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">町田泽维亚vs东京FC</td><td>9.0</td><td>-15%</td><td class="stake-boost">70</td><td>10</td><td>5.8</td><td>10</td><td>2:1</td><td>7.5</td><td>90</td><td>0:3</td><td class="profit-neg">-90</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">维冈竞技vs莱顿东方</td><td>10.0</td><td>-14%</td><td class="stake-boost">70</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.8</td><td>90</td><td>0:0</td><td class="profit-pos">+610</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">伯明翰vs布莱克本</td><td>10.5</td><td>+12%</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.2</td><td>70</td><td>1:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">西布罗姆维奇vs雷克斯汉姆</td><td>10.0</td><td>-2%</td><td>50</td><td>10</td><td>5.9</td><td>10</td><td>2:1</td><td>7.2</td><td>70</td><td>2:2</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">拉齐奥vs帕尔马</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.8</td><td>10</td><td>2:1</td><td>7.0</td><td>70</td><td>1:1</td><td class="profit-zero">-12</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">东京FCvs町田泽维亚</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.8</td><td>10</td><td>2:1</td><td>7.5</td><td>70</td><td>0:0</td><td class="profit-pos">+380</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">仁川联vs金泉尚武</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>2:1</td><td>8.0</td><td>70</td><td>2:1</td><td class="profit-zero">+10</td><td><span class="hit-close">2:1✅</span></td></tr>
+<tr><td>4</td><td class="team">克雷莫纳vs博洛尼亚</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.5</td><td>10</td><td>1:2</td><td>7.2</td><td>70</td><td>1:2</td><td class="profit-zero">+2</td><td><span class="hit-close">1:2✅</span></td></tr>
+<tr><td>4</td><td class="team">巴伦西亚vs维戈塞尔塔</td><td>9.0</td><td>+6%</td><td>50</td><td>10</td><td>5.6</td><td>10</td><td>2:1</td><td>8.2</td><td>70</td><td>2:3</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">乌迪内斯vs科莫</td><td>10.5</td><td>+9%</td><td>50</td><td>10</td><td>6.5</td><td>10</td><td>1:2</td><td>6.7</td><td>70</td><td>0:0</td><td class="profit-pos">+455</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">朴次茅斯vs牛津联</td><td>9.0</td><td>-3%</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.2</td><td>70</td><td>2:2</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">拉瓜伊拉vs弗鲁米嫩塞</td><td>9.0</td><td>+3%</td><td>50</td><td>10</td><td>7.1</td><td>10</td><td>1:2</td><td>6.8</td><td>70</td><td>0:0</td><td class="profit-pos">+380</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">布拉加vs皇家贝蒂斯</td><td>10.0</td><td>-6%</td><td class="stake-boost">70</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>8.2</td><td>90</td><td>1:1</td><td class="profit-zero">-30</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">巴兰基亚青年vs帕尔梅拉斯</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.7</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>1:1</td><td class="profit-zero">-3</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">巴列卡诺vs雅典AEK</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.2</td><td>70</td><td>3:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">拉瓦勒vs兰斯</td><td>10.0</td><td>0</td><td>50</td><td>10</td><td>6.5</td><td>10</td><td>1:2</td><td>6.8</td><td>70</td><td>2:2</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">阿纳西vs蒙彼利埃</td><td>10.0</td><td>-4%</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.5</td><td>70</td><td>0:0</td><td class="profit-pos">+430</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">法马利康vs摩雷伦斯</td><td>10.5</td><td>+3%</td><td>50</td><td>10</td><td>6.7</td><td>10</td><td>2:1</td><td>6.8</td><td>70</td><td>1:1</td><td class="profit-zero">-3</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">首尔FCvs全北现代</td><td>9.0</td><td>-4%</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>2:1</td><td>7.7</td><td>70</td><td>1:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">仁川联vs蔚山现代</td><td>9.0</td><td>+5%</td><td>50</td><td>10</td><td>5.6</td><td>10</td><td>1:2</td><td>8.0</td><td>70</td><td>1:2</td><td class="profit-zero">+10</td><td><span class="hit-close">1:2✅</span></td></tr>
+<tr><td>4</td><td class="team">诺维奇vs伊普斯维奇</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.2</td><td>10</td><td>1:2</td><td>7.2</td><td>70</td><td>0:2</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">塞维利亚vs马德里竞技</td><td>10.5</td><td>+11%</td><td>50</td><td>10</td><td>6.2</td><td>10</td><td>2:1</td><td>8.0</td><td>70</td><td>2:1</td><td class="profit-zero">+10</td><td><span class="hit-close">2:1✅</span></td></tr>
+<tr><td>4</td><td class="team">热那亚vs萨索洛</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>2:1</td><td>7.5</td><td>70</td><td>2:1</td><td class="profit-zero">+5</td><td><span class="hit-close">2:1✅</span></td></tr>
+<tr><td>4</td><td class="team">图卢兹vs里尔</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>1:2</td><td>7.5</td><td>70</td><td>0:4</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">博洛尼亚vs莱切</td><td>10.0</td><td>-4%</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.0</td><td>70</td><td>2:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">维戈塞尔塔vs皇家奥维耶多</td><td>10.0</td><td>-13%</td><td class="stake-boost">70</td><td>10</td><td>6.5</td><td>10</td><td>2:1</td><td>7.0</td><td>90</td><td>0:3</td><td class="profit-neg">-90</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">佛罗伦萨vs拉齐奥</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.7</td><td>10</td><td>2:1</td><td>7.5</td><td>70</td><td>1:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">曼谷联vs大阪钢巴</td><td>9.0</td><td>-4%</td><td>50</td><td>10</td><td>6.8</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>0:3</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">诺丁汉森林vs波尔图</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.4</td><td>10</td><td>2:1</td><td>8.0</td><td>70</td><td>1:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">佛罗伦萨vs水晶宫</td><td>10.0</td><td>-2%</td><td>50</td><td>10</td><td>6.2</td><td>10</td><td>1:2</td><td>8.0</td><td>70</td><td>2:1</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">圣保利vs科隆</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>1:2</td><td>7.8</td><td>70</td><td>1:1</td><td class="profit-zero">-10</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">布莱克本vs考文垂</td><td>10.0</td><td>-14%</td><td class="stake-boost">70</td><td>10</td><td>6.2</td><td>10</td><td>1:2</td><td>7.0</td><td>90</td><td>1:1</td><td class="profit-zero">-28</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">济州SKvs金泉尚武</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.2</td><td>10</td><td>1:2</td><td>7.8</td><td>70</td><td>1:1</td><td class="profit-zero">-18</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>4</td><td class="team">德比郡vs牛津联</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.0</td><td>70</td><td>1:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">蔚山现代vs光州FC</td><td>10.0</td><td>+2%</td><td>50</td><td>10</td><td>6.7</td><td>10</td><td>2:1</td><td>7.0</td><td>70</td><td>5:1</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">克雷莫纳vs都灵</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>1:2</td><td>8.0</td><td>70</td><td>0:0</td><td class="profit-pos">+380</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">维罗纳vsAC米兰</td><td>10.5</td><td>+2%</td><td>50</td><td>10</td><td>7.0</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>0:1</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">大阪钢巴vs福冈黄蜂</td><td>9.8</td><td>0</td><td>50</td><td>10</td><td>6.3</td><td>10</td><td>2:1</td><td>7.0</td><td>70</td><td>1:2</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">埃尔夫斯堡vs佐加顿斯</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.3</td><td>10</td><td>1:2</td><td>7.5</td><td>70</td><td>2:1</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">莱万特vs塞维利亚</td><td>10.0</td><td>-4%</td><td>50</td><td>10</td><td>5.9</td><td>10</td><td>2:1</td><td>8.0</td><td>70</td><td>2:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">桑德兰vs诺丁汉森林</td><td>9.0</td><td>-6%</td><td class="stake-boost">70</td><td>10</td><td>5.8</td><td>10</td><td>1:2</td><td>8.2</td><td>90</td><td>0:5</td><td class="profit-neg">-90</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">西布罗姆维奇vs伊普斯维奇</td><td>10.0</td><td>-7%</td><td class="stake-boost">70</td><td>10</td><td>5.5</td><td>10</td><td>1:2</td><td>7.8</td><td>90</td><td>0:0</td><td class="profit-pos">+610</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">吉达国民vs町田泽维亚</td><td>9.0</td><td>-4%</td><td>50</td><td>10</td><td>6.8</td><td>10</td><td>2:1</td><td>6.8</td><td>70</td><td>0:0</td><td class="profit-pos">+380</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">奥萨苏纳vs塞维利亚</td><td>9.0</td><td>-10%</td><td class="stake-boost">70</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>7.1</td><td>90</td><td>2:1</td><td class="profit-zero">-19</td><td><span class="hit-close">2:1✅</span></td></tr>
+<tr><td>4</td><td class="team">AC米兰vs尤文图斯</td><td>9.0</td><td>-10%</td><td class="stake-boost">70</td><td>10</td><td>5.8</td><td>10</td><td>1:2</td><td>8.2</td><td>90</td><td>0:0</td><td class="profit-pos">+540</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>4</td><td class="team">卡利亚里vs亚特兰大</td><td>10.0</td><td>+7%</td><td>50</td><td>10</td><td>6.2</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>3:2</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">柏太阳神vs东京FC</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>1:2</td><td>8.0</td><td>70</td><td>1:3</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>4</td><td class="team">波特诺山丘vs帕尔梅拉斯</td><td>9.0</td><td>+1%</td><td>50</td><td>10</td><td>6.5</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>1:1</td><td class="profit-zero">-5</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>5</td><td class="team">诺丁汉森林vs阿斯顿维拉</td><td>10.0</td><td>0</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>1:2</td><td>8.0</td><td>70</td><td>1:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>5</td><td class="team">蔚山现代vs浦项制铁</td><td>10.0</td><td>+3%</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>2:1</td><td>7.0</td><td>70</td><td>0:1</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>5</td><td class="team">乌迪内斯vs都灵</td><td>9.0</td><td>0</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>2:1</td><td>7.6</td><td>70</td><td>2:0</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>5</td><td class="team">代格福什vs赫根</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.5</td><td>10</td><td>1:2</td><td>7.0</td><td>70</td><td>1:1</td><td class="profit-zero">-5</td><td><span class="hit-11">1:1✅</span></td></tr>
+<tr><td>5</td><td class="team">科莫vs那不勒斯</td><td>9.8</td><td>-6%</td><td class="stake-boost">70</td><td>10</td><td>5.8</td><td>10</td><td>2:1</td><td>7.0</td><td>90</td><td>0:0</td><td class="profit-pos">+592</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>5</td><td class="team">博洛尼亚vs卡利亚里</td><td>9.0</td><td>-10%</td><td class="stake-boost">70</td><td>10</td><td>5.5</td><td>10</td><td>2:1</td><td>7.5</td><td>90</td><td>0:0</td><td class="profit-pos">+540</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>5</td><td class="team">马尔默vs米亚尔比</td><td>10.0</td><td>0</td><td>50</td><td>10</td><td>6.0</td><td>10</td><td>2:1</td><td>8.0</td><td>70</td><td>2:3</td><td class="profit-neg">-70</td><td class="hit-none">❌</td></tr>
+<tr><td>5</td><td class="team">圣保利vs美因茨</td><td>10.0</td><td>0</td><td>50</td><td>10</td><td>5.8</td><td>10</td><td>1:2</td><td>8.0</td><td>70</td><td>1:2</td><td class="profit-zero">+10</td><td><span class="hit-close">1:2✅</span></td></tr>
+<tr><td>5</td><td class="team">克雷莫纳vs拉齐奥</td><td>8.7</td><td>-9%</td><td class="stake-boost">70</td><td>10</td><td>5.5</td><td>10</td><td>1:2</td><td>7.5</td><td>90</td><td>1:2</td><td class="profit-zero">-15</td><td><span class="hit-close">1:2✅</span></td></tr>
+<tr><td>5</td><td class="team">首尔FCvs安养FC</td><td>10.5</td><td>0</td><td>50</td><td>10</td><td>6.2</td><td>10</td><td>2:1</td><td>6.8</td><td>70</td><td>0:0</td><td class="profit-pos">+455</td><td><span class="hit-0">0球✅</span></td></tr>
+<tr><td>5</td><td class="team">赫尔城vs米尔沃尔</td><td>10.0</td><td>0</td><td>50</td><td>10</td><td>5.5</td><td>10</td><td>1:2</td><td>7.8</td><td>70</td><td>0:0</td><td class="profit-pos">+430</td><td><span class="hit-0">0球✅</span></td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+  <strong>累计盈亏: +5,334元</strong> | 投入4,690元 | ROI +113.7% | 
+  🔥高置信 14场 | 普通 49场
+</div>
+
+</body>
+</html>
