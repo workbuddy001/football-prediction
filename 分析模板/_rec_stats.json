@@ -1204,5 +1204,613 @@
       }
     ],
     "time": "2026-05-06 10:44"
+  },
+  "2039549": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-06 19:46"
+  },
+  "2039550": {
+    "home_score": 0,
+    "away_score": 1,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-06 20:44"
+  },
+  "2039551": {
+    "home_score": 3,
+    "away_score": 1,
+    "total_goals": 4,
+    "rules": [
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-07 06:41"
+  },
+  "2039554": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "golden_1goals_enhanced",
+        "old_hit_rate": 44.8,
+        "new_hit_rate": 43.3,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 1
+      },
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-07 11:21"
+  },
+  "2039555": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "golden_1goals_enhanced",
+        "old_hit_rate": 44.8,
+        "new_hit_rate": 43.3,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 1
+      },
+      {
+        "type": "practical_recommend_2",
+        "old_hit_rate": 100,
+        "new_hit_rate": 100.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": true,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-07 11:21"
+  },
+  "2039556": {
+    "home_score": 2,
+    "away_score": 4,
+    "total_goals": 6,
+    "rules": [
+      {
+        "type": "final_近况+高球降",
+        "old_hit_rate": 50,
+        "new_hit_rate": 46.7,
+        "old_sample": 14,
+        "new_sample": 15,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-08 09:27"
+  },
+  "2039560": {
+    "home_score": 2,
+    "away_score": 0,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "practical_exclude_2",
+        "old_hit_rate": 0,
+        "new_hit_rate": 100.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": true,
+        "target_goals": 2
+      }
+    ],
+    "time": "2026-05-08 09:29"
+  },
+  "2039574": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "practical_recommend_3",
+        "old_hit_rate": 50,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 08:30"
+  },
+  "2039583": {
+    "home_score": 0,
+    "away_score": 0,
+    "total_goals": 0,
+    "rules": [
+      {
+        "type": "golden_1goals_base",
+        "old_hit_rate": 37.2,
+        "new_hit_rate": 36.4,
+        "old_sample": 43,
+        "new_sample": 44,
+        "is_hit": false,
+        "target_goals": 1
+      }
+    ],
+    "time": "2026-05-09 08:35"
+  },
+  "2039594": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "final_让负+3球黄金",
+        "old_hit_rate": 55.6,
+        "new_hit_rate": 52.7,
+        "old_sample": 18,
+        "new_sample": 19,
+        "is_hit": false,
+        "target_goals": 3
+      },
+      {
+        "type": "practical_recommend_3",
+        "old_hit_rate": 50,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 16:09"
+  },
+  "2039595": {
+    "home_score": 3,
+    "away_score": 2,
+    "total_goals": 5,
+    "rules": [
+      {
+        "type": "final_近况+高球降_关注2球_",
+        "old_hit_rate": 37.9,
+        "new_hit_rate": 36.6,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 17:07"
+  },
+  "2039596": {
+    "home_score": 0,
+    "away_score": 0,
+    "total_goals": 0,
+    "rules": [
+      {
+        "type": "golden_1goals_base",
+        "old_hit_rate": 37.2,
+        "new_hit_rate": 36.4,
+        "old_sample": 43,
+        "new_sample": 44,
+        "is_hit": false,
+        "target_goals": 1
+      }
+    ],
+    "time": "2026-05-09 17:33"
+  },
+  "2039597": {
+    "home_score": 0,
+    "away_score": 2,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "golden_1goals_enhanced",
+        "old_hit_rate": 44.8,
+        "new_hit_rate": 43.3,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 1
+      },
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 20:03"
+  },
+  "2039598": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "final_0球20-21+近况2_5-3_5",
+        "old_hit_rate": 53.3,
+        "new_hit_rate": 50.0,
+        "old_sample": 15,
+        "new_sample": 16,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 21:29"
+  },
+  "2039600": {
+    "home_score": 0,
+    "away_score": 0,
+    "total_goals": 0,
+    "rules": [
+      {
+        "type": "final_让负+3球黄金",
+        "old_hit_rate": 55.6,
+        "new_hit_rate": 52.7,
+        "old_sample": 18,
+        "new_sample": 19,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 21:31"
+  },
+  "2039599": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "practical_exclude_3",
+        "old_hit_rate": 0,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 21:31"
+  },
+  "2039601": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "final_让负+3球黄金",
+        "old_hit_rate": 55.6,
+        "new_hit_rate": 52.7,
+        "old_sample": 18,
+        "new_sample": 19,
+        "is_hit": false,
+        "target_goals": 3
+      },
+      {
+        "type": "practical_recommend_3",
+        "old_hit_rate": 50,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:33"
+  },
+  "2039602": {
+    "home_score": 2,
+    "away_score": 1,
+    "total_goals": 3,
+    "rules": [
+      {
+        "type": "practical_exclude_3",
+        "old_hit_rate": 0,
+        "new_hit_rate": 100.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": true,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:35"
+  },
+  "2039604": {
+    "home_score": 0,
+    "away_score": 2,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "golden_1goals_enhanced",
+        "old_hit_rate": 44.8,
+        "new_hit_rate": 43.3,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 1
+      }
+    ],
+    "time": "2026-05-09 23:36"
+  },
+  "2039609": {
+    "home_score": 3,
+    "away_score": 1,
+    "total_goals": 4,
+    "rules": [
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 35.2,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:39"
+  },
+  "2039607": {
+    "home_score": 3,
+    "away_score": 1,
+    "total_goals": 4,
+    "rules": [
+      {
+        "type": "practical_exclude_3",
+        "old_hit_rate": 0,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:43"
+  },
+  "2039608": {
+    "home_score": 1,
+    "away_score": 0,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "golden_4goals",
+        "old_hit_rate": 66.7,
+        "new_hit_rate": 57.2,
+        "old_sample": 6,
+        "new_sample": 7,
+        "is_hit": false,
+        "target_goals": 4
+      },
+      {
+        "type": "final_黄金4球",
+        "old_hit_rate": 66.7,
+        "new_hit_rate": 57.2,
+        "old_sample": 6,
+        "new_sample": 7,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:45"
+  },
+  "2039606": {
+    "home_score": 0,
+    "away_score": 1,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "final_近况+高球降",
+        "old_hit_rate": 50,
+        "new_hit_rate": 46.7,
+        "old_sample": 14,
+        "new_sample": 15,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:47"
+  },
+  "2039610": {
+    "home_score": 2,
+    "away_score": 1,
+    "total_goals": 3,
+    "rules": [
+      {
+        "type": "practical_exclude_3",
+        "old_hit_rate": 0,
+        "new_hit_rate": 100.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": true,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:49"
+  },
+  "2039612": {
+    "home_score": 0,
+    "away_score": 1,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "final_0球20-21+近况2_5-3_5",
+        "old_hit_rate": 53.3,
+        "new_hit_rate": 50.0,
+        "old_sample": 15,
+        "new_sample": 16,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-09 23:59"
+  },
+  "2039613": {
+    "home_score": 2,
+    "away_score": 1,
+    "total_goals": 3,
+    "rules": [
+      {
+        "type": "golden_1goals_enhanced",
+        "old_hit_rate": 44.8,
+        "new_hit_rate": 43.3,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 1
+      },
+      {
+        "type": "final_让负区间3球",
+        "old_hit_rate": 35.7,
+        "new_hit_rate": 36.6,
+        "old_sample": 70,
+        "new_sample": 71,
+        "is_hit": true,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 05:51"
+  },
+  "2039614": {
+    "home_score": 1,
+    "away_score": 1,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "practical_exclude_3",
+        "old_hit_rate": 0,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 05:51"
+  },
+  "2039618": {
+    "home_score": 0,
+    "away_score": 1,
+    "total_goals": 1,
+    "rules": [
+      {
+        "type": "final_让负+3球黄金",
+        "old_hit_rate": 55.6,
+        "new_hit_rate": 52.7,
+        "old_sample": 18,
+        "new_sample": 19,
+        "is_hit": false,
+        "target_goals": 3
+      },
+      {
+        "type": "practical_recommend_3",
+        "old_hit_rate": 50,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 05:58"
+  },
+  "2039621": {
+    "home_score": 1,
+    "away_score": 2,
+    "total_goals": 3,
+    "rules": [
+      {
+        "type": "final_让负+3球黄金",
+        "old_hit_rate": 55.6,
+        "new_hit_rate": 57.9,
+        "old_sample": 18,
+        "new_sample": 19,
+        "is_hit": true,
+        "target_goals": 3
+      },
+      {
+        "type": "practical_recommend_3",
+        "old_hit_rate": 50,
+        "new_hit_rate": 100.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": true,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 06:05"
+  },
+  "2039623": {
+    "home_score": 2,
+    "away_score": 2,
+    "total_goals": 4,
+    "rules": [
+      {
+        "type": "practical_recommend_3",
+        "old_hit_rate": 50,
+        "new_hit_rate": 0.0,
+        "old_sample": 0,
+        "new_sample": 1,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 06:09"
+  },
+  "2039603": {
+    "home_score": 2,
+    "away_score": 0,
+    "total_goals": 2,
+    "rules": [
+      {
+        "type": "final_近况+高球降_关注2球_",
+        "old_hit_rate": 37.9,
+        "new_hit_rate": 36.6,
+        "old_sample": 29,
+        "new_sample": 30,
+        "is_hit": false,
+        "target_goals": 3
+      }
+    ],
+    "time": "2026-05-10 11:31"
   }
 }

@@ -1,0 +1,839 @@
+{
+  "match_id": "2039554",
+  "fetch_time": "2026-05-06 21:09:51",
+  "match_info": {
+    "home_team": "里瓦达维亚独立",
+    "away_team": "弗鲁米嫩塞",
+    "league": "南美解放者杯",
+    "time": "2026-05-07 08:30",
+    "match_num_str": "周三008",
+    "match_week": "周三",
+    "match_date": "2026-05-07",
+    "match_time": "08:30:00",
+    "match_status": "Selling",
+    "home_rank": "[Group C1]",
+    "away_rank": "[Group C4]",
+    "league_abbr": "解放者杯"
+  },
+  "score_odds": {
+    "05:00": "150.0",
+    "01:00": "6.20",
+    "05:02": "200.0",
+    "05:01": "150.0",
+    "02:04": "120.0",
+    "02:05": "400.0",
+    "02:02": "16.00",
+    "02:03": "45.00",
+    "02:00": "9.50",
+    "02:01": "7.50",
+    "03:03": "80.00",
+    "03:01": "20.00",
+    "03:02": "32.00",
+    "03:00": "21.00",
+    "00:01": "8.00",
+    "00:00": "7.80",
+    "00:03": "40.00",
+    "00:02": "14.00",
+    "00:05": "400.0",
+    "00:04": "100.0",
+    "04:02": "60.00",
+    "04:01": "55.00",
+    "04:00": "60.00",
+    "01:02": "11.00",
+    "01:01": "5.50",
+    "01:04": "80.00",
+    "01:03": "30.00",
+    "01:05": "300.0"
+  },
+  "total_goals": {
+    "3球": "3.65",
+    "4球": "7.45",
+    "5球": "16.00",
+    "6球": "29.00",
+    "7球": "45.00",
+    "0球": "7.80",
+    "1球": "3.70",
+    "2球": "3.05"
+  },
+  "had": {
+    "胜": "2.03",
+    "平": "3.00",
+    "负": "3.30"
+  },
+  "ttg": {
+    "3球": "3.65",
+    "4球": "7.45",
+    "5球": "16.00",
+    "6球": "29.00",
+    "7球": "45.00",
+    "0球": "7.80",
+    "1球": "3.70",
+    "2球": "3.05"
+  },
+  "hafu": {
+    "负负": "5.50",
+    "平平": "3.75",
+    "胜胜": "4.00",
+    "负平": "15.00",
+    "平胜": "4.50",
+    "负胜": "32.00",
+    "胜负": "38.00",
+    "胜平": "15.00",
+    "平负": "7.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "4.60",
+    "让平": "3.55",
+    "让负": "1.59"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "弗鲁米嫩",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "40",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "87",
+        "homeWinGoalMatchCnt": 8,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "40",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.1",
+        "awayGoalAvgCntRatio": "32.4",
+        "homeGoalAvgCnt": "2.3",
+        "homeGoalAvgCntRatio": "67.6",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "里独立",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "0",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "100",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 1
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.3",
+        "awayLossGoalAvgCntRatio": "65.0",
+        "homeLossGoalAvgCnt": "0.7",
+        "homeLossGoalAvgCntRatio": "35.0",
+        "totalLegCnt": 10
+      },
+      "matchId": 2512164,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 572,
+      "sportteryHomeTeamId": 1036582,
+      "sportteryMatchId": 2039554,
+      "uniformAwayTeamId": 47,
+      "uniformHomeTeamId": 57394
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 7060,
+          "awayTeamShortName": "里独立",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 49,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 312,
+          "homeTeamShortName": "弗鲁米嫩",
+          "matchDate": "2026-04-16",
+          "matchId": 2512195,
+          "seasonId": 14216,
+          "sportteryAwayTeamId": 1036582,
+          "sportteryHomeTeamId": 572,
+          "sportteryMatchId": 2039114,
+          "sportteryTournamentId": 49,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1118,
+          "tournamentShortName": "解放者杯",
+          "uniformAwayTeamId": 57394,
+          "uniformHomeTeamId": 47,
+          "uniformLeagueId": 77,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "里独立",
+        "totalLegCnt": 1,
+        "winGoalMatchCnt": 1,
+        "winProbability": "100%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 3,
+            "injuryFlag": 1,
+            "personId": 282136,
+            "personName": "萨瓦里诺",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 3,
+            "injuryFlag": 1,
+            "personId": 452566,
+            "personName": "卡诺比奥",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 711067,
+            "personName": "Jemmes",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "3"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 785113,
+            "personName": "Matheus Reis",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          }
+        ],
+        "sportteryTeamId": 572,
+        "teamId": 312,
+        "teamShortName": "弗鲁米嫩",
+        "uniformTeamId": 47
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1036582,
+        "teamId": 7060,
+        "teamShortName": "里独立",
+        "uniformTeamId": 57394
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 572,
+            "awayTeamShortName": "弗鲁米嫩",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 575,
+            "homeTeamShortName": "巴西国际",
+            "matchDate": "2026-05-04",
+            "matchId": 2468909,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 47,
+            "uniformHomeTeamId": 41,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 572,
+            "awayTeamShortName": "弗鲁米嫩",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 623,
+            "homeTeamShortName": "玻利瓦尔",
+            "matchDate": "2026-05-01",
+            "matchId": 2512181,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039423,
+            "sportteryTournamentId": 49,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 47,
+            "uniformHomeTeamId": 724,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1947,
+            "awayTeamShortName": "沙佩科",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 572,
+            "homeTeamShortName": "弗鲁米嫩",
+            "matchDate": "2026-04-27",
+            "matchId": 2468913,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 1718,
+            "uniformHomeTeamId": 47,
+            "uniformLeagueId": 31,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 572,
+            "awayTeamShortName": "弗鲁米嫩",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 0,
+            "homeTeamShortName": "蓬塔格罗",
+            "matchDate": "2026-04-24",
+            "matchId": 2513071,
+            "seasonId": 14428,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 489,
+            "tournamentShortName": "巴西杯",
+            "uniformAwayTeamId": 47,
+            "uniformHomeTeamId": 1846,
+            "uniformLeagueId": 95,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 572,
+            "awayTeamShortName": "弗鲁米嫩",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 581,
+            "homeTeamShortName": "桑托斯",
+            "matchDate": "2026-04-20",
+            "matchId": 2469036,
+            "seasonId": 14239,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 84,
+            "tournamentShortName": "巴甲",
+            "uniformAwayTeamId": 47,
+            "uniformHomeTeamId": 45,
+            "uniformLeagueId": 31,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 5,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 572,
+          "teamShortName": "弗鲁米嫩",
+          "totalLegCnt": 5,
+          "uniformTeamId": 47,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1036582,
+            "awayTeamShortName": "里独立",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2126,
+            "homeTeamShortName": "阿多西维",
+            "matchDate": "2026-05-04",
+            "matchId": 2468005,
+            "seasonId": 14282,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 98,
+            "tournamentShortName": "阿甲",
+            "uniformAwayTeamId": 57394,
+            "uniformHomeTeamId": 1472,
+            "uniformLeagueId": 2,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 0,
+            "awayTeamShortName": "拉瓜伊拉",
+            "fullCourtGoal": "4:1",
+            "halfTimeGoal": "3:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 1036582,
+            "homeTeamShortName": "里独立",
+            "matchDate": "2026-05-01",
+            "matchId": 2512180,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 1451,
+            "uniformHomeTeamId": 57394,
+            "uniformLeagueId": 77,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Gim Mendoza",
+            "fullCourtGoal": "5:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "5",
+            "homeTeamId": 1036582,
+            "homeTeamShortName": "里独立",
+            "matchDate": "2026-04-27",
+            "matchId": 2467911,
+            "seasonId": 14282,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 98,
+            "tournamentShortName": "阿甲",
+            "uniformAwayTeamId": 7490,
+            "uniformHomeTeamId": 57394,
+            "uniformLeagueId": 2,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1036582,
+            "awayTeamShortName": "里独立",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 637,
+            "homeTeamShortName": "班菲尔德",
+            "matchDate": "2026-04-21",
+            "matchId": 2467912,
+            "seasonId": 14282,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 98,
+            "tournamentShortName": "阿甲",
+            "uniformAwayTeamId": 57394,
+            "uniformHomeTeamId": 1164,
+            "uniformLeagueId": 2,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1036582,
+            "awayTeamShortName": "里独立",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 572,
+            "homeTeamShortName": "弗鲁米嫩",
+            "matchDate": "2026-04-16",
+            "matchId": 2512195,
+            "seasonId": 14216,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039114,
+            "sportteryTournamentId": 49,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1118,
+            "tournamentShortName": "解放者杯",
+            "uniformAwayTeamId": 57394,
+            "uniformHomeTeamId": 47,
+            "uniformLeagueId": 77,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 12,
+          "lossGoalCnt": 4,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 8,
+          "sportteryTeamId": 0,
+          "teamId": 1036582,
+          "teamShortName": "里独立",
+          "totalLegCnt": 5,
+          "uniformTeamId": 57394,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48189,
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 0,
+          "groupId": 13569,
+          "groupName": "Group C",
+          "lossGoalMatchCnt": 0,
+          "phaseName": "",
+          "points": "9",
+          "ranking": "1",
+          "sportteryTeamId": 1036582,
+          "teamId": 0,
+          "teamShortName": "里独立",
+          "totalLegCnt": 3,
+          "uniformTeamId": 57394,
+          "winGoalMatchCnt": 3,
+          "winProbability": "100%"
+        },
+        {
+          "drawMatchCnt": 1,
+          "groupId": 13569,
+          "groupName": "Group C",
+          "lossGoalMatchCnt": 2,
+          "phaseName": "",
+          "points": "1",
+          "ranking": "4",
+          "sportteryTeamId": 572,
+          "teamId": 0,
+          "teamShortName": "弗鲁米嫩",
+          "totalLegCnt": 3,
+          "uniformTeamId": 47,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      ],
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2390285
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 2,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 1,
+            "goalProbability": "100%",
+            "injuryFlag": 0,
+            "personId": 355909,
+            "personName": "阿拉纳",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "13"
+          },
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 1,
+            "assistProbability": "100%",
+            "goalAvgCnt": "0",
+            "goalCnt": 0,
+            "goalProbability": "0%",
+            "injuryFlag": 1,
+            "personId": 282136,
+            "personName": "萨瓦里诺",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          }
+        ],
+        "sportteryTeamId": 572,
+        "teamId": 312,
+        "teamShortName": "弗鲁米嫩",
+        "uniformTeamId": 47
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "1.3",
+            "goalCnt": 4,
+            "goalProbability": "67%",
+            "injuryFlag": 0,
+            "personId": 399440,
+            "personName": "阿尔塞",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0.7",
+            "assistCnt": 2,
+            "assistProbability": "40%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 364033,
+            "personName": "比利亚",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 3,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 674170,
+            "personName": "F. Sartori",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "43"
+          }
+        ],
+        "sportteryTeamId": 1036582,
+        "teamId": 7060,
+        "teamShortName": "里独立",
+        "uniformTeamId": 57394
+      },
+      "seasonId": 14216,
+      "seasonName": "2026",
+      "tournamentId": 1118,
+      "tournamentShortName": "解放者杯",
+      "uniformLeagueId": 77,
+      "uniformMatchId": 2390285
+    }
+  },
+  "ttg_change": {
+    "5球": {
+      "count": 1,
+      "change_pct": 6.7
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 7.4
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -6.4
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 6.4
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 12.5
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "hafu_change": {
+    "负胜": {
+      "count": 1,
+      "change_pct": 6.7
+    },
+    "平平": {
+      "count": 4,
+      "change_pct": -12.8
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": 11.1
+    },
+    "胜平": {
+      "count": 2,
+      "change_pct": 7.1
+    },
+    "负平": {
+      "count": 2,
+      "change_pct": 7.1
+    },
+    "负负": {
+      "count": 4,
+      "change_pct": 12.2
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 3.9
+    },
+    "胜负": {
+      "count": 2,
+      "change_pct": 11.8
+    },
+    "平胜": {
+      "count": 4,
+      "change_pct": -13.5
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 3,
+      "change_pct": 3.4
+    },
+    "负": {
+      "count": 3,
+      "change_pct": 11.5
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": -9.4
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 3,
+      "change_pct": -5.3
+    },
+    "让负": {
+      "count": 3,
+      "change_pct": 6.0
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": -9.8
+    }
+  },
+  "exclusion_list": [],
+  "over_under": {
+    "over_odds": 1.05,
+    "ou_line": 2.25,
+    "under_odds": 0.68,
+    "save_time": "2026-05-06 21:10"
+  }
+}

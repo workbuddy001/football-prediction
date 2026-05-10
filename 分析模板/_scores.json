@@ -22687,5 +22687,2142 @@
       "历史19.2%大3球(比对照组6.7%高2.9倍)",
       "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
     ]
+  },
+  "2039547": {
+    "match_id": "2039547",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-06 17:42",
+    "total_goals_odds": {
+      "0球": "11.00",
+      "1球": "4.00",
+      "2球": "3.35",
+      "3球": "3.55",
+      "4球": "6.00",
+      "5球": "11.50",
+      "6球": "21.00",
+      "7球": "32.00"
+    },
+    "hhad_odds": {
+      "让平": "3.90",
+      "让球": "-1",
+      "让胜": "4.95",
+      "让负": "1.49"
+    },
+    "home_team": "广岛三箭",
+    "away_team": "神户胜利船",
+    "league": "日本职业联赛",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039548": {
+    "match_id": "2039548",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-06 17:42",
+    "total_goals_odds": {
+      "0球": "10.50",
+      "1球": "4.30",
+      "2球": "3.30",
+      "3球": "3.35",
+      "4球": "5.40",
+      "5球": "13.00",
+      "6球": "26.00",
+      "7球": "42.00"
+    },
+    "hhad_odds": {
+      "让平": "3.25",
+      "让球": "-1",
+      "让胜": "3.60",
+      "让负": "1.84"
+    },
+    "home_team": "町田泽维亚",
+    "away_team": "横滨水手",
+    "league": "日本职业联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
+  },
+  "2039549": {
+    "match_id": "2039549",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-06 19:46",
+    "total_goals_odds": {
+      "0球": "8.50",
+      "1球": "4.00",
+      "2球": "3.30",
+      "3球": "3.75",
+      "4球": "6.20",
+      "5球": "13.00",
+      "6球": "22.00",
+      "7球": "31.00"
+    },
+    "hhad_odds": {
+      "让平": "3.55",
+      "让球": "-1",
+      "让胜": "4.28",
+      "让负": "1.63"
+    },
+    "home_team": "川崎前锋",
+    "away_team": "东京绿茵",
+    "league": "日本职业联赛",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039550": {
+    "match_id": "2039550",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-06 20:44",
+    "total_goals_odds": {
+      "0球": "11.00",
+      "1球": "4.70",
+      "2球": "3.50",
+      "3球": "3.60",
+      "4球": "5.60",
+      "5球": "9.50",
+      "6球": "16.00",
+      "7球": "25.00"
+    },
+    "hhad_odds": {
+      "让平": "3.75",
+      "让球": "-1",
+      "让胜": "4.90",
+      "让负": "1.52"
+    },
+    "home_team": "柏太阳神",
+    "away_team": "浦和红钻",
+    "league": "日本职业联赛",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039552": {
+    "match_id": "2039552",
+    "home_score": 3,
+    "away_score": 1,
+    "score_str": "3:1",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-07 06:40",
+    "total_goals_odds": {
+      "0球": "24.00",
+      "1球": "8.00",
+      "2球": "4.75",
+      "3球": "3.30",
+      "4球": "4.00",
+      "5球": "6.50",
+      "6球": "11.00",
+      "7球": "13.00"
+    },
+    "hhad_odds": {
+      "让平": "3.90",
+      "让球": "-1",
+      "让胜": "1.68",
+      "让负": "3.60"
+    },
+    "home_team": "吉达国民",
+    "away_team": "穆拜赖兹征服",
+    "league": "沙特职业联赛",
+    "big3_signal_type": "关注3球+0>=22",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "关注3球 + 0球=24.0>=22区间",
+      "历史数据：倾向大3球(4+球)，小3球概率较低"
+    ]
+  },
+  "2039551": {
+    "match_id": "2039551",
+    "home_score": 3,
+    "away_score": 1,
+    "score_str": "3:1",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-07 06:41",
+    "total_goals_odds": {
+      "0球": "22.00",
+      "1球": "7.60",
+      "2球": "4.40",
+      "3球": "3.20",
+      "4球": "4.00",
+      "5球": "6.90",
+      "6球": "12.50",
+      "7球": "16.00"
+    },
+    "hhad_odds": {
+      "让平": "4.02",
+      "让球": "-1",
+      "让胜": "3.75",
+      "让负": "1.63"
+    },
+    "home_team": "阿尔梅勒城",
+    "away_team": "格拉夫夏普",
+    "league": "荷兰乙级联赛",
+    "big3_signal_type": "关注3球+0>=22",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "关注3球 + 0球=22.0>=22区间",
+      "历史数据：倾向大3球(4+球)，小3球概率较低"
+    ]
+  },
+  "2039553": {
+    "match_id": "2039553",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-07 06:47",
+    "total_goals_odds": {
+      "0球": "45.00",
+      "1球": "14.50",
+      "2球": "7.00",
+      "3球": "4.75",
+      "4球": "4.30",
+      "5球": "5.00",
+      "6球": "6.30",
+      "7球": "4.60"
+    },
+    "hhad_odds": {
+      "让平": "3.91",
+      "让球": "-1",
+      "让胜": "2.33",
+      "让负": "2.25"
+    },
+    "home_team": "拜仁慕尼黑",
+    "away_team": "巴黎圣日尔曼",
+    "league": "欧洲冠军联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039554": {
+    "match_id": "2039554",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-07 11:21",
+    "total_goals_odds": {
+      "0球": "7.80",
+      "1球": "3.70",
+      "2球": "3.05",
+      "3球": "3.65",
+      "4球": "7.45",
+      "5球": "16.00",
+      "6球": "29.00",
+      "7球": "45.00"
+    },
+    "hhad_odds": {
+      "让平": "3.55",
+      "让球": "-1",
+      "让胜": "4.60",
+      "让负": "1.59"
+    },
+    "home_team": "里瓦达维亚独立",
+    "away_team": "弗鲁米嫩塞",
+    "league": "南美解放者杯",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039555": {
+    "match_id": "2039555",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-07 11:21",
+    "total_goals_odds": {
+      "0球": "6.20",
+      "1球": "3.25",
+      "2球": "2.85",
+      "3球": "4.30",
+      "4球": "8.80",
+      "5球": "23.00",
+      "6球": "34.00",
+      "7球": "65.00"
+    },
+    "hhad_odds": {
+      "让平": "4.30",
+      "让球": "-1",
+      "让胜": "7.85",
+      "让负": "1.30"
+    },
+    "home_team": "圣菲独立",
+    "away_team": "科林蒂安",
+    "league": "南美解放者杯",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039556": {
+    "match_id": "2039556",
+    "home_score": 2,
+    "away_score": 4,
+    "score_str": "2:4",
+    "total_goals": 6,
+    "tg_result": "5+球",
+    "record_time": "2026-05-08 09:27",
+    "total_goals_odds": {
+      "0球": "31.00",
+      "1球": "9.25",
+      "2球": "5.50",
+      "3球": "3.50",
+      "4球": "3.65",
+      "5球": "6.00",
+      "6球": "9.25",
+      "7球": "10.25"
+    },
+    "hhad_odds": {
+      "让平": "3.83",
+      "让球": "+2",
+      "让胜": "1.98",
+      "让负": "2.75"
+    },
+    "home_team": "利雅得青年",
+    "away_team": "利雅得胜利",
+    "league": "沙特职业联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039557": {
+    "match_id": "2039557",
+    "home_score": 3,
+    "away_score": 1,
+    "score_str": "3:1",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-08 09:28",
+    "total_goals_odds": {
+      "0球": "12.00",
+      "1球": "4.85",
+      "2球": "3.50",
+      "3球": "3.20",
+      "4球": "5.05",
+      "5球": "10.00",
+      "6球": "23.00",
+      "7球": "41.00"
+    },
+    "hhad_odds": {
+      "让平": "2.84",
+      "让球": "-1",
+      "让胜": "3.25",
+      "让负": "2.13"
+    },
+    "home_team": "弗赖堡",
+    "away_team": "布拉加",
+    "league": "欧罗巴联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
+  },
+  "2039558": {
+    "match_id": "2039558",
+    "home_score": 4,
+    "away_score": 0,
+    "score_str": "4:0",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-08 09:28",
+    "total_goals_odds": {
+      "0球": "12.50",
+      "1球": "5.40",
+      "2球": "3.35",
+      "3球": "3.30",
+      "4球": "4.90",
+      "5球": "9.75",
+      "6球": "20.00",
+      "7球": "32.00"
+    },
+    "hhad_odds": {
+      "让平": "3.15",
+      "让球": "-1",
+      "让胜": "3.00",
+      "让负": "2.09"
+    },
+    "home_team": "阿斯顿维拉",
+    "away_team": "诺丁汉森林",
+    "league": "欧罗巴联赛",
+    "big3_signal_type": "3球黄金赔率",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 62,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "3球3.2-3.4黄金赔率区间",
+      "历史40%大3球(+11.1% vs基准)"
+    ]
+  },
+  "2039559": {
+    "match_id": "2039559",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-08 09:29",
+    "total_goals_odds": {
+      "0球": "12.00",
+      "1球": "5.00",
+      "2球": "3.30",
+      "3球": "3.30",
+      "4球": "5.75",
+      "5球": "9.75",
+      "6球": "19.00",
+      "7球": "28.00"
+    },
+    "hhad_odds": {
+      "让平": "3.55",
+      "让球": "-1",
+      "让胜": "3.60",
+      "让负": "1.76"
+    },
+    "home_team": "斯特拉斯堡",
+    "away_team": "巴列卡诺",
+    "league": "欧洲协会联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
+  },
+  "2039560": {
+    "match_id": "2039560",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-08 09:29",
+    "total_goals_odds": {
+      "0球": "12.00",
+      "1球": "4.60",
+      "2球": "3.05",
+      "3球": "3.35",
+      "4球": "5.95",
+      "5球": "11.50",
+      "6球": "22.00",
+      "7球": "37.00"
+    },
+    "hhad_odds": {
+      "让平": "3.15",
+      "让球": "-1",
+      "让胜": "2.46",
+      "让负": "2.47"
+    },
+    "home_team": "米拉索尔",
+    "away_team": "基多体育大学",
+    "league": "南美解放者杯",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039573": {
+    "match_id": "2039573",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 08:29",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "4.60",
+      "2球": "3.80",
+      "3球": "3.70",
+      "4球": "4.90",
+      "5球": "8.00",
+      "6球": "16.00",
+      "7球": "22.00"
+    },
+    "hhad_odds": {
+      "让平": "3.50",
+      "让球": "+1",
+      "让胜": "2.10",
+      "让负": "2.72"
+    },
+    "home_team": "TPS图尔库",
+    "away_team": "赫尔辛基",
+    "league": "芬兰超级联赛",
+    "big3_signal_type": "0球15-16+近况偏低",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "⭐0球15-16 + 近况<2.5",
+      "历史62.5%大3球(+33.6%)"
+    ]
+  },
+  "2039574": {
+    "match_id": "2039574",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 08:30",
+    "total_goals_odds": {
+      "0球": "13.00",
+      "1球": "5.40",
+      "2球": "3.70",
+      "3球": "3.35",
+      "4球": "5.10",
+      "5球": "8.50",
+      "6球": "15.00",
+      "7球": "23.00"
+    },
+    "hhad_odds": {
+      "让平": "4.55",
+      "让球": "-1",
+      "让胜": "5.75",
+      "让负": "1.36"
+    },
+    "home_team": "坦佩雷山猫",
+    "away_team": "AC奥卢",
+    "league": "芬兰超级联赛",
+    "big3_signal_type": "0球13-16+3球黄金区间",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "🎯0球13-16 + 3球3.2-3.4组合",
+      "历史56.5%大3球(+27.6% vs基准)"
+    ]
+  },
+  "2039575": {
+    "match_id": "2039575",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-09 08:31",
+    "total_goals_odds": {
+      "0球": "31.00",
+      "1球": "9.50",
+      "2球": "5.10",
+      "3球": "3.55",
+      "4球": "3.90",
+      "5球": "5.75",
+      "6球": "9.00",
+      "7球": "10.25"
+    },
+    "hhad_odds": {
+      "让平": "3.96",
+      "让球": "-1",
+      "让胜": "1.85",
+      "让负": "2.97"
+    },
+    "home_team": "帕德博恩",
+    "away_team": "卡尔斯鲁厄",
+    "league": "德国乙级联赛",
+    "big3_signal_type": null,
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "大3球",
+    "big3_result": "unknown",
+    "big3_reasons": []
+  },
+  "2039577": {
+    "match_id": "2039577",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 08:32",
+    "total_goals_odds": {
+      "0球": "11.00",
+      "1球": "4.75",
+      "2球": "3.30",
+      "3球": "3.40",
+      "4球": "5.60",
+      "5球": "10.50",
+      "6球": "20.00",
+      "7球": "31.00"
+    },
+    "hhad_odds": {
+      "让平": "3.24",
+      "让球": "-1",
+      "让胜": "3.36",
+      "让负": "1.91"
+    },
+    "home_team": "埃尔夫斯堡",
+    "away_team": "布鲁马波卡纳",
+    "league": "瑞典超级联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
+  },
+  "2039578": {
+    "match_id": "2039578",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 08:34",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "6.25",
+      "2球": "4.00",
+      "3球": "3.25",
+      "4球": "4.40",
+      "5球": "7.70",
+      "6球": "14.00",
+      "7球": "22.00"
+    },
+    "hhad_odds": {
+      "让平": "3.95",
+      "让球": "+1",
+      "让胜": "1.54",
+      "让负": "4.40"
+    },
+    "home_team": "汉坎",
+    "away_team": "瓦勒伦加",
+    "league": "挪威超级联赛",
+    "big3_signal_type": "关注3球+0=16+近况3.0-3.5",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=16 + 近况3.0-3.5",
+      "历史数据：66.7%小3球(0-2球)，样本小⚠️"
+    ]
+  },
+  "2039583": {
+    "match_id": "2039583",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "total_goals": 0,
+    "tg_result": "0球",
+    "record_time": "2026-05-09 08:35",
+    "total_goals_odds": {
+      "0球": "10.00",
+      "1球": "3.85",
+      "2球": "3.10",
+      "3球": "3.50",
+      "4球": "6.70",
+      "5球": "13.00",
+      "6球": "26.00",
+      "7球": "45.00"
+    },
+    "hhad_odds": {
+      "让平": "3.85",
+      "让球": "+1",
+      "让胜": "1.48",
+      "让负": "5.15"
+    },
+    "home_team": "赫尔城",
+    "away_team": "米尔沃尔",
+    "league": "英格兰冠军联赛",
+    "big3_signal_type": "关注3球+0球10-12+近况2.5-3.0",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐⭐ 关注3球 + 0球10-12 + 近况2.5-3.0",
+      "历史数据：100%无大3球(0%大3球)，63.6%小3球(0-2球)",
+      "最强排除大3球信号！比赛结果只能是小3球或恰好3球"
+    ]
+  },
+  "2039584": {
+    "match_id": "2039584",
+    "home_score": 3,
+    "away_score": 2,
+    "score_str": "3:2",
+    "total_goals": 5,
+    "tg_result": "5+球",
+    "record_time": "2026-05-09 08:36",
+    "total_goals_odds": {
+      "0球": "11.00",
+      "1球": "4.35",
+      "2球": "3.00",
+      "3球": "3.40",
+      "4球": "6.20",
+      "5球": "12.50",
+      "6球": "25.00",
+      "7球": "40.00"
+    },
+    "hhad_odds": {
+      "让平": "3.70",
+      "让球": "-1",
+      "让胜": "5.90",
+      "让负": "1.45"
+    },
+    "home_team": "莱万特",
+    "away_team": "奥萨苏纳",
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "大3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039582": {
+    "match_id": "2039582",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 08:37",
+    "total_goals_odds": {
+      "0球": "23.00",
+      "1球": "7.50",
+      "2球": "4.55",
+      "3球": "3.10",
+      "4球": "3.95",
+      "5球": "7.25",
+      "6球": "12.50",
+      "7球": "15.50"
+    },
+    "hhad_odds": {
+      "让平": "3.65",
+      "让球": "-1",
+      "让胜": "1.98",
+      "让负": "2.85"
+    },
+    "home_team": "朗斯",
+    "away_team": "南特",
+    "league": "法国甲级联赛",
+    "big3_signal_type": "关注3球+0>=22",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=23.0>=22区间",
+      "历史数据：倾向大3球(4+球)，小3球概率较低"
+    ]
+  },
+  "2039581": {
+    "match_id": "2039581",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-09 08:39",
+    "total_goals_odds": {
+      "0球": "11.00",
+      "1球": "5.05",
+      "2球": "2.70",
+      "3球": "3.50",
+      "4球": "6.20",
+      "5球": "12.00",
+      "6球": "25.00",
+      "7球": "40.00"
+    },
+    "hhad_odds": {
+      "让平": "4.10",
+      "让球": "-1",
+      "让胜": "5.66",
+      "让负": "1.41"
+    },
+    "home_team": "都灵",
+    "away_team": "萨索洛",
+    "league": "意大利甲级联赛",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039580": {
+    "match_id": "2039580",
+    "home_score": 3,
+    "away_score": 2,
+    "score_str": "3:2",
+    "total_goals": 5,
+    "tg_result": "5+球",
+    "record_time": "2026-05-09 08:41",
+    "total_goals_odds": {
+      "0球": "28.00",
+      "1球": "9.50",
+      "2球": "5.15",
+      "3球": "3.40",
+      "4球": "3.80",
+      "5球": "6.00",
+      "6球": "10.00",
+      "7球": "10.50"
+    },
+    "hhad_odds": {
+      "让平": "3.95",
+      "让球": "-1",
+      "让胜": "2.53",
+      "让负": "2.08"
+    },
+    "home_team": "多特蒙德",
+    "away_team": "法兰克福",
+    "league": "德国甲级联赛",
+    "big3_signal_type": "3球黄金赔率",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 62,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "3球3.2-3.4黄金赔率区间",
+      "历史40%大3球(+11.1% vs基准)"
+    ]
+  },
+  "2039579": {
+    "match_id": "2039579",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "total_goals": 0,
+    "tg_result": "0球",
+    "record_time": "2026-05-09 08:45",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "6.10",
+      "2球": "4.00",
+      "3球": "3.45",
+      "4球": "4.60",
+      "5球": "7.50",
+      "6球": "13.00",
+      "7球": "17.00"
+    },
+    "hhad_odds": {
+      "让平": "3.45",
+      "让球": "-1",
+      "让胜": "2.66",
+      "让负": "2.16"
+    },
+    "home_team": "库奥皮奥",
+    "away_team": "塞伊奈约基",
+    "league": "芬兰超级联赛",
+    "big3_signal_type": "关注3球+0=16+近况3.0-3.5",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=16 + 近况3.0-3.5",
+      "历史数据：66.7%小3球(0-2球)，样本小⚠️"
+    ]
+  },
+  "2039576": {
+    "match_id": "2039576",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 08:51",
+    "total_goals_odds": {
+      "0球": "19.00",
+      "1球": "6.70",
+      "2球": "4.25",
+      "3球": "3.25",
+      "4球": "4.10",
+      "5球": "7.60",
+      "6球": "13.50",
+      "7球": "17.00"
+    },
+    "hhad_odds": {
+      "让平": "3.80",
+      "让球": "+1",
+      "让胜": "1.71",
+      "让负": "3.55"
+    },
+    "home_team": "凯泽斯劳滕",
+    "away_team": "比勒费尔德",
+    "league": "德国乙级联赛",
+    "big3_signal_type": "3球黄金赔率",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 85,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "3球3.2-3.4黄金赔率区间",
+      "历史40%大3球(+11.1% vs基准)",
+      "⭐0球=19极端大比分信号(+40%)",
+      "历史100%大3球(4+球)"
+    ]
+  },
+  "2039594": {
+    "match_id": "2039594",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 16:09",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "5.70",
+      "2球": "3.85",
+      "3球": "3.40",
+      "4球": "4.55",
+      "5球": "8.50",
+      "6球": "14.00",
+      "7球": "18.50"
+    },
+    "hhad_odds": {
+      "让平": "3.90",
+      "让球": "-1",
+      "让胜": "4.00",
+      "让负": "1.61"
+    },
+    "home_team": "奥克兰FC",
+    "away_team": "阿德莱德联",
+    "league": "澳大利亚超级联赛",
+    "big3_signal_type": "0球13-16+3球黄金区间",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "🎯0球13-16 + 3球3.2-3.4组合",
+      "历史56.5%大3球(+27.6% vs基准)"
+    ]
+  },
+  "2039595": {
+    "match_id": "2039595",
+    "home_score": 3,
+    "away_score": 2,
+    "score_str": "3:2",
+    "total_goals": 5,
+    "tg_result": "5+球",
+    "record_time": "2026-05-09 17:07",
+    "total_goals_odds": {
+      "0球": "14.00",
+      "1球": "5.60",
+      "2球": "3.60",
+      "3球": "3.40",
+      "4球": "5.10",
+      "5球": "8.50",
+      "6球": "14.00",
+      "7球": "21.00"
+    },
+    "hhad_odds": {
+      "让平": "3.25",
+      "让球": "-1",
+      "让胜": "2.95",
+      "让负": "2.08"
+    },
+    "home_team": "大阪樱花",
+    "away_team": "长崎航海",
+    "league": "日本职业联赛",
+    "big3_signal_type": "关注3球+0=14",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=14（无需黄金3球前置）",
+      "历史数据：73.3%大3球(4+球)，样本15场"
+    ]
+  },
+  "2039596": {
+    "match_id": "2039596",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "total_goals": 0,
+    "tg_result": "0球",
+    "record_time": "2026-05-09 17:33",
+    "total_goals_odds": {
+      "0球": "10.00",
+      "1球": "3.95",
+      "2球": "3.20",
+      "3球": "3.70",
+      "4球": "6.30",
+      "5球": "12.00",
+      "6球": "22.00",
+      "7球": "34.00"
+    },
+    "hhad_odds": {
+      "让平": "3.25",
+      "让球": "+1",
+      "让胜": "2.49",
+      "让负": "2.38"
+    },
+    "home_team": "光州FC",
+    "away_team": "江原FC",
+    "league": "韩国职业联赛",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039597": {
+    "match_id": "2039597",
+    "home_score": 0,
+    "away_score": 2,
+    "score_str": "0:2",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 20:03",
+    "total_goals_odds": {
+      "0球": "7.80",
+      "1球": "3.85",
+      "2球": "3.20",
+      "3球": "3.95",
+      "4球": "7.00",
+      "5球": "12.00",
+      "6球": "22.00",
+      "7球": "36.00"
+    },
+    "hhad_odds": {
+      "让平": "3.40",
+      "让球": "-1",
+      "让胜": "4.45",
+      "让负": "1.64"
+    },
+    "home_team": "大田市民",
+    "away_team": "浦项制铁",
+    "league": "韩国职业联赛",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039598": {
+    "match_id": "2039598",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 21:29",
+    "total_goals_odds": {
+      "0球": "20.00",
+      "1球": "7.00",
+      "2球": "4.25",
+      "3球": "3.30",
+      "4球": "4.40",
+      "5球": "7.00",
+      "6球": "11.50",
+      "7球": "15.00"
+    },
+    "hhad_odds": {
+      "让平": "3.55",
+      "让球": "+1",
+      "让胜": "1.82",
+      "让负": "3.35"
+    },
+    "home_team": "波鸿",
+    "away_team": "汉诺威96",
+    "league": "德国乙级联赛",
+    "big3_signal_type": "关注3球+0=20-21",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 40,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "关注3球 + 0球=20.0",
+      "历史数据：倾向小3球"
+    ]
+  },
+  "2039600": {
+    "match_id": "2039600",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "total_goals": 0,
+    "tg_result": "0球",
+    "record_time": "2026-05-09 21:31",
+    "total_goals_odds": {
+      "0球": "13.00",
+      "1球": "5.10",
+      "2球": "3.35",
+      "3球": "3.45",
+      "4球": "5.20",
+      "5球": "9.00",
+      "6球": "17.00",
+      "7球": "32.00"
+    },
+    "hhad_odds": {
+      "让平": "3.70",
+      "让球": "-1",
+      "让胜": "4.15",
+      "让负": "1.62"
+    },
+    "home_team": "米德尔斯堡",
+    "away_team": "南安普敦",
+    "league": "英格兰冠军联赛",
+    "big3_signal_type": "0球13-16基础",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 64,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "0球13-16区间",
+      "历史39.1%大3球(+10.2% vs基准28.9%)"
+    ]
+  },
+  "2039599": {
+    "match_id": "2039599",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 21:31",
+    "total_goals_odds": {
+      "0球": "17.00",
+      "1球": "6.50",
+      "2球": "4.05",
+      "3球": "3.55",
+      "4球": "4.45",
+      "5球": "7.50",
+      "6球": "12.00",
+      "7球": "14.00"
+    },
+    "hhad_odds": {
+      "让平": "3.75",
+      "让球": "-1",
+      "让胜": "3.43",
+      "让负": "1.75"
+    },
+    "home_team": "利物浦",
+    "away_team": "切尔西",
+    "league": "英格兰超级联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 80,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球",
+      "⭐基于0球=17特殊区间推荐小3球"
+    ]
+  },
+  "2039601": {
+    "match_id": "2039601",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 23:33",
+    "total_goals_odds": {
+      "0球": "12.00",
+      "1球": "5.10",
+      "2球": "3.50",
+      "3球": "3.45",
+      "4球": "5.20",
+      "5球": "9.00",
+      "6球": "17.00",
+      "7球": "27.00"
+    },
+    "hhad_odds": {
+      "让平": "3.65",
+      "让球": "-1",
+      "让胜": "4.35",
+      "让负": "1.60"
+    },
+    "home_team": "埃尔切",
+    "away_team": "阿拉维斯",
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "0球<=12反向",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 61,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⚠️0球<=12区间（反向信号）",
+      "庄家造热0球，实际大3球仅18.8%"
+    ]
+  },
+  "2039602": {
+    "match_id": "2039602",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-09 23:34",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "5.60",
+      "2球": "3.90",
+      "3球": "3.50",
+      "4球": "4.65",
+      "5球": "8.00",
+      "6球": "13.50",
+      "7球": "19.00"
+    },
+    "hhad_odds": {
+      "让平": "3.70",
+      "让球": "-1",
+      "让胜": "3.48",
+      "让负": "1.75"
+    },
+    "home_team": "萨尔普斯堡",
+    "away_team": "腓特烈斯塔",
+    "league": "挪威超级联赛",
+    "big3_signal_type": "关注3球+0=15-16",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 68,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=15.0",
+      "历史数据：40-44%大3球，20-22%小3球"
+    ]
+  },
+  "2039604": {
+    "match_id": "2039604",
+    "home_score": 0,
+    "away_score": 2,
+    "score_str": "0:2",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-09 23:36",
+    "total_goals_odds": {
+      "0球": "8.50",
+      "1球": "3.50",
+      "2球": "3.40",
+      "3球": "3.60",
+      "4球": "6.50",
+      "5球": "15.00",
+      "6球": "30.00",
+      "7球": "40.00"
+    },
+    "hhad_odds": {
+      "让平": "3.90",
+      "让球": "-1",
+      "让胜": "5.95",
+      "让负": "1.42"
+    },
+    "home_team": "卡利亚里",
+    "away_team": "乌迪内斯",
+    "league": "意大利甲级联赛",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039609": {
+    "match_id": "2039609",
+    "home_score": 3,
+    "away_score": 1,
+    "score_str": "3:1",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-09 23:39",
+    "total_goals_odds": {
+      "0球": "35.00",
+      "1球": "10.50",
+      "2球": "5.50",
+      "3球": "4.10",
+      "4球": "4.00",
+      "5球": "5.30",
+      "6球": "7.50",
+      "7球": "7.50"
+    },
+    "hhad_odds": {
+      "让平": "4.25",
+      "让球": "-1",
+      "让胜": "3.95",
+      "让负": "1.56"
+    },
+    "home_team": "斯图加特",
+    "away_team": "勒沃库森",
+    "league": "德国甲级联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039605": {
+    "match_id": "2039605",
+    "home_score": 1,
+    "away_score": 4,
+    "score_str": "1:4",
+    "total_goals": 5,
+    "tg_result": "5+球",
+    "record_time": "2026-05-09 23:41",
+    "total_goals_odds": {
+      "0球": "9.50",
+      "1球": "4.10",
+      "2球": "3.15",
+      "3球": "3.70",
+      "4球": "6.30",
+      "5球": "12.00",
+      "6球": "22.00",
+      "7球": "35.00"
+    },
+    "hhad_odds": {
+      "让平": "3.45",
+      "让球": "+1",
+      "让胜": "1.71",
+      "让负": "3.94"
+    },
+    "home_team": "代格福什",
+    "away_team": "米亚尔比",
+    "league": "瑞典超级联赛",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "大3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039607": {
+    "match_id": "2039607",
+    "home_score": 3,
+    "away_score": 1,
+    "score_str": "3:1",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-09 23:43",
+    "total_goals_odds": {
+      "0球": "25.00",
+      "1球": "8.00",
+      "2球": "4.70",
+      "3球": "3.65",
+      "4球": "4.15",
+      "5球": "6.30",
+      "6球": "9.75",
+      "7球": "10.00"
+    },
+    "hhad_odds": {
+      "让平": "3.80",
+      "让球": "-1",
+      "让胜": "3.35",
+      "让负": "1.76"
+    },
+    "home_team": "奥格斯堡",
+    "away_team": "门兴格拉德巴赫",
+    "league": "德国甲级联赛",
+    "big3_signal_type": "关注3球+0>=22",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "关注3球 + 0球=25.0>=22区间",
+      "历史数据：倾向大3球(4+球)，小3球概率较低"
+    ]
+  },
+  "2039608": {
+    "match_id": "2039608",
+    "home_score": 1,
+    "away_score": 0,
+    "score_str": "1:0",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 23:45",
+    "total_goals_odds": {
+      "0球": "30.00",
+      "1球": "9.15",
+      "2球": "4.90",
+      "3球": "3.70",
+      "4球": "4.05",
+      "5球": "5.75",
+      "6球": "8.75",
+      "7球": "9.75"
+    },
+    "hhad_odds": {
+      "让平": "3.93",
+      "让球": "-1",
+      "让胜": "1.94",
+      "让负": "2.78"
+    },
+    "home_team": "霍芬海姆",
+    "away_team": "云达不来梅",
+    "league": "德国甲级联赛",
+    "big3_signal_type": null,
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": []
+  },
+  "2039606": {
+    "match_id": "2039606",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 23:47",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "5.90",
+      "2球": "3.95",
+      "3球": "3.50",
+      "4球": "4.55",
+      "5球": "7.50",
+      "6球": "13.00",
+      "7球": "19.00"
+    },
+    "hhad_odds": {
+      "让平": "3.30",
+      "让球": "+1",
+      "让胜": "2.35",
+      "让负": "2.50"
+    },
+    "home_team": "IFK哥德堡",
+    "away_team": "哈马比",
+    "league": "瑞典超级联赛",
+    "big3_signal_type": "关注3球+0=16+近况3.0-3.5",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=16 + 近况3.0-3.5",
+      "历史数据：66.7%小3球(0-2球)，样本小⚠️"
+    ]
+  },
+  "2039610": {
+    "match_id": "2039610",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-09 23:49",
+    "total_goals_odds": {
+      "0球": "22.00",
+      "1球": "7.50",
+      "2球": "4.45",
+      "3球": "3.55",
+      "4球": "4.15",
+      "5球": "6.55",
+      "6球": "10.50",
+      "7球": "12.50"
+    },
+    "hhad_odds": {
+      "让平": "3.80",
+      "让球": "-2",
+      "让胜": "2.73",
+      "让负": "2.00"
+    },
+    "home_team": "莱比锡红牛",
+    "away_team": "圣保利",
+    "league": "德国甲级联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039611": {
+    "match_id": "2039611",
+    "home_score": 0,
+    "away_score": 0,
+    "score_str": "0:0",
+    "total_goals": 0,
+    "tg_result": "0球",
+    "record_time": "2026-05-09 23:53",
+    "total_goals_odds": {
+      "0球": "14.00",
+      "1球": "5.60",
+      "2球": "3.60",
+      "3球": "3.35",
+      "4球": "4.60",
+      "5球": "9.00",
+      "6球": "17.00",
+      "7球": "25.00"
+    },
+    "hhad_odds": {
+      "让平": "3.75",
+      "让球": "+1",
+      "让胜": "1.75",
+      "让负": "3.45"
+    },
+    "home_team": "桑德兰",
+    "away_team": "曼彻斯特联",
+    "league": "英格兰超级联赛",
+    "big3_signal_type": "关注3球+0=14",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=14（无需黄金3球前置）",
+      "历史数据：73.3%大3球(4+球)，样本15场"
+    ]
+  },
+  "2039612": {
+    "match_id": "2039612",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-09 23:59",
+    "total_goals_odds": {
+      "0球": "20.00",
+      "1球": "6.80",
+      "2球": "4.20",
+      "3球": "3.10",
+      "4球": "4.00",
+      "5球": "7.70",
+      "6球": "14.50",
+      "7球": "21.00"
+    },
+    "hhad_odds": {
+      "让平": "4.08",
+      "让球": "+1",
+      "让胜": "1.47",
+      "让负": "4.90"
+    },
+    "home_team": "富勒姆",
+    "away_team": "伯恩茅斯",
+    "league": "英格兰超级联赛",
+    "big3_signal_type": "关注3球+0=20-21",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 40,
+    "big3_actual": "小3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "关注3球 + 0球=20.0",
+      "历史数据：倾向小3球"
+    ]
+  },
+  "2039613": {
+    "match_id": "2039613",
+    "home_score": 2,
+    "away_score": 1,
+    "score_str": "2:1",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-10 05:51",
+    "total_goals_odds": {
+      "0球": "8.00",
+      "1球": "3.80",
+      "2球": "3.00",
+      "3球": "3.75",
+      "4球": "7.30",
+      "5球": "14.00",
+      "6球": "28.00",
+      "7球": "45.00"
+    },
+    "hhad_odds": {
+      "让平": "3.30",
+      "让球": "-1",
+      "让胜": "4.26",
+      "让负": "1.69"
+    },
+    "home_team": "塞维利亚",
+    "away_team": "西班牙人",
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "0球低赔+高球下降",
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "恰好3球",
+    "big3_result": "unknown",
+    "big3_reasons": [
+      "⭐0球<10 + 高球下降信号",
+      "历史19.2%大3球(比对照组6.7%高2.9倍)",
+      "庄家压低0球赔率但高球(5/6/7)赔率下降→真实大球信号"
+    ]
+  },
+  "2039614": {
+    "match_id": "2039614",
+    "home_score": 1,
+    "away_score": 1,
+    "score_str": "1:1",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-10 05:51",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "5.50",
+      "2球": "3.80",
+      "3球": "3.35",
+      "4球": "4.70",
+      "5球": "8.50",
+      "6球": "15.00",
+      "7球": "21.00"
+    },
+    "hhad_odds": {
+      "让平": "3.65",
+      "让球": "-1",
+      "让胜": "3.45",
+      "让负": "1.77"
+    },
+    "home_team": "威廉二世",
+    "away_team": "瓦尔韦克",
+    "league": "荷兰乙级联赛",
+    "big3_signal_type": "关注3球+0=15-16",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 68,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=15.0",
+      "历史数据：40-44%大3球，20-22%小3球"
+    ]
+  },
+  "2039615": {
+    "match_id": "2039615",
+    "home_score": 0,
+    "away_score": 3,
+    "score_str": "0:3",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-10 05:54",
+    "total_goals_odds": {
+      "0球": "13.00",
+      "1球": "4.90",
+      "2球": "3.45",
+      "3球": "3.50",
+      "4球": "5.30",
+      "5球": "9.00",
+      "6球": "17.00",
+      "7球": "26.00"
+    },
+    "hhad_odds": {
+      "让平": "3.60",
+      "让球": "+1",
+      "让胜": "1.75",
+      "让负": "3.57"
+    },
+    "home_team": "拉齐奥",
+    "away_team": "国际米兰",
+    "league": "意大利甲级联赛",
+    "big3_signal_type": "0球13-16基础",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 71,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "0球13-16区间",
+      "历史39.1%大3球(+10.2% vs基准28.9%)",
+      "+近况>=3.5：历史46.2%大3球"
+    ]
+  },
+  "2039616": {
+    "match_id": "2039616",
+    "home_score": 3,
+    "away_score": 0,
+    "score_str": "3:0",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-10 05:56",
+    "total_goals_odds": {
+      "0球": "28.00",
+      "1球": "8.50",
+      "2球": "4.90",
+      "3球": "3.50",
+      "4球": "4.05",
+      "5球": "5.80",
+      "6球": "9.50",
+      "7球": "11.50"
+    },
+    "hhad_odds": {
+      "让平": "4.00",
+      "让球": "-1",
+      "让胜": "1.75",
+      "让负": "3.25"
+    },
+    "home_team": "曼彻斯特城",
+    "away_team": "布伦特福德",
+    "league": "英格兰超级联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039617": {
+    "match_id": "2039617",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-10 05:57",
+    "total_goals_odds": {
+      "0球": "50.00",
+      "1球": "13.00",
+      "2球": "6.25",
+      "3球": "4.10",
+      "4球": "4.20",
+      "5球": "4.90",
+      "6球": "6.80",
+      "7球": "6.10"
+    },
+    "hhad_odds": {
+      "让平": "4.10",
+      "让球": "+1",
+      "让胜": "2.56",
+      "让负": "2.02"
+    },
+    "home_team": "沃尔夫斯堡",
+    "away_team": "拜仁慕尼黑",
+    "league": "德国甲级联赛",
+    "big3_signal_type": "排除3球",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 72,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "排除3球信号",
+      "历史数据：35-40%大3球，15-17%小3球"
+    ]
+  },
+  "2039618": {
+    "match_id": "2039618",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-10 05:58",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "6.00",
+      "2球": "3.80",
+      "3球": "3.40",
+      "4球": "4.65",
+      "5球": "7.75",
+      "6球": "13.50",
+      "7球": "20.00"
+    },
+    "hhad_odds": {
+      "让平": "3.60",
+      "让球": "-1",
+      "让胜": "3.85",
+      "让负": "1.69"
+    },
+    "home_team": "马德里竞技",
+    "away_team": "维戈塞尔塔",
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "关注3球+0=16+近况3.0-3.5",
+    "final_signal_type": "",
+    "big3_prediction": "小3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "⭐关注3球 + 0球=16 + 近况3.0-3.5",
+      "历史数据：66.7%小3球(0-2球)，样本小⚠️"
+    ]
+  },
+  "2039619": {
+    "match_id": "2039619",
+    "home_score": 2,
+    "away_score": 4,
+    "score_str": "2:4",
+    "total_goals": 6,
+    "tg_result": "5+球",
+    "record_time": "2026-05-10 06:01",
+    "total_goals_odds": {
+      "0球": "25.00",
+      "1球": "7.80",
+      "2球": "4.60",
+      "3球": "3.60",
+      "4球": "4.30",
+      "5球": "5.70",
+      "6球": "10.00",
+      "7球": "12.00"
+    },
+    "hhad_odds": {
+      "让平": "3.70",
+      "让球": "+1",
+      "让胜": "2.07",
+      "让负": "2.66"
+    },
+    "home_team": "多伦多FC",
+    "away_team": "迈阿密国际",
+    "league": "美国职业大联盟",
+    "big3_signal_type": null,
+    "final_signal_type": "",
+    "big3_prediction": "不确定",
+    "big3_confidence": 35,
+    "big3_actual": "大3球",
+    "big3_result": "unknown",
+    "big3_reasons": []
+  },
+  "2039620": {
+    "match_id": "2039620",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-10 06:03",
+    "total_goals_odds": {
+      "0球": "23.00",
+      "1球": "7.40",
+      "2球": "4.60",
+      "3球": "3.35",
+      "4球": "4.15",
+      "5球": "6.60",
+      "6球": "10.50",
+      "7球": "14.00"
+    },
+    "hhad_odds": {
+      "让平": "3.65",
+      "让球": "+1",
+      "让胜": "2.85",
+      "让负": "1.98"
+    },
+    "home_team": "迈季迈阿宽广",
+    "away_team": "胡巴尔卡德西亚",
+    "league": "沙特职业联赛",
+    "big3_signal_type": "关注3球+0>=22",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=23.0>=22区间",
+      "历史数据：倾向大3球(4+球)，小3球概率较低"
+    ]
+  },
+  "2039621": {
+    "match_id": "2039621",
+    "home_score": 1,
+    "away_score": 2,
+    "score_str": "1:2",
+    "total_goals": 3,
+    "tg_result": "3球",
+    "record_time": "2026-05-10 06:05",
+    "total_goals_odds": {
+      "0球": "15.00",
+      "1球": "5.30",
+      "2球": "3.70",
+      "3球": "3.40",
+      "4球": "4.90",
+      "5球": "8.25",
+      "6球": "16.00",
+      "7球": "22.00"
+    },
+    "hhad_odds": {
+      "让平": "3.80",
+      "让球": "-1",
+      "让胜": "4.40",
+      "让负": "1.57"
+    },
+    "home_team": "阿纳西",
+    "away_team": "罗德兹",
+    "league": "法国乙级联赛",
+    "big3_signal_type": "关注3球+0=15-16",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 68,
+    "big3_actual": "恰好3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "关注3球 + 0球=15.0",
+      "历史数据：40-44%大3球，20-22%小3球"
+    ]
+  },
+  "2039622": {
+    "match_id": "2039622",
+    "home_score": 0,
+    "away_score": 1,
+    "score_str": "0:1",
+    "total_goals": 1,
+    "tg_result": "1球",
+    "record_time": "2026-05-10 06:07",
+    "total_goals_odds": {
+      "0球": "12.50",
+      "1球": "4.50",
+      "2球": "3.35",
+      "3球": "3.40",
+      "4球": "5.50",
+      "5球": "10.00",
+      "6球": "21.00",
+      "7球": "33.00"
+    },
+    "hhad_odds": {
+      "让平": "3.25",
+      "让球": "+1",
+      "让胜": "2.74",
+      "让负": "2.19"
+    },
+    "home_team": "莱切",
+    "away_team": "尤文图斯",
+    "league": "意大利甲级联赛",
+    "big3_signal_type": "3球黄金赔率",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 62,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "3球3.2-3.4黄金赔率区间",
+      "历史40%大3球(+11.1% vs基准)"
+    ]
+  },
+  "2039623": {
+    "match_id": "2039623",
+    "home_score": 2,
+    "away_score": 2,
+    "score_str": "2:2",
+    "total_goals": 4,
+    "tg_result": "4球",
+    "record_time": "2026-05-10 06:09",
+    "total_goals_odds": {
+      "0球": "16.00",
+      "1球": "6.00",
+      "2球": "3.85",
+      "3球": "3.40",
+      "4球": "4.80",
+      "5球": "7.50",
+      "6球": "13.00",
+      "7球": "19.00"
+    },
+    "hhad_odds": {
+      "让平": "4.40",
+      "让球": "-1",
+      "让胜": "5.35",
+      "让负": "1.40"
+    },
+    "home_team": "皇家社会",
+    "away_team": "皇家贝蒂斯",
+    "league": "西班牙甲级联赛",
+    "big3_signal_type": "0球13-16+3球黄金区间",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "大3球",
+    "big3_result": "hit",
+    "big3_reasons": [
+      "🎯0球13-16 + 3球3.2-3.4组合",
+      "历史56.5%大3球(+27.6% vs基准)",
+      "+近况>=3.5：历史46.2%大3球"
+    ]
+  },
+  "2039603": {
+    "match_id": "2039603",
+    "home_score": 2,
+    "away_score": 0,
+    "score_str": "2:0",
+    "total_goals": 2,
+    "tg_result": "2球",
+    "record_time": "2026-05-10 11:31",
+    "total_goals_odds": {
+      "0球": "13.00",
+      "1球": "5.10",
+      "2球": "3.50",
+      "3球": "3.40",
+      "4球": "5.20",
+      "5球": "9.00",
+      "6球": "17.00",
+      "7球": "26.00"
+    },
+    "hhad_odds": {
+      "让平": "3.15",
+      "让球": "-1",
+      "让胜": "2.38",
+      "让负": "2.55"
+    },
+    "home_team": "国际图尔库",
+    "away_team": "雅罗",
+    "league": "芬兰超级联赛",
+    "big3_signal_type": "0球13-16+3球黄金区间",
+    "final_signal_type": "",
+    "big3_prediction": "大3球",
+    "big3_confidence": 75,
+    "big3_actual": "小3球",
+    "big3_result": "miss",
+    "big3_reasons": [
+      "🎯0球13-16 + 3球3.2-3.4组合",
+      "历史56.5%大3球(+27.6% vs基准)",
+      "⭐+近况<2.5加成：历史66.7%大3球"
+    ]
   }
 }

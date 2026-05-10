@@ -1,0 +1,1095 @@
+{
+  "match_id": "2039607",
+  "fetch_time": "2026-05-09 20:18:39",
+  "match_info": {
+    "home_team": "奥格斯堡",
+    "away_team": "门兴格拉德巴赫",
+    "league": "德国甲级联赛",
+    "time": "2026-05-09 21:30",
+    "match_num_str": "周六014",
+    "match_week": "周六",
+    "match_date": "2026-05-09",
+    "match_time": "21:30:00",
+    "match_status": "Selling",
+    "home_rank": "[德甲9]",
+    "away_rank": "[德甲11]",
+    "league_abbr": "德甲"
+  },
+  "score_odds": {
+    "05:00": "90.00",
+    "01:00": "12.00",
+    "05:02": "70.00",
+    "05:01": "60.00",
+    "02:04": "50.00",
+    "02:05": "150.0",
+    "02:02": "9.50",
+    "02:03": "20.00",
+    "02:00": "12.00",
+    "02:01": "7.50",
+    "03:03": "26.00",
+    "03:01": "12.00",
+    "03:02": "16.00",
+    "03:00": "19.00",
+    "00:01": "18.00",
+    "00:00": "25.00",
+    "00:03": "45.00",
+    "00:02": "23.00",
+    "00:05": "250.0",
+    "00:04": "100.0",
+    "04:02": "33.00",
+    "04:01": "25.00",
+    "04:00": "38.00",
+    "01:02": "10.00",
+    "01:01": "8.25",
+    "01:04": "50.00",
+    "01:03": "20.00",
+    "01:05": "150.0"
+  },
+  "total_goals": {
+    "3球": "3.65",
+    "4球": "4.15",
+    "5球": "6.30",
+    "6球": "9.75",
+    "7球": "10.00",
+    "0球": "25.00",
+    "1球": "8.00",
+    "2球": "4.70"
+  },
+  "had": {
+    "胜": "1.80",
+    "平": "3.75",
+    "负": "3.25"
+  },
+  "ttg": {
+    "3球": "3.65",
+    "4球": "4.15",
+    "5球": "6.30",
+    "6球": "9.75",
+    "7球": "10.00",
+    "0球": "25.00",
+    "1球": "8.00",
+    "2球": "4.70"
+  },
+  "hafu": {
+    "负负": "5.25",
+    "平平": "6.90",
+    "胜胜": "2.90",
+    "负平": "13.50",
+    "平胜": "5.00",
+    "负胜": "18.00",
+    "胜负": "25.00",
+    "胜平": "13.50",
+    "平负": "7.75"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.35",
+    "让平": "3.80",
+    "让负": "1.76"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "门兴",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "47",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "17",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.3",
+        "awayGoalAvgCntRatio": "43.3",
+        "homeGoalAvgCnt": "1.7",
+        "homeGoalAvgCntRatio": "56.7",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "奥格斯堡",
+      "last": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "63",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.3",
+        "awayLossGoalAvgCntRatio": "43.3",
+        "homeLossGoalAvgCnt": "1.7",
+        "homeLossGoalAvgCntRatio": "56.7",
+        "totalLegCnt": 10
+      },
+      "matchId": 2355694,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "23",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "63",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 148,
+      "sportteryHomeTeamId": 808,
+      "sportteryMatchId": 2039607,
+      "uniformAwayTeamId": 290,
+      "uniformHomeTeamId": 243
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1000,
+          "awayTeamShortName": "奥格斯堡",
+          "fullCourtGoal": "4:0",
+          "gmLeagueId": 37,
+          "halfTimeGoal": "3:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 971,
+          "homeTeamShortName": "门兴",
+          "matchDate": "2026-01-11",
+          "matchId": 2355654,
+          "seasonId": 13419,
+          "sportteryAwayTeamId": 808,
+          "sportteryHomeTeamId": 148,
+          "sportteryMatchId": 2036863,
+          "sportteryTournamentId": 37,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 78,
+          "tournamentShortName": "德甲",
+          "uniformAwayTeamId": 243,
+          "uniformHomeTeamId": 290,
+          "uniformLeagueId": 1803,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 1000,
+          "awayTeamShortName": "奥格斯堡",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 37,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 971,
+          "homeTeamShortName": "门兴",
+          "matchDate": "2025-02-22",
+          "matchId": 2144392,
+          "seasonId": 11956,
+          "sportteryAwayTeamId": 808,
+          "sportteryHomeTeamId": 148,
+          "sportteryMatchId": 2029996,
+          "sportteryTournamentId": 37,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 78,
+          "tournamentShortName": "德甲",
+          "uniformAwayTeamId": 243,
+          "uniformHomeTeamId": 290,
+          "uniformLeagueId": 1803,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 971,
+          "awayTeamShortName": "门兴",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1000,
+          "homeTeamShortName": "奥格斯堡",
+          "matchDate": "2024-10-05",
+          "matchId": 2144344,
+          "seasonId": 11956,
+          "sportteryAwayTeamId": 148,
+          "sportteryHomeTeamId": 808,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 78,
+          "tournamentShortName": "德甲",
+          "uniformAwayTeamId": 290,
+          "uniformHomeTeamId": 243,
+          "uniformLeagueId": 1803,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1000,
+          "awayTeamShortName": "奥格斯堡",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 37,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 971,
+          "homeTeamShortName": "门兴",
+          "matchDate": "2024-01-22",
+          "matchId": 2009640,
+          "seasonId": 10943,
+          "sportteryAwayTeamId": 808,
+          "sportteryHomeTeamId": 148,
+          "sportteryMatchId": 1023178,
+          "sportteryTournamentId": 37,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 78,
+          "tournamentShortName": "德甲",
+          "uniformAwayTeamId": 243,
+          "uniformHomeTeamId": 290,
+          "uniformLeagueId": 1803,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "4",
+          "awayTeamId": 971,
+          "awayTeamShortName": "门兴",
+          "fullCourtGoal": "4:4",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "3:3",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 1000,
+          "homeTeamShortName": "奥格斯堡",
+          "matchDate": "2023-08-19",
+          "matchId": 2009652,
+          "seasonId": 10943,
+          "sportteryAwayTeamId": 148,
+          "sportteryHomeTeamId": 808,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 8,
+          "tournamentId": 78,
+          "tournamentShortName": "德甲",
+          "uniformAwayTeamId": 290,
+          "uniformHomeTeamId": 243,
+          "uniformLeagueId": 1803,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 1,
+        "lossProbability": "20%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "奥格斯堡",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 3,
+        "winProbability": "60%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 32,
+            "injuryFlag": 0,
+            "personId": 272851,
+            "personName": "埃尔韦迪",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 32,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 1,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 0,
+            "personId": 569416,
+            "personName": "J. Castrop",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 1,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 262405,
+            "personName": "T. Kleindienst",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 541505,
+            "personName": "T. Čvančara",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "31"
+          },
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 832450,
+            "personName": "C. Herrmann",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "34"
+          }
+        ],
+        "sportteryTeamId": 148,
+        "teamId": 971,
+        "teamShortName": "门兴",
+        "uniformTeamId": 290
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 274908,
+            "personName": "D. Giannoulis",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "13"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 646826,
+            "personName": "M. Kücüksahin",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "42"
+          }
+        ],
+        "sportteryTeamId": 808,
+        "teamId": 1000,
+        "teamShortName": "奥格斯堡",
+        "uniformTeamId": 243
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 140,
+            "awayTeamShortName": "多特蒙德",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 148,
+            "homeTeamShortName": "门兴",
+            "matchDate": "2026-05-03",
+            "matchId": 2355703,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039495,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 121,
+            "uniformHomeTeamId": 290,
+            "uniformLeagueId": 1803,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 148,
+            "awayTeamShortName": "门兴",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 154,
+            "homeTeamShortName": "沃夫斯堡",
+            "matchDate": "2026-04-25",
+            "matchId": 2355713,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039318,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 290,
+            "uniformHomeTeamId": 323,
+            "uniformLeagueId": 1803,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 147,
+            "awayTeamShortName": "美因茨",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 148,
+            "homeTeamShortName": "门兴",
+            "matchDate": "2026-04-20",
+            "matchId": 2355721,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039202,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 194,
+            "uniformHomeTeamId": 290,
+            "uniformLeagueId": 1803,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 148,
+            "awayTeamShortName": "门兴",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1619,
+            "homeTeamShortName": "莱红牛",
+            "matchDate": "2026-04-11",
+            "matchId": 2355733,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039017,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 290,
+            "uniformHomeTeamId": 347,
+            "uniformLeagueId": 1803,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1587,
+            "awayTeamShortName": "海登海姆",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 148,
+            "homeTeamShortName": "门兴",
+            "matchDate": "2026-04-04",
+            "matchId": 2355739,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038817,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 480,
+            "uniformHomeTeamId": 290,
+            "uniformLeagueId": 1803,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 4,
+          "lossGoalCnt": 4,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 0,
+          "sportteryTeamId": 0,
+          "teamId": 148,
+          "teamShortName": "门兴",
+          "totalLegCnt": 5,
+          "uniformTeamId": 290,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 808,
+            "awayTeamShortName": "奥格斯堡",
+            "fullCourtGoal": "1:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 153,
+            "homeTeamShortName": "不来梅",
+            "matchDate": "2026-05-02",
+            "matchId": 2355704,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039456,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 243,
+            "uniformHomeTeamId": 292,
+            "uniformLeagueId": 1803,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 170,
+            "awayTeamShortName": "法兰克福",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 808,
+            "homeTeamShortName": "奥格斯堡",
+            "matchDate": "2026-04-25",
+            "matchId": 2355712,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039320,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 538,
+            "uniformHomeTeamId": 243,
+            "uniformLeagueId": 1803,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 808,
+            "awayTeamShortName": "奥格斯堡",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 146,
+            "homeTeamShortName": "勒沃库森",
+            "matchDate": "2026-04-18",
+            "matchId": 2355725,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039167,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 243,
+            "uniformHomeTeamId": 195,
+            "uniformLeagueId": 1803,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 158,
+            "awayTeamShortName": "霍芬海姆",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 808,
+            "homeTeamShortName": "奥格斯堡",
+            "matchDate": "2026-04-11",
+            "matchId": 2355730,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038976,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 193,
+            "uniformHomeTeamId": 243,
+            "uniformLeagueId": 1803,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 808,
+            "awayTeamShortName": "奥格斯堡",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 142,
+            "homeTeamShortName": "汉堡",
+            "matchDate": "2026-04-04",
+            "matchId": 2355736,
+            "seasonId": 13419,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038822,
+            "sportteryTournamentId": 37,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 78,
+            "tournamentShortName": "德甲",
+            "uniformAwayTeamId": 243,
+            "uniformHomeTeamId": 258,
+            "uniformLeagueId": 1803,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 9,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 3,
+          "sportteryTeamId": 0,
+          "teamId": 808,
+          "teamShortName": "奥格斯堡",
+          "totalLegCnt": 5,
+          "uniformTeamId": 243,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47912,
+      "seasonId": 13419,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 7,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 14,
+          "phaseName": "",
+          "points": "40",
+          "ranking": "9",
+          "sportteryTeamId": 808,
+          "teamId": 0,
+          "teamShortName": "奥格斯堡",
+          "totalLegCnt": 32,
+          "uniformTeamId": 243,
+          "winGoalMatchCnt": 11,
+          "winProbability": "34%"
+        },
+        {
+          "drawMatchCnt": 11,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 13,
+          "phaseName": "",
+          "points": "35",
+          "ranking": "11",
+          "sportteryTeamId": 148,
+          "teamId": 0,
+          "teamShortName": "门兴",
+          "totalLegCnt": 32,
+          "uniformTeamId": 290,
+          "winGoalMatchCnt": 8,
+          "winProbability": "25%"
+        }
+      ],
+      "tournamentId": 78,
+      "tournamentShortName": "德甲",
+      "uniformLeagueId": 1803,
+      "uniformMatchId": 2390953
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 12,
+            "goalProbability": "34%",
+            "injuryFlag": 0,
+            "personId": 271788,
+            "personName": "高迪诺",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 4,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 352759,
+            "personName": "迪克斯",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "4"
+          },
+          {
+            "appearanceCnt": 30,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 532919,
+            "personName": "町野修斗",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 22,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          }
+        ],
+        "sportteryTeamId": 148,
+        "teamId": 971,
+        "teamShortName": "门兴",
+        "uniformTeamId": 290
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 30,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 541836,
+            "personName": "里德",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 597174,
+            "personName": "A. Kade",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 402947,
+            "personName": "A. Claude Maurice",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 25,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          }
+        ],
+        "sportteryTeamId": 808,
+        "teamId": 1000,
+        "teamShortName": "奥格斯堡",
+        "uniformTeamId": 243
+      },
+      "seasonId": 13419,
+      "seasonName": "2025/2026",
+      "tournamentId": 78,
+      "tournamentShortName": "德甲",
+      "uniformLeagueId": 1803,
+      "uniformMatchId": 2390953
+    }
+  },
+  "ttg_change": {
+    "6球": {
+      "count": 2,
+      "change_pct": -25.0
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": -5.7
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 26.0
+    },
+    "0球": {
+      "count": 2,
+      "change_pct": 35.1
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -13.1
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": -37.5
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 20.5
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": 2.8
+    }
+  },
+  "hafu_change": {
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": -7.4
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 5.3
+    },
+    "胜胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": -5.3
+    },
+    "负负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 2,
+      "change_pct": -3.2
+    },
+    "负": {
+      "count": 1,
+      "change_pct": 3.2
+    },
+    "平": {
+      "count": 1,
+      "change_pct": 2.7
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 1,
+      "change_pct": -3.5
+    },
+    "让负": {
+      "count": 1,
+      "change_pct": 1.7
+    },
+    "让平": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "4球",
+      "ttg_odds": "4.15",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "9.50",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "100.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "38.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "20.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(4.15)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "6球",
+      "ttg_odds": "9.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:01",
+          "odds": "60.00",
+          "special": false
+        },
+        {
+          "score": "02:04",
+          "odds": "50.00",
+          "special": false
+        },
+        {
+          "score": "03:03",
+          "odds": "26.00",
+          "special": false
+        },
+        {
+          "score": "04:02",
+          "odds": "33.00",
+          "special": false
+        },
+        {
+          "score": "01:05",
+          "odds": "150.0",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(9.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "4.70",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "23.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "8.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.70（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 1.1,
+    "ou_line": 3.25,
+    "under_odds": 0.65,
+    "save_time": "2026-05-09 20:23"
+  }
+}

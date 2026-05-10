@@ -1,0 +1,941 @@
+{
+  "match_id": "2039552",
+  "fetch_time": "2026-05-06 21:05:17",
+  "match_info": {
+    "home_team": "吉达国民",
+    "away_team": "穆拜赖兹征服",
+    "league": "沙特职业联赛",
+    "time": "2026-05-07 02:00",
+    "match_num_str": "周三006",
+    "match_week": "周三",
+    "match_date": "2026-05-07",
+    "match_time": "02:00:00",
+    "match_status": "Selling",
+    "home_rank": "[沙职3]",
+    "away_rank": "[沙职12]",
+    "league_abbr": "沙职"
+  },
+  "score_odds": {
+    "05:00": "27.00",
+    "01:00": "10.00",
+    "05:02": "58.00",
+    "05:01": "30.00",
+    "02:04": "120.0",
+    "02:05": "550.0",
+    "02:02": "16.00",
+    "02:03": "50.00",
+    "02:00": "7.80",
+    "02:01": "6.50",
+    "03:03": "50.00",
+    "03:01": "8.50",
+    "03:02": "17.00",
+    "03:00": "9.00",
+    "00:01": "26.00",
+    "00:00": "24.00",
+    "00:03": "120.0",
+    "00:02": "55.00",
+    "00:05": "850.0",
+    "00:04": "350.0",
+    "04:02": "28.00",
+    "04:01": "14.50",
+    "04:00": "13.00",
+    "01:02": "21.00",
+    "01:01": "10.50",
+    "01:04": "175.0",
+    "01:03": "70.00",
+    "01:05": "550.0"
+  },
+  "total_goals": {
+    "3球": "3.30",
+    "4球": "4.00",
+    "5球": "6.50",
+    "6球": "11.00",
+    "7球": "13.00",
+    "0球": "24.00",
+    "1球": "8.00",
+    "2球": "4.75"
+  },
+  "had": {
+    "胜": "1.20",
+    "平": "5.50",
+    "负": "8.75"
+  },
+  "ttg": {
+    "3球": "3.30",
+    "4球": "4.00",
+    "5球": "6.50",
+    "6球": "11.00",
+    "7球": "13.00",
+    "0球": "24.00",
+    "1球": "8.00",
+    "2球": "4.75"
+  },
+  "hafu": {
+    "负负": "14.00",
+    "平平": "9.50",
+    "胜胜": "1.67",
+    "负平": "19.00",
+    "平胜": "4.10",
+    "负胜": "17.00",
+    "胜负": "60.00",
+    "胜平": "19.00",
+    "平负": "19.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "1.68",
+    "让平": "3.90",
+    "让负": "3.60"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "穆拜征服",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "30",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "30",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "80",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.2",
+        "awayGoalAvgCntRatio": "44.4",
+        "homeGoalAvgCnt": "1.5",
+        "homeGoalAvgCntRatio": "55.6",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "吉达国民",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "37",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.6",
+        "awayLossGoalAvgCntRatio": "64.0",
+        "homeLossGoalAvgCnt": "0.9",
+        "homeLossGoalAvgCntRatio": "36.0",
+        "totalLegCnt": 10
+      },
+      "matchId": 2425091,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 7,
+        "awayScoreRatio": "17",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "77",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 1915,
+      "sportteryHomeTeamId": 1666,
+      "sportteryMatchId": 2039552,
+      "uniformAwayTeamId": 631,
+      "uniformHomeTeamId": 738
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 3509,
+          "awayTeamShortName": "吉达国民",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 9285,
+          "homeTeamShortName": "穆拜征服",
+          "matchDate": "2025-12-26",
+          "matchId": 2425033,
+          "seasonId": 13802,
+          "sportteryAwayTeamId": 1666,
+          "sportteryHomeTeamId": 1915,
+          "sportteryMatchId": 2036338,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 738,
+          "uniformHomeTeamId": 631,
+          "uniformLeagueId": 1767,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 9285,
+          "awayTeamShortName": "穆拜征服",
+          "fullCourtGoal": "2:0",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 3509,
+          "homeTeamShortName": "吉达国民",
+          "matchDate": "2025-02-08",
+          "matchId": 2163187,
+          "seasonId": 12092,
+          "sportteryAwayTeamId": 1915,
+          "sportteryHomeTeamId": 1666,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 631,
+          "uniformHomeTeamId": 738,
+          "uniformLeagueId": 1767,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 3509,
+          "awayTeamShortName": "吉达国民",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 9285,
+          "homeTeamShortName": "穆拜征服",
+          "matchDate": "2024-08-27",
+          "matchId": 2163243,
+          "seasonId": 12092,
+          "sportteryAwayTeamId": 1666,
+          "sportteryHomeTeamId": 1915,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 738,
+          "uniformHomeTeamId": 631,
+          "uniformLeagueId": 1767,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 9285,
+          "awayTeamShortName": "穆拜征服",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 3509,
+          "homeTeamShortName": "吉达国民",
+          "matchDate": "2024-03-03",
+          "matchId": 2026810,
+          "seasonId": 10985,
+          "sportteryAwayTeamId": 1915,
+          "sportteryHomeTeamId": 1666,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 631,
+          "uniformHomeTeamId": 738,
+          "uniformLeagueId": 1767,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 3509,
+          "awayTeamShortName": "吉达国民",
+          "fullCourtGoal": "5:1",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "5",
+          "homeTeamId": 9285,
+          "homeTeamShortName": "穆拜征服",
+          "matchDate": "2023-09-03",
+          "matchId": 2027045,
+          "seasonId": 10985,
+          "sportteryAwayTeamId": 1666,
+          "sportteryHomeTeamId": 1915,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 6,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 738,
+          "uniformHomeTeamId": 631,
+          "uniformLeagueId": 1767,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 3,
+        "lossProbability": "60%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "吉达国民",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1915,
+        "teamId": 9285,
+        "teamShortName": "穆拜征服",
+        "uniformTeamId": 631
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1666,
+        "teamId": 3509,
+        "teamShortName": "吉达国民",
+        "uniformTeamId": 738
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 2065842,
+            "awayTeamShortName": "新未来SC",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1915,
+            "homeTeamShortName": "穆拜征服",
+            "matchDate": "2026-05-02",
+            "matchId": 2425144,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57270,
+            "uniformHomeTeamId": 631,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1915,
+            "awayTeamShortName": "穆拜征服",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1228,
+            "homeTeamShortName": "利雅青年",
+            "matchDate": "2026-04-29",
+            "matchId": 2425079,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 631,
+            "uniformHomeTeamId": 883,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2065834,
+            "awayTeamShortName": "赛哈海湾",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1915,
+            "homeTeamShortName": "穆拜征服",
+            "matchDate": "2026-04-24",
+            "matchId": 2425084,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57275,
+            "uniformHomeTeamId": 631,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1915,
+            "awayTeamShortName": "穆拜征服",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2065836,
+            "homeTeamShortName": "奈季沟渠",
+            "matchDate": "2026-04-05",
+            "matchId": 2424932,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 631,
+            "uniformHomeTeamId": 57274,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1009,
+            "awayTeamShortName": "利雅新月",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1915,
+            "homeTeamShortName": "穆拜征服",
+            "matchDate": "2026-03-15",
+            "matchId": 2425107,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 732,
+            "uniformHomeTeamId": 631,
+            "uniformLeagueId": 1767,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 4,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 1915,
+          "teamShortName": "穆拜征服",
+          "totalLegCnt": 5,
+          "uniformTeamId": 631,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2065836,
+            "awayTeamShortName": "奈季沟渠",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "3:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 1666,
+            "homeTeamShortName": "吉达国民",
+            "matchDate": "2026-05-04",
+            "matchId": 2425148,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57274,
+            "uniformHomeTeamId": 738,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1666,
+            "awayTeamShortName": "吉达国民",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1560,
+            "homeTeamShortName": "利雅胜利",
+            "matchDate": "2026-04-30",
+            "matchId": 2425080,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039413,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 738,
+            "uniformHomeTeamId": 2122,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1489,
+            "awayTeamShortName": "町田泽维",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1666,
+            "homeTeamShortName": "吉达国民",
+            "matchDate": "2026-04-26",
+            "matchId": 2519202,
+            "seasonId": 13305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039327,
+            "sportteryTournamentId": 1,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 75,
+            "tournamentShortName": "亚冠精英",
+            "uniformAwayTeamId": 271,
+            "uniformHomeTeamId": 738,
+            "uniformLeagueId": 41,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1666,
+            "awayTeamShortName": "吉达国民",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 561,
+            "homeTeamShortName": "神户胜利",
+            "matchDate": "2026-04-21",
+            "matchId": 2518194,
+            "seasonId": 13305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039239,
+            "sportteryTournamentId": 1,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 75,
+            "tournamentShortName": "亚冠精英",
+            "uniformAwayTeamId": 738,
+            "uniformHomeTeamId": 362,
+            "uniformLeagueId": 41,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 0,
+            "awayTeamShortName": "柔佛",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1666,
+            "homeTeamShortName": "吉达国民",
+            "matchDate": "2026-04-17",
+            "matchId": 2517753,
+            "seasonId": 13305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 75,
+            "tournamentShortName": "亚冠精英",
+            "uniformAwayTeamId": 1430,
+            "uniformHomeTeamId": 738,
+            "uniformLeagueId": 41,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 8,
+          "lossGoalCnt": 4,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 4,
+          "sportteryTeamId": 0,
+          "teamId": 1666,
+          "teamShortName": "吉达国民",
+          "totalLegCnt": 5,
+          "uniformTeamId": 738,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48113,
+      "seasonId": 13802,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 6,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "69",
+          "ranking": "3",
+          "sportteryTeamId": 1666,
+          "teamId": 0,
+          "teamShortName": "吉达国民",
+          "totalLegCnt": 30,
+          "uniformTeamId": 738,
+          "winGoalMatchCnt": 21,
+          "winProbability": "70%"
+        },
+        {
+          "drawMatchCnt": 9,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 13,
+          "phaseName": "",
+          "points": "33",
+          "ranking": "12",
+          "sportteryTeamId": 1915,
+          "teamId": 0,
+          "teamShortName": "穆拜征服",
+          "totalLegCnt": 30,
+          "uniformTeamId": 631,
+          "winGoalMatchCnt": 8,
+          "winProbability": "27%"
+        }
+      ],
+      "tournamentId": 125,
+      "tournamentShortName": "沙职",
+      "uniformLeagueId": 1767,
+      "uniformMatchId": 2390289
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 8,
+            "assistProbability": "36%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "24%",
+            "injuryFlag": 0,
+            "personId": 285347,
+            "personName": "M. Batna",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 24,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "5%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "22%",
+            "injuryFlag": 0,
+            "personId": 220813,
+            "personName": "本德布卡",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "28"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 7,
+            "goalProbability": "19%",
+            "injuryFlag": 0,
+            "personId": 405659,
+            "personName": "M. Vargas",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 1915,
+        "teamId": 9285,
+        "teamShortName": "穆拜征服",
+        "uniformTeamId": 631
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "15%",
+            "goalAvgCnt": "1.0",
+            "goalCnt": 27,
+            "goalProbability": "47%",
+            "injuryFlag": 0,
+            "personId": 277348,
+            "personName": "托尼",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 24,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 319023,
+            "personName": "克谢",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "79"
+          },
+          {
+            "appearanceCnt": 20,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 5,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 727088,
+            "personName": "V. Atangana Edoa",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "6"
+          }
+        ],
+        "sportteryTeamId": 1666,
+        "teamId": 3509,
+        "teamShortName": "吉达国民",
+        "uniformTeamId": 738
+      },
+      "seasonId": 13802,
+      "seasonName": "2025/2026",
+      "tournamentId": 125,
+      "tournamentShortName": "沙职",
+      "uniformLeagueId": 1767,
+      "uniformMatchId": 2390289
+    }
+  },
+  "ttg_change": {
+    "5球": {
+      "count": 5,
+      "change_pct": 2.4
+    },
+    "6球": {
+      "count": 5,
+      "change_pct": 10.0
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -4.3
+    },
+    "4球": {
+      "count": 4,
+      "change_pct": -5.9
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 4,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 4,
+      "change_pct": 6.7
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 4.4
+    }
+  },
+  "hafu_change": {
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 3.8
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 11.8
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 12.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": -3.5
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": 1.2
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 3,
+      "change_pct": 6.2
+    },
+    "负": {
+      "count": 4,
+      "change_pct": 19.0
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": -4.0
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 4,
+      "change_pct": 4.0
+    },
+    "让负": {
+      "count": 4,
+      "change_pct": 12.5
+    },
+    "让胜": {
+      "count": 4,
+      "change_pct": -7.7
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "4.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "7.80",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "55.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "10.50",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(4.75)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.85,
+    "ou_line": 3.25,
+    "under_odds": 0.85,
+    "save_time": "2026-05-06 21:05"
+  }
+}

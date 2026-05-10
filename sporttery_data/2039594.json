@@ -1,0 +1,1022 @@
+{
+  "match_id": "2039594",
+  "fetch_time": "2026-05-09 13:46:38",
+  "match_info": {
+    "home_team": "奥克兰FC",
+    "away_team": "阿德莱德联",
+    "league": "澳大利亚超级联赛",
+    "time": "2026-05-09 14:00",
+    "match_num_str": "周六001",
+    "match_week": "周六",
+    "match_date": "2026-05-09",
+    "match_time": "14:00:00",
+    "match_status": "Selling",
+    "home_rank": "[澳超3]",
+    "away_rank": "[澳超2]",
+    "league_abbr": "澳超"
+  },
+  "score_odds": {
+    "05:00": "100.0",
+    "01:00": "9.00",
+    "05:02": "150.0",
+    "05:01": "100.0",
+    "02:04": "70.00",
+    "02:05": "150.0",
+    "02:02": "9.75",
+    "02:03": "26.00",
+    "02:00": "10.50",
+    "02:01": "7.50",
+    "03:03": "32.00",
+    "03:01": "15.00",
+    "03:02": "22.00",
+    "03:00": "19.00",
+    "00:01": "11.00",
+    "00:00": "16.00",
+    "00:03": "45.00",
+    "00:02": "19.00",
+    "00:05": "250.0",
+    "00:04": "100.0",
+    "04:02": "60.00",
+    "04:01": "35.00",
+    "04:00": "40.00",
+    "01:02": "9.50",
+    "01:01": "6.50",
+    "01:04": "70.00",
+    "01:03": "22.00",
+    "01:05": "150.0"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "4.55",
+    "5球": "8.50",
+    "6球": "14.00",
+    "7球": "18.50",
+    "0球": "16.00",
+    "1球": "5.70",
+    "2球": "3.85"
+  },
+  "had": {
+    "胜": "2.00",
+    "平": "3.20",
+    "负": "3.16"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "4.55",
+    "5球": "8.50",
+    "6球": "14.00",
+    "7球": "18.50",
+    "0球": "16.00",
+    "1球": "5.70",
+    "2球": "3.85"
+  },
+  "hafu": {
+    "负负": "5.20",
+    "平平": "5.50",
+    "胜胜": "3.25",
+    "负平": "12.50",
+    "平胜": "5.35",
+    "负胜": "20.00",
+    "胜负": "24.00",
+    "胜平": "12.50",
+    "平负": "7.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "4.00",
+    "让平": "3.90",
+    "让负": "1.61"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "阿德莱德",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "47",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "63",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.0",
+        "awayGoalAvgCntRatio": "51.3",
+        "homeGoalAvgCnt": "1.9",
+        "homeGoalAvgCntRatio": "48.7",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "奥克兰FC",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "25",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 4
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.0",
+        "awayLossGoalAvgCntRatio": "45.5",
+        "homeLossGoalAvgCnt": "1.2",
+        "homeLossGoalAvgCntRatio": "54.5",
+        "totalLegCnt": 10
+      },
+      "matchId": 2521071,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "17",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 2
+      },
+      "sportteryAwayTeamId": 1096,
+      "sportteryHomeTeamId": 1055698,
+      "sportteryMatchId": 2039594,
+      "uniformAwayTeamId": 139,
+      "uniformHomeTeamId": 57122
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 60597,
+          "awayTeamShortName": "奥克兰FC",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 143,
+          "homeTeamShortName": "阿德莱德",
+          "matchDate": "2026-04-03",
+          "matchId": 2445062,
+          "seasonId": 13971,
+          "sportteryAwayTeamId": 1055698,
+          "sportteryHomeTeamId": 1096,
+          "sportteryMatchId": 2038782,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 57122,
+          "uniformHomeTeamId": 139,
+          "uniformLeagueId": 70,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 143,
+          "awayTeamShortName": "阿德莱德",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 60597,
+          "homeTeamShortName": "奥克兰FC",
+          "matchDate": "2025-11-01",
+          "matchId": 2445025,
+          "seasonId": 13971,
+          "sportteryAwayTeamId": 1096,
+          "sportteryHomeTeamId": 1055698,
+          "sportteryMatchId": 2034586,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 139,
+          "uniformHomeTeamId": 57122,
+          "uniformLeagueId": 70,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "4",
+          "awayTeamId": 143,
+          "awayTeamShortName": "阿德莱德",
+          "fullCourtGoal": "4:4",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 60597,
+          "homeTeamShortName": "奥克兰FC",
+          "matchDate": "2025-03-01",
+          "matchId": 2182852,
+          "seasonId": 12214,
+          "sportteryAwayTeamId": 1096,
+          "sportteryHomeTeamId": 1055698,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 8,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 139,
+          "uniformHomeTeamId": 57122,
+          "uniformLeagueId": 70,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 60597,
+          "awayTeamShortName": "奥克兰FC",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 2,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 143,
+          "homeTeamShortName": "阿德莱德",
+          "matchDate": "2025-01-22",
+          "matchId": 2182860,
+          "seasonId": 12214,
+          "sportteryAwayTeamId": 1055698,
+          "sportteryHomeTeamId": 1096,
+          "sportteryMatchId": 1029616,
+          "sportteryTournamentId": 2,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 39,
+          "tournamentShortName": "澳超",
+          "uniformAwayTeamId": 57122,
+          "uniformHomeTeamId": 139,
+          "uniformLeagueId": 70,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 3,
+        "drawProbability": "75%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "奥克兰FC",
+        "totalLegCnt": 4,
+        "winGoalMatchCnt": 1,
+        "winProbability": "25%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 8,
+            "injuryFlag": 1,
+            "personId": 474164,
+            "personName": "皮埃尔里亚斯",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 683430,
+            "personName": "J. Najdovski",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "18"
+          },
+          {
+            "appearanceCnt": 4,
+            "injuryFlag": 1,
+            "personId": 704294,
+            "personName": "A. Riak",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "99"
+          }
+        ],
+        "sportteryTeamId": 1096,
+        "teamId": 143,
+        "teamShortName": "阿德莱德",
+        "uniformTeamId": 139
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 24,
+            "injuryFlag": 1,
+            "personId": 129282,
+            "personName": "加列戈斯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 319138,
+            "personName": "赛尔",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 13,
+            "injuryFlag": 1,
+            "personId": 561974,
+            "personName": "M. François",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 648622,
+            "personName": "S. Morris",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "12"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 743974,
+            "personName": "J. Knowles",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          }
+        ],
+        "sportteryTeamId": 1055698,
+        "teamId": 60597,
+        "teamShortName": "奥克兰FC",
+        "uniformTeamId": 57122
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1096,
+            "awayTeamShortName": "阿德莱德",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1427,
+            "homeTeamShortName": "墨尔本城",
+            "matchDate": "2026-04-26",
+            "matchId": 2445040,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039338,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 139,
+            "uniformHomeTeamId": 208,
+            "uniformLeagueId": 70,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1025286,
+            "awayTeamShortName": "麦克阿瑟",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 1096,
+            "homeTeamShortName": "阿德莱德",
+            "matchDate": "2026-04-19",
+            "matchId": 2445046,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039180,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 2098,
+            "uniformHomeTeamId": 139,
+            "uniformLeagueId": 70,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1096,
+            "awayTeamShortName": "阿德莱德",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1136,
+            "homeTeamShortName": "纽喷气机",
+            "matchDate": "2026-04-11",
+            "matchId": 2445055,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039005,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 139,
+            "uniformHomeTeamId": 210,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1055698,
+            "awayTeamShortName": "奥克兰FC",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1096,
+            "homeTeamShortName": "阿德莱德",
+            "matchDate": "2026-04-03",
+            "matchId": 2445062,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038782,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 57122,
+            "uniformHomeTeamId": 139,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 1096,
+            "awayTeamShortName": "阿德莱德",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1686,
+            "homeTeamShortName": "西悉尼",
+            "matchDate": "2026-03-20",
+            "matchId": 2445069,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038474,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 139,
+            "uniformHomeTeamId": 329,
+            "uniformLeagueId": 70,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 11,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 5,
+          "sportteryTeamId": 0,
+          "teamId": 1096,
+          "teamShortName": "阿德莱德",
+          "totalLegCnt": 5,
+          "uniformTeamId": 139,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1427,
+            "awayTeamShortName": "墨尔本城",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1055698,
+            "homeTeamShortName": "奥克兰FC",
+            "matchDate": "2026-05-02",
+            "matchId": 2519926,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039447,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 208,
+            "uniformHomeTeamId": 57122,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1055698,
+            "awayTeamShortName": "奥克兰FC",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 753,
+            "homeTeamShortName": "悉尼FC",
+            "matchDate": "2026-04-26",
+            "matchId": 2445041,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 57122,
+            "uniformHomeTeamId": 135,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1135,
+            "awayTeamShortName": "中央海岸",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1055698,
+            "homeTeamShortName": "奥克兰FC",
+            "matchDate": "2026-04-19",
+            "matchId": 2445047,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 453,
+            "uniformHomeTeamId": 57122,
+            "uniformLeagueId": 70,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1077,
+            "awayTeamShortName": "墨胜利",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1055698,
+            "homeTeamShortName": "奥克兰FC",
+            "matchDate": "2026-04-11",
+            "matchId": 2445056,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 454,
+            "uniformHomeTeamId": 57122,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1055698,
+            "awayTeamShortName": "奥克兰FC",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1096,
+            "homeTeamShortName": "阿德莱德",
+            "matchDate": "2026-04-03",
+            "matchId": 2445062,
+            "seasonId": 13971,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038782,
+            "sportteryTournamentId": 2,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 39,
+            "tournamentShortName": "澳超",
+            "uniformAwayTeamId": 57122,
+            "uniformHomeTeamId": 139,
+            "uniformLeagueId": 70,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 4,
+          "drawProbability": "80%",
+          "goalCnt": 6,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 1055698,
+          "teamShortName": "奥克兰FC",
+          "totalLegCnt": 5,
+          "uniformTeamId": 57122,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48082,
+      "seasonId": 13971,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 9,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 6,
+          "phaseName": "",
+          "points": "42",
+          "ranking": "3",
+          "sportteryTeamId": 1055698,
+          "teamId": 0,
+          "teamShortName": "奥克兰FC",
+          "totalLegCnt": 26,
+          "uniformTeamId": 57122,
+          "winGoalMatchCnt": 11,
+          "winProbability": "42%"
+        },
+        {
+          "drawMatchCnt": 7,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 7,
+          "phaseName": "",
+          "points": "43",
+          "ranking": "2",
+          "sportteryTeamId": 1096,
+          "teamId": 0,
+          "teamShortName": "阿德莱德",
+          "totalLegCnt": 26,
+          "uniformTeamId": 139,
+          "winGoalMatchCnt": 12,
+          "winProbability": "46%"
+        }
+      ],
+      "tournamentId": 39,
+      "tournamentShortName": "澳超",
+      "uniformLeagueId": 70,
+      "uniformMatchId": 2390939
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 23,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 11,
+            "goalProbability": "24%",
+            "injuryFlag": 0,
+            "personId": 697275,
+            "personName": "L. Jovanović",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 5,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 668887,
+            "personName": "J. Yull",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "12"
+          },
+          {
+            "appearanceCnt": 21,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 4,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 680792,
+            "personName": "E. Alagich",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "55"
+          }
+        ],
+        "sportteryTeamId": 1096,
+        "teamId": 143,
+        "teamShortName": "阿德莱德",
+        "uniformTeamId": 139
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 11,
+            "goalProbability": "28%",
+            "injuryFlag": 0,
+            "personId": 393622,
+            "personName": "S. Cosgrove",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 7,
+            "assistProbability": "21%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 640034,
+            "personName": "J.兰德尔",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "21"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "20%",
+            "injuryFlag": 0,
+            "personId": 467712,
+            "personName": "拉克伦·布鲁克",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "77"
+          }
+        ],
+        "sportteryTeamId": 1055698,
+        "teamId": 60597,
+        "teamShortName": "奥克兰FC",
+        "uniformTeamId": 57122
+      },
+      "seasonId": 13971,
+      "seasonName": "2025/2026",
+      "tournamentId": 39,
+      "tournamentShortName": "澳超",
+      "uniformLeagueId": 70,
+      "uniformMatchId": 2390939
+    }
+  },
+  "ttg_change": {
+    "6球": {
+      "count": 5,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 6,
+      "change_pct": -4.2
+    },
+    "1球": {
+      "count": 5,
+      "change_pct": 1.8
+    },
+    "0球": {
+      "count": 4,
+      "change_pct": 14.3
+    },
+    "5球": {
+      "count": 4,
+      "change_pct": 1.2
+    },
+    "7球": {
+      "count": 5,
+      "change_pct": -11.9
+    },
+    "2球": {
+      "count": 5,
+      "change_pct": 4.1
+    },
+    "3球": {
+      "count": 5,
+      "change_pct": -2.9
+    }
+  },
+  "hafu_change": {
+    "平负": {
+      "count": 2,
+      "change_pct": -3.2
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -3.8
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.8
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": -7.7
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -8.3
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 8.3
+    },
+    "负胜": {
+      "count": 2,
+      "change_pct": 5.3
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": -9.6
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": 10.3
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 7,
+      "change_pct": 7.5
+    },
+    "负": {
+      "count": 8,
+      "change_pct": -4.8
+    },
+    "平": {
+      "count": 4,
+      "change_pct": -7.0
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 7,
+      "change_pct": 11.1
+    },
+    "让负": {
+      "count": 7,
+      "change_pct": -6.9
+    },
+    "让平": {
+      "count": 5,
+      "change_pct": 6.8
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "4球",
+      "ttg_odds": "4.55",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "9.75",
+          "special": true
+        },
+        {
+          "score": "03:01",
+          "odds": "15.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "100.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "40.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "22.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.55（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.7,
+    "ou_line": 2.5,
+    "under_odds": 1.02,
+    "save_time": "2026-05-09 13:47"
+  }
+}

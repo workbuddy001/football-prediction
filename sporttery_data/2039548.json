@@ -1,0 +1,973 @@
+{
+  "match_id": "2039548",
+  "fetch_time": "2026-05-06 13:54:26",
+  "match_info": {
+    "home_team": "町田泽维亚",
+    "away_team": "横滨水手",
+    "league": "日本职业联赛",
+    "time": "2026-05-06 15:00",
+    "match_num_str": "周三002",
+    "match_week": "周三",
+    "match_date": "2026-05-06",
+    "match_time": "15:00:00",
+    "match_status": "Selling",
+    "home_rank": "[East3]",
+    "away_rank": "[East8]",
+    "league_abbr": "日职"
+  },
+  "score_odds": {
+    "05:00": "100.0",
+    "01:00": "6.25",
+    "05:02": "200.0",
+    "05:01": "90.00",
+    "02:04": "150.0",
+    "02:05": "300.0",
+    "02:02": "14.00",
+    "02:03": "36.00",
+    "02:00": "8.25",
+    "02:01": "7.00",
+    "03:03": "65.00",
+    "03:01": "13.00",
+    "03:02": "25.00",
+    "03:00": "15.00",
+    "00:01": "10.50",
+    "00:00": "10.50",
+    "00:03": "65.00",
+    "00:02": "21.00",
+    "00:05": "350.0",
+    "00:04": "200.0",
+    "04:02": "65.00",
+    "04:01": "31.00",
+    "04:00": "35.00",
+    "01:02": "12.00",
+    "01:01": "6.00",
+    "01:04": "125.0",
+    "01:03": "35.00",
+    "01:05": "300.0"
+  },
+  "total_goals": {
+    "3球": "3.35",
+    "4球": "5.40",
+    "5球": "13.00",
+    "6球": "26.00",
+    "7球": "42.00",
+    "0球": "10.50",
+    "1球": "4.30",
+    "2球": "3.30"
+  },
+  "had": {
+    "胜": "1.72",
+    "平": "3.30",
+    "负": "4.08"
+  },
+  "ttg": {
+    "3球": "3.35",
+    "4球": "5.40",
+    "5球": "13.00",
+    "6球": "26.00",
+    "7球": "42.00",
+    "0球": "10.50",
+    "1球": "4.30",
+    "2球": "3.30"
+  },
+  "hafu": {
+    "负负": "6.40",
+    "平平": "5.50",
+    "胜胜": "2.80",
+    "负平": "14.50",
+    "平胜": "4.50",
+    "负胜": "20.00",
+    "胜负": "35.00",
+    "胜平": "14.50",
+    "平负": "8.30"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.60",
+    "让平": "3.25",
+    "让负": "1.84"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "横滨水手",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "40",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.6",
+        "awayGoalAvgCntRatio": "64.0",
+        "homeGoalAvgCnt": "0.9",
+        "homeGoalAvgCntRatio": "36.0",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "町田泽维",
+      "last": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "39",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "56",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 6
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.7",
+        "awayLossGoalAvgCntRatio": "68.0",
+        "homeLossGoalAvgCnt": "0.8",
+        "homeLossGoalAvgCntRatio": "32.0",
+        "totalLegCnt": 10
+      },
+      "matchId": 2496546,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 2
+      },
+      "sportteryAwayTeamId": 562,
+      "sportteryHomeTeamId": 1489,
+      "sportteryMatchId": 2039548,
+      "uniformAwayTeamId": 266,
+      "uniformHomeTeamId": 271
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 13135,
+          "awayTeamShortName": "町田泽维",
+          "fullCourtGoal": "2:3",
+          "gmLeagueId": 42,
+          "halfTimeGoal": "1:3",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1322,
+          "homeTeamShortName": "横滨水手",
+          "matchDate": "2026-02-06",
+          "matchId": 2496560,
+          "seasonId": 14305,
+          "sportteryAwayTeamId": 1489,
+          "sportteryHomeTeamId": 562,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 42,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 2271,
+          "tournamentShortName": "日职",
+          "uniformAwayTeamId": 271,
+          "uniformHomeTeamId": 266,
+          "uniformLeagueId": 2279,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 13135,
+          "awayTeamShortName": "町田泽维",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 42,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1322,
+          "homeTeamShortName": "横滨水手",
+          "matchDate": "2025-08-23",
+          "matchId": 2269995,
+          "seasonId": 12748,
+          "sportteryAwayTeamId": 1489,
+          "sportteryHomeTeamId": 562,
+          "sportteryMatchId": 2033132,
+          "sportteryTournamentId": 42,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 50,
+          "tournamentShortName": "日职",
+          "uniformAwayTeamId": 271,
+          "uniformHomeTeamId": 266,
+          "uniformLeagueId": 28,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 1322,
+          "awayTeamShortName": "横滨水手",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 42,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 13135,
+          "homeTeamShortName": "町田泽维",
+          "matchDate": "2025-05-31",
+          "matchId": 2269754,
+          "seasonId": 12748,
+          "sportteryAwayTeamId": 562,
+          "sportteryHomeTeamId": 1489,
+          "sportteryMatchId": 2032013,
+          "sportteryTournamentId": 42,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 50,
+          "tournamentShortName": "日职",
+          "uniformAwayTeamId": 266,
+          "uniformHomeTeamId": 271,
+          "uniformLeagueId": 28,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1322,
+          "awayTeamShortName": "横滨水手",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 42,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 13135,
+          "homeTeamShortName": "町田泽维",
+          "matchDate": "2024-07-20",
+          "matchId": 2073414,
+          "seasonId": 11185,
+          "sportteryAwayTeamId": 562,
+          "sportteryHomeTeamId": 1489,
+          "sportteryMatchId": 1026193,
+          "sportteryTournamentId": 42,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 50,
+          "tournamentShortName": "日职",
+          "uniformAwayTeamId": 266,
+          "uniformHomeTeamId": 271,
+          "uniformLeagueId": 28,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 13135,
+          "awayTeamShortName": "町田泽维",
+          "fullCourtGoal": "1:3",
+          "gmLeagueId": 42,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1322,
+          "homeTeamShortName": "横滨水手",
+          "matchDate": "2024-06-15",
+          "matchId": 2073475,
+          "seasonId": 11185,
+          "sportteryAwayTeamId": 1489,
+          "sportteryHomeTeamId": 562,
+          "sportteryMatchId": 1025754,
+          "sportteryTournamentId": 42,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 50,
+          "tournamentShortName": "日职",
+          "uniformAwayTeamId": 271,
+          "uniformHomeTeamId": 266,
+          "uniformLeagueId": 28,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "町田泽维",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 562,
+        "teamId": 1322,
+        "teamShortName": "横滨水手",
+        "uniformTeamId": 266
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 12,
+            "injuryFlag": 1,
+            "personId": 340513,
+            "personName": "中山雄太",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          }
+        ],
+        "sportteryTeamId": 1489,
+        "teamId": 13135,
+        "teamShortName": "町田泽维",
+        "uniformTeamId": 271
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1016,
+            "awayTeamShortName": "水户蜀葵",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 562,
+            "homeTeamShortName": "横滨水手",
+            "matchDate": "2026-05-02",
+            "matchId": 2496678,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 377,
+            "uniformHomeTeamId": 266,
+            "uniformLeagueId": 2279,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 562,
+            "awayTeamShortName": "横滨水手",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 0,
+            "homeTeamShortName": "千叶市原",
+            "matchDate": "2026-04-29",
+            "matchId": 2496685,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 266,
+            "uniformHomeTeamId": 383,
+            "uniformLeagueId": 2279,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 562,
+            "awayTeamShortName": "横滨水手",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 560,
+            "homeTeamShortName": "浦和红钻",
+            "matchDate": "2026-04-25",
+            "matchId": 2496692,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 266,
+            "uniformHomeTeamId": 159,
+            "uniformLeagueId": 2279,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 553,
+            "awayTeamShortName": "川崎前锋",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 562,
+            "homeTeamShortName": "横滨水手",
+            "matchDate": "2026-04-18",
+            "matchId": 2496701,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 477,
+            "uniformHomeTeamId": 266,
+            "uniformLeagueId": 2279,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 548,
+            "awayTeamShortName": "东京FC",
+            "fullCourtGoal": "1:3",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 562,
+            "homeTeamShortName": "横滨水手",
+            "matchDate": "2026-04-11",
+            "matchId": 2496705,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 155,
+            "uniformHomeTeamId": 266,
+            "uniformLeagueId": 2279,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 9,
+          "lossGoalCnt": 10,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 562,
+          "teamShortName": "横滨水手",
+          "totalLegCnt": 5,
+          "uniformTeamId": 266,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1489,
+            "awayTeamShortName": "町田泽维",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 551,
+            "homeTeamShortName": "鹿岛鹿角",
+            "matchDate": "2026-05-03",
+            "matchId": 2496547,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039478,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 271,
+            "uniformHomeTeamId": 515,
+            "uniformLeagueId": 2279,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1489,
+            "awayTeamShortName": "町田泽维",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1016,
+            "homeTeamShortName": "水户蜀葵",
+            "matchDate": "2026-04-29",
+            "matchId": 2496548,
+            "seasonId": 14305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039409,
+            "sportteryTournamentId": 42,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2271,
+            "tournamentShortName": "日职",
+            "uniformAwayTeamId": 271,
+            "uniformHomeTeamId": 377,
+            "uniformLeagueId": 2279,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1489,
+            "awayTeamShortName": "町田泽维",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1666,
+            "homeTeamShortName": "吉达国民",
+            "matchDate": "2026-04-26",
+            "matchId": 2519202,
+            "seasonId": 13305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039327,
+            "sportteryTournamentId": 1,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 75,
+            "tournamentShortName": "亚冠精英",
+            "uniformAwayTeamId": 271,
+            "uniformHomeTeamId": 738,
+            "uniformLeagueId": 41,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2724,
+            "awayTeamShortName": "迪拜国青",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1489,
+            "homeTeamShortName": "町田泽维",
+            "matchDate": "2026-04-22",
+            "matchId": 2518427,
+            "seasonId": 13305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039242,
+            "sportteryTournamentId": 1,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 75,
+            "tournamentShortName": "亚冠精英",
+            "uniformAwayTeamId": 908,
+            "uniformHomeTeamId": 271,
+            "uniformLeagueId": 41,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 751,
+            "awayTeamShortName": "吉达联合",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1489,
+            "homeTeamShortName": "町田泽维",
+            "matchDate": "2026-04-18",
+            "matchId": 2517367,
+            "seasonId": 13305,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 75,
+            "tournamentShortName": "亚冠精英",
+            "uniformAwayTeamId": 1361,
+            "uniformHomeTeamId": 271,
+            "uniformLeagueId": 41,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 5,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 2,
+          "sportteryTeamId": 0,
+          "teamId": 1489,
+          "teamShortName": "町田泽维",
+          "totalLegCnt": 5,
+          "uniformTeamId": 271,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48411,
+      "seasonId": 14305,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 6,
+          "groupId": 13676,
+          "groupName": "East",
+          "lossGoalMatchCnt": 2,
+          "phaseName": "",
+          "points": "25",
+          "ranking": "3",
+          "sportteryTeamId": 1489,
+          "teamId": 0,
+          "teamShortName": "町田泽维",
+          "totalLegCnt": 13,
+          "uniformTeamId": 271,
+          "winGoalMatchCnt": 5,
+          "winProbability": "38%"
+        },
+        {
+          "drawMatchCnt": 1,
+          "groupId": 13676,
+          "groupName": "East",
+          "lossGoalMatchCnt": 8,
+          "phaseName": "",
+          "points": "16",
+          "ranking": "8",
+          "sportteryTeamId": 562,
+          "teamId": 0,
+          "teamShortName": "横滨水手",
+          "totalLegCnt": 14,
+          "uniformTeamId": 266,
+          "winGoalMatchCnt": 5,
+          "winProbability": "36%"
+        }
+      ],
+      "tournamentId": 2271,
+      "tournamentShortName": "日职",
+      "uniformLeagueId": 2279,
+      "uniformMatchId": 2390278
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 13,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 2,
+            "assistProbability": "13%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 6,
+            "goalProbability": "29%",
+            "injuryFlag": 0,
+            "personId": 738866,
+            "personName": "K. Tanimura",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 13,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "7%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 4,
+            "goalProbability": "19%",
+            "injuryFlag": 0,
+            "personId": 331333,
+            "personName": "天野纯",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "40"
+          },
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 3,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 633007,
+            "personName": "D. Tono",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 562,
+        "teamId": 1322,
+        "teamShortName": "横滨水手",
+        "uniformTeamId": 266
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 11,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 5,
+            "goalProbability": "29%",
+            "injuryFlag": 0,
+            "personId": 291015,
+            "personName": "埃里克",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          },
+          {
+            "appearanceCnt": 9,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 2,
+            "assistProbability": "22%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 4,
+            "goalProbability": "24%",
+            "injuryFlag": 0,
+            "personId": 561656,
+            "personName": "相马勇纪",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 11,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 2,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 667991,
+            "personName": "T. Yengi",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "99"
+          }
+        ],
+        "sportteryTeamId": 1489,
+        "teamId": 13135,
+        "teamShortName": "町田泽维",
+        "uniformTeamId": 271
+      },
+      "seasonId": 14305,
+      "seasonName": "2026",
+      "tournamentId": 2271,
+      "tournamentShortName": "日职",
+      "uniformLeagueId": 2279,
+      "uniformMatchId": 2390278
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 1,
+      "change_pct": -4.3
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -8.7
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": -1.5
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 30.0
+    },
+    "6球": {
+      "count": 4,
+      "change_pct": 44.4
+    },
+    "1球": {
+      "count": 3,
+      "change_pct": -9.5
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": 44.8
+    },
+    "4球": {
+      "count": 4,
+      "change_pct": -1.8
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 2,
+      "change_pct": -3.5
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": -21.0
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": -24.7
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": 12.5
+    },
+    "胜平": {
+      "count": 2,
+      "change_pct": -6.5
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 14.3
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 2,
+      "change_pct": -6.5
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 8,
+      "change_pct": 8.9
+    },
+    "平": {
+      "count": 9,
+      "change_pct": -8.8
+    },
+    "负": {
+      "count": 9,
+      "change_pct": -10.3
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 7,
+      "change_pct": 20.8
+    },
+    "让平": {
+      "count": 5,
+      "change_pct": 0.0
+    },
+    "让负": {
+      "count": 7,
+      "change_pct": -10.7
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "4.30",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "6.25",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "10.50",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.30（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "3.30",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "8.25",
+          "special": true
+        },
+        {
+          "score": "00:02",
+          "odds": "21.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.30（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.82,
+    "ou_line": 2.5,
+    "under_odds": 0.88,
+    "save_time": "2026-05-06 13:55"
+  }
+}
