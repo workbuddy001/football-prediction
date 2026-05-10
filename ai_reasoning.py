@@ -98,6 +98,24 @@ def compute_betting(data, analysis):
             pass
         if h_att is not None and h_att >= 2.0:
             return {'action': 'skip', 'reason': f'R0跳过: 主攻{h_att:.1f}≥2.0(强攻队不出0:0)'}
+        
+        # R0: 0球赔率命中率<10%过滤
+        if g0:
+            try:
+                from sporttery_web import _build_odds_hitrate
+                oh = _build_odds_hitrate()
+                g0_exact = oh.get('exact', {}).get(0, {})
+                key1 = f'{g0:.1f}'
+                key2 = f'{g0:.2f}'
+                g0_stat = g0_exact.get(key1, g0_exact.get(key2, {}))
+                if isinstance(g0_stat, dict) and g0_stat.get('total', 0) >= 5:
+                    g0_rate = g0_stat.get('rate', 0)
+                    if g0_rate < 10:
+                        g0_n = g0_stat['total']
+                        return {'action': 'skip', 'reason': f'R0跳过: 0球赔{g0}命中率{g0_rate:.0f}%<10%(n={g0_n})'}
+            except:
+                pass
+        
         rule = 'R0'
         bet_goals = [0]
         bet_type = 'single'
