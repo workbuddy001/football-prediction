@@ -86,6 +86,36 @@ def compute_betting(data, analysis):
     bet_type = None
     goal_stake = 0
     
+    # 预计算信号F条件（避免elif阻断后续规则）
+    f_eligible = False
+    if g0 and 25 <= g0 < 35:
+        try:
+            preview = data.get('preview', {}) or {}
+            recent = preview.get('recent', {}) or {}
+            hf = -1; af = -1; hfc = -1; afc = -1
+            for side, key in [('home', 'hf'), ('away', 'af')]:
+                side_data = recent.get(side, {})
+                ml = side_data.get('matchList', []) if isinstance(side_data, dict) else []
+                if len(ml) >= 2:
+                    n = min(len(ml), 5)
+                    total_g = 0; concede_g = 0
+                    for m in ml[:n]:
+                        hg = float(m.get('homeTeamFullCourtGoalCnt', 0) or 0)
+                        ag = float(m.get('awayTeamFullCourtGoalCnt', 0) or 0)
+                        total_g += hg + ag
+                        if side == 'home': concede_g += ag
+                        else: concede_g += hg
+                    if key == 'hf': hf = total_g / n; hfc = concede_g / n
+                    else: af = total_g / n; afc = concede_g / n
+            max_form = max(hf, af)
+            weak_def = afc if hf >= af else hfc
+            ttg_change = data.get('ttg_change', {})
+            g0_chg_data = ttg_change.get('0球', {}) if isinstance(ttg_change, dict) else {}
+            g0_chg = g0_chg_data.get('change_pct', 0) if isinstance(g0_chg_data, dict) else 0
+            f_eligible = (max_form > 4 and weak_def >= 0 and weak_def < 1.5 and g0_chg > -5)
+        except:
+            pass
+    
     if top_score_rec == '0:0':
         # R0: 主攻<2.0过滤（强攻队不出0:0）
         h_att = None
@@ -180,49 +210,12 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    
-    # 信号F: 近况>4 + 铁桶防守 + 0球25-35 + 0球不暴跌 → 投7球 (2026-05-11新增, 回测5场ROI+275%)
-    # 优先级高于R2, 低于R0/R1
-    if not rule and g0 and 25 <= g0 < 35:
-        try:
-            preview = data.get('preview', {}) or {}
-            recent = preview.get('recent', {}) or {}
-            hf = -1; af = -1; hfc = -1; afc = -1
-            
-            for side, key in [('home', 'hf'), ('away', 'af')]:
-                side_data = recent.get(side, {})
-                ml = side_data.get('matchList', []) if isinstance(side_data, dict) else []
-                if len(ml) >= 2:
-                    n = min(len(ml), 5)
-                    total_g = 0; concede_g = 0
-                    for m in ml[:n]:
-                        hg = float(m.get('homeTeamFullCourtGoalCnt', 0) or 0)
-                        ag = float(m.get('awayTeamFullCourtGoalCnt', 0) or 0)
-                        total_g += hg + ag
-                        if side == 'home':
-                            concede_g += ag
-                        else:
-                            concede_g += hg
-                    if key == 'hf':
-                        hf = total_g / n; hfc = concede_g / n
-                    else:
-                        af = total_g / n; afc = concede_g / n
-            
-            max_form = max(hf, af)
-            weak_def = afc if hf >= af else hfc
-            
-            ttg_change = data.get('ttg_change', {})
-            g0_chg_data = ttg_change.get('0球', {}) if isinstance(ttg_change, dict) else {}
-            g0_chg = g0_chg_data.get('change_pct', 0) if isinstance(g0_chg_data, dict) else 0
-            
-            if max_form > 4 and weak_def >= 0 and weak_def < 1.5 and g0_chg > -5:
-                rule = 'F'
-                bet_goals = [7]
-                bet_type = 'single'
-                goal_stake = 30
-        except:
-            pass
-    
+    elif f_eligible:
+        # 信号F: 近况>4 + 铁桶防守 + 0球25-35 + 0球不暴跌 → 投7球 (ROI+275%)
+        rule = 'F'
+        bet_goals = [7]
+        bet_type = 'single'
+        goal_stake = 30
     elif top_score_rec == '2:4':
         # R2: 推荐2:4 + 让胜<让负 + 让负>2.5 → 纯买2:4比分20元
         try:
