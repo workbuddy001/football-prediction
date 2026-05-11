@@ -1,0 +1,1001 @@
+{
+  "match_id": "2039638",
+  "fetch_time": "2026-05-10 20:50:51",
+  "match_info": {
+    "home_team": "毕尔巴鄂竞技",
+    "away_team": "巴伦西亚",
+    "league": "西班牙甲级联赛",
+    "time": "2026-05-10 22:15",
+    "match_num_str": "周日015",
+    "match_week": "周日",
+    "match_date": "2026-05-10",
+    "match_time": "22:15:00",
+    "match_status": "Selling",
+    "home_rank": "[西甲9]",
+    "away_rank": "[西甲14]",
+    "league_abbr": "西甲"
+  },
+  "score_odds": {
+    "05:00": "80.00",
+    "01:00": "6.10",
+    "05:02": "150.0",
+    "05:01": "80.00",
+    "02:04": "200.0",
+    "02:05": "600.0",
+    "02:02": "14.00",
+    "02:03": "50.00",
+    "02:00": "7.10",
+    "02:01": "7.00",
+    "03:03": "75.00",
+    "03:01": "12.50",
+    "03:02": "24.00",
+    "03:00": "12.50",
+    "00:01": "12.00",
+    "00:00": "11.00",
+    "00:03": "75.00",
+    "00:02": "22.00",
+    "00:05": "600.0",
+    "00:04": "300.0",
+    "04:02": "55.00",
+    "04:01": "28.00",
+    "04:00": "28.00",
+    "01:02": "13.00",
+    "01:01": "6.20",
+    "01:04": "175.0",
+    "01:03": "55.00",
+    "01:05": "400.0"
+  },
+  "total_goals": {
+    "3球": "3.35",
+    "4球": "6.15",
+    "5球": "12.00",
+    "6球": "22.00",
+    "7球": "35.00",
+    "0球": "11.00",
+    "1球": "4.50",
+    "2球": "3.10"
+  },
+  "had": {
+    "胜": "1.52",
+    "平": "3.58",
+    "负": "5.20"
+  },
+  "ttg": {
+    "3球": "3.35",
+    "4球": "6.15",
+    "5球": "12.00",
+    "6球": "22.00",
+    "7球": "35.00",
+    "0球": "11.00",
+    "1球": "4.50",
+    "2球": "3.10"
+  },
+  "hafu": {
+    "负负": "9.25",
+    "平平": "5.60",
+    "胜胜": "2.45",
+    "负平": "15.00",
+    "平胜": "3.95",
+    "负胜": "21.00",
+    "胜负": "30.00",
+    "胜平": "15.00",
+    "平负": "11.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.00",
+    "让平": "2.93",
+    "让负": "2.20"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "巴伦西亚",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 6,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.2",
+        "awayGoalAvgCntRatio": "52.2",
+        "homeGoalAvgCnt": "1.1",
+        "homeGoalAvgCntRatio": "47.8",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "毕尔巴鄂",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "27",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.3",
+        "awayLossGoalAvgCntRatio": "44.8",
+        "homeLossGoalAvgCnt": "1.6",
+        "homeLossGoalAvgCntRatio": "55.2",
+        "totalLegCnt": 10
+      },
+      "matchId": 2361896,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 6,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "30",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 6,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 678,
+      "sportteryHomeTeamId": 506,
+      "sportteryMatchId": 2039638,
+      "uniformAwayTeamId": 452,
+      "uniformHomeTeamId": 143
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 2019,
+          "awayTeamShortName": "毕尔巴鄂",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 61,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2015,
+          "homeTeamShortName": "巴伦西亚",
+          "matchDate": "2026-02-05",
+          "matchId": 2487939,
+          "seasonId": 13994,
+          "sportteryAwayTeamId": 506,
+          "sportteryHomeTeamId": 678,
+          "sportteryMatchId": 2037557,
+          "sportteryTournamentId": 61,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 555,
+          "tournamentShortName": "西国王杯",
+          "uniformAwayTeamId": 143,
+          "uniformHomeTeamId": 452,
+          "uniformLeagueId": 21,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 2019,
+          "awayTeamShortName": "毕尔巴鄂",
+          "fullCourtGoal": "2:0",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 2015,
+          "homeTeamShortName": "巴伦西亚",
+          "matchDate": "2025-09-21",
+          "matchId": 2361856,
+          "seasonId": 13440,
+          "sportteryAwayTeamId": 506,
+          "sportteryHomeTeamId": 678,
+          "sportteryMatchId": 2033704,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 143,
+          "uniformHomeTeamId": 452,
+          "uniformLeagueId": 24,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 2019,
+          "awayTeamShortName": "毕尔巴鄂",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 2015,
+          "homeTeamShortName": "巴伦西亚",
+          "matchDate": "2025-05-19",
+          "matchId": 2127168,
+          "seasonId": 11820,
+          "sportteryAwayTeamId": 506,
+          "sportteryHomeTeamId": 678,
+          "sportteryMatchId": 2031811,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 143,
+          "uniformHomeTeamId": 452,
+          "uniformLeagueId": 24,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 2015,
+          "awayTeamShortName": "巴伦西亚",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2019,
+          "homeTeamShortName": "毕尔巴鄂",
+          "matchDate": "2024-08-29",
+          "matchId": 2126948,
+          "seasonId": 11820,
+          "sportteryAwayTeamId": 678,
+          "sportteryHomeTeamId": 506,
+          "sportteryMatchId": 1026735,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 452,
+          "uniformHomeTeamId": 143,
+          "uniformLeagueId": 24,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 2019,
+          "awayTeamShortName": "毕尔巴鄂",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2015,
+          "homeTeamShortName": "巴伦西亚",
+          "matchDate": "2024-01-21",
+          "matchId": 2004423,
+          "seasonId": 10920,
+          "sportteryAwayTeamId": 506,
+          "sportteryHomeTeamId": 678,
+          "sportteryMatchId": 1023155,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 143,
+          "uniformHomeTeamId": 452,
+          "uniformLeagueId": 24,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "毕尔巴鄂",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 3,
+        "winProbability": "60%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 21,
+            "injuryFlag": 1,
+            "personId": 495679,
+            "personName": "Copete",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 19,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "3"
+          },
+          {
+            "appearanceCnt": 27,
+            "injuryFlag": 1,
+            "personId": 547451,
+            "personName": "L.贝尔特兰",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 11,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          },
+          {
+            "appearanceCnt": 18,
+            "injuryFlag": 1,
+            "personId": 581832,
+            "personName": "朱伦 阿吉雷扎巴拉",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "25"
+          }
+        ],
+        "sportteryTeamId": 678,
+        "teamId": 2015,
+        "teamShortName": "巴伦西亚",
+        "uniformTeamId": 452
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 694437,
+            "personName": "Á. Padilla",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          }
+        ],
+        "sportteryTeamId": 506,
+        "teamId": 2019,
+        "teamShortName": "毕尔巴鄂",
+        "uniformTeamId": 143
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 172,
+            "awayTeamShortName": "马竞",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 678,
+            "homeTeamShortName": "巴伦西亚",
+            "matchDate": "2026-05-02",
+            "matchId": 2361899,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039463,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 145,
+            "uniformHomeTeamId": 452,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1885,
+            "awayTeamShortName": "赫罗纳",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 678,
+            "homeTeamShortName": "巴伦西亚",
+            "matchDate": "2026-04-26",
+            "matchId": 2361925,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039331,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 639,
+            "uniformHomeTeamId": 452,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 678,
+            "awayTeamShortName": "巴伦西亚",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 533,
+            "homeTeamShortName": "马洛卡",
+            "matchDate": "2026-04-22",
+            "matchId": 2362125,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039243,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 452,
+            "uniformHomeTeamId": 516,
+            "uniformLeagueId": 24,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 678,
+            "awayTeamShortName": "巴伦西亚",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 30,
+            "homeTeamShortName": "埃尔切",
+            "matchDate": "2026-04-11",
+            "matchId": 2361930,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039020,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 452,
+            "uniformHomeTeamId": 1740,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 508,
+            "awayTeamShortName": "塞尔塔",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 678,
+            "homeTeamShortName": "巴伦西亚",
+            "matchDate": "2026-04-05",
+            "matchId": 2361945,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038850,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 339,
+            "uniformHomeTeamId": 452,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 5,
+          "lossGoalCnt": 8,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -3,
+          "sportteryTeamId": 0,
+          "teamId": 678,
+          "teamShortName": "巴伦西亚",
+          "totalLegCnt": 5,
+          "uniformTeamId": 452,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 506,
+            "awayTeamShortName": "毕尔巴鄂",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 171,
+            "homeTeamShortName": "阿拉维斯",
+            "matchDate": "2026-05-03",
+            "matchId": 2361905,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039469,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 143,
+            "uniformHomeTeamId": 219,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 506,
+            "awayTeamShortName": "毕尔巴鄂",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 172,
+            "homeTeamShortName": "马竞",
+            "matchDate": "2026-04-26",
+            "matchId": 2361919,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039335,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 143,
+            "uniformHomeTeamId": 145,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 534,
+            "awayTeamShortName": "奥萨苏纳",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 506,
+            "homeTeamShortName": "毕尔巴鄂",
+            "matchDate": "2026-04-22",
+            "matchId": 2361914,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039244,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 236,
+            "uniformHomeTeamId": 143,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 679,
+            "awayTeamShortName": "比利亚雷",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 506,
+            "homeTeamShortName": "毕尔巴鄂",
+            "matchDate": "2026-04-13",
+            "matchId": 2361933,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039059,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 137,
+            "uniformHomeTeamId": 143,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 506,
+            "awayTeamShortName": "毕尔巴鄂",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 511,
+            "homeTeamShortName": "赫塔费",
+            "matchDate": "2026-04-05",
+            "matchId": 2361936,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038844,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 143,
+            "uniformHomeTeamId": 517,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 8,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 506,
+          "teamShortName": "毕尔巴鄂",
+          "totalLegCnt": 5,
+          "uniformTeamId": 143,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47935,
+      "seasonId": 13440,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 5,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 16,
+          "phaseName": "",
+          "points": "44",
+          "ranking": "9",
+          "sportteryTeamId": 506,
+          "teamId": 0,
+          "teamShortName": "毕尔巴鄂",
+          "totalLegCnt": 34,
+          "uniformTeamId": 143,
+          "winGoalMatchCnt": 13,
+          "winProbability": "38%"
+        },
+        {
+          "drawMatchCnt": 9,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 15,
+          "phaseName": "",
+          "points": "39",
+          "ranking": "14",
+          "sportteryTeamId": 678,
+          "teamId": 0,
+          "teamShortName": "巴伦西亚",
+          "totalLegCnt": 34,
+          "uniformTeamId": 452,
+          "winGoalMatchCnt": 10,
+          "winProbability": "29%"
+        }
+      ],
+      "tournamentId": 128,
+      "tournamentShortName": "西甲",
+      "uniformLeagueId": 24,
+      "uniformMatchId": 2390983
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "24%",
+            "injuryFlag": 0,
+            "personId": 518583,
+            "personName": "Hugo Duro",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 14,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 23,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 6,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 501821,
+            "personName": "L.拉马扎尼",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 12,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 21,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "8%",
+            "injuryFlag": 0,
+            "personId": 383985,
+            "personName": "U. Sadiq",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 11,
+            "suspensionFlag": 0,
+            "uniformNo": "6"
+          }
+        ],
+        "sportteryTeamId": 678,
+        "teamId": 2015,
+        "teamShortName": "巴伦西亚",
+        "uniformTeamId": 452
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 372657,
+            "personName": "Gorka Guruzeta",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 25,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 24,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 6,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 628708,
+            "personName": "威廉斯",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 19,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 562209,
+            "personName": "Robert Navarro",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 21,
+            "suspensionFlag": 0,
+            "uniformNo": "23"
+          }
+        ],
+        "sportteryTeamId": 506,
+        "teamId": 2019,
+        "teamShortName": "毕尔巴鄂",
+        "uniformTeamId": 143
+      },
+      "seasonId": 13440,
+      "seasonName": "2025/2026",
+      "tournamentId": 128,
+      "tournamentShortName": "西甲",
+      "uniformLeagueId": 24,
+      "uniformMatchId": 2390983
+    }
+  },
+  "ttg_change": {
+    "2球": {
+      "count": 2,
+      "change_pct": -6.1
+    },
+    "0球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 14.3
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -5.6
+    },
+    "7球": {
+      "count": 3,
+      "change_pct": 16.7
+    },
+    "4球": {
+      "count": 3,
+      "change_pct": 7.9
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": 15.8
+    },
+    "1球": {
+      "count": 3,
+      "change_pct": 0.0
+    }
+  },
+  "hafu_change": {
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": -4.7
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": -10.2
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": 22.2
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": 23.3
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 4,
+      "change_pct": 3.8
+    },
+    "负": {
+      "count": 4,
+      "change_pct": 17.6
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": -6.7
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 5,
+      "change_pct": -12.5
+    },
+    "让负": {
+      "count": 5,
+      "change_pct": 11.1
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": -2.6
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "4球",
+      "ttg_odds": "6.15",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "14.00",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "12.50",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "300.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "28.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "55.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(6.15)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.9,
+    "ou_line": 2.5,
+    "under_odds": 0.8,
+    "save_time": "2026-05-10 20:51"
+  }
+}

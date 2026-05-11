@@ -1,0 +1,939 @@
+{
+  "match_id": "2039654",
+  "fetch_time": "2026-05-11 21:15:05",
+  "match_info": {
+    "home_team": "新未来SC",
+    "away_team": "利雅得青年",
+    "league": "沙特职业联赛",
+    "time": "2026-05-12 00:50",
+    "match_num_str": "周一001",
+    "match_week": "周一",
+    "match_date": "2026-05-12",
+    "match_time": "00:50:00",
+    "match_status": "Selling",
+    "home_rank": "[沙职8]",
+    "away_rank": "[沙职13]",
+    "league_abbr": "沙职"
+  },
+  "score_odds": {
+    "05:00": "100.0",
+    "01:00": "10.00",
+    "05:02": "100.0",
+    "05:01": "80.00",
+    "02:04": "55.00",
+    "02:05": "175.0",
+    "02:02": "9.50",
+    "02:03": "21.00",
+    "02:00": "12.50",
+    "02:01": "7.00",
+    "03:03": "35.00",
+    "03:01": "13.00",
+    "03:02": "17.00",
+    "03:00": "20.00",
+    "00:01": "13.00",
+    "00:00": "18.00",
+    "00:03": "35.00",
+    "00:02": "19.00",
+    "00:05": "300.0",
+    "00:04": "100.0",
+    "04:02": "48.00",
+    "04:01": "36.00",
+    "04:00": "50.00",
+    "01:02": "9.50",
+    "01:01": "7.25",
+    "01:04": "55.00",
+    "01:03": "20.00",
+    "01:05": "175.0"
+  },
+  "total_goals": {
+    "3球": "3.25",
+    "4球": "4.70",
+    "5球": "7.25",
+    "6球": "13.00",
+    "7球": "22.50",
+    "0球": "18.00",
+    "1球": "5.90",
+    "2球": "4.00"
+  },
+  "had": {
+    "胜": "2.06",
+    "平": "3.34",
+    "负": "2.90"
+  },
+  "ttg": {
+    "3球": "3.25",
+    "4球": "4.70",
+    "5球": "7.25",
+    "6球": "13.00",
+    "7球": "22.50",
+    "0球": "18.00",
+    "1球": "5.90",
+    "2球": "4.00"
+  },
+  "hafu": {
+    "负负": "4.75",
+    "平平": "6.20",
+    "胜胜": "3.35",
+    "负平": "12.00",
+    "平胜": "5.30",
+    "负胜": "19.00",
+    "胜负": "24.00",
+    "胜平": "12.00",
+    "平负": "7.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "4.20",
+    "让平": "3.75",
+    "让负": "1.60"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "利雅青年",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "27",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 6,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "40",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "37",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.4",
+        "awayGoalAvgCntRatio": "50.0",
+        "homeGoalAvgCnt": "1.4",
+        "homeGoalAvgCntRatio": "50.0",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "新未来SC",
+      "last": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 1
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "2.3",
+        "awayLossGoalAvgCntRatio": "62.2",
+        "homeLossGoalAvgCnt": "1.4",
+        "homeLossGoalAvgCntRatio": "37.8",
+        "totalLegCnt": 10
+      },
+      "matchId": 2425168,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 0
+      },
+      "sportteryAwayTeamId": 1228,
+      "sportteryHomeTeamId": 2065842,
+      "sportteryMatchId": 2039654,
+      "uniformAwayTeamId": 883,
+      "uniformHomeTeamId": 57270
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 16976,
+          "awayTeamShortName": "新未来SC",
+          "fullCourtGoal": "3:2",
+          "gmLeagueId": 2068446,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 3516,
+          "homeTeamShortName": "利雅青年",
+          "matchDate": "2026-01-15",
+          "matchId": 2424992,
+          "seasonId": 13802,
+          "sportteryAwayTeamId": 2065842,
+          "sportteryHomeTeamId": 1228,
+          "sportteryMatchId": 2036941,
+          "sportteryTournamentId": 2068446,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 125,
+          "tournamentShortName": "沙职",
+          "uniformAwayTeamId": 57270,
+          "uniformHomeTeamId": 883,
+          "uniformLeagueId": 1767,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 1,
+        "lossProbability": "100%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "新未来SC",
+        "totalLegCnt": 1,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 29,
+            "injuryFlag": 1,
+            "personId": 300856,
+            "personName": "W. Hoedt",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "4"
+          }
+        ],
+        "sportteryTeamId": 1228,
+        "teamId": 3516,
+        "teamShortName": "利雅青年",
+        "uniformTeamId": 883
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 18,
+            "injuryFlag": 1,
+            "personId": 326126,
+            "personName": "默罕默德·阿尔·布拉克",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "2"
+          },
+          {
+            "appearanceCnt": 5,
+            "injuryFlag": 1,
+            "personId": 816929,
+            "personName": "Muhannad Al Saad",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          }
+        ],
+        "sportteryTeamId": 2065842,
+        "teamId": 16976,
+        "teamShortName": "新未来SC",
+        "uniformTeamId": 57270
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 1560,
+            "awayTeamShortName": "利雅胜利",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1228,
+            "homeTeamShortName": "利雅青年",
+            "matchDate": "2026-05-08",
+            "matchId": 2425160,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039556,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 2122,
+            "uniformHomeTeamId": 883,
+            "uniformLeagueId": 1767,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "5",
+            "awayTeamId": 2470,
+            "awayTeamShortName": "布赖合作",
+            "fullCourtGoal": "1:5",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1228,
+            "homeTeamShortName": "利雅青年",
+            "matchDate": "2026-05-04",
+            "matchId": 2425074,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 1601,
+            "uniformHomeTeamId": 883,
+            "uniformLeagueId": 1767,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1915,
+            "awayTeamShortName": "穆拜征服",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1228,
+            "homeTeamShortName": "利雅青年",
+            "matchDate": "2026-04-29",
+            "matchId": 2425079,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 631,
+            "uniformHomeTeamId": 883,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 0,
+            "awayTeamShortName": "赖扬",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1228,
+            "homeTeamShortName": "利雅青年",
+            "matchDate": "2026-04-23",
+            "matchId": 2518864,
+            "seasonId": 14034,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2139,
+            "tournamentShortName": "海湾冠",
+            "uniformAwayTeamId": 609,
+            "uniformHomeTeamId": 883,
+            "uniformLeagueId": 2143,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1228,
+            "awayTeamShortName": "利雅青年",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "扎克霍",
+            "matchDate": "2026-04-19",
+            "matchId": 2516562,
+            "seasonId": 14034,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 2139,
+            "tournamentShortName": "海湾冠",
+            "uniformAwayTeamId": 883,
+            "uniformHomeTeamId": 36017,
+            "uniformLeagueId": 2143,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 5,
+          "lossGoalCnt": 14,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -9,
+          "sportteryTeamId": 0,
+          "teamId": 1228,
+          "teamShortName": "利雅青年",
+          "totalLegCnt": 5,
+          "uniformTeamId": 883,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 2065842,
+            "awayTeamShortName": "新未来SC",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1915,
+            "homeTeamShortName": "穆拜征服",
+            "matchDate": "2026-05-02",
+            "matchId": 2425144,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57270,
+            "uniformHomeTeamId": 631,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2068549,
+            "awayTeamShortName": "拉斯决心",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2065842,
+            "homeTeamShortName": "新未来SC",
+            "matchDate": "2026-04-29",
+            "matchId": 2425179,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039401,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57266,
+            "uniformHomeTeamId": 57270,
+            "uniformLeagueId": 1767,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2065842,
+            "awayTeamShortName": "新未来SC",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 2068550,
+            "homeTeamShortName": "欧奈纳伊",
+            "matchDate": "2026-04-12",
+            "matchId": 2425095,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039022,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57270,
+            "uniformHomeTeamId": 57264,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 2065842,
+            "awayTeamShortName": "新未来SC",
+            "fullCourtGoal": "3:4",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 751,
+            "homeTeamShortName": "吉达联合",
+            "matchDate": "2026-04-09",
+            "matchId": 2425082,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038922,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 57270,
+            "uniformHomeTeamId": 1361,
+            "uniformLeagueId": 1767,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1046326,
+            "awayTeamShortName": "迈季宽广",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2065842,
+            "homeTeamShortName": "新未来SC",
+            "matchDate": "2026-04-05",
+            "matchId": 2425101,
+            "seasonId": 13802,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 2068446,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 125,
+            "tournamentShortName": "沙职",
+            "uniformAwayTeamId": 55261,
+            "uniformHomeTeamId": 57270,
+            "uniformLeagueId": 1767,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 9,
+          "lossGoalCnt": 8,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 1,
+          "sportteryTeamId": 0,
+          "teamId": 2065842,
+          "teamShortName": "新未来SC",
+          "totalLegCnt": 5,
+          "uniformTeamId": 57270,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48113,
+      "seasonId": 13802,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 8,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 12,
+          "phaseName": "",
+          "points": "41",
+          "ranking": "8",
+          "sportteryTeamId": 2065842,
+          "teamId": 0,
+          "teamShortName": "新未来SC",
+          "totalLegCnt": 31,
+          "uniformTeamId": 57270,
+          "winGoalMatchCnt": 11,
+          "winProbability": "35%"
+        },
+        {
+          "drawMatchCnt": 11,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 13,
+          "phaseName": "",
+          "points": "32",
+          "ranking": "13",
+          "sportteryTeamId": 1228,
+          "teamId": 0,
+          "teamShortName": "利雅青年",
+          "totalLegCnt": 31,
+          "uniformTeamId": 883,
+          "winGoalMatchCnt": 7,
+          "winProbability": "23%"
+        }
+      ],
+      "tournamentId": 125,
+      "tournamentShortName": "沙职",
+      "uniformLeagueId": 1767,
+      "uniformMatchId": 2390930
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "26%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 16,
+            "goalProbability": "42%",
+            "injuryFlag": 0,
+            "personId": 159234,
+            "personName": "卡拉斯科",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 14,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 6,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 245731,
+            "personName": "哈姆达拉",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 318195,
+            "personName": "布朗希尔",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          }
+        ],
+        "sportteryTeamId": 1228,
+        "teamId": 3516,
+        "teamShortName": "利雅青年",
+        "uniformTeamId": 883
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "15%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 11,
+            "goalProbability": "27%",
+            "injuryFlag": 0,
+            "personId": 87653,
+            "personName": "拉卡泽特",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 28,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "91"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 7,
+            "assistProbability": "26%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "20%",
+            "injuryFlag": 0,
+            "personId": 316494,
+            "personName": "本拉赫马",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 668822,
+            "personName": "L. Rodríguez",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 25,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          }
+        ],
+        "sportteryTeamId": 2065842,
+        "teamId": 16976,
+        "teamShortName": "新未来SC",
+        "uniformTeamId": 57270
+      },
+      "seasonId": 13802,
+      "seasonName": "2025/2026",
+      "tournamentId": 125,
+      "tournamentShortName": "沙职",
+      "uniformLeagueId": 1767,
+      "uniformMatchId": 2390930
+    }
+  },
+  "ttg_change": {
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 3,
+      "change_pct": 18.4
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 3.6
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -10.0
+    },
+    "6球": {
+      "count": 4,
+      "change_pct": 4.0
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": -7.1
+    },
+    "3球": {
+      "count": 3,
+      "change_pct": -4.4
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 6.8
+    }
+  },
+  "hafu_change": {
+    "胜胜": {
+      "count": 3,
+      "change_pct": 11.7
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -7.7
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -7.7
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -1.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": -11.4
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 3,
+      "change_pct": -7.7
+    },
+    "负": {
+      "count": 2,
+      "change_pct": -1.4
+    },
+    "胜": {
+      "count": 3,
+      "change_pct": 5.6
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "让负": {
+      "count": 1,
+      "change_pct": -3.0
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": 7.7
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "3球",
+      "ttg_odds": "3.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "7.00",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "20.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "35.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "9.50",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(3.25)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "5球",
+      "ttg_odds": "7.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "100.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "21.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "17.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "300.0",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "36.00",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "55.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(7.25)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "4.00",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "12.50",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "19.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "7.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.00（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.66,
+    "ou_line": 2.75,
+    "under_odds": 1.08,
+    "save_time": "2026-05-11 21:37"
+  }
+}

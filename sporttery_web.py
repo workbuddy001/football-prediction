@@ -1420,6 +1420,10 @@ HTML_TEMPLATE = '''
         .pagination button.active { background: #4c1d95; color: #fff; border-color: #7c3aed; font-weight: bold; }
         .pagination .page-ellipsis { color: #555; padding: 0 4px; }
         .pagination .page-info { color: #666; font-size: 12px; margin-left: 12px; }
+        .pagination .page-jump { display: flex; align-items: center; gap: 4px; margin-left: 12px; }
+        .pagination .page-jump input { width: 42px; padding: 5px 6px; background: #0a0a1e; color: #e0e0e0; border: 1px solid #1e3a5f; border-radius: 6px; font-size: 13px; text-align: center; }
+        .pagination .page-jump input:focus { outline: none; border-color: #7c3aed; }
+        .pagination .page-jump button { padding: 5px 10px; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -1452,6 +1456,9 @@ HTML_TEMPLATE = '''
         const _ODDS_HITRATE = __ODDS_STATS_JSON__;
         let _CHANGE_HITRATE = __CHANGE_HITRATE_JSON__;
         const _HITRATE_COLORS = {green:'#4ade80', yellow:'#facc15', red:'#f87171', gray:'#888'};
+        // 分页状态
+        let _currentPage = 1;
+        let _totalMatches = 0;
         function _getHitRateLabel(goalNum, oddsVal) {
             // 直接精确匹配：找历史上有相同赔率的比赛
             const exact = _ODDS_HITRATE.exact || {};
@@ -1530,30 +1537,26 @@ HTML_TEMPLATE = '''
         }
 
         // ── 分页配置 ──────────────────────────────────────
-        window._PAGE_SIZE = 6;
-        window._currentPage = 1;
-        window._allMatches = [];
+        const _PAGE_SIZE = 6;
+        window._allMatches = [];  // 当前页的比赛数据
 
-        function renderPage(page) {
-            const matches = window._allMatches;
-            const PAGE_SIZE = window._PAGE_SIZE;
-            const total = matches.length;
-            const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        function renderPage(page, pageMatches) {
+            // pageMatches: 可选，如果传入则直接使用（来自服务端返回的当前页数据）
+            const matches = pageMatches || window._allMatches;
+            const total = _totalMatches;
+            const totalPages = Math.max(1, Math.ceil(total / _PAGE_SIZE));
             if (page < 1) page = 1;
             if (page > totalPages) page = totalPages;
-            window._currentPage = page;
-
-            const start = (page - 1) * PAGE_SIZE;
-            const pageMatches = matches.slice(start, start + PAGE_SIZE);
+            _currentPage = page;
 
             const container = document.getElementById('matchList');
-            if (matches.length === 0) {
+            if (!matches || matches.length === 0) {
                 container.innerHTML = '<div class="no-data"><h2>暂无数据</h2><p>输入比赛ID，点击"抓取分析"按钮获取数据</p></div>';
                 document.getElementById('pagination').innerHTML = '';
                 return;
             }
 
-            container.innerHTML = pageMatches.map(m => {
+            container.innerHTML = matches.map(m => {
                 const analysis = analyzeMatch(m);
                 const confClass = analysis.confidence >= 3 ? 'conf-high' : analysis.confidence >= 2 ? 'conf-medium' : 'conf-low';
                 const _missingHeader = !m.match_info.match_num_str;
@@ -2314,11 +2317,35 @@ HTML_TEMPLATE = '''
                 pageHtml += `<button ${page >= totalPages ? 'disabled' : ''} onclick="goPage(${page + 1})">下一页 ›</button>`;
             }
             pageHtml += `<span class="page-info">第${page}/${totalPages}页，共${total}场</span>`;
+            pageHtml += `<span class="page-jump"><input type="number" id="jumpPageInput" min="1" max="${totalPages}" placeholder="${page}" onkeydown="if(event.key==='Enter')jumpToPage()"><button onclick="jumpToPage()">跳转</button></span>`;
             pageHtml += '</div>';
             document.getElementById('pagination').innerHTML = pageHtml;
         }
 
-        function goPage(p) { renderPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function jumpToPage() {
+            const input = document.getElementById('jumpPageInput');
+            if (!input) return;
+            const p = parseInt(input.value);
+            const totalPages = Math.max(1, Math.ceil(_totalMatches / _PAGE_SIZE));
+            if (isNaN(p) || p < 1 || p > totalPages) {
+                input.style.borderColor = '#f87171';
+                setTimeout(() => { input.style.borderColor = '#1e3a5f'; }, 1500);
+                return;
+            }
+            goPage(p);
+        }
+
+        async function goPage(p) {
+            const ts = Date.now();
+            const res = await fetch('/api/matches?light=1&page=' + p + '&page_size=' + _PAGE_SIZE + '&t=' + ts);
+            const data = await res.json();
+            window._allMatches = data.matches;
+            _totalMatches = data.total;
+            // 更新 _matchData
+            data.matches.forEach(m => { window._matchData[m.match_id] = m; });
+            renderPage(p, data.matches);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         // ── 生成AI推理Prompt ─────────────────────────────
         async function generateAIPrompt(matchId) {
@@ -2891,12 +2918,14 @@ HTML_TEMPLATE = '''
                 btn.innerHTML = '✅ 已统计';
                 btn.classList.add('done');
                 btn.disabled = true;
-                // 重新加载比赛列表以更新实盘验证显示
+                // 重新加载当前页比赛列表以更新实盘验证显示
                 const ts2 = Date.now();
-                const fres = await fetch('/api/matches?light=1&t=' + ts2);
+                const fres = await fetch('/api/matches?light=1&page=' + _currentPage + '&page_size=' + _PAGE_SIZE + '&t=' + ts2);
                 const fdata = await fres.json();
-                window._allMatches = fdata;
-                renderPage(window._currentPage || 1);
+                window._allMatches = fdata.matches || [];
+                _totalMatches = fdata.total || 0;
+                (fdata.matches || []).forEach(m => { window._matchData[m.match_id] = m; });
+                renderPage(_currentPage, fdata.matches || []);
             } catch (err) {
                 alert('统计失败：' + err.message);
                 btn.innerHTML = '📊 推荐统计';
@@ -2905,19 +2934,21 @@ HTML_TEMPLATE = '''
         }
 
         async function loadMatches() {
-            // 并行加载：精简比赛列表 + 已保存比分（加时间戳防缓存）
+            // 并行加载：精简比赛列表(第1页) + 已保存比分（加时间戳防缓存）
             const ts = Date.now();
             const [matchesRes, scoresRes] = await Promise.all([
-                fetch('/api/matches?light=1&t=' + ts),
+                fetch('/api/matches?light=1&page=1&page_size=' + _PAGE_SIZE + '&t=' + ts),
                 fetch('/api/saved-scores?t=' + ts)
             ]);
-            window._allMatches = await matchesRes.json();
+            const data = await matchesRes.json();
+            window._allMatches = data.matches || [];
+            _totalMatches = data.total || 0;
             const scoresData = scoresRes.ok ? (await scoresRes.json()) : {};
             window._savedScores = (scoresData && scoresData.success && scoresData.scores) ? scoresData.scores : {};
             // 缓存数据，供复盘时取 g3_prediction
             window._matchData = {};
-            window._allMatches.forEach(m => { window._matchData[m.match_id] = m; });
-            renderPage(1);
+            (data.matches || []).forEach(m => { window._matchData[m.match_id] = m; });
+            renderPage(1, data.matches || []);
         }
         
         function analyzeMatch(m) {
@@ -5168,9 +5199,21 @@ def _build_match_card(data, api, match_list_cache=None):
 import time as _time
 _matches_cache = {'data': None, 'mtime_map': {}, 'ts': 0}
 
+def _invalidate_matches_cache():
+    """比分/统计更新后失效缓存，下次请求重新构建"""
+    _matches_cache['data'] = None
+    _matches_cache['mtime_map'] = {}
+    _matches_cache['ts'] = 0
+
 @app.route('/api/matches')
 def get_matches():
-    """获取所有比赛数据，?light=1 返回精简版（用于卡片列表）"""
+    """获取比赛数据。
+    ?light=1    返回精简版
+    ?page=N     服务端分页页码（默认不分页，返回全量）
+    ?page_size=M 每页条数（默认6）"""
+    page = request.args.get('page', None, type=int)
+    page_size = request.args.get('page_size', 6, type=int)
+    
     # 检查缓存：所有文件修改时间未变则直接返回
     cache_valid = _matches_cache['data'] is not None
     if cache_valid:
@@ -5180,8 +5223,19 @@ def get_matches():
                     cache_valid = False
                     break
             except: pass
+    
     if cache_valid and _matches_cache['data']:
-        return jsonify(_matches_cache['data'])
+        all_matches = _matches_cache['data']
+        if page is not None:
+            start = (page - 1) * page_size
+            paged = all_matches[start:start + page_size]
+            return jsonify({
+                'matches': paged,
+                'total': len(all_matches),
+                'page': page,
+                'page_size': page_size
+            })
+        return jsonify(all_matches)
     
     matches = []
     api = SportteryAPI()
@@ -5294,6 +5348,16 @@ def get_matches():
     _matches_cache['data'] = matches
     _matches_cache['mtime_map'] = _new_mtime_map
     _matches_cache['ts'] = _time.time()
+    
+    if page is not None:
+        start = (page - 1) * page_size
+        paged = matches[start:start + page_size]
+        return jsonify({
+            'matches': paged,
+            'total': len(matches),
+            'page': page,
+            'page_size': page_size
+        })
     return jsonify(matches)
 
 @app.route('/api/fetch/<match_id>')
@@ -5492,6 +5556,7 @@ def save_score(match_id):
             import traceback; traceback.print_exc()
 
         save_score_record(record)
+        _invalidate_matches_cache()  # 使/API/matches缓存失效，确保前端刷新拿到最新数据
         return jsonify({'success': True, 'record': record})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
@@ -5557,6 +5622,7 @@ def update_rec_stats(match_id):
         }
         save_rec_stats(stats)
 
+        _invalidate_matches_cache()  # 使/API/matches缓存失效，确保累积统计更新后前端刷新拿到最新数据
         return jsonify({'success': True, 'updated_rules': updated_rules})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
