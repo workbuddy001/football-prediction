@@ -3846,7 +3846,7 @@ HTML_TEMPLATE = '''
 @app.route('/')
 def index():
     import time
-    print(f'=== INDEX() CALLED: {time.strftime("%H:%M:%S")} ===')
+    # print(f'=== INDEX() CALLED: {time.strftime("%H:%M:%S")} ===')  # disabled
     # 注入命中率统计到 JS 全局变量
     stats = _build_odds_hitrate()
     # 序列化成 JS 字面量嵌入页面（用字符串替换避免 Jinja2 转义）
@@ -3941,13 +3941,11 @@ def _analyze_hhad_low_draw(hhad, recent_form, data=None):
             elif '主胜' in had_data:
                 had_win = float(had_data['主胜'])
             else:
-                # 打印had的所有keys，方便调试
-                print(f'[DEBUG] had_data keys: {list(had_data.keys())}, cannot find had_win')
+                pass  # had keys don't match expected format
     except Exception as e:
-        print(f'[DEBUG] Error reading had_win: {e}')
         pass
     is_law3 = hhad_win < 2.2 and hhad_draw >= 3.7 and form_diff is not None and form_diff > 0 and 0 < had_win < 1.5
-    print(f'[DEBUG] is_law3 calculation: hhad_win={hhad_win}<2.2, hhad_draw={hhad_draw}>=3.7, form_diff={form_diff}>0, had_win={had_win} in (0,1.5) → {is_law3}')
+                # print(f'[DEBUG] is_law3 calculation: ...')  # disabled
 
     # 中赔前置条件: 主受让 + 客队近况好(form_diff < -0.3)
     is_mid_match = is_mid and (not is_home_let) and form_diff is not None and form_diff < -0.3
@@ -5166,16 +5164,32 @@ def _build_match_card(data, api, match_list_cache=None):
         return data
 
 
+# /api/matches 缓存（避免每次页面加载重新分析600+场比赛）
+import time as _time
+_matches_cache = {'data': None, 'mtime_map': {}, 'ts': 0}
+
 @app.route('/api/matches')
 def get_matches():
     """获取所有比赛数据，?light=1 返回精简版（用于卡片列表）"""
+    # 检查缓存：所有文件修改时间未变则直接返回
+    cache_valid = _matches_cache['data'] is not None
+    if cache_valid:
+        for fp in glob.glob(os.path.join(DATA_DIR, '*.json')):
+            try:
+                if _matches_cache['mtime_map'].get(fp, 0) != os.path.getmtime(fp):
+                    cache_valid = False
+                    break
+            except: pass
+    if cache_valid and _matches_cache['data']:
+        return jsonify(_matches_cache['data'])
+    
     matches = []
     api = SportteryAPI()
     is_light = api is not None  # always True, just for readability
 
     # ── 预加载比赛列表（一次请求，供所有旧数据补充字段）──
     _match_list_cache = None
-
+    _new_mtime_map = {}
     for filepath in glob.glob(os.path.join(DATA_DIR, '*.json')):
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
@@ -5268,11 +5282,18 @@ def get_matches():
                     matches.append(_build_match_card(data, api, match_list_cache=_match_list_cache))
         except:
             pass
+        # 记录文件修改时间
+        try: _new_mtime_map[filepath] = os.path.getmtime(filepath)
+        except: pass
 
     matches.sort(key=lambda x: x.get('fetch_time', ''), reverse=True)
     # 应用累积统计数据覆盖硬编码命中率
     for m in matches:
         apply_accumulated_stats(m)
+    # 存入缓存
+    _matches_cache['data'] = matches
+    _matches_cache['mtime_map'] = _new_mtime_map
+    _matches_cache['ts'] = _time.time()
     return jsonify(matches)
 
 @app.route('/api/fetch/<match_id>')
