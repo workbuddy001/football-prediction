@@ -228,20 +228,20 @@ def compute_betting(data, analysis):
         bet_goals = [7]
         bet_type = 'single'
         goal_stake = 30
-    elif g7_signal:
-        # 信号G7: 三维排除7球=保留/警惕 → 投7球 (ROI+491%)
+    elif g7_signal and g0 and g0 >= 12:
+        # 信号G7: 三维排除7球=保留/警惕 + o0>=12 → 投7球 (ROI+550%)
         rule = 'G7'
         bet_goals = [7]
         bet_type = 'single'
         goal_stake = 30
-    elif g6_keep:
-        # 信号G6: 三维排除6球=保留 → 投6球 (ROI+215%)
+    elif g6_keep and g0 and g0 >= 12:
+        # 信号G6: 三维排除6球=保留 + o0>=12 → 投6球 (ROI+298%)
         rule = 'G6'
         bet_goals = [6]
         bet_type = 'single'
         goal_stake = 30
-    elif g5_warn:
-        # 信号G5: 三维排除5球=警惕造热 → 投5球 (ROI+194%)
+    elif g5_warn and g0 and g0 >= 12:
+        # 信号G5: 三维排除5球=警惕造热 + o0>=12 → 投5球 (ROI+135%)
         rule = 'G5'
         bet_goals = [5]
         bet_type = 'single'
