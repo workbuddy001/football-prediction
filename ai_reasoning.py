@@ -116,6 +116,18 @@ def compute_betting(data, analysis):
         except:
             pass
     
+    # 预计算G5/G6/G7信号（三维排除标签驱动，2026-05-12新增，回测ROI+253%）
+    g5_warn = False; g6_keep = False; g7_signal = False
+    try:
+        exclusion = analysis.get('exclusion', {})
+        for e in exclusion.get('kept', []) + exclusion.get('excluded', []):
+            g = e.get('goal', ''); st = e.get('status', '?')
+            if g == '5球' and st == '⚠️警惕造热': g5_warn = True
+            if g == '6球' and st == '✅保留': g6_keep = True
+            if g == '7球' and st in ('✅观察保留', '⚠️警惕造热'): g7_signal = True
+    except:
+        pass
+    
     if top_score_rec == '0:0':
         # R0: 主攻<2.0过滤（强攻队不出0:0）
         h_att = None
@@ -214,6 +226,24 @@ def compute_betting(data, analysis):
         # 信号F: 近况>4 + 铁桶防守 + 0球25-35 + 0球不暴跌 → 投7球 (ROI+275%)
         rule = 'F'
         bet_goals = [7]
+        bet_type = 'single'
+        goal_stake = 30
+    elif g7_signal:
+        # 信号G7: 三维排除7球=保留/警惕 → 投7球 (ROI+491%)
+        rule = 'G7'
+        bet_goals = [7]
+        bet_type = 'single'
+        goal_stake = 30
+    elif g6_keep:
+        # 信号G6: 三维排除6球=保留 → 投6球 (ROI+215%)
+        rule = 'G6'
+        bet_goals = [6]
+        bet_type = 'single'
+        goal_stake = 30
+    elif g5_warn:
+        # 信号G5: 三维排除5球=警惕造热 → 投5球 (ROI+194%)
+        rule = 'G5'
+        bet_goals = [5]
         bet_type = 'single'
         goal_stake = 30
     elif top_score_rec == '2:4':

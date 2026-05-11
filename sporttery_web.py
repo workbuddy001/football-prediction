@@ -2657,11 +2657,11 @@ HTML_TEMPLATE = '''
                         if (bt.action !== 'bet') {
                             return '<div style=\"margin-top:6px;padding:6px;background:#1a1a1a;border-radius:6px;color:#888;font-size:12px\">💤 ' + bt.reason + '</div>';
                         }
-                        const goalColors = {'R0':'#e91e63','R1':'#4caf50','R2':'#9c27b0','R3':'#ff9800','R4':'#2196f3','F':'#ff5722'};
+                        const goalColors = {'R0':'#e91e63','R1':'#4caf50','R2':'#9c27b0','R3':'#ff9800','R4':'#2196f3','F':'#ff5722','G5':'#e91e63','G6':'#9c27b0','G7':'#ff5722'};
                         const clr = goalColors[bt.rule] || '#888';
                         let h = '<div style=\"margin-top:8px;padding:10px;background:#0d1b0d;border-radius:8px;border:2px solid ' + clr + '\">';
                         h += '<strong style=\"color:' + clr + ';font-size:14px\">💰 投注策略 [' + bt.rule + ']</strong>';
-                        const roiMap = {'R0':'+164%','R1':'+300%','R2':'探索中','R3':'+56%','R4':'探索中','F':'+275%'};
+                        const roiMap = {'R0':'+164%','R1':'+300%','R2':'探索中','R3':'+56%','R4':'探索中','F':'+275%','G5':'+194%','G6':'+215%','G7':'+491%'};
                         h += '<span style=\"color:#888;font-size:10px;margin-left:6px\">回测ROI ' + (roiMap[bt.rule]||'N/A') + '</span><br>';
                         
                         // Goal bet
