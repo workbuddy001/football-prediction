@@ -2684,24 +2684,26 @@ HTML_TEMPLATE = '''
                         if (bt.action !== 'bet') {
                             return '<div style=\"margin-top:6px;padding:6px;background:#1a1a1a;border-radius:6px;color:#888;font-size:12px\">💤 ' + bt.reason + '</div>';
                         }
-                        const goalColors = {'R0':'#e91e63','R1':'#4caf50','R2':'#9c27b0','R3':'#ff9800','R4':'#2196f3','F':'#ff5722','G5':'#e91e63','G6':'#9c27b0','G7':'#ff5722'};
+                        const goalColors = {'R0':'#e91e63','R1':'#4caf50','R2':'#9c27b0','R3':'#ff9800','R4':'#2196f3','F':'#ff5722','G4':'#ff9800','G5':'#e91e63','G6':'#9c27b0','G7':'#ff5722'};
                         const clr = goalColors[bt.rule] || '#888';
                         let h = '<div style=\"margin-top:8px;padding:10px;background:#0d1b0d;border-radius:8px;border:2px solid ' + clr + '\">';
                         h += '<strong style=\"color:' + clr + ';font-size:14px\">💰 投注策略 [' + bt.rule + ']</strong>';
-                        const roiMap = {'R0':'+164%','R1':'+300%','R2':'探索中','R3':'+56%','R4':'探索中','F':'+275%','G5':'+135%','G6':'+298%','G7':'+550%'};
+                        const roiMap = {'R0':'+164%','R1':'+300%','R2':'探索中','R3':'+56%','R4':'探索中','F':'+275%','G4':'+122%','G5':'+135%','G6':'+298%','G7':'+550%'};
                         h += '<span style=\"color:#888;font-size:10px;margin-left:6px\">回测ROI ' + (roiMap[bt.rule]||'N/A') + '</span><br>';
                         
                         // Goal bet
                         const gb = bt.goal_bet;
-                        h += '<div style=\"margin:6px 0;padding:6px;background:#1a2a1a;border-radius:4px\">';
-                        h += '<span style=\"color:#ffcc80\">🎯 进球数:</span> ';
-                        h += '<span style=\"color:#fff;font-size:16px;font-weight:bold\">' + gb.goals.join('球+') + '球</span> ';
-                        h += '<span style=\"color:#4caf50;font-weight:bold\">投' + gb.stake + '元</span>';
-                        if (gb.odds) {
-                            let oStr = Object.entries(gb.odds).map(([g,o]) => g+'球赔'+o).join(' / ');
-                            h += '<br><span style=\"color:#888;font-size:11px\">赔率: ' + oStr + '</span>';
+                        if (gb.stake > 0) {
+                            h += '<div style=\"margin:6px 0;padding:6px;background:#1a2a1a;border-radius:4px\">';
+                            h += '<span style=\"color:#ffcc80\">🎯 进球数:</span> ';
+                            h += '<span style=\"color:#fff;font-size:16px;font-weight:bold\">' + gb.goals.join('球+') + '球</span> ';
+                            h += '<span style=\"color:#4caf50;font-weight:bold\">投' + gb.stake + '元</span>';
+                            if (gb.odds && Object.keys(gb.odds).length > 0) {
+                                let oStr = Object.entries(gb.odds).map(([g,o]) => g+'球赔'+o).join(' / ');
+                                h += '<br><span style=\"color:#888;font-size:11px\">赔率: ' + oStr + '</span>';
+                            }
+                            h += '</div>';
                         }
-                        h += '</div>';
                         
                         // Score bets
                         if (bt.score_bets && bt.score_bets.length > 0) {
@@ -2716,7 +2718,12 @@ HTML_TEMPLATE = '''
                         }
                         
                         h += '<div style=\"margin-top:4px;font-size:11px;color:#888\">';
-                        h += '进球投' + gb.stake + '元 + 比分投' + bt.score_stake + '元 = <strong style=\"color:#fff\">合计' + bt.total_stake + '元</strong>';
+                        if (gb.stake > 0 && bt.score_stake > 0) {
+                            h += '进球投' + gb.stake + '元 + 比分投' + bt.score_stake + '元 = ';
+                        } else if (bt.score_stake > 0) {
+                            h += '比分投' + bt.score_stake + '元 = ';
+                        }
+                        h += '<strong style=\"color:#fff\">合计' + bt.total_stake + '元</strong>';
                         h += '</div>';
                         h += '<div style=\"margin-top:2px;font-size:10px;color:#666\">' + bt.summary + '</div>';
                         h += '</div>';

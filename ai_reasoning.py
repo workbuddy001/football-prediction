@@ -116,6 +116,27 @@ def compute_betting(data, analysis):
         except:
             pass
     
+    # 预计算G4信号（4球警惕造热+平<3.5+双方防守>1.0→投2:2, 回测ROI+122%）
+    g4_22 = False
+    try:
+        exclusion = analysis.get('exclusion', {})
+        for e in exclusion.get('kept', []):
+            g = e.get('goal', ''); st = e.get('status', '?')
+            if g == '4球' and st == '⚠️警惕造热':
+                had = data.get('had', {})
+                try:
+                    draw = float(had.get('平', had.get('D', 999)))
+                    if draw < 3.5:
+                        rec = analysis.get('recent_summary', {})
+                        h_def = float(rec.get('h_def', 0) or 0)
+                        a_def = float(rec.get('a_def', 0) or 0)
+                        if min(h_def, a_def) > 1.0:  # 双方防守都不好
+                            g4_22 = True
+                except: pass
+                break
+    except:
+        pass
+    
     # 预计算G5/G6/G7信号（三维排除标签驱动，2026-05-12新增，回测ROI+253%）
     g5_warn = False; g6_keep = False; g7_signal = False
     try:
@@ -246,6 +267,12 @@ def compute_betting(data, analysis):
         bet_goals = [5]
         bet_type = 'single'
         goal_stake = 30
+    elif g4_22:
+        # 信号G4: 4球警惕造热 + 平<3.5 + 双方防守>1.0 → 投2:2比分10元 (ROI+122%)
+        rule = 'G4'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif top_score_rec == '2:4':
         # R2: 推荐2:4 + 让胜<让负 + 让负>2.5 → 纯买2:4比分20元
         try:
@@ -333,6 +360,12 @@ def compute_betting(data, analysis):
         if ho > 0:
             score_bets.append({'score': score_key, 'odds': round(ho, 1), 'stake': 20})
         conf_tag = ''
+    elif rule == 'G4':
+        # G4: 4球警惕造热+平<3.5 → 纯买2:2比分 10元 (ROI+82%)
+        ho = _get_score_odds('2:2')
+        if ho > 0:
+            score_bets.append({'score': '2:2', 'odds': round(ho, 1), 'stake': 10, 'tag': '4球警惕'})
+        conf_tag = ''
     else:
         # 非R0: 每个目标球数取最低赔率2个比分
         for g in bet_goals:
@@ -344,8 +377,12 @@ def compute_betting(data, analysis):
     
     total_score_stake = sum(s['stake'] for s in score_bets)
     
-    summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元" if bet_goals else ''
-    if score_bets:
+    summary_text = ''
+    if rule == 'G4':
+        summary_text = '2:2比分10元'
+    elif bet_goals:
+        summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
+    if score_bets and rule != 'G4':
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
