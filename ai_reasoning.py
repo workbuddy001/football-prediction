@@ -137,6 +137,63 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算H1信号（大热必死+Top1比分+o0>=20→投Top1比分10元,回测ROI+171%）
+    h1_score = None; h1_odds = 0
+    try:
+        exclusion = analysis.get('exclusion', {})
+        hot_goals = {}
+        for e in exclusion.get('kept', []) + exclusion.get('excluded', []):
+            st = e.get('status', '?'); reason = e.get('reason', '?')
+            if '大热必死' in st or '大热必死' in reason:
+                try: hot_goals[int(e.get('goal','').replace('球',''))] = True
+                except: pass
+        if hot_goals and g0 and g0 >= 20:
+            so = data.get('score_odds', {})
+            if so:
+                from sporttery_web import get_score_recommendations_for_match
+                top_recs = get_score_recommendations_for_match(so)
+                if top_recs:
+                    top1 = top_recs[0]
+                    if int(top1.get('total_goals', 0)) in hot_goals:
+                        h1_score = top1.get('score', '')
+                        # get odds for this score (inline, _get_score_odds defined later)
+                        try:
+                            parts = h1_score.replace('-',':').split(':')
+                            key = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
+                            h1_odds = float(so.get(key, so.get(h1_score, 0)) or 0)
+                        except: h1_odds = 0
+    except:
+        pass
+    
+    # 预计算H2信号（Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死→投1:1 10元,回测ROI+231%）
+    h2_11 = False
+    try:
+        if g0 and 11 <= g0 < 13:
+            had = data.get('had', {})
+            draw = float(had.get('平', had.get('D', 999)) or 0)
+            if draw < 3.5:
+                so = data.get('score_odds', {})
+                if so:
+                    from sporttery_web import get_score_recommendations_for_match
+                    top_recs = get_score_recommendations_for_match(so)
+                    if top_recs and top_recs[0].get('score') == '1:1':
+                        # 检查2球状态: 铁保留 或 大热必死
+                        excl = analysis.get('exclusion', {})
+                        st2 = None
+                        for e in excl.get('kept', []) + excl.get('excluded', []):
+                            if e.get('goal') == '2球':
+                                st2 = e.get('status', '?')
+                                if '大热必死' in st2 or st2 == '🛡️铁保留':
+                                    h2_11 = True
+                                break
+                        if not h2_11:
+                            # 也查excluded里大热必死
+                            for e in excl.get('excluded', []):
+                                if e.get('goal') == '2球' and '大热必死' in e.get('reason', ''):
+                                    h2_11 = True; break
+    except:
+        pass
+    
     # 预计算G5/G6/G7信号（三维排除标签驱动，2026-05-12新增，回测ROI+253%）
     g5_warn = False; g6_keep = False; g7_signal = False
     try:
@@ -261,6 +318,18 @@ def compute_betting(data, analysis):
         bet_goals = [6]
         bet_type = 'single'
         goal_stake = 30
+    elif h2_11:
+        # 信号H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死 → 投1:1 10元 (ROI+231%)
+        rule = 'H2'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
+    elif h1_score and h1_odds > 0:
+        # 信号H1: 大热必死+Top1比分+o0>=20 → 投Top1比分10元 (ROI+171%)
+        rule = 'H1'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif g5_warn and g0 and g0 >= 12:
         # 信号G5: 三维排除5球=警惕造热 + o0>=12 → 投5球 (ROI+135%)
         rule = 'G5'
@@ -361,10 +430,20 @@ def compute_betting(data, analysis):
             score_bets.append({'score': score_key, 'odds': round(ho, 1), 'stake': 20})
         conf_tag = ''
     elif rule == 'G4':
-        # G4: 4球警惕造热+平<3.5 → 纯买2:2比分 10元 (ROI+82%)
+        # G4: 4球警惕造热+平<3.5+双方防守>1.0 → 纯买2:2比分 10元 (ROI+122%)
         ho = _get_score_odds('2:2')
         if ho > 0:
             score_bets.append({'score': '2:2', 'odds': round(ho, 1), 'stake': 10, 'tag': '4球警惕'})
+        conf_tag = ''
+    elif rule == 'H1':
+        # H1: 大热必死+Top1比分+o0>=20 → 纯买Top1比分 10元 (ROI+171%)
+        score_bets.append({'score': h1_score, 'odds': round(h1_odds, 1), 'stake': 10, 'tag': '大热必死'})
+        conf_tag = ''
+    elif rule == 'H2':
+        # H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热 → 纯买1:1 10元 (ROI+231%)
+        ho = _get_score_odds('1:1')
+        if ho > 0:
+            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 10, 'tag': 'H2铁保留'})
         conf_tag = ''
     else:
         # 非R0: 每个目标球数取最低赔率2个比分
@@ -380,9 +459,13 @@ def compute_betting(data, analysis):
     summary_text = ''
     if rule == 'G4':
         summary_text = '2:2比分10元'
+    elif rule == 'H1':
+        summary_text = f'{h1_score}比分10元'
+    elif rule == 'H2':
+        summary_text = '1:1比分10元'
     elif bet_goals:
         summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
-    if score_bets and rule != 'G4':
+    if score_bets and rule not in ('G4', 'H1', 'H2'):
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
