@@ -194,6 +194,32 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算H3信号（平平↓+2球≥3.05+平<3.2+pp≤-8%+Top1=1:1+o0≤14→投1:1 30元,回测ROI+405%）
+    h3_11 = False
+    try:
+        if g0 and g0 <= 14:
+            had = data.get('had', {})
+            draw = float(had.get('平', had.get('D', 999)) or 0)
+            if draw < 3.2:
+                g2_val = go.get(2, 0)
+                if g2_val and g2_val >= 3.05:
+                    so = data.get('score_odds', {})
+                    if so:
+                        from sporttery_web import get_score_recommendations_for_match
+                        top_recs = get_score_recommendations_for_match(so)
+                        if top_recs and top_recs[0].get('score') == '1:1':
+                            hafu_c = data.get('hafu_change', {}) or {}
+                            pp = hafu_c.get('平平', {})
+                            if isinstance(pp, dict):
+                                pc = pp.get('count', 0)
+                                pch = pp.get('change_pct', 0)
+                                if pc > 1 and pch <= -8:
+                                    min_chg = min(v.get('change_pct', 0) for v in hafu_c.values() if isinstance(v, dict))
+                                    if pch <= min_chg + 0.1:
+                                        h3_11 = True
+    except:
+        pass
+    
     # 预计算G5/G6/G7信号（三维排除标签驱动，2026-05-12新增，回测ROI+253%）
     g5_warn = False; g6_keep = False; g7_signal = False
     try:
@@ -318,6 +344,12 @@ def compute_betting(data, analysis):
         bet_goals = [6]
         bet_type = 'single'
         goal_stake = 30
+    elif h3_11:
+        # 信号H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 投1:1 30元 (ROI+405%)
+        rule = 'H3'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif h2_11:
         # 信号H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死 → 投1:1 10元 (ROI+231%)
         rule = 'H2'
@@ -445,6 +477,12 @@ def compute_betting(data, analysis):
         if ho > 0:
             score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 10, 'tag': 'H2铁保留'})
         conf_tag = ''
+    elif rule == 'H3':
+        # H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 纯买1:1 30元 (ROI+405%)
+        ho = _get_score_odds('1:1')
+        if ho > 0:
+            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 30, 'tag': '平平↓压盘'})
+        conf_tag = ''
     else:
         # 非R0: 每个目标球数取最低赔率2个比分
         for g in bet_goals:
@@ -463,9 +501,11 @@ def compute_betting(data, analysis):
         summary_text = f'{h1_score}比分10元'
     elif rule == 'H2':
         summary_text = '1:1比分10元'
+    elif rule == 'H3':
+        summary_text = '1:1比分30元'
     elif bet_goals:
         summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
-    if score_bets and rule not in ('G4', 'H1', 'H2'):
+    if score_bets and rule not in ('G4', 'H1', 'H2', 'H3'):
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
