@@ -194,7 +194,7 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    # 预计算H3信号（平平↓+2球≥3.05+平<3.2+pp≤-8%+Top1=1:1+o0≤14→投1:1 30元,回测ROI+405%）
+    # 预计算H3信号（平平↓+2球≥3.05+平<3.2+pp≤-8%+pp≤3次+Top1=1:1+o0≤14→投1:1 30元,回测ROI+405%）
     h3_11 = False
     try:
         if g0 and g0 <= 14:
@@ -213,7 +213,7 @@ def compute_betting(data, analysis):
                             if isinstance(pp, dict):
                                 pc = pp.get('count', 0)
                                 pch = pp.get('change_pct', 0)
-                                if pc > 1 and pch <= -8:
+                                if 1 < pc <= 3 and pch <= -8:
                                     min_chg = min(v.get('change_pct', 0) for v in hafu_c.values() if isinstance(v, dict))
                                     if pch <= min_chg + 0.1:
                                         h3_11 = True
