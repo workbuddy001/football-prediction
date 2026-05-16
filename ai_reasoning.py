@@ -24,7 +24,6 @@ def compute_betting(data, analysis):
     投注策略决策：
     R0: 推荐0:0 → 三层排除 + 双层保底 → 0球50元 + 1:1(10)+小胜(10)
     R1: 推荐3:0 + V36+Tree双确认 + 让胜<1.80 → 3:0比分20元
-    R2: 推荐2:4 + 让胜<让负 + 让负>2.5 → 2:4比分20元
     R3: 不推荐1:1 + 主胜<1.3 + 0球20-35 → 双选3+4球120元
     R4: 不推荐1:1 + 0球<10 → 双选0+2球120元
     """
@@ -380,21 +379,6 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    elif top_score_rec == '2:4':
-        # R2: 推荐2:4 + 让胜<让负 + 让负>2.5 → 纯买2:4比分20元
-        try:
-            hhad = data.get('hhad', {})
-            rs = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
-            rf = float(hhad.get('让负', 0)) if isinstance(hhad, dict) and hhad.get('让负') else 0
-            if not (rs < rf and rf > 2.5):
-                return {'action': 'skip', 'reason': f'R2跳过: 让胜{rs:.1f}≥让负{rf:.1f}或让负≤2.5(不符合2:4规律)'}
-        except:
-            return {'action': 'skip', 'reason': 'R2跳过: 让球数据缺失'}
-        
-        rule = 'R2'
-        bet_goals = []
-        bet_type = 'single'
-        goal_stake = 0
     elif not_11 and strong_over:
         rule = 'R3'
         bet_goals = [3, 4]
@@ -460,9 +444,9 @@ def compute_betting(data, analysis):
             conf_tag = ' 💚HAD平赔降'
         elif had_weak:
             conf_tag = ' ⚠️HAD主胜升'
-    elif rule in ('R1', 'R2'):
-        # R1: 纯买3:0比分 20元 | R2: 纯买2:4比分 20元
-        score_key = '3:0' if rule == 'R1' else '2:4'
+    elif rule == 'R1':
+        # R1: 纯买3:0比分 20元
+        score_key = '3:0'
         ho = _get_score_odds(score_key)
         if ho > 0:
             score_bets.append({'score': score_key, 'odds': round(ho, 1), 'stake': 20})
