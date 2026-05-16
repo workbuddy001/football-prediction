@@ -137,7 +137,7 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    # 预计算H1信号（大热必死+Top1比分+o0>=20→投Top1比分10元,回测ROI+171%）
+    # 预计算H1信号（大热必死+Top1比分+o0>=20+尾数.25→投Top1比分10元,回测ROI+263%）
     h1_score = None; h1_odds = 0
     try:
         exclusion = analysis.get('exclusion', {})
@@ -156,16 +156,19 @@ def compute_betting(data, analysis):
                     top1 = top_recs[0]
                     if int(top1.get('total_goals', 0)) in hot_goals:
                         h1_score = top1.get('score', '')
-                        # get odds for this score (inline, _get_score_odds defined later)
                         try:
                             parts = h1_score.replace('-',':').split(':')
                             key = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
                             h1_odds = float(so.get(key, so.get(h1_score, 0)) or 0)
+                            # 尾数必须.25
+                            odd_str = str(h1_odds)
+                            if not (len(odd_str) >= 3 and odd_str[-2:] == '25'):
+                                h1_odds = 0; h1_score = None
                         except: h1_odds = 0
     except:
         pass
     
-    # 预计算H2信号（Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死→投1:1 10元,回测ROI+231%）
+    # 预计算H2信号（Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死+尾数.25→投1:1 10元,回测ROI+275%）
     h2_11 = False
     try:
         if g0 and 11 <= g0 < 13:
@@ -177,20 +180,23 @@ def compute_betting(data, analysis):
                     from sporttery_web import get_score_recommendations_for_match
                     top_recs = get_score_recommendations_for_match(so)
                     if top_recs and top_recs[0].get('score') == '1:1':
-                        # 检查2球状态: 铁保留 或 大热必死
-                        excl = analysis.get('exclusion', {})
-                        st2 = None
-                        for e in excl.get('kept', []) + excl.get('excluded', []):
-                            if e.get('goal') == '2球':
-                                st2 = e.get('status', '?')
-                                if '大热必死' in st2 or st2 == '🛡️铁保留':
-                                    h2_11 = True
-                                break
-                        if not h2_11:
-                            # 也查excluded里大热必死
-                            for e in excl.get('excluded', []):
-                                if e.get('goal') == '2球' and '大热必死' in e.get('reason', ''):
-                                    h2_11 = True; break
+                        # 尾数必须.25
+                        odds11 = top_recs[0].get('odds', 0)
+                        odd_str = str(odds11)
+                        if len(odd_str) >= 3 and odd_str[-2:] == '25':
+                            # 检查2球状态: 铁保留 或 大热必死
+                            excl = analysis.get('exclusion', {})
+                            st2 = None
+                            for e in excl.get('kept', []) + excl.get('excluded', []):
+                                if e.get('goal') == '2球':
+                                    st2 = e.get('status', '?')
+                                    if '大热必死' in st2 or st2 == '🛡️铁保留':
+                                        h2_11 = True
+                                    break
+                            if not h2_11:
+                                for e in excl.get('excluded', []):
+                                    if e.get('goal') == '2球' and '大热必死' in e.get('reason', ''):
+                                        h2_11 = True; break
     except:
         pass
     

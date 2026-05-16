@@ -2688,7 +2688,7 @@ HTML_TEMPLATE = '''
                         const clr = goalColors[bt.rule] || '#888';
                         let h = '<div style=\"margin-top:8px;padding:10px;background:#0d1b0d;border-radius:8px;border:2px solid ' + clr + '\">';
                         h += '<strong style=\"color:' + clr + ';font-size:14px\">💰 投注策略 [' + bt.rule + ']</strong>';
-                        const roiMap = {'R0':'+164%','R1':'+300%','R2':'探索中','R3':'+56%','R4':'探索中','F':'+275%','G4':'+122%','G5':'+135%','G6':'+298%','G7':'+550%','H3':'+405%','H2':'+231%','H1':'+171%'};
+                        const roiMap = {'R0':'+164%','R1':'+300%','R2':'探索中','R3':'+56%','R4':'探索中','F':'+275%','G4':'+122%','G5':'+135%','G6':'+298%','G7':'+550%','H3':'+405%','H2':'+275%','H1':'+263%'};
                         h += '<span style=\"color:#888;font-size:10px;margin-left:6px\">回测ROI ' + (roiMap[bt.rule]||'N/A') + '</span><br>';
                         
                         // Goal bet
