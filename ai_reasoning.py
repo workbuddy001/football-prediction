@@ -340,6 +340,12 @@ def compute_betting(data, analysis):
         except:
             pass
         
+        # R0: 近况过滤（2.5-3.5区间0球率最高42%, 回测ROI+206%）
+        rec = analysis.get('recent_summary', {})
+        combined = float(rec.get('combined_avg', 0) or 0)
+        if not (2.5 <= combined < 3.5):
+            return {'action': 'skip', 'reason': f'R0跳过: 近况{combined:.1f}不在2.5-3.5(0球率最佳区间)'}
+        
         # R0: 置信度标记（仅供参考，投注额统一50元）
         rule = 'R0'
         bet_goals = [0]
