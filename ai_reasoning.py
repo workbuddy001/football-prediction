@@ -999,3 +999,118 @@ def v36_analyze(match_id):
     except Exception as e:
         import traceback
         return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+# ── 批量推荐 ──
+@bp.route('/v36/batch_recommend', methods=['GET'])
+def v36_batch_recommend():
+    """批量分析所有未赛比赛，返回投注建议"""
+    try:
+        import glob
+        from datetime import datetime as dt
+        from sporttery_web import _build_odds_hitrate, _build_change_hitrate
+        _oh = _build_odds_hitrate()
+        _ch = _build_change_hitrate()
+        
+        # 读取已赛比分
+        scores_file = os.path.join(os.path.dirname(DATA_DIR), '分析模板', '_scores.json')
+        try:
+            with open(scores_file, 'r', encoding='utf-8') as f:
+                scores = json.load(f)
+        except:
+            scores = {}
+        
+        files = sorted(glob.glob(os.path.join(DATA_DIR, '20*.json')), reverse=True)
+        
+        signals = []
+        weekday_cn = ['周一','周二','周三','周四','周五','周六','周日']
+        today_idx = dt.now().weekday()
+        today_wd = weekday_cn[today_idx]
+        now = dt.now()
+        
+        for fp in files:
+            mid = os.path.basename(fp).replace('.json', '')
+            # 跳过已赛
+            if mid in scores:
+                sr = scores[mid]
+                if sr.get('home_score') is not None and isinstance(sr.get('home_score'), (int, float)):
+                    continue
+            
+            try:
+                with open(fp, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+            except:
+                continue
+            
+            if not data.get('match_info', {}).get('match_num_str'):
+                continue
+            
+            data['_odds_hitrate'] = _oh
+            data['_change_hitrate'] = _ch
+            
+            try:
+                from v36_analyzer import analyze_match
+                analysis = analyze_match(data)
+            except:
+                continue
+            
+            bt = compute_betting(data, analysis)
+            rule = bt.get('rule')
+            if not rule:
+                continue
+            
+            mi = data.get('match_info', {})
+            mid_str = mi.get('match_num_str', mid)
+            if not mid_str.startswith(today_wd):
+                continue  # 只显示今天
+            
+            # 比赛时间
+            date = mi.get('match_date', '')
+            time = mi.get('match_time', '')
+            dt_str = f'{date} {time}'.strip()
+            match_dt = None
+            if date and time:
+                for fmt in ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M']:
+                    try:
+                        match_dt = dt.strptime(dt_str, fmt)
+                        break
+                    except: pass
+            
+            hot = False
+            cutoff = False
+            if match_dt:
+                diff_min = (match_dt - now).total_seconds() / 60
+                if diff_min < 0:
+                    continue  # 已开赛
+                if diff_min <= 60:
+                    hot = True
+                now_mins = now.hour * 60 + now.minute
+                if now_mins >= 21 * 60 + 30:
+                    cutoff = True
+            
+            signals.append({
+                'rule': rule,
+                'match_id': mid,
+                'match_num': mid_str,
+                'home': mi.get('home_team', '?'),
+                'away': mi.get('away_team', '?'),
+                'datetime': dt_str,
+                'hot': hot,
+                'cutoff': cutoff,
+                'stake': bt.get('total_stake', 0),
+                'summary': bt.get('summary', '?'),
+                'goal_bet': {'goals': bt.get('goal_bet', {}).get('goals', []), 'odds': bt.get('goal_bet', {}).get('odds', {}), 'stake': bt.get('goal_bet', {}).get('stake', 0)},
+                'score_bets': [{'score': s['score'], 'odds': s['odds'], 'stake': s['stake'], 'tag': s.get('tag', '')} for s in bt.get('score_bets', [])],
+            })
+        
+        total_stake = sum(s['stake'] for s in signals)
+        return jsonify({
+            'success': True,
+            'today': today_wd,
+            'count': len(signals),
+            'total_stake': total_stake,
+            'signals': signals,
+        })
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500

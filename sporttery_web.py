@@ -1438,7 +1438,7 @@ HTML_TEMPLATE = '''
         <div class="controls">
             <input type="text" id="matchInput" placeholder="输入比赛ID">
             <button class="btn-fetch" onclick="fetchMatch()">抓取分析</button>
-            <button class="btn-refresh" onclick="loadMatches()">刷新列表</button>
+            <button class="btn-batch" onclick="batchRecommend()">📊 批量推荐</button>
         </div>
         
         <div id="matchList" class="match-grid"></div>
@@ -3338,6 +3338,54 @@ HTML_TEMPLATE = '''
             } catch(e) {
                 msgEl.style.color = '#ef4444';
                 msgEl.textContent = '❌ 请求失败: ' + e.message;
+            }
+        }
+
+        // ── 批量推荐 ──────────────────────────────────
+        async function batchRecommend() {
+            const matchList = document.getElementById('matchList');
+            matchList.innerHTML = '<div style="text-align:center;padding:40px;color:#4fc3f7;">📊 分析中，请稍候...</div>';
+            
+            try {
+                const res = await fetch('/v36/batch_recommend');
+                const data = await res.json();
+                if (!data.success) {
+                    matchList.innerHTML = '<div style="text-align:center;padding:40px;color:#f44336;">❌ ' + (data.error || '分析失败') + '</div>';
+                    return;
+                }
+                
+                if (!data.signals || data.signals.length === 0) {
+                    matchList.innerHTML = '<div style="text-align:center;padding:40px;color:#888;">📭 ' + data.today + '暂无可触发信号</div>';
+                    return;
+                }
+                
+                let html = '<div style="background:#1a1a2e;border:2px solid #4fc3f7;border-radius:12px;padding:16px;margin-bottom:12px">';
+                html += '<h3 style="color:#4fc3f7;margin:0 0 12px 0">📊 ' + data.today + ' 批量推荐 (' + data.count + '个信号 | 总投入' + data.total_stake + '元)</h3>';
+                html += '<div style="font-size:12px;color:#888">🔥 临场重点 | 📌 今日推荐 | ⏰ 21:30投注截止 / 21:15最后分析</div>';
+                html += '</div>';
+                
+                for (const s of data.signals) {
+                    const icon = s.hot ? '🔥' : (s.cutoff ? '⏰' : '📌');
+                    const borderColor = s.hot ? '#ff9800' : (s.cutoff ? '#f44336' : '#4fc3f7');
+                    html += '<div style="background:#16213e;border-left:3px solid ' + borderColor + ';border-radius:6px;padding:12px;margin:8px 0">';
+                    html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">';
+                    html += '<span style="font-size:14px;font-weight:bold;color:#fff">' + icon + ' [' + s.rule + '] ' + s.match_num + '</span>';
+                    html += '<span style="font-size:12px;color:#4fc3f7">投' + s.stake + '元</span>';
+                    html += '</div>';
+                    html += '<div style="font-size:13px;color:#e0e0e0;margin:4px 0">' + s.home + ' vs ' + s.away + '</div>';
+                    html += '<div style="font-size:12px;color:#888;margin:4px 0">⏰ ' + s.datetime + ' | ' + s.summary + '</div>';
+                    if (s.goal_bet && s.goal_bet.goals && s.goal_bet.goals.length > 0) {
+                        html += '<div style="font-size:12px;color:#66bb6a;margin:2px 0">⚽ 总进球' + s.goal_bet.goals + '球 赔' + JSON.stringify(s.goal_bet.odds) + ' 投' + s.goal_bet.stake + '元</div>';
+                    }
+                    for (const sb of s.score_bets) {
+                        html += '<div style="font-size:12px;color:#ffab40;margin:2px 0">🎯 ' + sb.score + ' 赔' + sb.odds + ' 投' + sb.stake + '元' + (sb.tag ? ' [' + sb.tag + ']' : '') + '</div>';
+                    }
+                    html += '</div>';
+                }
+                
+                matchList.innerHTML = html;
+            } catch (e) {
+                matchList.innerHTML = '<div style="text-align:center;padding:40px;color:#f44336;">❌ 请求失败: ' + e.message + '</div>';
             }
         }
 
