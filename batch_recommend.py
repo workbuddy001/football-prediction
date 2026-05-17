@@ -137,8 +137,10 @@ today_idx = dt.now().weekday()
 today_wd = weekday_cn[today_idx]
 now = dt.now()
 
+after_cutoff = (now.hour > CUTOFF_TIME[0] or (now.hour == CUTOFF_TIME[0] and now.minute >= CUTOFF_TIME[1]))
+cutoff_label = f' | ⏰ 已过{CUTOFF_TIME[0]}:{CUTOFF_TIME[1]:02d}截止' if after_cutoff else ''
 print(f'{"="*80}')
-print(f'📅 今天 {today_wd} | 当前 {now.strftime("%H:%M")} | 扫描 {len(files)} 场 → {len(signals)} 个信号')
+print(f'📅 今天 {today_wd} | 当前 {now.strftime("%H:%M")}{cutoff_label} | 扫描 {len(files)} 场 → {len(signals)} 个信号')
 print(f'{"="*80}\n')
 
 # 2. 只保留今天的比赛
@@ -152,9 +154,10 @@ if not today_signals:
     print(f'今天({today_wd})无触发信号')
     sys.exit(0)
 
-# 3. 分类：临场 / 今日 / 已过期
-HOT_MINUTES = 60  # 1小时内=重点
-CUTOFF_HOUR = 21   # 21点截止
+# 3. 分类：临场 / 今日 / 已截止
+HOT_MINUTES = 60          # 1小时内=重点
+CUTOFF_TIME = (21, 30)     # 21:30投注截止
+LAST_ANALYSIS = (21, 15)   # 21:15最后一次分析
 
 hot_signals = {}   # 🔥临场
 live_signals = {}  # 今天剩余
@@ -183,8 +186,13 @@ for mid, s in today_signals.items():
     if diff_min < 0:
         continue  # 已开赛，跳过
     
-    if now.hour >= CUTOFF_HOUR:
-        cutoff_signals[mid] = s
+    # 21:15后 = 最后分析模式，只显示尚未开赛的
+    if now.hour > LAST_ANALYSIS[0] or (now.hour == LAST_ANALYSIS[0] and now.minute >= LAST_ANALYSIS[1]):
+        after_cutoff = (now.hour > CUTOFF_TIME[0] or (now.hour == CUTOFF_TIME[0] and now.minute >= CUTOFF_TIME[1]))
+        if after_cutoff:
+            cutoff_signals[mid] = s
+        else:
+            live_signals[mid] = s
     elif diff_min <= HOT_MINUTES:
         hot_signals[mid] = s
     else:
@@ -220,7 +228,7 @@ if hot_signals:
 if live_signals:
     print_section('📌 今日推荐', live_signals)
 if cutoff_signals:
-    print(f'⏰ 当前已过21:00截止，剩余可投场次:')
-    print_section('📌 今日剩余', cutoff_signals)
+    print(f'⏰ 当前已过21:30截止，21:15最后分析 → 今日剩余可投:')
+    print_section('📌 剩余场次', cutoff_signals)
 
 print(f'💰 今日总投入: {total_stake}元 (共{len(hot_signals)+len(live_signals)+len(cutoff_signals)}个信号)')
