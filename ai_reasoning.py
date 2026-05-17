@@ -239,7 +239,7 @@ def compute_betting(data, analysis):
         pass
     
     # 预计算S2/S3/S4信号（近况<2.5 + 大球反常保留→反向投注）
-    s2_5ball = False; s3_6ball = False; s4_7ball = False
+    s2_5ball = False; s3_6ball = False; s4_7ball = False; s5_22 = False
     try:
         rec = analysis.get('recent_summary', {})
         combined = float(rec.get('combined_avg', 0) or 0)
@@ -250,6 +250,23 @@ def compute_betting(data, analysis):
                 if g == '5球' and st == '⚠️警惕造热': s2_5ball = True
                 if g == '6球' and st in ('✅保留', '✅观察保留'): s3_6ball = True
                 if g == '7球' and st == '✅观察保留': s4_7ball = True
+        # S5: Top1=3:0 + 3/4球双警惕 + 平>=5 + 近>=3.2 -> 投2:2 10元 (ROI+910%)
+        if combined >= 3.2:
+            so = data.get('score_odds', {})
+            if so:
+                from sporttery_web import get_score_recommendations_for_match
+                top_recs = get_score_recommendations_for_match(so)
+                if top_recs and top_recs[0].get('score') == '3:0':
+                    excl = analysis.get('exclusion', {})
+                    s3 = '?'; s4 = '?'
+                    for e in excl.get('kept', []):
+                        if e.get('goal') == '3球': s3 = e.get('status', '?')
+                        if e.get('goal') == '4球': s4 = e.get('status', '?')
+                    if '警惕造热' in s3 and '警惕造热' in s4:
+                        had = data.get('had', {})
+                        draw = float(had.get('平', had.get('D', 999)) or 0)
+                        if draw and draw >= 5.0:
+                            s5_22 = True
     except:
         pass
     
@@ -384,6 +401,12 @@ def compute_betting(data, analysis):
         bet_goals = [7]
         bet_type = 'single'
         goal_stake = 30
+    elif s5_22:
+        # 信号S5: Top1=3:0+3/4球双警惕+平>=5+近>=3.2 → 投2:2 10元 (ROI+910%)
+        rule = 'S5'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif s3_6ball:
         # 信号S3: 近况<2.5+6球=保留/观察 → 投6球 (ROI+427%)
         rule = 'S3'
@@ -525,6 +548,12 @@ def compute_betting(data, analysis):
         ho = _get_score_odds('1:1')
         if ho > 0:
             score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 10, 'tag': 'H2铁保留'})
+        conf_tag = ''
+    elif rule == 'S5':
+        # S5: Top1=3:0+3/4球双警惕+平>=5+近>=3.2 → 纯买2:2 10元 (ROI+910%)
+        ho = _get_score_odds('2:2')
+        if ho > 0:
+            score_bets.append({'score': '2:2', 'odds': round(ho, 1), 'stake': 10, 'tag': '双警惕2:2'})
         conf_tag = ''
     elif rule == 'H3':
         # H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 纯买1:1 30元 (ROI+405%)

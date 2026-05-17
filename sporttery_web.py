@@ -2684,11 +2684,11 @@ HTML_TEMPLATE = '''
                         if (bt.action !== 'bet') {
                             return '<div style=\"margin-top:6px;padding:6px;background:#1a1a1a;border-radius:6px;color:#888;font-size:12px\">💤 ' + bt.reason + '</div>';
                         }
-                        const goalColors = {'R0':'#e91e63','R1':'#4caf50','R3':'#ff9800','R4':'#2196f3','F':'#ff5722','S1':'#ff9800','S4':'#ff5722','S3':'#e040fb','S2':'#ff9800','G4':'#ff9800','G5':'#e91e63','G6':'#9c27b0','G7':'#ff5722','H3':'#e040fb','H2':'#e91e63','H1':'#00bcd4'};
+                        const goalColors = {'R0':'#e91e63','R1':'#4caf50','R3':'#ff9800','R4':'#2196f3','F':'#ff5722','S1':'#ff9800','S5':'#9c27b0','S4':'#ff5722','S3':'#e040fb','S2':'#ff9800','G4':'#ff9800','G5':'#e91e63','G6':'#9c27b0','G7':'#ff5722','H3':'#e040fb','H2':'#e91e63','H1':'#00bcd4'};
                         const clr = goalColors[bt.rule] || '#888';
                         let h = '<div style=\"margin-top:8px;padding:10px;background:#0d1b0d;border-radius:8px;border:2px solid ' + clr + '\">';
                         h += '<strong style=\"color:' + clr + ';font-size:14px\">💰 投注策略 [' + bt.rule + ']</strong>';
-                        const roiMap = {'R0':'+164%','R1':'+300%','R3':'+56%','R4':'探索中','F':'+275%','S1':'+80%','S4':'+1700%','S3':'+427%','S2':'+300%','G4':'+122%','G5':'+135%','G6':'+298%','G7':'+550%','H3':'+405%','H2':'+275%','H1':'+263%'};
+                        const roiMap = {'R0':'+164%','R1':'+300%','R3':'+56%','R4':'探索中','F':'+275%','S1':'+80%','S5':'+910%','S4':'+1700%','S3':'+427%','S2':'+300%','G4':'+122%','G5':'+135%','G6':'+298%','G7':'+550%','H3':'+405%','H2':'+275%','H1':'+263%'};
                         h += '<span style=\"color:#888;font-size:10px;margin-left:6px\">回测ROI ' + (roiMap[bt.rule]||'N/A') + '</span><br>';
                         
                         // Goal bet
