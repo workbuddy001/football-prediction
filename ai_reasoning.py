@@ -1012,6 +1012,37 @@ def v36_batch_recommend():
         _oh = _build_odds_hitrate()
         _ch = _build_change_hitrate()
         
+        # 先抓取最新比赛数据
+        from sporttery_api import SportteryAPI
+        api = SportteryAPI()
+        from datetime import timedelta
+        today_str = dt.now().strftime('%Y-%m-%d')
+        end_str = (dt.now() + timedelta(days=2)).strftime('%Y-%m-%d')
+        list_data = api.get_match_list(today_str, end_str)
+        new_matches = []
+        if isinstance(list_data, dict):
+            for k, v in list_data.items():
+                if isinstance(v, dict):
+                    v['_mid'] = k
+                    new_matches.append(v)
+        
+        os.makedirs(DATA_DIR, exist_ok=True)
+        fetch_count = 0
+        for m in new_matches:
+            mid = str(m.get('_mid', ''))
+            fp = os.path.join(DATA_DIR, f'{mid}.json')
+            if os.path.exists(fp):
+                try:
+                    with open(fp, 'r', encoding='utf-8') as f:
+                        d = json.load(f)
+                    if d.get('match_info', {}).get('match_num_str'):
+                        continue
+                except: pass
+            try:
+                api.fetch_and_save(mid)
+                fetch_count += 1
+            except: pass
+        
         # 读取已赛比分
         scores_file = os.path.join(os.path.dirname(DATA_DIR), '分析模板', '_scores.json')
         try:
