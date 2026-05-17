@@ -1140,6 +1140,7 @@ def v36_batch_recommend():
             'today': today_wd,
             'count': len(signals),
             'total_stake': total_stake,
+            'fetched': fetch_count,
             'signals': signals,
         })
     except Exception as e:
