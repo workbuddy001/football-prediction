@@ -1,0 +1,1047 @@
+{
+  "match_id": "2039710",
+  "fetch_time": "2026-05-13 21:20:11",
+  "match_info": {
+    "home_team": "辛辛那提FC",
+    "away_team": "迈阿密国际",
+    "league": "美国职业大联盟",
+    "time": "2026-05-14 07:30",
+    "match_num_str": "周三011",
+    "match_week": "周三",
+    "match_date": "2026-05-14",
+    "match_time": "07:30:00",
+    "match_status": "Selling",
+    "home_rank": "[美职6]",
+    "away_rank": "[美职3]",
+    "league_abbr": "美职"
+  },
+  "score_odds": {
+    "05:00": "200.0",
+    "01:00": "23.00",
+    "05:02": "100.0",
+    "05:01": "100.0",
+    "02:04": "26.00",
+    "02:05": "55.00",
+    "02:02": "10.00",
+    "02:03": "12.50",
+    "02:00": "24.00",
+    "02:01": "10.50",
+    "03:03": "22.00",
+    "03:01": "18.00",
+    "03:02": "16.00",
+    "03:00": "36.00",
+    "00:01": "16.00",
+    "00:00": "38.00",
+    "00:03": "23.00",
+    "00:02": "16.00",
+    "00:05": "80.00",
+    "00:04": "45.00",
+    "04:02": "38.00",
+    "04:01": "38.00",
+    "04:00": "80.00",
+    "01:02": "8.50",
+    "01:01": "9.20",
+    "01:04": "25.00",
+    "01:03": "13.00",
+    "01:05": "50.00"
+  },
+  "total_goals": {
+    "3球": "3.75",
+    "4球": "4.05",
+    "5球": "5.25",
+    "6球": "8.00",
+    "7球": "8.00",
+    "0球": "38.00",
+    "1球": "11.00",
+    "2球": "5.45"
+  },
+  "had": {
+    "胜": "2.90",
+    "平": "4.05",
+    "负": "1.86"
+  },
+  "ttg": {
+    "3球": "3.75",
+    "4球": "4.05",
+    "5球": "5.25",
+    "6球": "8.00",
+    "7球": "8.00",
+    "0球": "38.00",
+    "1球": "11.00",
+    "2球": "5.45"
+  },
+  "hafu": {
+    "负负": "2.75",
+    "平平": "8.50",
+    "胜胜": "4.60",
+    "负平": "13.00",
+    "平胜": "8.20",
+    "负胜": "21.00",
+    "胜负": "17.00",
+    "胜平": "13.00",
+    "平负": "5.75"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.72",
+    "让平": "4.00",
+    "让负": "3.35"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "迈国际",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "77",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.1",
+        "awayGoalAvgCntRatio": "47.7",
+        "homeGoalAvgCnt": "2.3",
+        "homeGoalAvgCntRatio": "52.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "辛辛那提",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "30",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "60",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.6",
+        "awayLossGoalAvgCntRatio": "34.8",
+        "homeLossGoalAvgCnt": "3.0",
+        "homeLossGoalAvgCntRatio": "65.2",
+        "totalLegCnt": 10
+      },
+      "matchId": 2465373,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "42",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "54",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 8
+      },
+      "sportteryAwayTeamId": 2705,
+      "sportteryHomeTeamId": 2535,
+      "sportteryMatchId": 2039710,
+      "uniformAwayTeamId": 65,
+      "uniformHomeTeamId": 39
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "4",
+          "awayTeamId": 44997,
+          "awayTeamShortName": "迈国际",
+          "fullCourtGoal": "0:4",
+          "gmLeagueId": 50,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 35679,
+          "homeTeamShortName": "辛辛那提",
+          "matchDate": "2025-11-24",
+          "matchId": 2458954,
+          "seasonId": 12768,
+          "sportteryAwayTeamId": 2705,
+          "sportteryHomeTeamId": 2535,
+          "sportteryMatchId": 2035310,
+          "sportteryTournamentId": 50,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 124,
+          "tournamentShortName": "美职",
+          "uniformAwayTeamId": 65,
+          "uniformHomeTeamId": 39,
+          "uniformLeagueId": 40,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 35679,
+          "awayTeamShortName": "辛辛那提",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 50,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 44997,
+          "homeTeamShortName": "迈国际",
+          "matchDate": "2025-07-27",
+          "matchId": 2272434,
+          "seasonId": 12768,
+          "sportteryAwayTeamId": 2535,
+          "sportteryHomeTeamId": 2705,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 50,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 124,
+          "tournamentShortName": "美职",
+          "uniformAwayTeamId": 39,
+          "uniformHomeTeamId": 65,
+          "uniformLeagueId": 40,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 44997,
+          "awayTeamShortName": "迈国际",
+          "fullCourtGoal": "3:0",
+          "gmLeagueId": 50,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 35679,
+          "homeTeamShortName": "辛辛那提",
+          "matchDate": "2025-07-17",
+          "matchId": 2272331,
+          "seasonId": 12768,
+          "sportteryAwayTeamId": 2705,
+          "sportteryHomeTeamId": 2535,
+          "sportteryMatchId": 2032617,
+          "sportteryTournamentId": 50,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 124,
+          "tournamentShortName": "美职",
+          "uniformAwayTeamId": 65,
+          "uniformHomeTeamId": 39,
+          "uniformLeagueId": 40,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 35679,
+          "awayTeamShortName": "辛辛那提",
+          "fullCourtGoal": "2:0",
+          "gmLeagueId": 50,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 44997,
+          "homeTeamShortName": "迈国际",
+          "matchDate": "2024-08-25",
+          "matchId": 2050301,
+          "seasonId": 11152,
+          "sportteryAwayTeamId": 2535,
+          "sportteryHomeTeamId": 2705,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 50,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 124,
+          "tournamentShortName": "美职",
+          "uniformAwayTeamId": 39,
+          "uniformHomeTeamId": 65,
+          "uniformLeagueId": 40,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 44997,
+          "awayTeamShortName": "迈国际",
+          "fullCourtGoal": "6:1",
+          "gmLeagueId": 50,
+          "halfTimeGoal": "4:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "6",
+          "homeTeamId": 35679,
+          "homeTeamShortName": "辛辛那提",
+          "matchDate": "2024-07-07",
+          "matchId": 2050325,
+          "seasonId": 11152,
+          "sportteryAwayTeamId": 2705,
+          "sportteryHomeTeamId": 2535,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 50,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 7,
+          "tournamentId": 124,
+          "tournamentShortName": "美职",
+          "uniformAwayTeamId": 65,
+          "uniformHomeTeamId": 39,
+          "uniformLeagueId": 40,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "辛辛那提",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 8,
+            "injuryFlag": 1,
+            "personId": 638009,
+            "personName": "I.弗雷",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          }
+        ],
+        "sportteryTeamId": 2705,
+        "teamId": 44997,
+        "teamShortName": "迈国际",
+        "uniformTeamId": 65
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 7,
+            "injuryFlag": 1,
+            "personId": 173435,
+            "personName": "A. Powell",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "2"
+          },
+          {
+            "appearanceCnt": 7,
+            "injuryFlag": 1,
+            "personId": 407114,
+            "personName": "巴瓦",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          },
+          {
+            "appearanceCnt": 11,
+            "injuryFlag": 1,
+            "personId": 653586,
+            "personName": "A.贾巴里",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "99"
+          },
+          {
+            "appearanceCnt": 9,
+            "injuryFlag": 1,
+            "personId": 870212,
+            "personName": "K. Mboma Dem",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          }
+        ],
+        "sportteryTeamId": 2535,
+        "teamId": 35679,
+        "teamShortName": "辛辛那提",
+        "uniformTeamId": 39
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 2705,
+            "awayTeamShortName": "迈国际",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1672,
+            "homeTeamShortName": "多伦多",
+            "matchDate": "2026-05-10",
+            "matchId": 2465382,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039619,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 65,
+            "uniformHomeTeamId": 37,
+            "uniformLeagueId": 40,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 1583,
+            "awayTeamShortName": "奥兰多",
+            "fullCourtGoal": "3:4",
+            "halfTimeGoal": "3:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2705,
+            "homeTeamShortName": "迈国际",
+            "matchDate": "2026-05-03",
+            "matchId": 2465400,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 66,
+            "uniformHomeTeamId": 65,
+            "uniformLeagueId": 40,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 910,
+            "awayTeamShortName": "新英格兰",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2705,
+            "homeTeamShortName": "迈国际",
+            "matchDate": "2026-04-26",
+            "matchId": 2465412,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 521,
+            "uniformHomeTeamId": 65,
+            "uniformLeagueId": 40,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 2705,
+            "awayTeamShortName": "迈国际",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 911,
+            "homeTeamShortName": "盐湖城",
+            "matchDate": "2026-04-23",
+            "matchId": 2465419,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039265,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 65,
+            "uniformHomeTeamId": 367,
+            "uniformLeagueId": 40,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 2705,
+            "awayTeamShortName": "迈国际",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 903,
+            "homeTeamShortName": "科罗拉多",
+            "matchDate": "2026-04-19",
+            "matchId": 2465440,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 65,
+            "uniformHomeTeamId": 172,
+            "uniformLeagueId": 40,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 13,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 4,
+          "sportteryTeamId": 0,
+          "teamId": 2705,
+          "teamShortName": "迈国际",
+          "totalLegCnt": 5,
+          "uniformTeamId": 65,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 2535,
+            "awayTeamShortName": "辛辛那提",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1034472,
+            "homeTeamShortName": "夏洛特FC",
+            "matchDate": "2026-05-10",
+            "matchId": 2465385,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 39,
+            "uniformHomeTeamId": 1727,
+            "uniformLeagueId": 40,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 2535,
+            "awayTeamShortName": "辛辛那提",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 902,
+            "homeTeamShortName": "芝加哥",
+            "matchDate": "2026-05-03",
+            "matchId": 2465393,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 39,
+            "uniformHomeTeamId": 366,
+            "uniformLeagueId": 40,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 912,
+            "awayTeamShortName": "纽约红牛",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 2535,
+            "homeTeamShortName": "辛辛那提",
+            "matchDate": "2026-04-26",
+            "matchId": 2465415,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 56,
+            "uniformHomeTeamId": 39,
+            "uniformLeagueId": 40,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 2535,
+            "awayTeamShortName": "辛辛那提",
+            "fullCourtGoal": "4:4",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 2133,
+            "homeTeamShortName": "纽约城",
+            "matchDate": "2026-04-23",
+            "matchId": 2465425,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 39,
+            "uniformHomeTeamId": 31,
+            "uniformLeagueId": 40,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 902,
+            "awayTeamShortName": "芝加哥",
+            "fullCourtGoal": "3:3",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2535,
+            "homeTeamShortName": "辛辛那提",
+            "matchDate": "2026-04-19",
+            "matchId": 2465438,
+            "seasonId": 14258,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 50,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 124,
+            "tournamentShortName": "美职",
+            "uniformAwayTeamId": 366,
+            "uniformHomeTeamId": 39,
+            "uniformLeagueId": 40,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 14,
+          "lossGoalCnt": 11,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 3,
+          "sportteryTeamId": 0,
+          "teamId": 2535,
+          "teamShortName": "辛辛那提",
+          "totalLegCnt": 5,
+          "uniformTeamId": 39,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48213,
+      "seasonId": 14258,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 4,
+          "groupId": 13574,
+          "groupName": "",
+          "lossGoalMatchCnt": 4,
+          "phaseName": "",
+          "points": "16",
+          "ranking": "6",
+          "sportteryTeamId": 2535,
+          "teamId": 0,
+          "teamShortName": "辛辛那提",
+          "totalLegCnt": 12,
+          "uniformTeamId": 39,
+          "winGoalMatchCnt": 4,
+          "winProbability": "33%"
+        },
+        {
+          "drawMatchCnt": 4,
+          "groupId": 13574,
+          "groupName": "",
+          "lossGoalMatchCnt": 2,
+          "phaseName": "",
+          "points": "22",
+          "ranking": "3",
+          "sportteryTeamId": 2705,
+          "teamId": 0,
+          "teamShortName": "迈国际",
+          "totalLegCnt": 12,
+          "uniformTeamId": 65,
+          "winGoalMatchCnt": 6,
+          "winProbability": "50%"
+        }
+      ],
+      "tournamentId": 124,
+      "tournamentShortName": "美职",
+      "uniformLeagueId": 40,
+      "uniformMatchId": 2391413
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 11,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 3,
+            "assistProbability": "18%",
+            "goalAvgCnt": "0.8",
+            "goalCnt": 9,
+            "goalProbability": "35%",
+            "injuryFlag": 0,
+            "personId": 119,
+            "personName": "梅西",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 10,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 3,
+            "assistProbability": "18%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 3,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 248912,
+            "personName": "R. de Paul",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 12,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 2,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 3,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 398821,
+            "personName": "G. Berterame",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 9,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          }
+        ],
+        "sportteryTeamId": 2705,
+        "teamId": 44997,
+        "teamShortName": "迈国际",
+        "uniformTeamId": 65
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 11,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 7,
+            "goalProbability": "30%",
+            "injuryFlag": 0,
+            "personId": 468816,
+            "personName": "琼斯",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 11,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "8%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 6,
+            "goalProbability": "26%",
+            "injuryFlag": 0,
+            "personId": 398758,
+            "personName": "Evander",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 12,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 2,
+            "goalProbability": "9%",
+            "injuryFlag": 0,
+            "personId": 484114,
+            "personName": "T. Barlow",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "16"
+          }
+        ],
+        "sportteryTeamId": 2535,
+        "teamId": 35679,
+        "teamShortName": "辛辛那提",
+        "uniformTeamId": 39
+      },
+      "seasonId": 14258,
+      "seasonName": "2026",
+      "tournamentId": 124,
+      "tournamentShortName": "美职",
+      "uniformLeagueId": 40,
+      "uniformMatchId": 2391413
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 1,
+      "change_pct": -2.6
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 1.3
+    },
+    "7球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 4.8
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -4.7
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 3.8
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 3,
+      "change_pct": 17.1
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 7.0
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": -14.1
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 3,
+      "change_pct": 11.8
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 3,
+      "change_pct": -7.0
+    },
+    "平": {
+      "count": 2,
+      "change_pct": 2.5
+    },
+    "胜": {
+      "count": 3,
+      "change_pct": 9.0
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 3,
+      "change_pct": -9.5
+    },
+    "让平": {
+      "count": 3,
+      "change_pct": -4.8
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": 6.8
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "3球",
+      "ttg_odds": "3.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "10.50",
+          "special": false
+        },
+        {
+          "score": "03:00",
+          "odds": "36.00",
+          "special": false
+        },
+        {
+          "score": "00:03",
+          "odds": "23.00",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "8.50",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(3.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "5球",
+      "ttg_odds": "5.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "200.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "12.50",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "16.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "80.00",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "38.00",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "25.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(5.25)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.93,
+    "ou_line": 3.75,
+    "under_odds": 0.77,
+    "save_time": "2026-05-14 07:23"
+  }
+}

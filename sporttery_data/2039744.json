@@ -1,0 +1,771 @@
+{
+  "match_id": "2039744",
+  "fetch_time": "2026-05-16 06:12:09",
+  "match_info": {
+    "home_team": "圣埃蒂安",
+    "away_team": "罗德兹",
+    "league": "法国甲级联赛",
+    "time": "",
+    "match_num_str": "周五004",
+    "match_week": "周五",
+    "match_date": "2026-05-16",
+    "match_time": "02:30:00",
+    "match_status": "已截止",
+    "league_abbr": "法甲"
+  },
+  "score_odds": {
+    "05:00": "80.00",
+    "01:00": "8.00",
+    "05:02": "100.0",
+    "05:01": "60.00",
+    "02:04": "125.0",
+    "02:05": "400.0",
+    "02:02": "11.50",
+    "02:03": "35.00",
+    "02:00": "8.50",
+    "02:01": "6.50",
+    "03:03": "45.00",
+    "03:01": "11.00",
+    "03:02": "19.00",
+    "03:00": "13.00",
+    "00:01": "13.00",
+    "00:00": "15.50",
+    "00:03": "65.00",
+    "00:02": "26.00",
+    "00:05": "600.0",
+    "00:04": "200.0",
+    "04:02": "42.00",
+    "04:01": "25.00",
+    "04:00": "29.00",
+    "01:02": "12.50",
+    "01:01": "6.80",
+    "01:04": "125.0",
+    "01:03": "35.00",
+    "01:05": "400.0"
+  },
+  "total_goals": {
+    "3球": "3.10",
+    "4球": "4.70",
+    "5球": "8.50",
+    "6球": "16.00",
+    "7球": "24.00",
+    "0球": "15.50",
+    "1球": "5.90",
+    "2球": "3.80"
+  },
+  "had": {
+    "胜": "1.65",
+    "平": "3.37",
+    "负": "4.42"
+  },
+  "ttg": {
+    "3球": "3.10",
+    "4球": "4.70",
+    "5球": "8.50",
+    "6球": "16.00",
+    "7球": "24.00",
+    "0球": "15.50",
+    "1球": "5.90",
+    "2球": "3.80"
+  },
+  "hafu": {
+    "负负": "7.25",
+    "平平": "5.55",
+    "胜胜": "2.70",
+    "负平": "16.00",
+    "平胜": "3.85",
+    "负胜": "22.00",
+    "胜负": "34.00",
+    "胜平": "16.00",
+    "平负": "9.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.25",
+    "让平": "3.30",
+    "让负": "1.93"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "罗德兹",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "80",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "73",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.7",
+        "awayGoalAvgCntRatio": "48.6",
+        "homeGoalAvgCnt": "1.8",
+        "homeGoalAvgCntRatio": "51.4",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "圣埃蒂安",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "50",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "38",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 8
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.0",
+        "awayLossGoalAvgCntRatio": "52.6",
+        "homeLossGoalAvgCnt": "0.9",
+        "homeLossGoalAvgCntRatio": "47.4",
+        "totalLegCnt": 10
+      },
+      "matchId": 2522147,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 5
+      },
+      "sportteryAwayTeamId": 476,
+      "sportteryHomeTeamId": 190,
+      "sportteryMatchId": 2039744,
+      "uniformAwayTeamId": 275,
+      "uniformHomeTeamId": 249
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 901,
+          "awayTeamShortName": "圣埃蒂安",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 3305,
+          "homeTeamShortName": "罗德兹",
+          "matchDate": "2026-05-03",
+          "matchId": 2356074,
+          "seasonId": 13417,
+          "sportteryAwayTeamId": 190,
+          "sportteryHomeTeamId": 476,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 250,
+          "tournamentShortName": "法乙",
+          "uniformAwayTeamId": 249,
+          "uniformHomeTeamId": 275,
+          "uniformLeagueId": 1049,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 3305,
+          "awayTeamShortName": "罗德兹",
+          "fullCourtGoal": "4:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 901,
+          "homeTeamShortName": "圣埃蒂安",
+          "matchDate": "2025-08-17",
+          "matchId": 2356106,
+          "seasonId": 13417,
+          "sportteryAwayTeamId": 476,
+          "sportteryHomeTeamId": 190,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 250,
+          "tournamentShortName": "法乙",
+          "uniformAwayTeamId": 275,
+          "uniformHomeTeamId": 249,
+          "uniformLeagueId": 1049,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 3305,
+          "awayTeamShortName": "罗德兹",
+          "fullCourtGoal": "2:0",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 901,
+          "homeTeamShortName": "圣埃蒂安",
+          "matchDate": "2024-05-25",
+          "matchId": 2116862,
+          "seasonId": 0,
+          "sportteryAwayTeamId": 476,
+          "sportteryHomeTeamId": 190,
+          "sportteryMatchId": 1025468,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 275,
+          "uniformHomeTeamId": 249,
+          "uniformLeagueId": 74,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 3305,
+          "awayTeamShortName": "罗德兹",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 81,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 901,
+          "homeTeamShortName": "圣埃蒂安",
+          "matchDate": "2024-05-11",
+          "matchId": 2008869,
+          "seasonId": 10940,
+          "sportteryAwayTeamId": 476,
+          "sportteryHomeTeamId": 190,
+          "sportteryMatchId": 1025220,
+          "sportteryTournamentId": 81,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 250,
+          "tournamentShortName": "法乙",
+          "uniformAwayTeamId": 275,
+          "uniformHomeTeamId": 249,
+          "uniformLeagueId": 1049,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 901,
+          "awayTeamShortName": "圣埃蒂安",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 3305,
+          "homeTeamShortName": "罗德兹",
+          "matchDate": "2023-08-12",
+          "matchId": 2009060,
+          "seasonId": 10940,
+          "sportteryAwayTeamId": 190,
+          "sportteryHomeTeamId": 476,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 250,
+          "tournamentShortName": "法乙",
+          "uniformAwayTeamId": 249,
+          "uniformHomeTeamId": 275,
+          "uniformLeagueId": 1049,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "圣埃蒂安",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 476,
+        "teamId": 3305,
+        "teamShortName": "罗德兹",
+        "uniformTeamId": 275
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 190,
+        "teamId": 901,
+        "teamShortName": "圣埃蒂安",
+        "uniformTeamId": 249
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 476,
+            "awayTeamShortName": "罗德兹",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1643,
+            "homeTeamShortName": "圣旺红星",
+            "matchDate": "2026-05-13",
+            "matchId": 2522137,
+            "seasonId": 15177,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039717,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1785,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 275,
+            "uniformHomeTeamId": 346,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 476,
+            "awayTeamShortName": "罗德兹",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2707,
+            "homeTeamShortName": "阿纳西",
+            "matchDate": "2026-05-10",
+            "matchId": 2355814,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039621,
+            "sportteryTournamentId": 81,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 275,
+            "uniformHomeTeamId": 835,
+            "uniformLeagueId": 1049,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 190,
+            "awayTeamShortName": "圣埃蒂安",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 476,
+            "homeTeamShortName": "罗德兹",
+            "matchDate": "2026-05-03",
+            "matchId": 2356074,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 249,
+            "uniformHomeTeamId": 275,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 476,
+            "awayTeamShortName": "罗德兹",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 201,
+            "homeTeamShortName": "拉瓦勒",
+            "matchDate": "2026-04-25",
+            "matchId": 2355885,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039295,
+            "sportteryTournamentId": 81,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 275,
+            "uniformHomeTeamId": 1245,
+            "uniformLeagueId": 1049,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 202,
+            "awayTeamShortName": "亚眠",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 476,
+            "homeTeamShortName": "罗德兹",
+            "matchDate": "2026-04-18",
+            "matchId": 2355983,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 223,
+            "uniformHomeTeamId": 275,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 10,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 4,
+          "sportteryTeamId": 0,
+          "teamId": 476,
+          "teamShortName": "罗德兹",
+          "totalLegCnt": 5,
+          "uniformTeamId": 275,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 202,
+            "awayTeamShortName": "亚眠",
+            "fullCourtGoal": "5:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "5",
+            "homeTeamId": 190,
+            "homeTeamShortName": "圣埃蒂安",
+            "matchDate": "2026-05-10",
+            "matchId": 2356073,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 223,
+            "uniformHomeTeamId": 249,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 190,
+            "awayTeamShortName": "圣埃蒂安",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 476,
+            "homeTeamShortName": "罗德兹",
+            "matchDate": "2026-05-03",
+            "matchId": 2356074,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 249,
+            "uniformHomeTeamId": 275,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 198,
+            "awayTeamShortName": "特鲁瓦",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 190,
+            "homeTeamShortName": "圣埃蒂安",
+            "matchDate": "2026-04-26",
+            "matchId": 2356076,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 100,
+            "uniformHomeTeamId": 249,
+            "uniformLeagueId": 1049,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 190,
+            "awayTeamShortName": "圣埃蒂安",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 175,
+            "homeTeamShortName": "巴斯蒂亚",
+            "matchDate": "2026-04-19",
+            "matchId": 2355821,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 249,
+            "uniformHomeTeamId": 1974,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1190,
+            "awayTeamShortName": "敦刻尔克",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 190,
+            "homeTeamShortName": "圣埃蒂安",
+            "matchDate": "2026-04-12",
+            "matchId": 2356078,
+            "seasonId": 13417,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 250,
+            "tournamentShortName": "法乙",
+            "uniformAwayTeamId": 165,
+            "uniformHomeTeamId": 249,
+            "uniformLeagueId": 1049,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 8,
+          "lossGoalCnt": 8,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": 0,
+          "sportteryTeamId": 0,
+          "teamId": 190,
+          "teamShortName": "圣埃蒂安",
+          "totalLegCnt": 5,
+          "uniformTeamId": 249,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48593,
+      "seasonId": 15177,
+      "seasonName": "2025/2026",
+      "tables": [],
+      "tournamentId": 1785,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2391816
+    },
+    "player": {
+      "away": {
+        "playerList": [],
+        "sportteryTeamId": 476,
+        "teamId": 3305,
+        "teamShortName": "罗德兹",
+        "uniformTeamId": 275
+      },
+      "home": {
+        "playerList": [],
+        "sportteryTeamId": 190,
+        "teamId": 901,
+        "teamShortName": "圣埃蒂安",
+        "uniformTeamId": 249
+      },
+      "seasonId": 15177,
+      "seasonName": "2025/2026",
+      "tournamentId": 1785,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2391816
+    }
+  },
+  "ttg_change": {
+    "1球": {
+      "count": 4,
+      "change_pct": 7.3
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 3.3
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 5.6
+    },
+    "4球": {
+      "count": 4,
+      "change_pct": -4.1
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": 6.7
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 3.0
+    },
+    "3球": {
+      "count": 4,
+      "change_pct": -10.1
+    },
+    "7球": {
+      "count": 3,
+      "change_pct": 9.1
+    }
+  },
+  "hafu_change": {
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": -8.3
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 8.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -4.3
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 3,
+      "change_pct": 2.8
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": 2.5
+    },
+    "平": {
+      "count": 4,
+      "change_pct": -7.7
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 3,
+      "change_pct": -4.5
+    },
+    "让胜": {
+      "count": 4,
+      "change_pct": 12.1
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": -4.3
+    }
+  },
+  "exclusion_list": [],
+  "over_under": {
+    "over_odds": 0.55,
+    "ou_line": 2.5,
+    "under_odds": 1.29,
+    "save_time": "2026-05-16 06:29"
+  }
+}

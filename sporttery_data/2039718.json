@@ -1,0 +1,30 @@
+{
+  "match_id": "2039718",
+  "fetch_time": "2026-05-14 21:02:46",
+  "match_info": {
+    "home_team": "",
+    "away_team": "",
+    "league": "",
+    "time": "",
+    "match_status": "已截止"
+  },
+  "score_odds": {},
+  "total_goals": {},
+  "had": {},
+  "ttg": {},
+  "hafu": {},
+  "hhad": {},
+  "preview": {
+    "feature": {},
+    "history": {},
+    "injury": {},
+    "recent": {},
+    "tables": {},
+    "player": {}
+  },
+  "ttg_change": {},
+  "hafu_change": {},
+  "had_change": {},
+  "hhad_change": {},
+  "exclusion_list": []
+}

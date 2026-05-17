@@ -1,0 +1,1063 @@
+{
+  "match_id": "2039704",
+  "fetch_time": "2026-05-13 21:03:39",
+  "match_info": {
+    "home_team": "布雷斯特",
+    "away_team": "斯特拉斯堡",
+    "league": "法国甲级联赛",
+    "time": "2026-05-14 01:00",
+    "match_num_str": "周三005",
+    "match_week": "周三",
+    "match_date": "2026-05-14",
+    "match_time": "01:00:00",
+    "match_status": "Selling",
+    "home_rank": "[法甲12]",
+    "away_rank": "[法甲8]",
+    "league_abbr": "法甲"
+  },
+  "score_odds": {
+    "05:00": "250.0",
+    "01:00": "10.50",
+    "05:02": "200.0",
+    "05:01": "150.0",
+    "02:04": "60.00",
+    "02:05": "175.0",
+    "02:02": "10.50",
+    "02:03": "21.00",
+    "02:00": "15.00",
+    "02:01": "8.00",
+    "03:03": "41.00",
+    "03:01": "19.00",
+    "03:02": "23.00",
+    "03:00": "29.00",
+    "00:01": "10.00",
+    "00:00": "14.00",
+    "00:03": "22.00",
+    "00:02": "13.00",
+    "00:05": "175.0",
+    "00:04": "60.00",
+    "04:02": "70.00",
+    "04:01": "60.00",
+    "04:00": "80.00",
+    "01:02": "7.80",
+    "01:01": "6.25",
+    "01:04": "40.00",
+    "01:03": "15.00",
+    "01:05": "100.0"
+  },
+  "total_goals": {
+    "3球": "3.30",
+    "4球": "4.70",
+    "5球": "8.35",
+    "6球": "14.50",
+    "7球": "22.00",
+    "0球": "14.00",
+    "1球": "5.90",
+    "2球": "3.80"
+  },
+  "had": {
+    "胜": "2.65",
+    "平": "2.98",
+    "负": "2.40"
+  },
+  "ttg": {
+    "3球": "3.30",
+    "4球": "4.70",
+    "5球": "8.35",
+    "6球": "14.50",
+    "7球": "22.00",
+    "0球": "14.00",
+    "1球": "5.90",
+    "2球": "3.80"
+  },
+  "hafu": {
+    "负负": "3.75",
+    "平平": "5.35",
+    "胜胜": "4.35",
+    "负平": "13.00",
+    "平胜": "6.50",
+    "负胜": "25.00",
+    "胜负": "23.00",
+    "胜平": "13.00",
+    "平负": "5.60"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.43",
+    "让平": "4.15",
+    "让负": "5.30"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "斯特拉斯",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "37",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "50",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.2",
+        "awayGoalAvgCntRatio": "50.0",
+        "homeGoalAvgCnt": "1.2",
+        "homeGoalAvgCntRatio": "50.0",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "布雷斯特",
+      "last": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.5",
+        "awayLossGoalAvgCntRatio": "45.5",
+        "homeLossGoalAvgCnt": "1.8",
+        "homeLossGoalAvgCntRatio": "54.5",
+        "totalLegCnt": 10
+      },
+      "matchId": 2355216,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "38",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 8
+      },
+      "sportteryAwayTeamId": 191,
+      "sportteryHomeTeamId": 204,
+      "sportteryMatchId": 2039704,
+      "uniformAwayTeamId": 102,
+      "uniformHomeTeamId": 1553
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 922,
+          "awayTeamShortName": "布雷斯特",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 898,
+          "homeTeamShortName": "斯特拉斯",
+          "matchDate": "2025-11-30",
+          "matchId": 2355459,
+          "seasonId": 13416,
+          "sportteryAwayTeamId": 204,
+          "sportteryHomeTeamId": 191,
+          "sportteryMatchId": 2035581,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 1553,
+          "uniformHomeTeamId": 102,
+          "uniformLeagueId": 74,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 922,
+          "awayTeamShortName": "布雷斯特",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 898,
+          "homeTeamShortName": "斯特拉斯",
+          "matchDate": "2025-02-24",
+          "matchId": 2130733,
+          "seasonId": 11848,
+          "sportteryAwayTeamId": 204,
+          "sportteryHomeTeamId": 191,
+          "sportteryMatchId": 2030027,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 1553,
+          "uniformHomeTeamId": 102,
+          "uniformLeagueId": 74,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 898,
+          "awayTeamShortName": "斯特拉斯",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 922,
+          "homeTeamShortName": "布雷斯特",
+          "matchDate": "2024-12-01",
+          "matchId": 2130516,
+          "seasonId": 11848,
+          "sportteryAwayTeamId": 191,
+          "sportteryHomeTeamId": 204,
+          "sportteryMatchId": 1028310,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 102,
+          "uniformHomeTeamId": 1553,
+          "uniformLeagueId": 74,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 922,
+          "awayTeamShortName": "布雷斯特",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 898,
+          "homeTeamShortName": "斯特拉斯",
+          "matchDate": "2024-02-25",
+          "matchId": 1841626,
+          "seasonId": 9652,
+          "sportteryAwayTeamId": 204,
+          "sportteryHomeTeamId": 191,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 1553,
+          "uniformHomeTeamId": 102,
+          "uniformLeagueId": 74,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 898,
+          "awayTeamShortName": "斯特拉斯",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 922,
+          "homeTeamShortName": "布雷斯特",
+          "matchDate": "2023-12-08",
+          "matchId": 1841552,
+          "seasonId": 9652,
+          "sportteryAwayTeamId": 191,
+          "sportteryHomeTeamId": 204,
+          "sportteryMatchId": 1022221,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 102,
+          "uniformHomeTeamId": 1553,
+          "uniformLeagueId": 74,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "布雷斯特",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 3,
+        "winProbability": "60%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 20,
+            "injuryFlag": 1,
+            "personId": 383419,
+            "personName": "B. Chilwell",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 19,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "3"
+          },
+          {
+            "appearanceCnt": 17,
+            "injuryFlag": 1,
+            "personId": 504036,
+            "personName": "S.纳纳西",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 9,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 16,
+            "injuryFlag": 1,
+            "personId": 632940,
+            "personName": "S. Coulibaly",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "44"
+          },
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 1,
+            "personId": 645514,
+            "personName": "E. Emegha",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 25,
+            "injuryFlag": 1,
+            "personId": 675174,
+            "personName": "V. Barco",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          },
+          {
+            "appearanceCnt": 27,
+            "injuryFlag": 1,
+            "personId": 697008,
+            "personName": "J. Panichelli",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 3,
+            "injuryFlag": 1,
+            "personId": 795954,
+            "personName": "A. Anselmino",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          }
+        ],
+        "sportteryTeamId": 191,
+        "teamId": 898,
+        "teamShortName": "斯特拉斯",
+        "uniformTeamId": 102
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 23,
+            "injuryFlag": 1,
+            "personId": 428267,
+            "personName": "G.库德特",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 16,
+            "injuryFlag": 1,
+            "personId": 632940,
+            "personName": "S. Coulibaly",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "44"
+          },
+          {
+            "appearanceCnt": 20,
+            "injuryFlag": 1,
+            "personId": 677447,
+            "personName": "B. Locko",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 14,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "2"
+          }
+        ],
+        "sportteryTeamId": 204,
+        "teamId": 922,
+        "teamShortName": "布雷斯特",
+        "uniformTeamId": 1553
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 191,
+            "awayTeamShortName": "斯特拉斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 459,
+            "homeTeamShortName": "昂热",
+            "matchDate": "2026-05-11",
+            "matchId": 2355190,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 102,
+            "uniformHomeTeamId": 237,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 849,
+            "awayTeamShortName": "巴列卡诺",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 191,
+            "homeTeamShortName": "斯特拉斯",
+            "matchDate": "2026-05-08",
+            "matchId": 2518201,
+            "seasonId": 13339,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039559,
+            "sportteryTournamentId": 1033103,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1689,
+            "tournamentShortName": "欧协联",
+            "uniformAwayTeamId": 1546,
+            "uniformHomeTeamId": 102,
+            "uniformLeagueId": 354,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 192,
+            "awayTeamShortName": "图卢兹",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 191,
+            "homeTeamShortName": "斯特拉斯",
+            "matchDate": "2026-05-03",
+            "matchId": 2355408,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039494,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 227,
+            "uniformHomeTeamId": 102,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 191,
+            "awayTeamShortName": "斯特拉斯",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 849,
+            "homeTeamShortName": "巴列卡诺",
+            "matchDate": "2026-05-01",
+            "matchId": 2518203,
+            "seasonId": 13339,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039422,
+            "sportteryTournamentId": 1033103,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1689,
+            "tournamentShortName": "欧协联",
+            "uniformAwayTeamId": 102,
+            "uniformHomeTeamId": 1546,
+            "uniformLeagueId": 354,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 191,
+            "awayTeamShortName": "斯特拉斯",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 750,
+            "homeTeamShortName": "洛里昂",
+            "matchDate": "2026-04-26",
+            "matchId": 2355210,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039347,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 102,
+            "uniformHomeTeamId": 397,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 5,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 191,
+          "teamShortName": "斯特拉斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 102,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 204,
+            "awayTeamShortName": "布雷斯特",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 187,
+            "homeTeamShortName": "巴黎圣曼",
+            "matchDate": "2026-05-11",
+            "matchId": 2355406,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039651,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 1553,
+            "uniformHomeTeamId": 178,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 204,
+            "awayTeamShortName": "布雷斯特",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 482,
+            "homeTeamShortName": "巴黎FC",
+            "matchDate": "2026-05-03",
+            "matchId": 2355407,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 1553,
+            "uniformHomeTeamId": 490,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 179,
+            "awayTeamShortName": "朗斯",
+            "fullCourtGoal": "3:3",
+            "halfTimeGoal": "3:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 204,
+            "homeTeamShortName": "布雷斯特",
+            "matchDate": "2026-04-25",
+            "matchId": 2355209,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039299,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 351,
+            "uniformHomeTeamId": 1553,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 204,
+            "awayTeamShortName": "布雷斯特",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 185,
+            "homeTeamShortName": "南特",
+            "matchDate": "2026-04-19",
+            "matchId": 2355313,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 1553,
+            "uniformHomeTeamId": 492,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 188,
+            "awayTeamShortName": "雷恩",
+            "fullCourtGoal": "3:4",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 204,
+            "homeTeamShortName": "布雷斯特",
+            "matchDate": "2026-04-05",
+            "matchId": 2355220,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 333,
+            "uniformHomeTeamId": 1553,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 7,
+          "lossGoalCnt": 13,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -6,
+          "sportteryTeamId": 0,
+          "teamId": 204,
+          "teamShortName": "布雷斯特",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1553,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47907,
+      "seasonId": 13416,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 8,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 14,
+          "phaseName": "",
+          "points": "38",
+          "ranking": "12",
+          "sportteryTeamId": 204,
+          "teamId": 0,
+          "teamShortName": "布雷斯特",
+          "totalLegCnt": 32,
+          "uniformTeamId": 1553,
+          "winGoalMatchCnt": 10,
+          "winProbability": "31%"
+        },
+        {
+          "drawMatchCnt": 8,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 11,
+          "phaseName": "",
+          "points": "47",
+          "ranking": "8",
+          "sportteryTeamId": 191,
+          "teamId": 0,
+          "teamShortName": "斯特拉斯",
+          "totalLegCnt": 32,
+          "uniformTeamId": 102,
+          "winGoalMatchCnt": 13,
+          "winProbability": "41%"
+        }
+      ],
+      "tournamentId": 81,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2391411
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 16,
+            "goalProbability": "30%",
+            "injuryFlag": 1,
+            "personId": 697008,
+            "personName": "J. Panichelli",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 695105,
+            "personName": "M. Godo",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 10,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 2,
+            "assistProbability": "5%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 4,
+            "goalProbability": "7%",
+            "injuryFlag": 1,
+            "personId": 645514,
+            "personName": "E. Emegha",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 191,
+        "teamId": 898,
+        "teamShortName": "斯特拉斯",
+        "uniformTeamId": 102
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 30,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "20%",
+            "injuryFlag": 0,
+            "personId": 328270,
+            "personName": "R. Del Castillo",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 30,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 9,
+            "assistProbability": "30%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 7,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 264466,
+            "personName": "L.阿戈克",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 22,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "12%",
+            "injuryFlag": 0,
+            "personId": 680814,
+            "personName": "K. Doumbia",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "23"
+          }
+        ],
+        "sportteryTeamId": 204,
+        "teamId": 922,
+        "teamShortName": "布雷斯特",
+        "uniformTeamId": 1553
+      },
+      "seasonId": 13416,
+      "seasonName": "2025/2026",
+      "tournamentId": 81,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2391411
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 2,
+      "change_pct": -5.7
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": 10.0
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 11.3
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": -6.0
+    },
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 2.7
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 5.6
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -3.7
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -3.7
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": 1.8
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -6.1
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 6,
+      "change_pct": 9.1
+    },
+    "平": {
+      "count": 6,
+      "change_pct": -13.6
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": 1.9
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 5,
+      "change_pct": 15.2
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": 3.8
+    },
+    "让胜": {
+      "count": 5,
+      "change_pct": -5.3
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.80",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "15.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "13.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.80（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.87,
+    "ou_line": 2.75,
+    "under_odds": 0.83,
+    "save_time": "2026-05-13 21:04"
+  }
+}

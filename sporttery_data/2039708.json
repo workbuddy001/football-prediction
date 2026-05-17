@@ -1,0 +1,1034 @@
+{
+  "match_id": "2039708",
+  "fetch_time": "2026-05-14 06:52:41",
+  "match_info": {
+    "home_team": "阿拉维斯",
+    "away_team": "巴塞罗那",
+    "league": "西班牙甲级联赛",
+    "time": "",
+    "match_num_str": "周三009",
+    "match_week": "周三",
+    "match_date": "2026-05-14",
+    "match_time": "03:30:00",
+    "match_status": "已截止",
+    "home_rank": "[西甲19]",
+    "away_rank": "[西甲1]",
+    "league_abbr": "西甲"
+  },
+  "score_odds": {
+    "05:00": "300.0",
+    "01:00": "14.50",
+    "05:02": "200.0",
+    "05:01": "175.0",
+    "02:04": "40.00",
+    "02:05": "80.00",
+    "02:02": "10.50",
+    "02:03": "16.00",
+    "02:00": "19.00",
+    "02:01": "11.00",
+    "03:03": "33.00",
+    "03:01": "22.00",
+    "03:02": "24.00",
+    "03:00": "35.00",
+    "00:01": "11.00",
+    "00:00": "21.00",
+    "00:03": "18.00",
+    "00:02": "10.50",
+    "00:05": "80.00",
+    "00:04": "40.00",
+    "04:02": "60.00",
+    "04:01": "50.00",
+    "04:00": "90.00",
+    "01:02": "7.50",
+    "01:01": "7.25",
+    "01:04": "28.00",
+    "01:03": "12.00",
+    "01:05": "70.00"
+  },
+  "total_goals": {
+    "3球": "3.30",
+    "4球": "4.35",
+    "5球": "7.10",
+    "6球": "12.00",
+    "7球": "16.00",
+    "0球": "21.00",
+    "1球": "6.75",
+    "2球": "4.20"
+  },
+  "had": {
+    "胜": "3.20",
+    "平": "3.75",
+    "负": "1.82"
+  },
+  "ttg": {
+    "3球": "3.30",
+    "4球": "4.35",
+    "5球": "7.10",
+    "6球": "12.00",
+    "7球": "16.00",
+    "0球": "21.00",
+    "1球": "6.75",
+    "2球": "4.20"
+  },
+  "hafu": {
+    "负负": "2.85",
+    "平平": "6.75",
+    "胜胜": "5.00",
+    "负平": "14.00",
+    "平胜": "7.80",
+    "负胜": "25.00",
+    "胜负": "20.00",
+    "胜平": "14.00",
+    "平负": "5.15"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.75",
+    "让平": "3.90",
+    "让负": "3.32"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "巴萨",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "90",
+        "awayWinGoalMatchCnt": 9,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "73",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.3",
+        "awayGoalAvgCntRatio": "56.1",
+        "homeGoalAvgCnt": "1.8",
+        "homeGoalAvgCntRatio": "43.9",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "阿拉维斯",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "87",
+        "awayWinGoalMatchCnt": 8,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 8,
+        "homeScoreRatio": "7",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "0.8",
+        "awayLossGoalAvgCntRatio": "26.7",
+        "homeLossGoalAvgCnt": "2.2",
+        "homeLossGoalAvgCntRatio": "73.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2361888,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "93",
+        "awayWinGoalMatchCnt": 8,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 8,
+        "homeScoreRatio": "4",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 9
+      },
+      "sportteryAwayTeamId": 401,
+      "sportteryHomeTeamId": 171,
+      "sportteryMatchId": 2039708,
+      "uniformAwayTeamId": 246,
+      "uniformHomeTeamId": 219
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 2037,
+          "awayTeamShortName": "阿拉维斯",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 2017,
+          "homeTeamShortName": "巴萨",
+          "matchDate": "2025-11-29",
+          "matchId": 2362096,
+          "seasonId": 13440,
+          "sportteryAwayTeamId": 171,
+          "sportteryHomeTeamId": 401,
+          "sportteryMatchId": 2035539,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 219,
+          "uniformHomeTeamId": 246,
+          "uniformLeagueId": 24,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 2037,
+          "awayTeamShortName": "阿拉维斯",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2017,
+          "homeTeamShortName": "巴萨",
+          "matchDate": "2025-02-02",
+          "matchId": 2127029,
+          "seasonId": 11820,
+          "sportteryAwayTeamId": 171,
+          "sportteryHomeTeamId": 401,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 219,
+          "uniformHomeTeamId": 246,
+          "uniformLeagueId": 24,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 2017,
+          "awayTeamShortName": "巴萨",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "0:3",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 2037,
+          "homeTeamShortName": "阿拉维斯",
+          "matchDate": "2024-10-06",
+          "matchId": 2127151,
+          "seasonId": 11820,
+          "sportteryAwayTeamId": 401,
+          "sportteryHomeTeamId": 171,
+          "sportteryMatchId": 1027268,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 246,
+          "uniformHomeTeamId": 219,
+          "uniformLeagueId": 24,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 2017,
+          "awayTeamShortName": "巴萨",
+          "fullCourtGoal": "1:3",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2037,
+          "homeTeamShortName": "阿拉维斯",
+          "matchDate": "2024-02-04",
+          "matchId": 2004323,
+          "seasonId": 10920,
+          "sportteryAwayTeamId": 401,
+          "sportteryHomeTeamId": 171,
+          "sportteryMatchId": 1023484,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 246,
+          "uniformHomeTeamId": 219,
+          "uniformLeagueId": 24,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 2037,
+          "awayTeamShortName": "阿拉维斯",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 62,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 2017,
+          "homeTeamShortName": "巴萨",
+          "matchDate": "2023-11-12",
+          "matchId": 2004467,
+          "seasonId": 10920,
+          "sportteryAwayTeamId": 171,
+          "sportteryHomeTeamId": 401,
+          "sportteryMatchId": 1021772,
+          "sportteryTournamentId": 62,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 128,
+          "tournamentShortName": "西甲",
+          "uniformAwayTeamId": 219,
+          "uniformHomeTeamId": 246,
+          "uniformLeagueId": 24,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 5,
+        "lossProbability": "100%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "阿拉维斯",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 0,
+        "winProbability": "0%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 21,
+            "injuryFlag": 0,
+            "personId": 429714,
+            "personName": "拉菲尼亚",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 1,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 28,
+            "injuryFlag": 1,
+            "personId": 723652,
+            "personName": "亚马尔",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 31,
+            "injuryFlag": 1,
+            "personId": 723655,
+            "personName": "Pau Cubarsí",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 31,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          }
+        ],
+        "sportteryTeamId": 401,
+        "teamId": 2017,
+        "teamShortName": "巴萨",
+        "uniformTeamId": 246
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 0,
+            "personId": 482836,
+            "personName": "F. Garcés",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 1,
+            "uniformNo": "2"
+          },
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 1,
+            "personId": 206423,
+            "personName": "M. Díaz",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 27,
+            "injuryFlag": 1,
+            "personId": 351879,
+            "personName": "博耶",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          }
+        ],
+        "sportteryTeamId": 171,
+        "teamId": 2037,
+        "teamShortName": "阿拉维斯",
+        "uniformTeamId": 219
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 664,
+            "awayTeamShortName": "皇马",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 401,
+            "homeTeamShortName": "巴萨",
+            "matchDate": "2026-05-11",
+            "matchId": 2361894,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039649,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 514,
+            "uniformHomeTeamId": 246,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 401,
+            "awayTeamShortName": "巴萨",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 534,
+            "homeTeamShortName": "奥萨苏纳",
+            "matchDate": "2026-05-03",
+            "matchId": 2361898,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039475,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 246,
+            "uniformHomeTeamId": 236,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 401,
+            "awayTeamShortName": "巴萨",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 511,
+            "homeTeamShortName": "赫塔费",
+            "matchDate": "2026-04-25",
+            "matchId": 2361918,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039324,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 246,
+            "uniformHomeTeamId": 517,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 508,
+            "awayTeamShortName": "塞尔塔",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 401,
+            "homeTeamShortName": "巴萨",
+            "matchDate": "2026-04-23",
+            "matchId": 2361913,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039264,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 339,
+            "uniformHomeTeamId": 246,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 401,
+            "awayTeamShortName": "巴萨",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 172,
+            "homeTeamShortName": "马竞",
+            "matchDate": "2026-04-15",
+            "matchId": 2511620,
+            "seasonId": 13333,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039102,
+            "sportteryTournamentId": 69,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1096,
+            "tournamentShortName": "欧冠",
+            "uniformAwayTeamId": 246,
+            "uniformHomeTeamId": 145,
+            "uniformLeagueId": 30,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 9,
+          "lossGoalCnt": 2,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 7,
+          "sportteryTeamId": 0,
+          "teamId": 401,
+          "teamShortName": "巴萨",
+          "totalLegCnt": 5,
+          "uniformTeamId": 246,
+          "winGoalMatchCnt": 5,
+          "winProbability": "100%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 171,
+            "awayTeamShortName": "阿拉维斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 30,
+            "homeTeamShortName": "埃尔切",
+            "matchDate": "2026-05-09",
+            "matchId": 2361892,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039601,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 219,
+            "uniformHomeTeamId": 1740,
+            "uniformLeagueId": 24,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 506,
+            "awayTeamShortName": "毕尔巴鄂",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 171,
+            "homeTeamShortName": "阿拉维斯",
+            "matchDate": "2026-05-03",
+            "matchId": 2361905,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039469,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 143,
+            "uniformHomeTeamId": 219,
+            "uniformLeagueId": 24,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 533,
+            "awayTeamShortName": "马洛卡",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 171,
+            "homeTeamShortName": "阿拉维斯",
+            "matchDate": "2026-04-25",
+            "matchId": 2361924,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039314,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 516,
+            "uniformHomeTeamId": 219,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 171,
+            "awayTeamShortName": "阿拉维斯",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 664,
+            "homeTeamShortName": "皇马",
+            "matchDate": "2026-04-22",
+            "matchId": 2361911,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039248,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 219,
+            "uniformHomeTeamId": 514,
+            "uniformLeagueId": 24,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 171,
+            "awayTeamShortName": "阿拉维斯",
+            "fullCourtGoal": "3:3",
+            "halfTimeGoal": "2:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 675,
+            "homeTeamShortName": "皇家社会",
+            "matchDate": "2026-04-11",
+            "matchId": 2361928,
+            "seasonId": 13440,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039011,
+            "sportteryTournamentId": 62,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 128,
+            "tournamentShortName": "西甲",
+            "uniformAwayTeamId": 219,
+            "uniformHomeTeamId": 248,
+            "uniformLeagueId": 24,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 9,
+          "lossGoalCnt": 11,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 171,
+          "teamShortName": "阿拉维斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 219,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47935,
+      "seasonId": 13440,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 10,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 16,
+          "phaseName": "",
+          "points": "40",
+          "ranking": "15",
+          "sportteryTeamId": 171,
+          "teamId": 0,
+          "teamShortName": "阿拉维斯",
+          "totalLegCnt": 36,
+          "uniformTeamId": 219,
+          "winGoalMatchCnt": 10,
+          "winProbability": "28%"
+        },
+        {
+          "drawMatchCnt": 1,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 5,
+          "phaseName": "",
+          "points": "91",
+          "ranking": "1",
+          "sportteryTeamId": 401,
+          "teamId": 0,
+          "teamShortName": "巴萨",
+          "totalLegCnt": 36,
+          "uniformTeamId": 246,
+          "winGoalMatchCnt": 30,
+          "winProbability": "83%"
+        }
+      ],
+      "tournamentId": 128,
+      "tournamentShortName": "西甲",
+      "uniformLeagueId": 24,
+      "uniformMatchId": 2391410
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.4",
+            "assistCnt": 11,
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 16,
+            "goalProbability": "18%",
+            "injuryFlag": 1,
+            "personId": 723652,
+            "personName": "亚马尔",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "1%",
+            "goalAvgCnt": "0.5",
+            "goalCnt": 16,
+            "goalProbability": "18%",
+            "injuryFlag": 0,
+            "personId": 420666,
+            "personName": "托雷斯",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 22,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 13,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 41310,
+            "personName": "R. Lewandowski",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 14,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 401,
+        "teamId": 2017,
+        "teamShortName": "巴萨",
+        "uniformTeamId": 246
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 35,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 12,
+            "goalProbability": "31%",
+            "injuryFlag": 0,
+            "personId": 324453,
+            "personName": "Toni Martínez",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 11,
+            "goalProbability": "28%",
+            "injuryFlag": 1,
+            "personId": 351879,
+            "personName": "博耶",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          },
+          {
+            "appearanceCnt": 21,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 510378,
+            "personName": "Carlos Vicente",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 171,
+        "teamId": 2037,
+        "teamShortName": "阿拉维斯",
+        "uniformTeamId": 219
+      },
+      "seasonId": 13440,
+      "seasonName": "2025/2026",
+      "tournamentId": 128,
+      "tournamentShortName": "西甲",
+      "uniformLeagueId": 24,
+      "uniformMatchId": 2391410
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 1,
+      "change_pct": -4.3
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 9.1
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 10.3
+    },
+    "1球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -3.3
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 5.2
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 2,
+      "change_pct": 8.3
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 8.7
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": -8.1
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": -5.5
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 6.3
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 4,
+      "change_pct": -9.0
+    },
+    "平": {
+      "count": 1,
+      "change_pct": 1.4
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": 14.3
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 5,
+      "change_pct": -13.8
+    },
+    "让平": {
+      "count": 5,
+      "change_pct": -2.5
+    },
+    "让胜": {
+      "count": 5,
+      "change_pct": 8.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "6.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "14.50",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "11.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(6.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "4.20",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "19.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "10.50",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "7.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.20（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.85,
+    "ou_line": 3.25,
+    "under_odds": 0.85,
+    "save_time": "2026-05-14 07:02"
+  }
+}
