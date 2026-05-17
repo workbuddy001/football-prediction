@@ -105,8 +105,14 @@ for fp in files:
     mid_str = mi.get('match_num_str', mid)
     home = mi.get('home_team', '?')
     away = mi.get('away_team', '?')
-    date = mi.get('match_date', '?')
-    time = mi.get('match_time', '?')
+    date = mi.get('match_date', '')
+    time = mi.get('match_time', '')
+    # 从match数据补充时间
+    if not date:
+        mdata = data.get('match', data.get('match_data', {}))
+        if isinstance(mdata, dict):
+            date = mdata.get('matchDate', mdata.get('match_date', ''))
+            time = mdata.get('matchTime', mdata.get('match_time', ''))
     stake = betting.get('total_stake', 0)
     summary = betting.get('summary', '?')
     
@@ -118,33 +124,103 @@ for fp in files:
         'summary': summary,
         'goal_bet': betting.get('goal_bet', {}),
         'score_bets': betting.get('score_bets', []),
+        '_date': date,
+        '_time': time,
     }
 
-# 输出
+# 输出 - 按时间规则过滤
+from datetime import datetime as dt
+
+# 1. 今天周几
+weekday_cn = ['周一','周二','周三','周四','周五','周六','周日']
+today_idx = dt.now().weekday()
+today_wd = weekday_cn[today_idx]
+now = dt.now()
+
 print(f'{"="*80}')
-print(f'扫描 {len(files)} 场，{len(signals)} 个未赛信号触发')
+print(f'📅 今天 {today_wd} | 当前 {now.strftime("%H:%M")} | 扫描 {len(files)} 场 → {len(signals)} 个信号')
 print(f'{"="*80}\n')
 
-if not signals:
-    print('当前无未赛信号触发')
+# 2. 只保留今天的比赛
+today_signals = {}
+for mid, s in signals.items():
+    match_str = s['match']
+    if match_str.startswith(today_wd):
+        today_signals[mid] = s
+
+if not today_signals:
+    print(f'今天({today_wd})无触发信号')
     sys.exit(0)
 
+# 3. 分类：临场 / 今日 / 已过期
+HOT_MINUTES = 60  # 1小时内=重点
+CUTOFF_HOUR = 21   # 21点截止
+
+hot_signals = {}   # 🔥临场
+live_signals = {}  # 今天剩余
+cutoff_signals = {} # 21点后剩余
+
+for mid, s in today_signals.items():
+    dt_str = f"{s.get('_date','')} {s.get('_time','')}"
+    try:
+        # 尝试多种格式
+        for fmt in ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%Y-%m-%d']:
+            try:
+                match_dt = dt.strptime(dt_str.strip(), fmt)
+                break
+            except: continue
+        else:
+            match_dt = None
+    except:
+        match_dt = None
+    
+    if match_dt is None:
+        live_signals[mid] = s
+        continue
+    
+    diff_min = (match_dt - now).total_seconds() / 60
+    
+    if diff_min < 0:
+        continue  # 已开赛，跳过
+    
+    if now.hour >= CUTOFF_HOUR:
+        cutoff_signals[mid] = s
+    elif diff_min <= HOT_MINUTES:
+        hot_signals[mid] = s
+    else:
+        live_signals[mid] = s
+
+# 4. 排序输出
 order = ['R0','R1','F','G7','S4','S5','S3','G6','S2','H3','H2','H1','G5','S6','S1','G4','R3','R4']
 rule_order = {r: i for i, r in enumerate(order)}
 
-sorted_signals = sorted(signals.items(), key=lambda x: (rule_order.get(x[1]['rule'], 99), x[0]))
-
 total_stake = 0
-for mid, s in sorted_signals:
-    total_stake += s['stake']
-    print(f"[{s['rule']}] {s['match']}")
-    print(f"      {s['datetime']} | 投{s['stake']}元 | {s['summary']}")
-    gb = s['goal_bet']
-    if gb.get('goals'):
-        odds_str = str(gb.get('odds', {}))
-        print(f"      进球: {gb.get('goals')} 赔{odds_str} 投{gb.get('stake')}元")
-    for sb in s['score_bets']:
-        print(f"      比分: {sb.get('score')} 赔{sb.get('odds')} 投{sb.get('stake')}元 [{sb.get('tag','')}]")
+
+def print_section(title, signals_dict, emoji='📌'):
+    global total_stake
+    if not signals_dict:
+        return
+    sorted_s = sorted(signals_dict.items(), key=lambda x: (rule_order.get(x[1]['rule'], 99), x[0]))
+    print(f'{emoji} {title} ({len(sorted_s)}场):')
+    for mid, s in sorted_s:
+        total_stake += s['stake']
+        dt_display = s['datetime'] if s['datetime'].strip() else s['match']
+        dt_short = dt_display.replace('2026-05-17 ','').replace(':00','')[:8]
+        print(f"  [{s['rule']}] {s['match']}")
+        print(f"        ⏰ {dt_short} | 投{s['stake']}元 | {s['summary']}")
+        gb = s['goal_bet']
+        if gb.get('goals'):
+            print(f"        进球: {gb.get('goals')} 赔{gb.get('odds')} 投{gb.get('stake')}元")
+        for sb in s['score_bets']:
+            print(f"        比分: {sb.get('score')} 赔{sb.get('odds')} 投{sb.get('stake')}元 [{sb.get('tag','')}]")
     print()
 
-print(f'合计: {len(signals)}个信号, 总投入{total_stake}元')
+if hot_signals:
+    print_section('🔥 临场重点（1小时内开赛）', hot_signals, '🔥')
+if live_signals:
+    print_section('📌 今日推荐', live_signals)
+if cutoff_signals:
+    print(f'⏰ 当前已过21:00截止，剩余可投场次:')
+    print_section('📌 今日剩余', cutoff_signals)
+
+print(f'💰 今日总投入: {total_stake}元 (共{len(hot_signals)+len(live_signals)+len(cutoff_signals)}个信号)')
