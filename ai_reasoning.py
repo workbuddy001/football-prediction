@@ -239,7 +239,7 @@ def compute_betting(data, analysis):
         pass
     
     # 预计算S2/S3/S4信号（近况<2.5 + 大球反常保留→反向投注）
-    s2_5ball = False; s3_6ball = False; s4_7ball = False; s5_22 = False
+    s2_5ball = False; s3_6ball = False; s4_7ball = False; s5_22 = False; s6_2ball = False
     try:
         rec = analysis.get('recent_summary', {})
         combined = float(rec.get('combined_avg', 0) or 0)
@@ -267,6 +267,16 @@ def compute_betting(data, analysis):
                         draw = float(had.get('平', had.get('D', 999)) or 0)
                         if draw and draw >= 5.0:
                             s5_22 = True
+        # S6: 0球>=19 + 2球4.0-4.4 + 近况>=2.5 + 2球警惕 → 2球20+1:1 10元 (ROI+100%)
+        if combined >= 2.5:
+            tg = data.get('total_goals', {})
+            g0 = float(tg.get('0球', 0) or 0)
+            g2 = float(tg.get('2球', 0) or 0)
+            if g0 >= 19 and 4.0 <= g2 <= 4.4:
+                excl = analysis.get('exclusion', {})
+                for e in excl.get('kept', []):
+                    if e.get('goal') == '2球' and e.get('status') == '⚠️警惕造热':
+                        s6_2ball = True; break
     except:
         pass
     
@@ -449,6 +459,12 @@ def compute_betting(data, analysis):
         bet_goals = [5]
         bet_type = 'single'
         goal_stake = 30
+    elif s6_2ball:
+        # 信号S6: 0球>=19+2球4.0-4.4+近>=2.5+2球警惕 → 2球20+1:1 10 (ROI+100%)
+        rule = 'S6'
+        bet_goals = [2]
+        bet_type = 'single'
+        goal_stake = 20
     elif s1_1ball:
         # 信号S1: 近况>2.5+1球=⭐变高共振 → 投1球30元+2个2球比分各10元 (命中率76% ROI+80%)
         rule = 'S1'
@@ -554,6 +570,12 @@ def compute_betting(data, analysis):
         ho = _get_score_odds('2:2')
         if ho > 0:
             score_bets.append({'score': '2:2', 'odds': round(ho, 1), 'stake': 10, 'tag': '双警惕2:2'})
+        conf_tag = ''
+    elif rule == 'S6':
+        # S6: 黄金2球+2球警惕 → 2球20元 + 1:1 10元
+        ho = _get_score_odds('1:1')
+        if ho > 0:
+            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 10, 'tag': 'S6 1:1保护'})
         conf_tag = ''
     elif rule == 'H3':
         # H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 纯买1:1 30元 (ROI+405%)
