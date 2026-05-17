@@ -3363,6 +3363,9 @@ HTML_TEMPLATE = '''
                 html += '<h3 style="color:#4fc3f7;margin:0 0 12px 0">📊 ' + data.today + ' 批量推荐 (' + data.count + '个信号 | 总投入' + data.total_stake + '元)</h3>';
                 if (data.fetched > 0) {
                     html += '<div style="font-size:12px;color:#66bb6a;margin-bottom:4px">✅ 抓取更新 ' + data.fetched + ' 场比赛</div>';
+                    if (data.fetched_names && data.fetched_names.length > 0) {
+                        html += '<div style="font-size:11px;color:#999;margin-bottom:6px;max-height:60px;overflow-y:auto">📥 ' + data.fetched_names.join(' | ') + '</div>';
+                    }
                 }
                 html += '<div style="font-size:12px;color:#888">🔥 临场重点 | 📌 今日推荐 | ⏰ 21:30投注截止 / 21:15最后分析</div>';
                 html += '</div>';

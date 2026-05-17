@@ -1028,19 +1028,27 @@ def v36_batch_recommend():
         
         os.makedirs(DATA_DIR, exist_ok=True)
         fetch_count = 0
+        fetched_names = []
         for m in new_matches:
             mid = str(m.get('_mid', ''))
             fp = os.path.join(DATA_DIR, f'{mid}.json')
+            old_data = {}
             if os.path.exists(fp):
                 try:
                     with open(fp, 'r', encoding='utf-8') as f:
-                        d = json.load(f)
-                    if d.get('match_info', {}).get('match_num_str'):
+                        old_data = json.load(f)
+                    if old_data.get('match_info', {}).get('match_num_str'):
                         continue
-                except: pass
+                except: old_data = {}
             try:
                 api.fetch_and_save(mid)
                 fetch_count += 1
+                # 读取刚保存的数据获取队名
+                with open(fp, 'r', encoding='utf-8') as f:
+                    new_data = json.load(f)
+                mi = new_data.get('match_info', {})
+                name = f"{mi.get('match_num_str','')} {mi.get('home_team','?')} vs {mi.get('away_team','?')}"
+                fetched_names.append(name)
             except: pass
         
         # 读取已赛比分
@@ -1141,6 +1149,7 @@ def v36_batch_recommend():
             'count': len(signals),
             'total_stake': total_stake,
             'fetched': fetch_count,
+            'fetched_names': fetched_names,
             'signals': signals,
         })
     except Exception as e:
