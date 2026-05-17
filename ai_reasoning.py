@@ -238,6 +238,21 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算S2/S3/S4信号（近况<2.5 + 大球反常保留→反向投注）
+    s2_5ball = False; s3_6ball = False; s4_7ball = False
+    try:
+        rec = analysis.get('recent_summary', {})
+        combined = float(rec.get('combined_avg', 0) or 0)
+        if combined < 2.5:
+            excl = analysis.get('exclusion', {})
+            for e in excl.get('kept', []):
+                g = e.get('goal', ''); st = e.get('status', '?')
+                if g == '5球' and st == '⚠️警惕造热': s2_5ball = True
+                if g == '6球' and st in ('✅保留', '✅观察保留'): s3_6ball = True
+                if g == '7球' and st == '✅观察保留': s4_7ball = True
+    except:
+        pass
+    
     # 预计算G5/G6/G7信号（三维排除标签驱动，2026-05-12新增，回测ROI+253%）
     g5_warn = False; g6_keep = False; g7_signal = False
     try:
@@ -356,10 +371,29 @@ def compute_betting(data, analysis):
         bet_goals = [7]
         bet_type = 'single'
         goal_stake = 30
+    # 新规律信号(S2/S3/S4) - 近况小+大球反常,优先级高于G6
+    elif s4_7ball:
+        # 信号S4: 近况<2.5+7球=观察保留 → 投7球 (ROI+1700%)
+        rule = 'S4'
+        bet_goals = [7]
+        bet_type = 'single'
+        goal_stake = 30
+    elif s3_6ball:
+        # 信号S3: 近况<2.5+6球=保留/观察 → 投6球 (ROI+427%)
+        rule = 'S3'
+        bet_goals = [6]
+        bet_type = 'single'
+        goal_stake = 30
     elif g6_keep and g0 and g0 >= 12:
         # 信号G6: 三维排除6球=保留 + o0>=12 → 投6球 (ROI+298%)
         rule = 'G6'
         bet_goals = [6]
+        bet_type = 'single'
+        goal_stake = 30
+    elif s2_5ball:
+        # 信号S2: 近况<2.5+5球=警惕造热 → 投5球 (ROI+300%)
+        rule = 'S2'
+        bet_goals = [5]
         bet_type = 'single'
         goal_stake = 30
     elif h3_11:
@@ -491,6 +525,13 @@ def compute_betting(data, analysis):
         ho = _get_score_odds('1:1')
         if ho > 0:
             score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 30, 'tag': '平平↓压盘'})
+        conf_tag = ''
+    elif rule == 'S3':
+        # S3: 近况<2.5+6球保留 → 6球30元 + 2个5球比分各10元 (ROI+427%)
+        if 5 in score_by_goals:
+            candidates = sorted(score_by_goals[5], key=lambda x: x[1])
+            for sc, odds in candidates[:2]:
+                score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10, 'tag': 'S3保护'})
         conf_tag = ''
     elif rule == 'S1':
         # S1: 近况>2.5+1球变高共振 → 1球30元 + 2个2球比分各10元 (ROI+80%)
