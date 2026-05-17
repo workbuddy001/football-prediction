@@ -3366,6 +3366,8 @@ HTML_TEMPLATE = '''
                     if (data.fetched_names && data.fetched_names.length > 0) {
                         html += '<div style="font-size:11px;color:#999;margin-bottom:6px;max-height:60px;overflow-y:auto">📥 ' + data.fetched_names.join(' | ') + '</div>';
                     }
+                } else {
+                    html += '<div style="font-size:12px;color:#888;margin-bottom:4px">📦 数据均为最新，基于现有数据分析</div>';
                 }
                 html += '<div style="font-size:12px;color:#888">🔥 临场重点 | 📌 今日推荐 | ⏰ 21:30投注截止 / 21:15最后分析</div>';
                 html += '</div>';
