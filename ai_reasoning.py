@@ -387,7 +387,7 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 30
     elif s1_1ball:
-        # 信号S1: 近况>2.5+1球=⭐变高共振 → 投1球 (ROI+155%)
+        # 信号S1: 近况>2.5+1球=⭐变高共振 → 投1球30元+2个2球比分各10元 (命中率76% ROI+80%)
         rule = 'S1'
         bet_goals = [1]
         bet_type = 'single'
@@ -491,6 +491,13 @@ def compute_betting(data, analysis):
         ho = _get_score_odds('1:1')
         if ho > 0:
             score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 30, 'tag': '平平↓压盘'})
+        conf_tag = ''
+    elif rule == 'S1':
+        # S1: 近况>2.5+1球变高共振 → 1球30元 + 2个2球比分各10元 (ROI+80%)
+        if 2 in score_by_goals:
+            candidates = sorted(score_by_goals[2], key=lambda x: x[1])
+            for sc, odds in candidates[:2]:
+                score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10, 'tag': 'S1保护'})
         conf_tag = ''
     else:
         # 非R0: 每个目标球数取最低赔率2个比分
