@@ -225,6 +225,21 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算H4信号（平平3次↓>10% + Top1≠1:1 → 投1:1 20元 ROI+233%）
+    h4_11 = False
+    try:
+        hafu_c = data.get('hafu_change', {}) or {}
+        pp = hafu_c.get('平平', {})
+        if isinstance(pp, dict) and pp.get('count', 0) == 3 and pp.get('change_pct', 0) <= -10:
+            so = data.get('score_odds', {})
+            if so:
+                from sporttery_web import get_score_recommendations_for_match
+                top_recs = get_score_recommendations_for_match(so)
+                if top_recs and top_recs[0].get('score') != '1:1':
+                    h4_11 = True
+    except:
+        pass
+    
     # 预计算S1信号（近况>2.5+1球=⭐变高共振→投1球 30元,回测ROI+155%）
     s1_1ball = False
     try:
@@ -441,6 +456,12 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
+    elif h4_11:
+        # 信号H4: 平平3次↓>10%+Top1≠1:1 → 投1:1 20元 (ROI+233%)
+        rule = 'H4'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif h2_11:
         # 信号H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死 → 投1:1 10元 (ROI+231%)
         rule = 'H2'
@@ -582,6 +603,12 @@ def compute_betting(data, analysis):
         ho = _get_score_odds('1:1')
         if ho > 0:
             score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 30, 'tag': '平平↓压盘'})
+        conf_tag = ''
+    elif rule == 'H4':
+        # H4: 平平3次↓>10%+Top1≠1:1 → 纯买1:1 20元 (ROI+233%)
+        ho = _get_score_odds('1:1')
+        if ho > 0:
+            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 20, 'tag': 'H4平淡↓'})
         conf_tag = ''
     elif rule == 'S3':
         # S3: 近况<2.5+6球保留 → 6球30元 + 2个5球比分各10元 (ROI+427%)
