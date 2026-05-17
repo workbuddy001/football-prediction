@@ -225,6 +225,19 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算S1信号（近况>2.5+1球=⭐变高共振→投1球 30元,回测ROI+155%）
+    s1_1ball = False
+    try:
+        rec = analysis.get('recent_summary', {})
+        combined = float(rec.get('combined_avg', 0) or 0)
+        if combined > 2.5:
+            excl = analysis.get('exclusion', {})
+            for e in excl.get('kept', []):
+                if e.get('goal') == '1球' and '变高共振' in e.get('status', ''):
+                    s1_1ball = True; break
+    except:
+        pass
+    
     # 预计算G5/G6/G7信号（三维排除标签驱动，2026-05-12新增，回测ROI+253%）
     g5_warn = False; g6_keep = False; g7_signal = False
     try:
@@ -371,6 +384,12 @@ def compute_betting(data, analysis):
         # 信号G5: 三维排除5球=警惕造热 + o0>=12 → 投5球 (ROI+135%)
         rule = 'G5'
         bet_goals = [5]
+        bet_type = 'single'
+        goal_stake = 30
+    elif s1_1ball:
+        # 信号S1: 近况>2.5+1球=⭐变高共振 → 投1球 (ROI+155%)
+        rule = 'S1'
+        bet_goals = [1]
         bet_type = 'single'
         goal_stake = 30
     elif g4_22:
