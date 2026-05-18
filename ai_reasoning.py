@@ -22,7 +22,7 @@ DATA_DIR = 'sporttery_data'
 def compute_betting(data, analysis):
     """
     投注策略决策：
-    R0: 推荐0:0 → 三层排除 + 双层保底 → 0球50元 + 1:1(10)+小胜(10)
+    R0: 推荐0:0 → 纯0球20元
     R1: 推荐3:0 + V36+Tree双确认 + 让胜<1.80 → 3:0比分20元
     R3: 不推荐1:1 + 主胜<1.3 + 0球20-35 → 双选3+4球120元
     R4: 不推荐1:1 + 0球<10 → 双选0+2球120元
@@ -84,6 +84,7 @@ def compute_betting(data, analysis):
     bet_goals = []
     bet_type = None
     goal_stake = 0
+    s7_dual = False
     
     # 预计算信号F条件（避免elif阻断后续规则）
     f_eligible = False
@@ -307,7 +308,14 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    if top_score_rec == '0:0':
+    # ⚠️ H4优先于R0: 平平3次↓>10%+Top1≠1:1时直接触发(H4回测50%+233% vs R0在部分联赛仅10%)
+    if h4_11:
+        # 信号H4: 平平3次↓>10%+Top1≠1:1 → 投1:1 20元 (ROI+233%)
+        rule = 'H4'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
+    elif top_score_rec == '0:0':
         # R0: 主攻<2.0过滤（强攻队不出0:0）
         h_att = None
         try:
@@ -382,17 +390,13 @@ def compute_betting(data, analysis):
         except:
             pass
         
-        # R0: 近况过滤（2.5-3.5区间0球率最高42%, 回测ROI+206%）
-        rec = analysis.get('recent_summary', {})
-        combined = float(rec.get('combined_avg', 0) or 0)
-        if not (2.5 <= combined < 3.5):
-            return {'action': 'skip', 'reason': f'R0跳过: 近况{combined:.1f}不在2.5-3.5(0球率最佳区间)'}
+        # R0: 近况过滤已移除(2026-05-18) — 全量回测: <2.5或>=3.5区间26场中7场0:0(27%), 与2.5-3.5区间命中率持平, 过滤无效
         
-        # R0: 置信度标记（仅供参考，投注额统一50元）
+        # R0: 纯0球20元 (2026-05-18简化)
         rule = 'R0'
         bet_goals = [0]
         bet_type = 'single'
-        goal_stake = 50
+        goal_stake = 20
     elif top_score_rec == '3:0' and agree_count == 2:
         # R1: 推荐3:0 + 让胜<1.80 → 纯买3:0比分20元
         try:
@@ -407,49 +411,69 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
+    elif g0 and g0 == 23 and go.get(2, 99) >= 4.0 and go.get(2, 99) <= 4.3:
+        # 信号S7: 0球=23 + 2球[4.0-4.3] → 投2球20元 (回测5/5=100%)
+        # S6+S7双确认: 两个独立逻辑(三维排除+赔率区间)同时指向2球 → 加注到40元 (4/4=100%)
+        rule = 'S7'
+        bet_goals = [2]
+        bet_type = 'single'
+        goal_stake = 40 if s6_2ball else 20
+        s7_dual = s6_2ball
     elif f_eligible:
         # 信号F: 近况>4 + 铁桶防守 + 0球25-35 + 0球不暴跌 → 投7球 (ROI+275%)
         rule = 'F'
         bet_goals = [7]
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 20
     elif g7_signal and g0 and g0 >= 12:
         # 信号G7: 三维排除7球=保留/警惕 + o0>=12 → 投7球 (ROI+550%)
         rule = 'G7'
         bet_goals = [7]
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 20
     # 新规律信号(S2/S3/S4) - 近况小+大球反常,优先级高于G6
     elif s4_7ball:
         # 信号S4: 近况<2.5+7球=观察保留 → 投7球 (ROI+1700%)
         rule = 'S4'
         bet_goals = [7]
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 20
     elif s5_22:
         # 信号S5: Top1=3:0+3/4球双警惕+平>=5+近>=3.2 → 投2:2 10元 (ROI+910%)
         rule = 'S5'
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    elif s3_6ball:
-        # 信号S3: 近况<2.5+6球=保留/观察 → 投6球 (ROI+427%)
-        rule = 'S3'
-        bet_goals = [6]
-        bet_type = 'single'
-        goal_stake = 30
-    elif g6_keep and g0 and g0 >= 12:
-        # 信号G6: 三维排除6球=保留 + o0>=12 → 投6球 (ROI+298%)
+    elif s3_6ball and g0 and g0 >= 10 and go.get(6, 99) < 30 and (min(h_win, a_win) < 1.65 if (h_win and a_win) else True):
+        # 国内杯赛排除: 足总杯等强队不全力进攻, S3杯赛全miss
+        SKIP_CUPS = ['足总杯', '联赛杯', '意大利杯', '德国杯', '法国杯', '国王杯', '葡萄牙杯', '荷兰杯']
+        league = ''
+        try:
+            info = data.get('match_info', {})
+            league = info.get('league', '') if isinstance(info, dict) else ''
+        except: pass
+        if any(cup in league for cup in SKIP_CUPS):
+            pass  # 跳过国内杯赛, 不设rule
+        else:
+            # 信号S3: 近<2.5+6球保留 + o0≥10 + 6球<30 + HAD<1.65(极端强队) → 投6球
+            rule = 'S3'
+            bet_goals = [6]
+            bet_type = 'single'
+            goal_stake = 20
+    elif g6_keep and g0 and g0 >= 12 and go.get(6, 99) < 12:
+        # 信号G6: 三维排除6球=保留 + o0>=12 + 6球<12 → 投6球 (ROI+298%)
+        # 赔率过滤: 6球≥12区间0%(1场0中)
         rule = 'G6'
         bet_goals = [6]
         bet_type = 'single'
-        goal_stake = 30
-    elif s2_5ball:
-        # 信号S2: 近况<2.5+5球=警惕造热 → 投5球 (ROI+300%)
+        goal_stake = 20
+    elif s2_5ball and (min(h_win, a_win) >= 1.65 if (h_win and a_win) else True):
+        # 信号S2: 近况<2.5+5球警惕 + HAD最低赔≥1.65(过滤极端强队) → 投5球 (ROI+462%)
+        # HAD过滤: 一方极强(<1.65)→大球难出, 科莫1.13+拉瓦勒1.63两场全miss
         rule = 'S2'
         bet_goals = [5]
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 20
     elif h3_11:
         # 信号H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 投1:1 30元 (ROI+405%)
         rule = 'H3'
@@ -457,7 +481,7 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 0
     elif h4_11:
-        # 信号H4: 平平3次↓>10%+Top1≠1:1 → 投1:1 20元 (ROI+233%)
+        # 信号H4: 平平3次↓>10%+Top1≠1:1 → 已在前面触发(优先于R0), 此处保留为安全网
         rule = 'H4'
         bet_goals = []
         bet_type = 'single'
@@ -474,12 +498,13 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    elif g5_warn and g0 and g0 >= 12:
-        # 信号G5: 三维排除5球=警惕造热 + o0>=12 → 投5球 (ROI+135%)
+    elif g5_warn and g0 and g0 >= 12 and go.get(5, 99) <= 7:
+        # 信号G5: 三维排除5球=警惕造热 + o0>=12 + 5球≤7 → 投5球 (ROI+135%)
+        # 赔率过滤: 5球=7.8区间9场仅1中(11%), ≤7区间4场2中(50%)
         rule = 'G5'
         bet_goals = [5]
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 20
     elif s6_2ball:
         # 信号S6: 0球>=19+2球4.0-4.4+近>=2.5+2球警惕 → 2球20+1:1 10 (ROI+100%)
         rule = 'S6'
@@ -491,7 +516,7 @@ def compute_betting(data, analysis):
         rule = 'S1'
         bet_goals = [1]
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 20
     elif g4_22:
         # 信号G4: 4球警惕造热 + 平<3.5 + 双方防守>1.0 → 投2:2比分10元 (ROI+122%)
         rule = 'G4'
@@ -539,23 +564,7 @@ def compute_betting(data, analysis):
         except: return 0
     
     if rule == 'R0':
-        # R0保底比分: 1:1(10元) + 智能小胜(10元)
-        home_fav = (h_win is not None and a_win is not None and h_win < a_win)
-        fav_odds = h_win if home_fav else a_win
-        
-        if fav_odds and fav_odds < 2.0:
-            close_score = '1:0' if home_fav else '0:1'
-        else:
-            close_score = '2:1' if home_fav else '1:2'
-        
-        odds_11 = _get_score_odds('1:1')
-        odds_close = _get_score_odds(close_score)
-        
-        if odds_11 > 0:
-            score_bets.append({'score': '1:1', 'odds': round(odds_11, 1), 'stake': 10, 'tag': '保底'})
-        if odds_close > 0:
-            score_bets.append({'score': close_score, 'odds': round(odds_close, 1), 'stake': 10, 'tag': '1球小胜保底'})
-        
+        # R0: 纯0球20元, 无比分保底 (2026-05-18简化)
         conf_tag = ''
         if pp_boost:
             conf_tag = ' 🔥平平降>5%'
@@ -593,10 +602,7 @@ def compute_betting(data, analysis):
             score_bets.append({'score': '2:2', 'odds': round(ho, 1), 'stake': 10, 'tag': '双警惕2:2'})
         conf_tag = ''
     elif rule == 'S6':
-        # S6: 黄金2球+2球警惕 → 2球20元 + 1:1 10元
-        ho = _get_score_odds('1:1')
-        if ho > 0:
-            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 10, 'tag': 'S6 1:1保护'})
+        # S6: 黄金2球+2球警惕 → 纯2球20元
         conf_tag = ''
     elif rule == 'H3':
         # H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 纯买1:1 30元 (ROI+405%)
@@ -611,26 +617,13 @@ def compute_betting(data, analysis):
             score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 20, 'tag': 'H4平淡↓'})
         conf_tag = ''
     elif rule == 'S3':
-        # S3: 近况<2.5+6球保留 → 6球30元 + 2个5球比分各10元 (ROI+427%)
-        if 5 in score_by_goals:
-            candidates = sorted(score_by_goals[5], key=lambda x: x[1])
-            for sc, odds in candidates[:2]:
-                score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10, 'tag': 'S3保护'})
+        # S3: 近况<2.5+6球保留 → 纯6球20元 (ROI+330%)
         conf_tag = ''
     elif rule == 'S1':
-        # S1: 近况>2.5+1球变高共振 → 1球30元 + 2个2球比分各10元 (ROI+80%)
-        if 2 in score_by_goals:
-            candidates = sorted(score_by_goals[2], key=lambda x: x[1])
-            for sc, odds in candidates[:2]:
-                score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10, 'tag': 'S1保护'})
+        # S1: 近况>2.5+1球变高共振 → 纯1球20元 (ROI+80%)
         conf_tag = ''
     else:
-        # 非R0: 每个目标球数取最低赔率2个比分
-        for g in bet_goals:
-            candidates = sorted(score_by_goals.get(g, []), key=lambda x: x[1])
-            hot = candidates[:2]
-            for sc, odds in hot:
-                score_bets.append({'score': sc, 'odds': round(odds, 1), 'stake': 10})
+        # 纯总进球投注(无比分保护), 2026-05-18改为纯20元
         conf_tag = ''
     
     total_score_stake = sum(s['stake'] for s in score_bets)
@@ -650,6 +643,13 @@ def compute_betting(data, analysis):
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
+    if s7_dual:
+        summary_text += ' 🔥双确认(S6+S7)'
+    
+    # 2026-05-18 停用低ROI信号
+    DISABLED = {'S6', 'H4', 'G4'}
+    if rule in DISABLED:
+        return {'action': 'skip', 'reason': f'{rule}已停用(低ROI)'}
     
     return {
         'action': 'bet',
@@ -665,6 +665,7 @@ def compute_betting(data, analysis):
         'total_stake': goal_stake + total_score_stake,
         'summary': summary_text,
         'pp_boost': pp_boost if rule == 'R0' else False,
+        's7_dual': s7_dual,
     }
 
 
