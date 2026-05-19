@@ -314,14 +314,18 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    # 预计算X2/X4信号（三维排除仅剩2项排除陷阱, 2026-05-20新增）
-    x2_35 = False; x4_34 = False
+    # 预计算X2/X3/X4信号（三维排除陷阱, 2026-05-20新增）
+    x2_35 = False; x3_123 = False; x4_34 = False
     try:
         exclusion = analysis.get('exclusion', {})
         kept = exclusion.get('kept', [])
+        kept_goals = {e.get('goal', '') for e in kept}
+        kept_statuses = {e.get('goal', ''): e.get('status', '') for e in kept}
+        # X3: 1球+2球+3球保留 + 3球警惕 + 2球警惕 → 投3球 (10场6中60%, ROI+109%)
+        if kept_goals == {'1球', '2球', '3球'}:
+            if '警惕' in kept_statuses.get('3球', '') and '警惕' in kept_statuses.get('2球', ''):
+                x3_123 = True
         if len(kept) == 2:
-            kept_goals = {e.get('goal', '') for e in kept}
-            kept_statuses = {e.get('goal', ''): e.get('status', '') for e in kept}
             # X2: 仅剩3球+5球 → 投2球 (4场3中75%)
             if kept_goals == {'3球', '5球'}:
                 x2_35 = True
@@ -344,6 +348,13 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
+    elif x3_123:
+        # 信号X3: 三维排除1球+2球+3球保留 + 3球警惕 + 2球警惕 → 投3球20元 (10场6中60%, ROI+109%)
+        # ⚠️ 优先于R0: R0的0球命中率过滤会误拦X3(2039350皇家奥维1:2本应中3球)
+        rule = 'X3'
+        bet_goals = [3]
+        bet_type = 'single'
+        goal_stake = 20
     elif top_score_rec == '0:0':
         # R0: 主攻<2.0过滤（强攻队不出0:0）
         h_att = None
