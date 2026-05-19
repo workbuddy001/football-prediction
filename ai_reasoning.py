@@ -314,6 +314,23 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算X2/X4信号（三维排除仅剩2项排除陷阱, 2026-05-20新增）
+    x2_35 = False; x4_34 = False
+    try:
+        exclusion = analysis.get('exclusion', {})
+        kept = exclusion.get('kept', [])
+        if len(kept) == 2:
+            kept_goals = {e.get('goal', '') for e in kept}
+            kept_statuses = {e.get('goal', ''): e.get('status', '') for e in kept}
+            # X2: 仅剩3球+5球 → 投2球 (4场3中75%)
+            if kept_goals == {'3球', '5球'}:
+                x2_35 = True
+            # X4: 仅剩3球(警惕)+4球(保留) → 投4球 (4场3中75%)
+            if kept_goals == {'3球', '4球'} and kept_statuses.get('3球') == '⚠️警惕造热':
+                x4_34 = True
+    except:
+        pass
+    
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
     if h5_11:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元
@@ -555,6 +572,18 @@ def compute_betting(data, analysis):
         bet_goals = [0, 2]
         bet_type = 'dual'
         goal_stake = 120
+    elif x4_34:
+        # 信号X4: 三维排除仅剩3球(警惕)+4球(保留) → 投4球20元 (4场3中75%, 填补G4空白)
+        rule = 'X4'
+        bet_goals = [4]
+        bet_type = 'single'
+        goal_stake = 20
+    elif x2_35:
+        # 信号X2: 三维排除仅剩3球+5球 → 投2球20元 (4场3中75%, 辅助填充)
+        rule = 'X2'
+        bet_goals = [2]
+        bet_type = 'single'
+        goal_stake = 20
     
     if not rule:
         return {'action': 'skip', 'reason': '无匹配投注规则'}
