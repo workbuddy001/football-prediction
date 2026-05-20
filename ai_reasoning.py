@@ -1072,8 +1072,12 @@ def v36_analyze(match_id):
                 raw = body['ttg_hitrates']
                 data['_change_hitrate'] = {int(k) if k.isdigit() else k: v for k, v in raw.items()} if isinstance(raw, dict) else raw
         
-        # V3.6 fix: 独立加载命中率数据（优先使用，key保证是整数）
+        # V3.6 fix: 独立加载命中率数据（强制刷新缓存，确保与_scores.json同步）
         try:
+            import sporttery_web
+            sporttery_web._odds_hitrate_cache = None
+            sporttery_web._change_hitrate_cache = None
+            sporttery_web._score_hitrate_cache = None
             from sporttery_web import _build_odds_hitrate, _build_change_hitrate
             if '_odds_hitrate' not in data:
                 data['_odds_hitrate'] = _build_odds_hitrate()
@@ -1104,6 +1108,10 @@ def v36_batch_recommend():
     try:
         import glob
         from datetime import datetime as dt
+        import sporttery_web
+        sporttery_web._odds_hitrate_cache = None
+        sporttery_web._change_hitrate_cache = None
+        sporttery_web._score_hitrate_cache = None
         from sporttery_web import _build_odds_hitrate, _build_change_hitrate
         _oh = _build_odds_hitrate()
         _ch = _build_change_hitrate()
