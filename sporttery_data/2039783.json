@@ -1,0 +1,941 @@
+{
+  "match_id": "2039783",
+  "fetch_time": "2026-05-17 15:23:30",
+  "match_info": {
+    "home_team": "全北现代",
+    "away_team": "金泉尚武",
+    "league": "韩国职业联赛",
+    "time": "2026-05-17 15:40",
+    "match_num_str": "周日002",
+    "match_week": "周日",
+    "match_date": "2026-05-17",
+    "match_time": "15:40:00",
+    "match_status": "Selling",
+    "home_rank": "[韩职3]",
+    "away_rank": "[韩职10]",
+    "league_abbr": "韩职"
+  },
+  "score_odds": {
+    "05:00": "80.00",
+    "01:00": "6.30",
+    "05:02": "150.0",
+    "05:01": "80.00",
+    "02:04": "175.0",
+    "02:05": "500.0",
+    "02:02": "14.00",
+    "02:03": "50.00",
+    "02:00": "7.25",
+    "02:01": "6.70",
+    "03:03": "75.00",
+    "03:01": "13.00",
+    "03:02": "24.00",
+    "03:00": "13.00",
+    "00:01": "12.50",
+    "00:00": "11.50",
+    "00:03": "60.00",
+    "00:02": "24.00",
+    "00:05": "600.0",
+    "00:04": "200.0",
+    "04:02": "55.00",
+    "04:01": "32.00",
+    "04:00": "32.00",
+    "01:02": "12.50",
+    "01:01": "6.00",
+    "01:04": "125.0",
+    "01:03": "35.00",
+    "01:05": "500.0"
+  },
+  "total_goals": {
+    "3球": "3.50",
+    "4球": "5.50",
+    "5球": "10.00",
+    "6球": "19.00",
+    "7球": "27.00",
+    "0球": "11.50",
+    "1球": "4.85",
+    "2球": "3.30"
+  },
+  "had": {
+    "胜": "1.58",
+    "平": "3.60",
+    "负": "4.58"
+  },
+  "ttg": {
+    "3球": "3.50",
+    "4球": "5.50",
+    "5球": "10.00",
+    "6球": "19.00",
+    "7球": "27.00",
+    "0球": "11.50",
+    "1球": "4.85",
+    "2球": "3.30"
+  },
+  "hafu": {
+    "负负": "8.00",
+    "平平": "5.50",
+    "胜胜": "2.35",
+    "负平": "16.00",
+    "平胜": "4.15",
+    "负胜": "25.00",
+    "胜负": "40.00",
+    "胜平": "16.00",
+    "平负": "11.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "3.18",
+    "让平": "3.00",
+    "让负": "2.08"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "金泉尚武",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "33",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "60",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.1",
+        "awayGoalAvgCntRatio": "42.3",
+        "homeGoalAvgCnt": "1.5",
+        "homeGoalAvgCntRatio": "57.7",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "全北现代",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "50",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "40",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.6",
+        "awayLossGoalAvgCntRatio": "69.6",
+        "homeLossGoalAvgCnt": "0.7",
+        "homeLossGoalAvgCntRatio": "30.4",
+        "totalLegCnt": 10
+      },
+      "matchId": 2485262,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "37",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 1084,
+      "sportteryHomeTeamId": 860,
+      "sportteryMatchId": 2039783,
+      "uniformAwayTeamId": 389,
+      "uniformHomeTeamId": 112
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1377,
+          "awayTeamShortName": "全北现代",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 48,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1378,
+          "homeTeamShortName": "金泉尚武",
+          "matchDate": "2026-03-08",
+          "matchId": 2485338,
+          "seasonId": 14497,
+          "sportteryAwayTeamId": 860,
+          "sportteryHomeTeamId": 1084,
+          "sportteryMatchId": 2038152,
+          "sportteryTournamentId": 48,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 51,
+          "tournamentShortName": "韩职",
+          "uniformAwayTeamId": 112,
+          "uniformHomeTeamId": 389,
+          "uniformLeagueId": 86,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 1378,
+          "awayTeamShortName": "金泉尚武",
+          "fullCourtGoal": "2:3",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1377,
+          "homeTeamShortName": "全北现代",
+          "matchDate": "2025-10-25",
+          "matchId": 2455111,
+          "seasonId": 12851,
+          "sportteryAwayTeamId": 1084,
+          "sportteryHomeTeamId": 860,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 51,
+          "tournamentShortName": "韩职",
+          "uniformAwayTeamId": 389,
+          "uniformHomeTeamId": 112,
+          "uniformLeagueId": 86,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1378,
+          "awayTeamShortName": "金泉尚武",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 48,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1377,
+          "homeTeamShortName": "全北现代",
+          "matchDate": "2025-09-20",
+          "matchId": 2284414,
+          "seasonId": 12851,
+          "sportteryAwayTeamId": 1084,
+          "sportteryHomeTeamId": 860,
+          "sportteryMatchId": 2033670,
+          "sportteryTournamentId": 48,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 51,
+          "tournamentShortName": "韩职",
+          "uniformAwayTeamId": 389,
+          "uniformHomeTeamId": 112,
+          "uniformLeagueId": 86,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1377,
+          "awayTeamShortName": "全北现代",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 48,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1378,
+          "homeTeamShortName": "金泉尚武",
+          "matchDate": "2025-06-27",
+          "matchId": 2284336,
+          "seasonId": 12851,
+          "sportteryAwayTeamId": 860,
+          "sportteryHomeTeamId": 1084,
+          "sportteryMatchId": 2032385,
+          "sportteryTournamentId": 48,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 51,
+          "tournamentShortName": "韩职",
+          "uniformAwayTeamId": 112,
+          "uniformHomeTeamId": 389,
+          "uniformLeagueId": 86,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1378,
+          "awayTeamShortName": "金泉尚武",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 48,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1377,
+          "homeTeamShortName": "全北现代",
+          "matchDate": "2025-02-16",
+          "matchId": 2284489,
+          "seasonId": 12851,
+          "sportteryAwayTeamId": 1084,
+          "sportteryHomeTeamId": 860,
+          "sportteryMatchId": 1029916,
+          "sportteryTournamentId": 48,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 51,
+          "tournamentShortName": "韩职",
+          "uniformAwayTeamId": 389,
+          "uniformHomeTeamId": 112,
+          "uniformLeagueId": 86,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "全北现代",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1084,
+        "teamId": 1378,
+        "teamShortName": "金泉尚武",
+        "uniformTeamId": 389
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 860,
+        "teamId": 1377,
+        "teamShortName": "全北现代",
+        "uniformTeamId": 112
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1084,
+            "awayTeamShortName": "金泉尚武",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1035899,
+            "homeTeamShortName": "安养FC",
+            "matchDate": "2026-05-13",
+            "matchId": 2485266,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 389,
+            "uniformHomeTeamId": 57172,
+            "uniformLeagueId": 86,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 1086,
+            "awayTeamShortName": "仁川联",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1084,
+            "homeTeamShortName": "金泉尚武",
+            "matchDate": "2026-05-09",
+            "matchId": 2485275,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 117,
+            "uniformHomeTeamId": 389,
+            "uniformLeagueId": 86,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1090,
+            "awayTeamShortName": "蔚山现代",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1084,
+            "homeTeamShortName": "金泉尚武",
+            "matchDate": "2026-05-05",
+            "matchId": 2485280,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 387,
+            "uniformHomeTeamId": 389,
+            "uniformLeagueId": 86,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 1084,
+            "awayTeamShortName": "金泉尚武",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 929,
+            "homeTeamShortName": "首尔FC",
+            "matchDate": "2026-05-02",
+            "matchId": 2485288,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 389,
+            "uniformHomeTeamId": 111,
+            "uniformLeagueId": 86,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1084,
+            "awayTeamShortName": "金泉尚武",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2437,
+            "homeTeamShortName": "富川FC",
+            "matchDate": "2026-04-25",
+            "matchId": 2485292,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 389,
+            "uniformHomeTeamId": 1962,
+            "uniformLeagueId": 86,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 8,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -1,
+          "sportteryTeamId": 0,
+          "teamId": 1084,
+          "teamShortName": "金泉尚武",
+          "totalLegCnt": 5,
+          "uniformTeamId": 389,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 860,
+            "awayTeamShortName": "全北现代",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2437,
+            "homeTeamShortName": "富川FC",
+            "matchDate": "2026-05-13",
+            "matchId": 2485265,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039701,
+            "sportteryTournamentId": 48,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 112,
+            "uniformHomeTeamId": 1962,
+            "uniformLeagueId": 86,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 860,
+            "awayTeamShortName": "全北现代",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1035899,
+            "homeTeamShortName": "安养FC",
+            "matchDate": "2026-05-10",
+            "matchId": 2485271,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 112,
+            "uniformHomeTeamId": 57172,
+            "uniformLeagueId": 86,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1557,
+            "awayTeamShortName": "光州FC",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 860,
+            "homeTeamShortName": "全北现代",
+            "matchDate": "2026-05-05",
+            "matchId": 2485282,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039538,
+            "sportteryTournamentId": 48,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 386,
+            "uniformHomeTeamId": 112,
+            "uniformLeagueId": 86,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 860,
+            "awayTeamShortName": "全北现代",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 1087,
+            "homeTeamShortName": "济州SK",
+            "matchDate": "2026-05-02",
+            "matchId": 2485285,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 112,
+            "uniformHomeTeamId": 523,
+            "uniformLeagueId": 86,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1088,
+            "awayTeamShortName": "浦项制铁",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "2:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 860,
+            "homeTeamShortName": "全北现代",
+            "matchDate": "2026-04-26",
+            "matchId": 2485291,
+            "seasonId": 14497,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039337,
+            "sportteryTournamentId": 48,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 51,
+            "tournamentShortName": "韩职",
+            "uniformAwayTeamId": 388,
+            "uniformHomeTeamId": 112,
+            "uniformLeagueId": 86,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 10,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 7,
+          "sportteryTeamId": 0,
+          "teamId": 860,
+          "teamShortName": "全北现代",
+          "totalLegCnt": 5,
+          "uniformTeamId": 112,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48357,
+      "seasonId": 14497,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 5,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "23",
+          "ranking": "3",
+          "sportteryTeamId": 860,
+          "teamId": 0,
+          "teamShortName": "全北现代",
+          "totalLegCnt": 14,
+          "uniformTeamId": 112,
+          "winGoalMatchCnt": 6,
+          "winProbability": "43%"
+        },
+        {
+          "drawMatchCnt": 8,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 4,
+          "phaseName": "",
+          "points": "14",
+          "ranking": "10",
+          "sportteryTeamId": 1084,
+          "teamId": 0,
+          "teamShortName": "金泉尚武",
+          "totalLegCnt": 14,
+          "uniformTeamId": 389,
+          "winGoalMatchCnt": 2,
+          "winProbability": "14%"
+        }
+      ],
+      "tournamentId": 51,
+      "tournamentShortName": "韩职",
+      "uniformLeagueId": 86,
+      "uniformMatchId": 2392034
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 13,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 4,
+            "goalProbability": "27%",
+            "injuryFlag": 0,
+            "personId": 539674,
+            "personName": "高在贤",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 14,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "20%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 3,
+            "goalProbability": "20%",
+            "injuryFlag": 0,
+            "personId": 657818,
+            "personName": "Lee Geon-hee",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 779944,
+            "personName": "Kim Ju-Chan",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          }
+        ],
+        "sportteryTeamId": 1084,
+        "teamId": 1378,
+        "teamShortName": "金泉尚武",
+        "uniformTeamId": 389
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 14,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 3,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 230114,
+            "personName": "佩雷拉达席尔瓦",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 14,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 3,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 425859,
+            "personName": "Lee Seung-Woo",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 14,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 3,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 465561,
+            "personName": "Lee Dong-Jun",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 14,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          }
+        ],
+        "sportteryTeamId": 860,
+        "teamId": 1377,
+        "teamShortName": "全北现代",
+        "uniformTeamId": 112
+      },
+      "seasonId": 14497,
+      "seasonName": "2026",
+      "tournamentId": 51,
+      "tournamentShortName": "韩职",
+      "uniformLeagueId": 86,
+      "uniformMatchId": 2392034
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 2,
+      "change_pct": -10.0
+    },
+    "6球": {
+      "count": 2,
+      "change_pct": -9.5
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -2.8
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": 9.5
+    },
+    "5球": {
+      "count": 2,
+      "change_pct": -9.1
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 10.2
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": 3.1
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": -6.8
+    }
+  },
+  "hafu_change": {
+    "胜胜": {
+      "count": 5,
+      "change_pct": -14.5
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 4.2
+    },
+    "平负": {
+      "count": 5,
+      "change_pct": 29.4
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": 6.7
+    },
+    "平平": {
+      "count": 5,
+      "change_pct": 10.0
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": 6.7
+    },
+    "胜负": {
+      "count": 3,
+      "change_pct": 21.2
+    },
+    "平胜": {
+      "count": 3,
+      "change_pct": -6.7
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": 14.3
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 5,
+      "change_pct": 17.4
+    },
+    "平": {
+      "count": 5,
+      "change_pct": 11.8
+    },
+    "胜": {
+      "count": 5,
+      "change_pct": -11.2
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 5,
+      "change_pct": 14.9
+    },
+    "让平": {
+      "count": 5,
+      "change_pct": -11.8
+    },
+    "让胜": {
+      "count": 4,
+      "change_pct": -10.4
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.30",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "00:02",
+          "odds": "24.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.30（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.85,
+    "ou_line": 2.5,
+    "under_odds": 0.85,
+    "save_time": "2026-05-17 16:40"
+  }
+}

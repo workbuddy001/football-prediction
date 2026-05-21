@@ -1,0 +1,1028 @@
+{
+  "match_id": "2039787",
+  "fetch_time": "2026-05-17 17:45:14",
+  "match_info": {
+    "home_team": "尤文图斯",
+    "away_team": "佛罗伦萨",
+    "league": "意大利甲级联赛",
+    "time": "2026-05-17 18:00",
+    "match_num_str": "周日006",
+    "match_week": "周日",
+    "match_date": "2026-05-17",
+    "match_time": "18:00:00",
+    "match_status": "Selling",
+    "home_rank": "[意甲3]",
+    "away_rank": "[意甲15]",
+    "league_abbr": "意甲"
+  },
+  "score_odds": {
+    "05:00": "26.00",
+    "01:00": "6.75",
+    "05:02": "90.00",
+    "05:01": "35.00",
+    "02:04": "300.0",
+    "02:05": "700.0",
+    "02:02": "21.00",
+    "02:03": "75.00",
+    "02:00": "6.00",
+    "02:01": "7.25",
+    "03:03": "100.0",
+    "03:01": "10.00",
+    "03:02": "24.00",
+    "03:00": "7.25",
+    "00:01": "21.00",
+    "00:00": "17.00",
+    "00:03": "200.0",
+    "00:02": "60.00",
+    "00:05": "800.0",
+    "00:04": "500.0",
+    "04:02": "50.00",
+    "04:01": "17.00",
+    "04:00": "12.00",
+    "01:02": "22.00",
+    "01:01": "9.00",
+    "01:04": "400.0",
+    "01:03": "90.00",
+    "01:05": "800.0"
+  },
+  "total_goals": {
+    "3球": "3.50",
+    "4球": "4.75",
+    "5球": "7.50",
+    "6球": "13.00",
+    "7球": "18.00",
+    "0球": "17.00",
+    "1球": "5.75",
+    "2球": "3.85"
+  },
+  "had": {
+    "胜": "1.18",
+    "平": "5.50",
+    "负": "10.00"
+  },
+  "ttg": {
+    "3球": "3.50",
+    "4球": "4.75",
+    "5球": "7.50",
+    "6球": "13.00",
+    "7球": "18.00",
+    "0球": "17.00",
+    "1球": "5.75",
+    "2球": "3.85"
+  },
+  "hafu": {
+    "负负": "16.00",
+    "平平": "8.20",
+    "胜胜": "1.66",
+    "负平": "22.00",
+    "平胜": "3.65",
+    "负胜": "25.00",
+    "胜负": "70.00",
+    "胜平": "22.00",
+    "平负": "21.00"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "1.72",
+    "让平": "3.54",
+    "让负": "3.77"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "佛罗伦萨",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "73",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "70",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.8",
+        "awayGoalAvgCntRatio": "33.3",
+        "homeGoalAvgCnt": "1.6",
+        "homeGoalAvgCntRatio": "66.7",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "尤文图斯",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "30",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "60",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.1",
+        "awayLossGoalAvgCntRatio": "68.8",
+        "homeLossGoalAvgCnt": "0.5",
+        "homeLossGoalAvgCntRatio": "31.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2340998,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 8,
+        "awayScoreRatio": "13",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "83",
+        "homeWinGoalMatchCnt": 8,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 122,
+      "sportteryHomeTeamId": 124,
+      "sportteryMatchId": 2039787,
+      "uniformAwayTeamId": 198,
+      "uniformHomeTeamId": 293
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1242,
+          "awayTeamShortName": "尤文图斯",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1259,
+          "homeTeamShortName": "佛罗伦萨",
+          "matchDate": "2025-11-23",
+          "matchId": 2341078,
+          "seasonId": 13290,
+          "sportteryAwayTeamId": 124,
+          "sportteryHomeTeamId": 122,
+          "sportteryMatchId": 2035257,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 293,
+          "uniformHomeTeamId": 198,
+          "uniformLeagueId": 73,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1242,
+          "awayTeamShortName": "尤文图斯",
+          "fullCourtGoal": "3:0",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 1259,
+          "homeTeamShortName": "佛罗伦萨",
+          "matchDate": "2025-03-17",
+          "matchId": 2144745,
+          "seasonId": 11962,
+          "sportteryAwayTeamId": 124,
+          "sportteryHomeTeamId": 122,
+          "sportteryMatchId": 2030532,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 293,
+          "uniformHomeTeamId": 198,
+          "uniformLeagueId": 73,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1259,
+          "awayTeamShortName": "佛罗伦萨",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1242,
+          "homeTeamShortName": "尤文图斯",
+          "matchDate": "2024-12-30",
+          "matchId": 2144783,
+          "seasonId": 11962,
+          "sportteryAwayTeamId": 122,
+          "sportteryHomeTeamId": 124,
+          "sportteryMatchId": 1029086,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 198,
+          "uniformHomeTeamId": 293,
+          "uniformLeagueId": 73,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1259,
+          "awayTeamShortName": "佛罗伦萨",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1242,
+          "homeTeamShortName": "尤文图斯",
+          "matchDate": "2024-04-08",
+          "matchId": 2011650,
+          "seasonId": 10955,
+          "sportteryAwayTeamId": 122,
+          "sportteryHomeTeamId": 124,
+          "sportteryMatchId": 1024630,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 198,
+          "uniformHomeTeamId": 293,
+          "uniformLeagueId": 73,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1242,
+          "awayTeamShortName": "尤文图斯",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1259,
+          "homeTeamShortName": "佛罗伦萨",
+          "matchDate": "2023-11-06",
+          "matchId": 2011809,
+          "seasonId": 10955,
+          "sportteryAwayTeamId": 124,
+          "sportteryHomeTeamId": 122,
+          "sportteryMatchId": 1021639,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 293,
+          "uniformHomeTeamId": 198,
+          "uniformLeagueId": 73,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 1,
+        "lossProbability": "20%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "尤文图斯",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 429830,
+            "personName": "M. Kean",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 459567,
+            "personName": "T.兰普蒂",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "48"
+          }
+        ],
+        "sportteryTeamId": 122,
+        "teamId": 1259,
+        "teamShortName": "佛罗伦萨",
+        "uniformTeamId": 198
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 197974,
+            "personName": "A. Milik",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 33,
+            "injuryFlag": 1,
+            "personId": 506331,
+            "personName": "图拉姆-于利安",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 12,
+            "injuryFlag": 1,
+            "personId": 617003,
+            "personName": "J. Cabal",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 2,
+            "substituteMatchCnt": 10,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          }
+        ],
+        "sportteryTeamId": 124,
+        "teamId": 1242,
+        "teamShortName": "尤文图斯",
+        "uniformTeamId": 293
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 26,
+            "awayTeamShortName": "热那亚",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 122,
+            "homeTeamShortName": "佛罗伦萨",
+            "matchDate": "2026-05-10",
+            "matchId": 2341003,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039636,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 130,
+            "uniformHomeTeamId": 198,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 122,
+            "awayTeamShortName": "佛罗伦萨",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "3:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 132,
+            "homeTeamShortName": "罗马",
+            "matchDate": "2026-05-05",
+            "matchId": 2341122,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039514,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 198,
+            "uniformHomeTeamId": 541,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1509,
+            "awayTeamShortName": "萨索洛",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 122,
+            "homeTeamShortName": "佛罗伦萨",
+            "matchDate": "2026-04-26",
+            "matchId": 2341009,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039340,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 132,
+            "uniformHomeTeamId": 198,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 122,
+            "awayTeamShortName": "佛罗伦萨",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 126,
+            "homeTeamShortName": "莱切",
+            "matchDate": "2026-04-21",
+            "matchId": 2341127,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039207,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 198,
+            "uniformHomeTeamId": 542,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 8,
+            "awayTeamShortName": "水晶宫",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 122,
+            "homeTeamShortName": "佛罗伦萨",
+            "matchDate": "2026-04-17",
+            "matchId": 2511994,
+            "seasonId": 13339,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039120,
+            "sportteryTournamentId": 1033103,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 1689,
+            "tournamentShortName": "欧协联",
+            "uniformAwayTeamId": 25,
+            "uniformHomeTeamId": 198,
+            "uniformLeagueId": 354,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 3,
+          "drawProbability": "60%",
+          "goalCnt": 3,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": -3,
+          "sportteryTeamId": 0,
+          "teamId": 122,
+          "teamShortName": "佛罗伦萨",
+          "totalLegCnt": 5,
+          "uniformTeamId": 198,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 124,
+            "awayTeamShortName": "尤文图斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 126,
+            "homeTeamShortName": "莱切",
+            "matchDate": "2026-05-10",
+            "matchId": 2341120,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039622,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 293,
+            "uniformHomeTeamId": 542,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1639,
+            "awayTeamShortName": "维罗纳",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 124,
+            "homeTeamShortName": "尤文图斯",
+            "matchDate": "2026-05-04",
+            "matchId": 2341004,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039496,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 533,
+            "uniformHomeTeamId": 293,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 124,
+            "awayTeamShortName": "尤文图斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 116,
+            "homeTeamShortName": "AC米兰",
+            "matchDate": "2026-04-27",
+            "matchId": 2341126,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039361,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 293,
+            "uniformHomeTeamId": 125,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 118,
+            "awayTeamShortName": "博洛尼亚",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 124,
+            "homeTeamShortName": "尤文图斯",
+            "matchDate": "2026-04-20",
+            "matchId": 2341010,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039203,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 124,
+            "uniformHomeTeamId": 293,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 124,
+            "awayTeamShortName": "尤文图斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 117,
+            "homeTeamShortName": "亚特兰大",
+            "matchDate": "2026-04-12",
+            "matchId": 2340912,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039027,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 293,
+            "uniformHomeTeamId": 200,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 5,
+          "lossGoalCnt": 1,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 4,
+          "sportteryTeamId": 0,
+          "teamId": 124,
+          "teamShortName": "尤文图斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 293,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47781,
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 11,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 6,
+          "phaseName": "",
+          "points": "68",
+          "ranking": "3",
+          "sportteryTeamId": 124,
+          "teamId": 0,
+          "teamShortName": "尤文图斯",
+          "totalLegCnt": 36,
+          "uniformTeamId": 293,
+          "winGoalMatchCnt": 19,
+          "winProbability": "53%"
+        },
+        {
+          "drawMatchCnt": 14,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 14,
+          "phaseName": "",
+          "points": "38",
+          "ranking": "15",
+          "sportteryTeamId": 122,
+          "teamId": 0,
+          "teamShortName": "佛罗伦萨",
+          "totalLegCnt": 36,
+          "uniformTeamId": 198,
+          "winGoalMatchCnt": 8,
+          "winProbability": "22%"
+        }
+      ],
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2392038
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "4%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "20%",
+            "injuryFlag": 1,
+            "personId": 429830,
+            "personName": "M. Kean",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "13%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 335207,
+            "personName": "R. Mandragora",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 29,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "17%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 250530,
+            "personName": "A. Gudmundsson",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 122,
+        "teamId": 1259,
+        "teamShortName": "佛罗伦萨",
+        "uniformTeamId": 198
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 35,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 10,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 724038,
+            "personName": "耶尔德兹",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 32,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 34,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 6,
+            "goalProbability": "10%",
+            "injuryFlag": 0,
+            "personId": 481528,
+            "personName": "戴维",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 14,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 34,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 5,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 5,
+            "goalProbability": "8%",
+            "injuryFlag": 0,
+            "personId": 459693,
+            "personName": "麦肯尼",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 30,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          }
+        ],
+        "sportteryTeamId": 124,
+        "teamId": 1242,
+        "teamShortName": "尤文图斯",
+        "uniformTeamId": 293
+      },
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2392038
+    }
+  },
+  "ttg_change": {},
+  "hafu_change": {
+    "胜胜": {
+      "count": 1,
+      "change_pct": -2.4
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": 9.3
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": 3.2
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 2,
+      "change_pct": 11.1
+    },
+    "平": {
+      "count": 2,
+      "change_pct": 5.8
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": -2.5
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 3,
+      "change_pct": 9.3
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": -4.3
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": -2.3
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "5.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "6.75",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "21.00",
+          "special": false
+        }
+      ],
+      "level": "强排除",
+      "reason": "进球数赔率(5.75)含特殊尾数，且对应比分中有特殊尾数赔率，联动双重排除信号"
+    },
+    {
+      "goal": "4球",
+      "ttg_odds": "4.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:02",
+          "odds": "21.00",
+          "special": false
+        },
+        {
+          "score": "03:01",
+          "odds": "10.00",
+          "special": false
+        },
+        {
+          "score": "00:04",
+          "odds": "500.0",
+          "special": false
+        },
+        {
+          "score": "04:00",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "01:03",
+          "odds": "90.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(4.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "3球",
+      "ttg_odds": "3.50",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:01",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "03:00",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "00:03",
+          "odds": "200.0",
+          "special": false
+        },
+        {
+          "score": "01:02",
+          "odds": "22.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.50（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.68,
+    "ou_line": 2.75,
+    "under_odds": 1.05,
+    "save_time": "2026-05-17 23:53"
+  }
+}

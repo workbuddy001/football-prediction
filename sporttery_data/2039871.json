@@ -1,0 +1,792 @@
+{
+  "match_id": "2039871",
+  "fetch_time": "2026-05-20 21:10:28",
+  "match_info": {
+    "home_team": "托林斯",
+    "away_team": "卡萨皮亚",
+    "league": "葡萄牙超级联赛",
+    "time": "2026-05-21 01:00",
+    "match_num_str": "周三012",
+    "match_week": "周三",
+    "match_date": "2026-05-21",
+    "match_time": "01:00:00",
+    "match_status": "Selling",
+    "home_rank": "",
+    "away_rank": "",
+    "league_abbr": "葡超"
+  },
+  "score_odds": {
+    "05:00": "300.0",
+    "01:00": "6.50",
+    "05:02": "450.0",
+    "05:01": "250.0",
+    "02:04": "150.0",
+    "02:05": "500.0",
+    "02:02": "14.00",
+    "02:03": "40.00",
+    "02:00": "10.50",
+    "02:01": "8.00",
+    "03:03": "85.00",
+    "03:01": "21.00",
+    "03:02": "35.00",
+    "03:00": "24.00",
+    "00:01": "7.00",
+    "00:00": "8.00",
+    "00:03": "32.00",
+    "00:02": "12.00",
+    "00:05": "500.0",
+    "00:04": "100.0",
+    "04:02": "100.0",
+    "04:01": "75.00",
+    "04:00": "75.00",
+    "01:02": "9.50",
+    "01:01": "5.25",
+    "01:04": "90.00",
+    "01:03": "27.00",
+    "01:05": "350.0"
+  },
+  "total_goals": {
+    "3球": "3.80",
+    "4球": "6.90",
+    "5球": "15.00",
+    "6球": "30.00",
+    "7球": "47.00",
+    "0球": "8.00",
+    "1球": "3.60",
+    "2球": "3.10"
+  },
+  "had": {
+    "胜": "2.50",
+    "平": "2.70",
+    "负": "2.80"
+  },
+  "ttg": {
+    "3球": "3.80",
+    "4球": "6.90",
+    "5球": "15.00",
+    "6球": "30.00",
+    "7球": "47.00",
+    "0球": "8.00",
+    "1球": "3.60",
+    "2球": "3.10"
+  },
+  "hafu": {
+    "负负": "4.90",
+    "平平": "3.90",
+    "胜胜": "4.60",
+    "负平": "15.50",
+    "平胜": "4.85",
+    "负胜": "29.00",
+    "胜负": "32.00",
+    "胜平": "15.50",
+    "平负": "5.80"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "6.50",
+    "让平": "3.90",
+    "让负": "1.39"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "卡萨皮亚",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "23",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "77",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "27",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "83",
+        "homeWinGoalMatchCnt": 8,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.5",
+        "awayGoalAvgCntRatio": "22.7",
+        "homeGoalAvgCnt": "1.7",
+        "homeGoalAvgCntRatio": "77.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "托林斯",
+      "last": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 1,
+        "awayScoreRatio": "67",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "27",
+        "homeWinGoalMatchCnt": 1,
+        "totalLegCnt": 5
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.3",
+        "awayLossGoalAvgCntRatio": "68.4",
+        "homeLossGoalAvgCnt": "0.6",
+        "homeLossGoalAvgCntRatio": "31.6",
+        "totalLegCnt": 10
+      },
+      "matchId": 2522985,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "100",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "0",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 2
+      },
+      "sportteryAwayTeamId": 2702,
+      "sportteryHomeTeamId": 1061,
+      "sportteryMatchId": 2039871,
+      "uniformAwayTeamId": 51219,
+      "uniformHomeTeamId": 1397
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1734,
+          "awayTeamShortName": "托林斯",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2892,
+          "homeTeamShortName": "卡萨皮亚",
+          "matchDate": "2025-12-18",
+          "matchId": 2462484,
+          "seasonId": 13780,
+          "sportteryAwayTeamId": 1061,
+          "sportteryHomeTeamId": 2702,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 570,
+          "tournamentShortName": "葡萄牙杯",
+          "uniformAwayTeamId": 1397,
+          "uniformHomeTeamId": 51219,
+          "uniformLeagueId": 98,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 2892,
+          "awayTeamShortName": "卡萨皮亚",
+          "fullCourtGoal": "0:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1734,
+          "homeTeamShortName": "托林斯",
+          "matchDate": "2023-07-31",
+          "matchId": 1900114,
+          "seasonId": 10352,
+          "sportteryAwayTeamId": 2702,
+          "sportteryHomeTeamId": 1061,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 586,
+          "tournamentShortName": "葡联赛杯",
+          "uniformAwayTeamId": 51219,
+          "uniformHomeTeamId": 1397,
+          "uniformLeagueId": 44,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1734,
+          "awayTeamShortName": "托林斯",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "-:-",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 2892,
+          "homeTeamShortName": "卡萨皮亚",
+          "matchDate": "2021-07-14",
+          "matchId": 1410740,
+          "seasonId": 7724,
+          "sportteryAwayTeamId": 1061,
+          "sportteryHomeTeamId": 2702,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1014,
+          "tournamentShortName": "俱乐部赛",
+          "uniformAwayTeamId": 1397,
+          "uniformHomeTeamId": 51219,
+          "uniformLeagueId": 719,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1734,
+          "awayTeamShortName": "托林斯",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "-:-",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2892,
+          "homeTeamShortName": "卡萨皮亚",
+          "matchDate": "2016-01-03",
+          "matchId": 314686,
+          "seasonId": 1781,
+          "sportteryAwayTeamId": 1061,
+          "sportteryHomeTeamId": 2702,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 369,
+          "tournamentShortName": "乙级联赛",
+          "uniformAwayTeamId": 1397,
+          "uniformHomeTeamId": 51219,
+          "uniformLeagueId": 313,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 2892,
+          "awayTeamShortName": "卡萨皮亚",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "-:-",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1734,
+          "homeTeamShortName": "托林斯",
+          "matchDate": "2015-10-10",
+          "matchId": 270626,
+          "seasonId": 1781,
+          "sportteryAwayTeamId": 2702,
+          "sportteryHomeTeamId": 1061,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 369,
+          "tournamentShortName": "乙级联赛",
+          "uniformAwayTeamId": 51219,
+          "uniformHomeTeamId": 1397,
+          "uniformLeagueId": 313,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 3,
+        "lossProbability": "60%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "托林斯",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 2702,
+        "teamId": 2892,
+        "teamShortName": "卡萨皮亚",
+        "uniformTeamId": 51219
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1061,
+        "teamId": 1734,
+        "teamShortName": "托林斯",
+        "uniformTeamId": 1397
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1047,
+            "awayTeamShortName": "里奥阿维",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2702,
+            "homeTeamShortName": "卡萨皮亚",
+            "matchDate": "2026-05-17",
+            "matchId": 2367395,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 455,
+            "uniformHomeTeamId": 51219,
+            "uniformLeagueId": 78,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2702,
+            "awayTeamShortName": "卡萨皮亚",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 538,
+            "homeTeamShortName": "吉马良斯",
+            "matchDate": "2026-05-12",
+            "matchId": 2367407,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 51219,
+            "uniformHomeTeamId": 300,
+            "uniformLeagueId": 78,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1873,
+            "awayTeamShortName": "通德拉",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2702,
+            "homeTeamShortName": "卡萨皮亚",
+            "matchDate": "2026-05-03",
+            "matchId": 2367408,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 394,
+            "uniformHomeTeamId": 51219,
+            "uniformLeagueId": 78,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 2702,
+            "awayTeamShortName": "卡萨皮亚",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 393,
+            "homeTeamShortName": "吉维森特",
+            "matchDate": "2026-04-28",
+            "matchId": 2367422,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039374,
+            "sportteryTournamentId": 55,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 51219,
+            "uniformHomeTeamId": 512,
+            "uniformLeagueId": 78,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 269,
+            "awayTeamShortName": "布拉加",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 2702,
+            "homeTeamShortName": "卡萨皮亚",
+            "matchDate": "2026-04-24",
+            "matchId": 2367980,
+            "seasonId": 13480,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039271,
+            "sportteryTournamentId": 55,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 140,
+            "tournamentShortName": "葡超",
+            "uniformAwayTeamId": 513,
+            "uniformHomeTeamId": 51219,
+            "uniformLeagueId": 78,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 3,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 2702,
+          "teamShortName": "卡萨皮亚",
+          "totalLegCnt": 5,
+          "uniformTeamId": 51219,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1144,
+            "awayTeamShortName": "维兹拉",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 1061,
+            "homeTeamShortName": "托林斯",
+            "matchDate": "2026-05-16",
+            "matchId": 2367899,
+            "seasonId": 13481,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 291,
+            "tournamentShortName": "葡甲",
+            "uniformAwayTeamId": 1268,
+            "uniformHomeTeamId": 1397,
+            "uniformLeagueId": 805,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1061,
+            "awayTeamShortName": "托林斯",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "鲁斯塔尼亚",
+            "matchDate": "2026-05-10",
+            "matchId": 2367909,
+            "seasonId": 13481,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 291,
+            "tournamentShortName": "葡甲",
+            "uniformAwayTeamId": 1397,
+            "uniformHomeTeamId": 7795,
+            "uniformLeagueId": 805,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 882,
+            "awayTeamShortName": "佩纳菲耶",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "3:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 1061,
+            "homeTeamShortName": "托林斯",
+            "matchDate": "2026-05-05",
+            "matchId": 2367923,
+            "seasonId": 13481,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 291,
+            "tournamentShortName": "葡甲",
+            "uniformAwayTeamId": 1970,
+            "uniformHomeTeamId": 1397,
+            "uniformLeagueId": 805,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1061,
+            "awayTeamShortName": "托林斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 275,
+            "homeTeamShortName": "费伦斯",
+            "matchDate": "2026-04-29",
+            "matchId": 2367636,
+            "seasonId": 13481,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 291,
+            "tournamentShortName": "葡甲",
+            "uniformAwayTeamId": 1397,
+            "uniformHomeTeamId": 1670,
+            "uniformLeagueId": 805,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "Fafe",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1061,
+            "homeTeamShortName": "托林斯",
+            "matchDate": "2026-04-24",
+            "matchId": 2486527,
+            "seasonId": 13780,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 570,
+            "tournamentShortName": "葡萄牙杯",
+            "uniformAwayTeamId": 11565,
+            "uniformHomeTeamId": 1397,
+            "uniformLeagueId": 98,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 11,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 8,
+          "sportteryTeamId": 0,
+          "teamId": 1061,
+          "teamShortName": "托林斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1397,
+          "winGoalMatchCnt": 4,
+          "winProbability": "80%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48564,
+      "seasonId": 15118,
+      "seasonName": "2025/2026",
+      "tables": [],
+      "tournamentId": 1681,
+      "tournamentShortName": "葡超",
+      "uniformLeagueId": 78,
+      "uniformMatchId": 2392458
+    },
+    "player": {
+      "away": {
+        "playerList": [],
+        "sportteryTeamId": 2702,
+        "teamId": 2892,
+        "teamShortName": "卡萨皮亚",
+        "uniformTeamId": 51219
+      },
+      "home": {
+        "playerList": [],
+        "sportteryTeamId": 1061,
+        "teamId": 1734,
+        "teamShortName": "托林斯",
+        "uniformTeamId": 1397
+      },
+      "seasonId": 15118,
+      "seasonName": "2025/2026",
+      "tournamentId": 1681,
+      "tournamentShortName": "葡超",
+      "uniformLeagueId": 78,
+      "uniformMatchId": 2392458
+    }
+  },
+  "ttg_change": {
+    "6球": {
+      "count": 1,
+      "change_pct": 15.4
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 7.1
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 17.5
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": -5.3
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "hafu_change": {
+    "负平": {
+      "count": 2,
+      "change_pct": 10.7
+    },
+    "胜平": {
+      "count": 2,
+      "change_pct": 10.7
+    },
+    "平平": {
+      "count": 3,
+      "change_pct": -9.3
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 11.5
+    },
+    "负负": {
+      "count": 3,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 19.5
+    },
+    "平负": {
+      "count": 3,
+      "change_pct": -10.8
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 10.3
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": -8.5
+    }
+  },
+  "had_change": {
+    "胜": {
+      "count": 4,
+      "change_pct": 7.8
+    },
+    "平": {
+      "count": 4,
+      "change_pct": -7.8
+    },
+    "负": {
+      "count": 3,
+      "change_pct": 0.0
+    }
+  },
+  "hhad_change": {
+    "让胜": {
+      "count": 4,
+      "change_pct": 12.1
+    },
+    "让平": {
+      "count": 3,
+      "change_pct": 4.0
+    },
+    "让负": {
+      "count": 4,
+      "change_pct": -4.1
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.10",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "10.50",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "5.25",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.10（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

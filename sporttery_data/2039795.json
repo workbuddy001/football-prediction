@@ -1,0 +1,1085 @@
+{
+  "match_id": "2039795",
+  "fetch_time": "2026-05-17 21:16:52",
+  "match_info": {
+    "home_team": "狼队",
+    "away_team": "富勒姆",
+    "league": "英格兰超级联赛",
+    "time": "2026-05-17 22:00",
+    "match_num_str": "周日014",
+    "match_week": "周日",
+    "match_date": "2026-05-17",
+    "match_time": "22:00:00",
+    "match_status": "Selling",
+    "home_rank": "[英超20]",
+    "away_rank": "[英超11]",
+    "league_abbr": "英超"
+  },
+  "score_odds": {
+    "05:00": "550.0",
+    "01:00": "12.00",
+    "05:02": "450.0",
+    "05:01": "400.0",
+    "02:04": "50.00",
+    "02:05": "150.0",
+    "02:02": "12.00",
+    "02:03": "22.00",
+    "02:00": "22.00",
+    "02:01": "11.00",
+    "03:03": "55.00",
+    "03:01": "29.00",
+    "03:02": "30.00",
+    "03:00": "60.00",
+    "00:01": "7.75",
+    "00:00": "12.00",
+    "00:03": "14.00",
+    "00:02": "8.50",
+    "00:05": "100.0",
+    "00:04": "38.00",
+    "04:02": "100.0",
+    "04:01": "100.0",
+    "04:00": "200.0",
+    "01:02": "6.50",
+    "01:01": "6.50",
+    "01:04": "30.00",
+    "01:03": "13.00",
+    "01:05": "80.00"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "4.90",
+    "5球": "9.75",
+    "6球": "21.00",
+    "7球": "30.00",
+    "0球": "12.00",
+    "1球": "5.00",
+    "2球": "3.45"
+  },
+  "had": {
+    "胜": "3.66",
+    "平": "3.55",
+    "负": "1.74"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "4.90",
+    "5球": "9.75",
+    "6球": "21.00",
+    "7球": "30.00",
+    "0球": "12.00",
+    "1球": "5.00",
+    "2球": "3.45"
+  },
+  "hafu": {
+    "负负": "2.86",
+    "平平": "5.40",
+    "胜胜": "6.50",
+    "负平": "14.00",
+    "平胜": "8.75",
+    "负胜": "30.00",
+    "胜负": "21.00",
+    "胜平": "14.00",
+    "平负": "4.40"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.86",
+    "让平": "3.50",
+    "让负": "3.27"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "富勒姆",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "37",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 6,
+        "homeScoreRatio": "27",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "30",
+        "awayWinGoalMatchCnt": 2,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "40",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "0.6",
+        "awayGoalAvgCntRatio": "42.9",
+        "homeGoalAvgCnt": "0.8",
+        "homeGoalAvgCntRatio": "57.1",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "狼队",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "37",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.0",
+        "awayLossGoalAvgCntRatio": "34.5",
+        "homeLossGoalAvgCnt": "1.9",
+        "homeLossGoalAvgCntRatio": "65.5",
+        "totalLegCnt": 10
+      },
+      "matchId": 2346563,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 6,
+        "awayScoreRatio": "20",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "70",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 10,
+      "sportteryHomeTeamId": 64,
+      "sportteryMatchId": 2039795,
+      "uniformAwayTeamId": 24,
+      "uniformHomeTeamId": 423
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 680,
+          "awayTeamShortName": "狼队",
+          "fullCourtGoal": "3:0",
+          "gmLeagueId": 25,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 667,
+          "homeTeamShortName": "富勒姆",
+          "matchDate": "2025-11-01",
+          "matchId": 2346433,
+          "seasonId": 13343,
+          "sportteryAwayTeamId": 64,
+          "sportteryHomeTeamId": 10,
+          "sportteryMatchId": 2034612,
+          "sportteryTournamentId": 25,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 127,
+          "tournamentShortName": "英超",
+          "uniformAwayTeamId": 423,
+          "uniformHomeTeamId": 24,
+          "uniformLeagueId": 72,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 667,
+          "awayTeamShortName": "富勒姆",
+          "fullCourtGoal": "1:2",
+          "gmLeagueId": 25,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 680,
+          "homeTeamShortName": "狼队",
+          "matchDate": "2025-02-26",
+          "matchId": 2126633,
+          "seasonId": 11817,
+          "sportteryAwayTeamId": 10,
+          "sportteryHomeTeamId": 64,
+          "sportteryMatchId": 2030062,
+          "sportteryTournamentId": 25,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 127,
+          "tournamentShortName": "英超",
+          "uniformAwayTeamId": 24,
+          "uniformHomeTeamId": 423,
+          "uniformLeagueId": 72,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "4",
+          "awayTeamId": 680,
+          "awayTeamShortName": "狼队",
+          "fullCourtGoal": "1:4",
+          "gmLeagueId": 25,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 667,
+          "homeTeamShortName": "富勒姆",
+          "matchDate": "2024-11-23",
+          "matchId": 2126414,
+          "seasonId": 11817,
+          "sportteryAwayTeamId": 64,
+          "sportteryHomeTeamId": 10,
+          "sportteryMatchId": 1028084,
+          "sportteryTournamentId": 25,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 127,
+          "tournamentShortName": "英超",
+          "uniformAwayTeamId": 423,
+          "uniformHomeTeamId": 24,
+          "uniformLeagueId": 72,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 667,
+          "awayTeamShortName": "富勒姆",
+          "fullCourtGoal": "2:1",
+          "gmLeagueId": 25,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 680,
+          "homeTeamShortName": "狼队",
+          "matchDate": "2024-03-09",
+          "matchId": 2000761,
+          "seasonId": 10906,
+          "sportteryAwayTeamId": 10,
+          "sportteryHomeTeamId": 64,
+          "sportteryMatchId": 1023990,
+          "sportteryTournamentId": 25,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 127,
+          "tournamentShortName": "英超",
+          "uniformAwayTeamId": 24,
+          "uniformHomeTeamId": 423,
+          "uniformLeagueId": 72,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 680,
+          "awayTeamShortName": "狼队",
+          "fullCourtGoal": "3:2",
+          "gmLeagueId": 25,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 667,
+          "homeTeamShortName": "富勒姆",
+          "matchDate": "2023-11-28",
+          "matchId": 2000984,
+          "seasonId": 10906,
+          "sportteryAwayTeamId": 64,
+          "sportteryHomeTeamId": 10,
+          "sportteryMatchId": 1022039,
+          "sportteryTournamentId": 25,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 127,
+          "tournamentShortName": "英超",
+          "uniformAwayTeamId": 423,
+          "uniformHomeTeamId": 24,
+          "uniformLeagueId": 72,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 0,
+        "drawProbability": "0%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 3,
+        "lossProbability": "60%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "狼队",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 33,
+            "injuryFlag": 0,
+            "personId": 232240,
+            "personName": "安诺森",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 33,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 1,
+            "uniformNo": "5"
+          },
+          {
+            "appearanceCnt": 27,
+            "injuryFlag": 1,
+            "personId": 264176,
+            "personName": "伊沃比",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 27,
+            "injuryFlag": 1,
+            "personId": 440992,
+            "personName": "R. Sessegnon",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 14,
+            "injuryFlag": 1,
+            "personId": 485662,
+            "personName": "Jorge Cuenca",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 11,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "15"
+          },
+          {
+            "appearanceCnt": 30,
+            "injuryFlag": 1,
+            "personId": 720374,
+            "personName": "J. King",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 15,
+            "suspensionFlag": 0,
+            "uniformNo": "24"
+          }
+        ],
+        "sportteryTeamId": 10,
+        "teamId": 667,
+        "teamShortName": "富勒姆",
+        "uniformTeamId": 24
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 12,
+            "injuryFlag": 1,
+            "personId": 196266,
+            "personName": "约翰斯通",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "31"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 597538,
+            "personName": "B·特劳雷",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "6"
+          },
+          {
+            "appearanceCnt": 33,
+            "injuryFlag": 1,
+            "personId": 624935,
+            "personName": "雨果 布埃诺",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "3"
+          },
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 695705,
+            "personName": "E. González",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          }
+        ],
+        "sportteryTeamId": 64,
+        "teamId": 680,
+        "teamShortName": "狼队",
+        "uniformTeamId": 423
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 67,
+            "awayTeamShortName": "伯恩茅斯",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 10,
+            "homeTeamShortName": "富勒姆",
+            "matchDate": "2026-05-09",
+            "matchId": 2346367,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039612,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 295,
+            "uniformHomeTeamId": 24,
+            "uniformLeagueId": 72,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 10,
+            "awayTeamShortName": "富勒姆",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "3:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 1,
+            "homeTeamShortName": "阿森纳",
+            "matchDate": "2026-05-03",
+            "matchId": 2346272,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039467,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 24,
+            "uniformHomeTeamId": 1193,
+            "uniformLeagueId": 72,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2,
+            "awayTeamShortName": "维拉",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 10,
+            "homeTeamShortName": "富勒姆",
+            "matchDate": "2026-04-25",
+            "matchId": 2346371,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039312,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 6,
+            "uniformHomeTeamId": 24,
+            "uniformLeagueId": 72,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 10,
+            "awayTeamShortName": "富勒姆",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 69,
+            "homeTeamShortName": "布伦特",
+            "matchDate": "2026-04-18",
+            "matchId": 2346277,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039158,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 24,
+            "uniformHomeTeamId": 421,
+            "uniformLeagueId": 72,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 10,
+            "awayTeamShortName": "富勒姆",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 11,
+            "homeTeamShortName": "利物浦",
+            "matchDate": "2026-04-12",
+            "matchId": 2346478,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039024,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 24,
+            "uniformHomeTeamId": 361,
+            "uniformLeagueId": 72,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 1,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -5,
+          "sportteryTeamId": 0,
+          "teamId": 10,
+          "teamShortName": "富勒姆",
+          "totalLegCnt": 5,
+          "uniformTeamId": 24,
+          "winGoalMatchCnt": 1,
+          "winProbability": "20%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 64,
+            "awayTeamShortName": "狼队",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 41,
+            "homeTeamShortName": "布赖顿",
+            "matchDate": "2026-05-09",
+            "matchId": 2346269,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 423,
+            "uniformHomeTeamId": 128,
+            "uniformLeagueId": 72,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 60,
+            "awayTeamShortName": "桑德兰",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 64,
+            "homeTeamShortName": "狼队",
+            "matchDate": "2026-05-02",
+            "matchId": 2346567,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039461,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 409,
+            "uniformHomeTeamId": 423,
+            "uniformLeagueId": 72,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 19,
+            "awayTeamShortName": "热刺",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 64,
+            "homeTeamShortName": "狼队",
+            "matchDate": "2026-04-25",
+            "matchId": 2346568,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039322,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 214,
+            "uniformHomeTeamId": 423,
+            "uniformLeagueId": 72,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 64,
+            "awayTeamShortName": "狼队",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 49,
+            "homeTeamShortName": "利兹联",
+            "matchDate": "2026-04-18",
+            "matchId": 2346475,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039168,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 423,
+            "uniformHomeTeamId": 448,
+            "uniformLeagueId": 72,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 64,
+            "awayTeamShortName": "狼队",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 62,
+            "homeTeamShortName": "西汉姆联",
+            "matchDate": "2026-04-11",
+            "matchId": 2346573,
+            "seasonId": 13343,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2038978,
+            "sportteryTournamentId": 25,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 127,
+            "tournamentShortName": "英超",
+            "uniformAwayTeamId": 423,
+            "uniformHomeTeamId": 509,
+            "uniformLeagueId": 72,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 1,
+          "lossGoalCnt": 12,
+          "lossGoalMatchCnt": 4,
+          "lossProbability": "80%",
+          "netGoal": -11,
+          "sportteryTeamId": 0,
+          "teamId": 64,
+          "teamShortName": "狼队",
+          "totalLegCnt": 5,
+          "uniformTeamId": 423,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47855,
+      "seasonId": 13343,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 9,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 24,
+          "phaseName": "",
+          "points": "18",
+          "ranking": "20",
+          "sportteryTeamId": 64,
+          "teamId": 0,
+          "teamShortName": "狼队",
+          "totalLegCnt": 36,
+          "uniformTeamId": 423,
+          "winGoalMatchCnt": 3,
+          "winProbability": "8%"
+        },
+        {
+          "drawMatchCnt": 6,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 16,
+          "phaseName": "",
+          "points": "48",
+          "ranking": "11",
+          "sportteryTeamId": 10,
+          "teamId": 0,
+          "teamShortName": "富勒姆",
+          "totalLegCnt": 36,
+          "uniformTeamId": 24,
+          "winGoalMatchCnt": 14,
+          "winProbability": "39%"
+        }
+      ],
+      "tournamentId": 127,
+      "tournamentShortName": "英超",
+      "uniformLeagueId": 72,
+      "uniformMatchId": 2392039
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 34,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "23%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 10,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 316312,
+            "personName": "哈里·威尔森",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 32,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 34,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 9,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 209521,
+            "personName": "R. Jiménez",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 7,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "12%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 4,
+            "goalProbability": "10%",
+            "injuryFlag": 1,
+            "personId": 264176,
+            "personName": "伊沃比",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 27,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          }
+        ],
+        "sportteryTeamId": 10,
+        "teamId": 667,
+        "teamShortName": "富勒姆",
+        "uniformTeamId": 24
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 32,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 4,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 461807,
+            "personName": "J. Larsen",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 615972,
+            "personName": "T. Arokodare",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 18,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 27,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 397866,
+            "personName": "S. Bueno",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "4"
+          }
+        ],
+        "sportteryTeamId": 64,
+        "teamId": 680,
+        "teamShortName": "狼队",
+        "uniformTeamId": 423
+      },
+      "seasonId": 13343,
+      "seasonName": "2025/2026",
+      "tournamentId": 127,
+      "tournamentShortName": "英超",
+      "uniformLeagueId": 72,
+      "uniformMatchId": 2392039
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 3,
+      "change_pct": 25.0
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": 31.2
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "0球": {
+      "count": 2,
+      "change_pct": -14.3
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 14.7
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": -5.7
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": -2.8
+    },
+    "4球": {
+      "count": 2,
+      "change_pct": 0.0
+    }
+  },
+  "hafu_change": {
+    "胜胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -2.2
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 2,
+      "change_pct": -10.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 5.0
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 5.9
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 3,
+      "change_pct": 1.8
+    },
+    "平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "胜": {
+      "count": 3,
+      "change_pct": -3.7
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 3,
+      "change_pct": 1.6
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": -1.1
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "5球",
+      "ttg_odds": "9.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "550.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "30.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "100.0",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "100.0",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "30.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(9.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "5.00",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "12.00",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "7.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率5.00（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ],
+  "over_under": {
+    "over_odds": 0.87,
+    "ou_line": 2.75,
+    "under_odds": 0.83,
+    "save_time": "2026-05-18 00:07"
+  }
+}

@@ -1,0 +1,1076 @@
+{
+  "match_id": "2039812",
+  "fetch_time": "2026-05-18 00:48:16",
+  "match_info": {
+    "home_team": "里尔",
+    "away_team": "欧塞尔",
+    "league": "法国甲级联赛",
+    "time": "2026-05-18 03:00",
+    "match_num_str": "周日031",
+    "match_week": "周日",
+    "match_date": "2026-05-18",
+    "match_time": "03:00:00",
+    "match_status": "Selling",
+    "home_rank": "[法甲3]",
+    "away_rank": "[法甲15]",
+    "league_abbr": "法甲"
+  },
+  "score_odds": {
+    "05:00": "38.00",
+    "01:00": "6.25",
+    "05:02": "90.00",
+    "05:01": "50.00",
+    "02:04": "250.0",
+    "02:05": "700.0",
+    "02:02": "19.00",
+    "02:03": "70.00",
+    "02:00": "6.00",
+    "02:01": "7.00",
+    "03:03": "75.00",
+    "03:01": "10.00",
+    "03:02": "22.00",
+    "03:00": "9.00",
+    "00:01": "16.00",
+    "00:00": "14.00",
+    "00:03": "120.0",
+    "00:02": "40.00",
+    "00:05": "1000",
+    "00:04": "500.0",
+    "04:02": "50.00",
+    "04:01": "19.00",
+    "04:00": "17.00",
+    "01:02": "19.00",
+    "01:01": "8.25",
+    "01:04": "250.0",
+    "01:03": "80.00",
+    "01:05": "700.0"
+  },
+  "total_goals": {
+    "3球": "3.35",
+    "4球": "5.00",
+    "5球": "8.50",
+    "6球": "14.00",
+    "7球": "23.00",
+    "0球": "14.00",
+    "1球": "5.40",
+    "2球": "3.75"
+  },
+  "had": {
+    "胜": "1.26",
+    "平": "4.90",
+    "负": "7.60"
+  },
+  "ttg": {
+    "3球": "3.35",
+    "4球": "5.00",
+    "5球": "8.50",
+    "6球": "14.00",
+    "7球": "23.00",
+    "0球": "14.00",
+    "1球": "5.40",
+    "2球": "3.75"
+  },
+  "hafu": {
+    "负负": "12.50",
+    "平平": "7.00",
+    "胜胜": "1.82",
+    "负平": "20.00",
+    "平胜": "3.90",
+    "负胜": "23.00",
+    "胜负": "50.00",
+    "胜平": "20.00",
+    "平负": "16.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "1.93",
+    "让平": "3.46",
+    "让负": "3.10"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "欧塞尔",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "47",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 6,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "27",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.5",
+        "awayGoalAvgCntRatio": "51.7",
+        "homeGoalAvgCnt": "1.4",
+        "homeGoalAvgCntRatio": "48.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "里尔",
+      "last": {
+        "awayDrawMatchCnt": 5,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "17",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 5,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.1",
+        "awayLossGoalAvgCntRatio": "64.7",
+        "homeLossGoalAvgCnt": "0.6",
+        "homeLossGoalAvgCntRatio": "35.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2355202,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "24",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "67",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 7
+      },
+      "sportteryAwayTeamId": 174,
+      "sportteryHomeTeamId": 180,
+      "sportteryMatchId": 2039812,
+      "uniformAwayTeamId": 496,
+      "uniformHomeTeamId": 103
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "4",
+          "awayTeamId": 895,
+          "awayTeamShortName": "里尔",
+          "fullCourtGoal": "3:4",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 888,
+          "homeTeamShortName": "欧塞尔",
+          "matchDate": "2025-12-15",
+          "matchId": 2355253,
+          "seasonId": 13416,
+          "sportteryAwayTeamId": 180,
+          "sportteryHomeTeamId": 174,
+          "sportteryMatchId": 2036046,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 7,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 103,
+          "uniformHomeTeamId": 496,
+          "uniformLeagueId": 74,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 888,
+          "awayTeamShortName": "欧塞尔",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 895,
+          "homeTeamShortName": "里尔",
+          "matchDate": "2025-04-20",
+          "matchId": 2130670,
+          "seasonId": 11848,
+          "sportteryAwayTeamId": 174,
+          "sportteryHomeTeamId": 180,
+          "sportteryMatchId": 2031282,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 496,
+          "uniformHomeTeamId": 103,
+          "uniformLeagueId": 74,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 895,
+          "awayTeamShortName": "里尔",
+          "fullCourtGoal": "0:0",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 888,
+          "homeTeamShortName": "欧塞尔",
+          "matchDate": "2025-01-11",
+          "matchId": 2130788,
+          "seasonId": 11848,
+          "sportteryAwayTeamId": 180,
+          "sportteryHomeTeamId": 174,
+          "sportteryMatchId": 1029330,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 0,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 103,
+          "uniformHomeTeamId": 496,
+          "uniformLeagueId": 74,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 895,
+          "awayTeamShortName": "里尔",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 888,
+          "homeTeamShortName": "欧塞尔",
+          "matchDate": "2023-04-22",
+          "matchId": 1612656,
+          "seasonId": 9036,
+          "sportteryAwayTeamId": 180,
+          "sportteryHomeTeamId": 174,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 103,
+          "uniformHomeTeamId": 496,
+          "uniformLeagueId": 74,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 888,
+          "awayTeamShortName": "欧塞尔",
+          "fullCourtGoal": "4:1",
+          "gmLeagueId": 32,
+          "halfTimeGoal": "3:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "4",
+          "homeTeamId": 895,
+          "homeTeamShortName": "里尔",
+          "matchDate": "2022-08-07",
+          "matchId": 1612349,
+          "seasonId": 9036,
+          "sportteryAwayTeamId": 174,
+          "sportteryHomeTeamId": 180,
+          "sportteryMatchId": 1014227,
+          "sportteryTournamentId": 32,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 81,
+          "tournamentShortName": "法甲",
+          "uniformAwayTeamId": 496,
+          "uniformHomeTeamId": 103,
+          "uniformLeagueId": 74,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "里尔",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 3,
+        "winProbability": "60%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 369181,
+            "personName": "F. Aye",
+            "playerPositionCode": "Attacker",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 10,
+            "injuryFlag": 1,
+            "personId": 406092,
+            "personName": "R. Faivre",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "28"
+          },
+          {
+            "appearanceCnt": 11,
+            "injuryFlag": 1,
+            "personId": 499723,
+            "personName": "O. El Azzouzi",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "17"
+          },
+          {
+            "appearanceCnt": 23,
+            "injuryFlag": 1,
+            "personId": 575059,
+            "personName": "F. Oppegård",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 15,
+            "substituteMatchCnt": 8,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          },
+          {
+            "appearanceCnt": 13,
+            "injuryFlag": 1,
+            "personId": 616022,
+            "personName": "B.奥克",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 12,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "24"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 626142,
+            "personName": "S.玛拉",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 13,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 626461,
+            "personName": "C. Akpa",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 21,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "92"
+          }
+        ],
+        "sportteryTeamId": 174,
+        "teamId": 888,
+        "teamShortName": "欧塞尔",
+        "uniformTeamId": 496
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 0,
+            "injuryFlag": 1,
+            "personId": 190850,
+            "personName": "卡亚尔",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "30"
+          },
+          {
+            "appearanceCnt": 13,
+            "injuryFlag": 1,
+            "personId": 701673,
+            "personName": "I. Hamza",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 4,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "29"
+          },
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 728870,
+            "personName": "O. Touré",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "36"
+          }
+        ],
+        "sportteryTeamId": 180,
+        "teamId": 895,
+        "teamShortName": "里尔",
+        "uniformTeamId": 103
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 186,
+            "awayTeamShortName": "尼斯",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 174,
+            "homeTeamShortName": "欧塞尔",
+            "matchDate": "2026-05-11",
+            "matchId": 2355204,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039650,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 276,
+            "uniformHomeTeamId": 496,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 459,
+            "awayTeamShortName": "昂热",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 174,
+            "homeTeamShortName": "欧塞尔",
+            "matchDate": "2026-05-03",
+            "matchId": 2355207,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 237,
+            "uniformHomeTeamId": 496,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 174,
+            "awayTeamShortName": "欧塞尔",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 181,
+            "homeTeamShortName": "里昂",
+            "matchDate": "2026-04-25",
+            "matchId": 2355312,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 496,
+            "uniformHomeTeamId": 144,
+            "uniformLeagueId": 74,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 174,
+            "awayTeamShortName": "欧塞尔",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 184,
+            "homeTeamShortName": "摩纳哥",
+            "matchDate": "2026-04-19",
+            "matchId": 2355314,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 496,
+            "uniformHomeTeamId": 250,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 185,
+            "awayTeamShortName": "南特",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 174,
+            "homeTeamShortName": "欧塞尔",
+            "matchDate": "2026-04-12",
+            "matchId": 2355215,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 492,
+            "uniformHomeTeamId": 496,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 9,
+          "lossGoalCnt": 7,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 2,
+          "sportteryTeamId": 0,
+          "teamId": 174,
+          "teamShortName": "欧塞尔",
+          "totalLegCnt": 5,
+          "uniformTeamId": 496,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 180,
+            "awayTeamShortName": "里尔",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 184,
+            "homeTeamShortName": "摩纳哥",
+            "matchDate": "2026-05-11",
+            "matchId": 2355306,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039652,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 103,
+            "uniformHomeTeamId": 250,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 194,
+            "awayTeamShortName": "勒阿弗尔",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 180,
+            "homeTeamShortName": "里尔",
+            "matchDate": "2026-05-03",
+            "matchId": 2355208,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039488,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 176,
+            "uniformHomeTeamId": 103,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 180,
+            "awayTeamShortName": "里尔",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 482,
+            "homeTeamShortName": "巴黎FC",
+            "matchDate": "2026-04-26",
+            "matchId": 2355412,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039353,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 103,
+            "uniformHomeTeamId": 490,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 186,
+            "awayTeamShortName": "尼斯",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 180,
+            "homeTeamShortName": "里尔",
+            "matchDate": "2026-04-19",
+            "matchId": 2355212,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039177,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 276,
+            "uniformHomeTeamId": 103,
+            "uniformLeagueId": 74,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 180,
+            "awayTeamShortName": "里尔",
+            "fullCourtGoal": "0:4",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 192,
+            "homeTeamShortName": "图卢兹",
+            "matchDate": "2026-04-12",
+            "matchId": 2355416,
+            "seasonId": 13416,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039052,
+            "sportteryTournamentId": 32,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 81,
+            "tournamentShortName": "法甲",
+            "uniformAwayTeamId": 103,
+            "uniformHomeTeamId": 227,
+            "uniformLeagueId": 74,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 7,
+          "lossGoalCnt": 1,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 180,
+          "teamShortName": "里尔",
+          "totalLegCnt": 5,
+          "uniformTeamId": 103,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47907,
+      "seasonId": 13416,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 7,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 8,
+          "phaseName": "",
+          "points": "61",
+          "ranking": "3",
+          "sportteryTeamId": 180,
+          "teamId": 0,
+          "teamShortName": "里尔",
+          "totalLegCnt": 33,
+          "uniformTeamId": 103,
+          "winGoalMatchCnt": 18,
+          "winProbability": "55%"
+        },
+        {
+          "drawMatchCnt": 10,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 16,
+          "phaseName": "",
+          "points": "31",
+          "ranking": "15",
+          "sportteryTeamId": 174,
+          "teamId": 0,
+          "teamShortName": "欧塞尔",
+          "totalLegCnt": 33,
+          "uniformTeamId": 496,
+          "winGoalMatchCnt": 7,
+          "winProbability": "21%"
+        }
+      ],
+      "tournamentId": 81,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2392063
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 4,
+            "assistProbability": "22%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 10,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 521307,
+            "personName": "L.西纳约科",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 31,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 3,
+            "assistProbability": "17%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "10%",
+            "injuryFlag": 0,
+            "personId": 453841,
+            "personName": "D.卢德",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 28,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 26,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "11%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 3,
+            "goalProbability": "10%",
+            "injuryFlag": 1,
+            "personId": 626142,
+            "personName": "S.玛拉",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 13,
+            "substituteMatchCnt": 13,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 174,
+        "teamId": 888,
+        "teamShortName": "欧塞尔",
+        "uniformTeamId": 496
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 28,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 5,
+            "assistProbability": "16%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 800944,
+            "personName": "M. Fernandez-Pardo",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 31,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 8,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 601446,
+            "personName": "H. Haraldsson",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 28,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 7,
+            "goalProbability": "14%",
+            "injuryFlag": 0,
+            "personId": 59504,
+            "personName": "吉鲁",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 12,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 180,
+        "teamId": 895,
+        "teamShortName": "里尔",
+        "uniformTeamId": 103
+      },
+      "seasonId": 13416,
+      "seasonName": "2025/2026",
+      "tournamentId": 81,
+      "tournamentShortName": "法甲",
+      "uniformLeagueId": 74,
+      "uniformMatchId": 2392063
+    }
+  },
+  "ttg_change": {
+    "1球": {
+      "count": 2,
+      "change_pct": -1.8
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 3.1
+    },
+    "2球": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 7.7
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -12.5
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 15.0
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -4.3
+    }
+  },
+  "hafu_change": {
+    "胜胜": {
+      "count": 1,
+      "change_pct": -3.2
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": 5.3
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": 8.7
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": 10.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": 5.3
+    },
+    "平胜": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 2,
+      "change_pct": 8.6
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": -3.1
+    },
+    "平": {
+      "count": 2,
+      "change_pct": 6.5
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 2,
+      "change_pct": 6.9
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": -3.0
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": -2.5
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "6.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "40.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "8.25",
+          "special": true
+        }
+      ],
+      "level": "强排除",
+      "reason": "进球数赔率(3.75)含特殊尾数，且对应比分中有特殊尾数赔率，联动双重排除信号"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "5.40",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "6.25",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "16.00",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率5.40（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}
