@@ -39,9 +39,11 @@ def compute_betting(data, analysis):
     had = data.get('had', {})
     try: 
         h_win = float(had.get('胜', 0))
+        draw = float(had.get('平', 0))
         a_win = float(had.get('负', 0))
     except: 
         h_win = None
+        draw = None
         a_win = None
     
     step0 = analysis.get('step0', {})
@@ -335,6 +337,18 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算X5信号（建议投注+推荐4+5球+无规则 → 投4球, 11场7中64%, ROI+174%）
+    x5_45 = False
+    try:
+        fgp = analysis.get('final_goal_pick', {})
+        skip_reason = fgp.get('skip_reason', [])
+        rec = analysis.get('recommended', {})
+        rec_goals = rec.get('goals', [])
+        if (not skip_reason or len(skip_reason) == 0) and rec_goals and rec_goals[:2] == [4, 5]:
+            x5_45 = True
+    except:
+        pass
+    
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
     if h5_11:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元
@@ -435,6 +449,19 @@ def compute_betting(data, analysis):
         # R0: 0球甜区[9.5,10.5]过滤 (2026-05-19) — 甜区内10场7中70%, 甜区外12场1中8%
         if not (9.5 <= g0 <= 10.5):
             return {'action': 'skip', 'reason': f'R0跳过: 0球={g0}不在甜区[9.5-10.5](命中70%)'}
+        
+        # R0: 平赔≤3.0过滤 (2026-05-21) — 平赔低=市场预期胶着, 5/5=100%命中
+        if draw is not None and draw > 3.0:
+            return {'action': 'skip', 'reason': f'R0跳过: 平赔{draw:.2f}>3.0(回测命中仅14%)'}
+        
+        # R0: 推荐≠[1,2]过滤 (2026-05-21) — 推荐1+2球时R0仅12%命中
+        try:
+            rec = analysis.get('recommended', {})
+            rec_goals = rec.get('goals', [])
+            if rec_goals and rec_goals[:2] == [1, 2]:
+                return {'action': 'skip', 'reason': 'R0跳过: 推荐1+2球(R0仅12%命中)'}
+        except:
+            pass
         
         # R0: 纯0球20元
         rule = 'R0'
@@ -586,6 +613,12 @@ def compute_betting(data, analysis):
     elif x4_34:
         # 信号X4: 三维排除仅剩3球(警惕)+4球(保留) → 投4球20元 (4场3中75%, 填补G4空白)
         rule = 'X4'
+        bet_goals = [4]
+        bet_type = 'single'
+        goal_stake = 20
+    elif x5_45:
+        # 信号X5: 建议投注+推荐4+5球+无规则 → 投4球20元 (11场7中64%, ROI+174%)
+        rule = 'X5'
         bet_goals = [4]
         bet_type = 'single'
         goal_stake = 20
