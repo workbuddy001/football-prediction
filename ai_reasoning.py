@@ -349,6 +349,31 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算X6信号（客让+2:3候选+客攻>主防 → 投2:3比分, 13场4中31%, ROI+592%）
+    x6_23 = False
+    x6_23_odds = 0
+    try:
+        hhad = data.get('hhad', {})
+        rs_val = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 99
+        rl_val = float(hhad.get('让负', 0)) if isinstance(hhad, dict) and hhad.get('让负') else 99
+        if rs_val < 99 and rl_val < 99 and rs_val > rl_val:
+            rec_sum = analysis.get('recent_summary', {})
+            a_att = rec_sum.get('a_att', 0)
+            h_def = rec_sum.get('h_def', 0)
+            if a_att - h_def >= 1.0:
+                rec = analysis.get('recommended', {})
+                fs = rec.get('filtered_scores', [])
+                for f in fs:
+                    if f.get('score') == '2-3':
+                        so = data.get('score_odds', {})
+                        odds_23 = float(so.get('02:03', so.get('2:3', 0)) or 0)
+                        if odds_23 > 0:
+                            x6_23 = True
+                            x6_23_odds = odds_23
+                        break
+    except:
+        pass
+    
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
     if h5_11:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元
@@ -622,6 +647,12 @@ def compute_betting(data, analysis):
         bet_goals = [4]
         bet_type = 'single'
         goal_stake = 20
+    elif x6_23:
+        # 信号X6: 客让+2:3候选+客攻>主防 → 投2:3比分20元 (13场4中31%, ROI+592%)
+        rule = 'X6'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif x2_35:
         # 信号X2: 三维排除仅剩3球+5球 → 投2球20元 (4场3中75%, 辅助填充)
         rule = 'X2'
@@ -722,6 +753,11 @@ def compute_betting(data, analysis):
         conf_tag = ''
     elif rule == 'S1':
         # S1: 近况>2.5+1球变高共振 → 纯1球20元 (ROI+80%)
+        conf_tag = ''
+    elif rule == 'X6':
+        # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 (ROI+592%)
+        if x6_23_odds > 0:
+            score_bets.append({'score': '2:3', 'odds': round(x6_23_odds, 1), 'stake': 20, 'tag': '客让2:3'})
         conf_tag = ''
     else:
         # 纯总进球投注(无比分保护), 2026-05-18改为纯20元
