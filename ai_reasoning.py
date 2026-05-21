@@ -19,6 +19,15 @@ DATA_DIR = 'sporttery_data'
 DATA_DIR = 'sporttery_data'
 
 
+def _get_stake_by_tier(rule_name):
+    """凯利公式的硬编码平替：基于历史ROI甜区进行资金分级（2026-05-22）"""
+    tier_1_heavy = ['R0', 'S7', 'S3', 'S2', 'X6']
+    tier_2_medium = ['X3', 'X5', 'X4', 'X2', 'G6', 'H5', 'H3', 'H2']
+    tier_3_light = ['G7', 'G5', 'F', 'H1', 'R1', 'S1']
+    if rule_name in tier_1_heavy: return 40
+    elif rule_name in tier_2_medium: return 20
+    return 10
+
 def compute_betting(data, analysis):
     """
     投注策略决策：
@@ -378,6 +387,17 @@ def compute_betting(data, analysis):
         pass
     
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
+    # ⚠️ HAD/HHAD诱盘检测：主胜极低但让胜极高=深盘无力陷阱（2026-05-22, 3/3全丢）
+    try:
+        had = data.get('had', {})
+        hhad = data.get('hhad', {})
+        hw_chk = float(had.get('胜', 0)) if isinstance(had, dict) and had.get('胜') else 99
+        rs_chk = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
+        if 1.10 < hw_chk < 1.45 and rs_chk > 2.30:
+            return {'action': 'skip', 'reason': f'HAD陷阱: 主胜{hw_chk:.2f}<1.45+让胜{rs_chk:.2f}>2.30(深盘无力,回测0/3)'}
+    except:
+        pass
+    
     if h5_11:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元
         rule = 'H5'
@@ -814,6 +834,30 @@ def compute_betting(data, analysis):
     DISABLED = {'S6', 'H4', 'G4'}
     if rule in DISABLED:
         return {'action': 'skip', 'reason': f'{rule}已停用(低ROI)'}
+    
+    # ⚠️ Shadow Voting: 大球方向触发了小球/闷平信号→风控减半（2026-05-22）
+    if '大球' in v36_dir and rule in ['H5', 'H3', 'H2']:
+        goal_stake = goal_stake // 2
+        for sb in score_bets:
+            sb['stake'] = sb['stake'] // 2
+        total_score_stake = sum(s['stake'] for s in score_bets)
+        rule = f'{rule}(风控减半)'
+    
+    # ⚠️ Staking Tier: 按历史ROI分级调整仓位（2026-05-22）
+    tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', ''))
+    # 保持规则内原设定为主，tier只调整纯进球投注
+    if bet_goals and goal_stake > 0:
+        if goal_stake < tier_goal_stake:  # 原设定比tier小，升级
+            goal_stake = tier_goal_stake
+    # 重建summary
+    if bet_goals:
+        base_summary = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
+        if score_bets:
+            base_summary += f" + {len(score_bets)}个比分投注{total_score_stake}元"
+        base_summary += conf_tag
+        if s7_dual:
+            base_summary += ' 🔥双确认(S6+S7)'
+        summary_text = base_summary
     
     return {
         'action': 'bet',
