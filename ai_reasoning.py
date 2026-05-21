@@ -766,6 +766,30 @@ def compute_betting(data, analysis):
         # 纯总进球投注(无比分保护), 2026-05-18改为纯20元
         conf_tag = ''
     
+    # ===== 比分保护: 每个进球投注+10元买V3.6首选比分 =====
+    if bet_goals and goal_stake > 0:
+        try:
+            rec = analysis.get('recommended', {})
+            fs = rec.get('filtered_scores', [])
+            so = data.get('score_odds', {})
+            for g in bet_goals:
+                for f in fs:
+                    if f.get('goals') == g:
+                        sc = f.get('score', '')
+                        parts = sc.split('-')
+                        odds_key = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
+                        odds_val = float(so.get(odds_key, so.get(sc.replace('-',':'), 0)) or 0)
+                        if odds_val > 0:
+                            score_bets.append({
+                                'score': sc.replace('-', ':'),
+                                'odds': round(odds_val, 1),
+                                'stake': 10,
+                                'tag': '比分保护'
+                            })
+                        break  # 每个进球只取首选
+        except:
+            pass
+    
     total_score_stake = sum(s['stake'] for s in score_bets)
     
     summary_text = ''
