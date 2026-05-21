@@ -69,15 +69,27 @@ football-prediction/
 
 ## 🚀 快速开始
 
-### 本地运行
+### 一行命令预测今天比赛（推荐）
 
 ```bash
 git clone https://github.com/workbuddy001/football-prediction.git
 cd football-prediction
-python sporttery_web.py        # 启动Web服务（端口8899）
+python predict.py
 ```
 
-### 独立预测（推荐，不受缓存影响）
+输出示例：
+```
+============================================================
+  周三009 弗拉门戈 vs 拉普拉塔大学生
+  2026-05-21 08:30:00
+  🎯 规则: R0
+  📋 单选0球 20元
+  ⚽ 总进球: [0]球 x20元
+      0球 赔10.0
+  💰 总投入: 20元
+```
+
+### 更多用法
 
 ```bash
 python predict.py              # 抓取+分析今天所有比赛
@@ -85,15 +97,12 @@ python predict.py 2039856      # 单场分析
 python predict.py --all        # 所有历史未赛
 ```
 
-### 回测验证
+### 启动Web服务
 
 ```bash
-python _backtest_all_rules_45.py  # 4-5月全量回测
+python sporttery_web.py        # 启动Web服务（端口8899）
+# 浏览器打开 http://localhost:8899 → V3.6推理分析 → 批量推荐
 ```
-
-### 浏览器访问
-
-打开 `http://localhost:8899` → V3.6推理分析 → 批量推荐按钮
 
 ---
 
