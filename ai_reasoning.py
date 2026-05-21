@@ -1216,6 +1216,9 @@ def v36_batch_recommend():
             data['_change_hitrate'] = _ch
             
             try:
+                import importlib, sys
+                if 'v36_analyzer' in sys.modules:
+                    importlib.reload(sys.modules['v36_analyzer'])
                 from v36_analyzer import analyze_match
                 analysis = analyze_match(data)
             except:
