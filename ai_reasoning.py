@@ -323,10 +323,13 @@ def compute_betting(data, analysis):
         kept = exclusion.get('kept', [])
         kept_goals = {e.get('goal', '') for e in kept}
         kept_statuses = {e.get('goal', ''): e.get('status', '') for e in kept}
-        # X3: 1球+2球+3球保留 + 3球警惕 + 2球警惕 → 投3球 (10场6中60%, ROI+109%)
+        # X3: 1球+2球+3球保留 + 3球警惕 + 2球警惕 + 推荐含5球 → 投3球 (6场4中67%, ROI+129%)
         if kept_goals == {'1球', '2球', '3球'}:
             if '警惕' in kept_statuses.get('3球', '') and '警惕' in kept_statuses.get('2球', ''):
-                x3_123 = True
+                rec = analysis.get('recommended', {})
+                rec_goals = rec.get('goals', [])
+                if rec_goals and 5 in rec_goals[:2]:
+                    x3_123 = True
         if len(kept) == 2:
             # X2: 仅剩3球+5球 → 投2球 (4场3中75%)
             if kept_goals == {'3球', '5球'}:
