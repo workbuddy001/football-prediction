@@ -67,18 +67,55 @@ def _extract_recent_matches(data):
                 'total': int(hg) + int(ag),
                 'venue': '主' if is_home else '客',
                 'result': m.get('teamMatchResult', ''),
+                'match_date': m.get('matchDate', ''),
             })
     return result
 
-def _calc_att_def(recent):
-    """计算攻击力(场均进球)和防守力(场均失球)"""
+def _calc_att_def(recent, target_date=None):
+    """计算攻击力(场均进球)和防守力(场均失球)。
+    如果提供target_date，使用时间衰减加权（指数衰减，半衰期14天）。
+    """
     home = recent.get('home', [])
     away = recent.get('away', [])
     
-    h_att = sum(r['scored'] for r in home) / max(len(home), 1)
-    h_def = sum(r['conceded'] for r in home) / max(len(home), 1)
-    a_att = sum(r['scored'] for r in away) / max(len(away), 1)
-    a_def = sum(r['conceded'] for r in away) / max(len(away), 1)
+    if target_date:
+        import math
+        from datetime import datetime
+        try:
+            target_dt = datetime.strptime(target_date[:10], '%Y-%m-%d')
+        except:
+            target_dt = None
+        
+        def _weighted_avg(items, key):
+            if not items: return 0
+            if not target_dt:
+                return sum(r[key] for r in items) / len(items)
+            weights = []
+            for r in items:
+                md = r.get('match_date', '')
+                if md:
+                    try:
+                        mdt = datetime.strptime(md[:10], '%Y-%m-%d')
+                        days = (target_dt - mdt).days
+                        w = max(0.1, 0.5 ** (days / 14))
+                    except:
+                        w = 0.5
+                else:
+                    w = 0.5  # 无日期按中等权重
+                weights.append(w)
+            total_w = sum(weights)
+            if total_w == 0: return sum(r[key] for r in items) / max(len(items), 1)
+            return sum(r[key] * w for r, w in zip(items, weights)) / total_w
+        
+        h_att = _weighted_avg(home, 'scored')
+        h_def = _weighted_avg(home, 'conceded')
+        a_att = _weighted_avg(away, 'scored')
+        a_def = _weighted_avg(away, 'conceded')
+    else:
+        h_att = sum(r['scored'] for r in home) / max(len(home), 1)
+        h_def = sum(r['conceded'] for r in home) / max(len(home), 1)
+        a_att = sum(r['scored'] for r in away) / max(len(away), 1)
+        a_def = sum(r['conceded'] for r in away) / max(len(away), 1)
     
     return h_att, h_def, a_att, a_def
 
@@ -179,7 +216,10 @@ def analyze_match(data):
     tc = data.get('ttg_change', {}) or {}
     
     recent = _extract_recent_matches(data)
-    h_att, h_def, a_att, a_def = _calc_att_def(recent)
+    # 获取目标比赛日期用于时间衰减加权
+    match_info = data.get('match_info', {}) or {}
+    target_date = match_info.get('match_date', '') if isinstance(match_info, dict) else ''
+    h_att, h_def, a_att, a_def = _calc_att_def(recent, target_date)
     
     # 近况组合
     home_recent_goals = [r['total'] for r in recent.get('home', [])]
