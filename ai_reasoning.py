@@ -1122,6 +1122,8 @@ def v36_analyze(match_id):
         import importlib, sys
         if 'v36_analyzer' in sys.modules:
             importlib.reload(sys.modules['v36_analyzer'])
+        if 'ai_reasoning' in sys.modules:
+            importlib.reload(sys.modules['ai_reasoning'])
         from v36_analyzer import analyze_match
         result = analyze_match(data)
         
@@ -1219,6 +1221,8 @@ def v36_batch_recommend():
                 import importlib, sys
                 if 'v36_analyzer' in sys.modules:
                     importlib.reload(sys.modules['v36_analyzer'])
+                if 'ai_reasoning' in sys.modules:
+                    importlib.reload(sys.modules['ai_reasoning'])
                 from v36_analyzer import analyze_match
                 analysis = analyze_match(data)
             except:
