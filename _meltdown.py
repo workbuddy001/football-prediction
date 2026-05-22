@@ -98,17 +98,106 @@ def show_streak():
         emoji = '✅' if r.get('hit') else '❌'
         print(f'  {r.get("date","?")} {emoji} {r.get("rule","?")} {r.get("match","")}')
 
+def auto_sync_from_scores(scores_file='分析模板/_scores.json'):
+    """
+    从_scores.json自动同步最近未录入的战绩。
+    每天跑predict.py之前调用一次即可。
+    """
+    if not os.path.exists(scores_file):
+        print(f'_scores.json 不存在')
+        return
+    
+    with open(scores_file, 'r', encoding='utf-8') as f:
+        scores = json.load(f)
+    
+    results = _load_streak()
+    recorded_matches = {r.get('match','') for r in results}
+    new_count = 0
+    
+    for k, v in scores.items():
+        hs = v.get('home_score')
+        aws = v.get('away_score')
+        if hs is None or aws is None:
+            continue
+        
+        # 重建投注结果：需要知道这场比赛触发了哪个规则
+        # 通过sporttery_data回查
+        mid = v.get('match_id', '')
+        h = v.get('home_team', '')
+        a = v.get('away_team', '')
+        match_name = f'{h}vs{a}'
+        
+        if match_name in recorded_matches:
+            continue  # 已录入
+        
+        # 读取sporttery_data分析投注
+        fp = f'sporttery_data/{mid}.json' if mid else ''
+        if not fp or not os.path.exists(fp):
+            continue
+        
+        try:
+            # 延迟导入避免循环
+            sys_mods = list(sys.modules.keys())
+            for m in sys_mods:
+                if 'v36_analyzer' in m: del sys.modules[m]
+            from v36_analyzer import analyze_match
+            for m in list(sys.modules.keys()):
+                if 'ai_reasoning' in m: del sys.modules[m]
+            from ai_reasoning import compute_betting
+            from sporttery_web import _build_change_hitrate, _build_odds_hitrate
+            
+            _oh = _build_odds_hitrate()
+            _ch = _build_change_hitrate()
+            
+            with open(fp, 'r', encoding='utf-8') as f_data:
+                data = json.load(f_data)
+            data['_odds_hitrate'] = _oh
+            data['_change_hitrate'] = _ch
+            
+            analysis = analyze_match(data)
+            bet = compute_betting(data, analysis)
+            
+            if bet.get('action') != 'bet':
+                continue
+            
+            rule = bet.get('rule', '').split('(')[0]
+            gb = bet.get('goal_bet', {})
+            goals = gb.get('goals', [])
+            actual = hs + aws
+            
+            is_hit = actual in goals if goals else False
+            # 比分投注命中检查
+            for sb in bet.get('score_bets', []):
+                if sb.get('score') == f'{hs}:{aws}':
+                    is_hit = True
+                    break
+            
+            record_streak(rule, 1 if is_hit else 0, match_name)
+            new_count += 1
+            
+        except Exception as e:
+            print(f'  跳过 {match_name}: {e}')
+            continue
+    
+    if new_count == 0:
+        print('没有新比赛需要同步')
+    else:
+        print(f'✅ 自动同步 {new_count} 场战绩')
+        show_streak()
+
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) >= 3:
+    if len(sys.argv) >= 2 and sys.argv[1] == 'sync':
+        auto_sync_from_scores()
+    elif len(sys.argv) == 2 and sys.argv[1] == 'show':
+        show_streak()
+    elif len(sys.argv) >= 3:
         rule = sys.argv[1]
         hit = int(sys.argv[2])
         match = sys.argv[3] if len(sys.argv) > 3 else ''
         record_streak(rule, hit, match)
-    elif len(sys.argv) == 2 and sys.argv[1] == 'show':
-        show_streak()
     else:
         print('用法:')
-        print('  python _meltdown.py <规则> <0/1> [比赛]  # 记录结果')
-        print('  python _meltdown.py show                # 查看状态')
-        print('  例: python _meltdown.py R0 0 \"弗拉门戈vs拉普拉塔\"')
+        print('  python _meltdown.py sync              # 自动同步最近的战绩')
+        print('  python _meltdown.py show              # 查看连黑状态')
+        print('  python _meltdown.py <规则> <0/1> [比赛] # 手动录入')
