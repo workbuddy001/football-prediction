@@ -539,6 +539,9 @@ def compute_betting(data, analysis):
                 return {'action': 'skip', 'reason': f'R1跳过: 让胜{rs:.1f}≥1.80(回测仅10%命中)'}
         except:
             pass
+        # R1: g0>20=大球过热追高陷阱(2026-05-22黑单残差: 4黑g0均值26.5 vs 2红g0均值18)
+        if g0 and g0 > 20:
+            return {'action': 'skip', 'reason': f'R1跳过: g0={g0:.0f}>20(大球过热追高,回测黑单g0均值26)'}
         
         rule = 'R1'
         bet_goals = []
