@@ -813,6 +813,12 @@ def compute_betting(data, analysis):
             rec = analysis.get('recommended', {})
             fs = rec.get('filtered_scores', [])
             so = data.get('score_odds', {})
+            # 预统计每个赔率出现次数(同赔比分=噪音,回测0%命中)
+            from collections import Counter
+            odds_counter = Counter()
+            for vv in so.values():
+                try: odds_counter[round(float(vv),1)] += 1
+                except: pass
             for g in bet_goals:
                 for f in fs:
                     if f.get('goals') == g:
@@ -820,6 +826,9 @@ def compute_betting(data, analysis):
                         parts = sc.split('-')
                         odds_key = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
                         odds_val = float(so.get(odds_key, so.get(sc.replace('-',':'), 0)) or 0)
+                        # 🔑 同赔比分跳过保护(赔率重复=市场无方向,0%命中)
+                        if odds_val > 0 and odds_counter.get(round(odds_val,1), 0) >= 2:
+                            break
                         if odds_val > 0:
                             score_bets.append({
                                 'score': sc.replace('-', ':'),
