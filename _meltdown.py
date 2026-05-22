@@ -137,6 +137,7 @@ def auto_sync_from_scores(scores_file='分析模板/_scores.json'):
         
         try:
             # 延迟导入避免循环
+            import sys
             sys_mods = list(sys.modules.keys())
             for m in sys_mods:
                 if 'v36_analyzer' in m: del sys.modules[m]

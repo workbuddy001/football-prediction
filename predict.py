@@ -18,6 +18,10 @@ for m in list(sys.modules):
 import sporttery_web as _sw
 _sw._odds_hitrate_cache = None
 _sw._change_hitrate_cache = None
+
+# 自动同步过去战绩（仅处理新增的比赛）
+from _meltdown import auto_sync_from_scores
+auto_sync_from_scores()
 _sw._score_hitrate_cache = None
 
 from v36_analyzer import analyze_match
