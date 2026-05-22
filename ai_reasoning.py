@@ -795,10 +795,10 @@ def compute_betting(data, analysis):
         # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 + 5球对冲5元 (2026-05-22)
         if x6_23_odds > 0:
             score_bets.append({'score': '2:3', 'odds': round(x6_23_odds, 1), 'stake': 20, 'tag': '客让2:3'})
-        # 比分防御伞: 5元买5球, 防爆冷(1:4/0:5/3:2)
+        # 比分防御伞: 6元买5球, 防爆冷(1:4/0:5/3:2)
         bet_goals = [5]
         bet_type = 'single'
-        goal_stake = 5
+        goal_stake = 6
         conf_tag = ''
     else:
         # 纯总进球投注(无比分保护), 2026-05-18改为纯20元
@@ -856,8 +856,10 @@ def compute_betting(data, analysis):
     # ⚠️ Shadow Voting: 大球方向触发了小球/闷平信号→风控减半（2026-05-22）
     if '大球' in v36_dir and rule in ['H5', 'H3', 'H2']:
         goal_stake = goal_stake // 2
+        if goal_stake % 2 == 1: goal_stake += 1  # 竞彩2元倍数对齐
         for sb in score_bets:
             sb['stake'] = sb['stake'] // 2
+            if sb['stake'] % 2 == 1: sb['stake'] += 1
         total_score_stake = sum(s['stake'] for s in score_bets)
         orig_rule = rule
         rule = f'{rule}(风控减半)'
@@ -873,7 +875,7 @@ def compute_betting(data, analysis):
     
     # ⚠️ Staking Tier: 按历史ROI分级调整仓位（2026-05-22）
     # 排除X6(已有防御伞对冲，不升级)
-    tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', '')) if 'X6' not in rule else 5
+    tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', '')) if 'X6' not in rule else 6
     # 保持规则内原设定为主，tier只调整纯进球投注
     if bet_goals and goal_stake > 0:
         if goal_stake < tier_goal_stake:  # 原设定比tier小，升级
