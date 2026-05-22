@@ -22,6 +22,7 @@ _sw._score_hitrate_cache = None
 
 from v36_analyzer import analyze_match
 from ai_reasoning import compute_betting
+from _meltdown import check_streak
 from sporttery_web import _build_change_hitrate, _build_odds_hitrate, _build_score_hitrate_stats
 
 _oh = _build_odds_hitrate()
@@ -57,6 +58,9 @@ def predict_match(mid, force_fetch=False):
     try:
         analysis = analyze_match(data)
         bet = compute_betting(data, analysis)
+        # 连黑熔断检查
+        if bet.get('action') == 'bet':
+            bet = check_streak(bet)
     except Exception as e:
         return {'error': str(e)}
     
