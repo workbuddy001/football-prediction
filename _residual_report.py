@@ -171,5 +171,32 @@ def run():
     print(f"\n✅ 报告已保存至: {out_file}")
     print(f"📊 可复制内容投喂给大模型做深度复盘")
 
+    # 可选: 自动投喂LLM (需设置环境变量 DEEPSEEK_KEY)
+    api_key = os.environ.get('DEEPSEEK_KEY', '')
+    if api_key:
+        print("\n🤖 检测到DEEPSEEK_KEY, 自动投喂LLM分析...")
+        try:
+            import urllib.request
+            prompt = f"足彩量化分析师。以下是黑单残差报告。直接给出每条规则翻车原因+改进建议。\n格式:【规则名】原因:xxx|建议:yyy\n\n{report[:6000]}"
+            req = urllib.request.Request(
+                'https://api.deepseek.com/v1/chat/completions',
+                data=json.dumps({
+                    'model': 'deepseek-chat',
+                    'messages': [{'role': 'user', 'content': prompt}],
+                    'max_tokens': 2000
+                }).encode(),
+                headers={'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'}
+            )
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                result = json.loads(resp.read())
+                suggestions = result['choices'][0]['message']['content']
+                print(f"\n{'='*60}\n  LLM深度分析建议\n{'='*60}")
+                print(suggestions)
+                with open('residual_llm_suggestions.txt', 'w', encoding='utf-8') as f:
+                    f.write(suggestions)
+                print(f"\n✅ LLM建议已保存至: residual_llm_suggestions.txt")
+        except Exception as e:
+            print(f"  ⚠️ LLM调用失败: {e}")
+
 if __name__ == '__main__':
     run()
