@@ -11,7 +11,11 @@ from collections import defaultdict
 SCORES_FILE = '分析模板/_scores.json'
 DATA_DIR = 'sporttery_data'
 
-def run():
+def run(weekly_only=True):
+    """
+    weekly_only=True: 仅最近7天（自动化任务）
+    weekly_only=False: 全量历史（手动跑）
+    """
     # 清缓存
     for m in list(sys.modules):
         if m in ('v36_analyzer', 'ai_reasoning', 'sporttery_web'):
@@ -41,6 +45,15 @@ def run():
         rt = str(v.get('record_time', ''))
         if '2026-04' not in rt and '2026-05' not in rt:
             continue
+        # 每周报告: 仅分析最近7天的比赛
+        if weekly_only:
+            from datetime import datetime, timedelta
+            try:
+                match_date = datetime.strptime(rt[:10], '%Y-%m-%d')
+                if match_date < datetime.now() - timedelta(days=7):
+                    continue
+            except:
+                pass
         fp = os.path.join(DATA_DIR, f'{mid}.json')
         if not os.path.exists(fp):
             continue
@@ -199,4 +212,10 @@ def run():
             print(f"  ⚠️ LLM调用失败: {e}")
 
 if __name__ == '__main__':
-    run()
+    import sys
+    weekly = '--full' not in sys.argv
+    if not weekly:
+        print('🔍 全量历史模式..')
+    else:
+        print('📅 每周模式(最近7天)...')
+    run(weekly_only=weekly)
