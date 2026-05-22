@@ -198,9 +198,18 @@ def run(weekly_only=True):
     if total_triggers < estimated_triggers:
         total_triggers = estimated_triggers
     
-    milestones = [('阶段一: 人工主导', 150, '残差报告+手动补丁'),
-                  ('阶段二: 二级弱盲测', 300, '解锁70/30切分+数据增强'),
-                  ('阶段三: 完整自进化', 500, '60/20/20三级盲测')]
+    milestones = [('阶段一: 人工主导', 150, '残差报告+手动补丁',
+                    ['数据≥150场触发 ~3-4个月', '人类专家主导,机器协助',
+                     '每周残差报告→人工判断→加skip补丁',
+                     '编码: 修改ai_reasoning.py的if-elif条件']),
+                  ('阶段二: 二级弱盲测', 300, '解锁70/30切分+数据增强',
+                    ['数据≥300场触发 ~7个月', '机器初步接入,不完全切分',
+                     '数据增强: 赔率微动震荡×50生成合成样本',
+                     '编码: 70/30切分→残差挖掘→auto_rules.json']),
+                  ('阶段三: 完整自进化', 500, '60/20/20三级盲测',
+                    ['数据≥500场触发 ~12个月', '机器全面自进化',
+                     '严格60%训练/20%验证/20%盲测钢印切分',
+                     '编码: 博费罗尼修正+交叉验证→自动写规则'])]
     
     tracker = []
     tracker.append("")
@@ -208,7 +217,7 @@ def run(weekly_only=True):
     tracker.append(f"  进化里程碑进度 (累计触发: {total_triggers}场)")
     tracker.append("=" * 60)
     
-    for name, target, desc in milestones:
+    for name, target, desc, details in milestones:
         pct = min(100, total_triggers / target * 100)
         bar_len = 20
         filled = int(pct / 100 * bar_len)
@@ -216,11 +225,13 @@ def run(weekly_only=True):
         status = '✅ 已解锁' if total_triggers >= target else f'还需 {target - total_triggers} 场'
         tracker.append(f"  {name:<16} [{bar}] {pct:3.0f}%")
         tracker.append(f"    ╰ {desc} | {status}")
+        for d in details:
+            tracker.append(f"       · {d}")
     
     tracker.append("")
     # 预计解锁时间（按~42场/月计算）
     monthly_rate = max(1, total_triggers // 2)
-    for name, target, desc in milestones:
+    for name, target, desc, details in milestones:
         if total_triggers < target:
             months = (target - total_triggers) / monthly_rate
             tracker.append(f"    预计{name}解锁: {months:.0f}个月后")
