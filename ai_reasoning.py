@@ -473,8 +473,11 @@ def compute_betting(data, analysis):
         if g0 and g0 >= 10.5 and pp_change < -0.5:
             return {'action': 'skip', 'reason': f'R0跳过: g0={g0}≥10.5+平平降{pp_change:.0f}%(陷阱信号,回测0/6)'}
         
-        # R0: 联赛过滤（西甲/欧联/瑞典超/日职/韩职0球率极低）
-        SKIP_LEAGUES = ['西班牙甲级联赛', '欧罗巴联赛', '瑞典超级联赛', '日本职业联赛', '韩国职业联赛']
+        # R0: 联赛过滤（大球联赛天然不适合R0闷平）
+        SKIP_LEAGUES = ['西班牙甲级联赛', '欧罗巴联赛', '瑞典超级联赛', '日本职业联赛', '韩国职业联赛',
+                        '美国职业大联盟', '荷兰乙级联赛', '德国甲级联赛', '德国乙级联赛',
+                        '沙特职业联赛', '荷兰甲级联赛', '法国甲级联赛', '葡萄牙超级联赛',
+                        '挪威超级联赛']  # 均球>3.0的大球联赛 + 已有小球联赛(西甲/日职/韩职)
         try:
             info = data.get('match_info', {})
             league = info.get('league', '') if isinstance(info, dict) else ''
@@ -789,9 +792,13 @@ def compute_betting(data, analysis):
         # S1: 近况>2.5+1球变高共振 → 纯1球20元 (ROI+80%)
         conf_tag = ''
     elif rule == 'X6':
-        # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 (ROI+592%)
+        # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 + 5球对冲5元 (2026-05-22)
         if x6_23_odds > 0:
             score_bets.append({'score': '2:3', 'odds': round(x6_23_odds, 1), 'stake': 20, 'tag': '客让2:3'})
+        # 比分防御伞: 5元买5球, 防爆冷(1:4/0:5/3:2)
+        bet_goals = [5]
+        bet_type = 'single'
+        goal_stake = 5
         conf_tag = ''
     else:
         # 纯总进球投注(无比分保护), 2026-05-18改为纯20元
@@ -865,7 +872,8 @@ def compute_betting(data, analysis):
             pass
     
     # ⚠️ Staking Tier: 按历史ROI分级调整仓位（2026-05-22）
-    tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', ''))
+    # 排除X6(已有防御伞对冲，不升级)
+    tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', '')) if 'X6' not in rule else 5
     # 保持规则内原设定为主，tier只调整纯进球投注
     if bet_goals and goal_stake > 0:
         if goal_stake < tier_goal_stake:  # 原设定比tier小，升级
