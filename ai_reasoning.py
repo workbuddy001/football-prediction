@@ -28,6 +28,12 @@ def _get_stake_by_tier(rule_name):
     elif rule_name in tier_2_medium: return 20
     return 10
 
+def _trace_log(level, msg):
+    """拦截日志跟踪（2026-05-22）：所有风控拦截统一打LOG，便于审计是否误伤"""
+    import datetime
+    ts = datetime.datetime.now().strftime('%m-%d %H:%M')
+    print(f'[{level}][{ts}] {msg}', flush=True)
+
 def compute_betting(data, analysis):
     """
     投注策略决策：
@@ -394,6 +400,11 @@ def compute_betting(data, analysis):
         hw_chk = float(had.get('胜', 0)) if isinstance(had, dict) and had.get('胜') else 99
         rs_chk = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
         if 1.10 < hw_chk < 1.45 and rs_chk > 2.30:
+            mi = data.get('match_info', {}) or {}
+            mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+            ht = mi.get('home_team', '?') if isinstance(mi, dict) else '?'
+            at = mi.get('away_team', '?') if isinstance(mi, dict) else '?'
+            _trace_log('HAD-TRAP', f'{mn} {ht}vs{at} 主胜{hw_chk:.2f}+让胜{rs_chk:.2f}→SKIP(深盘无力)')
             return {'action': 'skip', 'reason': f'HAD陷阱: 主胜{hw_chk:.2f}<1.45+让胜{rs_chk:.2f}>2.30(深盘无力,回测0/3)'}
     except:
         pass
@@ -841,7 +852,17 @@ def compute_betting(data, analysis):
         for sb in score_bets:
             sb['stake'] = sb['stake'] // 2
         total_score_stake = sum(s['stake'] for s in score_bets)
+        orig_rule = rule
         rule = f'{rule}(风控减半)'
+        # 拦截日志
+        try:
+            mi = data.get('match_info', {}) or {}
+            mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+            ht = mi.get('home_team', '?') if isinstance(mi, dict) else '?'
+            at = mi.get('away_team', '?') if isinstance(mi, dict) else '?'
+            _trace_log('SHADOW-LOCK', f'{mn} {ht}vs{at} 触发{orig_rule}但Step0={v36_dir}→资金减半')
+        except:
+            pass
     
     # ⚠️ Staking Tier: 按历史ROI分级调整仓位（2026-05-22）
     tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', ''))

@@ -79,30 +79,11 @@ def _calc_att_def(recent, target_date=None):
     away = recent.get('away', [])
     
     if target_date:
-        import math
-        from datetime import datetime
-        try:
-            target_dt = datetime.strptime(target_date[:10], '%Y-%m-%d')
-        except:
-            target_dt = None
-        
         def _weighted_avg(items, key):
+            """场次序号衰减：0.8^index, index=0最新一场。
+            不论赛程疏密，权重稳定平滑。最小底噪0.1。"""
             if not items: return 0
-            if not target_dt:
-                return sum(r[key] for r in items) / len(items)
-            weights = []
-            for r in items:
-                md = r.get('match_date', '')
-                if md:
-                    try:
-                        mdt = datetime.strptime(md[:10], '%Y-%m-%d')
-                        days = (target_dt - mdt).days
-                        w = max(0.1, 0.5 ** (days / 14))
-                    except:
-                        w = 0.5
-                else:
-                    w = 0.5  # 无日期按中等权重
-                weights.append(w)
+            weights = [max(0.1, 0.8 ** i) for i in range(len(items))]
             total_w = sum(weights)
             if total_w == 0: return sum(r[key] for r in items) / max(len(items), 1)
             return sum(r[key] * w for r, w in zip(items, weights)) / total_w
