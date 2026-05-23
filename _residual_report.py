@@ -175,6 +175,32 @@ def run(weekly_only=True):
 
     report = "\n".join(lines)
 
+    # ===== 手动观察项 =====
+    watch_items = [
+        ('5.23 3:1比分偏见', 
+         '30场3:1中V3.6候选含3:1占47%(14/30)但仅2次排第一',
+         '当3-1在filtered_scores第2-3位+平赔>3.5+主胜<2.0时, 比分保护可优先选3-1',
+         '等样本≥50场后评估落代码'),
+        ('5.23 g0≥16→次选策略',
+         'g0≥16时首选赔率重复→改选次选2/2=100%命中',
+         '等≥5场后确认, 目前样本不足暂不落代码',
+         '预计1-2个月后回测验证'),
+    ]
+    if watch_items:
+        watch_section = []
+        watch_section.append("")
+        watch_section.append("=" * 60)
+        watch_section.append(f"  📌 人工观察项 ({len(watch_items)}条)")
+        watch_section.append("=" * 60)
+        for title, finding, suggestion, status in watch_items:
+            watch_section.append(f"  [{title}]")
+            watch_section.append(f"    发现: {finding}")
+            watch_section.append(f"    建议: {suggestion}")
+            watch_section.append(f"    状态: {status}")
+            watch_section.append("")
+        lines.append("\n".join(watch_section))
+        report = "\n".join(lines)
+
     # ===== 进化里程碑追踪（从_scores.json统计全量触发） =====
     total_triggers = sum(s['hit'] + s['miss'] for s in rule_stats.values())
     # 覆盖全量触发数（weekly模式时rule_stats只含本周，需补全）
