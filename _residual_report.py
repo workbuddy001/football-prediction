@@ -35,6 +35,13 @@ def run(weekly_only=True):
     # 按规则分组黑单
     black_by_rule = defaultdict(list)
     rule_stats = defaultdict(lambda: {'hit': 0, 'miss': 0})
+    
+    # 新增追踪
+    weekly_all = {}  # {rule: {matches, hit, inv, ret, is_hit}}
+    had_trap_count = 0
+    shadow_count = 0
+    protect_total = 0; protect_hit = 0; protect_skipped = 0
+    protect_inv = 0; protect_ret = 0
 
     for k, v in scores.items():
         mid = v.get('match_id', '')
@@ -70,6 +77,9 @@ def run(weekly_only=True):
             continue
 
         if bet.get('action') != 'bet':
+            reason = bet.get('reason', '')
+            if 'HAD陷阱' in reason:
+                had_trap_count += 1
             continue
 
         rule = bet.get('rule', '').split('(')[0]
@@ -82,6 +92,59 @@ def run(weekly_only=True):
                 break
 
         rule_stats[rule]['hit' if is_hit else 'miss'] += 1
+        
+        # 周报追踪
+        full_rule = bet.get('rule', '')
+        if '风控减半' in full_rule: shadow_count += 1
+        if rule not in weekly_all:
+            weekly_all[rule] = {'matches': 0, 'hit': 0, 'inv': 0, 'ret': 0, 'is_hit': False}
+        weekly_all[rule]['matches'] += 1
+        gb = bet.get('goal_bet', {})
+        wk_gstake = gb.get('stake', 0)
+        wk_sstake = sum(s.get('stake', 0) for s in bet.get('score_bets', []))
+        wk_inv = wk_gstake + wk_sstake
+        weekly_all[rule]['inv'] += wk_inv
+        # 比分保护统计
+        for sb in bet.get('score_bets', []):
+            if sb.get('tag') == '比分保护':
+                protect_total += 1
+                protect_inv += sb.get('stake', 10)
+                if sb.get('score') == f'{hs}:{aws}':
+                    protect_hit += 1
+                    protect_ret += sb.get('stake') * sb.get('odds', 1)
+        # 收益
+        profit = -wk_gstake
+        if goals and actual in goals:
+            godds = gb.get('odds', {})
+            profit += wk_gstake * godds.get(str(actual), 0)
+        for sb in bet.get('score_bets', []):
+            profit -= sb.get('stake', 0)
+            if sb.get('score') == f'{hs}:{aws}':
+                profit += sb.get('stake') * sb.get('odds', 0)
+        if profit > -wk_inv:
+            weekly_all[rule]['hit'] += 1
+            weekly_all[rule]['ret'] += profit + wk_inv
+            weekly_all[rule]['is_hit'] = True
+        # 同赔跳过计数: 对比比分保护应有的和实际的
+        from collections import Counter
+        so = data.get('score_odds', {})
+        odds_counter = Counter()
+        for vv in so.values():
+            try: odds_counter[round(float(vv), 1)] += 1
+            except: pass
+        rec = analysis.get('recommended', {})
+        fs = rec.get('filtered_scores', [])
+        for g in goals:
+            for f in fs:
+                if f.get('goals') == g:
+                    sc = f.get('score', '')
+                    parts = sc.split('-')
+                    odds_key = f'{int(parts[0]):02d}:{int(parts[1]):02d}'
+                    odds_val = float(so.get(odds_key, 0) or 0)
+                    if odds_val > 0 and odds_counter.get(round(odds_val, 1), 0) >= 2:
+                        protect_skipped += 1
+                    break
+            break
 
         if not is_hit:
             tg = data.get('total_goals', {})
@@ -115,8 +178,49 @@ def run(weekly_only=True):
     # 生成报告
     lines = []
     lines.append("=" * 60)
-    lines.append(f"  黑单残差盲区报告 ({len(black_by_rule)}条规则有黑单)")
+    lines.append(f"  竞彩AI预测系统 — 每周复盘报告")
+    lines.append(f"  生成时间: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M')}")
     lines.append("=" * 60)
+    lines.append("")
+    
+    # ===== 本周盈亏总览 =====
+    total_inv = sum(hstats['inv'] for _,hstats in weekly_all.items())
+    total_ret = sum(hstats['ret'] for _,hstats in weekly_all.items())
+    total_trig = len(weekly_all)
+    total_hit_count = sum(1 for _,hstats in weekly_all.items() if hstats['is_hit'])
+    lines.append(f"【本周盈亏总览】")
+    if total_trig > 0:
+        roi = (total_ret - total_inv) / total_inv * 100 if total_inv > 0 else 0
+        lines.append(f"  触发: {total_trig}场 | 命中: {total_hit_count}场({total_hit_count/total_trig*100:.0f}%)")
+        lines.append(f"  投入: {total_inv}元 | 回报: {total_ret:.0f}元 | ROI: {roi:+.1f}%")
+    else:
+        lines.append(f"  本周无规则触发")
+    
+    # ===== 拦截器战报 =====
+    lines.append(f"\n【拦截器战报】")
+    lines.append(f"  HAD陷阱拦截: {had_trap_count}场")
+    lines.append(f"  Shadow风控减半: {shadow_count}场")
+    
+    # ===== 比分保护周报 =====
+    lines.append(f"\n【比分保护周报】")
+    lines.append(f"  保护投注: {protect_total}次 | 命中: {protect_hit}次({protect_hit/protect_total*100:.0f}%)" if protect_total > 0 else f"  保护投注: 0次")
+    lines.append(f"  同赔跳过: {protect_skipped}次 (省{protect_skipped*10}元)")
+    if protect_total > 0:
+        proi = (protect_ret - protect_inv) / protect_inv * 100 if protect_inv > 0 else 0
+        lines.append(f"  保护ROI: {proi:+.0f}%")
+    
+    lines.append("")
+    
+    # ===== 本周触发概览 =====
+    lines.append(f"【本周触发概览】")
+    sorted_weekly = sorted(weekly_all.items(), key=lambda x: x[1]['inv'], reverse=True)
+    for rule, wstats in sorted_weekly[:10]:
+        rpct = wstats['hit']/wstats['matches']*100 if wstats['matches']>0 else 0
+        rroi = (wstats['ret']-wstats['inv'])/wstats['inv']*100 if wstats['inv']>0 else 0
+        mark = '⭐红' if rpct >= 60 else ('🟡平' if rpct >= 40 else '🛑黑')
+        lines.append(f"  {rule}: {wstats['matches']}场 {rpct:.0f}% ROI{rroi:+.0f}% {mark}")
+    if not weekly_all:
+        lines.append(f"  无")
     lines.append("")
 
     for rule in sorted(black_by_rule.keys(), key=lambda r: len(black_by_rule[r]), reverse=True):
