@@ -392,6 +392,25 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # ⚠️ H系列上轮差距检查: 两队上轮进球与投注目标差≥2 → 0命中 (2026-05-24)
+    h_gap_far = False
+    try:
+        preview = data.get('preview', {})
+        recent_data = preview.get('recent', {})
+        home_recent = recent_data.get('home', {}).get('matchList', []) if isinstance(recent_data.get('home'), dict) else []
+        away_recent = recent_data.get('away', {}).get('matchList', []) if isinstance(recent_data.get('away'), dict) else []
+        def _last_total(ml):
+            if not ml: return None
+            m = ml[0]
+            return int(m.get('homeTeamFullCourtGoalCnt', 0) or 0) + int(m.get('awayTeamFullCourtGoalCnt', 0) or 0)
+        hl = _last_total(home_recent); al = _last_total(away_recent)
+        # H系列只在0-1球区域, 检查是否全部差≥2
+        h_far = hl is not None and hl >= 2
+        a_far = al is not None and al >= 2
+        h_gap_far = h_far and a_far  # 两队都≥2球 → 不可能突然闷平
+    except:
+        pass
+    
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
     # ⚠️ HAD/HHAD诱盘检测：主胜极低但让胜极高=深盘无力陷阱（2026-05-22, 3/3全丢）
     try:
@@ -409,7 +428,7 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    if h5_11:
+    if h5_11 and not h_gap_far:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元
         rule = 'H5'
         bet_goals = []
@@ -610,13 +629,13 @@ def compute_betting(data, analysis):
         bet_goals = [5]
         bet_type = 'single'
         goal_stake = 20
-    elif h3_11:
+    elif h3_11 and not h_gap_far:
         # 信号H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 投1:1 30元 (ROI+405%)
         rule = 'H3'
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    elif h5_11:
+    elif h5_11 and not h_gap_far:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元 (回测7场4中57% ROI+90%)
         rule = 'H5'
         bet_goals = []
@@ -628,13 +647,13 @@ def compute_betting(data, analysis):
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    elif h2_11:
+    elif h2_11 and not h_gap_far:
         # 信号H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死 → 投1:1 10元 (ROI+231%)
         rule = 'H2'
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
-    elif h1_score and h1_odds > 0:
+    elif h1_score and h1_odds > 0 and not h_gap_far:
         # 信号H1: 大热必死+Top1比分+o0>=20 → 投Top1比分10元 (ROI+171%)
         rule = 'H1'
         bet_goals = []
