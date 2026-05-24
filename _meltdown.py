@@ -25,9 +25,11 @@ def _load_streak():
 def _save_streak(results):
     base = os.path.dirname(os.path.abspath(__file__))
     path = os.path.join(base, STREAK_FILE)
+    # 按日期排序(升序), 保留最近30场
+    sorted_results = sorted(results, key=lambda r: r.get('date', ''))
     with open(path, 'w', encoding='utf-8') as f:
         json.dump({
-            'results': results[-30:],  # 保留最近30场
+            'results': sorted_results[-30:],
             'updated': datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
         }, f, ensure_ascii=False, indent=2)
 
@@ -95,7 +97,9 @@ def show_streak():
         else: break
     hits = sum(1 for r in results if r.get('hit') == 1)
     print(f'最近{len(results)}场: {hits}红/{len(results)-hits}黑 | 当前连黑{consecutive}场')
-    for r in results[-10:]:
+    # 最近10场, 按日期倒序
+    display = sorted(results, key=lambda r: r.get('date', ''))[-10:][::-1]
+    for r in display:
         emoji = '✅' if r.get('hit') else '❌'
         d = r.get("date", "?")
         ru = r.get("rule", "?")
