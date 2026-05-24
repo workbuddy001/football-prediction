@@ -27,19 +27,20 @@ def _save_streak(results):
     path = os.path.join(base, STREAK_FILE)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump({
-            'results': results[-10:],
+            'results': results[-30:],  # 保留最近30场
             'updated': datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
         }, f, ensure_ascii=False, indent=2)
 
-def record_streak(rule, hit, match_info=''):
+def record_streak(rule, hit, match_info='', match_date=None):
     """
     手动录入单场结果，更新连黑记录。
-    hit=1 命中, 0=黑单
+    hit=1 命中, 0=黑单 / match_date='2026-05-19' 或 None(用当前日期)
     用法: python _meltdown.py R0 0 '弗拉门戈vs拉普拉塔'
     """
     results = _load_streak()
+    date_str = match_date if match_date else datetime.datetime.now().strftime('%m-%d')
     results.append({
-        'date': datetime.datetime.now().strftime('%m-%d %H:%M'),
+        'date': date_str,
         'rule': rule,
         'hit': int(hit),
         'match': match_info,
@@ -94,9 +95,12 @@ def show_streak():
         else: break
     hits = sum(1 for r in results if r.get('hit') == 1)
     print(f'最近{len(results)}场: {hits}红/{len(results)-hits}黑 | 当前连黑{consecutive}场')
-    for r in results[-5:]:
+    for r in results[-10:]:
         emoji = '✅' if r.get('hit') else '❌'
-        print(f'  {r.get("date","?")} {emoji} {r.get("rule","?")} {r.get("match","")}')
+        d = r.get("date", "?")
+        ru = r.get("rule", "?")
+        ma = r.get("match", "")
+        print(f'  {d} {emoji} {ru} {ma}')
 
 def auto_sync_from_scores(scores_file='分析模板/_scores.json'):
     """
@@ -114,7 +118,17 @@ def auto_sync_from_scores(scores_file='分析模板/_scores.json'):
     recorded_matches = {r.get('match','') for r in results}
     new_count = 0
     
+    # 只同步最近30天的比赛
+    from datetime import timedelta
+    cutoff = datetime.datetime.now() - timedelta(days=30)
+    
     for k, v in scores.items():
+        # 时间过滤
+        rt = str(v.get('record_time', ''))
+        try:
+            md = datetime.datetime.strptime(rt[:10], '%Y-%m-%d')
+            if md < cutoff: continue
+        except: pass
         hs = v.get('home_score')
         aws = v.get('away_score')
         if hs is None or aws is None:
@@ -173,7 +187,11 @@ def auto_sync_from_scores(scores_file='分析模板/_scores.json'):
                     is_hit = True
                     break
             
-            record_streak(rule, 1 if is_hit else 0, match_name)
+            # 用比赛日期而非同步时间
+            rt = str(v.get('record_time', ''))
+            match_date = rt[:10] if rt else None
+            
+            record_streak(rule, 1 if is_hit else 0, match_name, match_date=match_date)
             new_count += 1
             
         except Exception as e:
