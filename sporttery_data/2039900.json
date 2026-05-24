@@ -1,0 +1,943 @@
+{
+  "match_id": "2039900",
+  "fetch_time": "2026-05-23 20:49:29",
+  "match_info": {
+    "home_team": "哈尔姆斯塔德",
+    "away_team": "厄尔格里特",
+    "league": "瑞典超级联赛",
+    "time": "2026-05-23 21:00",
+    "match_num_str": "周六006",
+    "match_week": "周六",
+    "match_date": "2026-05-23",
+    "match_time": "21:00:00",
+    "match_status": "Selling",
+    "home_rank": "[瑞超16]",
+    "away_rank": "[瑞超15]",
+    "league_abbr": "瑞超"
+  },
+  "score_odds": {
+    "05:00": "100.0",
+    "01:00": "7.25",
+    "05:02": "175.0",
+    "05:01": "100.0",
+    "02:04": "125.0",
+    "02:05": "400.0",
+    "02:02": "13.00",
+    "02:03": "35.00",
+    "02:00": "9.00",
+    "02:01": "7.00",
+    "03:03": "70.00",
+    "03:01": "14.50",
+    "03:02": "24.00",
+    "03:00": "17.00",
+    "00:01": "9.50",
+    "00:00": "11.50",
+    "00:03": "50.00",
+    "00:02": "17.00",
+    "00:05": "400.0",
+    "00:04": "150.0",
+    "04:02": "75.00",
+    "04:01": "35.00",
+    "04:00": "40.00",
+    "01:02": "9.50",
+    "01:01": "6.00",
+    "01:04": "100.0",
+    "01:03": "28.00",
+    "01:05": "400.0"
+  },
+  "total_goals": {
+    "3球": "3.55",
+    "4球": "5.55",
+    "5球": "9.50",
+    "6球": "17.00",
+    "7球": "26.00",
+    "0球": "11.50",
+    "1球": "4.90",
+    "2球": "3.35"
+  },
+  "had": {
+    "胜": "1.95",
+    "平": "3.10",
+    "负": "3.40"
+  },
+  "ttg": {
+    "3球": "3.55",
+    "4球": "5.55",
+    "5球": "9.50",
+    "6球": "17.00",
+    "7球": "26.00",
+    "0球": "11.50",
+    "1球": "4.90",
+    "2球": "3.35"
+  },
+  "hafu": {
+    "负负": "5.25",
+    "平平": "5.00",
+    "胜胜": "3.30",
+    "负平": "14.00",
+    "平胜": "4.75",
+    "负胜": "26.00",
+    "胜负": "33.00",
+    "胜平": "14.00",
+    "平负": "7.20"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "4.10",
+    "让平": "3.55",
+    "让负": "1.66"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "厄格里特",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "37",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 7,
+        "homeScoreRatio": "10",
+        "homeWinGoalMatchCnt": 0,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 5,
+        "awayScoreRatio": "23",
+        "awayWinGoalMatchCnt": 1,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "33",
+        "homeWinGoalMatchCnt": 2,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.0",
+        "awayGoalAvgCntRatio": "66.7",
+        "homeGoalAvgCnt": "0.5",
+        "homeGoalAvgCntRatio": "33.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "哈尔姆斯",
+      "last": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "2.1",
+        "awayLossGoalAvgCntRatio": "50.0",
+        "homeLossGoalAvgCnt": "2.1",
+        "homeLossGoalAvgCntRatio": "50.0",
+        "totalLegCnt": 10
+      },
+      "matchId": 2471959,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 0,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 7
+      },
+      "sportteryAwayTeamId": 601,
+      "sportteryHomeTeamId": 609,
+      "sportteryMatchId": 2039900,
+      "uniformAwayTeamId": 865,
+      "uniformHomeTeamId": 1745
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 2151,
+          "awayTeamShortName": "厄格里特",
+          "fullCourtGoal": "2:3",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 2145,
+          "homeTeamShortName": "哈尔姆斯",
+          "matchDate": "2022-10-12",
+          "matchId": 1549670,
+          "seasonId": 8738,
+          "sportteryAwayTeamId": 601,
+          "sportteryHomeTeamId": 609,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 5,
+          "tournamentId": 283,
+          "tournamentShortName": "瑞甲",
+          "uniformAwayTeamId": 865,
+          "uniformHomeTeamId": 1745,
+          "uniformLeagueId": 809,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 2145,
+          "awayTeamShortName": "哈尔姆斯",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 2151,
+          "homeTeamShortName": "厄格里特",
+          "matchDate": "2022-04-06",
+          "matchId": 1549474,
+          "seasonId": 8738,
+          "sportteryAwayTeamId": 609,
+          "sportteryHomeTeamId": 601,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 283,
+          "tournamentShortName": "瑞甲",
+          "uniformAwayTeamId": 1745,
+          "uniformHomeTeamId": 865,
+          "uniformLeagueId": 809,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 2151,
+          "awayTeamShortName": "厄格里特",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 2145,
+          "homeTeamShortName": "哈尔姆斯",
+          "matchDate": "2020-11-28",
+          "matchId": 1311177,
+          "seasonId": 6880,
+          "sportteryAwayTeamId": 601,
+          "sportteryHomeTeamId": 609,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 283,
+          "tournamentShortName": "瑞甲",
+          "uniformAwayTeamId": 865,
+          "uniformHomeTeamId": 1745,
+          "uniformLeagueId": 809,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "3",
+          "awayTeamId": 2145,
+          "awayTeamShortName": "哈尔姆斯",
+          "fullCourtGoal": "0:3",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 2151,
+          "homeTeamShortName": "厄格里特",
+          "matchDate": "2020-06-24",
+          "matchId": 1232418,
+          "seasonId": 6880,
+          "sportteryAwayTeamId": 609,
+          "sportteryHomeTeamId": 601,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 283,
+          "tournamentShortName": "瑞甲",
+          "uniformAwayTeamId": 1745,
+          "uniformHomeTeamId": 865,
+          "uniformLeagueId": 809,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 2145,
+          "awayTeamShortName": "哈尔姆斯",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "3:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 2151,
+          "homeTeamShortName": "厄格里特",
+          "matchDate": "2019-08-07",
+          "matchId": 924034,
+          "seasonId": 5560,
+          "sportteryAwayTeamId": 609,
+          "sportteryHomeTeamId": 601,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 283,
+          "tournamentShortName": "瑞甲",
+          "uniformAwayTeamId": 1745,
+          "uniformHomeTeamId": 865,
+          "uniformLeagueId": 809,
+          "winningTeam": "home"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "哈尔姆斯",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 2,
+        "winProbability": "40%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 313602,
+            "personName": "R. Alm",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 601,
+        "teamId": 2151,
+        "teamShortName": "厄格里特",
+        "uniformTeamId": 865
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 609,
+        "teamId": 2145,
+        "teamShortName": "哈尔姆斯",
+        "uniformTeamId": 1745
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 600,
+            "awayTeamShortName": "哥德堡",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 601,
+            "homeTeamShortName": "厄格里特",
+            "matchDate": "2026-05-19",
+            "matchId": 2471971,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039818,
+            "sportteryTournamentId": 58,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 484,
+            "uniformHomeTeamId": 865,
+            "uniformLeagueId": 1085,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 601,
+            "awayTeamShortName": "厄格里特",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1917,
+            "homeTeamShortName": "天狼星",
+            "matchDate": "2026-05-12",
+            "matchId": 2471977,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039655,
+            "sportteryTournamentId": 58,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 865,
+            "uniformHomeTeamId": 312,
+            "uniformLeagueId": 1085,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 601,
+            "awayTeamShortName": "厄格里特",
+            "fullCourtGoal": "4:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "4",
+            "homeTeamId": 789,
+            "homeTeamShortName": "盖斯",
+            "matchDate": "2026-05-03",
+            "matchId": 2471988,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 865,
+            "uniformHomeTeamId": 1194,
+            "uniformLeagueId": 1085,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1110,
+            "awayTeamShortName": "代格福什",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 601,
+            "homeTeamShortName": "厄格里特",
+            "matchDate": "2026-04-28",
+            "matchId": 2471995,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 1233,
+            "uniformHomeTeamId": 865,
+            "uniformLeagueId": 1085,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 888,
+            "awayTeamShortName": "布鲁马波",
+            "fullCourtGoal": "1:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 601,
+            "homeTeamShortName": "厄格里特",
+            "matchDate": "2026-04-23",
+            "matchId": 2472004,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 1190,
+            "uniformHomeTeamId": 865,
+            "uniformLeagueId": 1085,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 4,
+          "lossGoalCnt": 12,
+          "lossGoalMatchCnt": 4,
+          "lossProbability": "80%",
+          "netGoal": -8,
+          "sportteryTeamId": 0,
+          "teamId": 601,
+          "teamShortName": "厄格里特",
+          "totalLegCnt": 5,
+          "uniformTeamId": 865,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 608,
+            "awayTeamShortName": "埃夫斯堡",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 609,
+            "homeTeamShortName": "哈尔姆斯",
+            "matchDate": "2026-05-16",
+            "matchId": 2471967,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039760,
+            "sportteryTournamentId": 58,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 482,
+            "uniformHomeTeamId": 1745,
+            "uniformLeagueId": 1085,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 609,
+            "awayTeamShortName": "哈尔姆斯",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 602,
+            "homeTeamShortName": "卡尔马",
+            "matchDate": "2026-05-10",
+            "matchId": 2471975,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 1745,
+            "uniformHomeTeamId": 435,
+            "uniformLeagueId": 1085,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 888,
+            "awayTeamShortName": "布鲁马波",
+            "fullCourtGoal": "1:3",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 609,
+            "homeTeamShortName": "哈尔姆斯",
+            "matchDate": "2026-05-05",
+            "matchId": 2471983,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039511,
+            "sportteryTournamentId": 58,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 1190,
+            "uniformHomeTeamId": 1745,
+            "uniformLeagueId": 1085,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 609,
+            "awayTeamShortName": "哈尔姆斯",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 974,
+            "homeTeamShortName": "米亚尔比",
+            "matchDate": "2026-04-28",
+            "matchId": 2471993,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039367,
+            "sportteryTournamentId": 58,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 1745,
+            "uniformHomeTeamId": 470,
+            "uniformLeagueId": 1085,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 609,
+            "awayTeamShortName": "哈尔姆斯",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 352,
+            "homeTeamShortName": "哈马比",
+            "matchDate": "2026-04-23",
+            "matchId": 2472006,
+            "seasonId": 14355,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 132,
+            "tournamentShortName": "瑞超",
+            "uniformAwayTeamId": 1745,
+            "uniformHomeTeamId": 429,
+            "uniformLeagueId": 1085,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 3,
+          "lossGoalCnt": 9,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": -6,
+          "sportteryTeamId": 0,
+          "teamId": 609,
+          "teamShortName": "哈尔姆斯",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1745,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48269,
+      "seasonId": 14355,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 3,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 5,
+          "phaseName": "",
+          "points": "3",
+          "ranking": "16",
+          "sportteryTeamId": 609,
+          "teamId": 0,
+          "teamShortName": "哈尔姆斯",
+          "totalLegCnt": 8,
+          "uniformTeamId": 1745,
+          "winGoalMatchCnt": 0,
+          "winProbability": "0%"
+        },
+        {
+          "drawMatchCnt": 2,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 5,
+          "phaseName": "",
+          "points": "5",
+          "ranking": "15",
+          "sportteryTeamId": 601,
+          "teamId": 0,
+          "teamShortName": "厄格里特",
+          "totalLegCnt": 8,
+          "uniformTeamId": 865,
+          "winGoalMatchCnt": 1,
+          "winProbability": "13%"
+        }
+      ],
+      "tournamentId": 132,
+      "tournamentShortName": "瑞超",
+      "uniformLeagueId": 1085,
+      "uniformMatchId": 2392796
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 288209,
+            "personName": "A. Andreasson",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 624726,
+            "personName": "C. Styffe",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "5"
+          },
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0.5",
+            "assistCnt": 4,
+            "assistProbability": "67%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "13%",
+            "injuryFlag": 0,
+            "personId": 30435,
+            "personName": "T. Sana",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "22"
+          }
+        ],
+        "sportteryTeamId": 601,
+        "teamId": 2151,
+        "teamShortName": "厄格里特",
+        "uniformTeamId": 865
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 725792,
+            "personName": "O. Liimatta",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 685542,
+            "personName": "H. Carneil",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "14"
+          },
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 646563,
+            "personName": "O.法拉吉",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          }
+        ],
+        "sportteryTeamId": 609,
+        "teamId": 2145,
+        "teamShortName": "哈尔姆斯",
+        "uniformTeamId": 1745
+      },
+      "seasonId": 14355,
+      "seasonName": "2026",
+      "tournamentId": 132,
+      "tournamentShortName": "瑞超",
+      "uniformLeagueId": 1085,
+      "uniformMatchId": 2392796
+    }
+  },
+  "ttg_change": {
+    "7球": {
+      "count": 1,
+      "change_pct": -10.3
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": -5.6
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 6.5
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": -5.0
+    }
+  },
+  "hafu_change": {
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": -2.8
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 1,
+      "change_pct": -4.8
+    },
+    "平胜": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 6.5
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -4.0
+    }
+  },
+  "had_change": {
+    "负": {
+      "count": 3,
+      "change_pct": -1.4
+    },
+    "平": {
+      "count": 3,
+      "change_pct": -6.1
+    },
+    "胜": {
+      "count": 4,
+      "change_pct": 4.3
+    }
+  },
+  "hhad_change": {
+    "让负": {
+      "count": 3,
+      "change_pct": -2.4
+    },
+    "让平": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": 6.5
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "4.90",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "7.25",
+          "special": true
+        },
+        {
+          "score": "00:01",
+          "odds": "9.50",
+          "special": false
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率4.90（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

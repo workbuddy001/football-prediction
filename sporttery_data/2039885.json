@@ -1,6 +1,6 @@
 {
   "match_id": "2039885",
-  "fetch_time": "2026-05-21 21:18:58",
+  "fetch_time": "2026-05-22 21:27:30",
   "match_info": {
     "home_team": "朗斯",
     "away_team": "尼斯",
@@ -16,76 +16,76 @@
     "league_abbr": "法国杯"
   },
   "score_odds": {
-    "05:00": "50.00",
+    "05:00": "55.00",
     "01:00": "7.50",
     "05:02": "100.0",
-    "05:01": "50.00",
+    "05:01": "55.00",
     "02:04": "200.0",
     "02:05": "500.0",
-    "02:02": "14.00",
-    "02:03": "50.00",
-    "02:00": "7.50",
+    "02:02": "13.00",
+    "02:03": "58.00",
+    "02:00": "7.00",
     "02:01": "6.50",
-    "03:03": "60.00",
-    "03:01": "10.00",
-    "03:02": "20.00",
+    "03:03": "55.00",
+    "03:01": "10.50",
+    "03:02": "22.00",
     "03:00": "10.00",
     "00:01": "16.50",
-    "00:00": "16.00",
+    "00:00": "14.50",
     "00:03": "100.0",
     "00:02": "33.00",
     "00:05": "700.0",
     "00:04": "300.0",
-    "04:02": "50.00",
-    "04:01": "20.00",
-    "04:00": "18.00",
+    "04:02": "55.00",
+    "04:01": "21.00",
+    "04:00": "22.00",
     "01:02": "14.00",
-    "01:01": "7.50",
+    "01:01": "6.75",
     "01:04": "200.0",
-    "01:03": "50.00",
+    "01:03": "52.00",
     "01:05": "500.0"
   },
   "total_goals": {
-    "3球": "3.50",
-    "4球": "4.70",
-    "5球": "8.00",
-    "6球": "13.50",
-    "7球": "19.00",
-    "0球": "16.00",
-    "1球": "5.70",
-    "2球": "3.75"
+    "3球": "3.20",
+    "4球": "4.50",
+    "5球": "9.05",
+    "6球": "18.50",
+    "7球": "27.00",
+    "0球": "14.50",
+    "1球": "5.60",
+    "2球": "3.70"
   },
   "had": {
-    "胜": "1.41",
-    "平": "4.10",
-    "负": "5.66"
+    "胜": "1.42",
+    "平": "3.95",
+    "负": "5.80"
   },
   "ttg": {
-    "3球": "3.50",
-    "4球": "4.70",
-    "5球": "8.00",
-    "6球": "13.50",
-    "7球": "19.00",
-    "0球": "16.00",
-    "1球": "5.70",
-    "2球": "3.75"
+    "3球": "3.20",
+    "4球": "4.50",
+    "5球": "9.05",
+    "6球": "18.50",
+    "7球": "27.00",
+    "0球": "14.50",
+    "1球": "5.60",
+    "2球": "3.70"
   },
   "hafu": {
-    "负负": "10.50",
-    "平平": "6.80",
-    "胜胜": "1.95",
-    "负平": "18.00",
-    "平胜": "4.10",
-    "负胜": "21.00",
-    "胜负": "45.00",
-    "胜平": "18.00",
-    "平负": "13.50"
+    "负负": "10.00",
+    "平平": "6.25",
+    "胜胜": "2.10",
+    "负平": "17.00",
+    "平胜": "3.90",
+    "负胜": "23.00",
+    "胜负": "49.00",
+    "胜平": "17.00",
+    "平负": "12.50"
   },
   "hhad": {
     "让球": "-1",
-    "让胜": "2.30",
-    "让平": "3.45",
-    "让负": "2.47"
+    "让胜": "2.42",
+    "让平": "3.23",
+    "让负": "2.46"
   },
   "preview": {
     "feature": {
@@ -314,14 +314,76 @@
     },
     "injury": {
       "away": {
-        "injuriesAndSuspensionsList": [],
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 4,
+            "injuryFlag": 1,
+            "personId": 619537,
+            "personName": "阿卜杜勒萨米德",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "99"
+          },
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 878661,
+            "personName": "E. Pereira da Silva",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 0,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "41"
+          }
+        ],
         "sportteryTeamId": 186,
         "teamId": 894,
         "teamShortName": "尼斯",
         "uniformTeamId": 276
       },
       "home": {
-        "injuriesAndSuspensionsList": [],
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 1,
+            "injuryFlag": 1,
+            "personId": 13672,
+            "personName": "R. Gurtner",
+            "playerPositionCode": "Goalkeeper",
+            "playerPositionDesc": "守门员",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "1"
+          },
+          {
+            "appearanceCnt": 3,
+            "injuryFlag": 1,
+            "personId": 651894,
+            "personName": "S. Baidoo",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "6"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 817950,
+            "personName": "K. Antonio",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "32"
+          }
+        ],
         "sportteryTeamId": 179,
         "teamId": 892,
         "teamShortName": "朗斯",
@@ -773,19 +835,115 @@
       "uniformMatchId": 2392668
     }
   },
-  "ttg_change": {},
-  "hafu_change": {},
-  "had_change": {},
-  "hhad_change": {},
+  "ttg_change": {
+    "4球": {
+      "count": 5,
+      "change_pct": -4.3
+    },
+    "1球": {
+      "count": 4,
+      "change_pct": -1.8
+    },
+    "0球": {
+      "count": 3,
+      "change_pct": -9.4
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": -1.3
+    },
+    "6球": {
+      "count": 4,
+      "change_pct": 37.0
+    },
+    "7球": {
+      "count": 4,
+      "change_pct": 42.1
+    },
+    "5球": {
+      "count": 4,
+      "change_pct": 13.1
+    },
+    "3球": {
+      "count": 2,
+      "change_pct": -8.6
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 1,
+      "change_pct": -8.1
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 8.9
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": -5.6
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": -5.6
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 7.7
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -4.8
+    },
+    "平胜": {
+      "count": 1,
+      "change_pct": -4.9
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -7.4
+    },
+    "负胜": {
+      "count": 1,
+      "change_pct": 9.5
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 8,
+      "change_pct": -3.7
+    },
+    "负": {
+      "count": 9,
+      "change_pct": 2.5
+    },
+    "胜": {
+      "count": 7,
+      "change_pct": 0.7
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 4,
+      "change_pct": -6.4
+    },
+    "让负": {
+      "count": 6,
+      "change_pct": -0.4
+    },
+    "让胜": {
+      "count": 6,
+      "change_pct": 5.2
+    }
+  },
   "exclusion_list": [
     {
       "goal": "2球",
-      "ttg_odds": "3.75",
-      "ttg_special": true,
+      "ttg_odds": "3.70",
+      "ttg_special": false,
       "scores": [
         {
           "score": "02:00",
-          "odds": "7.50",
+          "odds": "7.00",
           "special": false
         },
         {
@@ -795,12 +953,12 @@
         },
         {
           "score": "01:01",
-          "odds": "7.50",
-          "special": false
+          "odds": "6.75",
+          "special": true
         }
       ],
-      "level": "普通排除",
-      "reason": "进球数赔率(3.75)含特殊尾数，排除该进球数及其所有比分"
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.70（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
     }
   ]
 }

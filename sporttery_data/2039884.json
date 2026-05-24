@@ -1,6 +1,6 @@
 {
   "match_id": "2039884",
-  "fetch_time": "2026-05-21 21:33:13",
+  "fetch_time": "2026-05-22 21:27:28",
   "match_info": {
     "home_team": "佛罗伦萨",
     "away_team": "亚特兰大",
@@ -16,76 +16,76 @@
     "league_abbr": "意甲"
   },
   "score_odds": {
-    "05:00": "300.0",
+    "05:00": "200.0",
     "01:00": "11.50",
     "05:02": "200.0",
-    "05:01": "175.0",
+    "05:01": "100.0",
     "02:04": "50.00",
     "02:05": "150.0",
-    "02:02": "11.00",
-    "02:03": "18.00",
-    "02:00": "16.00",
+    "02:02": "10.00",
+    "02:03": "19.00",
+    "02:00": "14.50",
     "02:01": "8.50",
-    "03:03": "36.00",
+    "03:03": "35.00",
     "03:01": "20.00",
     "03:02": "20.00",
     "03:00": "30.00",
-    "00:01": "10.50",
-    "00:00": "18.00",
-    "00:03": "21.00",
-    "00:02": "12.00",
+    "00:01": "11.00",
+    "00:00": "16.00",
+    "00:03": "26.00",
+    "00:02": "13.50",
     "00:05": "150.0",
-    "00:04": "50.00",
+    "00:04": "65.00",
     "04:02": "60.00",
-    "04:01": "50.00",
-    "04:00": "90.00",
+    "04:01": "40.00",
+    "04:00": "80.00",
     "01:02": "8.00",
-    "01:01": "6.70",
-    "01:04": "30.00",
-    "01:03": "14.00",
+    "01:01": "6.20",
+    "01:04": "32.00",
+    "01:03": "19.00",
     "01:05": "90.00"
   },
   "total_goals": {
-    "3球": "3.50",
-    "4球": "4.70",
-    "5球": "7.25",
-    "6球": "12.00",
-    "7球": "17.00",
-    "0球": "18.00",
-    "1球": "6.00",
-    "2球": "3.95"
+    "3球": "3.35",
+    "4球": "4.85",
+    "5球": "8.00",
+    "6球": "14.00",
+    "7球": "20.00",
+    "0球": "16.00",
+    "1球": "6.15",
+    "2球": "3.60"
   },
   "had": {
-    "胜": "2.68",
-    "平": "3.60",
-    "负": "2.09"
+    "胜": "2.60",
+    "平": "2.97",
+    "负": "2.45"
   },
   "ttg": {
-    "3球": "3.50",
-    "4球": "4.70",
-    "5球": "7.25",
-    "6球": "12.00",
-    "7球": "17.00",
-    "0球": "18.00",
-    "1球": "6.00",
-    "2球": "3.95"
+    "3球": "3.35",
+    "4球": "4.85",
+    "5球": "8.00",
+    "6球": "14.00",
+    "7球": "20.00",
+    "0球": "16.00",
+    "1球": "6.15",
+    "2球": "3.60"
   },
   "hafu": {
-    "负负": "3.55",
-    "平平": "5.80",
-    "胜胜": "4.30",
+    "负负": "4.10",
+    "平平": "5.00",
+    "胜胜": "4.40",
     "负平": "13.00",
-    "平胜": "6.50",
-    "负胜": "23.00",
-    "胜负": "20.00",
+    "平胜": "5.50",
+    "负胜": "33.00",
+    "胜负": "31.00",
     "胜平": "13.00",
-    "平负": "6.00"
+    "平负": "5.40"
   },
   "hhad": {
     "让球": "+1",
-    "让胜": "1.55",
-    "让平": "4.00",
-    "让负": "4.27"
+    "让胜": "1.41",
+    "让平": "4.50",
+    "让负": "5.05"
   },
   "preview": {
     "feature": {
@@ -314,7 +314,32 @@
     },
     "injury": {
       "away": {
-        "injuriesAndSuspensionsList": [],
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 19,
+            "injuryFlag": 1,
+            "personId": 591862,
+            "personName": "K·奥迪隆",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 10,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "3"
+          },
+          {
+            "appearanceCnt": 23,
+            "injuryFlag": 1,
+            "personId": 640979,
+            "personName": "L. Bernasconi",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 6,
+            "suspensionFlag": 0,
+            "uniformNo": "47"
+          }
+        ],
         "sportteryTeamId": 117,
         "teamId": 1255,
         "teamShortName": "亚特兰大",
@@ -333,6 +358,42 @@
             "substituteMatchCnt": 5,
             "suspensionFlag": 1,
             "uniformNo": "6"
+          },
+          {
+            "appearanceCnt": 26,
+            "injuryFlag": 1,
+            "personId": 429830,
+            "personName": "M. Kean",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 23,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          },
+          {
+            "appearanceCnt": 2,
+            "injuryFlag": 1,
+            "personId": 459567,
+            "personName": "T.兰普蒂",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 1,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "48"
+          },
+          {
+            "appearanceCnt": 23,
+            "injuryFlag": 1,
+            "personId": 624239,
+            "personName": "F. Parisi",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 18,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "65"
           }
         ],
         "sportteryTeamId": 122,
@@ -759,7 +820,7 @@
             "goalAvgCnt": "0.3",
             "goalCnt": 8,
             "goalProbability": "19%",
-            "injuryFlag": 0,
+            "injuryFlag": 1,
             "personId": 429830,
             "personName": "M. Kean",
             "playerPositionCode": "Forward",
@@ -819,49 +880,125 @@
       "uniformMatchId": 2392666
     }
   },
-  "ttg_change": {},
-  "hafu_change": {},
-  "had_change": {},
-  "hhad_change": {},
+  "ttg_change": {
+    "4球": {
+      "count": 1,
+      "change_pct": 3.2
+    },
+    "1球": {
+      "count": 2,
+      "change_pct": 2.5
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -11.1
+    },
+    "2球": {
+      "count": 3,
+      "change_pct": -8.9
+    },
+    "6球": {
+      "count": 3,
+      "change_pct": 16.7
+    },
+    "7球": {
+      "count": 2,
+      "change_pct": 17.6
+    },
+    "5球": {
+      "count": 3,
+      "change_pct": 10.3
+    },
+    "3球": {
+      "count": 1,
+      "change_pct": -4.3
+    }
+  },
+  "hafu_change": {
+    "平平": {
+      "count": 5,
+      "change_pct": -13.8
+    },
+    "胜负": {
+      "count": 5,
+      "change_pct": 55.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 5,
+      "change_pct": 2.3
+    },
+    "负负": {
+      "count": 4,
+      "change_pct": 15.5
+    },
+    "平胜": {
+      "count": 5,
+      "change_pct": -15.4
+    },
+    "平负": {
+      "count": 6,
+      "change_pct": -10.0
+    },
+    "负胜": {
+      "count": 5,
+      "change_pct": 43.5
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 7,
+      "change_pct": -17.5
+    },
+    "负": {
+      "count": 6,
+      "change_pct": 17.2
+    },
+    "胜": {
+      "count": 6,
+      "change_pct": -3.0
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 5,
+      "change_pct": 12.5
+    },
+    "让负": {
+      "count": 5,
+      "change_pct": 18.3
+    },
+    "让胜": {
+      "count": 6,
+      "change_pct": -9.0
+    }
+  },
   "exclusion_list": [
     {
-      "goal": "5球",
-      "ttg_odds": "7.25",
+      "goal": "1球",
+      "ttg_odds": "6.15",
       "ttg_special": true,
       "scores": [
         {
-          "score": "05:00",
-          "odds": "300.0",
+          "score": "01:00",
+          "odds": "11.50",
           "special": false
         },
         {
-          "score": "02:03",
-          "odds": "18.00",
-          "special": false
-        },
-        {
-          "score": "03:02",
-          "odds": "20.00",
-          "special": false
-        },
-        {
-          "score": "00:05",
-          "odds": "150.0",
-          "special": false
-        },
-        {
-          "score": "04:01",
-          "odds": "50.00",
-          "special": false
-        },
-        {
-          "score": "01:04",
-          "odds": "30.00",
+          "score": "00:01",
+          "odds": "11.00",
           "special": false
         }
       ],
       "level": "普通排除",
-      "reason": "进球数赔率(7.25)含特殊尾数，排除该进球数及其所有比分"
+      "reason": "进球数赔率(6.15)含特殊尾数，排除该进球数及其所有比分"
     }
   ]
 }

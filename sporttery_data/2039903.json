@@ -1,0 +1,969 @@
+{
+  "match_id": "2039903",
+  "fetch_time": "2026-05-23 21:04:43",
+  "match_info": {
+    "home_team": "塞伊奈约基",
+    "away_team": "AC奥卢",
+    "league": "芬兰超级联赛",
+    "time": "2026-05-23 22:00",
+    "match_num_str": "周六009",
+    "match_week": "周六",
+    "match_date": "2026-05-23",
+    "match_time": "22:00:00",
+    "match_status": "Selling",
+    "home_rank": "[芬超9]",
+    "away_rank": "[芬超3]",
+    "league_abbr": "芬超"
+  },
+  "score_odds": {
+    "05:00": "175.0",
+    "01:00": "9.50",
+    "05:02": "175.0",
+    "05:01": "120.0",
+    "02:04": "65.00",
+    "02:05": "175.0",
+    "02:02": "11.00",
+    "02:03": "22.00",
+    "02:00": "13.50",
+    "02:01": "8.00",
+    "03:03": "40.00",
+    "03:01": "18.00",
+    "03:02": "22.00",
+    "03:00": "26.00",
+    "00:01": "9.50",
+    "00:00": "14.00",
+    "00:03": "26.00",
+    "00:02": "13.50",
+    "00:05": "175.0",
+    "00:04": "75.00",
+    "04:02": "65.00",
+    "04:01": "41.00",
+    "04:00": "75.00",
+    "01:02": "8.00",
+    "01:01": "6.50",
+    "01:04": "41.00",
+    "01:03": "18.00",
+    "01:05": "120.0"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "5.10",
+    "5球": "8.75",
+    "6球": "19.00",
+    "7球": "28.00",
+    "0球": "14.00",
+    "1球": "5.25",
+    "2球": "3.35"
+  },
+  "had": {
+    "胜": "2.45",
+    "平": "3.20",
+    "负": "2.45"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "5.10",
+    "5球": "8.75",
+    "6球": "19.00",
+    "7球": "28.00",
+    "0球": "14.00",
+    "1球": "5.25",
+    "2球": "3.35"
+  },
+  "hafu": {
+    "负负": "3.95",
+    "平平": "5.85",
+    "胜胜": "3.95",
+    "负平": "13.50",
+    "平胜": "5.80",
+    "负胜": "24.00",
+    "胜负": "24.00",
+    "胜平": "13.50",
+    "平负": "5.80"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "5.75",
+    "让平": "4.15",
+    "让负": "1.40"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "AC奥卢",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 0,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "60",
+        "awayWinGoalMatchCnt": 6,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 1,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "53",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 2,
+        "homeScoreRatio": "53",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.7",
+        "awayGoalAvgCntRatio": "44.7",
+        "homeGoalAvgCnt": "2.1",
+        "homeGoalAvgCntRatio": "55.3",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "塞伊奈",
+      "last": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "40",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "50",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.1",
+        "awayLossGoalAvgCntRatio": "47.8",
+        "homeLossGoalAvgCnt": "1.2",
+        "homeLossGoalAvgCntRatio": "52.2",
+        "totalLegCnt": 10
+      },
+      "matchId": 2472818,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "37",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 1040074,
+      "sportteryHomeTeamId": 2348,
+      "sportteryMatchId": 2039903,
+      "uniformAwayTeamId": 57199,
+      "uniformHomeTeamId": 1535
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 10247,
+          "awayTeamShortName": "塞伊奈",
+          "fullCourtGoal": "3:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "2:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 824,
+          "homeTeamShortName": "AC奥卢",
+          "matchDate": "2026-01-31",
+          "matchId": 2469975,
+          "seasonId": 14330,
+          "sportteryAwayTeamId": 2348,
+          "sportteryHomeTeamId": 1040074,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 3,
+          "tournamentId": 1695,
+          "tournamentShortName": "联赛杯",
+          "uniformAwayTeamId": 1535,
+          "uniformHomeTeamId": 57199,
+          "uniformLeagueId": 351,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 10247,
+          "awayTeamShortName": "塞伊奈",
+          "fullCourtGoal": "2:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 824,
+          "homeTeamShortName": "AC奥卢",
+          "matchDate": "2025-06-24",
+          "matchId": 2344311,
+          "seasonId": 12942,
+          "sportteryAwayTeamId": 2348,
+          "sportteryHomeTeamId": 1040074,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 739,
+          "tournamentShortName": "芬兰杯",
+          "uniformAwayTeamId": 1535,
+          "uniformHomeTeamId": 57199,
+          "uniformLeagueId": 1843,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 10247,
+          "awayTeamShortName": "塞伊奈",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 824,
+          "homeTeamShortName": "AC奥卢",
+          "matchDate": "2025-05-31",
+          "matchId": 2289155,
+          "seasonId": 12872,
+          "sportteryAwayTeamId": 2348,
+          "sportteryHomeTeamId": 1040074,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 1535,
+          "uniformHomeTeamId": 57199,
+          "uniformLeagueId": 1073,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 824,
+          "awayTeamShortName": "AC奥卢",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 10247,
+          "homeTeamShortName": "塞伊奈",
+          "matchDate": "2025-04-24",
+          "matchId": 2289184,
+          "seasonId": 12872,
+          "sportteryAwayTeamId": 1040074,
+          "sportteryHomeTeamId": 2348,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 57199,
+          "uniformHomeTeamId": 1535,
+          "uniformLeagueId": 1073,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 824,
+          "awayTeamShortName": "AC奥卢",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 10247,
+          "homeTeamShortName": "塞伊奈",
+          "matchDate": "2025-02-27",
+          "matchId": 2269427,
+          "seasonId": 12747,
+          "sportteryAwayTeamId": 1040074,
+          "sportteryHomeTeamId": 2348,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 1695,
+          "tournamentShortName": "联赛杯",
+          "uniformAwayTeamId": 57199,
+          "uniformHomeTeamId": 1535,
+          "uniformLeagueId": 351,
+          "winningTeam": "draw"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "塞伊奈",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 1040074,
+        "teamId": 824,
+        "teamShortName": "AC奥卢",
+        "uniformTeamId": 57199
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 2348,
+        "teamId": 10247,
+        "teamShortName": "塞伊奈",
+        "uniformTeamId": 1535
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 591,
+            "awayTeamShortName": "TPS图尔",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1040074,
+            "homeTeamShortName": "AC奥卢",
+            "matchDate": "2026-05-17",
+            "matchId": 2472827,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039774,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57393,
+            "uniformHomeTeamId": 57199,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 1040074,
+            "awayTeamShortName": "AC奥卢",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 1040076,
+            "homeTeamShortName": "坦山猫",
+            "matchDate": "2026-05-08",
+            "matchId": 2472837,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039574,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57199,
+            "uniformHomeTeamId": 57200,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 586,
+            "awayTeamShortName": "库奥皮奥",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1040074,
+            "homeTeamShortName": "AC奥卢",
+            "matchDate": "2026-05-03",
+            "matchId": 2472840,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039466,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 166,
+            "uniformHomeTeamId": 57199,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1040074,
+            "awayTeamShortName": "AC奥卢",
+            "fullCourtGoal": "2:1",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 592,
+            "homeTeamShortName": "拉赫蒂",
+            "matchDate": "2026-04-25",
+            "matchId": 2472847,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57199,
+            "uniformHomeTeamId": 1696,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 1040074,
+            "awayTeamShortName": "AC奥卢",
+            "fullCourtGoal": "3:2",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 586,
+            "homeTeamShortName": "库奥皮奥",
+            "matchDate": "2026-04-22",
+            "matchId": 2472851,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039252,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57199,
+            "uniformHomeTeamId": 166,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 0,
+          "drawProbability": "0%",
+          "goalCnt": 6,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 3,
+          "lossProbability": "60%",
+          "netGoal": 0,
+          "sportteryTeamId": 0,
+          "teamId": 1040074,
+          "teamShortName": "AC奥卢",
+          "totalLegCnt": 5,
+          "uniformTeamId": 57199,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 588,
+            "awayTeamShortName": "国际图尔",
+            "fullCourtGoal": "1:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2348,
+            "homeTeamShortName": "塞伊奈",
+            "matchDate": "2026-05-16",
+            "matchId": 2472829,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 584,
+            "uniformHomeTeamId": 1535,
+            "uniformLeagueId": 1073,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 0,
+            "awayTeamShortName": "PEPO",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "2:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 2348,
+            "homeTeamShortName": "塞伊奈",
+            "matchDate": "2026-05-12",
+            "matchId": 2521394,
+            "seasonId": 14583,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 739,
+            "tournamentShortName": "芬兰杯",
+            "uniformAwayTeamId": 7832,
+            "uniformHomeTeamId": 1535,
+            "uniformLeagueId": 1843,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2348,
+            "awayTeamShortName": "塞伊奈",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 586,
+            "homeTeamShortName": "库奥皮奥",
+            "matchDate": "2026-05-09",
+            "matchId": 2472835,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039579,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1535,
+            "uniformHomeTeamId": 166,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1040076,
+            "awayTeamShortName": "坦山猫",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 2348,
+            "homeTeamShortName": "塞伊奈",
+            "matchDate": "2026-05-02",
+            "matchId": 2472843,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57200,
+            "uniformHomeTeamId": 1535,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "6",
+            "awayTeamId": 2348,
+            "awayTeamShortName": "塞伊奈",
+            "fullCourtGoal": "1:6",
+            "halfTimeGoal": "1:4",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 0,
+            "homeTeamShortName": "VPS II",
+            "matchDate": "2026-04-28",
+            "matchId": 2519199,
+            "seasonId": 14583,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 739,
+            "tournamentShortName": "芬兰杯",
+            "uniformAwayTeamId": 1535,
+            "uniformHomeTeamId": 2359,
+            "uniformLeagueId": 1843,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 11,
+          "lossGoalCnt": 5,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 6,
+          "sportteryTeamId": 0,
+          "teamId": 2348,
+          "teamShortName": "塞伊奈",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1535,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48275,
+      "seasonId": 14374,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 3,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "6",
+          "ranking": "9",
+          "sportteryTeamId": 2348,
+          "teamId": 0,
+          "teamShortName": "塞伊奈",
+          "totalLegCnt": 7,
+          "uniformTeamId": 1535,
+          "winGoalMatchCnt": 1,
+          "winProbability": "14%"
+        },
+        {
+          "drawMatchCnt": 0,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "15",
+          "ranking": "3",
+          "sportteryTeamId": 1040074,
+          "teamId": 0,
+          "teamShortName": "AC奥卢",
+          "totalLegCnt": 8,
+          "uniformTeamId": 57199,
+          "winGoalMatchCnt": 5,
+          "winProbability": "63%"
+        }
+      ],
+      "tournamentId": 130,
+      "tournamentShortName": "芬超",
+      "uniformLeagueId": 1073,
+      "uniformMatchId": 2392805
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "14%",
+            "goalAvgCnt": "0.8",
+            "goalCnt": 6,
+            "goalProbability": "46%",
+            "injuryFlag": 0,
+            "personId": 343631,
+            "personName": "R. Karjalainen",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 3,
+            "goalProbability": "23%",
+            "injuryFlag": 0,
+            "personId": 791130,
+            "personName": "J. Körkkö",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "26"
+          },
+          {
+            "appearanceCnt": 8,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 2,
+            "assistProbability": "29%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "8%",
+            "injuryFlag": 0,
+            "personId": 725754,
+            "personName": "E. Kallio",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "27"
+          }
+        ],
+        "sportteryTeamId": 1040074,
+        "teamId": 824,
+        "teamShortName": "AC奥卢",
+        "uniformTeamId": 57199
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "33%",
+            "injuryFlag": 0,
+            "personId": 481241,
+            "personName": "J. Streng",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 2,
+            "assistProbability": "40%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 472174,
+            "personName": "E. Mastokangas",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 3,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          },
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "20%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "17%",
+            "injuryFlag": 0,
+            "personId": 634742,
+            "personName": "K. Paananen",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          }
+        ],
+        "sportteryTeamId": 2348,
+        "teamId": 10247,
+        "teamShortName": "塞伊奈",
+        "uniformTeamId": 1535
+      },
+      "seasonId": 14374,
+      "seasonName": "2026",
+      "tournamentId": 130,
+      "tournamentShortName": "芬超",
+      "uniformLeagueId": 1073,
+      "uniformMatchId": 2392805
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": 5.0
+    },
+    "7球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "6球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "4球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "5球": {
+      "count": 0,
+      "change_pct": 0.0
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "负负": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "负平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜胜": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "胜平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "负胜": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 2,
+      "change_pct": 0.0
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": 0.0
+    },
+    "负": {
+      "count": 2,
+      "change_pct": 0.0
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 1,
+      "change_pct": 1.2
+    },
+    "让胜": {
+      "count": 1,
+      "change_pct": 4.5
+    },
+    "让负": {
+      "count": 1,
+      "change_pct": -1.4
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "1球",
+      "ttg_odds": "5.25",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "9.50",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "9.50",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(5.25)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "5球",
+      "ttg_odds": "8.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "175.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "22.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "175.0",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "41.00",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "41.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(8.75)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ]
+}

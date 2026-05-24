@@ -1,0 +1,1043 @@
+{
+  "match_id": "2039907",
+  "fetch_time": "2026-05-23 21:04:52",
+  "match_info": {
+    "home_team": "博洛尼亚",
+    "away_team": "国际米兰",
+    "league": "意大利甲级联赛",
+    "time": "2026-05-24 00:00",
+    "match_num_str": "周六013",
+    "match_week": "周六",
+    "match_date": "2026-05-24",
+    "match_time": "00:00:00",
+    "match_status": "Selling",
+    "home_rank": "[意甲8]",
+    "away_rank": "[意甲1]",
+    "league_abbr": "意甲"
+  },
+  "score_odds": {
+    "05:00": "350.0",
+    "01:00": "13.00",
+    "05:02": "300.0",
+    "05:01": "200.0",
+    "02:04": "45.00",
+    "02:05": "125.0",
+    "02:02": "11.00",
+    "02:03": "18.00",
+    "02:00": "18.00",
+    "02:01": "9.50",
+    "03:03": "45.00",
+    "03:01": "22.00",
+    "03:02": "23.00",
+    "03:00": "42.00",
+    "00:01": "8.75",
+    "00:00": "17.00",
+    "00:03": "17.00",
+    "00:02": "10.50",
+    "00:05": "90.00",
+    "00:04": "45.00",
+    "04:02": "80.00",
+    "04:01": "65.00",
+    "04:00": "125.0",
+    "01:02": "7.50",
+    "01:01": "6.75",
+    "01:04": "28.00",
+    "01:03": "12.50",
+    "01:05": "80.00"
+  },
+  "total_goals": {
+    "3球": "3.40",
+    "4球": "4.70",
+    "5球": "7.75",
+    "6球": "13.50",
+    "7球": "20.00",
+    "0球": "17.00",
+    "1球": "5.70",
+    "2球": "3.85"
+  },
+  "had": {
+    "胜": "3.18",
+    "平": "3.50",
+    "负": "1.89"
+  },
+  "ttg": {
+    "3球": "3.40",
+    "4球": "4.70",
+    "5球": "7.75",
+    "6球": "13.50",
+    "7球": "20.00",
+    "0球": "17.00",
+    "1球": "5.70",
+    "2球": "3.85"
+  },
+  "hafu": {
+    "负负": "3.05",
+    "平平": "5.40",
+    "胜胜": "5.25",
+    "负平": "13.50",
+    "平胜": "7.50",
+    "负胜": "31.00",
+    "胜负": "22.00",
+    "胜平": "13.50",
+    "平负": "5.25"
+  },
+  "hhad": {
+    "让球": "+1",
+    "让胜": "1.69",
+    "让平": "3.78",
+    "让负": "3.68"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "国际米兰",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 0,
+        "awayScoreRatio": "80",
+        "awayWinGoalMatchCnt": 7,
+        "homeDrawMatchCnt": 1,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 4,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 2,
+        "awayScoreRatio": "60",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 4,
+        "homeScoreRatio": "40",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "2.6",
+        "awayGoalAvgCntRatio": "74.3",
+        "homeGoalAvgCnt": "0.9",
+        "homeGoalAvgCntRatio": "25.7",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "博洛尼亚",
+      "last": {
+        "awayDrawMatchCnt": 4,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "43",
+        "awayWinGoalMatchCnt": 3,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "43",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.1",
+        "awayLossGoalAvgCntRatio": "40.7",
+        "homeLossGoalAvgCnt": "1.6",
+        "homeLossGoalAvgCntRatio": "59.3",
+        "totalLegCnt": 10
+      },
+      "matchId": 2340896,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 5,
+        "homeScoreRatio": "37",
+        "homeWinGoalMatchCnt": 3,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 123,
+      "sportteryHomeTeamId": 118,
+      "sportteryMatchId": 2039907,
+      "uniformAwayTeamId": 122,
+      "uniformHomeTeamId": 124
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1249,
+          "awayTeamShortName": "博洛尼亚",
+          "fullCourtGoal": "3:1",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "1:0",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 1244,
+          "homeTeamShortName": "国际米兰",
+          "matchDate": "2026-01-05",
+          "matchId": 2341058,
+          "seasonId": 13290,
+          "sportteryAwayTeamId": 118,
+          "sportteryHomeTeamId": 123,
+          "sportteryMatchId": 2036665,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 124,
+          "uniformHomeTeamId": 122,
+          "uniformLeagueId": 73,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1244,
+          "awayTeamShortName": "国际米兰",
+          "fullCourtGoal": "1:1",
+          "gmLeagueId": 41,
+          "halfTimeGoal": "1:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1249,
+          "homeTeamShortName": "博洛尼亚",
+          "matchDate": "2025-12-20",
+          "matchId": 2448269,
+          "seasonId": 14001,
+          "sportteryAwayTeamId": 123,
+          "sportteryHomeTeamId": 118,
+          "sportteryMatchId": 2036156,
+          "sportteryTournamentId": 41,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 777,
+          "tournamentShortName": "意超杯",
+          "uniformAwayTeamId": 122,
+          "uniformHomeTeamId": 124,
+          "uniformLeagueId": 50,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 1244,
+          "awayTeamShortName": "国际米兰",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 1249,
+          "homeTeamShortName": "博洛尼亚",
+          "matchDate": "2025-04-21",
+          "matchId": 2144639,
+          "seasonId": 11962,
+          "sportteryAwayTeamId": 123,
+          "sportteryHomeTeamId": 118,
+          "sportteryMatchId": 2031291,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 122,
+          "uniformHomeTeamId": 124,
+          "uniformLeagueId": 73,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 1249,
+          "awayTeamShortName": "博洛尼亚",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "2:1",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 1244,
+          "homeTeamShortName": "国际米兰",
+          "matchDate": "2025-01-16",
+          "matchId": 2144778,
+          "seasonId": 11962,
+          "sportteryAwayTeamId": 118,
+          "sportteryHomeTeamId": 123,
+          "sportteryMatchId": 1029454,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 124,
+          "uniformHomeTeamId": 122,
+          "uniformLeagueId": 73,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 1244,
+          "awayTeamShortName": "国际米兰",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 40,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "away",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 1249,
+          "homeTeamShortName": "博洛尼亚",
+          "matchDate": "2024-03-10",
+          "matchId": 2011592,
+          "seasonId": 10955,
+          "sportteryAwayTeamId": 123,
+          "sportteryHomeTeamId": 118,
+          "sportteryMatchId": 1023992,
+          "sportteryTournamentId": 40,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 79,
+          "tournamentShortName": "意甲",
+          "uniformAwayTeamId": 122,
+          "uniformHomeTeamId": 124,
+          "uniformLeagueId": 73,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 2,
+        "drawProbability": "40%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 2,
+        "lossProbability": "40%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "博洛尼亚",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 1,
+        "winProbability": "20%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 33,
+            "injuryFlag": 1,
+            "personId": 329229,
+            "personName": "阿坎吉",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 31,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "25"
+          }
+        ],
+        "sportteryTeamId": 123,
+        "teamId": 1244,
+        "teamShortName": "国际米兰",
+        "uniformTeamId": 122
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 12,
+            "injuryFlag": 1,
+            "personId": 470002,
+            "personName": "N. Casale",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 8,
+            "substituteMatchCnt": 4,
+            "suspensionFlag": 0,
+            "uniformNo": "16"
+          },
+          {
+            "appearanceCnt": 28,
+            "injuryFlag": 1,
+            "personId": 608172,
+            "personName": "N. Cambiaghi",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 17,
+            "substituteMatchCnt": 11,
+            "suspensionFlag": 0,
+            "uniformNo": "28"
+          },
+          {
+            "appearanceCnt": 19,
+            "injuryFlag": 1,
+            "personId": 612303,
+            "personName": "维季克",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 14,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "41"
+          }
+        ],
+        "sportteryTeamId": 118,
+        "teamId": 1249,
+        "teamShortName": "博洛尼亚",
+        "uniformTeamId": 124
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1639,
+            "awayTeamShortName": "维罗纳",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 123,
+            "homeTeamShortName": "国际米兰",
+            "matchDate": "2026-05-17",
+            "matchId": 2340999,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 533,
+            "uniformHomeTeamId": 122,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 123,
+            "awayTeamShortName": "国际米兰",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 125,
+            "homeTeamShortName": "拉齐奥",
+            "matchDate": "2026-05-14",
+            "matchId": 2519595,
+            "seasonId": 13392,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039706,
+            "sportteryTournamentId": 38,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 734,
+            "tournamentShortName": "意大利杯",
+            "uniformAwayTeamId": 122,
+            "uniformHomeTeamId": 419,
+            "uniformLeagueId": 26,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 123,
+            "awayTeamShortName": "国际米兰",
+            "fullCourtGoal": "0:3",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 125,
+            "homeTeamShortName": "拉齐奥",
+            "matchDate": "2026-05-10",
+            "matchId": 2341002,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039615,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 122,
+            "uniformHomeTeamId": 419,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 130,
+            "awayTeamShortName": "帕尔马",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 123,
+            "homeTeamShortName": "国际米兰",
+            "matchDate": "2026-05-04",
+            "matchId": 2341005,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039502,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 418,
+            "uniformHomeTeamId": 122,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 123,
+            "awayTeamShortName": "国际米兰",
+            "fullCourtGoal": "2:2",
+            "halfTimeGoal": "0:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 136,
+            "homeTeamShortName": "都灵",
+            "matchDate": "2026-04-27",
+            "matchId": 2341232,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039356,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 122,
+            "uniformHomeTeamId": 126,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 10,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 0,
+          "lossProbability": "0%",
+          "netGoal": 7,
+          "sportteryTeamId": 0,
+          "teamId": 123,
+          "teamShortName": "国际米兰",
+          "totalLegCnt": 5,
+          "uniformTeamId": 122,
+          "winGoalMatchCnt": 3,
+          "winProbability": "60%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 118,
+            "awayTeamShortName": "博洛尼亚",
+            "fullCourtGoal": "0:1",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 117,
+            "homeTeamShortName": "亚特兰大",
+            "matchDate": "2026-05-18",
+            "matchId": 2340899,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039798,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 124,
+            "uniformHomeTeamId": 200,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "3",
+            "awayTeamId": 118,
+            "awayTeamShortName": "博洛尼亚",
+            "fullCourtGoal": "2:3",
+            "halfTimeGoal": "1:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 744,
+            "homeTeamShortName": "那不勒斯",
+            "matchDate": "2026-05-12",
+            "matchId": 2341118,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039657,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 124,
+            "uniformHomeTeamId": 136,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 120,
+            "awayTeamShortName": "卡利亚里",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 118,
+            "homeTeamShortName": "博洛尼亚",
+            "matchDate": "2026-05-03",
+            "matchId": 2340904,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039480,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 123,
+            "uniformHomeTeamId": 124,
+            "uniformLeagueId": 73,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 132,
+            "awayTeamShortName": "罗马",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:2",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 118,
+            "homeTeamShortName": "博洛尼亚",
+            "matchDate": "2026-04-26",
+            "matchId": 2340907,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039326,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 541,
+            "uniformHomeTeamId": 124,
+            "uniformLeagueId": 73,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 118,
+            "awayTeamShortName": "博洛尼亚",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 124,
+            "homeTeamShortName": "尤文图斯",
+            "matchDate": "2026-04-20",
+            "matchId": 2341010,
+            "seasonId": 13290,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039203,
+            "sportteryTournamentId": 40,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 79,
+            "tournamentShortName": "意甲",
+            "uniformAwayTeamId": 124,
+            "uniformHomeTeamId": 293,
+            "uniformLeagueId": 73,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 1,
+          "drawProbability": "20%",
+          "goalCnt": 4,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 2,
+          "lossProbability": "40%",
+          "netGoal": -2,
+          "sportteryTeamId": 0,
+          "teamId": 118,
+          "teamShortName": "博洛尼亚",
+          "totalLegCnt": 5,
+          "uniformTeamId": 124,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 47781,
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tables": [
+        {
+          "drawMatchCnt": 7,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 14,
+          "phaseName": "",
+          "points": "55",
+          "ranking": "8",
+          "sportteryTeamId": 118,
+          "teamId": 0,
+          "teamShortName": "博洛尼亚",
+          "totalLegCnt": 37,
+          "uniformTeamId": 124,
+          "winGoalMatchCnt": 16,
+          "winProbability": "43%"
+        },
+        {
+          "drawMatchCnt": 5,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 5,
+          "phaseName": "",
+          "points": "86",
+          "ranking": "1",
+          "sportteryTeamId": 123,
+          "teamId": 0,
+          "teamShortName": "国际米兰",
+          "totalLegCnt": 37,
+          "uniformTeamId": 122,
+          "winGoalMatchCnt": 27,
+          "winProbability": "73%"
+        }
+      ],
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2392800
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 17,
+            "goalProbability": "21%",
+            "injuryFlag": 0,
+            "personId": 404462,
+            "personName": "劳塔罗",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 3,
+            "suspensionFlag": 0,
+            "uniformNo": "10"
+          },
+          {
+            "appearanceCnt": 29,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 6,
+            "assistProbability": "10%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 13,
+            "goalProbability": "16%",
+            "injuryFlag": 0,
+            "personId": 334250,
+            "personName": "图拉姆",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 24,
+            "substituteMatchCnt": 5,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 22,
+            "assistAvgCnt": "0.2",
+            "assistCnt": 4,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.4",
+            "goalCnt": 9,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 155410,
+            "personName": "H. Çalhanoğlu",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 20,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "20"
+          }
+        ],
+        "sportteryTeamId": 123,
+        "teamId": 1244,
+        "teamShortName": "国际米兰",
+        "uniformTeamId": 122
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 35,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 10,
+            "goalProbability": "21%",
+            "injuryFlag": 0,
+            "personId": 401959,
+            "personName": "R·奥索里尼",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 26,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "7"
+          },
+          {
+            "appearanceCnt": 34,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 2,
+            "assistProbability": "6%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 7,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 672918,
+            "personName": "S. Castro",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 25,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "9"
+          },
+          {
+            "appearanceCnt": 25,
+            "assistAvgCnt": "0",
+            "assistCnt": 1,
+            "assistProbability": "3%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 5,
+            "goalProbability": "11%",
+            "injuryFlag": 0,
+            "personId": 421643,
+            "personName": "奥戈尔德",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 16,
+            "substituteMatchCnt": 9,
+            "suspensionFlag": 0,
+            "uniformNo": "21"
+          }
+        ],
+        "sportteryTeamId": 118,
+        "teamId": 1249,
+        "teamShortName": "博洛尼亚",
+        "uniformTeamId": 124
+      },
+      "seasonId": 13290,
+      "seasonName": "2025/2026",
+      "tournamentId": 79,
+      "tournamentShortName": "意甲",
+      "uniformLeagueId": 73,
+      "uniformMatchId": 2392800
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 1,
+      "change_pct": -2.9
+    },
+    "0球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "1球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 11.1
+    },
+    "2球": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 3.8
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": -2.1
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 3.3
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 1,
+      "change_pct": 7.1
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": -4.7
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": 3.8
+    },
+    "胜胜": {
+      "count": 3,
+      "change_pct": 10.5
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": 3.8
+    },
+    "负胜": {
+      "count": 2,
+      "change_pct": 14.8
+    },
+    "平平": {
+      "count": 3,
+      "change_pct": -10.0
+    },
+    "胜负": {
+      "count": 1,
+      "change_pct": 4.8
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": -4.5
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 1,
+      "change_pct": -1.4
+    },
+    "胜": {
+      "count": 3,
+      "change_pct": 10.4
+    },
+    "负": {
+      "count": 3,
+      "change_pct": -5.5
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 2,
+      "change_pct": -3.1
+    },
+    "让胜": {
+      "count": 3,
+      "change_pct": 5.0
+    },
+    "让负": {
+      "count": 3,
+      "change_pct": -8.0
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "5球",
+      "ttg_odds": "7.75",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "05:00",
+          "odds": "350.0",
+          "special": false
+        },
+        {
+          "score": "02:03",
+          "odds": "18.00",
+          "special": false
+        },
+        {
+          "score": "03:02",
+          "odds": "23.00",
+          "special": false
+        },
+        {
+          "score": "00:05",
+          "odds": "90.00",
+          "special": false
+        },
+        {
+          "score": "04:01",
+          "odds": "65.00",
+          "special": false
+        },
+        {
+          "score": "01:04",
+          "odds": "28.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(7.75)含特殊尾数，排除该进球数及其所有比分"
+    },
+    {
+      "goal": "1球",
+      "ttg_odds": "5.70",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "01:00",
+          "odds": "13.00",
+          "special": false
+        },
+        {
+          "score": "00:01",
+          "odds": "8.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率5.70（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    },
+    {
+      "goal": "2球",
+      "ttg_odds": "3.85",
+      "ttg_special": false,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "18.00",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "10.50",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "6.75",
+          "special": true
+        }
+      ],
+      "level": "仅比分排除",
+      "reason": "进球数赔率3.85（普通），但对应比分中存在特殊尾数赔率，可优先排除特殊尾数比分"
+    }
+  ]
+}

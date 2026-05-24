@@ -1,0 +1,948 @@
+{
+  "match_id": "2039904",
+  "fetch_time": "2026-05-23 21:04:45",
+  "match_info": {
+    "home_team": "库奥皮奥",
+    "away_team": "拉赫蒂",
+    "league": "芬兰超级联赛",
+    "time": "2026-05-23 22:00",
+    "match_num_str": "周六010",
+    "match_week": "周六",
+    "match_date": "2026-05-23",
+    "match_time": "22:00:00",
+    "match_status": "Selling",
+    "home_rank": "[芬超2]",
+    "away_rank": "[芬超8]",
+    "league_abbr": "芬超"
+  },
+  "score_odds": {
+    "05:00": "70.00",
+    "01:00": "6.00",
+    "05:02": "120.0",
+    "05:01": "70.00",
+    "02:04": "200.0",
+    "02:05": "650.0",
+    "02:02": "17.00",
+    "02:03": "45.00",
+    "02:00": "6.70",
+    "02:01": "6.50",
+    "03:03": "80.00",
+    "03:01": "11.50",
+    "03:02": "23.00",
+    "03:00": "12.00",
+    "00:01": "12.00",
+    "00:00": "10.50",
+    "00:03": "100.0",
+    "00:02": "24.00",
+    "00:05": "750.0",
+    "00:04": "300.0",
+    "04:02": "60.00",
+    "04:01": "30.00",
+    "04:00": "28.00",
+    "01:02": "15.00",
+    "01:01": "7.00",
+    "01:04": "200.0",
+    "01:03": "42.00",
+    "01:05": "550.0"
+  },
+  "total_goals": {
+    "3球": "3.55",
+    "4球": "5.70",
+    "5球": "11.00",
+    "6球": "24.00",
+    "7球": "40.00",
+    "0球": "10.50",
+    "1球": "4.40",
+    "2球": "3.15"
+  },
+  "had": {
+    "胜": "1.49",
+    "平": "3.75",
+    "负": "5.25"
+  },
+  "ttg": {
+    "3球": "3.55",
+    "4球": "5.70",
+    "5球": "11.00",
+    "6球": "24.00",
+    "7球": "40.00",
+    "0球": "10.50",
+    "1球": "4.40",
+    "2球": "3.15"
+  },
+  "hafu": {
+    "负负": "9.00",
+    "平平": "6.05",
+    "胜胜": "2.20",
+    "负平": "17.00",
+    "平胜": "4.00",
+    "负胜": "23.00",
+    "胜负": "40.00",
+    "胜平": "17.00",
+    "平负": "11.50"
+  },
+  "hhad": {
+    "让球": "-1",
+    "让胜": "2.69",
+    "让平": "3.20",
+    "让负": "2.25"
+  },
+  "preview": {
+    "feature": {
+      "awayTeamId": 0,
+      "awayTeamShortName": "拉赫蒂",
+      "eachHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 3,
+        "awayScoreRatio": "57",
+        "awayWinGoalMatchCnt": 5,
+        "homeDrawMatchCnt": 4,
+        "homeLossGoalMatchCnt": 1,
+        "homeScoreRatio": "63",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "eachSameHomeAway": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 4,
+        "awayScoreRatio": "47",
+        "awayWinGoalMatchCnt": 4,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 3,
+        "homeScoreRatio": "57",
+        "homeWinGoalMatchCnt": 5,
+        "totalLegCnt": 10
+      },
+      "goalAvg": {
+        "awayGoalAvgCnt": "1.6",
+        "awayGoalAvgCntRatio": "51.6",
+        "homeGoalAvgCnt": "1.5",
+        "homeGoalAvgCntRatio": "48.4",
+        "totalLegCnt": 10
+      },
+      "homeTeamId": 0,
+      "homeTeamShortName": "库奥皮奥",
+      "last": {
+        "awayDrawMatchCnt": 2,
+        "awayLossGoalMatchCnt": 8,
+        "awayScoreRatio": "7",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 2,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "87",
+        "homeWinGoalMatchCnt": 8,
+        "totalLegCnt": 10
+      },
+      "lossGoalAvg": {
+        "awayLossGoalAvgCnt": "1.2",
+        "awayLossGoalAvgCntRatio": "60.0",
+        "homeLossGoalAvgCnt": "0.8",
+        "homeLossGoalAvgCntRatio": "40.0",
+        "totalLegCnt": 10
+      },
+      "matchId": 2472821,
+      "sameHomeAway": {
+        "awayDrawMatchCnt": 3,
+        "awayLossGoalMatchCnt": 7,
+        "awayScoreRatio": "10",
+        "awayWinGoalMatchCnt": 0,
+        "homeDrawMatchCnt": 3,
+        "homeLossGoalMatchCnt": 0,
+        "homeScoreRatio": "80",
+        "homeWinGoalMatchCnt": 7,
+        "totalLegCnt": 10
+      },
+      "sportteryAwayTeamId": 592,
+      "sportteryHomeTeamId": 586,
+      "sportteryMatchId": 2039904,
+      "uniformAwayTeamId": 1696,
+      "uniformHomeTeamId": 166
+    },
+    "history": {
+      "matchList": [
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 821,
+          "awayTeamShortName": "库奥皮奥",
+          "fullCourtGoal": "2:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "-:-",
+          "homeMatchResult": "draw",
+          "homeTeamFullCourtGoalCnt": "2",
+          "homeTeamId": 817,
+          "homeTeamShortName": "拉赫蒂",
+          "matchDate": "2025-03-01",
+          "matchId": 2303977,
+          "seasonId": 12808,
+          "sportteryAwayTeamId": 586,
+          "sportteryHomeTeamId": 592,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 4,
+          "tournamentId": 1014,
+          "tournamentShortName": "俱乐部赛",
+          "uniformAwayTeamId": 166,
+          "uniformHomeTeamId": 1696,
+          "uniformLeagueId": 719,
+          "winningTeam": "draw"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "0",
+          "awayTeamId": 817,
+          "awayTeamShortName": "拉赫蒂",
+          "fullCourtGoal": "1:0",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:0",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "1",
+          "homeTeamId": 821,
+          "homeTeamShortName": "库奥皮奥",
+          "matchDate": "2024-07-21",
+          "matchId": 2070443,
+          "seasonId": 11299,
+          "sportteryAwayTeamId": 592,
+          "sportteryHomeTeamId": 586,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 1696,
+          "uniformHomeTeamId": 166,
+          "uniformLeagueId": 1073,
+          "winningTeam": "home"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "1",
+          "awayTeamId": 821,
+          "awayTeamShortName": "库奥皮奥",
+          "fullCourtGoal": "0:1",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:1",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 817,
+          "homeTeamShortName": "拉赫蒂",
+          "matchDate": "2024-04-27",
+          "matchId": 2070502,
+          "seasonId": 11299,
+          "sportteryAwayTeamId": 586,
+          "sportteryHomeTeamId": 592,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 1,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 166,
+          "uniformHomeTeamId": 1696,
+          "uniformLeagueId": 1073,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "2",
+          "awayTeamId": 821,
+          "awayTeamShortName": "库奥皮奥",
+          "fullCourtGoal": "0:2",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "0:2",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "0",
+          "homeTeamId": 817,
+          "homeTeamShortName": "拉赫蒂",
+          "matchDate": "2024-03-16",
+          "matchId": 2094138,
+          "seasonId": 11105,
+          "sportteryAwayTeamId": 586,
+          "sportteryHomeTeamId": 592,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 2,
+          "tournamentId": 1695,
+          "tournamentShortName": "联赛杯",
+          "uniformAwayTeamId": 166,
+          "uniformHomeTeamId": 1696,
+          "uniformLeagueId": 351,
+          "winningTeam": "away"
+        },
+        {
+          "awayTeamFullCourtGoalCnt": "4",
+          "awayTeamId": 821,
+          "awayTeamShortName": "库奥皮奥",
+          "fullCourtGoal": "3:4",
+          "gmLeagueId": 0,
+          "halfTimeGoal": "1:2",
+          "homeMatchResult": "home",
+          "homeTeamFullCourtGoalCnt": "3",
+          "homeTeamId": 817,
+          "homeTeamShortName": "拉赫蒂",
+          "matchDate": "2023-07-02",
+          "matchId": 1894032,
+          "seasonId": 10311,
+          "sportteryAwayTeamId": 586,
+          "sportteryHomeTeamId": 592,
+          "sportteryMatchId": 0,
+          "sportteryTournamentId": 0,
+          "teamMatchResult": "",
+          "totalTeamFullCourtGoalCnt": 7,
+          "tournamentId": 130,
+          "tournamentShortName": "芬超",
+          "uniformAwayTeamId": 166,
+          "uniformHomeTeamId": 1696,
+          "uniformLeagueId": 1073,
+          "winningTeam": "away"
+        }
+      ],
+      "statistics": {
+        "drawMatchCnt": 1,
+        "drawProbability": "20%",
+        "goalCnt": 0,
+        "lossGoalCnt": 0,
+        "lossGoalMatchCnt": 0,
+        "lossProbability": "0%",
+        "netGoal": 0,
+        "sportteryTeamId": 0,
+        "teamId": 0,
+        "teamShortName": "库奥皮奥",
+        "totalLegCnt": 5,
+        "winGoalMatchCnt": 4,
+        "winProbability": "80%"
+      }
+    },
+    "injury": {
+      "away": {
+        "injuriesAndSuspensionsList": [],
+        "sportteryTeamId": 592,
+        "teamId": 817,
+        "teamShortName": "拉赫蒂",
+        "uniformTeamId": 1696
+      },
+      "home": {
+        "injuriesAndSuspensionsList": [
+          {
+            "appearanceCnt": 7,
+            "injuryFlag": 1,
+            "personId": 369345,
+            "personName": "布尔基",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 1,
+            "suspensionFlag": 0,
+            "uniformNo": "4"
+          }
+        ],
+        "sportteryTeamId": 586,
+        "teamId": 821,
+        "teamShortName": "库奥皮奥",
+        "uniformTeamId": 166
+      }
+    },
+    "recent": {
+      "away": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 1957,
+            "awayTeamShortName": "瓦萨",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 592,
+            "homeTeamShortName": "拉赫蒂",
+            "matchDate": "2026-05-18",
+            "matchId": 2472826,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039816,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1704,
+            "uniformHomeTeamId": 1696,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 0,
+            "awayTeamShortName": "MP",
+            "fullCourtGoal": "3:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 592,
+            "homeTeamShortName": "拉赫蒂",
+            "matchDate": "2026-05-13",
+            "matchId": 2521395,
+            "seasonId": 14583,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 739,
+            "tournamentShortName": "芬兰杯",
+            "uniformAwayTeamId": 21247,
+            "uniformHomeTeamId": 1696,
+            "uniformLeagueId": 1843,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 594,
+            "awayTeamShortName": "玛丽港",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 592,
+            "homeTeamShortName": "拉赫蒂",
+            "matchDate": "2026-05-10",
+            "matchId": 2472832,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 831,
+            "uniformHomeTeamId": 1696,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 592,
+            "awayTeamShortName": "拉赫蒂",
+            "fullCourtGoal": "1:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 297,
+            "homeTeamShortName": "赫尔辛基",
+            "matchDate": "2026-05-05",
+            "matchId": 2472839,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039508,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1696,
+            "uniformHomeTeamId": 1821,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "4",
+            "awayTeamId": 592,
+            "awayTeamShortName": "拉赫蒂",
+            "fullCourtGoal": "2:4",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 0,
+            "homeTeamShortName": "Union Plaani",
+            "matchDate": "2026-04-28",
+            "matchId": 2519179,
+            "seasonId": 14583,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 739,
+            "tournamentShortName": "芬兰杯",
+            "uniformAwayTeamId": 1696,
+            "uniformHomeTeamId": 24925,
+            "uniformLeagueId": 1843,
+            "winningTeam": ""
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 9,
+          "lossGoalCnt": 6,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 3,
+          "sportteryTeamId": 0,
+          "teamId": 592,
+          "teamShortName": "拉赫蒂",
+          "totalLegCnt": 5,
+          "uniformTeamId": 1696,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      },
+      "home": {
+        "matchList": [
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 597,
+            "awayTeamShortName": "雅罗",
+            "fullCourtGoal": "3:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "3",
+            "homeTeamId": 586,
+            "homeTeamShortName": "库奥皮奥",
+            "matchDate": "2026-05-21",
+            "matchId": 2472824,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039850,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 57198,
+            "uniformHomeTeamId": 166,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "1",
+            "awayTeamId": 586,
+            "awayTeamShortName": "库奥皮奥",
+            "fullCourtGoal": "1:1",
+            "halfTimeGoal": "1:1",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "1",
+            "homeTeamId": 594,
+            "homeTeamShortName": "玛丽港",
+            "matchDate": "2026-05-16",
+            "matchId": 2472830,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 166,
+            "uniformHomeTeamId": 831,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "2",
+            "awayTeamId": 586,
+            "awayTeamShortName": "库奥皮奥",
+            "fullCourtGoal": "0:2",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 0,
+            "homeTeamShortName": "PK-35",
+            "matchDate": "2026-05-13",
+            "matchId": 2521397,
+            "seasonId": 14583,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 0,
+            "sportteryTournamentId": 0,
+            "teamMatchResult": "home",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 739,
+            "tournamentShortName": "芬兰杯",
+            "uniformAwayTeamId": 166,
+            "uniformHomeTeamId": 14598,
+            "uniformLeagueId": 1843,
+            "winningTeam": ""
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 2348,
+            "awayTeamShortName": "塞伊奈",
+            "fullCourtGoal": "0:0",
+            "halfTimeGoal": "0:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "0",
+            "homeTeamId": 586,
+            "homeTeamShortName": "库奥皮奥",
+            "matchDate": "2026-05-09",
+            "matchId": 2472835,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039579,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "draw",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 1535,
+            "uniformHomeTeamId": 166,
+            "uniformLeagueId": 1073,
+            "winningTeam": "draw"
+          },
+          {
+            "awayTeamFullCourtGoalCnt": "0",
+            "awayTeamId": 586,
+            "awayTeamShortName": "库奥皮奥",
+            "fullCourtGoal": "2:0",
+            "halfTimeGoal": "1:0",
+            "homeMatchResult": "",
+            "homeTeamFullCourtGoalCnt": "2",
+            "homeTeamId": 1040074,
+            "homeTeamShortName": "AC奥卢",
+            "matchDate": "2026-05-03",
+            "matchId": 2472840,
+            "seasonId": 14374,
+            "sportteryAwayTeamId": 0,
+            "sportteryHomeTeamId": 0,
+            "sportteryMatchId": 2039466,
+            "sportteryTournamentId": 2064839,
+            "teamMatchResult": "away",
+            "totalTeamFullCourtGoalCnt": 0,
+            "tournamentId": 130,
+            "tournamentShortName": "芬超",
+            "uniformAwayTeamId": 166,
+            "uniformHomeTeamId": 57199,
+            "uniformLeagueId": 1073,
+            "winningTeam": "home"
+          }
+        ],
+        "statistics": {
+          "drawMatchCnt": 2,
+          "drawProbability": "40%",
+          "goalCnt": 6,
+          "lossGoalCnt": 3,
+          "lossGoalMatchCnt": 1,
+          "lossProbability": "20%",
+          "netGoal": 3,
+          "sportteryTeamId": 0,
+          "teamId": 586,
+          "teamShortName": "库奥皮奥",
+          "totalLegCnt": 5,
+          "uniformTeamId": 166,
+          "winGoalMatchCnt": 2,
+          "winProbability": "40%"
+        }
+      }
+    },
+    "tables": {
+      "phaseId": 48275,
+      "seasonId": 14374,
+      "seasonName": "2026",
+      "tables": [
+        {
+          "drawMatchCnt": 4,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 1,
+          "phaseName": "",
+          "points": "16",
+          "ranking": "2",
+          "sportteryTeamId": 586,
+          "teamId": 0,
+          "teamShortName": "库奥皮奥",
+          "totalLegCnt": 9,
+          "uniformTeamId": 166,
+          "winGoalMatchCnt": 4,
+          "winProbability": "44%"
+        },
+        {
+          "drawMatchCnt": 2,
+          "groupId": 0,
+          "groupName": "",
+          "lossGoalMatchCnt": 3,
+          "phaseName": "",
+          "points": "8",
+          "ranking": "8",
+          "sportteryTeamId": 592,
+          "teamId": 0,
+          "teamShortName": "拉赫蒂",
+          "totalLegCnt": 7,
+          "uniformTeamId": 1696,
+          "winGoalMatchCnt": 2,
+          "winProbability": "29%"
+        }
+      ],
+      "tournamentId": 130,
+      "tournamentShortName": "芬超",
+      "uniformLeagueId": 1073,
+      "uniformMatchId": 2392798
+    },
+    "player": {
+      "away": {
+        "playerList": [
+          {
+            "appearanceCnt": 6,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.3",
+            "goalCnt": 2,
+            "goalProbability": "50%",
+            "injuryFlag": 0,
+            "personId": 542323,
+            "personName": "M. Sarr",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "77"
+          },
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "25%",
+            "goalAvgCnt": "0.1",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 558442,
+            "personName": "Cristóbal Montiel",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 5,
+            "substituteMatchCnt": 2,
+            "suspensionFlag": 0,
+            "uniformNo": "8"
+          },
+          {
+            "appearanceCnt": 6,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 1,
+            "goalProbability": "25%",
+            "injuryFlag": 0,
+            "personId": 868384,
+            "personName": "Neemias Barbosa",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 6,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "19"
+          }
+        ],
+        "sportteryTeamId": 592,
+        "teamId": 817,
+        "teamShortName": "拉赫蒂",
+        "uniformTeamId": 1696
+      },
+      "home": {
+        "playerList": [
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0.1",
+            "assistCnt": 1,
+            "assistProbability": "9%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 4,
+            "goalProbability": "31%",
+            "injuryFlag": 0,
+            "personId": 274460,
+            "personName": "J. Moreno",
+            "playerPositionCode": "Forward",
+            "playerPositionDesc": "前锋",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "11"
+          },
+          {
+            "appearanceCnt": 7,
+            "assistAvgCnt": "0",
+            "assistCnt": 0,
+            "assistProbability": "0%",
+            "goalAvgCnt": "0.6",
+            "goalCnt": 4,
+            "goalProbability": "31%",
+            "injuryFlag": 0,
+            "personId": 808337,
+            "personName": "B. Armah",
+            "playerPositionCode": "Defender",
+            "playerPositionDesc": "后卫",
+            "startedMatchCnt": 7,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "24"
+          },
+          {
+            "appearanceCnt": 9,
+            "assistAvgCnt": "0.3",
+            "assistCnt": 3,
+            "assistProbability": "27%",
+            "goalAvgCnt": "0.2",
+            "goalCnt": 2,
+            "goalProbability": "15%",
+            "injuryFlag": 0,
+            "personId": 725500,
+            "personName": "O. Ruoppi",
+            "playerPositionCode": "Midfielder",
+            "playerPositionDesc": "中场",
+            "startedMatchCnt": 9,
+            "substituteMatchCnt": 0,
+            "suspensionFlag": 0,
+            "uniformNo": "34"
+          }
+        ],
+        "sportteryTeamId": 586,
+        "teamId": 821,
+        "teamShortName": "库奥皮奥",
+        "uniformTeamId": 166
+      },
+      "seasonId": 14374,
+      "seasonName": "2026",
+      "tournamentId": 130,
+      "tournamentShortName": "芬超",
+      "uniformLeagueId": 1073,
+      "uniformMatchId": 2392798
+    }
+  },
+  "ttg_change": {
+    "3球": {
+      "count": 1,
+      "change_pct": 2.9
+    },
+    "0球": {
+      "count": 1,
+      "change_pct": -8.7
+    },
+    "1球": {
+      "count": 1,
+      "change_pct": -7.4
+    },
+    "7球": {
+      "count": 1,
+      "change_pct": 11.1
+    },
+    "2球": {
+      "count": 1,
+      "change_pct": -1.6
+    },
+    "6球": {
+      "count": 1,
+      "change_pct": 9.1
+    },
+    "4球": {
+      "count": 1,
+      "change_pct": 3.6
+    },
+    "5球": {
+      "count": 1,
+      "change_pct": 10.0
+    }
+  },
+  "hafu_change": {
+    "平胜": {
+      "count": 1,
+      "change_pct": -2.4
+    },
+    "负负": {
+      "count": 1,
+      "change_pct": 9.1
+    },
+    "负平": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "胜胜": {
+      "count": 1,
+      "change_pct": -4.3
+    },
+    "胜平": {
+      "count": 1,
+      "change_pct": 6.2
+    },
+    "负胜": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平平": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "胜负": {
+      "count": 0,
+      "change_pct": 0.0
+    },
+    "平负": {
+      "count": 1,
+      "change_pct": 9.5
+    }
+  },
+  "had_change": {
+    "平": {
+      "count": 2,
+      "change_pct": 4.2
+    },
+    "胜": {
+      "count": 2,
+      "change_pct": -3.2
+    },
+    "负": {
+      "count": 2,
+      "change_pct": 6.1
+    }
+  },
+  "hhad_change": {
+    "让平": {
+      "count": 1,
+      "change_pct": -1.5
+    },
+    "让胜": {
+      "count": 2,
+      "change_pct": -4.3
+    },
+    "让负": {
+      "count": 2,
+      "change_pct": 4.7
+    }
+  },
+  "exclusion_list": [
+    {
+      "goal": "2球",
+      "ttg_odds": "3.15",
+      "ttg_special": true,
+      "scores": [
+        {
+          "score": "02:00",
+          "odds": "6.70",
+          "special": false
+        },
+        {
+          "score": "00:02",
+          "odds": "24.00",
+          "special": false
+        },
+        {
+          "score": "01:01",
+          "odds": "7.00",
+          "special": false
+        }
+      ],
+      "level": "普通排除",
+      "reason": "进球数赔率(3.15)含特殊尾数，排除该进球数及其所有比分"
+    }
+  ]
+}
