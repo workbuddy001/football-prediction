@@ -404,11 +404,13 @@ def compute_betting(data, analysis):
             m = ml[0]
             return int(m.get('homeTeamFullCourtGoalCnt', 0) or 0) + int(m.get('awayTeamFullCourtGoalCnt', 0) or 0)
         hl = _last_total(home_recent); al = _last_total(away_recent)
+        hl_prev = hl; al_prev = al  # 暴露给N1规则 (2026-05-24)
         # H系列只在0-1球区域, 检查是否全部差≥2
         h_far = hl is not None and hl >= 2
         a_far = al is not None and al >= 2
         h_gap_far = h_far and a_far  # 两队都≥2球 → 不可能突然闷平
     except:
+        hl_prev = None; al_prev = None
         pass
     
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
@@ -719,6 +721,14 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     
+    elif (hl_prev is not None and al_prev is not None and hl_prev == 4 and al_prev == 4
+          and 4 in analysis.get('recommended', {}).get('goals', [])):
+        # 信号N1: 两队上轮都4球+V3.6推荐含4球→投4球20元 (2026-05-24, 9场56% ROI+149%)
+        rule = 'N1'
+        bet_goals = [4]
+        bet_type = 'single'
+        goal_stake = 20
+    
     if not rule:
         return {'action': 'skip', 'reason': '无匹配投注规则'}
     
@@ -812,6 +822,9 @@ def compute_betting(data, analysis):
         conf_tag = ''
     elif rule == 'S1':
         # S1: 近况>2.5+1球变高共振 → 纯1球20元 (ROI+80%)
+        conf_tag = ''
+    elif rule == 'N1':
+        # N1: 两队上轮都4球+V3.6推荐含4球→纯4球20元 (2026-05-24)
         conf_tag = ''
     elif rule == 'X6':
         # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 + 5球对冲5元 (2026-05-22)
