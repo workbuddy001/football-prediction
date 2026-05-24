@@ -578,12 +578,21 @@ def compute_betting(data, analysis):
         s7_dual = s6_2ball
     elif f_eligible:
         # 信号F: 近况>4 + 铁桶防守 + 0球25-35 + 0球不暴跌 → 投7球 (ROI+275%)
+        # ⚠️ F过热过滤: 某队上轮≥5→跳过(2026-05-24, 3/3黑单全有上轮≥5, 红单0/2)
+        if hl_prev is not None and al_prev is not None and (hl_prev >= 5 or al_prev >= 5):
+            return {'action': 'skip', 'reason': f'F跳过: 上轮≥5(hl={hl_prev} al={al_prev})'}
         rule = 'F'
         bet_goals = [7]
         bet_type = 'single'
         goal_stake = 20
     elif g7_signal and g0 and g0 >= 12:
         # 信号G7: 三维排除7球=保留/警惕 + o0>=12 → 投7球 (ROI+550%)
+        # ⚠️ G7过热过滤: dw<3→跳过(2026-05-24, 黑单dw均2.70 vs 红单4.30)
+        try:
+            dw_chk = float(data.get('had', {}).get('平', 0) or 0)
+            if dw_chk < 3.0:
+                return {'action': 'skip', 'reason': f'G7跳过: dw={dw_chk:.2f}<3.0'}
+        except: pass
         rule = 'G7'
         bet_goals = [7]
         bet_type = 'single'
@@ -676,6 +685,9 @@ def compute_betting(data, analysis):
         goal_stake = 20
     elif s1_1ball:
         # 信号S1: 近况>2.5+1球=⭐变高共振 → 投1球30元+2个2球比分各10元 (命中率76% ROI+80%)
+        # ⚠️ S1过热过滤: g0<20→跳过(2026-05-24, 红单g0均24 vs 黑单g0均19)
+        if g0 and g0 < 20:
+            return {'action': 'skip', 'reason': f'S1跳过: g0={g0:.0f}<20'}
         rule = 'S1'
         bet_goals = [1]
         bet_type = 'single'
