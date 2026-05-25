@@ -355,10 +355,11 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    # 预计算X5信号（建议投注+推荐4+5球+无规则 → 投4球, 14场7中50%, ROI+107%）
-    # 2026-05-25: 5球变化>5%时翻车率75%→跳过, 剩10场ROI+148%
+    # 预计算X5信号（建议投注+推荐4+5球+无规则 → 投4球, 10场6中60%, ROI+175%）
+    # 2026-05-25: 5球变化>5%→跳过; 2026-05-26: 4球警惕造热→跳过(3场全黑)
     x5_45 = False
-    x5_5ball_surge = False  # 5球赔率大涨标记
+    x5_5ball_surge = False
+    x5_4ball_warn = False
     try:
         fgp = analysis.get('final_goal_pick', {})
         skip_reason = fgp.get('skip_reason', [])
@@ -371,6 +372,12 @@ def compute_betting(data, analysis):
             ch5 = float(ttg2.get('5球', {}).get('change_pct', 0) or 0)
             if ch5 > 5:
                 x5_5ball_surge = True
+            # 检查4球是否警惕造热
+            exc = analysis.get('exclusion', {})
+            for e in exc.get('kept', []):
+                if e.get('goal') == '4球' and '警惕造热' in str(e.get('status', '')):
+                    x5_4ball_warn = True
+                    break
     except:
         pass
     
@@ -726,12 +733,12 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif x5_45:
-        # 信号X5: 建议投注+推荐4+5球+无规则 → 投4球20元 (14场7中50%, ROI+107%)
-        # 2026-05-25: 5球变化>5%时翻车率75%→跳过 (≤5%: 10场60%ROI+148%, >5%: 4场25%ROI+198%但净利几乎为0)
+        # 信号X5: 建议投注+推荐4+5球+无规则 → 投4球20元 (10场6中60%, ROI+175%)
+        # 2026-05-25: 5球变化>5%→跳过; 2026-05-26: 4球警惕造热→跳过(3场全黑)
         if x5_5ball_surge:
-            mi2 = data.get('match_info', {}) or {}
-            mn2 = mi2.get('match_num_str', '') if isinstance(mi2, dict) else ''
-            return {'action': 'skip', 'reason': f'X5跳过: 5球异动>{5}%'}
+            return {'action': 'skip', 'reason': f'X5跳过: 5球异动>5%'}
+        if x5_4ball_warn:
+            return {'action': 'skip', 'reason': 'X5跳过: 4球警惕造热(3场全黑)'}
         rule = 'X5'
         bet_goals = [4]
         bet_type = 'single'
