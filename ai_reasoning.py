@@ -935,7 +935,7 @@ def compute_betting(data, analysis):
     
     # ⚠️ 大球规则+V3.6不含+赔率下降→跳过 (2026-05-25)
     # V3.6含=19场58%ROI; V3.6不含+赔率↑=4场75%ROI; V3.6不含+赔率↓=8场38%ROI→跳过
-    BIG_RULES = {'S2','G5','G6','G7','F','S3','X6'}
+    BIG_RULES = {'S2','G5','G6','G7','F','S3','X4','X5','X6'}
     if rule in BIG_RULES and bet_goals:
         try:
             rec_goals = analysis.get('recommended', {}).get('goals', [])
