@@ -934,8 +934,9 @@ def compute_betting(data, analysis):
         except:
             pass
     
-    # ⚠️ 大球规则+V3.6不含+赔率下降→跳过 (2026-05-25)
-    # V3.6含=19场58%ROI; V3.6不含+赔率↑=4场75%ROI; V3.6不含+赔率↓=8场38%ROI→跳过
+    # ⚠️ 大球规则+V3.6不含+赔率异动→跳过 (2026-05-25)
+    # V3.6不含+赔率↑>10%: 市场推离+共识一致→危险(6球>+10%仅4%命中)
+    # V3.6不含+赔率↓: 市场拉客但V3.6不推→诱盘(8场38%ROI)→跳过
     BIG_RULES = {'S2','G5','G6','G7','F','S3','X4','X5','X6'}
     if rule in BIG_RULES and bet_goals:
         try:
@@ -949,6 +950,10 @@ def compute_betting(data, analysis):
                     mi = data.get('match_info', {}) or {}
                     mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
                     return {'action': 'skip', 'reason': f'{rule}跳过: V3.6不含+赔率↓({ch_pct:+.1f}%)'}
+                if ch_pct > 10:
+                    mi = data.get('match_info', {}) or {}
+                    mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+                    return {'action': 'skip', 'reason': f'{rule}跳过: V3.6不含+赔率暴涨({ch_pct:+.1f}%)'}
         except:
             pass
     
