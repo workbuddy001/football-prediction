@@ -602,6 +602,12 @@ def compute_betting(data, analysis):
     elif g7_signal and g0 and g0 >= 12:
         # 信号G7: 三维排除7球=保留/警惕 + o0>=12 → 投7球 (ROI+550%)
         # ⚠️ G7过热过滤: dw<3→跳过(2026-05-24, 黑单dw均2.70 vs 红单4.30)
+        # ⚠️ 2026-05-26: 警惕造热→跳过(有警惕0/2 vs 无警惕2/2=100%)
+        try:
+            exc_check = analysis.get('exclusion', {})
+            if any('警惕' in str(e.get('status','')) for e in exc_check.get('kept',[])):
+                return {'action': 'skip', 'reason': 'G7跳过: 警惕造热(0/2全黑)'}
+        except: pass
         try:
             dw_chk = float(data.get('had', {}).get('平', 0) or 0)
             if dw_chk < 3.0:
@@ -643,6 +649,12 @@ def compute_betting(data, analysis):
     elif g6_keep and g0 and g0 >= 12 and go.get(6, 99) < 12:
         # 信号G6: 三维排除6球=保留 + o0>=12 + 6球<12 → 投6球 (ROI+298%)
         # 赔率过滤: 6球≥12区间0%(1场0中)
+        # ⚠️ 2026-05-26: 警惕造热→跳过(有警惕0/2 vs 无警惕2/2=100%)
+        try:
+            exc_check = analysis.get('exclusion', {})
+            if any('警惕' in str(e.get('status','')) for e in exc_check.get('kept',[])):
+                return {'action': 'skip', 'reason': 'G6跳过: 警惕造热(0/2全黑)'}
+        except: pass
         rule = 'G6'
         bet_goals = [6]
         bet_type = 'single'
@@ -650,6 +662,13 @@ def compute_betting(data, analysis):
     elif s2_5ball and (min(h_win, a_win) >= 1.65 if (h_win and a_win) else True):
         # 信号S2: 近况<2.5+5球警惕 + HAD最低赔≥1.65(过滤极端强队) → 投5球 (ROI+462%)
         # HAD过滤: 一方极强(<1.65)→大球难出, 科莫1.13+拉瓦勒1.63两场全miss
+        # ⚠️ 2026-05-26: 2球警惕→跳过(含2球警惕0/2 vs 不含3/4=75%)
+        try:
+            exc_check = analysis.get('exclusion', {})
+            for e in exc_check.get('kept', []):
+                if e.get('goal') == '2球' and '警惕' in str(e.get('status', '')):
+                    return {'action': 'skip', 'reason': 'S2跳过: 2球警惕(0/2全黑)'}
+        except: pass
         rule = 'S2'
         bet_goals = [5]
         bet_type = 'single'
@@ -727,7 +746,14 @@ def compute_betting(data, analysis):
         bet_type = 'dual'
         goal_stake = 120
     elif x4_34:
-        # 信号X4: 三维排除仅剩3球(警惕)+4球(保留) → 投4球20元 (4场3中75%, 填补G4空白)
+        # 信号X4: 三维排除仅剩3球(警惕)+4球(保留) → 投4球20元 (3场1中33%)
+        # ⚠️ 2026-05-26: 仅3球警惕(不含4球警惕)→跳过(0/2全黑, 比赛被压在3球)
+        try:
+            exc_check = analysis.get('exclusion', {})
+            kept_map = {e.get('goal',''): str(e.get('status','')) for e in exc_check.get('kept',[])}
+            if '警惕' in kept_map.get('3球','') and '警惕' not in kept_map.get('4球',''):
+                return {'action': 'skip', 'reason': 'X4跳过: 仅3球警惕(0/2全黑)'}
+        except: pass
         rule = 'X4'
         bet_goals = [4]
         bet_type = 'single'
