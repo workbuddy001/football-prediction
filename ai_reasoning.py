@@ -642,6 +642,10 @@ def compute_betting(data, analysis):
         goal_stake = 20
     elif h3_11 and not h_gap_far:
         # 信号H3: 平平↓+2球≥3.05+平<3.2+Top1=1:1+o0≤14 → 投1:1 30元 (ROI+405%)
+        # ⚠️ V3.6验证: 推荐范围含2球时命中率50%+163%ROI vs 不含时22%+26% (2026-05-25)
+        rec_goals_chk = analysis.get('recommended', {}).get('goals', [])
+        if 2 not in rec_goals_chk:
+            return {'action': 'skip', 'reason': f'H3跳过: V3.6推荐不含2球({rec_goals_chk})'}
         rule = 'H3'
         bet_goals = []
         bet_type = 'single'
