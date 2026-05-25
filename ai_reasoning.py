@@ -355,8 +355,10 @@ def compute_betting(data, analysis):
     except:
         pass
     
-    # 预计算X5信号（建议投注+推荐4+5球+无规则 → 投4球, 11场7中64%, ROI+174%）
+    # 预计算X5信号（建议投注+推荐4+5球+无规则 → 投4球, 14场7中50%, ROI+107%）
+    # 2026-05-25: 5球变化>5%时翻车率75%→跳过, 剩10场ROI+148%
     x5_45 = False
+    x5_5ball_surge = False  # 5球赔率大涨标记
     try:
         fgp = analysis.get('final_goal_pick', {})
         skip_reason = fgp.get('skip_reason', [])
@@ -364,6 +366,11 @@ def compute_betting(data, analysis):
         rec_goals = rec.get('goals', [])
         if (not skip_reason or len(skip_reason) == 0) and rec_goals and rec_goals[:2] == [4, 5]:
             x5_45 = True
+            # 检查5球赔率变化
+            ttg2 = data.get('ttg_change', {})
+            ch5 = float(ttg2.get('5球', {}).get('change_pct', 0) or 0)
+            if ch5 > 5:
+                x5_5ball_surge = True
     except:
         pass
     
@@ -404,7 +411,7 @@ def compute_betting(data, analysis):
             m = ml[0]
             return int(m.get('homeTeamFullCourtGoalCnt', 0) or 0) + int(m.get('awayTeamFullCourtGoalCnt', 0) or 0)
         hl = _last_total(home_recent); al = _last_total(away_recent)
-        hl_prev = hl; al_prev = al  # 暴露给N1规则 (2026-05-24)
+        hl_prev = hl; al_prev = al
         # H系列只在0-1球区域, 检查是否全部差≥2
         h_far = hl is not None and hl >= 2
         a_far = al is not None and al >= 2
@@ -719,7 +726,12 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif x5_45:
-        # 信号X5: 建议投注+推荐4+5球+无规则 → 投4球20元 (11场7中64%, ROI+174%)
+        # 信号X5: 建议投注+推荐4+5球+无规则 → 投4球20元 (14场7中50%, ROI+107%)
+        # 2026-05-25: 5球变化>5%时翻车率75%→跳过 (≤5%: 10场60%ROI+148%, >5%: 4场25%ROI+198%但净利几乎为0)
+        if x5_5ball_surge:
+            mi2 = data.get('match_info', {}) or {}
+            mn2 = mi2.get('match_num_str', '') if isinstance(mi2, dict) else ''
+            return {'action': 'skip', 'reason': f'X5跳过: 5球异动>{5}%'}
         rule = 'X5'
         bet_goals = [4]
         bet_type = 'single'
@@ -734,14 +746,6 @@ def compute_betting(data, analysis):
         # 信号X2: 三维排除仅剩3球+5球 → 投2球20元 (4场3中75%, 辅助填充)
         rule = 'X2'
         bet_goals = [2]
-        bet_type = 'single'
-        goal_stake = 20
-    
-    elif (hl_prev is not None and al_prev is not None and hl_prev == 4 and al_prev == 4
-          and 4 in analysis.get('recommended', {}).get('goals', [])):
-        # 信号N1: 两队上轮都4球+V3.6推荐含4球→投4球20元 (2026-05-24, 9场56% ROI+149%)
-        rule = 'N1'
-        bet_goals = [4]
         bet_type = 'single'
         goal_stake = 20
     
@@ -838,9 +842,6 @@ def compute_betting(data, analysis):
         conf_tag = ''
     elif rule == 'S1':
         # S1: 近况>2.5+1球变高共振 → 纯1球20元 (ROI+80%)
-        conf_tag = ''
-    elif rule == 'N1':
-        # N1: 两队上轮都4球+V3.6推荐含4球→纯4球20元 (2026-05-24)
         conf_tag = ''
     elif rule == 'X6':
         # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 + 5球对冲5元 (2026-05-22)
