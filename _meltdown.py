@@ -185,6 +185,9 @@ def auto_sync_from_scores(scores_file='分析模板/_scores.json'):
             actual = hs + aws
             
             is_hit = actual in goals if goals else False
+            # 7球+特殊处理: 竞彩7球+=≥7球
+            if not is_hit and goals and 7 in goals and actual >= 7:
+                is_hit = True
             # 比分投注命中检查
             for sb in bet.get('score_bets', []):
                 if sb.get('score') == f'{hs}:{aws}':

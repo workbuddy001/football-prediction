@@ -86,6 +86,9 @@ def run(weekly_only=True):
         actual = hs + aws
         goals = bet.get('goal_bet', {}).get('goals', [])
         is_hit = actual in goals if goals else False
+        # 7球+特殊处理: 竞彩7球+=≥7球
+        if not is_hit and goals and 7 in goals and actual >= 7:
+            is_hit = True
         for sb in bet.get('score_bets', []):
             if sb.get('score') == f'{hs}:{aws}':
                 is_hit = True
