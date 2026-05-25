@@ -933,6 +933,24 @@ def compute_betting(data, analysis):
         except:
             pass
     
+    # ⚠️ 大球规则+V3.6不含+赔率下降→跳过 (2026-05-25)
+    # V3.6含=19场58%ROI; V3.6不含+赔率↑=4场75%ROI; V3.6不含+赔率↓=8场38%ROI→跳过
+    BIG_RULES = {'S2','G5','G6','G7','F','S3','X6'}
+    if rule in BIG_RULES and bet_goals:
+        try:
+            rec_goals = analysis.get('recommended', {}).get('goals', [])
+            main_g = bet_goals[0]
+            if main_g not in rec_goals:
+                ttg = data.get('ttg_change', {})
+                gk = f'{main_g}球'
+                ch_pct = float(ttg.get(gk, {}).get('change_pct', 0) or 0)
+                if ch_pct <= 0:
+                    mi = data.get('match_info', {}) or {}
+                    mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+                    return {'action': 'skip', 'reason': f'{rule}跳过: V3.6不含+赔率↓({ch_pct:+.1f}%)'}
+        except:
+            pass
+    
     # ⚠️ Staking Tier: 按历史ROI分级调整仓位（2026-05-22）
     # 排除X6(已有防御伞对冲，不升级)
     tier_goal_stake = _get_stake_by_tier(rule.replace('(风控减半)', '')) if 'X6' not in rule else 6
