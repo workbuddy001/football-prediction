@@ -32,7 +32,8 @@ def _trace_log(level, msg):
     """拦截日志跟踪（2026-05-22）：所有风控拦截统一打LOG，便于审计是否误伤"""
     import datetime
     ts = datetime.datetime.now().strftime('%m-%d %H:%M')
-    print(f'[{level}][{ts}] {msg}', flush=True)
+    import sys
+    print(f'[{level}][{ts}] {msg}', file=sys.stderr, flush=True)
 
 def compute_betting(data, analysis):
     """
