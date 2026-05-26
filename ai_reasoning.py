@@ -550,18 +550,7 @@ def compute_betting(data, analysis):
         if not (9.5 <= g0 <= 10.5):
             return {'action': 'skip', 'reason': f'R0跳过: 0球={g0}不在甜区[9.5-10.5](命中70%)'}
         
-        # R0: 平赔≤3.0过滤 (2026-05-21) — 平赔低=市场预期胶着, 5/5=100%命中
-        if draw is not None and draw > 3.0:
-            return {'action': 'skip', 'reason': f'R0跳过: 平赔{draw:.2f}>3.0(回测命中仅14%)'}
-        
-        # R0: 推荐≠[1,2]过滤 (2026-05-21) — 推荐1+2球时R0仅12%命中
-        try:
-            rec = analysis.get('recommended', {})
-            rec_goals = rec.get('goals', [])
-            if rec_goals and rec_goals[:2] == [1, 2]:
-                return {'action': 'skip', 'reason': 'R0跳过: 推荐1+2球(R0仅12%命中)'}
-        except:
-            pass
+        # 2026-05-27: 移除平赔>3.0和推荐1+2球过滤器(回测误伤严重)
         
         # R0: 纯0球20元
         rule = 'R0'
