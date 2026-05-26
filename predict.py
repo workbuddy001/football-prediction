@@ -160,50 +160,92 @@ if __name__ == '__main__':
     else:
         # 今天比赛
         api = SportteryAPI()
-        today = dt.now().strftime('%Y-%m-%d')
-        end = (dt.now() + timedelta(days=2)).strftime('%Y-%m-%d')
+        now = dt.now()
+        today = now.strftime('%Y-%m-%d')
+        end = (now + timedelta(days=2)).strftime('%Y-%m-%d')
+        
+        # 今天星期几(中文)
+        WEEKDAY_CN = ['周一','周二','周三','周四','周五','周六','周日']
+        today_weekday = WEEKDAY_CN[now.weekday()]
         
         print(f"📡 抓取 {today} ~ {end} 比赛数据...")
         list_data = api.get_match_list(today, end)
         
-        matches = []
+        all_matches = []
         if isinstance(list_data, dict):
             for k, v in list_data.items():
                 if isinstance(v, dict):
                     v['_mid'] = k
-                    matches.append(v)
+                    all_matches.append(v)
         
-        if not matches:
+        if not all_matches:
             print("无比赛")
             sys.exit(0)
         
-        print(f"共 {len(matches)} 场比赛\n")
+        print(f"共抓取 {len(all_matches)} 场比赛\n")
         
-        # 先抓数据
-        for m in matches:
+        # 先抓所有数据
+        for m in all_matches:
             mid = str(m.get('_mid', ''))
-            fp = os.path.join(DATA_DIR, f'{mid}.json')
             try:
                 api.fetch_and_save(mid)
                 print(f"  ✅ {mid}")
             except:
                 print(f"  ❌ {mid} 抓取失败")
         
-        # 再分析（force_fetch不再重复抓，已在上面抓过）
-        count = 0
-        total_stake = 0
-        for m in matches:
-            mid = str(m.get('_mid', ''))
-            # 已在上面全部抓过最新，force_fetch=False跳过重抓
-            r = predict_match(mid, force_fetch=False)
-            if r:
-                print_result(r)
-                if r['action'] == 'bet':
-                    count += 1
-                    total_stake += r['total_stake']
+        # 再分析 — 只分析今天的比赛(过滤match_num前缀)
+        print(f"\n{'='*60}")
+        print(f"  📅 只分析 {today_weekday} 比赛")
+        print(f"{'='*60}")
         
-        if count == 0:
-            print(f"\n💤 今日无投注信号")
+        all_results = []
+        bet_count = 0
+        total_stake = 0
+        
+        for m in all_matches:
+            mid = str(m.get('_mid', ''))
+            r = predict_match(mid, force_fetch=False)
+            if not r:
+                continue
+            
+            # 过滤: 只显示今天星期几的比赛(如周二001-周二00x)
+            mn = r.get('match_num', '')
+            if not mn.startswith(today_weekday):
+                continue
+            
+            all_results.append(r)
+            print_result(r)
+            if r['action'] == 'bet':
+                bet_count += 1
+                total_stake += r['total_stake']
+        
+        # ===== 总结 =====
+        print(f"\n{'='*60}")
+        print(f"  📊 {today_weekday} 投注总结")
+        print(f"{'='*60}")
+        
+        bet_results = [r for r in all_results if r['action'] == 'bet']
+        skip_count = sum(1 for r in all_results if r['action'] == 'skip')
+        
+        if not bet_results:
+            print(f"  💤 今日({today_weekday})无投注信号（{len(all_results)}场分析，{skip_count}场跳过）")
         else:
-            print(f"\n{'='*60}")
-            print(f"  📊 今日共 {count} 场推荐，总投入 {total_stake} 元")
+            print(f"  {'编号':<10s} {'对阵':<28s} {'规则':<12s} {'投注':<12s} {'金额':>5s}")
+            print(f"  {'-'*10} {'-'*28} {'-'*12} {'-'*12} {'-'*5}")
+            for r in bet_results:
+                gb = r.get('goal_bet', {})
+                goals = gb.get('goals', [])
+                goal_str = '+'.join(str(g) for g in goals) + '球' if goals else ''
+                if r.get('score_bets'):
+                    scores = ','.join(sb['score'] for sb in r['score_bets'])
+                    goal_str = (goal_str + ' ' + scores).strip()
+                print(f"  {r['match_num']:<10s} {r['home']+'vs'+r['away']:<28s} {r['rule']:<12s} {goal_str:<12s} {r['total_stake']:>4d}元")
+            print(f"  {'-'*10} {'-'*28} {'-'*12} {'-'*12} {'-'*5}")
+            print(f"  {'':>10s} {'':>28s} {'':>12s} {'共'+str(bet_count)+'场':<12s} {total_stake:>4d}元")
+        
+        # 跳过明细
+        skipped = [r for r in all_results if r['action'] == 'skip']
+        if skipped:
+            print(f"\n  ⏭️ 跳过 {len(skipped)} 场:")
+            for r in skipped:
+                print(f"     {r['match_num']} {r['home']}vs{r['away']} — 无匹配规则")
