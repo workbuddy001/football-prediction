@@ -550,7 +550,9 @@ def compute_betting(data, analysis):
         if not (9.5 <= g0 <= 10.5):
             return {'action': 'skip', 'reason': f'R0跳过: 0球={g0}不在甜区[9.5-10.5](命中70%)'}
         
-        # 2026-05-27: 移除平赔>3.0和推荐1+2球过滤器(回测误伤严重)
+        # R0: 平赔≤3.0 (5月验证: ≤3.0=2/2红, >3.0=0/4全黑)
+        if draw is not None and draw > 3.0:
+            return {'action': 'skip', 'reason': f'R0跳过: 平赔{draw:.2f}>3.0(0/4全黑)'}
         
         # R0: 纯0球20元
         rule = 'R0'
