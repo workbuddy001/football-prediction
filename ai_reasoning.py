@@ -997,6 +997,39 @@ def compute_betting(data, analysis):
     if bet_goals and goal_stake > 0:
         if goal_stake < tier_goal_stake:  # 原设定比tier小，升级
             goal_stake = tier_goal_stake
+    
+    # ⚠️ 相似比赛甜区翻倍 (2026-05-26)
+    # 投注目标在相似比赛中占比10-20%→92%命中→仓位翻倍
+    if bet_goals and goal_stake > 0:
+        try:
+            cache_key = '_sim_sweet_cache'
+            if cache_key not in data:
+                from sporttery_web import find_similar_matches
+                sims = find_similar_matches(data, top_n=8)
+                sweet_map = {}
+                if len(sims) >= 3:
+                    from collections import Counter
+                    gc = Counter()
+                    for s in sims:
+                        g = s.get('total_goals', 0)
+                        if g is not None and g >= 0: gc[g] += 1
+                    tp = sum(gc.values())
+                    for goal in range(0, 8):
+                        pct = gc.get(goal, 0) / tp if tp > 0 else 0
+                        sweet_map[goal] = pct
+                data[cache_key] = sweet_map
+            else:
+                sweet_map = data[cache_key]
+            
+            if sweet_map:
+                bp = sweet_map.get(bet_goals[0], 0)
+                if 0.1 < bp <= 0.2:
+                    goal_stake = goal_stake * 2
+                    rule = f'{rule}(甜区翻倍)'
+                    _trace_log('SWEET-X2', f'{rule} sim占比={bp:.0%}→仓位翻倍')
+        except:
+            pass
+    
     # 重建summary
     if bet_goals:
         base_summary = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
