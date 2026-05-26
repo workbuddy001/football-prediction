@@ -193,24 +193,25 @@ if __name__ == '__main__':
             except:
                 print(f"  ❌ {mid} 抓取失败")
         
-        # 再分析 — 只分析今天的比赛(过滤match_num前缀)
-        print(f"\n{'='*60}")
-        print(f"  📅 只分析 {today_weekday} 比赛")
-        print(f"{'='*60}")
+        # 过滤: 只保留今天星期几的比赛(如周二001-周二00x)
+        today_matches = [m for m in all_matches 
+                         if str(m.get('matchNumStr', '')).startswith(today_weekday)]
         
+        if not today_matches:
+            print(f"\n💤 今日({today_weekday})无比赛")
+            sys.exit(0)
+        
+        print(f"\n📅 {today_weekday} 共 {len(today_matches)} 场比赛，开始分析...")
+        
+        # 再分析
         all_results = []
         bet_count = 0
         total_stake = 0
         
-        for m in all_matches:
+        for m in today_matches:
             mid = str(m.get('_mid', ''))
             r = predict_match(mid, force_fetch=False)
             if not r:
-                continue
-            
-            # 过滤: 只显示今天星期几的比赛(如周二001-周二00x)
-            mn = r.get('match_num', '')
-            if not mn.startswith(today_weekday):
                 continue
             
             all_results.append(r)
