@@ -79,6 +79,8 @@ def compute_betting(data, analysis):
     
     top_score_rec = recs[0]['score'] if recs else None
     not_11 = (top_score_rec != '1:1') if top_score_rec else None
+    # R0放宽: 0:0从不当Top1, 放宽到Top2 (2026-05-27, Top2: 164场16%, Top3: 11场0%)
+    r0_in_top2 = ('0:0' in [r['score'] for r in recs[:2]]) if recs else False
     
     # 决策树信号 (扩展: 主强队 + 客强队)
     strong_home = h_win and h_win < 1.3 and g0 and 20 <= g0 <= 35
@@ -464,7 +466,7 @@ def compute_betting(data, analysis):
         bet_goals = [3]
         bet_type = 'single'
         goal_stake = 20
-    elif top_score_rec == '0:0':
+    elif r0_in_top2:
         # R0: 主攻<2.0过滤（强攻队不出0:0）
         h_att = None
         try:
