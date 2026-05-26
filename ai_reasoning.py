@@ -1044,6 +1044,24 @@ def compute_betting(data, analysis):
         except:
             pass
     
+    # ⚠️ H类比分冷区跳过 (2026-05-26)
+    # H2/H3/H5比分投注: 对应总进球在相似中出现<2次→跳过(0/3全黑 vs 2次+4/6=67%)
+    if rule in ('H2','H3','H5') and score_bets:
+        try:
+            from sporttery_web import find_similar_matches
+            sims = find_similar_matches(data, top_n=8)
+            if len(sims) >= 3:
+                sim_tgs = [s.get('record',{}).get('home_score',0)+s.get('record',{}).get('away_score',0) for s in sims]
+                first_score = score_bets[0].get('score','')
+                parts = first_score.split(':')
+                if len(parts) == 2:
+                    bet_tg = int(parts[0]) + int(parts[1])
+                    cnt = sum(1 for g in sim_tgs if g == bet_tg)
+                    if cnt < 2:
+                        return {'action': 'skip', 'reason': f'{rule}跳过: 比分冷区({bet_tg}球出现{cnt}次<2次)'}
+        except:
+            pass
+    
     # 重建summary
     if bet_goals:
         base_summary = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
