@@ -559,6 +559,13 @@ def compute_betting(data, analysis):
         bet_goals = [0]
         bet_type = 'single'
         goal_stake = 20
+    elif h1_score and h1_odds > 0 and not h_gap_far:
+        # 信号H1: 大热必死+Top1比分+o0>=20 → 投Top1比分10元 (ROI+171%)
+        # 2026-05-27: 移到R1之前, 避免R1的sim3球过滤阻断H1
+        rule = 'H1'
+        bet_goals = []
+        bet_type = 'single'
+        goal_stake = 0
     elif top_score_rec == '3:0':
         # R1: Top1=3:0 + 让胜<1.80(当前或初盘) + sim3球<1 → 3:0比分20元 (7场4中 ROI+343%)
         # 2026-05-27: 移除agree_count==2和g0≤20, 新增sim3球过滤, 初盘让胜兼容
@@ -718,12 +725,6 @@ def compute_betting(data, analysis):
     elif h2_11 and not h_gap_far:
         # 信号H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热必死 → 投1:1 10元 (ROI+231%)
         rule = 'H2'
-        bet_goals = []
-        bet_type = 'single'
-        goal_stake = 0
-    elif h1_score and h1_odds > 0 and not h_gap_far:
-        # 信号H1: 大热必死+Top1比分+o0>=20 → 投Top1比分10元 (ROI+171%)
-        rule = 'H1'
         bet_goals = []
         bet_type = 'single'
         goal_stake = 0
