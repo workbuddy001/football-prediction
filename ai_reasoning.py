@@ -23,7 +23,7 @@ def _get_stake_by_tier(rule_name):
     """凯利公式的硬编码平替：基于历史ROI甜区进行资金分级（2026-05-22）"""
     tier_1_heavy = ['R0', 'S7', 'S3', 'S2', 'X6']
     tier_2_medium = ['X3', 'X5', 'X4', 'X2', 'G6', 'H5', 'H3', 'H2']
-    tier_3_light = ['G7', 'G5', 'F', 'H1', 'R1', 'S1']
+    tier_3_light = ['G7', 'G5', 'F', 'H1', 'R1']
     if rule_name in tier_1_heavy: return 40
     elif rule_name in tier_2_medium: return 20
     return 10
@@ -735,14 +735,9 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif s1_1ball:
-        # 信号S1: 近况>2.5+1球=⭐变高共振 → 投1球30元+2个2球比分各10元 (命中率76% ROI+80%)
-        # ⚠️ S1过热过滤: g0<20→跳过(2026-05-24, 红单g0均24 vs 黑单g0均19)
-        if g0 and g0 < 20:
-            return {'action': 'skip', 'reason': f'S1跳过: g0={g0:.0f}<20'}
-        rule = 'S1'
-        bet_goals = [1]
-        bet_type = 'single'
-        goal_stake = 20
+        # 信号S1: 已停用 (2026-05-27)
+        # 近况>2.5+1球变高共振 → 方向冲突(V3.6大球vs投1球), 4+5月仅1黑
+        pass
     elif g4_22:
         # 信号G4: 4球警惕造热 + 平<3.5 + 双方防守>1.0 → 投2:2比分10元 (ROI+122%)
         rule = 'G4'
@@ -895,9 +890,7 @@ def compute_betting(data, analysis):
     elif rule == 'S3':
         # S3: 近况<2.5+6球保留 → 纯6球20元 (ROI+330%)
         conf_tag = ''
-    elif rule == 'S1':
-        # S1: 近况>2.5+1球变高共振 → 纯1球20元 (ROI+80%)
-        conf_tag = ''
+    # S1已停用 (2026-05-27)
     elif rule == 'X6':
         # X6: 客让+2:3候选+客攻>主防 → 买2:3比分20元 + 5球对冲5元 (2026-05-22)
         if x6_23_odds > 0:
