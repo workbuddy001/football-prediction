@@ -559,8 +559,9 @@ def compute_betting(data, analysis):
         bet_goals = [0]
         bet_type = 'single'
         goal_stake = 20
-    elif top_score_rec == '3:0' and agree_count == 2:
-        # R1: 推荐3:0 + 让胜<1.80 → 纯买3:0比分20元
+    elif top_score_rec == '3:0':
+        # R1: Top1=3:0 + 让胜<1.80 → 纯买3:0比分20元 (17场5中 ROI+135%)
+        # 2026-05-27: 移除agree_count==2和g0≤20(过度过滤), 仅保留让胜<1.80
         try:
             hhad = data.get('hhad', {})
             rs = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
@@ -568,9 +569,6 @@ def compute_betting(data, analysis):
                 return {'action': 'skip', 'reason': f'R1跳过: 让胜{rs:.1f}≥1.80(回测仅10%命中)'}
         except:
             pass
-        # R1: g0>20=大球过热追高陷阱(2026-05-22黑单残差: 4黑g0均值26.5 vs 2红g0均值18)
-        if g0 and g0 > 20:
-            return {'action': 'skip', 'reason': f'R1跳过: g0={g0:.0f}>20(大球过热追高,回测黑单g0均值26)'}
         
         rule = 'R1'
         bet_goals = []
