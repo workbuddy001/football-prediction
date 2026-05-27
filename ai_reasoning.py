@@ -560,13 +560,25 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif top_score_rec == '3:0':
-        # R1: Top1=3:0 + 让胜<1.80 → 纯买3:0比分20元 (17场5中 ROI+135%)
-        # 2026-05-27: 移除agree_count==2和g0≤20(过度过滤), 仅保留让胜<1.80
+        # R1: Top1=3:0 + 让胜<1.80 + sim3球<1 → 3:0比分20元 (7场4中 ROI+343%)
+        # 2026-05-27: 移除agree_count==2和g0≤20, 新增sim3球过滤
         try:
             hhad = data.get('hhad', {})
             rs = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
             if rs >= 1.80:
                 return {'action': 'skip', 'reason': f'R1跳过: 让胜{rs:.1f}≥1.80(回测仅10%命中)'}
+        except:
+            pass
+        
+        # R1: sim3球≥1次→跳过 (甜区1/6=17%, 温区0/4=0%) (2026-05-27)
+        try:
+            from sporttery_web import find_similar_matches
+            sims = find_similar_matches(data, top_n=8)
+            if len(sims) >= 3:
+                sim_tgs = [s.get('record',{}).get('home_score',0)+s.get('record',{}).get('away_score',0) for s in sims]
+                cnt = sum(1 for g in sim_tgs if g == 3)
+                if cnt >= 1:
+                    return {'action': 'skip', 'reason': f'R1跳过: sim3球{cnt}次(≥1次仅10%命中)'}
         except:
             pass
         
