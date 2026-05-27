@@ -560,12 +560,24 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif top_score_rec == '3:0':
-        # R1: Top1=3:0 + 让胜<1.80 + sim3球<1 → 3:0比分20元 (7场4中 ROI+343%)
-        # 2026-05-27: 移除agree_count==2和g0≤20, 新增sim3球过滤
+        # R1: Top1=3:0 + 让胜<1.80(当前或初盘) + sim3球<1 → 3:0比分20元 (7场4中 ROI+343%)
+        # 2026-05-27: 移除agree_count==2和g0≤20, 新增sim3球过滤, 初盘让胜兼容
         try:
             hhad = data.get('hhad', {})
             rs = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
-            if rs >= 1.80:
+            rs_pass = (rs < 1.80)
+            if not rs_pass:
+                # 倒推初盘让胜 (2026-05-27)
+                try:
+                    hhad_chg = data.get('hhad_change', {})
+                    rs_chg = hhad_chg.get('让胜', {})
+                    chg_pct = float(rs_chg.get('change_pct', 0)) if isinstance(rs_chg, dict) else 0
+                    if rs > 0 and chg_pct != 0:
+                        rs_ini = rs / (1 + chg_pct / 100)
+                        rs_pass = (rs_ini < 1.80)
+                except:
+                    pass
+            if not rs_pass:
                 return {'action': 'skip', 'reason': f'R1跳过: 让胜{rs:.1f}≥1.80(回测仅10%命中)'}
         except:
             pass
