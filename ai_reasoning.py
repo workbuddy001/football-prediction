@@ -582,6 +582,10 @@ def compute_betting(data, analysis):
         except:
             pass
         
+        # R1: g0 15-25区间跳过 (0/4全黑, 2026-05-27)
+        if g0 and 15 <= g0 <= 25:
+            return {'action': 'skip', 'reason': f'R1跳过: g0={g0:.0f}在15-25区间(0/4全黑)'}
+        
         rule = 'R1'
         bet_goals = []
         bet_type = 'single'
