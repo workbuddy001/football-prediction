@@ -104,6 +104,7 @@ def compute_betting(data, analysis):
     bet_goals = []
     bet_type = None
     goal_stake = 0
+    score_bets = []
     s7_dual = False
     
     # 预计算信号F条件（避免elif阻断后续规则）
@@ -277,6 +278,19 @@ def compute_betting(data, analysis):
             for e in excl.get('kept', []):
                 if e.get('goal') == '1球' and '变高共振' in e.get('status', ''):
                     s1_1ball = True; break
+    except:
+        pass
+    
+    # 预计算S8信号（g0<10+平平降>17%→假0:0恐慌盘, 投HAD方向1:0/0:1 10元+1球20元, ROI+172%）
+    s8_signal = False
+    try:
+        g0_val = float(data.get('total_goals', {}).get('0球', 0) or 0)
+        if g0_val < 10:
+            hf = data.get('hafu_change', {}) or {}
+            pp = hf.get('平平', {})
+            pp_chg = float(pp.get('change_pct', 0)) if isinstance(pp, dict) else 0
+            if pp_chg < -17:
+                s8_signal = True
     except:
         pass
     
@@ -734,6 +748,30 @@ def compute_betting(data, analysis):
         bet_goals = [2]
         bet_type = 'single'
         goal_stake = 20
+    elif s8_signal:
+        # 信号S8: g0<10+平平降>17%→假0:0恐慌盘, 11场7中64% ROI+172% (2026-05-28)
+        # 投HAD方向比分10元 + 1球总进球20元 = 30元
+        try:
+            had2 = data.get('had', {}) or {}
+            hw2 = float(had2.get('胜', 0) or 0)
+            aw2 = float(had2.get('负', 0) or 0)
+            if hw2 < aw2:
+                bet_score = '1:0'
+                so_key = '01:00'
+            else:
+                bet_score = '0:1'
+                so_key = '00:01'
+            so2 = data.get('score_odds', {})
+            score_odds = float(so2.get(so_key, 0) or 0)
+            if score_odds <= 0:
+                return {'action': 'skip', 'reason': 'S8跳过: 比分赔率缺失'}
+        except:
+            return {'action': 'skip', 'reason': 'S8跳过: 数据异常'}
+        rule = 'S8'
+        bet_goals = [1]
+        bet_type = 'single'
+        goal_stake = 20
+        score_bets = [{'score': bet_score, 'stake': 10, 'odds': score_odds}]
     elif s1_1ball:
         # 信号S1: 已停用 (2026-05-27)
         # 近况>2.5+1球变高共振 → 方向冲突(V3.6大球vs投1球), 4+5月仅1黑
@@ -806,7 +844,6 @@ def compute_betting(data, analysis):
     goal_odds = {g: go.get(g) for g in bet_goals if go.get(g)}
     
     # 比分投注
-    score_bets = []
     so_data = data.get('score_odds', {})
     score_by_goals = {}
     for sk, ov in so_data.items():
