@@ -1085,7 +1085,7 @@ def compute_betting(data, analysis):
     # ⚠️ 相似温区跳过 (2026-05-26)
     # 投注目标在相似中出现≥2次(≥25%)=过热 → 跳过(除S7免疫)
     # 5月回测: 3场全黑零误伤, 命中68%→81%
-    if rule not in ('S7',) and bet_goals and goal_stake > 0:
+    if rule not in ('S7','S8') and bet_goals and goal_stake > 0:
         try:
             cache_key = '_sim_sweet_cache'
             sweet_map = data.get(cache_key, {})
