@@ -480,6 +480,27 @@ def compute_betting(data, analysis):
         bet_goals = [3]
         bet_type = 'single'
         goal_stake = 20
+    elif g0 == 10 and go.get(2) and 2.9 <= go[2] <= 3.1:
+        # G2: g0=10+g2≈3.0 → 0或2球必选一 → 0球10元+2球20元=30元 (5场5中100%, ROI+154%)
+        # ⚠️ 优先于R0: 此信号独立于R0的draw/联赛过滤, 0/2球二选一全覆盖
+        # ⚠️ 近况过滤: 主+客近况和>3.0→跳过 (巴列卡诺3.2=0/1, 其余≤3.0全中)
+        try:
+            preview_g2 = data.get('preview', {})
+            recent_g2 = preview_g2.get('recent', {})
+            home_g2 = recent_g2.get('home', {}).get('matchList', []) if isinstance(recent_g2.get('home'), dict) else []
+            away_g2 = recent_g2.get('away', {}).get('matchList', []) if isinstance(recent_g2.get('away'), dict) else []
+            if home_g2 and away_g2:
+                h_m = sum(float(x.get('homeTeamFullCourtGoalCnt', 0) or 0) for x in home_g2) / len(home_g2)
+                a_m = sum(float(x.get('awayTeamFullCourtGoalCnt', 0) or 0) for x in away_g2) / len(away_g2)
+                if h_m + a_m > 3.0:
+                    return {'action': 'skip', 'reason': f'G2跳过: 近况和{h_m+a_m:.1f}>3.0(主{h_m:.1f}+客{a_m:.1f})'}
+        except:
+            pass
+        rule = 'G2'
+        bet_goals = [0, 2]
+        bet_type = 'dual'
+        goal_stake = 30
+        goal_odds = {0: go.get(0, 10), 2: go.get(2, 3)}
     elif r0_in_top2:
         # R0: 主攻<2.0过滤（强攻队不出0:0）
         h_att = None
@@ -619,6 +640,19 @@ def compute_betting(data, analysis):
     elif g0 and g0 == 23 and go.get(2, 99) >= 4.0 and go.get(2, 99) <= 4.3:
         # 信号S7: 0球=23 + 2球[4.0-4.3] → 投2球20元 (回测5/5=100%)
         # S6+S7双确认: 两个独立逻辑(三维排除+赔率区间)同时指向2球 → 加注到40元 (4/4=100%)
+        # ⚠️ S7近况过滤: 主+客近况和>3.0→跳过 (2026-05-30瓦勒伦加3:1,近况2.6+1.0=3.6唯一>3.0, 其他6场≤3.0全中)
+        try:
+            preview_s7 = data.get('preview', {})
+            recent_s7 = preview_s7.get('recent', {})
+            home_s7 = recent_s7.get('home', {}).get('matchList', []) if isinstance(recent_s7.get('home'), dict) else []
+            away_s7 = recent_s7.get('away', {}).get('matchList', []) if isinstance(recent_s7.get('away'), dict) else []
+            if home_s7 and away_s7:
+                h_mean = sum(float(x.get('homeTeamFullCourtGoalCnt', 0) or 0) for x in home_s7) / len(home_s7)
+                a_mean = sum(float(x.get('awayTeamFullCourtGoalCnt', 0) or 0) for x in away_s7) / len(away_s7)
+                if h_mean + a_mean > 3.0:
+                    return {'action': 'skip', 'reason': f'S7跳过: 近况和{h_mean+a_mean:.1f}>3.0(主{h_mean:.1f}+客{a_mean:.1f})'}
+        except:
+            pass
         rule = 'S7'
         bet_goals = [2]
         bet_type = 'single'
@@ -1075,7 +1109,7 @@ def compute_betting(data, analysis):
             
             if sweet_map:
                 bp = sweet_map.get(bet_goals[0], 0)
-                if 0.1 < bp <= 0.2:
+                if 0.1 < bp <= 0.2 and rule not in ('S8', 'G2'):
                     goal_stake = goal_stake * 2
                     rule = f'{rule}(甜区翻倍)'
                     _trace_log('SWEET-X2', f'{rule} sim占比={bp:.0%}→仓位翻倍')
@@ -1085,7 +1119,7 @@ def compute_betting(data, analysis):
     # ⚠️ 相似温区跳过 (2026-05-26)
     # 投注目标在相似中出现≥2次(≥25%)=过热 → 跳过(除S7免疫)
     # 5月回测: 3场全黑零误伤, 命中68%→81%
-    if rule not in ('S7','S8') and bet_goals and goal_stake > 0:
+    if rule not in ('S7','S8','G2') and bet_goals and goal_stake > 0:
         try:
             cache_key = '_sim_sweet_cache'
             sweet_map = data.get(cache_key, {})
@@ -1132,6 +1166,7 @@ def compute_betting(data, analysis):
             'goals': bet_goals,
             'stake': goal_stake,
             'odds': {str(g): round(o, 1) for g, o in goal_odds.items()},
+            **({'stake_split': {0: 10, 2: 20}} if rule == 'G2' else {}),
         },
         'score_bets': score_bets,
         'score_stake': total_score_stake,
