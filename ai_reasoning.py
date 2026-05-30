@@ -799,12 +799,20 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif p1_signal:
-        # 信号P1: 黄金1球+通用3球+平平不动 → 1球30元 (10场8中80%, ROI+190%, 2026-05-30)
-        # ⚠️ 平平降=0与S8(平平降>17%)互斥, 不会冲突
+        # 信号P1: 黄金1球+通用3球+平平不动 → 0:1比分30元 (10场4中40%, 均赔7.7, ROI+207%, 2026-05-30)
+        # ⚠️ 1:0/0:1方向随机各50%, 0:1赔率更高→博高赔
+        try:
+            so_p1 = data.get('score_odds', {})
+            o01 = float(so_p1.get('00:01', 0) or 0)
+            if o01 <= 0:
+                return {'action': 'skip', 'reason': 'P1跳过: 0:1赔率缺失'}
+        except:
+            return {'action': 'skip', 'reason': 'P1跳过: 数据异常'}
         rule = 'P1'
-        bet_goals = [1]
+        bet_goals = []
         bet_type = 'single'
-        goal_stake = 30
+        goal_stake = 0
+        score_bets = [{'score': '0:1', 'stake': 30, 'odds': round(o01, 1)}]
     elif s8_signal:
         # 信号S8: g0<10+平平降>17%→假0:0恐慌盘, 11场7中64% ROI+172% (2026-05-28)
         # 投HAD方向比分10元 + 1球总进球20元 = 30元
