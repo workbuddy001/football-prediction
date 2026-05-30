@@ -294,6 +294,22 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # P1信号: 黄金1球+通用3球+平平不动 → 1球 (10场8中80%, ROI+190%, 2026-05-30)
+    p1_signal = False
+    try:
+        p1_g1 = float(data.get('total_goals', {}).get('1球', 0) or 0)
+        p1_g0 = float(data.get('total_goals', {}).get('0球', 0) or 0)
+        p1_rf = float(data.get('hhad', {}).get('让负', 0) or 0)
+        p1_rq = int(data.get('hhad', {}).get('让球', '0') or '0')
+        hf = data.get('hafu_change', {}) or {}
+        pp = hf.get('平平', {})
+        p1_pp_chg = float(pp.get('change_pct', 0)) if isinstance(pp, dict) else 0
+        if (3.0 <= p1_g1 <= 4.0 and p1_g0 < 10 and p1_rq == -1 
+            and 1.5 <= p1_rf <= 1.7 and p1_pp_chg == 0):
+            p1_signal = True
+    except:
+        pass
+    
     # 预计算S2/S3/S4信号（近况<2.5 + 大球反常保留→反向投注）
     s2_5ball = False; s3_6ball = False; s4_7ball = False; s5_22 = False; s6_2ball = False
     try:
@@ -782,6 +798,13 @@ def compute_betting(data, analysis):
         bet_goals = [2]
         bet_type = 'single'
         goal_stake = 20
+    elif p1_signal:
+        # 信号P1: 黄金1球+通用3球+平平不动 → 1球30元 (10场8中80%, ROI+190%, 2026-05-30)
+        # ⚠️ 平平降=0与S8(平平降>17%)互斥, 不会冲突
+        rule = 'P1'
+        bet_goals = [1]
+        bet_type = 'single'
+        goal_stake = 30
     elif s8_signal:
         # 信号S8: g0<10+平平降>17%→假0:0恐慌盘, 11场7中64% ROI+172% (2026-05-28)
         # 投HAD方向比分10元 + 1球总进球20元 = 30元
@@ -1109,7 +1132,7 @@ def compute_betting(data, analysis):
             
             if sweet_map:
                 bp = sweet_map.get(bet_goals[0], 0)
-                if 0.1 < bp <= 0.2 and rule not in ('S8', 'G2'):
+                if 0.1 < bp <= 0.2 and rule not in ('S8', 'G2', 'P1'):
                     goal_stake = goal_stake * 2
                     rule = f'{rule}(甜区翻倍)'
                     _trace_log('SWEET-X2', f'{rule} sim占比={bp:.0%}→仓位翻倍')
@@ -1119,7 +1142,7 @@ def compute_betting(data, analysis):
     # ⚠️ 相似温区跳过 (2026-05-26)
     # 投注目标在相似中出现≥2次(≥25%)=过热 → 跳过(除S7免疫)
     # 5月回测: 3场全黑零误伤, 命中68%→81%
-    if rule not in ('S7','S8','G2') and bet_goals and goal_stake > 0:
+    if rule not in ('S7','S8','G2','P1') and bet_goals and goal_stake > 0:
         try:
             cache_key = '_sim_sweet_cache'
             sweet_map = data.get(cache_key, {})
