@@ -901,8 +901,37 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 0
     
+    # ===== C1冷推: 博冷比分20元 (V3过滤, 2026-06-01) =====
+    cold_sb = None
+    try:
+        from v36_analyzer import analyze_match as v36_cold
+        cold_analysis = v36_cold(data)
+        csb = cold_analysis.get('score_bet')
+        if csb and csb.get('strategy') == '无推荐博冷':
+            c_odds = csb.get('odds', 0)
+            c_bet_goals = csb['goals']
+            c_g0 = float(data.get('total_goals', {}).get('0球', 99) or 99)
+            c_ok = True
+            if c_bet_goals >= 5 and c_g0 < 25 and c_odds <= 20: c_ok = False
+            if c_bet_goals == 4 and 10 < c_g0 < 30 and c_odds <= 20: c_ok = False
+            if c_bet_goals <= 2 and c_g0 >= 15 and c_odds <= 20: c_ok = False
+            if c_odds > 100: c_ok = False
+            if 15 < c_odds <= 30: c_ok = False
+            if c_ok:
+                cold_sb = {'score': csb['score'], 'odds': round(c_odds, 1), 'stake': 20, 'tag': '冷推'}
+    except:
+        pass
+    
     if not rule:
-        return {'action': 'skip', 'reason': '无匹配投注规则'}
+        if cold_sb:
+            rule = 'C1'
+            bet_goals = []
+            bet_type = 'single'
+            goal_stake = 0
+            score_bets = [cold_sb]
+            total_score_stake = cold_sb['stake']
+        else:
+            return {'action': 'skip', 'reason': '无匹配投注规则'}
     
     # 进球数投注
     goal_odds = {g: go.get(g) for g in bet_goals if go.get(g)}
@@ -959,7 +988,7 @@ def compute_betting(data, analysis):
         # H2: Top1=1:1+o0 11-13+平<3.5+2球铁保留/大热 → 纯买1:1 10元 (ROI+231%)
         ho = _get_score_odds('1:1')
         if ho > 0:
-            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 10, 'tag': 'H2铁保留'})
+            score_bets.append({'score': '1:1', 'odds': round(ho, 1), 'stake': 20, 'tag': 'H2铁保留'})
         conf_tag = ''
     elif rule == 'S5':
         # S5: Top1=3:0+3/4球双警惕+平>=5+近>=3.2 → 纯买2:2 10元 (ROI+910%)
@@ -1064,7 +1093,7 @@ def compute_betting(data, analysis):
         return {'action': 'skip', 'reason': f'{rule}已停用(低ROI)'}
     
     # ⚠️ Shadow Voting: 大球方向触发了小球/闷平信号→风控减半（2026-05-22）
-    if '大球' in v36_dir and rule in ['H5', 'H3', 'H2']:
+    if '大球' in v36_dir and rule in ['H5', 'H3']:
         goal_stake = goal_stake // 2
         if goal_stake % 2 == 1: goal_stake += 1  # 竞彩2元倍数对齐
         for sb in score_bets:
@@ -1177,6 +1206,12 @@ def compute_betting(data, analysis):
                         return {'action': 'skip', 'reason': f'{rule}跳过: 比分冷区({bet_tg}球出现{cnt}次<2次)'}
         except:
             pass
+    
+    # C1冷推与现有规则共存：追加冷推比分
+    if cold_sb and rule != 'C1':
+        score_bets.append(cold_sb)
+        total_score_stake += cold_sb['stake']
+        rule = f'{rule}+C1'
     
     # 重建summary
     if bet_goals:
