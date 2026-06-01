@@ -1088,12 +1088,12 @@ def compute_betting(data, analysis):
         summary_text += ' 🔥双确认(S6+S7)'
     
     # 2026-05-18 停用低ROI信号
-    DISABLED = {'S6', 'H4', 'G4', 'R3', 'R4'}  # R3: 43场ROI+4%鸡肋, R4: 暂未启用
+    DISABLED = {'S6', 'H4', 'G4', 'R3', 'R4', 'X2', 'X5', 'G5', 'H5'}  # R3: 43场ROI+4%鸡肋, R4: 暂未启用
     if rule in DISABLED:
         return {'action': 'skip', 'reason': f'{rule}已停用(低ROI)'}
     
     # ⚠️ Shadow Voting: 大球方向触发了小球/闷平信号→风控减半（2026-05-22）
-    if '大球' in v36_dir and rule in ['H5', 'H3']:
+    if '大球' in v36_dir and rule in ['H3']:
         goal_stake = goal_stake // 2
         if goal_stake % 2 == 1: goal_stake += 1  # 竞彩2元倍数对齐
         for sb in score_bets:
