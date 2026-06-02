@@ -500,6 +500,7 @@ def compute_betting(data, analysis):
         # G2: g0=10+g2≈3.0 → 0或2球必选一 → 0球10元+2球20元=30元 (5场5中100%, ROI+154%)
         # ⚠️ 优先于R0: 此信号独立于R0的draw/联赛过滤, 0/2球二选一全覆盖
         # ⚠️ 近况过滤: 主+客近况和>3.0→跳过 (巴列卡诺3.2=0/1, 其余≤3.0全中)
+        # ⚠️ 平赔过滤: draw>3.4→跳过 (16场中5场draw>3.4仅1中20%, 2026-06-03)
         try:
             preview_g2 = data.get('preview', {})
             recent_g2 = preview_g2.get('recent', {})
@@ -512,6 +513,8 @@ def compute_betting(data, analysis):
                     return {'action': 'skip', 'reason': f'G2跳过: 近况和{h_m+a_m:.1f}>3.0(主{h_m:.1f}+客{a_m:.1f})'}
         except:
             pass
+        if draw is not None and draw > 3.4:
+            return {'action': 'skip', 'reason': f'G2跳过: 平赔{draw:.2f}>3.4(仅20%命中)'}
         rule = 'G2'
         bet_goals = [0, 2]
         bet_type = 'dual'
