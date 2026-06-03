@@ -310,6 +310,19 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算N1信号：4球低价+平赔跌→6球 (2026-06-03, 10场4/10=40% ROI+405%)
+    n1_signal = False
+    try:
+        g4_raw = data.get('total_goals', {}).get('4球')
+        g4_val = float(g4_raw) if g4_raw else 99
+        had_ch = data.get('had_change', {})
+        draw_ch = had_ch.get('平', {})
+        ch_pct = float(draw_ch.get('change_pct', 0)) if isinstance(draw_ch, dict) else 0
+        if g4_val < 5.0 and -20 <= ch_pct <= -10:
+            n1_signal = True
+    except:
+        pass
+    
     # 预计算S2/S3/S4信号（近况<2.5 + 大球反常保留→反向投注）
     s2_5ball = False; s3_6ball = False; s4_7ball = False; s5_22 = False; s6_2ball = False
     try:
@@ -743,6 +756,13 @@ def compute_betting(data, analysis):
                 return {'action': 'skip', 'reason': 'G6跳过: 警惕造热(0/2全黑)'}
         except: pass
         rule = 'G6'
+        bet_goals = [6]
+        bet_type = 'single'
+        goal_stake = 20
+    elif n1_signal:
+        # N1: g4<5.0+平赔跌10-20%→6球 (10场4/10=40% ROI+405%, 2026-06-03)
+        # ⚠️ 未来若加CAND041(g2≥4.0+平跌→6球)需做互斥, 当前独用
+        rule = 'N1'
         bet_goals = [6]
         bet_type = 'single'
         goal_stake = 20
