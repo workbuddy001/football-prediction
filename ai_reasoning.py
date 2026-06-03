@@ -1111,7 +1111,7 @@ def compute_betting(data, analysis):
         summary_text += ' 🔥双确认(S6+S7)'
     
     # 2026-05-18 停用低ROI信号
-    DISABLED = {'S6', 'H4', 'G4', 'R3', 'R4', 'X2', 'X5', 'G5', 'H5'}  # R3: 43场ROI+4%鸡肋, R4: 暂未启用
+    DISABLED = {'S6', 'H4', 'G4', 'R3', 'R4', 'X2', 'X5', 'G5', 'H5', 'G7'}  # G7: 1场0/1 ROI-100%, F:0触发
     if rule in DISABLED:
         return {'action': 'skip', 'reason': f'{rule}已停用(低ROI)'}
     
