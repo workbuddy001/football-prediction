@@ -292,6 +292,14 @@ def run(weekly_only=True):
          'g0≥16时首选赔率重复→改选次选2/2=100%命中',
          '等≥5场后确认, 目前样本不足暂不落代码',
          '预计1-2个月后回测验证'),
+        ('6.3 CAND030 → 1球候选',
+         '条件: 3球赔升10-20% + 7球暴跌20%+ → 1球20元',
+         '6场4/6=67% ROI+437%, 但未通过Bonferroni校正, 样本过小',
+         '6月前向验证: 仅触发不实投, 等≥5场新触发后做统计再检验'),
+        ('6.3 CAND038 → 5球候选',
+         '条件: g3[3.0-3.3) + 1球升10-20% → 5球20元',
+         '16场7/16=44% ROI+269%, 样本量最大候选中, 但ROI偏低',
+         '6月前向验证: 仅触发不实投, 等≥5场新触发后做统计再检验'),
     ]
     if watch_items:
         watch_section = []
@@ -308,7 +316,88 @@ def run(weekly_only=True):
         lines.append("\n".join(watch_section))
         report = "\n".join(lines)
 
-    # ===== 进化里程碑追踪（从_scores.json统计全量触发） =====
+    # ===== 前向验证追踪: CAND030 & CAND038 =====
+    cand030_triggers = []
+    cand038_triggers = []
+    for k, v in scores.items():
+        mid = v.get('match_id', '')
+        hs = v.get('home_score')
+        aws = v.get('away_score')
+        if hs is None or aws is None: continue
+        rt = str(v.get('record_time', ''))
+        if '2026-04' not in rt and '2026-05' not in rt: continue
+        if weekly_only:
+            from datetime import datetime, timedelta
+            try:
+                match_date = datetime.strptime(rt[:10], '%Y-%m-%d')
+                if match_date < datetime.now() - timedelta(days=7): continue
+            except: pass
+        fp = os.path.join(DATA_DIR, f'{mid}.json')
+        if not os.path.exists(fp): continue
+        with open(fp, 'r', encoding='utf-8') as f: data = json.load(f)
+        
+        # CAND030: 3球升10-20% + 7球暴跌20%+
+        try:
+            ttg = data.get('ttg_change', {})
+            g3_ch = float(ttg.get('3球', {}).get('change_pct', 0) or 0)
+            g7_ch = float(ttg.get('7球', {}).get('change_pct', 0) or 0)
+            if 10 <= g3_ch < 20 and g7_ch <= -20:
+                tg = data.get('total_goals', {})
+                g1_odds = float(tg.get('1球', 0) or 0)
+                info = data.get('match_info', {})
+                home = info.get('home_team', '?') if isinstance(info, dict) else '?'
+                away = info.get('away_team', '?') if isinstance(info, dict) else '?'
+                profit = (20 * g1_odds - 20) if (hs + aws) == 1 else -20
+                cand030_triggers.append({
+                    'date': rt[:10], 'team': f'{home}vs{away}',
+                    'score': f'{hs}:{aws}', 'tg': hs + aws,
+                    'odds': g1_odds, 'profit': profit, 'hit': (hs + aws) == 1
+                })
+        except: pass
+        
+        # CAND038: g3[3.0-3.3) + 1球升10-20%
+        try:
+            tg = data.get('total_goals', {})
+            g3 = float(tg.get('3球', 0) or 0)
+            ttg = data.get('ttg_change', {})
+            g1_ch = float(ttg.get('1球', {}).get('change_pct', 0) or 0)
+            if 3.0 <= g3 < 3.3 and 10 <= g1_ch < 20:
+                g5_odds = float(tg.get('5球', 0) or 0)
+                info = data.get('match_info', {})
+                home = info.get('home_team', '?') if isinstance(info, dict) else '?'
+                away = info.get('away_team', '?') if isinstance(info, dict) else '?'
+                profit = (20 * g5_odds - 20) if (hs + aws) == 5 else -20
+                cand038_triggers.append({
+                    'date': rt[:10], 'team': f'{home}vs{away}',
+                    'score': f'{hs}:{aws}', 'tg': hs + aws,
+                    'odds': g5_odds, 'profit': profit, 'hit': (hs + aws) == 5
+                })
+        except: pass
+    
+    if cand030_triggers or cand038_triggers:
+        lines.append("")
+        lines.append("=" * 60)
+        lines.append(f"  🔍 前向验证追踪 (CAND030 & CAND038)")
+        lines.append("=" * 60)
+    
+    if cand030_triggers:
+        c30_hit = sum(1 for t in cand030_triggers if t['hit'])
+        c30_profit = sum(t['profit'] for t in cand030_triggers)
+        c30_n = len(cand030_triggers)
+        lines.append(f"  CAND030(3升+7暴跌→1球): 本周触发{c30_n}场 命中{c30_hit}/{c30_n} 盈亏{int(c30_profit):+d}元")
+        for t in cand030_triggers:
+            lines.append(f"    {t['date']} {t['team']} {t['score']}({t['tg']}球) 1球赔{t['odds']:.1f} {int(t['profit']):+d} {'HIT' if t['hit'] else 'MISS'}")
+    
+    if cand038_triggers:
+        c38_hit = sum(1 for t in cand038_triggers if t['hit'])
+        c38_profit = sum(t['profit'] for t in cand038_triggers)
+        c38_n = len(cand038_triggers)
+        lines.append(f"  CAND038(g3[3.0-3.3)+1球升→5球): 本周触发{c38_n}场 命中{c38_hit}/{c38_n} 盈亏{int(c38_profit):+d}元")
+        for t in cand038_triggers:
+            lines.append(f"    {t['date']} {t['team']} {t['score']}({t['tg']}球) 5球赔{t['odds']:.1f} {int(t['profit']):+d} {'HIT' if t['hit'] else 'MISS'}")
+    
+    if not cand030_triggers and not cand038_triggers:
+        lines.append("  (本周无触发)")
     total_triggers = sum(s['hit'] + s['miss'] for s in rule_stats.values())
     # 覆盖全量触发数（weekly模式时rule_stats只含本周，需补全）
     all_scores = {}
