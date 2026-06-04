@@ -1,0 +1,1124 @@
+[
+  {
+    "rank": 1,
+    "rule_id": "CAND001",
+    "target_goal": 6,
+    "conditions": {
+      "g0": "g0_[11-13)",
+      "form_avg": "form_[3.5-4.5)"
+    },
+    "n_samples": 3,
+    "n_hits": 2,
+    "hit_rate": 66.7,
+    "avg_odds": 22.5,
+    "stake": 60,
+    "profit": 840.0,
+    "roi": 1400.0,
+    "sample_mids": [
+      "2039011",
+      "2039469",
+      "2039601"
+    ]
+  },
+  {
+    "rank": 2,
+    "rule_id": "CAND002",
+    "target_goal": 6,
+    "conditions": {
+      "had_w": "had_w_[2.5-3.0)",
+      "ch_had_l": "ch_had_l_up5-10"
+    },
+    "n_samples": 6,
+    "n_hits": 3,
+    "hit_rate": 50.0,
+    "avg_odds": 19.0,
+    "stake": 120,
+    "profit": 1020.0,
+    "roi": 850.0,
+    "sample_mids": [
+      "2039469",
+      "2039704",
+      "2039745",
+      "2039753",
+      "2039792"
+    ]
+  },
+  {
+    "rank": 3,
+    "rule_id": "CAND003",
+    "target_goal": 6,
+    "conditions": {
+      "had_l": "had_l_[2.0-2.5)",
+      "ch_had_l": "ch_had_l_up5-10"
+    },
+    "n_samples": 6,
+    "n_hits": 3,
+    "hit_rate": 50.0,
+    "avg_odds": 19.0,
+    "stake": 120,
+    "profit": 1020.0,
+    "roi": 850.0,
+    "sample_mids": [
+      "2039469",
+      "2039704",
+      "2039745",
+      "2039753",
+      "2039792"
+    ]
+  },
+  {
+    "rank": 4,
+    "rule_id": "CAND004",
+    "target_goal": 0,
+    "conditions": {
+      "had_d": "had_d_[3.5-4.5)",
+      "ch_had_l": "ch_had_l_up20+"
+    },
+    "n_samples": 6,
+    "n_hits": 3,
+    "hit_rate": 50.0,
+    "avg_odds": 14.5,
+    "stake": 120,
+    "profit": 750.0,
+    "roi": 625.0,
+    "sample_mids": [
+      "2039406",
+      "2039474",
+      "2039507",
+      "2039770",
+      "2039869"
+    ]
+  },
+  {
+    "rank": 5,
+    "rule_id": "CAND005",
+    "target_goal": 0,
+    "conditions": {
+      "had_d": "had_d_[4.5+)",
+      "ch_g1": "ch_g1_dn5-10"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 19.0,
+    "stake": 100,
+    "profit": 660.0,
+    "roi": 660.0,
+    "sample_mids": [
+      "2038811",
+      "2038831",
+      "2038846",
+      "2038927",
+      "2039329"
+    ]
+  },
+  {
+    "rank": 6,
+    "rule_id": "CAND006",
+    "target_goal": 0,
+    "conditions": {
+      "g0": "g0_[16-20)",
+      "ch_g5": "ch_g5_dn10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 17.25,
+    "stake": 80,
+    "profit": 610.0,
+    "roi": 762.5,
+    "sample_mids": [
+      "2038721",
+      "2038807",
+      "2039158",
+      "2039356"
+    ]
+  },
+  {
+    "rank": 7,
+    "rule_id": "CAND007",
+    "target_goal": 0,
+    "conditions": {
+      "ch_had_d": "ch_had_d_up10-20",
+      "ch_had_l": "ch_had_l_up20+"
+    },
+    "n_samples": 7,
+    "n_hits": 3,
+    "hit_rate": 42.9,
+    "avg_odds": 14.5,
+    "stake": 140,
+    "profit": 730.0,
+    "roi": 521.4,
+    "sample_mids": [
+      "2039406",
+      "2039474",
+      "2039488",
+      "2039507",
+      "2039791"
+    ]
+  },
+  {
+    "rank": 8,
+    "rule_id": "CAND008",
+    "target_goal": 0,
+    "conditions": {
+      "had_w": "had_w_[2.5-3.0)",
+      "ch_g7": "ch_g7_up5-10"
+    },
+    "n_samples": 7,
+    "n_hits": 3,
+    "hit_rate": 42.9,
+    "avg_odds": 14.33,
+    "stake": 140,
+    "profit": 720.0,
+    "roi": 514.3,
+    "sample_mids": [
+      "2039184",
+      "2039191",
+      "2039267",
+      "2039295",
+      "2039494"
+    ]
+  },
+  {
+    "rank": 9,
+    "rule_id": "CAND009",
+    "target_goal": 0,
+    "conditions": {
+      "a_form": "form_[2.0-2.5)",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 3,
+    "n_hits": 2,
+    "hit_rate": 66.7,
+    "avg_odds": 15.0,
+    "stake": 60,
+    "profit": 540.0,
+    "roi": 900.0,
+    "sample_mids": [
+      "2039406",
+      "2039474",
+      "2039845"
+    ]
+  },
+  {
+    "rank": 10,
+    "rule_id": "CAND010",
+    "target_goal": 0,
+    "conditions": {
+      "a_form": "form_[2.0-2.5)",
+      "ch_had_l": "ch_had_l_up20+"
+    },
+    "n_samples": 3,
+    "n_hits": 2,
+    "hit_rate": 66.7,
+    "avg_odds": 15.0,
+    "stake": 60,
+    "profit": 540.0,
+    "roi": 900.0,
+    "sample_mids": [
+      "2039406",
+      "2039474",
+      "2039939"
+    ]
+  },
+  {
+    "rank": 11,
+    "rule_id": "CAND011",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g4": "ch_g4_flat",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 3,
+    "n_hits": 2,
+    "hit_rate": 66.7,
+    "avg_odds": 15.0,
+    "stake": 60,
+    "profit": 540.0,
+    "roi": 900.0,
+    "sample_mids": [
+      "2039406",
+      "2039474",
+      "2039488"
+    ]
+  },
+  {
+    "rank": 12,
+    "rule_id": "CAND012",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g0": "ch_g0_up10-20",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 3,
+    "n_hits": 2,
+    "hit_rate": 66.7,
+    "avg_odds": 14.75,
+    "stake": 60,
+    "profit": 530.0,
+    "roi": 883.3,
+    "sample_mids": [
+      "2039406",
+      "2039869",
+      "2039928"
+    ]
+  },
+  {
+    "rank": 13,
+    "rule_id": "CAND013",
+    "target_goal": 1,
+    "conditions": {
+      "g0": "g0_[35+)",
+      "h_form": "form_[2.5-3.0)"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 10.43,
+    "stake": 80,
+    "profit": 546.0,
+    "roi": 682.5,
+    "sample_mids": [
+      "2039260",
+      "2039264",
+      "2039418",
+      "2039512"
+    ]
+  },
+  {
+    "rank": 14,
+    "rule_id": "CAND014",
+    "target_goal": 6,
+    "conditions": {
+      "g4": "g4_[<5.0)",
+      "ch_had_d": "ch_had_d_dn10-20"
+    },
+    "n_samples": 10,
+    "n_hits": 4,
+    "hit_rate": 40.0,
+    "avg_odds": 12.62,
+    "stake": 200,
+    "profit": 810.0,
+    "roi": 405.0,
+    "sample_mids": [
+      "2039482",
+      "2039580",
+      "2039696",
+      "2039704",
+      "2039713"
+    ]
+  },
+  {
+    "rank": 15,
+    "rule_id": "CAND015",
+    "target_goal": 6,
+    "conditions": {
+      "h_form": "form_[4.5+)",
+      "v36_h_att": "hatt_[1.5-2.5)"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 16.82,
+    "stake": 100,
+    "profit": 573.0,
+    "roi": 573.0,
+    "sample_mids": [
+      "2039469",
+      "2039505",
+      "2039717",
+      "2039763",
+      "2039886"
+    ]
+  },
+  {
+    "rank": 16,
+    "rule_id": "CAND016",
+    "target_goal": 0,
+    "conditions": {
+      "g0": "g0_[9-11)",
+      "ch_g2": "ch_g2_dn10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 10.17,
+    "stake": 80,
+    "profit": 530.0,
+    "roi": 662.5,
+    "sample_mids": [
+      "2039313",
+      "2039712",
+      "2039986",
+      "2040018"
+    ]
+  },
+  {
+    "rank": 17,
+    "rule_id": "CAND017",
+    "target_goal": 0,
+    "conditions": {
+      "had_d": "had_d_[3.0-3.5)",
+      "ch_g2": "ch_g2_dn10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 10.17,
+    "stake": 80,
+    "profit": 530.0,
+    "roi": 662.5,
+    "sample_mids": [
+      "2039015",
+      "2039313",
+      "2039986",
+      "2040018"
+    ]
+  },
+  {
+    "rank": 18,
+    "rule_id": "CAND018",
+    "target_goal": 0,
+    "conditions": {
+      "had_l": "had_l_[4.5+)",
+      "ch_had_w": "ch_had_w_dn10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 14.75,
+    "stake": 80,
+    "profit": 510.0,
+    "roi": 637.5,
+    "sample_mids": [
+      "2039406",
+      "2039507",
+      "2039783",
+      "2039869"
+    ]
+  },
+  {
+    "rank": 19,
+    "rule_id": "CAND019",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g0": "ch_g0_up10-20",
+      "ch_had_w": "ch_had_w_dn10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 14.75,
+    "stake": 80,
+    "profit": 510.0,
+    "roi": 637.5,
+    "sample_mids": [
+      "2039319",
+      "2039406",
+      "2039858",
+      "2039869"
+    ]
+  },
+  {
+    "rank": 20,
+    "rule_id": "CAND020",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g0": "ch_g0_up10-20",
+      "ch_had_l": "ch_had_l_up20+"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 14.75,
+    "stake": 80,
+    "profit": 510.0,
+    "roi": 637.5,
+    "sample_mids": [
+      "2039406",
+      "2039869",
+      "2039928",
+      "2039931"
+    ]
+  },
+  {
+    "rank": 21,
+    "rule_id": "CAND021",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g7": "ch_g7_up5-10",
+      "ch_had_d": "ch_had_d_dn5-10"
+    },
+    "n_samples": 6,
+    "n_hits": 3,
+    "hit_rate": 50.0,
+    "avg_odds": 11.75,
+    "stake": 120,
+    "profit": 585.0,
+    "roi": 487.5,
+    "sample_mids": [
+      "2039454",
+      "2039465",
+      "2039615",
+      "2039636",
+      "2039744"
+    ]
+  },
+  {
+    "rank": 22,
+    "rule_id": "CAND022",
+    "target_goal": 5,
+    "conditions": {
+      "ch_g5": "ch_g5_up20+",
+      "ch_had_l": "ch_had_l_up5-10"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 14.5,
+    "stake": 80,
+    "profit": 500.0,
+    "roi": 625.0,
+    "sample_mids": [
+      "2039584",
+      "2039742",
+      "2039745",
+      "2040025"
+    ]
+  },
+  {
+    "rank": 23,
+    "rule_id": "CAND023",
+    "target_goal": 0,
+    "conditions": {
+      "g0": "g0_[9-11)",
+      "ch_had_l": "ch_had_l_up5-10"
+    },
+    "n_samples": 5,
+    "n_hits": 3,
+    "hit_rate": 60.0,
+    "avg_odds": 10.17,
+    "stake": 100,
+    "profit": 510.0,
+    "roi": 510.0,
+    "sample_mids": [
+      "2039596",
+      "2039753",
+      "2039761",
+      "2039904",
+      "2040024"
+    ]
+  },
+  {
+    "rank": 24,
+    "rule_id": "CAND024",
+    "target_goal": 5,
+    "conditions": {
+      "g0": "g0_[11-13)",
+      "ch_g2": "ch_g2_dn10-20"
+    },
+    "n_samples": 7,
+    "n_hits": 3,
+    "hit_rate": 42.9,
+    "avg_odds": 12.17,
+    "stake": 140,
+    "profit": 590.0,
+    "roi": 421.4,
+    "sample_mids": [
+      "2039015",
+      "2039581",
+      "2039584",
+      "2039644",
+      "2039657"
+    ]
+  },
+  {
+    "rank": 25,
+    "rule_id": "CAND025",
+    "target_goal": 0,
+    "conditions": {
+      "g0": "g0_[13-16)",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 13.75,
+    "stake": 80,
+    "profit": 470.0,
+    "roi": 587.5,
+    "sample_mids": [
+      "2038719",
+      "2039474",
+      "2039488",
+      "2039869"
+    ]
+  },
+  {
+    "rank": 26,
+    "rule_id": "CAND026",
+    "target_goal": 5,
+    "conditions": {
+      "ch_g1": "ch_g1_up10-20",
+      "ch_g6": "ch_g6_up20+"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 9.17,
+    "stake": 80,
+    "profit": 470.0,
+    "roi": 587.5,
+    "sample_mids": [
+      "2039657",
+      "2039661",
+      "2039808",
+      "2040002"
+    ]
+  },
+  {
+    "rank": 27,
+    "rule_id": "CAND027",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g1": "ch_g1_up10-20",
+      "ch_had_w": "ch_had_w_dn10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.75,
+    "stake": 100,
+    "profit": 490.0,
+    "roi": 490.0,
+    "sample_mids": [
+      "2039319",
+      "2039406",
+      "2039783",
+      "2039869",
+      "2039985"
+    ]
+  },
+  {
+    "rank": 28,
+    "rule_id": "CAND028",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g1": "ch_g1_up10-20",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.75,
+    "stake": 100,
+    "profit": 490.0,
+    "roi": 490.0,
+    "sample_mids": [
+      "2038719",
+      "2039406",
+      "2039694",
+      "2039783",
+      "2039869"
+    ]
+  },
+  {
+    "rank": 29,
+    "rule_id": "CAND029",
+    "target_goal": 0,
+    "conditions": {
+      "ch_had_w": "ch_had_w_dn10-20",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.75,
+    "stake": 100,
+    "profit": 490.0,
+    "roi": 490.0,
+    "sample_mids": [
+      "2039406",
+      "2039507",
+      "2039783",
+      "2039811",
+      "2039869"
+    ]
+  },
+  {
+    "rank": 30,
+    "rule_id": "CAND030",
+    "target_goal": 1,
+    "conditions": {
+      "ch_g3": "ch_g3_up10-20",
+      "ch_g7": "ch_g7_dn20+"
+    },
+    "n_samples": 6,
+    "n_hits": 4,
+    "hit_rate": 66.7,
+    "avg_odds": 8.05,
+    "stake": 120,
+    "profit": 524.0,
+    "roi": 436.7,
+    "sample_mids": [
+      "2038836",
+      "2038867",
+      "2039007",
+      "2039008",
+      "2039931"
+    ]
+  },
+  {
+    "rank": 31,
+    "rule_id": "CAND031",
+    "target_goal": 1,
+    "conditions": {
+      "ch_g3": "ch_g3_up10-20",
+      "ch_g6": "ch_g6_dn20+"
+    },
+    "n_samples": 3,
+    "n_hits": 3,
+    "hit_rate": 100.0,
+    "avg_odds": 8.07,
+    "stake": 60,
+    "profit": 424.0,
+    "roi": 706.7,
+    "sample_mids": [
+      "2038836",
+      "2038867",
+      "2040056"
+    ]
+  },
+  {
+    "rank": 32,
+    "rule_id": "CAND032",
+    "target_goal": 5,
+    "conditions": {
+      "form_avg": "form_[2.0-2.5)",
+      "ch_g5": "ch_g5_up20+"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.5,
+    "stake": 100,
+    "profit": 480.0,
+    "roi": 480.0,
+    "sample_mids": [
+      "2039271",
+      "2039584",
+      "2039986",
+      "2040001",
+      "2040025"
+    ]
+  },
+  {
+    "rank": 33,
+    "rule_id": "CAND033",
+    "target_goal": 5,
+    "conditions": {
+      "ch_g0": "ch_g0_dn5-10",
+      "ch_g5": "ch_g5_up20+"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.5,
+    "stake": 100,
+    "profit": 480.0,
+    "roi": 480.0,
+    "sample_mids": [
+      "2039548",
+      "2039560",
+      "2039584",
+      "2039742",
+      "2040025"
+    ]
+  },
+  {
+    "rank": 34,
+    "rule_id": "CAND034",
+    "target_goal": 6,
+    "conditions": {
+      "h_form": "form_[2.5-3.0)",
+      "ch_had_d": "ch_had_d_dn10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.5,
+    "stake": 100,
+    "profit": 480.0,
+    "roi": 480.0,
+    "sample_mids": [
+      "2039506",
+      "2039741",
+      "2039745",
+      "2039860",
+      "2039986"
+    ]
+  },
+  {
+    "rank": 35,
+    "rule_id": "CAND035",
+    "target_goal": 0,
+    "conditions": {
+      "g1": "g1_[3.5-4.0)",
+      "ch_g0": "ch_g0_up5-10"
+    },
+    "n_samples": 8,
+    "n_hits": 4,
+    "hit_rate": 50.0,
+    "avg_odds": 9.38,
+    "stake": 160,
+    "profit": 590.0,
+    "roi": 368.8,
+    "sample_mids": [
+      "2038789",
+      "2038830",
+      "2038849",
+      "2038928",
+      "2039256"
+    ]
+  },
+  {
+    "rank": 36,
+    "rule_id": "CAND036",
+    "target_goal": 5,
+    "conditions": {
+      "g5": "g5_[12.0-18.0)",
+      "ch_pp": "ch_pp_up5-10"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 13.0,
+    "stake": 80,
+    "profit": 440.0,
+    "roi": 550.0,
+    "sample_mids": [
+      "2038849",
+      "2038850",
+      "2039046",
+      "2039337"
+    ]
+  },
+  {
+    "rank": 37,
+    "rule_id": "CAND037",
+    "target_goal": 6,
+    "conditions": {
+      "ch_g1": "ch_g1_dn10-20",
+      "ch_had_d": "ch_had_d_dn10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 14.25,
+    "stake": 100,
+    "profit": 470.0,
+    "roi": 470.0,
+    "sample_mids": [
+      "2039482",
+      "2039742",
+      "2039745",
+      "2039946",
+      "2039986"
+    ]
+  },
+  {
+    "rank": 38,
+    "rule_id": "CAND038",
+    "target_goal": 5,
+    "conditions": {
+      "g3": "g3_[3.0-3.3)",
+      "ch_g1": "ch_g1_up10-20"
+    },
+    "n_samples": 16,
+    "n_hits": 7,
+    "hit_rate": 43.8,
+    "avg_odds": 8.44,
+    "stake": 320,
+    "profit": 862.0,
+    "roi": 269.4,
+    "sample_mids": [
+      "2038970",
+      "2039143",
+      "2039193",
+      "2039257",
+      "2039290"
+    ]
+  },
+  {
+    "rank": 39,
+    "rule_id": "CAND039",
+    "target_goal": 5,
+    "conditions": {
+      "g5": "g5_[12.0-18.0)",
+      "ch_g7": "ch_g7_dn5-10"
+    },
+    "n_samples": 4,
+    "n_hits": 2,
+    "hit_rate": 50.0,
+    "avg_odds": 12.75,
+    "stake": 80,
+    "profit": 430.0,
+    "roi": 537.5,
+    "sample_mids": [
+      "2038722",
+      "2038732",
+      "2038840",
+      "2039801"
+    ]
+  },
+  {
+    "rank": 40,
+    "rule_id": "CAND040",
+    "target_goal": 0,
+    "conditions": {
+      "g2": "g2_[2.8-3.1)",
+      "ch_g0": "ch_g0_dn10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 3,
+    "hit_rate": 60.0,
+    "avg_odds": 9.33,
+    "stake": 100,
+    "profit": 460.0,
+    "roi": 460.0,
+    "sample_mids": [
+      "2039327",
+      "2039358",
+      "2039405",
+      "2039480",
+      "2040018"
+    ]
+  },
+  {
+    "rank": 41,
+    "rule_id": "CAND041",
+    "target_goal": 6,
+    "conditions": {
+      "g2": "g2_[4.0+)",
+      "ch_had_d": "ch_had_d_dn10-20"
+    },
+    "n_samples": 7,
+    "n_hits": 3,
+    "hit_rate": 42.9,
+    "avg_odds": 11.17,
+    "stake": 140,
+    "profit": 530.0,
+    "roi": 378.6,
+    "sample_mids": [
+      "2039482",
+      "2039580",
+      "2039696",
+      "2039713",
+      "2039860"
+    ]
+  },
+  {
+    "rank": 42,
+    "rule_id": "CAND042",
+    "target_goal": 6,
+    "conditions": {
+      "g5": "g5_[<8.0)",
+      "ch_had_d": "ch_had_d_dn10-20"
+    },
+    "n_samples": 7,
+    "n_hits": 3,
+    "hit_rate": 42.9,
+    "avg_odds": 11.17,
+    "stake": 140,
+    "profit": 530.0,
+    "roi": 378.6,
+    "sample_mids": [
+      "2039482",
+      "2039580",
+      "2039696",
+      "2039713",
+      "2039860"
+    ]
+  },
+  {
+    "rank": 43,
+    "rule_id": "CAND043",
+    "target_goal": 0,
+    "conditions": {
+      "ch_pp": "ch_pp_up10-20",
+      "ch_had_d": "ch_had_d_up10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 13.75,
+    "stake": 100,
+    "profit": 450.0,
+    "roi": 450.0,
+    "sample_mids": [
+      "2039474",
+      "2039694",
+      "2039783",
+      "2039869",
+      "2039928"
+    ]
+  },
+  {
+    "rank": 44,
+    "rule_id": "CAND044",
+    "target_goal": 0,
+    "conditions": {
+      "ch_pp": "ch_pp_up10-20",
+      "ch_had_l": "ch_had_l_up20+"
+    },
+    "n_samples": 5,
+    "n_hits": 2,
+    "hit_rate": 40.0,
+    "avg_odds": 13.75,
+    "stake": 100,
+    "profit": 450.0,
+    "roi": 450.0,
+    "sample_mids": [
+      "2038720",
+      "2039474",
+      "2039869",
+      "2039928",
+      "2039931"
+    ]
+  },
+  {
+    "rank": 45,
+    "rule_id": "CAND045",
+    "target_goal": 5,
+    "conditions": {
+      "ch_g1": "ch_g1_up10-20",
+      "ch_g5": "ch_g5_up10-20"
+    },
+    "n_samples": 5,
+    "n_hits": 3,
+    "hit_rate": 60.0,
+    "avg_odds": 9.17,
+    "stake": 100,
+    "profit": 450.0,
+    "roi": 450.0,
+    "sample_mids": [
+      "2039582",
+      "2039657",
+      "2039661",
+      "2039843",
+      "2040002"
+    ]
+  },
+  {
+    "rank": 46,
+    "rule_id": "CAND046",
+    "target_goal": 0,
+    "conditions": {
+      "ch_g4": "ch_g4_up5-10",
+      "ch_g7": "ch_g7_up5-10"
+    },
+    "n_samples": 7,
+    "n_hits": 3,
+    "hit_rate": 42.9,
+    "avg_odds": 11.0,
+    "stake": 140,
+    "profit": 520.0,
+    "roi": 371.4,
+    "sample_mids": [
+      "2039023",
+      "2039265",
+      "2039295",
+      "2039311",
+      "2039596"
+    ]
+  },
+  {
+    "rank": 47,
+    "rule_id": "CAND047",
+    "target_goal": 5,
+    "conditions": {
+      "g0": "g0_[16-20)",
+      "ch_g3": "ch_g3_dn10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 8.28,
+    "stake": 80,
+    "profit": 417.0,
+    "roi": 521.2,
+    "sample_mids": [
+      "2039060",
+      "2039247",
+      "2039257",
+      "2040002"
+    ]
+  },
+  {
+    "rank": 48,
+    "rule_id": "CAND048",
+    "target_goal": 1,
+    "conditions": {
+      "had_w": "had_w_[<1.5)",
+      "ch_g3": "ch_g3_up10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 8.17,
+    "stake": 80,
+    "profit": 410.0,
+    "roi": 512.5,
+    "sample_mids": [
+      "2038836",
+      "2039008",
+      "2039931",
+      "2040056"
+    ]
+  },
+  {
+    "rank": 49,
+    "rule_id": "CAND049",
+    "target_goal": 1,
+    "conditions": {
+      "had_d": "had_d_[4.5+)",
+      "ch_g3": "ch_g3_up10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 8.17,
+    "stake": 80,
+    "profit": 410.0,
+    "roi": 512.5,
+    "sample_mids": [
+      "2038836",
+      "2039008",
+      "2039931",
+      "2040056"
+    ]
+  },
+  {
+    "rank": 50,
+    "rule_id": "CAND050",
+    "target_goal": 1,
+    "conditions": {
+      "had_l": "had_l_[4.5+)",
+      "ch_g3": "ch_g3_up10-20"
+    },
+    "n_samples": 4,
+    "n_hits": 3,
+    "hit_rate": 75.0,
+    "avg_odds": 8.17,
+    "stake": 80,
+    "profit": 410.0,
+    "roi": 512.5,
+    "sample_mids": [
+      "2038836",
+      "2039008",
+      "2039931",
+      "2040056"
+    ]
+  }
+]

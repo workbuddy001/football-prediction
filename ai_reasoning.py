@@ -510,7 +510,7 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif g0 == 10 and go.get(2) and 2.9 <= go[2] <= 3.1:
-        # G2: g0=10+g2≈3.0 → 0或2球必选一 → 0球10元+2球20元=30元 (5场5中100%, ROI+154%)
+        # G2: g0=10+g2≈3.0 → 0或2球必选一 → 0球20元+2球10元=30元 (5场5中100%, 优化后ROI+240%)
         # ⚠️ 优先于R0: 此信号独立于R0的draw/联赛过滤, 0/2球二选一全覆盖
         # ⚠️ 近况过滤: 主+客近况和>3.0→跳过 (巴列卡诺3.2=0/1, 其余≤3.0全中)
         # ⚠️ 平赔过滤: draw>3.4→跳过 (16场中5场draw>3.4仅1中20%, 2026-06-03)
@@ -1254,7 +1254,7 @@ def compute_betting(data, analysis):
             'goals': bet_goals,
             'stake': goal_stake,
             'odds': {str(g): round(o, 1) for g, o in goal_odds.items()},
-            **({'stake_split': {0: 10, 2: 20}} if rule == 'G2' else {}),
+            **({'stake_split': {0: 20, 2: 10}} if rule == 'G2' else {}),
         },
         'score_bets': score_bets,
         'score_stake': total_score_stake,
@@ -1782,6 +1782,87 @@ def v36_batch_recommend():
             'fetched_names': fetched_names,
             'signals': signals,
         })
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+# ══════════════════════════════════════════
+#  投注确认埋点 API
+# ══════════════════════════════════════════
+
+@bp.route('/v36/confirm_bet/<match_id>', methods=['POST'])
+def v36_confirm_bet(match_id):
+    """用户确认投注：优先使用前端传来的投注结果（避免重新计算导致赔率变动偏差）"""
+    try:
+        data_file = os.path.join(DATA_DIR, f'{match_id}.json')
+        if not os.path.exists(data_file):
+            return jsonify({'success': False, 'error': f'比赛{match_id}数据不存在'}), 404
+
+        with open(data_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # 优先使用前端传来的已显示投注结果
+        result = None
+        if request.is_json:
+            body = request.get_json(silent=True) or {}
+            if body.get('betting'):
+                result = body['betting']
+        
+        # 如果没有前端数据，重新计算
+        if not result or not result.get('action'):
+            try:
+                import sporttery_web
+                sporttery_web._odds_hitrate_cache = None
+                sporttery_web._change_hitrate_cache = None
+                from sporttery_web import _build_odds_hitrate, _build_change_hitrate
+                if '_odds_hitrate' not in data:
+                    data['_odds_hitrate'] = _build_odds_hitrate()
+                data['_change_hitrate'] = _build_change_hitrate()
+            except:
+                pass
+            from v36_analyzer import analyze_match
+            analysis = analyze_match(data)
+            result = compute_betting(data, analysis)
+
+        # 写入埋点
+        from _rule_logger import confirm_bet as _log_confirm
+        entry = _log_confirm(str(match_id), data, result)
+
+        return jsonify({'success': True, 'entry': entry})
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+@bp.route('/v36/undo_bet/<match_id>', methods=['POST'])
+def v36_undo_bet(match_id):
+    """撤销投注确认。比分数据不受影响，重新确认后可自动回填。"""
+    try:
+        from _rule_logger import undo_bet as _log_undo
+        _log_undo(str(match_id))
+        return jsonify({'success': True})
+    except Exception as e:
+        import traceback
+        return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+@bp.route('/v36/bet_status', methods=['GET'])
+def v36_bet_status():
+    """查询所有已确认的投注状态（批量，供前端初始化用）"""
+    try:
+        from _rule_logger import get_all_confirmed
+        confirmed = get_all_confirmed()
+        status = {}
+        for mid, entry in confirmed.items():
+            status[mid] = {
+                'confirmed': True,
+                'rule': entry.get('rule', ''),
+                'confirmed_at': entry.get('confirmed_at', ''),
+                'actual_total': entry.get('actual_total'),
+                'hit': entry.get('hit'),
+            }
+        return jsonify({'success': True, 'status': status})
     except Exception as e:
         import traceback
         return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500

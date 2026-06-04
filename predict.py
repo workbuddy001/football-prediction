@@ -29,6 +29,13 @@ from ai_reasoning import compute_betting
 from _meltdown import check_streak
 from sporttery_web import _build_change_hitrate, _build_odds_hitrate, _build_score_hitrate_stats
 
+# 埋点回填
+try:
+    from _rule_logger import backfill_scores, query_stats, query_summary
+    _HAS_LOGGER = True
+except:
+    _HAS_LOGGER = False
+
 _oh = _build_odds_hitrate()
 _ch = _build_change_hitrate()
 _build_score_hitrate_stats()
@@ -116,6 +123,39 @@ def print_result(r):
 # ===== 主逻辑 =====
 if __name__ == '__main__':
     args = sys.argv[1:]
+
+    # ── 回填昨日战绩（埋点数据同步） ──
+    if _HAS_LOGGER:
+        scores_file = os.path.join(os.path.dirname(__file__), '分析模板', '_scores.json')
+        if os.path.exists(scores_file):
+            try:
+                with open(scores_file, 'r', encoding='utf-8') as f:
+                    scores_data = json.load(f)
+                n = backfill_scores(scores_data)
+                if n > 0:
+                    print(f"📥 埋点回填: {n} 场比分已同步\n")
+                
+                # 汇总已投注战绩
+                s = query_summary()
+                if s.get('total_bets', 0) > 0:
+                    print(f"{'='*60}")
+                    print(f"  📊 真实投注战绩（已确认）")
+                    print(f"{'='*60}")
+                    print(f"  总投注: {s['total_bets']} 场 | 命中: {s['total_hits']} 场 | 命中率: {s['hit_rate']:.1f}%")
+                    print(f"  总投入: {s['total_stake']} 元 | 总回报: {s['total_return']:.1f} 元 | ROI: {s['roi']:+.1f}%")
+                    
+                    # 按规则细分
+                    from collections import Counter
+                    confirmed = query_stats()
+                    rule_counter = Counter(e.get('rule','?') for e in confirmed if e.get('action')=='bet')
+                    if rule_counter:
+                        print(f"\n  规则分布:")
+                        for rule, cnt in rule_counter.most_common():
+                            rs = query_summary(rule=rule)
+                            print(f"    {rule}: {cnt}场, 命中率{rs.get('hit_rate',0):.0f}%, ROI{rs.get('roi',0):+.0f}%")
+                    print()
+            except Exception as e:
+                print(f"⚠️ 埋点回填异常: {e}\n")
     
     if args and args[0].isdigit():
         # 单场预测 — 强制抓最新数据

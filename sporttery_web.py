@@ -1424,6 +1424,18 @@ HTML_TEMPLATE = '''
         .pagination .page-jump input { width: 42px; padding: 5px 6px; background: #0a0a1e; color: #e0e0e0; border: 1px solid #1e3a5f; border-radius: 6px; font-size: 13px; text-align: center; }
         .pagination .page-jump input:focus { outline: none; border-color: #7c3aed; }
         .pagination .page-jump button { padding: 5px 10px; font-size: 12px; }
+
+        /* ── 投注确认按钮 ── */
+        .btn-confirm { display:inline-block; padding:6px 16px; border-radius:6px; font-size:13px; font-weight:bold; cursor:pointer; border:none; margin-top:4px; margin-right:6px; transition:all 0.2s; }
+        .btn-confirm.go { background:#22c55e; color:#000; }
+        .btn-confirm.go:hover { background:#16a34a; }
+        .btn-confirm.undo { background:#ef4444; color:#fff; }
+        .btn-confirm.undo:hover { background:#dc2626; }
+        .btn-confirm.disabled { background:#333; color:#666; cursor:not-allowed; }
+        .confirm-badge { display:inline-block; font-size:11px; padding:3px 8px; border-radius:4px; }
+        .confirm-badge.yes { background:#22c55e22; color:#22c55e; border:1px solid #22c55e44; }
+        .confirm-badge.hit { background:#22c55e44; color:#4ade80; }
+        .confirm-badge.miss { background:#ef444422; color:#f87171; border:1px solid #ef444444; }
     </style>
 </head>
 <body>
@@ -2444,6 +2456,9 @@ HTML_TEMPLATE = '''
                 if (!data.success) { alert('分析失败: ' + data.error); return; }
 
                 const a = data.analysis;
+                // 保存投注结果供确认按钮使用（避免确认时重新计算导致赔率变动偏差）
+                window._currentBetting = window._currentBetting || {};
+                window._currentBetting[matchId] = a.betting;
                 const dirTag = a.step0.direction === '大球' ? 'v36-big' : (a.step0.direction === '小球' ? 'v36-small' : 'v36-fuzzy');
                 
                 let vetoHtml = '';
@@ -2726,6 +2741,7 @@ HTML_TEMPLATE = '''
                         h += '<strong style=\"color:#fff\">合计' + bt.total_stake + '元</strong>';
                         h += '</div>';
                         h += '<div style=\"margin-top:2px;font-size:10px;color:#666\">' + bt.summary + '</div>';
+                        h += '<div class=\"bet-confirm-area\" id=\"confirm-area-' + matchId + '\" style=\"margin-top:6px\"></div>';
                         h += '</div>';
                         return h;
                     })() : '')
@@ -2769,6 +2785,8 @@ HTML_TEMPLATE = '''
 
                 document.body.appendChild(overlay);
                 document.getElementById('v36-close-btn').onclick = function() { overlay.remove(); };
+                // 初始化弹窗中的投注确认按钮（弹窗是动态创建的）
+                setTimeout(initAllConfirmAreas, 100);
             } catch (err) {
                 alert('分析失败: ' + err.message);
             } finally {
@@ -2956,6 +2974,8 @@ HTML_TEMPLATE = '''
             window._matchData = {};
             (data.matches || []).forEach(m => { window._matchData[m.match_id] = m; });
             renderPage(1, data.matches || []);
+            // 投注确认按钮初始化（延迟确保DOM渲染完毕）
+            setTimeout(initAllConfirmAreas, 300);
         }
         
         function analyzeMatch(m) {
@@ -3682,7 +3702,8 @@ HTML_TEMPLATE = '''
 
 
         // 初始加载
-        loadMatches();
+        loadMatches().then(() => { setTimeout(initAllConfirmAreas, 300); });
+        loadBetStatus();
 
         // 加载前置条件命中率统计（页面加载时立即获取）
         fetch('/api/pattern_hitrate')
@@ -3890,6 +3911,106 @@ HTML_TEMPLATE = '''
 
             html += '</div>';
             return html;
+        }
+
+        // ══════════════════════════════════════════
+        //  投注确认埋点
+        // ══════════════════════════════════════════
+
+        window._betStatus = {};  // {match_id: {confirmed, rule, confirmed_at, ...}}
+
+        // 全局事件委托：监听确认/撤销按钮点击
+        document.addEventListener('click', function(e) {
+            var el = e.target;
+            // 向上查找最近的 .btn-confirm
+            while (el && el !== document.body) {
+                if (el.classList && el.classList.contains('btn-confirm')) break;
+                el = el.parentElement;
+            }
+            if (!el || !el.classList) return;
+            var mid = el.getAttribute('data-mid');
+            if (!mid) return;
+            if (el.classList.contains('go')) {
+                confirmBet(mid);
+            } else if (el.classList.contains('undo')) {
+                undoBet(mid);
+            }
+        });
+
+        // 页面加载时拉取所有已确认状态
+        async function loadBetStatus() {
+            try {
+                const r = await fetch('/v36/bet_status');
+                const d = await r.json();
+                if (d.success) {
+                    window._betStatus = d.status;
+                }
+            } catch(e) { console.log('loadBetStatus error:', e); }
+        }
+
+        // 确认投注
+        async function confirmBet(matchId) {
+            try {
+                // 从当前弹窗中取出已显示的投注结果（不重新计算，避免赔率变动导致偏差）
+                var bt = window._currentBetting && window._currentBetting[matchId];
+                var body = bt ? JSON.stringify({ betting: bt }) : '{}';
+                const r = await fetch('/v36/confirm_bet/' + matchId, { method: 'POST',
+                    headers: {'Content-Type': 'application/json'}, body: body });
+                const d = await r.json();
+                if (d.success) {
+                    window._betStatus[matchId] = { confirmed: true, rule: d.entry.rule, confirmed_at: d.entry.confirmed_at };
+                    renderConfirmArea(matchId);
+                } else {
+                    alert('确认失败: ' + (d.error || '未知错误'));
+                }
+            } catch(e) {
+                console.error('[confirmBet] error:', e);
+                alert('网络错误: ' + e.message);
+            }
+        }
+
+        // 撤销投注
+        async function undoBet(matchId) {
+            if (!confirm('确定撤销此投注确认？')) return;
+            const btn = document.getElementById('undo-btn-' + matchId);
+            if (btn) { btn.disabled = true; btn.textContent = '...撤销中'; }
+            try {
+                const r = await fetch('/v36/undo_bet/' + matchId, { method: 'POST' });
+                const d = await r.json();
+                if (d.success) {
+                    delete window._betStatus[matchId];
+                    renderConfirmArea(matchId);
+                } else {
+                    alert('撤销失败: ' + (d.error || '未知错误'));
+                }
+            } catch(e) { alert('网络错误: ' + e.message); }
+            if (btn) { btn.disabled = false; btn.textContent = '↩ 撤销投注'; }
+        }
+
+        // 渲染确认按钮区域
+        function renderConfirmArea(matchId) {
+            const area = document.getElementById('confirm-area-' + matchId);
+            if (!area) return;
+            const status = window._betStatus[matchId];
+            if (status && status.confirmed && status.rule) {
+                const hit = status.hit;
+                let badge = '';
+                if (hit === true) badge = '<span class="confirm-badge hit">✓ 命中</span>';
+                else if (hit === false) badge = '<span class="confirm-badge miss">✗ 未中</span>';
+                area.innerHTML = '<span class="confirm-badge yes">📌 已投注 [' + status.rule + ']</span> ' + badge
+                    + ' <button class="btn-confirm undo" data-mid="' + matchId + '">↩ 撤销</button>';
+            } else {
+                area.innerHTML = '<button class="btn-confirm go" data-mid="' + matchId + '">✅ 确认投注</button>'
+                    + '<span style="color:#666;font-size:11px;margin-left:4px">点击确认下单</span>';
+            }
+        }
+
+        // 首次加载时初始化所有确认区域
+        function initAllConfirmAreas() {
+            document.querySelectorAll('[id^="confirm-area-"]').forEach(el => {
+                const matchId = el.id.replace('confirm-area-', '');
+                renderConfirmArea(matchId);
+            });
         }
 
     </script>

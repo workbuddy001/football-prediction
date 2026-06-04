@@ -1,0 +1,132 @@
+{
+  "subset": "澳超",
+  "n_total": 26,
+  "quality": "moderate",
+  "desc_stats": {
+    "0": {
+      "n": 26,
+      "hits": 2,
+      "hit_rate": 7.7,
+      "avg_odds": 18.5
+    },
+    "1": {
+      "n": 26,
+      "hits": 3,
+      "hit_rate": 11.5,
+      "avg_odds": 6.42
+    },
+    "2": {
+      "n": 26,
+      "hits": 8,
+      "hit_rate": 30.8,
+      "avg_odds": 4.33
+    },
+    "3": {
+      "n": 26,
+      "hits": 5,
+      "hit_rate": 19.2,
+      "avg_odds": 3.56
+    },
+    "4": {
+      "n": 26,
+      "hits": 7,
+      "hit_rate": 26.9,
+      "avg_odds": 4.29
+    },
+    "5": {
+      "n": 26,
+      "hits": 1,
+      "hit_rate": 3.8,
+      "avg_odds": 5.55
+    },
+    "6": {
+      "n": 26,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    },
+    "7": {
+      "n": 26,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_flat"
+      },
+      "n_samples": 6,
+      "n_hits": 2,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 9.7,
+      "wilson_ci_upper": 70.0,
+      "avg_odds": 18.5,
+      "roi": 516.7,
+      "rule_id": "SUB-澳超-001",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "form_avg": "form_[2.0-2.5)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 16.0,
+      "roi": 433.3,
+      "rule_id": "SUB-澳超-002",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 2,
+      "conditions": {
+        "ch_g0": "ch_g0_up5-10"
+      },
+      "n_samples": 5,
+      "n_hits": 4,
+      "hit_rate": 80.0,
+      "wilson_ci_lower": 37.6,
+      "wilson_ci_upper": 96.4,
+      "avg_odds": 3.96,
+      "roi": 217.0,
+      "rule_id": "SUB-澳超-003",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 4,
+      "conditions": {
+        "ch_g2": "ch_g2_up5-10"
+      },
+      "n_samples": 9,
+      "n_hits": 5,
+      "hit_rate": 55.6,
+      "wilson_ci_lower": 26.7,
+      "wilson_ci_upper": 81.1,
+      "avg_odds": 4.31,
+      "roi": 139.4,
+      "rule_id": "SUB-澳超-004",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 4,
+      "conditions": {
+        "ch_g0": "ch_g0_up20+"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 4.25,
+      "roi": 218.8,
+      "rule_id": "SUB-澳超-005",
+      "quality": "moderate"
+    }
+  ]
+}

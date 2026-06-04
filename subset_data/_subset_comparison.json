@@ -1,0 +1,5769 @@
+{
+  "五大次级联赛": {
+    "subset": "五大次级联赛",
+    "n": 79,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 12.7,
+        "full_pct": 6.8,
+        "diff": 5.9
+      },
+      "1": {
+        "subset_pct": 10.1,
+        "full_pct": 16.3,
+        "diff": -6.2
+      },
+      "2": {
+        "subset_pct": 24.1,
+        "full_pct": 24.8,
+        "diff": -0.8
+      },
+      "3": {
+        "subset_pct": 19.0,
+        "full_pct": 21.8,
+        "diff": -2.9
+      },
+      "4": {
+        "subset_pct": 20.3,
+        "full_pct": 14.3,
+        "diff": 6.0
+      },
+      "5": {
+        "subset_pct": 10.1,
+        "full_pct": 9.8,
+        "diff": 0.4
+      },
+      "6": {
+        "subset_pct": 2.5,
+        "full_pct": 3.8,
+        "diff": -1.3
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-五大次级-001",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[3.5-4.0)",
+        "subset_hitrate": 83.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-002",
+        "target_goal": 0,
+        "condition_str": "g6=g6_[25.0+)",
+        "subset_hitrate": 71.4,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-003",
+        "target_goal": 0,
+        "condition_str": "g5=g5_[12.0-18.0)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 12,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-004",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[9-11)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 15,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-005",
+        "target_goal": 0,
+        "condition_str": "g7=g7_[45.0+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-006",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_up5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-007",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[2.5-3.0)",
+        "subset_hitrate": 37.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-008",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[<9]",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-009",
+        "target_goal": 0,
+        "condition_str": "g2=g2_[2.8-3.1)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大次级-010",
+        "target_goal": 0,
+        "condition_str": "ch_g5=ch_g5_dn10-20",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 13.0,
+        "roi": 1200.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": 685.7,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 11.5,
+        "roi": 1050.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": 645.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "五大联赛": {
+    "subset": "五大联赛",
+    "n": 330,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.1,
+        "full_pct": 6.8,
+        "diff": -0.7
+      },
+      "1": {
+        "subset_pct": 17.0,
+        "full_pct": 16.3,
+        "diff": 0.6
+      },
+      "2": {
+        "subset_pct": 22.7,
+        "full_pct": 24.8,
+        "diff": -2.1
+      },
+      "3": {
+        "subset_pct": 24.8,
+        "full_pct": 21.8,
+        "diff": 3.0
+      },
+      "4": {
+        "subset_pct": 13.6,
+        "full_pct": 14.3,
+        "diff": -0.6
+      },
+      "5": {
+        "subset_pct": 8.8,
+        "full_pct": 9.8,
+        "diff": -1.0
+      },
+      "6": {
+        "subset_pct": 4.8,
+        "full_pct": 3.8,
+        "diff": 1.1
+      },
+      "7": {
+        "subset_pct": 1.8,
+        "full_pct": 1.4,
+        "diff": 0.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-五大联赛-002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": 50.0,
+        "exclusivity": 33.4,
+        "label": "weak_exclusive",
+        "subset_n": 3,
+        "full_n": 6
+      },
+      {
+        "rule_id": "SUB-五大联赛-003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": 50.0,
+        "exclusivity": 33.4,
+        "label": "weak_exclusive",
+        "subset_n": 3,
+        "full_n": 6
+      },
+      {
+        "rule_id": "SUB-五大联赛-001",
+        "target_goal": 6,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[3.5-4.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": 66.7,
+        "exclusivity": 0.0,
+        "label": "neutral",
+        "subset_n": 3,
+        "full_n": 3
+      },
+      {
+        "rule_id": "SUB-五大联赛-004",
+        "target_goal": 6,
+        "condition_str": "hhad_ball=hhad_guestgive & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大联赛-005",
+        "target_goal": 6,
+        "condition_str": "ch_g2=ch_g2_dn5-10 & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大联赛-006",
+        "target_goal": 5,
+        "condition_str": "h_form=form_[<2.0) & ch_g6=ch_g6_up20+",
+        "subset_hitrate": 100.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大联赛-007",
+        "target_goal": 6,
+        "condition_str": "h_form=form_[4.5+) & ch_g3=ch_g3_flat",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大联赛-008",
+        "target_goal": 6,
+        "condition_str": "h_form=form_[4.5+) & ch_g4=ch_g4_flat",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大联赛-009",
+        "target_goal": 6,
+        "condition_str": "h_form=form_[4.5+) & ch_pp=ch_pp_flat",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-五大联赛-010",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g2=ch_g2_dn5-10",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "wilson_lo": 20.8,
+        "wilson_hi": 93.9,
+        "avg_odds": 22.5,
+        "roi": 1400.0,
+        "full_hitrate": 66.7,
+        "full_roi": 1400.0,
+        "roi_vs_full": 0.0,
+        "rule_id": "CAND001",
+        "target_goal": 6,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[3.5-4.5)"
+      },
+      {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "wilson_lo": 20.8,
+        "wilson_hi": 93.9,
+        "avg_odds": 22.5,
+        "roi": 1400.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 550.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "wilson_lo": 20.8,
+        "wilson_hi": 93.9,
+        "avg_odds": 22.5,
+        "roi": 1400.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 550.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 5,
+        "hits": 2,
+        "hit_rate": 40.0,
+        "wilson_lo": 11.8,
+        "wilson_hi": 76.9,
+        "avg_odds": 13.75,
+        "roi": 450.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": -175.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": -760.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 17.5,
+        "roi": 775.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": 12.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      },
+      {
+        "n": 4,
+        "hits": 2,
+        "hit_rate": 50.0,
+        "wilson_lo": 15.0,
+        "wilson_hi": 85.0,
+        "avg_odds": 13.75,
+        "roi": 587.5,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": 66.1,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 3,
+        "hits": 1,
+        "hit_rate": 33.3,
+        "wilson_lo": 6.1,
+        "wilson_hi": 79.2,
+        "avg_odds": 9.0,
+        "roi": 200.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -314.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 400.0,
+        "rule_id": "CAND009",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 14.0,
+        "roi": 600.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -300.0,
+        "rule_id": "CAND010",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 14.0,
+        "roi": 600.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -300.0,
+        "rule_id": "CAND011",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 13.5,
+        "roi": 1250.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": 366.7,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 2,
+        "hits": 2,
+        "hit_rate": 100.0,
+        "wilson_lo": 34.2,
+        "wilson_hi": 100,
+        "avg_odds": 10.4,
+        "roi": 940.0,
+        "full_hitrate": 75.0,
+        "full_roi": 682.5,
+        "roi_vs_full": 257.5,
+        "rule_id": "CAND013",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[35+) & h_form=form_[2.5-3.0)"
+      },
+      {
+        "n": 6,
+        "hits": 2,
+        "hit_rate": 33.3,
+        "wilson_lo": 9.7,
+        "wilson_hi": 70.0,
+        "avg_odds": 13.5,
+        "roi": 350.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -55.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "亚洲联赛": {
+    "subset": "亚洲联赛",
+    "n": 134,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.7,
+        "full_pct": 6.8,
+        "diff": -0.1
+      },
+      "1": {
+        "subset_pct": 18.7,
+        "full_pct": 16.3,
+        "diff": 2.3
+      },
+      "2": {
+        "subset_pct": 26.9,
+        "full_pct": 24.8,
+        "diff": 2.0
+      },
+      "3": {
+        "subset_pct": 20.1,
+        "full_pct": 21.8,
+        "diff": -1.7
+      },
+      "4": {
+        "subset_pct": 14.2,
+        "full_pct": 14.3,
+        "diff": -0.1
+      },
+      "5": {
+        "subset_pct": 7.5,
+        "full_pct": 9.8,
+        "diff": -2.3
+      },
+      "6": {
+        "subset_pct": 3.7,
+        "full_pct": 3.8,
+        "diff": -0.1
+      },
+      "7": {
+        "subset_pct": 1.5,
+        "full_pct": 1.4,
+        "diff": 0.1
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-亚洲联赛-001",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & h_form=form_[2.0-2.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-002",
+        "target_goal": 7,
+        "condition_str": "g2=g2_[3.5-4.0) & ch_pp=ch_pp_dn5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-003",
+        "target_goal": 0,
+        "condition_str": "g2=g2_[4.0+) & h_form=form_[2.0-2.5)",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-004",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & ch_g6=ch_g6_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-005",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & ch_g7=ch_g7_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-006",
+        "target_goal": 7,
+        "condition_str": "g2=g2_[3.5-4.0) & h_form=form_[2.0-2.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-007",
+        "target_goal": 7,
+        "condition_str": "h_form=form_[2.0-2.5) & ch_pp=ch_pp_dn5-10",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-008",
+        "target_goal": 7,
+        "condition_str": "ch_g7=ch_g7_flat & ch_pp=ch_pp_dn5-10",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-009",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[20-25) & h_form=form_[2.0-2.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-亚洲联赛-010",
+        "target_goal": 0,
+        "condition_str": "g5=g5_[<8.0) & h_form=form_[2.0-2.5)",
+        "subset_hitrate": 37.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 12.0,
+        "roi": 500.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -350.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 12.0,
+        "roi": 500.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -350.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": 875.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": -760.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": -862.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": 978.6,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 600.0,
+        "rule_id": "CAND009",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 600.0,
+        "rule_id": "CAND010",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 600.0,
+        "rule_id": "CAND011",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": 616.7,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 3,
+        "hits": 1,
+        "hit_rate": 33.3,
+        "wilson_lo": 6.1,
+        "wilson_hi": 79.2,
+        "avg_odds": 12.0,
+        "roi": 300.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -105.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "北欧联赛": {
+    "subset": "北欧联赛",
+    "n": 115,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 2.6,
+        "full_pct": 6.8,
+        "diff": -4.2
+      },
+      "1": {
+        "subset_pct": 14.8,
+        "full_pct": 16.3,
+        "diff": -1.5
+      },
+      "2": {
+        "subset_pct": 28.7,
+        "full_pct": 24.8,
+        "diff": 3.9
+      },
+      "3": {
+        "subset_pct": 22.6,
+        "full_pct": 21.8,
+        "diff": 0.8
+      },
+      "4": {
+        "subset_pct": 11.3,
+        "full_pct": 14.3,
+        "diff": -2.9
+      },
+      "5": {
+        "subset_pct": 16.5,
+        "full_pct": 9.8,
+        "diff": 6.8
+      },
+      "6": {
+        "subset_pct": 1.7,
+        "full_pct": 3.8,
+        "diff": -2.1
+      },
+      "7": {
+        "subset_pct": 0.9,
+        "full_pct": 1.4,
+        "diff": -0.5
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-北欧联赛-001",
+        "target_goal": 0,
+        "condition_str": "g6=g6_[<15.0) & ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-002",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_dn10-20 & ch_pp=ch_pp_flat",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-003",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_dn10-20 & ch_had_d=ch_had_d_flat",
+        "subset_hitrate": 37.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-004",
+        "target_goal": 5,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-005",
+        "target_goal": 5,
+        "condition_str": "had_w=had_w_[2.0-2.5) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 10,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-006",
+        "target_goal": 5,
+        "condition_str": "a_form=form_[3.0-3.5) & ch_g6=ch_g6_flat",
+        "subset_hitrate": 53.8,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 13,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-007",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[5.0+) & ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-008",
+        "target_goal": 0,
+        "condition_str": "g4=g4_[<5.0) & ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-009",
+        "target_goal": 0,
+        "condition_str": "g7=g7_[<25.0) & ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-北欧联赛-010",
+        "target_goal": 0,
+        "condition_str": "hhad_ball=hhad_flat & ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": 840.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 2,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 65.8,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": -621.4,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -614.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": -983.3,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 10.5,
+        "roi": 425.0,
+        "full_hitrate": 75.0,
+        "full_roi": 682.5,
+        "roi_vs_full": -257.5,
+        "rule_id": "CAND013",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[35+) & h_form=form_[2.5-3.0)"
+      }
+    ]
+  },
+  "南美杯赛": {
+    "subset": "南美杯赛",
+    "n": 33,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.1,
+        "full_pct": 6.8,
+        "diff": -0.7
+      },
+      "1": {
+        "subset_pct": 30.3,
+        "full_pct": 16.3,
+        "diff": 14.0
+      },
+      "2": {
+        "subset_pct": 39.4,
+        "full_pct": 24.8,
+        "diff": 14.6
+      },
+      "3": {
+        "subset_pct": 9.1,
+        "full_pct": 21.8,
+        "diff": -12.7
+      },
+      "4": {
+        "subset_pct": 9.1,
+        "full_pct": 14.3,
+        "diff": -5.2
+      },
+      "5": {
+        "subset_pct": 6.1,
+        "full_pct": 9.8,
+        "diff": -3.7
+      },
+      "6": {
+        "subset_pct": 0.0,
+        "full_pct": 3.8,
+        "diff": -3.8
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-南美杯赛-001",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & g2=g2_[3.5-4.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-002",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & ch_g0=ch_g0_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-003",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & form_avg=form_[2.5-3.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-004",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & had_w=had_w_[<1.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-005",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & had_d=had_d_[4.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-006",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & had_l=had_l_[4.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-007",
+        "target_goal": 5,
+        "condition_str": "form_avg=form_[2.5-3.0) & had_w=had_w_[<1.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-008",
+        "target_goal": 5,
+        "condition_str": "form_avg=form_[2.5-3.0) & had_d=had_d_[4.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-009",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-南美杯赛-010",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[16-20) & g1=g1_[5.0+)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -614.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -1000.0,
+        "rule_id": "CAND009",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_d=ch_had_d_up10-20"
+      }
+    ]
+  },
+  "国内杯赛": {
+    "subset": "国内杯赛",
+    "n": 17,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 0.0,
+        "full_pct": 6.8,
+        "diff": -6.8
+      },
+      "1": {
+        "subset_pct": 11.8,
+        "full_pct": 16.3,
+        "diff": -4.6
+      },
+      "2": {
+        "subset_pct": 29.4,
+        "full_pct": 24.8,
+        "diff": 4.6
+      },
+      "3": {
+        "subset_pct": 17.6,
+        "full_pct": 21.8,
+        "diff": -4.2
+      },
+      "4": {
+        "subset_pct": 17.6,
+        "full_pct": 14.3,
+        "diff": 3.4
+      },
+      "5": {
+        "subset_pct": 11.8,
+        "full_pct": 9.8,
+        "diff": 2.0
+      },
+      "6": {
+        "subset_pct": 5.9,
+        "full_pct": 3.8,
+        "diff": 2.1
+      },
+      "7": {
+        "subset_pct": 5.9,
+        "full_pct": 1.4,
+        "diff": 4.5
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-国内杯赛-001",
+        "target_goal": 5,
+        "condition_str": "form_avg=form_[3.5-4.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国内杯赛-002",
+        "target_goal": 1,
+        "condition_str": "ch_g0=ch_g0_up20+",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国内杯赛-003",
+        "target_goal": 1,
+        "condition_str": "ch_g1=ch_g1_up10-20",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国内杯赛-004",
+        "target_goal": 6,
+        "condition_str": "had_d=had_d_[3.0-3.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国内杯赛-005",
+        "target_goal": 1,
+        "condition_str": "g2=g2_[3.5-4.0)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": -760.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      }
+    ]
+  },
+  "国家队赛事": {
+    "subset": "国家队赛事",
+    "n": 42,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 16.7,
+        "full_pct": 6.8,
+        "diff": 9.9
+      },
+      "1": {
+        "subset_pct": 21.4,
+        "full_pct": 16.3,
+        "diff": 5.1
+      },
+      "2": {
+        "subset_pct": 23.8,
+        "full_pct": 24.8,
+        "diff": -1.0
+      },
+      "3": {
+        "subset_pct": 9.5,
+        "full_pct": 21.8,
+        "diff": -12.3
+      },
+      "4": {
+        "subset_pct": 11.9,
+        "full_pct": 14.3,
+        "diff": -2.3
+      },
+      "5": {
+        "subset_pct": 11.9,
+        "full_pct": 9.8,
+        "diff": 2.1
+      },
+      "6": {
+        "subset_pct": 2.4,
+        "full_pct": 3.8,
+        "diff": -1.4
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-国家队赛-001",
+        "target_goal": 0,
+        "condition_str": "ch_g3=ch_g3_flat & form_avg=form_[2.5-3.0)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 10,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-002",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[2.5-3.0) & had_d=had_d_[3.0-3.5)",
+        "subset_hitrate": 100.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-003",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_flat & form_avg=form_[2.5-3.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 12,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-004",
+        "target_goal": 5,
+        "condition_str": "form_avg=form_[2.5-3.0) & had_d=had_d_[2.5-3.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-005",
+        "target_goal": 0,
+        "condition_str": "ch_g3=ch_g3_flat & had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 10,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[25-35)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-007",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[25-35) & g1=g1_[5.0+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-008",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[25-35) & g2=g2_[4.0+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-009",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[25-35) & form_avg=form_[2.5-3.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-国家队赛-010",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[25-35) & hhad_ball=hhad_flat",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 17.0,
+        "roi": 1600.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": 837.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      }
+    ]
+  },
+  "德乙": {
+    "subset": "德乙",
+    "n": 22,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 0.0,
+        "full_pct": 6.8,
+        "diff": -6.8
+      },
+      "1": {
+        "subset_pct": 9.1,
+        "full_pct": 16.3,
+        "diff": -7.2
+      },
+      "2": {
+        "subset_pct": 36.4,
+        "full_pct": 24.8,
+        "diff": 11.5
+      },
+      "3": {
+        "subset_pct": 18.2,
+        "full_pct": 21.8,
+        "diff": -3.7
+      },
+      "4": {
+        "subset_pct": 13.6,
+        "full_pct": 14.3,
+        "diff": -0.6
+      },
+      "5": {
+        "subset_pct": 18.2,
+        "full_pct": 9.8,
+        "diff": 8.4
+      },
+      "6": {
+        "subset_pct": 4.5,
+        "full_pct": 3.8,
+        "diff": 0.8
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-德乙-001",
+        "target_goal": 5,
+        "condition_str": "g2=g2_[3.5-4.0)",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德乙-002",
+        "target_goal": 5,
+        "condition_str": "had_l=had_l_[2.0-2.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德乙-003",
+        "target_goal": 5,
+        "condition_str": "had_w=had_w_[3.0-3.5)",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德乙-004",
+        "target_goal": 2,
+        "condition_str": "had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德乙-005",
+        "target_goal": 5,
+        "condition_str": "hhad_ball=hhad_guestgive",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 11.5,
+        "roi": 1050.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": 645.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "德甲": {
+    "subset": "德甲",
+    "n": 63,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 3.2,
+        "full_pct": 6.8,
+        "diff": -3.6
+      },
+      "1": {
+        "subset_pct": 9.5,
+        "full_pct": 16.3,
+        "diff": -6.8
+      },
+      "2": {
+        "subset_pct": 20.6,
+        "full_pct": 24.8,
+        "diff": -4.2
+      },
+      "3": {
+        "subset_pct": 19.0,
+        "full_pct": 21.8,
+        "diff": -2.8
+      },
+      "4": {
+        "subset_pct": 28.6,
+        "full_pct": 14.3,
+        "diff": 14.3
+      },
+      "5": {
+        "subset_pct": 9.5,
+        "full_pct": 9.8,
+        "diff": -0.2
+      },
+      "6": {
+        "subset_pct": 6.3,
+        "full_pct": 3.8,
+        "diff": 2.6
+      },
+      "7": {
+        "subset_pct": 3.2,
+        "full_pct": 1.4,
+        "diff": 1.8
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-德甲-001",
+        "target_goal": 6,
+        "condition_str": "h_form=form_[4.5+)",
+        "subset_hitrate": 100.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-002",
+        "target_goal": 1,
+        "condition_str": "ch_had_l=ch_had_l_dn5-10",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-003",
+        "target_goal": 4,
+        "condition_str": "ch_g0=ch_g0_up20+",
+        "subset_hitrate": 100.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-004",
+        "target_goal": 6,
+        "condition_str": "v36_h_att=hatt_[2.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-005",
+        "target_goal": 4,
+        "condition_str": "ch_g7=ch_g7_up10-20",
+        "subset_hitrate": 62.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-006",
+        "target_goal": 0,
+        "condition_str": "ch_had_w=ch_had_w_dn10-20",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-007",
+        "target_goal": 5,
+        "condition_str": "had_w=had_w_[4.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-008",
+        "target_goal": 1,
+        "condition_str": "had_w=had_w_[4.5+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-009",
+        "target_goal": 4,
+        "condition_str": "had_w=had_w_[2.5-3.0)",
+        "subset_hitrate": 57.1,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-德甲-010",
+        "target_goal": 5,
+        "condition_str": "ch_pp=ch_pp_dn5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 13.5,
+        "roi": 575.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": -50.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 13.5,
+        "roi": 1250.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": 728.6,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 13.5,
+        "roi": 1250.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": 366.7,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -505.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "意甲": {
+    "subset": "意甲",
+    "n": 76,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 11.8,
+        "full_pct": 6.8,
+        "diff": 5.1
+      },
+      "1": {
+        "subset_pct": 22.4,
+        "full_pct": 16.3,
+        "diff": 6.0
+      },
+      "2": {
+        "subset_pct": 23.7,
+        "full_pct": 24.8,
+        "diff": -1.1
+      },
+      "3": {
+        "subset_pct": 23.7,
+        "full_pct": 21.8,
+        "diff": 1.8
+      },
+      "4": {
+        "subset_pct": 5.3,
+        "full_pct": 14.3,
+        "diff": -9.0
+      },
+      "5": {
+        "subset_pct": 7.9,
+        "full_pct": 9.8,
+        "diff": -1.9
+      },
+      "6": {
+        "subset_pct": 2.6,
+        "full_pct": 3.8,
+        "diff": -1.2
+      },
+      "7": {
+        "subset_pct": 2.6,
+        "full_pct": 1.4,
+        "diff": 1.3
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-意甲-001",
+        "target_goal": 5,
+        "condition_str": "ch_had_w=ch_had_w_up10-20",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-002",
+        "target_goal": 5,
+        "condition_str": "ch_g6=ch_g6_up20+",
+        "subset_hitrate": 36.4,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 11,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-003",
+        "target_goal": 5,
+        "condition_str": "ch_g2=ch_g2_dn10-20",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-004",
+        "target_goal": 5,
+        "condition_str": "ch_g4=ch_g4_up10-20",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-005",
+        "target_goal": 5,
+        "condition_str": "ch_had_l=ch_had_l_dn5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-006",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_dn5-10",
+        "subset_hitrate": 37.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-007",
+        "target_goal": 5,
+        "condition_str": "ch_had_d=ch_had_d_up5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.0-2.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-009",
+        "target_goal": 6,
+        "condition_str": "ch_had_l=ch_had_l_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-意甲-010",
+        "target_goal": 1,
+        "condition_str": "ch_g0=ch_g0_dn5-10",
+        "subset_hitrate": 62.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": 675.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": -862.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": 778.6,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 9.0,
+        "roi": 800.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": 285.7,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 400.0,
+        "rule_id": "CAND009",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 400.0,
+        "rule_id": "CAND010",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 400.0,
+        "rule_id": "CAND011",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -505.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "挪威超": {
+    "subset": "挪威超",
+    "n": 36,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 2.8,
+        "full_pct": 6.8,
+        "diff": -4.0
+      },
+      "1": {
+        "subset_pct": 13.9,
+        "full_pct": 16.3,
+        "diff": -2.4
+      },
+      "2": {
+        "subset_pct": 22.2,
+        "full_pct": 24.8,
+        "diff": -2.6
+      },
+      "3": {
+        "subset_pct": 30.6,
+        "full_pct": 21.8,
+        "diff": 8.7
+      },
+      "4": {
+        "subset_pct": 11.1,
+        "full_pct": 14.3,
+        "diff": -3.1
+      },
+      "5": {
+        "subset_pct": 16.7,
+        "full_pct": 9.8,
+        "diff": 6.9
+      },
+      "6": {
+        "subset_pct": 2.8,
+        "full_pct": 3.8,
+        "diff": -1.0
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-挪威超-001",
+        "target_goal": 1,
+        "condition_str": "g2=g2_[4.0+) & had_l=had_l_[2.0-2.5)",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-002",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_up5-10 & hhad_ball=hhad_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-003",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-004",
+        "target_goal": 5,
+        "condition_str": "g1=g1_[5.0+) & ch_g0=ch_g0_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-005",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_up5-10 & ch_g2=ch_g2_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-006",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_up5-10 & ch_g3=ch_g3_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-007",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_flat & had_d=had_d_[4.5+)",
+        "subset_hitrate": 60.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-008",
+        "target_goal": 1,
+        "condition_str": "ch_g1=ch_g1_up5-10 & ch_g3=ch_g3_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-009",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[13-16) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-挪威超-010",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[13-16) & ch_g2=ch_g2_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -614.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 10.5,
+        "roi": 425.0,
+        "full_hitrate": 75.0,
+        "full_roi": 682.5,
+        "roi_vs_full": -257.5,
+        "rule_id": "CAND013",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[35+) & h_form=form_[2.5-3.0)"
+      }
+    ]
+  },
+  "日职": {
+    "subset": "日职",
+    "n": 47,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.4,
+        "full_pct": 6.8,
+        "diff": -0.4
+      },
+      "1": {
+        "subset_pct": 23.4,
+        "full_pct": 16.3,
+        "diff": 7.1
+      },
+      "2": {
+        "subset_pct": 29.8,
+        "full_pct": 24.8,
+        "diff": 5.0
+      },
+      "3": {
+        "subset_pct": 10.6,
+        "full_pct": 21.8,
+        "diff": -11.2
+      },
+      "4": {
+        "subset_pct": 10.6,
+        "full_pct": 14.3,
+        "diff": -3.6
+      },
+      "5": {
+        "subset_pct": 10.6,
+        "full_pct": 9.8,
+        "diff": 0.9
+      },
+      "6": {
+        "subset_pct": 4.3,
+        "full_pct": 3.8,
+        "diff": 0.5
+      },
+      "7": {
+        "subset_pct": 2.1,
+        "full_pct": 1.4,
+        "diff": 0.7
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-日职-001",
+        "target_goal": 6,
+        "condition_str": "g3=g3_[3.3-3.7) & had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-002",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-003",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & hhad_ball=hhad_guestgive",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-004",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & had_w=had_w_[2.0-2.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-005",
+        "target_goal": 7,
+        "condition_str": "g1=g1_[5.0+) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-006",
+        "target_goal": 7,
+        "condition_str": "g1=g1_[5.0+) & hhad_ball=hhad_guestgive",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-007",
+        "target_goal": 6,
+        "condition_str": "had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-008",
+        "target_goal": 6,
+        "condition_str": "hhad_ball=hhad_flat & had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-009",
+        "target_goal": 0,
+        "condition_str": "g3=g3_[3.3-3.7) & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-日职-010",
+        "target_goal": 0,
+        "condition_str": "ch_g2=ch_g2_flat & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": 875.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": 978.6,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 600.0,
+        "rule_id": "CAND009",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 600.0,
+        "rule_id": "CAND010",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 600.0,
+        "rule_id": "CAND011",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": 616.7,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      }
+    ]
+  },
+  "欧战": {
+    "subset": "欧战",
+    "n": 32,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 0.0,
+        "full_pct": 6.8,
+        "diff": -6.8
+      },
+      "1": {
+        "subset_pct": 21.9,
+        "full_pct": 16.3,
+        "diff": 5.6
+      },
+      "2": {
+        "subset_pct": 28.1,
+        "full_pct": 24.8,
+        "diff": 3.3
+      },
+      "3": {
+        "subset_pct": 25.0,
+        "full_pct": 21.8,
+        "diff": 3.2
+      },
+      "4": {
+        "subset_pct": 18.8,
+        "full_pct": 14.3,
+        "diff": 4.5
+      },
+      "5": {
+        "subset_pct": 0.0,
+        "full_pct": 9.8,
+        "diff": -9.8
+      },
+      "6": {
+        "subset_pct": 3.1,
+        "full_pct": 3.8,
+        "diff": -0.7
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-欧战-001",
+        "target_goal": 6,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[2.0-2.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-002",
+        "target_goal": 6,
+        "condition_str": "g1=g1_[4.0-5.0) & had_l=had_l_[4.5+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-003",
+        "target_goal": 6,
+        "condition_str": "ch_g0=ch_g0_flat & had_l=had_l_[4.5+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-004",
+        "target_goal": 6,
+        "condition_str": "ch_g1=ch_g1_flat & had_l=had_l_[4.5+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-005",
+        "target_goal": 6,
+        "condition_str": "ch_g2=ch_g2_flat & had_l=had_l_[4.5+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-006",
+        "target_goal": 6,
+        "condition_str": "ch_g3=ch_g3_flat & form_avg=form_[2.0-2.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-007",
+        "target_goal": 6,
+        "condition_str": "form_avg=form_[2.0-2.5) & had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-008",
+        "target_goal": 2,
+        "condition_str": "g2=g2_[4.0+) & hhad_ball=hhad_flat",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-009",
+        "target_goal": 4,
+        "condition_str": "ch_g1=ch_g1_up5-10 & had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧战-010",
+        "target_goal": 4,
+        "condition_str": "had_w=had_w_[1.5-2.0) & had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": []
+  },
+  "欧洲主流联赛": {
+    "subset": "欧洲主流联赛",
+    "n": 502,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.0,
+        "full_pct": 6.8,
+        "diff": -0.8
+      },
+      "1": {
+        "subset_pct": 15.1,
+        "full_pct": 16.3,
+        "diff": -1.2
+      },
+      "2": {
+        "subset_pct": 23.7,
+        "full_pct": 24.8,
+        "diff": -1.1
+      },
+      "3": {
+        "subset_pct": 23.9,
+        "full_pct": 21.8,
+        "diff": 2.1
+      },
+      "4": {
+        "subset_pct": 14.1,
+        "full_pct": 14.3,
+        "diff": -0.1
+      },
+      "5": {
+        "subset_pct": 11.0,
+        "full_pct": 9.8,
+        "diff": 1.2
+      },
+      "6": {
+        "subset_pct": 4.0,
+        "full_pct": 3.8,
+        "diff": 0.2
+      },
+      "7": {
+        "subset_pct": 1.8,
+        "full_pct": 1.4,
+        "diff": 0.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-欧洲主流-010",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": 40.0,
+        "exclusivity": 66.8,
+        "label": "strong_exclusive",
+        "subset_n": 3,
+        "full_n": 5
+      },
+      {
+        "rule_id": "SUB-欧洲主流-001",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up20+ & ch_g2=ch_g2_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲主流-002",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_dn10-20 & ch_g5=ch_g5_flat",
+        "subset_hitrate": 60.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲主流-003",
+        "target_goal": 6,
+        "condition_str": "h_form=form_[<2.0) & ch_g7=ch_g7_up5-10",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲主流-004",
+        "target_goal": 6,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[3.5-4.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": 66.7,
+        "exclusivity": 0.0,
+        "label": "neutral",
+        "subset_n": 3,
+        "full_n": 3
+      },
+      {
+        "rule_id": "SUB-欧洲主流-005",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": 50.0,
+        "exclusivity": 0.0,
+        "label": "neutral",
+        "subset_n": 4,
+        "full_n": 6
+      },
+      {
+        "rule_id": "SUB-欧洲主流-006",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": 50.0,
+        "exclusivity": 0.0,
+        "label": "neutral",
+        "subset_n": 4,
+        "full_n": 6
+      },
+      {
+        "rule_id": "SUB-欧洲主流-007",
+        "target_goal": 0,
+        "condition_str": "hhad_ball=hhad_guestgive & ch_g0=ch_g0_up20+",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲主流-008",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[35+) & had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲主流-009",
+        "target_goal": 0,
+        "condition_str": "g3=g3_[3.7-4.5) & ch_g0=ch_g0_up20+",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "wilson_lo": 20.8,
+        "wilson_hi": 93.9,
+        "avg_odds": 22.5,
+        "roi": 1400.0,
+        "full_hitrate": 66.7,
+        "full_roi": 1400.0,
+        "roi_vs_full": 0.0,
+        "rule_id": "CAND001",
+        "target_goal": 6,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[3.5-4.5)"
+      },
+      {
+        "n": 4,
+        "hits": 2,
+        "hit_rate": 50.0,
+        "wilson_lo": 15.0,
+        "wilson_hi": 85.0,
+        "avg_odds": 22.5,
+        "roi": 1025.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 175.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 4,
+        "hits": 2,
+        "hit_rate": 50.0,
+        "wilson_lo": 15.0,
+        "wilson_hi": 85.0,
+        "avg_odds": 22.5,
+        "roi": 1025.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 175.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 5,
+        "hits": 2,
+        "hit_rate": 40.0,
+        "wilson_lo": 11.8,
+        "wilson_hi": 76.9,
+        "avg_odds": 13.75,
+        "roi": 450.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": -175.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "wilson_lo": 20.8,
+        "wilson_hi": 93.9,
+        "avg_odds": 19.0,
+        "roi": 1166.7,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": 506.7,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 17.5,
+        "roi": 775.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": 12.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      },
+      {
+        "n": 6,
+        "hits": 2,
+        "hit_rate": 33.3,
+        "wilson_lo": 9.7,
+        "wilson_hi": 70.0,
+        "avg_odds": 13.75,
+        "roi": 358.3,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": -163.1,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 5,
+        "hits": 2,
+        "hit_rate": 40.0,
+        "wilson_lo": 11.8,
+        "wilson_hi": 76.9,
+        "avg_odds": 15.0,
+        "roi": 500.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -14.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 14.0,
+        "roi": 1300.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": 400.0,
+        "rule_id": "CAND009",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 14.0,
+        "roi": 600.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -300.0,
+        "rule_id": "CAND010",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 14.0,
+        "roi": 600.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -300.0,
+        "rule_id": "CAND011",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 13.5,
+        "roi": 575.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": -308.3,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 4,
+        "hits": 3,
+        "hit_rate": 75.0,
+        "wilson_lo": 30.1,
+        "wilson_hi": 95.4,
+        "avg_odds": 10.43,
+        "roi": 682.5,
+        "full_hitrate": 75.0,
+        "full_roi": 682.5,
+        "roi_vs_full": 0.0,
+        "rule_id": "CAND013",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[35+) & h_form=form_[2.5-3.0)"
+      },
+      {
+        "n": 6,
+        "hits": 2,
+        "hit_rate": 33.3,
+        "wilson_lo": 9.7,
+        "wilson_hi": 70.0,
+        "avg_odds": 13.5,
+        "roi": 350.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -55.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "欧洲二级联赛": {
+    "subset": "欧洲二级联赛",
+    "n": 57,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 12.3,
+        "full_pct": 6.8,
+        "diff": 5.5
+      },
+      "1": {
+        "subset_pct": 5.3,
+        "full_pct": 16.3,
+        "diff": -11.1
+      },
+      "2": {
+        "subset_pct": 19.3,
+        "full_pct": 24.8,
+        "diff": -5.5
+      },
+      "3": {
+        "subset_pct": 21.1,
+        "full_pct": 21.8,
+        "diff": -0.8
+      },
+      "4": {
+        "subset_pct": 22.8,
+        "full_pct": 14.3,
+        "diff": 8.6
+      },
+      "5": {
+        "subset_pct": 12.3,
+        "full_pct": 9.8,
+        "diff": 2.5
+      },
+      "6": {
+        "subset_pct": 3.5,
+        "full_pct": 3.8,
+        "diff": -0.3
+      },
+      "7": {
+        "subset_pct": 3.5,
+        "full_pct": 1.4,
+        "diff": 2.1
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-欧洲二级-001",
+        "target_goal": 0,
+        "condition_str": "had_l=had_l_[1.5-2.0)",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-002",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-003",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[3.0-3.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 15,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-004",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[35+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-005",
+        "target_goal": 0,
+        "condition_str": "v36_single=v36_rec_2",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-006",
+        "target_goal": 0,
+        "condition_str": "ch_had_w=ch_had_w_up5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_dn5-10",
+        "subset_hitrate": 37.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-008",
+        "target_goal": 0,
+        "condition_str": "had_l=had_l_[2.5-3.0)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-009",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-欧洲二级-010",
+        "target_goal": 5,
+        "condition_str": "ch_g7=ch_g7_dn10-20",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 22.0,
+        "roi": 2100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": 1440.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 21.0,
+        "roi": 2000.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": 1485.7,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      }
+    ]
+  },
+  "沙特联": {
+    "subset": "沙特联",
+    "n": 33,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 3.0,
+        "full_pct": 6.8,
+        "diff": -3.8
+      },
+      "1": {
+        "subset_pct": 6.1,
+        "full_pct": 16.3,
+        "diff": -10.3
+      },
+      "2": {
+        "subset_pct": 21.2,
+        "full_pct": 24.8,
+        "diff": -3.6
+      },
+      "3": {
+        "subset_pct": 36.4,
+        "full_pct": 21.8,
+        "diff": 14.5
+      },
+      "4": {
+        "subset_pct": 15.2,
+        "full_pct": 14.3,
+        "diff": 0.9
+      },
+      "5": {
+        "subset_pct": 9.1,
+        "full_pct": 9.8,
+        "diff": -0.7
+      },
+      "6": {
+        "subset_pct": 6.1,
+        "full_pct": 3.8,
+        "diff": 2.3
+      },
+      "7": {
+        "subset_pct": 3.0,
+        "full_pct": 1.4,
+        "diff": 1.7
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-沙特联-001",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-002",
+        "target_goal": 7,
+        "condition_str": "had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-003",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & g1=g1_[5.0+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-004",
+        "target_goal": 7,
+        "condition_str": "g0=g0_[13-16) & g2=g2_[3.5-4.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-005",
+        "target_goal": 7,
+        "condition_str": "g2=g2_[3.5-4.0) & ch_g0=ch_g0_flat",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-006",
+        "target_goal": 7,
+        "condition_str": "g3=g3_[3.0-3.3) & ch_g3=ch_g3_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-007",
+        "target_goal": 7,
+        "condition_str": "ch_g2=ch_g2_up5-10 & had_d=had_d_[3.5-4.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-008",
+        "target_goal": 7,
+        "condition_str": "ch_g3=ch_g3_dn5-10 & hhad_ball=hhad_flat",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-009",
+        "target_goal": 7,
+        "condition_str": "hhad_ball=hhad_flat & had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-沙特联-010",
+        "target_goal": 6,
+        "condition_str": "ch_g2=ch_g2_flat & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 12.0,
+        "roi": 1100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 250.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 12.0,
+        "roi": 1100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 250.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": -760.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 3,
+        "hits": 1,
+        "hit_rate": 33.3,
+        "wilson_lo": 6.1,
+        "wilson_hi": 79.2,
+        "avg_odds": 12.0,
+        "roi": 300.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -105.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "法甲": {
+    "subset": "法甲",
+    "n": 39,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 7.7,
+        "full_pct": 6.8,
+        "diff": 0.9
+      },
+      "1": {
+        "subset_pct": 10.3,
+        "full_pct": 16.3,
+        "diff": -6.1
+      },
+      "2": {
+        "subset_pct": 17.9,
+        "full_pct": 24.8,
+        "diff": -6.9
+      },
+      "3": {
+        "subset_pct": 28.2,
+        "full_pct": 21.8,
+        "diff": 6.4
+      },
+      "4": {
+        "subset_pct": 15.4,
+        "full_pct": 14.3,
+        "diff": 1.1
+      },
+      "5": {
+        "subset_pct": 12.8,
+        "full_pct": 9.8,
+        "diff": 3.1
+      },
+      "6": {
+        "subset_pct": 5.1,
+        "full_pct": 3.8,
+        "diff": 1.3
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-法甲-001",
+        "target_goal": 5,
+        "condition_str": "g2=g2_[3.1-3.5) & hhad_ball=hhad_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-002",
+        "target_goal": 5,
+        "condition_str": "ch_g2=ch_g2_flat & had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-003",
+        "target_goal": 5,
+        "condition_str": "g2=g2_[3.1-3.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-004",
+        "target_goal": 5,
+        "condition_str": "g2=g2_[3.1-3.5) & ch_g2=ch_g2_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-005",
+        "target_goal": 5,
+        "condition_str": "g2=g2_[3.1-3.5) & ch_g3=ch_g3_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-006",
+        "target_goal": 5,
+        "condition_str": "ch_g3=ch_g3_flat & had_w=had_w_[1.5-2.0)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-007",
+        "target_goal": 5,
+        "condition_str": "ch_g1=ch_g1_up5-10 & had_l=had_l_[3.0-3.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-008",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_flat & had_l=had_l_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-009",
+        "target_goal": 5,
+        "condition_str": "ch_g2=ch_g2_flat & had_l=had_l_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-法甲-010",
+        "target_goal": 5,
+        "condition_str": "had_l=had_l_[3.5-4.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": -621.4,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -614.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -1000.0,
+        "rule_id": "CAND011",
+        "target_goal": 0,
+        "condition_str": "ch_g4=ch_g4_flat & ch_had_d=ch_had_d_up10-20"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": -505.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "澳超": {
+    "subset": "澳超",
+    "n": 26,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 7.7,
+        "full_pct": 6.8,
+        "diff": 0.9
+      },
+      "1": {
+        "subset_pct": 11.5,
+        "full_pct": 16.3,
+        "diff": -4.8
+      },
+      "2": {
+        "subset_pct": 30.8,
+        "full_pct": 24.8,
+        "diff": 5.9
+      },
+      "3": {
+        "subset_pct": 19.2,
+        "full_pct": 21.8,
+        "diff": -2.6
+      },
+      "4": {
+        "subset_pct": 26.9,
+        "full_pct": 14.3,
+        "diff": 12.7
+      },
+      "5": {
+        "subset_pct": 3.8,
+        "full_pct": 9.8,
+        "diff": -5.9
+      },
+      "6": {
+        "subset_pct": 0.0,
+        "full_pct": 3.8,
+        "diff": -3.8
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-澳超-001",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_flat",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-澳超-002",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[2.0-2.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-澳超-003",
+        "target_goal": 2,
+        "condition_str": "ch_g0=ch_g0_up5-10",
+        "subset_hitrate": 80.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-澳超-004",
+        "target_goal": 4,
+        "condition_str": "ch_g2=ch_g2_up5-10",
+        "subset_hitrate": 55.6,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-澳超-005",
+        "target_goal": 4,
+        "condition_str": "ch_g0=ch_g0_up20+",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": -862.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      }
+    ]
+  },
+  "瑞典超": {
+    "subset": "瑞典超",
+    "n": 48,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 0.0,
+        "full_pct": 6.8,
+        "diff": -6.8
+      },
+      "1": {
+        "subset_pct": 8.3,
+        "full_pct": 16.3,
+        "diff": -8.0
+      },
+      "2": {
+        "subset_pct": 33.3,
+        "full_pct": 24.8,
+        "diff": 8.5
+      },
+      "3": {
+        "subset_pct": 18.8,
+        "full_pct": 21.8,
+        "diff": -3.1
+      },
+      "4": {
+        "subset_pct": 14.6,
+        "full_pct": 14.3,
+        "diff": 0.3
+      },
+      "5": {
+        "subset_pct": 18.8,
+        "full_pct": 9.8,
+        "diff": 9.0
+      },
+      "6": {
+        "subset_pct": 2.1,
+        "full_pct": 3.8,
+        "diff": -1.7
+      },
+      "7": {
+        "subset_pct": 2.1,
+        "full_pct": 1.4,
+        "diff": 0.7
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-瑞典超-001",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_flat & had_l=had_l_[2.5-3.0)",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-002",
+        "target_goal": 5,
+        "condition_str": "g1=g1_[4.0-5.0) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-003",
+        "target_goal": 5,
+        "condition_str": "g2=g2_[3.1-3.5) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-004",
+        "target_goal": 5,
+        "condition_str": "ch_g1=ch_g1_flat & had_d=had_d_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-005",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[9-11) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-006",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[9-11) & form_avg=form_[2.0-2.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-007",
+        "target_goal": 5,
+        "condition_str": "g3=g3_[3.7-4.5) & ch_g0=ch_g0_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-008",
+        "target_goal": 5,
+        "condition_str": "g3=g3_[3.7-4.5) & ch_g1=ch_g1_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-009",
+        "target_goal": 5,
+        "condition_str": "g3=g3_[3.7-4.5) & form_avg=form_[2.0-2.5)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-瑞典超-010",
+        "target_goal": 5,
+        "condition_str": "ch_g0=ch_g0_flat & had_w=had_w_[2.0-2.5)",
+        "subset_hitrate": 60.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 2,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 65.8,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": -621.4,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 66.7,
+        "full_roi": 883.3,
+        "roi_vs_full": -983.3,
+        "rule_id": "CAND012",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_up10-20 & ch_had_d=ch_had_d_up10-20"
+      }
+    ]
+  },
+  "美洲联赛": {
+    "subset": "美洲联赛",
+    "n": 24,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 0.0,
+        "full_pct": 6.8,
+        "diff": -6.8
+      },
+      "1": {
+        "subset_pct": 8.3,
+        "full_pct": 16.3,
+        "diff": -8.0
+      },
+      "2": {
+        "subset_pct": 20.8,
+        "full_pct": 24.8,
+        "diff": -4.0
+      },
+      "3": {
+        "subset_pct": 33.3,
+        "full_pct": 21.8,
+        "diff": 11.5
+      },
+      "4": {
+        "subset_pct": 4.2,
+        "full_pct": 14.3,
+        "diff": -10.1
+      },
+      "5": {
+        "subset_pct": 12.5,
+        "full_pct": 9.8,
+        "diff": 2.7
+      },
+      "6": {
+        "subset_pct": 8.3,
+        "full_pct": 3.8,
+        "diff": 4.5
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-美洲联赛-001",
+        "target_goal": 6,
+        "condition_str": "ch_g0=ch_g0_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美洲联赛-002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[<1.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美洲联赛-003",
+        "target_goal": 5,
+        "condition_str": "ch_g2=ch_g2_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美洲联赛-004",
+        "target_goal": 6,
+        "condition_str": "hhad_ball=hhad_guestgive",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美洲联赛-005",
+        "target_goal": 3,
+        "condition_str": "had_w=had_w_[2.0-2.5)",
+        "subset_hitrate": 62.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": []
+  },
+  "美职联": {
+    "subset": "美职联",
+    "n": 24,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 0.0,
+        "full_pct": 6.8,
+        "diff": -6.8
+      },
+      "1": {
+        "subset_pct": 8.3,
+        "full_pct": 16.3,
+        "diff": -8.0
+      },
+      "2": {
+        "subset_pct": 20.8,
+        "full_pct": 24.8,
+        "diff": -4.0
+      },
+      "3": {
+        "subset_pct": 33.3,
+        "full_pct": 21.8,
+        "diff": 11.5
+      },
+      "4": {
+        "subset_pct": 4.2,
+        "full_pct": 14.3,
+        "diff": -10.1
+      },
+      "5": {
+        "subset_pct": 12.5,
+        "full_pct": 9.8,
+        "diff": 2.7
+      },
+      "6": {
+        "subset_pct": 8.3,
+        "full_pct": 3.8,
+        "diff": 4.5
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-美职联-001",
+        "target_goal": 6,
+        "condition_str": "ch_g0=ch_g0_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美职联-002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[<1.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美职联-003",
+        "target_goal": 5,
+        "condition_str": "ch_g2=ch_g2_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美职联-004",
+        "target_goal": 6,
+        "condition_str": "hhad_ball=hhad_guestgive",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-美职联-005",
+        "target_goal": 3,
+        "condition_str": "had_w=had_w_[2.0-2.5)",
+        "subset_hitrate": 62.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": []
+  },
+  "芬兰超": {
+    "subset": "芬兰超",
+    "n": 31,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.5,
+        "full_pct": 6.8,
+        "diff": -0.3
+      },
+      "1": {
+        "subset_pct": 25.8,
+        "full_pct": 16.3,
+        "diff": 9.5
+      },
+      "2": {
+        "subset_pct": 29.0,
+        "full_pct": 24.8,
+        "diff": 4.2
+      },
+      "3": {
+        "subset_pct": 19.4,
+        "full_pct": 21.8,
+        "diff": -2.5
+      },
+      "4": {
+        "subset_pct": 6.5,
+        "full_pct": 14.3,
+        "diff": -7.8
+      },
+      "5": {
+        "subset_pct": 12.9,
+        "full_pct": 9.8,
+        "diff": 3.1
+      },
+      "6": {
+        "subset_pct": 0.0,
+        "full_pct": 3.8,
+        "diff": -3.8
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-芬兰超-001",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[5.0+) & ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-002",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_dn10-20 & hhad_ball=hhad_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-003",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-004",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-005",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & g1=g1_[5.0+)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & hhad_ball=hhad_flat",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-007",
+        "target_goal": 5,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[2.5-3.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-008",
+        "target_goal": 5,
+        "condition_str": "g1=g1_[4.0-5.0) & form_avg=form_[2.5-3.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-009",
+        "target_goal": 5,
+        "condition_str": "form_avg=form_[2.5-3.0) & had_d=had_d_[2.5-3.0)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-芬兰超-010",
+        "target_goal": 1,
+        "condition_str": "ch_g1=ch_g1_flat & had_l=had_l_[4.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 16.0,
+        "roi": 1500.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": 840.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      }
+    ]
+  },
+  "英冠": {
+    "subset": "英冠",
+    "n": 31,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 19.4,
+        "full_pct": 6.8,
+        "diff": 12.6
+      },
+      "1": {
+        "subset_pct": 12.9,
+        "full_pct": 16.3,
+        "diff": -3.4
+      },
+      "2": {
+        "subset_pct": 19.4,
+        "full_pct": 24.8,
+        "diff": -5.5
+      },
+      "3": {
+        "subset_pct": 19.4,
+        "full_pct": 21.8,
+        "diff": -2.5
+      },
+      "4": {
+        "subset_pct": 22.6,
+        "full_pct": 14.3,
+        "diff": 8.3
+      },
+      "5": {
+        "subset_pct": 3.2,
+        "full_pct": 9.8,
+        "diff": -6.5
+      },
+      "6": {
+        "subset_pct": 3.2,
+        "full_pct": 3.8,
+        "diff": -0.6
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-英冠-001",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[3.5-4.0) & ch_g3=ch_g3_flat",
+        "subset_hitrate": 100.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-002",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[13-16) & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-003",
+        "target_goal": 0,
+        "condition_str": "ch_g2=ch_g2_flat & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-004",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[3.0-3.5) & had_d=had_d_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-005",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[3.5-4.0)",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-006",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[3.5-4.0) & ch_g2=ch_g2_flat",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-007",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-008",
+        "target_goal": 0,
+        "condition_str": "g1=g1_[5.0+) & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-009",
+        "target_goal": 0,
+        "condition_str": "g3=g3_[3.3-3.7) & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英冠-010",
+        "target_goal": 0,
+        "condition_str": "ch_g3=ch_g3_flat & form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": []
+  },
+  "英超": {
+    "subset": "英超",
+    "n": 62,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 4.8,
+        "full_pct": 6.8,
+        "diff": -1.9
+      },
+      "1": {
+        "subset_pct": 14.5,
+        "full_pct": 16.3,
+        "diff": -1.8
+      },
+      "2": {
+        "subset_pct": 19.4,
+        "full_pct": 24.8,
+        "diff": -5.5
+      },
+      "3": {
+        "subset_pct": 32.3,
+        "full_pct": 21.8,
+        "diff": 10.4
+      },
+      "4": {
+        "subset_pct": 17.7,
+        "full_pct": 14.3,
+        "diff": 3.5
+      },
+      "5": {
+        "subset_pct": 6.5,
+        "full_pct": 9.8,
+        "diff": -3.3
+      },
+      "6": {
+        "subset_pct": 3.2,
+        "full_pct": 3.8,
+        "diff": -0.6
+      },
+      "7": {
+        "subset_pct": 1.6,
+        "full_pct": 1.4,
+        "diff": 0.2
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-英超-001",
+        "target_goal": 6,
+        "condition_str": "ch_g0=ch_g0_dn20+",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-002",
+        "target_goal": 6,
+        "condition_str": "ch_g1=ch_g1_dn10-20",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-003",
+        "target_goal": 6,
+        "condition_str": "ch_pp=ch_pp_dn10-20",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-004",
+        "target_goal": 6,
+        "condition_str": "ch_had_d=ch_had_d_dn10-20",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-005",
+        "target_goal": 1,
+        "condition_str": "ch_g0=ch_g0_dn10-20",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-006",
+        "target_goal": 1,
+        "condition_str": "h_form=form_[<2.0)",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-007",
+        "target_goal": 1,
+        "condition_str": "ch_g3=ch_g3_dn10-20",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-008",
+        "target_goal": 1,
+        "condition_str": "a_form=form_[3.5-4.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-009",
+        "target_goal": 1,
+        "condition_str": "ch_g6=ch_g6_dn5-10",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-英超-010",
+        "target_goal": 4,
+        "condition_str": "ch_had_w=ch_had_w_up10-20",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 17.0,
+        "roi": 1600.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 750.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 17.0,
+        "roi": 1600.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 750.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 2,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 65.8,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 625.0,
+        "roi_vs_full": -725.0,
+        "rule_id": "CAND004",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[3.5-4.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": -760.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 17.5,
+        "roi": 1650.0,
+        "full_hitrate": 50.0,
+        "full_roi": 762.5,
+        "roi_vs_full": 887.5,
+        "rule_id": "CAND006",
+        "target_goal": 0,
+        "condition_str": "g0=g0_[16-20) & ch_g5=ch_g5_dn10-20"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 521.4,
+        "roi_vs_full": -621.4,
+        "rule_id": "CAND007",
+        "target_goal": 0,
+        "condition_str": "ch_had_d=ch_had_d_up10-20 & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": -614.3,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 66.7,
+        "full_roi": 900.0,
+        "roi_vs_full": -1000.0,
+        "rule_id": "CAND010",
+        "target_goal": 0,
+        "condition_str": "a_form=form_[2.0-2.5) & ch_had_l=ch_had_l_up20+"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 9.8,
+        "roi": 880.0,
+        "full_hitrate": 75.0,
+        "full_roi": 682.5,
+        "roi_vs_full": 197.5,
+        "rule_id": "CAND013",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[35+) & h_form=form_[2.5-3.0)"
+      },
+      {
+        "n": 2,
+        "hits": 1,
+        "hit_rate": 50.0,
+        "wilson_lo": 9.5,
+        "wilson_hi": 90.5,
+        "avg_odds": 17.0,
+        "roi": 750.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": 345.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "荷甲": {
+    "subset": "荷甲",
+    "n": 26,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 19.2,
+        "full_pct": 6.8,
+        "diff": 12.4
+      },
+      "1": {
+        "subset_pct": 0.0,
+        "full_pct": 16.3,
+        "diff": -16.3
+      },
+      "2": {
+        "subset_pct": 19.2,
+        "full_pct": 24.8,
+        "diff": -5.6
+      },
+      "3": {
+        "subset_pct": 23.1,
+        "full_pct": 21.8,
+        "diff": 1.2
+      },
+      "4": {
+        "subset_pct": 11.5,
+        "full_pct": 14.3,
+        "diff": -2.7
+      },
+      "5": {
+        "subset_pct": 19.2,
+        "full_pct": 9.8,
+        "diff": 9.5
+      },
+      "6": {
+        "subset_pct": 0.0,
+        "full_pct": 3.8,
+        "diff": -3.8
+      },
+      "7": {
+        "subset_pct": 7.7,
+        "full_pct": 1.4,
+        "diff": 6.3
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-荷甲-001",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 42.9,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 7,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-荷甲-002",
+        "target_goal": 0,
+        "condition_str": "had_l=had_l_[1.5-2.0)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-荷甲-003",
+        "target_goal": 0,
+        "condition_str": "ch_g1=ch_g1_up10-20",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-荷甲-004",
+        "target_goal": 0,
+        "condition_str": "g2=g2_[3.5-4.0)",
+        "subset_hitrate": 40.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-荷甲-005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 0,
+        "hit_rate": 0.0,
+        "wilson_lo": 0,
+        "wilson_hi": 79.3,
+        "avg_odds": 0.0,
+        "roi": -100.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": -950.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 22.0,
+        "roi": 2100.0,
+        "full_hitrate": 40.0,
+        "full_roi": 660.0,
+        "roi_vs_full": 1440.0,
+        "rule_id": "CAND005",
+        "target_goal": 0,
+        "condition_str": "had_d=had_d_[4.5+) & ch_g1=ch_g1_dn5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 21.0,
+        "roi": 2000.0,
+        "full_hitrate": 42.9,
+        "full_roi": 514.3,
+        "roi_vs_full": 1485.7,
+        "rule_id": "CAND008",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_g7=ch_g7_up5-10"
+      }
+    ]
+  },
+  "葡超": {
+    "subset": "葡超",
+    "n": 31,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 6.5,
+        "full_pct": 6.8,
+        "diff": -0.3
+      },
+      "1": {
+        "subset_pct": 9.7,
+        "full_pct": 16.3,
+        "diff": -6.6
+      },
+      "2": {
+        "subset_pct": 19.4,
+        "full_pct": 24.8,
+        "diff": -5.5
+      },
+      "3": {
+        "subset_pct": 19.4,
+        "full_pct": 21.8,
+        "diff": -2.5
+      },
+      "4": {
+        "subset_pct": 32.3,
+        "full_pct": 14.3,
+        "diff": 18.0
+      },
+      "5": {
+        "subset_pct": 6.5,
+        "full_pct": 9.8,
+        "diff": -3.3
+      },
+      "6": {
+        "subset_pct": 6.5,
+        "full_pct": 3.8,
+        "diff": 2.7
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-葡超-001",
+        "target_goal": 6,
+        "condition_str": "ch_g0=ch_g0_flat & ch_g2=ch_g2_up5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-002",
+        "target_goal": 6,
+        "condition_str": "ch_g0=ch_g0_flat & ch_g3=ch_g3_dn5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-003",
+        "target_goal": 6,
+        "condition_str": "ch_g1=ch_g1_up5-10 & ch_g2=ch_g2_up5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-004",
+        "target_goal": 6,
+        "condition_str": "ch_g1=ch_g1_up5-10 & ch_g3=ch_g3_dn5-10",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-005",
+        "target_goal": 6,
+        "condition_str": "ch_g1=ch_g1_up5-10 & hhad_ball=hhad_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-006",
+        "target_goal": 6,
+        "condition_str": "ch_g3=ch_g3_dn5-10 & hhad_ball=hhad_flat",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-007",
+        "target_goal": 6,
+        "condition_str": "ch_g1=ch_g1_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-008",
+        "target_goal": 6,
+        "condition_str": "g1=g1_[5.0+) & ch_g1=ch_g1_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-009",
+        "target_goal": 6,
+        "condition_str": "ch_g2=ch_g2_up5-10 & hhad_ball=hhad_flat",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-葡超-010",
+        "target_goal": 6,
+        "condition_str": "ch_g2=ch_g2_up5-10 & ch_g3=ch_g3_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": []
+  },
+  "西甲": {
+    "subset": "西甲",
+    "n": 90,
+    "quality": "good",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 3.3,
+        "full_pct": 6.8,
+        "diff": -3.4
+      },
+      "1": {
+        "subset_pct": 22.2,
+        "full_pct": 16.3,
+        "diff": 5.9
+      },
+      "2": {
+        "subset_pct": 27.8,
+        "full_pct": 24.8,
+        "diff": 3.0
+      },
+      "3": {
+        "subset_pct": 23.3,
+        "full_pct": 21.8,
+        "diff": 1.5
+      },
+      "4": {
+        "subset_pct": 6.7,
+        "full_pct": 14.3,
+        "diff": -7.6
+      },
+      "5": {
+        "subset_pct": 8.9,
+        "full_pct": 9.8,
+        "diff": -0.9
+      },
+      "6": {
+        "subset_pct": 6.7,
+        "full_pct": 3.8,
+        "diff": 2.9
+      },
+      "7": {
+        "subset_pct": 1.1,
+        "full_pct": 1.4,
+        "diff": -0.3
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-西甲-001",
+        "target_goal": 5,
+        "condition_str": "g3=g3_[3.0-3.3)",
+        "subset_hitrate": 37.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-002",
+        "target_goal": 1,
+        "condition_str": "ch_g0=ch_g0_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-003",
+        "target_goal": 3,
+        "condition_str": "ch_g0=ch_g0_up10-20",
+        "subset_hitrate": 100.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 5,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-004",
+        "target_goal": 1,
+        "condition_str": "ch_had_l=ch_had_l_dn5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 8,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-005",
+        "target_goal": 1,
+        "condition_str": "ch_g7=ch_g7_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-006",
+        "target_goal": 2,
+        "condition_str": "ch_g3=ch_g3_dn5-10",
+        "subset_hitrate": 54.5,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 11,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-007",
+        "target_goal": 1,
+        "condition_str": "ch_g6=ch_g6_up5-10",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-008",
+        "target_goal": 1,
+        "condition_str": "ch_g6=ch_g6_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 9,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-009",
+        "target_goal": 1,
+        "condition_str": "had_w=had_w_[3.0-3.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-西甲-010",
+        "target_goal": 2,
+        "condition_str": "ch_g6=ch_g6_up10-20",
+        "subset_hitrate": 52.6,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 19,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": [
+      {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "wilson_lo": 20.8,
+        "wilson_hi": 93.9,
+        "avg_odds": 22.5,
+        "roi": 1400.0,
+        "full_hitrate": 66.7,
+        "full_roi": 1400.0,
+        "roi_vs_full": 0.0,
+        "rule_id": "CAND001",
+        "target_goal": 6,
+        "condition_str": "g0=g0_[11-13) & form_avg=form_[3.5-4.5)"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 28.0,
+        "roi": 2700.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 1850.0,
+        "rule_id": "CAND002",
+        "target_goal": 6,
+        "condition_str": "had_w=had_w_[2.5-3.0) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 28.0,
+        "roi": 2700.0,
+        "full_hitrate": 50.0,
+        "full_roi": 850.0,
+        "roi_vs_full": 1850.0,
+        "rule_id": "CAND003",
+        "target_goal": 6,
+        "condition_str": "had_l=had_l_[2.0-2.5) & ch_had_l=ch_had_l_up5-10"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 11.0,
+        "roi": 1000.0,
+        "full_hitrate": 75.0,
+        "full_roi": 682.5,
+        "roi_vs_full": 317.5,
+        "rule_id": "CAND013",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[35+) & h_form=form_[2.5-3.0)"
+      },
+      {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "wilson_lo": 20.7,
+        "wilson_hi": 100,
+        "avg_odds": 10.0,
+        "roi": 900.0,
+        "full_hitrate": 40.0,
+        "full_roi": 405.0,
+        "roi_vs_full": 495.0,
+        "rule_id": "CAND014",
+        "target_goal": 6,
+        "condition_str": "g4=g4_[<5.0) & ch_had_d=ch_had_d_dn10-20"
+      }
+    ]
+  },
+  "韩职": {
+    "subset": "韩职",
+    "n": 28,
+    "quality": "moderate",
+    "goal_distribution": {
+      "0": {
+        "subset_pct": 10.7,
+        "full_pct": 6.8,
+        "diff": 3.9
+      },
+      "1": {
+        "subset_pct": 32.1,
+        "full_pct": 16.3,
+        "diff": 15.8
+      },
+      "2": {
+        "subset_pct": 25.0,
+        "full_pct": 24.8,
+        "diff": 0.2
+      },
+      "3": {
+        "subset_pct": 17.9,
+        "full_pct": 21.8,
+        "diff": -4.0
+      },
+      "4": {
+        "subset_pct": 7.1,
+        "full_pct": 14.3,
+        "diff": -7.1
+      },
+      "5": {
+        "subset_pct": 3.6,
+        "full_pct": 9.8,
+        "diff": -6.2
+      },
+      "6": {
+        "subset_pct": 3.6,
+        "full_pct": 3.8,
+        "diff": -0.2
+      },
+      "7": {
+        "subset_pct": 0.0,
+        "full_pct": 1.4,
+        "diff": -1.4
+      }
+    },
+    "exclusive_rules": [
+      {
+        "rule_id": "SUB-韩职-001",
+        "target_goal": 0,
+        "condition_str": "had_w=had_w_[4.5+)",
+        "subset_hitrate": 66.7,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-韩职-002",
+        "target_goal": 0,
+        "condition_str": "form_avg=form_[3.0-3.5)",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 6,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-韩职-003",
+        "target_goal": 1,
+        "condition_str": "g0=g0_[11-13)",
+        "subset_hitrate": 75.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-韩职-004",
+        "target_goal": 4,
+        "condition_str": "had_w=had_w_[<1.5)",
+        "subset_hitrate": 50.0,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 4,
+        "full_n": 0
+      },
+      {
+        "rule_id": "SUB-韩职-005",
+        "target_goal": 0,
+        "condition_str": "ch_g0=ch_g0_dn5-10",
+        "subset_hitrate": 33.3,
+        "full_hitrate": null,
+        "exclusivity": null,
+        "label": "subset_only",
+        "subset_n": 3,
+        "full_n": 0
+      }
+    ],
+    "full_rules_in_subset": []
+  }
+}

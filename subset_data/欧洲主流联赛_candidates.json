@@ -1,0 +1,377 @@
+{
+  "subset": "欧洲主流联赛",
+  "n_total": 502,
+  "quality": "good",
+  "desc_stats": {
+    "0": {
+      "n": 502,
+      "hits": 30,
+      "hit_rate": 6.0,
+      "avg_odds": 13.61
+    },
+    "1": {
+      "n": 502,
+      "hits": 76,
+      "hit_rate": 15.1,
+      "avg_odds": 5.68
+    },
+    "2": {
+      "n": 502,
+      "hits": 119,
+      "hit_rate": 23.7,
+      "avg_odds": 3.74
+    },
+    "3": {
+      "n": 502,
+      "hits": 120,
+      "hit_rate": 23.9,
+      "avg_odds": 3.49
+    },
+    "4": {
+      "n": 502,
+      "hits": 71,
+      "hit_rate": 14.1,
+      "avg_odds": 4.74
+    },
+    "5": {
+      "n": 502,
+      "hits": 55,
+      "hit_rate": 11.0,
+      "avg_odds": 8.64
+    },
+    "6": {
+      "n": 502,
+      "hits": 20,
+      "hit_rate": 4.0,
+      "avg_odds": 13.77
+    },
+    "7": {
+      "n": 502,
+      "hits": 9,
+      "hit_rate": 1.8,
+      "avg_odds": 19.24
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_up20+",
+        "ch_g2": "ch_g2_flat"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 25.75,
+      "roi": 1187.5,
+      "rule_id": "SUB-欧洲主流-001",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20",
+        "ch_g5": "ch_g5_flat"
+      },
+      "n_samples": 5,
+      "n_hits": 3,
+      "hit_rate": 60.0,
+      "wilson_ci_lower": 23.1,
+      "wilson_ci_upper": 88.2,
+      "avg_odds": 18.0,
+      "roi": 980.0,
+      "rule_id": "SUB-欧洲主流-002",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "h_form": "form_[<2.0)",
+        "ch_g7": "ch_g7_up5-10"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 16.33,
+      "roi": 1125.0,
+      "rule_id": "SUB-欧洲主流-003",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "g0": "g0_[11-13)",
+        "form_avg": "form_[3.5-4.5)"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 22.5,
+      "roi": 1400.0,
+      "rule_id": "SUB-欧洲主流-004",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "had_w": "had_w_[2.5-3.0)",
+        "ch_had_l": "ch_had_l_up5-10"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 22.5,
+      "roi": 1025.0,
+      "rule_id": "SUB-欧洲主流-005",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "had_l": "had_l_[2.0-2.5)",
+        "ch_had_l": "ch_had_l_up5-10"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 22.5,
+      "roi": 1025.0,
+      "rule_id": "SUB-欧洲主流-006",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "hhad_ball": "hhad_guestgive",
+        "ch_g0": "ch_g0_up20+"
+      },
+      "n_samples": 6,
+      "n_hits": 2,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 9.7,
+      "wilson_ci_upper": 70.0,
+      "avg_odds": 25.75,
+      "roi": 758.3,
+      "rule_id": "SUB-欧洲主流-007",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[35+)",
+        "had_d": "had_d_[3.5-4.5)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 38.0,
+      "roi": 1166.7,
+      "rule_id": "SUB-欧洲主流-008",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g3": "g3_[3.7-4.5)",
+        "ch_g0": "ch_g0_up20+"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 38.0,
+      "roi": 1166.7,
+      "rule_id": "SUB-欧洲主流-009",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "had_d": "had_d_[4.5+)",
+        "ch_g1": "ch_g1_dn5-10"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 19.0,
+      "roi": 1166.7,
+      "rule_id": "SUB-欧洲主流-010",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "had_l": "had_l_[1.5-2.0)",
+        "ch_g0": "ch_g0_up20+"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 38.0,
+      "roi": 1166.7,
+      "rule_id": "SUB-欧洲主流-011",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "h_form": "form_[<2.0)",
+        "ch_g6": "ch_g6_up20+"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 13.5,
+      "roi": 912.5,
+      "rule_id": "SUB-欧洲主流-012",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g1": "g1_[5.0+)",
+        "g2": "g2_[2.8-3.1)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-013",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g2": "g2_[2.8-3.1)",
+        "g3": "g3_[3.0-3.3)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-014",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g2": "g2_[2.8-3.1)",
+        "ch_g1": "ch_g1_up10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-015",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g2": "g2_[2.8-3.1)",
+        "ch_g3": "ch_g3_dn5-10"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-016",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g3": "g3_[3.0-3.3)",
+        "had_d": "had_d_[2.5-3.0)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-017",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g3": "g3_[3.0-3.3)",
+        "ch_g2": "ch_g2_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-018",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "g3": "g3_[3.0-3.3)",
+        "ch_pp": "ch_pp_dn5-10"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-019",
+      "quality": "good"
+    },
+    {
+      "target_goal": 7,
+      "conditions": {
+        "h_form": "form_[2.5-3.0)",
+        "ch_g2": "ch_g2_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 35.0,
+      "roi": 1066.7,
+      "rule_id": "SUB-欧洲主流-020",
+      "quality": "good"
+    }
+  ]
+}

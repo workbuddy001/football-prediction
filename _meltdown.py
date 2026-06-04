@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-连黑熔断引擎 — 2026-05-22
+连黑熔断引擎 — 2026-05-22 / 2026-06-04 接入埋点数据
 引入零依赖的防爆仓机制:
   4连黑 → 砍60%仓位 (强制偶数)
   6连黑 → 0元虚拟观察盘
@@ -12,8 +12,38 @@ import os
 import datetime
 
 STREAK_FILE = '_streak.json'
+RULES_LOG = os.path.join(os.path.dirname(__file__), '分析模板', '_rule_trigger_log.json')
+
 
 def _load_streak():
+    """
+    加载连黑数据。优先从埋点日志读取（真实投注记录），
+    若不存在则回退到旧 _streak.json。
+    """
+    # 优先从埋点日志读取
+    if os.path.exists(RULES_LOG):
+        try:
+            with open(RULES_LOG, 'r', encoding='utf-8') as f:
+                log = json.load(f)
+            results = []
+            for mid, e in log.items():
+                if e.get('action') != 'bet':
+                    continue
+                if e.get('hit') is None:
+                    continue  # 未出比分，不计入连黑
+                results.append({
+                    'hit': 1 if e['hit'] else 0,
+                    'date': (e.get('confirmed_at', '') or '')[:10],
+                    'rule': e.get('rule', ''),
+                    'match': f"{e.get('match_num','')}{e.get('home_team','')}vs{e.get('away_team','')}",
+                })
+            # 按日期排序
+            results.sort(key=lambda r: r.get('date', ''))
+            return results
+        except:
+            pass
+
+    # 回退到旧文件
     if not os.path.exists(STREAK_FILE):
         return []
     try:

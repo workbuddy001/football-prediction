@@ -1,0 +1,207 @@
+{
+  "subset": "英超",
+  "n_total": 62,
+  "quality": "good",
+  "desc_stats": {
+    "0": {
+      "n": 62,
+      "hits": 3,
+      "hit_rate": 4.8,
+      "avg_odds": 14.5
+    },
+    "1": {
+      "n": 62,
+      "hits": 9,
+      "hit_rate": 14.5,
+      "avg_odds": 6.57
+    },
+    "2": {
+      "n": 62,
+      "hits": 12,
+      "hit_rate": 19.4,
+      "avg_odds": 3.85
+    },
+    "3": {
+      "n": 62,
+      "hits": 20,
+      "hit_rate": 32.3,
+      "avg_odds": 3.45
+    },
+    "4": {
+      "n": 62,
+      "hits": 11,
+      "hit_rate": 17.7,
+      "avg_odds": 4.84
+    },
+    "5": {
+      "n": 62,
+      "hits": 4,
+      "hit_rate": 6.5,
+      "avg_odds": 9.06
+    },
+    "6": {
+      "n": 62,
+      "hits": 2,
+      "hit_rate": 3.2,
+      "avg_odds": 15.25
+    },
+    "7": {
+      "n": 62,
+      "hits": 1,
+      "hit_rate": 1.6,
+      "avg_odds": 29.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 6,
+      "conditions": {
+        "ch_g0": "ch_g0_dn20+"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 17.0,
+      "roi": 466.7,
+      "rule_id": "SUB-英超-001",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "ch_g1": "ch_g1_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 17.0,
+      "roi": 466.7,
+      "rule_id": "SUB-英超-002",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "ch_pp": "ch_pp_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 17.0,
+      "roi": 466.7,
+      "rule_id": "SUB-英超-003",
+      "quality": "good"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "ch_had_d": "ch_had_d_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 17.0,
+      "roi": 466.7,
+      "rule_id": "SUB-英超-004",
+      "quality": "good"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 6,
+      "n_hits": 3,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 18.8,
+      "wilson_ci_upper": 81.2,
+      "avg_odds": 6.78,
+      "roi": 239.2,
+      "rule_id": "SUB-英超-005",
+      "quality": "good"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "h_form": "form_[<2.0)"
+      },
+      "n_samples": 7,
+      "n_hits": 3,
+      "hit_rate": 42.9,
+      "wilson_ci_lower": 15.8,
+      "wilson_ci_upper": 75.0,
+      "avg_odds": 6.72,
+      "roi": 187.9,
+      "rule_id": "SUB-英超-006",
+      "quality": "good"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "ch_g3": "ch_g3_dn10-20"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 8.15,
+      "roi": 226.0,
+      "rule_id": "SUB-英超-007",
+      "quality": "good"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "a_form": "form_[3.5-4.5)"
+      },
+      "n_samples": 8,
+      "n_hits": 4,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 21.5,
+      "wilson_ci_upper": 78.5,
+      "avg_odds": 5.44,
+      "roi": 171.9,
+      "rule_id": "SUB-英超-008",
+      "quality": "good"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "ch_g6": "ch_g6_dn5-10"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 7.4,
+      "roi": 196.0,
+      "rule_id": "SUB-英超-009",
+      "quality": "good"
+    },
+    {
+      "target_goal": 4,
+      "conditions": {
+        "ch_had_w": "ch_had_w_up10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 5.35,
+      "roi": 256.7,
+      "rule_id": "SUB-英超-010",
+      "quality": "good"
+    }
+  ]
+}

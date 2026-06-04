@@ -1,0 +1,824 @@
+{
+  "generated_at": "2026-06-03T15:14:05.566188",
+  "total_matches": 1009,
+  "rules": [
+    {
+      "rule": "C1",
+      "total_score": 39,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 0,
+        "net_profit": 4,
+        "stability": 1,
+        "sample_size": 3,
+        "consistency": 5,
+        "overfitting": 3,
+        "frequency": 5,
+        "odds_availability": 4,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 19,
+        "hits": 5,
+        "hit_rate": 26.3,
+        "total_profit": 1550.0,
+        "total_stake": 380,
+        "roi": 407.9,
+        "avg_odds": 18.03,
+        "max_odds": 70.0,
+        "monthly_avg": 9.5,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 22.2,
+        "second_half_hitrate": 30.0,
+        "consistency_gap": 7.8,
+        "std_dev": 551.1
+      },
+      "labels": [
+        "🔵 主力规则"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "F",
+      "total_score": 0,
+      "dimensions": {
+        "roi": 0,
+        "hit_rate": 0,
+        "net_profit": 0,
+        "stability": 0,
+        "sample_size": 0,
+        "consistency": 0,
+        "overfitting": 0,
+        "frequency": 0,
+        "odds_availability": 0,
+        "uniqueness": 0
+      },
+      "stats": {
+        "n": 0,
+        "hits": 0,
+        "hit_rate": 0,
+        "total_profit": 0,
+        "total_stake": 0,
+        "roi": 0,
+        "avg_odds": 0,
+        "max_odds": 0,
+        "monthly_avg": 0,
+        "months_covered": 0,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 未触发"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "G2",
+      "total_score": 39,
+      "dimensions": {
+        "roi": 3,
+        "hit_rate": 5,
+        "net_profit": 2,
+        "stability": 4,
+        "sample_size": 3,
+        "consistency": 4,
+        "overfitting": 3,
+        "frequency": 5,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 10,
+        "hits": 9,
+        "hit_rate": 90.0,
+        "total_profit": 424.0,
+        "total_stake": 320,
+        "roi": 132.5,
+        "avg_odds": 7.34,
+        "max_odds": 18.0,
+        "monthly_avg": 5.0,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 80.0,
+        "second_half_hitrate": 100.0,
+        "consistency_gap": 20.0,
+        "std_dev": 28.2
+      },
+      "labels": [
+        "🔵 主力规则"
+      ],
+      "optimizations": [
+        {
+          "type": "dual_optimization",
+          "current": "0球10+2球20=30元",
+          "suggested": "0球30+2球10=40元"
+        }
+      ],
+      "near_misses": 1
+    },
+    {
+      "rule": "G6",
+      "total_score": 33,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 5,
+        "net_profit": 1,
+        "stability": 3,
+        "sample_size": 1,
+        "consistency": 3,
+        "overfitting": 2,
+        "frequency": 3,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "total_profit": 164.0,
+        "total_stake": 20,
+        "roi": 820.0,
+        "avg_odds": 9.2,
+        "max_odds": 9.2,
+        "monthly_avg": 1.0,
+        "months_covered": 1,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "🟡 样本不足",
+        "⚪ 待观察"
+      ],
+      "optimizations": [
+        {
+          "type": "stake_optimization_held",
+          "reason": "样本1<10，暂不调整（最优=50元，需1→≥10场后再议）"
+        }
+      ],
+      "near_misses": 0
+    },
+    {
+      "rule": "H1",
+      "total_score": 0,
+      "dimensions": {
+        "roi": 0,
+        "hit_rate": 0,
+        "net_profit": 0,
+        "stability": 0,
+        "sample_size": 0,
+        "consistency": 0,
+        "overfitting": 0,
+        "frequency": 0,
+        "odds_availability": 0,
+        "uniqueness": 0
+      },
+      "stats": {
+        "n": 0,
+        "hits": 0,
+        "hit_rate": 0,
+        "total_profit": 0,
+        "total_stake": 0,
+        "roi": 0,
+        "avg_odds": 0,
+        "max_odds": 0,
+        "monthly_avg": 0,
+        "months_covered": 0,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 未触发"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "H2",
+      "total_score": 33,
+      "dimensions": {
+        "roi": 3,
+        "hit_rate": 3,
+        "net_profit": 1,
+        "stability": 4,
+        "sample_size": 1,
+        "consistency": 5,
+        "overfitting": 2,
+        "frequency": 4,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 4,
+        "hits": 2,
+        "hit_rate": 50.0,
+        "total_profit": 148.0,
+        "total_stake": 80,
+        "roi": 185.0,
+        "avg_odds": 5.95,
+        "max_odds": 6.2,
+        "monthly_avg": 2.0,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 50.0,
+        "second_half_hitrate": 50.0,
+        "consistency_gap": 0.0,
+        "std_dev": 25.0
+      },
+      "labels": [
+        "🟡 样本不足",
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "H3",
+      "total_score": 35,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 5,
+        "net_profit": 3,
+        "stability": 3,
+        "sample_size": 1,
+        "consistency": 3,
+        "overfitting": 2,
+        "frequency": 3,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 3,
+        "hits": 3,
+        "hit_rate": 100.0,
+        "total_profit": 555.4,
+        "total_stake": 116,
+        "roi": 478.8,
+        "avg_odds": 5.76,
+        "max_odds": 6.0,
+        "monthly_avg": 1.5,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "🟡 样本不足",
+        "🟡 过拟合风险",
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "N1",
+      "total_score": 36,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 2,
+        "net_profit": 3,
+        "stability": 3,
+        "sample_size": 2,
+        "consistency": 2,
+        "overfitting": 4,
+        "frequency": 5,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 9,
+        "hits": 4,
+        "hit_rate": 44.4,
+        "total_profit": 830.0,
+        "total_stake": 180,
+        "roi": 461.1,
+        "avg_odds": 12.83,
+        "max_odds": 17.0,
+        "monthly_avg": 9.0,
+        "months_covered": 1,
+        "overlap_rate": 0,
+        "first_half_hitrate": 25.0,
+        "second_half_hitrate": 60.0,
+        "consistency_gap": 35.0,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 待观察"
+      ],
+      "optimizations": [
+        {
+          "type": "stake_optimization_held",
+          "reason": "样本9<10，暂不调整（最优=50元，需9→≥10场后再议）"
+        }
+      ],
+      "near_misses": 1
+    },
+    {
+      "rule": "P1",
+      "total_score": 36,
+      "dimensions": {
+        "roi": 3,
+        "hit_rate": 5,
+        "net_profit": 3,
+        "stability": 1,
+        "sample_size": 3,
+        "consistency": 2,
+        "overfitting": 4,
+        "frequency": 5,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 10,
+        "hits": 8,
+        "hit_rate": 80.0,
+        "total_profit": 783.0,
+        "total_stake": 400,
+        "roi": 195.8,
+        "avg_odds": 5.78,
+        "max_odds": 8.5,
+        "monthly_avg": 5.0,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 100.0,
+        "second_half_hitrate": 60.0,
+        "consistency_gap": 40.0,
+        "std_dev": 105.3
+      },
+      "labels": [
+        "🟠 ROI衰减",
+        "🔵 主力规则",
+        "🟣 优化候选"
+      ],
+      "optimizations": [
+        {
+          "type": "mixed_optimization",
+          "current": "1球30元+0:1比分10元",
+          "suggested": "1球40元+0:1比分20元"
+        },
+        {
+          "type": "near_miss",
+          "count": 2,
+          "details": [
+            {
+              "match_id": "2039454",
+              "actual": 2,
+              "target": 1,
+              "score": "2:0"
+            },
+            {
+              "match_id": "2039478",
+              "actual": 2,
+              "target": 1,
+              "score": "1:1"
+            }
+          ],
+          "suggestion": "有2场差1球，可考虑比分加注10-20元"
+        }
+      ],
+      "near_misses": 2
+    },
+    {
+      "rule": "R0",
+      "total_score": 0,
+      "dimensions": {
+        "roi": 0,
+        "hit_rate": 0,
+        "net_profit": 0,
+        "stability": 0,
+        "sample_size": 0,
+        "consistency": 0,
+        "overfitting": 0,
+        "frequency": 0,
+        "odds_availability": 0,
+        "uniqueness": 0
+      },
+      "stats": {
+        "n": 0,
+        "hits": 0,
+        "hit_rate": 0,
+        "total_profit": 0,
+        "total_stake": 0,
+        "roi": 0,
+        "avg_odds": 0,
+        "max_odds": 0,
+        "monthly_avg": 0,
+        "months_covered": 0,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 未触发"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "R1",
+      "total_score": 32,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 3,
+        "net_profit": 2,
+        "stability": 1,
+        "sample_size": 2,
+        "consistency": 2,
+        "overfitting": 3,
+        "frequency": 4,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 6,
+        "hits": 3,
+        "hit_rate": 50.0,
+        "total_profit": 360.0,
+        "total_stake": 120,
+        "roi": 300.0,
+        "avg_odds": 8.75,
+        "max_odds": 10.0,
+        "monthly_avg": 3.0,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 66.7,
+        "second_half_hitrate": 33.3,
+        "consistency_gap": 33.3,
+        "std_dev": 262.5
+      },
+      "labels": [
+        "🟠 ROI衰减",
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "S2",
+      "total_score": 35,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 5,
+        "net_profit": 3,
+        "stability": 3,
+        "sample_size": 1,
+        "consistency": 3,
+        "overfitting": 2,
+        "frequency": 3,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 1,
+        "hits": 1,
+        "hit_rate": 100.0,
+        "total_profit": 534.0,
+        "total_stake": 90,
+        "roi": 593.3,
+        "avg_odds": 12.4,
+        "max_odds": 17.0,
+        "monthly_avg": 1.0,
+        "months_covered": 1,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "🟡 样本不足",
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "S3",
+      "total_score": 35,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 4,
+        "net_profit": 4,
+        "stability": 3,
+        "sample_size": 1,
+        "consistency": 3,
+        "overfitting": 2,
+        "frequency": 4,
+        "odds_availability": 4,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "total_profit": 1060.0,
+        "total_stake": 140,
+        "roi": 757.1,
+        "avg_odds": 30.0,
+        "max_odds": 60.0,
+        "monthly_avg": 3.0,
+        "months_covered": 1,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "🟡 样本不足",
+        "🟡 过拟合风险",
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "S4",
+      "total_score": 0,
+      "dimensions": {
+        "roi": 0,
+        "hit_rate": 0,
+        "net_profit": 0,
+        "stability": 0,
+        "sample_size": 0,
+        "consistency": 0,
+        "overfitting": 0,
+        "frequency": 0,
+        "odds_availability": 0,
+        "uniqueness": 0
+      },
+      "stats": {
+        "n": 0,
+        "hits": 0,
+        "hit_rate": 0,
+        "total_profit": 0,
+        "total_stake": 0,
+        "roi": 0,
+        "avg_odds": 0,
+        "max_odds": 0,
+        "monthly_avg": 0,
+        "months_covered": 0,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 未触发"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "S5",
+      "total_score": 0,
+      "dimensions": {
+        "roi": 0,
+        "hit_rate": 0,
+        "net_profit": 0,
+        "stability": 0,
+        "sample_size": 0,
+        "consistency": 0,
+        "overfitting": 0,
+        "frequency": 0,
+        "odds_availability": 0,
+        "uniqueness": 0
+      },
+      "stats": {
+        "n": 0,
+        "hits": 0,
+        "hit_rate": 0,
+        "total_profit": 0,
+        "total_stake": 0,
+        "roi": 0,
+        "avg_odds": 0,
+        "max_odds": 0,
+        "monthly_avg": 0,
+        "months_covered": 0,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 未触发"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "S7",
+      "total_score": 42,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 5,
+        "net_profit": 4,
+        "stability": 4,
+        "sample_size": 2,
+        "consistency": 5,
+        "overfitting": 3,
+        "frequency": 4,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 100.0,
+        "total_profit": 1118.0,
+        "total_stake": 330,
+        "roi": 338.8,
+        "avg_odds": 4.8,
+        "max_odds": 8.0,
+        "monthly_avg": 3.0,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 100.0,
+        "second_half_hitrate": 100.0,
+        "consistency_gap": 0.0,
+        "std_dev": 17.2
+      },
+      "labels": [
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "S8",
+      "total_score": 37,
+      "dimensions": {
+        "roi": 4,
+        "hit_rate": 5,
+        "net_profit": 3,
+        "stability": 3,
+        "sample_size": 2,
+        "consistency": 3,
+        "overfitting": 3,
+        "frequency": 4,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 7,
+        "hits": 6,
+        "hit_rate": 85.7,
+        "total_profit": 504.0,
+        "total_stake": 230,
+        "roi": 219.1,
+        "avg_odds": 4.82,
+        "max_odds": 7.0,
+        "monthly_avg": 3.5,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": 100.0,
+        "second_half_hitrate": 75.0,
+        "consistency_gap": 25.0,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 1
+    },
+    {
+      "rule": "X3",
+      "total_score": 0,
+      "dimensions": {
+        "roi": 0,
+        "hit_rate": 0,
+        "net_profit": 0,
+        "stability": 0,
+        "sample_size": 0,
+        "consistency": 0,
+        "overfitting": 0,
+        "frequency": 0,
+        "odds_availability": 0,
+        "uniqueness": 0
+      },
+      "stats": {
+        "n": 0,
+        "hits": 0,
+        "hit_rate": 0,
+        "total_profit": 0,
+        "total_stake": 0,
+        "roi": 0,
+        "avg_odds": 0,
+        "max_odds": 0,
+        "monthly_avg": 0,
+        "months_covered": 0,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "⚪ 未触发"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    },
+    {
+      "rule": "X4",
+      "total_score": 32,
+      "dimensions": {
+        "roi": 4,
+        "hit_rate": 5,
+        "net_profit": 1,
+        "stability": 3,
+        "sample_size": 1,
+        "consistency": 3,
+        "overfitting": 2,
+        "frequency": 3,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 2,
+        "hits": 2,
+        "hit_rate": 100.0,
+        "total_profit": 114.0,
+        "total_stake": 50,
+        "roi": 228.0,
+        "avg_odds": 6.73,
+        "max_odds": 12.0,
+        "monthly_avg": 1.0,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "🟡 样本不足",
+        "⚪ 待观察"
+      ],
+      "optimizations": [
+        {
+          "type": "stake_optimization_held",
+          "reason": "样本2<10，暂不调整（最优=50元，需2→≥10场后再议）"
+        }
+      ],
+      "near_misses": 0
+    },
+    {
+      "rule": "X6",
+      "total_score": 35,
+      "dimensions": {
+        "roi": 5,
+        "hit_rate": 4,
+        "net_profit": 4,
+        "stability": 3,
+        "sample_size": 1,
+        "consistency": 3,
+        "overfitting": 2,
+        "frequency": 3,
+        "odds_availability": 5,
+        "uniqueness": 5
+      },
+      "stats": {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 66.7,
+        "total_profit": 1196.0,
+        "total_stake": 94,
+        "roi": 1272.3,
+        "avg_odds": 26.25,
+        "max_odds": 29.0,
+        "monthly_avg": 1.5,
+        "months_covered": 2,
+        "overlap_rate": 0,
+        "first_half_hitrate": null,
+        "second_half_hitrate": null,
+        "consistency_gap": null,
+        "std_dev": null
+      },
+      "labels": [
+        "🟡 样本不足",
+        "⚪ 待观察"
+      ],
+      "optimizations": [],
+      "near_misses": 0
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "subset": "美洲联赛",
+  "n_total": 24,
+  "quality": "moderate",
+  "desc_stats": {
+    "0": {
+      "n": 24,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    },
+    "1": {
+      "n": 24,
+      "hits": 2,
+      "hit_rate": 8.3,
+      "avg_odds": 6.05
+    },
+    "2": {
+      "n": 24,
+      "hits": 5,
+      "hit_rate": 20.8,
+      "avg_odds": 4.29
+    },
+    "3": {
+      "n": 24,
+      "hits": 8,
+      "hit_rate": 33.3,
+      "avg_odds": 3.49
+    },
+    "4": {
+      "n": 24,
+      "hits": 1,
+      "hit_rate": 4.2,
+      "avg_odds": 4.1
+    },
+    "5": {
+      "n": 24,
+      "hits": 3,
+      "hit_rate": 12.5,
+      "avg_odds": 7.52
+    },
+    "6": {
+      "n": 24,
+      "hits": 2,
+      "hit_rate": 8.3,
+      "avg_odds": 13.5
+    },
+    "7": {
+      "n": 24,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 6,
+      "conditions": {
+        "ch_g0": "ch_g0_dn5-10"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 17.0,
+      "roi": 466.7,
+      "rule_id": "SUB-美洲联赛-001",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "had_w": "had_w_[<1.5)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 17.0,
+      "roi": 466.7,
+      "rule_id": "SUB-美洲联赛-002",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "ch_g2": "ch_g2_up5-10"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 7.88,
+      "roi": 293.8,
+      "rule_id": "SUB-美洲联赛-003",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "hhad_ball": "hhad_guestgive"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 10.0,
+      "roi": 233.3,
+      "rule_id": "SUB-美洲联赛-004",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 3,
+      "conditions": {
+        "had_w": "had_w_[2.0-2.5)"
+      },
+      "n_samples": 8,
+      "n_hits": 5,
+      "hit_rate": 62.5,
+      "wilson_ci_lower": 30.6,
+      "wilson_ci_upper": 86.3,
+      "avg_odds": 3.4,
+      "roi": 112.5,
+      "rule_id": "SUB-美洲联赛-005",
+      "quality": "moderate"
+    }
+  ]
+}

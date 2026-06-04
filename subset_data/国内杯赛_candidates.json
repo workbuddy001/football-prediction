@@ -1,0 +1,132 @@
+{
+  "subset": "国内杯赛",
+  "n_total": 17,
+  "quality": "moderate",
+  "desc_stats": {
+    "0": {
+      "n": 17,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    },
+    "1": {
+      "n": 17,
+      "hits": 2,
+      "hit_rate": 11.8,
+      "avg_odds": 6.1
+    },
+    "2": {
+      "n": 17,
+      "hits": 5,
+      "hit_rate": 29.4,
+      "avg_odds": 3.94
+    },
+    "3": {
+      "n": 17,
+      "hits": 3,
+      "hit_rate": 17.6,
+      "avg_odds": 3.75
+    },
+    "4": {
+      "n": 17,
+      "hits": 3,
+      "hit_rate": 17.6,
+      "avg_odds": 4.73
+    },
+    "5": {
+      "n": 17,
+      "hits": 2,
+      "hit_rate": 11.8,
+      "avg_odds": 8.8
+    },
+    "6": {
+      "n": 17,
+      "hits": 1,
+      "hit_rate": 5.9,
+      "avg_odds": 12.0
+    },
+    "7": {
+      "n": 17,
+      "hits": 1,
+      "hit_rate": 5.9,
+      "avg_odds": 6.15
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 5,
+      "conditions": {
+        "form_avg": "form_[3.5-4.5)"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 8.8,
+      "roi": 340.0,
+      "rule_id": "SUB-国内杯赛-001",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "ch_g0": "ch_g0_up20+"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 6.1,
+      "roi": 306.7,
+      "rule_id": "SUB-国内杯赛-002",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "ch_g1": "ch_g1_up10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 6.1,
+      "roi": 306.7,
+      "rule_id": "SUB-国内杯赛-003",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 6,
+      "conditions": {
+        "had_d": "had_d_[3.0-3.5)"
+      },
+      "n_samples": 3,
+      "n_hits": 1,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 6.1,
+      "wilson_ci_upper": 79.2,
+      "avg_odds": 12.0,
+      "roi": 300.0,
+      "rule_id": "SUB-国内杯赛-004",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "g2": "g2_[3.5-4.0)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 6.1,
+      "roi": 144.0,
+      "rule_id": "SUB-国内杯赛-005",
+      "quality": "moderate"
+    }
+  ]
+}

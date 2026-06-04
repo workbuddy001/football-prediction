@@ -1,0 +1,376 @@
+{
+  "subset": "北欧联赛",
+  "n_total": 115,
+  "quality": "good",
+  "desc_stats": {
+    "0": {
+      "n": 115,
+      "hits": 3,
+      "hit_rate": 2.6,
+      "avg_odds": 14.0
+    },
+    "1": {
+      "n": 115,
+      "hits": 17,
+      "hit_rate": 14.8,
+      "avg_odds": 6.06
+    },
+    "2": {
+      "n": 115,
+      "hits": 33,
+      "hit_rate": 28.7,
+      "avg_odds": 3.62
+    },
+    "3": {
+      "n": 115,
+      "hits": 26,
+      "hit_rate": 22.6,
+      "avg_odds": 3.46
+    },
+    "4": {
+      "n": 115,
+      "hits": 13,
+      "hit_rate": 11.3,
+      "avg_odds": 4.84
+    },
+    "5": {
+      "n": 115,
+      "hits": 19,
+      "hit_rate": 16.5,
+      "avg_odds": 8.27
+    },
+    "6": {
+      "n": 115,
+      "hits": 2,
+      "hit_rate": 1.7,
+      "avg_odds": 14.25
+    },
+    "7": {
+      "n": 115,
+      "hits": 1,
+      "hit_rate": 0.9,
+      "avg_odds": 20.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g6": "g6_[<15.0)",
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 16.0,
+      "roi": 966.7,
+      "rule_id": "SUB-北欧联赛-001",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20",
+        "ch_pp": "ch_pp_flat"
+      },
+      "n_samples": 7,
+      "n_hits": 3,
+      "hit_rate": 42.9,
+      "wilson_ci_lower": 15.8,
+      "wilson_ci_upper": 75.0,
+      "avg_odds": 14.0,
+      "roi": 500.0,
+      "rule_id": "SUB-北欧联赛-002",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20",
+        "ch_had_d": "ch_had_d_flat"
+      },
+      "n_samples": 8,
+      "n_hits": 3,
+      "hit_rate": 37.5,
+      "wilson_ci_lower": 13.7,
+      "wilson_ci_upper": 69.4,
+      "avg_odds": 14.0,
+      "roi": 425.0,
+      "rule_id": "SUB-北欧联赛-003",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "ch_g4": "ch_g4_flat",
+        "ch_had_l": "ch_had_l_up5-10"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 9.83,
+      "roi": 637.5,
+      "rule_id": "SUB-北欧联赛-004",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "had_w": "had_w_[2.0-2.5)",
+        "ch_g1": "ch_g1_flat"
+      },
+      "n_samples": 10,
+      "n_hits": 5,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 23.7,
+      "wilson_ci_upper": 76.3,
+      "avg_odds": 9.61,
+      "roi": 380.5,
+      "rule_id": "SUB-北欧联赛-005",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "a_form": "form_[3.0-3.5)",
+        "ch_g6": "ch_g6_flat"
+      },
+      "n_samples": 13,
+      "n_hits": 7,
+      "hit_rate": 53.8,
+      "wilson_ci_lower": 29.1,
+      "wilson_ci_upper": 76.8,
+      "avg_odds": 8.18,
+      "roi": 340.4,
+      "rule_id": "SUB-北欧联赛-006",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[5.0+)",
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-北欧联赛-007",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g4": "g4_[<5.0)",
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-北欧联赛-008",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g7": "g7_[<25.0)",
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-北欧联赛-009",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "hhad_ball": "hhad_flat",
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-北欧联赛-010",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "had_w": "had_w_[2.0-2.5)",
+        "ch_had_l": "ch_had_l_up5-10"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 9.42,
+      "roi": 606.2,
+      "rule_id": "SUB-北欧联赛-011",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "a_form": "form_[3.0-3.5)",
+        "ch_g7": "ch_g7_flat"
+      },
+      "n_samples": 11,
+      "n_hits": 6,
+      "hit_rate": 54.5,
+      "wilson_ci_lower": 28.0,
+      "wilson_ci_upper": 78.7,
+      "avg_odds": 8.21,
+      "roi": 347.7,
+      "rule_id": "SUB-北欧联赛-012",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "g0": "g0_[13-16)",
+        "a_form": "form_[3.0-3.5)"
+      },
+      "n_samples": 9,
+      "n_hits": 5,
+      "hit_rate": 55.6,
+      "wilson_ci_lower": 26.7,
+      "wilson_ci_upper": 81.1,
+      "avg_odds": 8.6,
+      "roi": 377.8,
+      "rule_id": "SUB-北欧联赛-013",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "g2": "g2_[3.5-4.0)",
+        "a_form": "form_[3.0-3.5)"
+      },
+      "n_samples": 9,
+      "n_hits": 5,
+      "hit_rate": 55.6,
+      "wilson_ci_lower": 26.7,
+      "wilson_ci_upper": 81.1,
+      "avg_odds": 8.6,
+      "roi": 377.8,
+      "rule_id": "SUB-北欧联赛-014",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "g1": "g1_[4.0-5.0)",
+        "ch_g1": "ch_g1_flat"
+      },
+      "n_samples": 12,
+      "n_hits": 5,
+      "hit_rate": 41.7,
+      "wilson_ci_lower": 19.3,
+      "wilson_ci_upper": 68.0,
+      "avg_odds": 10.3,
+      "roi": 329.2,
+      "rule_id": "SUB-北欧联赛-015",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "had_w": "had_w_[2.0-2.5)",
+        "ch_g4": "ch_g4_dn5-10"
+      },
+      "n_samples": 3,
+      "n_hits": 3,
+      "hit_rate": 100.0,
+      "wilson_ci_lower": 43.8,
+      "wilson_ci_upper": 100,
+      "avg_odds": 8.43,
+      "roi": 743.3,
+      "rule_id": "SUB-北欧联赛-016",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 9,
+      "n_hits": 3,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 12.1,
+      "wilson_ci_upper": 64.6,
+      "avg_odds": 14.0,
+      "roi": 366.7,
+      "rule_id": "SUB-北欧联赛-017",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20",
+        "v36_single": "v36_rec_0"
+      },
+      "n_samples": 9,
+      "n_hits": 3,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 12.1,
+      "wilson_ci_upper": 64.6,
+      "avg_odds": 14.0,
+      "roi": 366.7,
+      "rule_id": "SUB-北欧联赛-018",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "g3": "g3_[3.7-4.5)",
+        "a_form": "form_[2.0-2.5)"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 9.05,
+      "roi": 578.8,
+      "rule_id": "SUB-北欧联赛-019",
+      "quality": "good"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "ch_g1": "ch_g1_flat",
+        "ch_had_l": "ch_had_l_up5-10"
+      },
+      "n_samples": 5,
+      "n_hits": 3,
+      "hit_rate": 60.0,
+      "wilson_ci_lower": 23.1,
+      "wilson_ci_upper": 88.2,
+      "avg_odds": 9.83,
+      "roi": 490.0,
+      "rule_id": "SUB-北欧联赛-020",
+      "quality": "good"
+    }
+  ]
+}

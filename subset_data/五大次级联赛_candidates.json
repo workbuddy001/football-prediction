@@ -1,0 +1,207 @@
+{
+  "subset": "五大次级联赛",
+  "n_total": 79,
+  "quality": "good",
+  "desc_stats": {
+    "0": {
+      "n": 79,
+      "hits": 10,
+      "hit_rate": 12.7,
+      "avg_odds": 10.7
+    },
+    "1": {
+      "n": 79,
+      "hits": 8,
+      "hit_rate": 10.1,
+      "avg_odds": 5.14
+    },
+    "2": {
+      "n": 79,
+      "hits": 19,
+      "hit_rate": 24.1,
+      "avg_odds": 3.74
+    },
+    "3": {
+      "n": 79,
+      "hits": 15,
+      "hit_rate": 19.0,
+      "avg_odds": 3.45
+    },
+    "4": {
+      "n": 79,
+      "hits": 16,
+      "hit_rate": 20.3,
+      "avg_odds": 4.78
+    },
+    "5": {
+      "n": 79,
+      "hits": 8,
+      "hit_rate": 10.1,
+      "avg_odds": 7.9
+    },
+    "6": {
+      "n": 79,
+      "hits": 2,
+      "hit_rate": 2.5,
+      "avg_odds": 14.25
+    },
+    "7": {
+      "n": 79,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[3.5-4.0)"
+      },
+      "n_samples": 6,
+      "n_hits": 5,
+      "hit_rate": 83.3,
+      "wilson_ci_lower": 43.6,
+      "wilson_ci_upper": 97.0,
+      "avg_odds": 9.2,
+      "roi": 666.7,
+      "rule_id": "SUB-五大次级-001",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g6": "g6_[25.0+)"
+      },
+      "n_samples": 7,
+      "n_hits": 5,
+      "hit_rate": 71.4,
+      "wilson_ci_lower": 35.9,
+      "wilson_ci_upper": 91.8,
+      "avg_odds": 9.2,
+      "roi": 557.1,
+      "rule_id": "SUB-五大次级-002",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g5": "g5_[12.0-18.0)"
+      },
+      "n_samples": 12,
+      "n_hits": 6,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 25.4,
+      "wilson_ci_upper": 74.6,
+      "avg_odds": 9.33,
+      "roi": 366.7,
+      "rule_id": "SUB-五大次级-003",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[9-11)"
+      },
+      "n_samples": 15,
+      "n_hits": 5,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 15.2,
+      "wilson_ci_upper": 58.3,
+      "avg_odds": 9.9,
+      "roi": 230.0,
+      "rule_id": "SUB-五大次级-004",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g7": "g7_[45.0+)"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 9.75,
+      "roi": 550.0,
+      "rule_id": "SUB-五大次级-005",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g4": "ch_g4_up5-10"
+      },
+      "n_samples": 9,
+      "n_hits": 3,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 12.1,
+      "wilson_ci_upper": 64.6,
+      "avg_odds": 11.0,
+      "roi": 266.7,
+      "rule_id": "SUB-五大次级-006",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "had_d": "had_d_[2.5-3.0)"
+      },
+      "n_samples": 8,
+      "n_hits": 3,
+      "hit_rate": 37.5,
+      "wilson_ci_lower": 13.7,
+      "wilson_ci_upper": 69.4,
+      "avg_odds": 9.33,
+      "roi": 250.0,
+      "rule_id": "SUB-五大次级-007",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[<9]"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 8.25,
+      "roi": 450.0,
+      "rule_id": "SUB-五大次级-008",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g2": "g2_[2.8-3.1)"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 9.0,
+      "roi": 350.0,
+      "rule_id": "SUB-五大次级-009",
+      "quality": "good"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g5": "ch_g5_dn10-20"
+      },
+      "n_samples": 6,
+      "n_hits": 2,
+      "hit_rate": 33.3,
+      "wilson_ci_lower": 9.7,
+      "wilson_ci_upper": 70.0,
+      "avg_odds": 10.75,
+      "roi": 258.3,
+      "rule_id": "SUB-五大次级-010",
+      "quality": "good"
+    }
+  ]
+}

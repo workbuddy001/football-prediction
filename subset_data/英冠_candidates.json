@@ -1,0 +1,215 @@
+{
+  "subset": "英冠",
+  "n_total": 31,
+  "quality": "moderate",
+  "desc_stats": {
+    "0": {
+      "n": 31,
+      "hits": 6,
+      "hit_rate": 19.4,
+      "avg_odds": 10.92
+    },
+    "1": {
+      "n": 31,
+      "hits": 4,
+      "hit_rate": 12.9,
+      "avg_odds": 4.11
+    },
+    "2": {
+      "n": 31,
+      "hits": 6,
+      "hit_rate": 19.4,
+      "avg_odds": 3.33
+    },
+    "3": {
+      "n": 31,
+      "hits": 6,
+      "hit_rate": 19.4,
+      "avg_odds": 3.46
+    },
+    "4": {
+      "n": 31,
+      "hits": 7,
+      "hit_rate": 22.6,
+      "avg_odds": 5.28
+    },
+    "5": {
+      "n": 31,
+      "hits": 1,
+      "hit_rate": 3.2,
+      "avg_odds": 8.35
+    },
+    "6": {
+      "n": 31,
+      "hits": 1,
+      "hit_rate": 3.2,
+      "avg_odds": 17.0
+    },
+    "7": {
+      "n": 31,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[3.5-4.0)",
+        "ch_g3": "ch_g3_flat"
+      },
+      "n_samples": 3,
+      "n_hits": 3,
+      "hit_rate": 100.0,
+      "wilson_ci_lower": 43.8,
+      "wilson_ci_upper": 100,
+      "avg_odds": 9.17,
+      "roi": 816.7,
+      "rule_id": "SUB-英冠-001",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[13-16)",
+        "form_avg": "form_[3.0-3.5)"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 14.0,
+      "roi": 600.0,
+      "rule_id": "SUB-英冠-002",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g2": "ch_g2_flat",
+        "form_avg": "form_[3.0-3.5)"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 14.0,
+      "roi": 600.0,
+      "rule_id": "SUB-英冠-003",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "form_avg": "form_[3.0-3.5)",
+        "had_d": "had_d_[3.0-3.5)"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 14.0,
+      "roi": 600.0,
+      "rule_id": "SUB-英冠-004",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[3.5-4.0)"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 9.17,
+      "roi": 587.5,
+      "rule_id": "SUB-英冠-005",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[3.5-4.0)",
+        "ch_g2": "ch_g2_flat"
+      },
+      "n_samples": 4,
+      "n_hits": 3,
+      "hit_rate": 75.0,
+      "wilson_ci_lower": 30.1,
+      "wilson_ci_upper": 95.4,
+      "avg_odds": 9.17,
+      "roi": 587.5,
+      "rule_id": "SUB-英冠-006",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "form_avg": "form_[3.0-3.5)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 14.0,
+      "roi": 460.0,
+      "rule_id": "SUB-英冠-007",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[5.0+)",
+        "form_avg": "form_[3.0-3.5)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 14.0,
+      "roi": 460.0,
+      "rule_id": "SUB-英冠-008",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g3": "g3_[3.3-3.7)",
+        "form_avg": "form_[3.0-3.5)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 14.0,
+      "roi": 460.0,
+      "rule_id": "SUB-英冠-009",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g3": "ch_g3_flat",
+        "form_avg": "form_[3.0-3.5)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 14.0,
+      "roi": 460.0,
+      "rule_id": "SUB-英冠-010",
+      "quality": "moderate"
+    }
+  ]
+}

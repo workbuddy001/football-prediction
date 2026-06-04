@@ -1,0 +1,215 @@
+{
+  "subset": "芬兰超",
+  "n_total": 31,
+  "quality": "moderate",
+  "desc_stats": {
+    "0": {
+      "n": 31,
+      "hits": 2,
+      "hit_rate": 6.5,
+      "avg_odds": 16.0
+    },
+    "1": {
+      "n": 31,
+      "hits": 8,
+      "hit_rate": 25.8,
+      "avg_odds": 5.85
+    },
+    "2": {
+      "n": 31,
+      "hits": 9,
+      "hit_rate": 29.0,
+      "avg_odds": 3.41
+    },
+    "3": {
+      "n": 31,
+      "hits": 6,
+      "hit_rate": 19.4,
+      "avg_odds": 3.45
+    },
+    "4": {
+      "n": 31,
+      "hits": 2,
+      "hit_rate": 6.5,
+      "avg_odds": 4.88
+    },
+    "5": {
+      "n": 31,
+      "hits": 4,
+      "hit_rate": 12.9,
+      "avg_odds": 9.19
+    },
+    "6": {
+      "n": 31,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    },
+    "7": {
+      "n": 31,
+      "hits": 0,
+      "hit_rate": 0.0,
+      "avg_odds": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g1": "g1_[5.0+)",
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 16.0,
+      "roi": 966.7,
+      "rule_id": "SUB-芬兰超-001",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20",
+        "hhad_ball": "hhad_flat"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 16.0,
+      "roi": 966.7,
+      "rule_id": "SUB-芬兰超-002",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "ch_g0": "ch_g0_dn10-20"
+      },
+      "n_samples": 4,
+      "n_hits": 2,
+      "hit_rate": 50.0,
+      "wilson_ci_lower": 15.0,
+      "wilson_ci_upper": 85.0,
+      "avg_odds": 16.0,
+      "roi": 700.0,
+      "rule_id": "SUB-芬兰超-003",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[16-20)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-芬兰超-004",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[16-20)",
+        "g1": "g1_[5.0+)"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-芬兰超-005",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 0,
+      "conditions": {
+        "g0": "g0_[16-20)",
+        "hhad_ball": "hhad_flat"
+      },
+      "n_samples": 5,
+      "n_hits": 2,
+      "hit_rate": 40.0,
+      "wilson_ci_lower": 11.8,
+      "wilson_ci_upper": 76.9,
+      "avg_odds": 16.0,
+      "roi": 540.0,
+      "rule_id": "SUB-芬兰超-006",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "g0": "g0_[11-13)",
+        "form_avg": "form_[2.5-3.0)"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 10.25,
+      "roi": 583.3,
+      "rule_id": "SUB-芬兰超-007",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "g1": "g1_[4.0-5.0)",
+        "form_avg": "form_[2.5-3.0)"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 10.25,
+      "roi": 583.3,
+      "rule_id": "SUB-芬兰超-008",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 5,
+      "conditions": {
+        "form_avg": "form_[2.5-3.0)",
+        "had_d": "had_d_[2.5-3.0)"
+      },
+      "n_samples": 3,
+      "n_hits": 2,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 20.8,
+      "wilson_ci_upper": 93.9,
+      "avg_odds": 10.25,
+      "roi": 583.3,
+      "rule_id": "SUB-芬兰超-009",
+      "quality": "moderate"
+    },
+    {
+      "target_goal": 1,
+      "conditions": {
+        "ch_g1": "ch_g1_flat",
+        "had_l": "had_l_[4.5+)"
+      },
+      "n_samples": 6,
+      "n_hits": 4,
+      "hit_rate": 66.7,
+      "wilson_ci_lower": 30.0,
+      "wilson_ci_upper": 90.3,
+      "avg_odds": 6.66,
+      "roi": 344.2,
+      "rule_id": "SUB-芬兰超-010",
+      "quality": "moderate"
+    }
+  ]
+}
