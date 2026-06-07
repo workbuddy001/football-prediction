@@ -924,7 +924,7 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 0
     
-    # ===== C1冷推: 博冷比分20元 (V3过滤, 2026-06-01) =====
+    # ===== C1冷推: 博冷比分40元 (V3过滤, 2026-06-07双过滤: 反向排除+去零封) =====
     cold_sb = None
     try:
         from v36_analyzer import analyze_match as v36_cold
@@ -933,6 +933,7 @@ def compute_betting(data, analysis):
         if csb and csb.get('strategy') == '无推荐博冷':
             c_odds = csb.get('odds', 0)
             c_bet_goals = csb['goals']
+            c_score = csb['score']  # 格式: "1-2"
             c_g0 = float(data.get('total_goals', {}).get('0球', 99) or 99)
             c_ok = True
             if c_bet_goals >= 5 and c_g0 < 25 and c_odds <= 20: c_ok = False
@@ -940,8 +941,20 @@ def compute_betting(data, analysis):
             if c_bet_goals <= 2 and c_g0 >= 15 and c_odds <= 20: c_ok = False
             if c_odds > 100: c_ok = False
             if 15 < c_odds <= 30: c_ok = False
+            # V6.5 反向排除过滤: 冷推比分在前2排除名单→跳过 (19场3全黑, ROI+106pp)
+            if c_ok and c_score:
+                sc_list = cold_analysis.get('score_candidates', [])
+                all_sc = []
+                for sc in sc_list:
+                    for s in sc.get('scores', []):
+                        all_sc.append(s.get('score', ''))
+                if len(all_sc) >= 2 and c_score in set(all_sc[:2]):
+                    c_ok = False
+            # V6.5 去零封过滤: 4-0/0-4全黑 (6场0中)→跳过
+            if c_ok and c_score in ('4-0', '0-4'):
+                c_ok = False
             if c_ok:
-                cold_sb = {'score': csb['score'], 'odds': round(c_odds, 1), 'stake': 20, 'tag': '冷推'}
+                cold_sb = {'score': csb['score'], 'odds': round(c_odds, 1), 'stake': 40, 'tag': '冷推'}
     except:
         pass
     
