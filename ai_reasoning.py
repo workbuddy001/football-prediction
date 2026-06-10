@@ -474,19 +474,63 @@ def compute_betting(data, analysis):
         pass
     
     # ⚠️ H4/H5优先于R0: 平平↓信号直接触发(不给R0拦截机会)
-    # ⚠️ HAD/HHAD诱盘检测：主胜极低但让胜极高=深盘无力陷阱（2026-05-22, 3/3全丢）
+    # ⚠️ HAD/HHAD诱盘检测：主胜极低但让胜极高=深盘无力陷阱
+    # V6.6 CAND-HAD: 非让胜候选比分博冷10元 (回测5/5全中, 需让平>=3.85过滤)
     try:
         had = data.get('had', {})
         hhad = data.get('hhad', {})
         hw_chk = float(had.get('胜', 0)) if isinstance(had, dict) and had.get('胜') else 99
         rs_chk = float(hhad.get('让胜', 0)) if isinstance(hhad, dict) and hhad.get('让胜') else 0
-        if 1.10 < hw_chk < 1.45 and rs_chk > 2.30:
+        rp_chk = float(hhad.get('让平', 0)) if isinstance(hhad, dict) and hhad.get('让平') else 0
+        hd_chk = float(had.get('平', 0)) if isinstance(had, dict) and had.get('平') else 0
+        if 1.10 < hw_chk < 1.45 and rs_chk > 2.30 and rp_chk >= 3.85 and 5.0 < hd_chk <= 5.5:
+            # CAND-HAD: 检查V3.6候选比分中3球/4球的非让胜选项
+            cand_scores = []
+            sc_list = (analysis or {}).get('score_candidates', [])
+            so_data = data.get('score_odds', {}) if isinstance(data, dict) else {}
+            for sc in sc_list:
+                if sc.get('total_goals') not in (3, 4):
+                    continue
+                for s in sc.get('scores', []):
+                    s_score = s.get('score', '')
+                    parts = s_score.split('-')
+                    if len(parts) != 2:
+                        continue
+                    try:
+                        s_h, s_a = int(parts[0]), int(parts[1])
+                    except:
+                        continue
+                    # 跳过让胜 (主胜)
+                    if s_h > s_a:
+                        continue
+                    # 获取赔率
+                    so_key = '{:02d}:{:02d}'.format(s_h, s_a)
+                    s_odds = float(so_data.get(so_key, 0) or 0)
+                    if s_odds > 0:
+                        cand_scores.append({'score': '{}:{}'.format(s_h, s_a), 'odds': round(s_odds, 1),
+                                            'stake': 10, 'tag': 'CAND-HAD'})
+            if cand_scores:
+                mi = data.get('match_info', {}) or {}
+                mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+                ht = mi.get('home_team', '?') if isinstance(mi, dict) else '?'
+                at = mi.get('away_team', '?') if isinstance(mi, dict) else '?'
+                _trace_log('HAD-TRAP', f'{mn} {ht}vs{at} 主胜{hw_chk:.2f}+让胜{rs_chk:.2f}→CAND-HAD({len(cand_scores)}个比分)')
+                return {
+                    'action': 'bet', 'rule': 'CAND-HAD',
+                    'goal_stake': 0, 'goal_bet': {}, 'bet_goals': [],
+                    'total_score_stake': sum(s['stake'] for s in cand_scores),
+                    'score_bets': cand_scores, 'bet_type': '分数冷推',
+                    'total_stake': sum(s['stake'] for s in cand_scores),
+                    'summary': 'CAND-HAD: {}个比分{}元'.format(len(cand_scores), sum(s['stake'] for s in cand_scores)),
+                    'pp_boost': False, 's7_dual': False
+                }
+            # 无候选比分 → 原skip逻辑
             mi = data.get('match_info', {}) or {}
             mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
             ht = mi.get('home_team', '?') if isinstance(mi, dict) else '?'
             at = mi.get('away_team', '?') if isinstance(mi, dict) else '?'
             _trace_log('HAD-TRAP', f'{mn} {ht}vs{at} 主胜{hw_chk:.2f}+让胜{rs_chk:.2f}→SKIP(深盘无力)')
-            return {'action': 'skip', 'reason': f'HAD陷阱: 主胜{hw_chk:.2f}<1.45+让胜{rs_chk:.2f}>2.30(深盘无力,回测0/3)'}
+            return {'action': 'skip', 'reason': f'HAD陷阱: 主胜{hw_chk:.2f}<1.45+让胜{rs_chk:.2f}>2.30(深盘无力,无冷推比分)'}
     except:
         pass
     
