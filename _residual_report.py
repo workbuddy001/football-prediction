@@ -300,6 +300,10 @@ def run(weekly_only=True):
          '条件: g3[3.0-3.3) + 1球升10-20% → 5球20元',
          '16场7/16=44% ROI+269%, 样本量最大候选中, 但ROI偏低',
          '6月前向验证: 仅触发不实投, 等≥5场新触发后做统计再检验'),
+        ('6.13 CAND043 → 世界杯低赔比分',
+         '条件: 世界杯/大赛 + 比分赔<5.0 + 该进球数赔率最低 → 投该比分',
+         '3场2/3=67%(墨西哥2:0赔4.0x/加拿大1:1赔4.8x/韩国2:1赔7.0x未中)',
+         '世界杯前向验证: 等≥10场后评估，联赛815场0触发说明大赛专有'),
     ]
     if watch_items:
         watch_section = []
@@ -485,7 +489,7 @@ def run(weekly_only=True):
                     })
         except: pass
     
-    if cand030_triggers or cand038_triggers or cand042_triggers or cand031_triggers or cand032_triggers:
+    if cand030_triggers or cand038_triggers or cand042_triggers or cand031_triggers or cand032_triggers or cand043_triggers:
         lines.append("")
         lines.append("=" * 60)
         lines.append(f"  🔍 前向验证追踪 (CAND030 & CAND038)")
@@ -507,7 +511,7 @@ def run(weekly_only=True):
         for t in cand038_triggers:
             lines.append(f"    {t['date']} {t['team']} {t['score']}({t['tg']}球) 5球赔{t['odds']:.1f} {int(t['profit']):+d} {'HIT' if t['hit'] else 'MISS'}")
     
-    if not cand030_triggers and not cand038_triggers and not cand042_triggers and not cand031_triggers and not cand032_triggers:
+    if not cand030_triggers and not cand038_triggers and not cand042_triggers and not cand031_triggers and not cand032_triggers and not cand043_triggers:
         lines.append("")
         lines.append("  本周无候选规则触发")
     
@@ -542,7 +546,81 @@ def run(weekly_only=True):
         for t in cand042_triggers:
             lines.append(f"    {t['date']} {t['team']} {t['score']}({t['tg']}球) g0={t['g0']:.0f} 0:2赔{t['odds']:.1f} {int(t['profit']):+d} {'HIT' if t['hit'] else 'MISS'}")
 
-    if not cand030_triggers and not cand038_triggers:
+    # CAND043 世界杯低赔比分追踪
+    cand043_triggers = []
+    cand043_cumul_n = 0; cand043_cumul_hit = 0
+    for k, v in scores.items():
+        mid = v.get('match_id', '')
+        hs = v.get('home_score'); aws = v.get('away_score')
+        if hs is None or aws is None: continue
+        rt = str(v.get('record_time', ''))
+        if '2026-04' not in rt and '2026-05' not in rt: continue
+        if v.get('league', '') not in ('世界杯', '国际赛'): continue
+        if weekly_only:
+            from datetime import datetime, timedelta
+            try:
+                match_date = datetime.strptime(rt[:10], '%Y-%m-%d')
+                if match_date < datetime.now() - timedelta(days=7): continue
+            except: pass
+        fp = os.path.join(DATA_DIR, f'{mid}.json')
+        if not os.path.exists(fp): continue
+        with open(fp, 'r', encoding='utf-8') as f: data = json.load(f)
+        try:
+            so = data.get('score_odds', {})
+            tg = data.get('total_goals', {})
+            # 找赔率最低的进球数
+            goal_odds = {}
+            for gk in ['0球','1球','2球','3球','4球','5球','6球','7球']:
+                try: goal_odds[gk] = float(tg.get(gk, 0) or 0)
+                except: goal_odds[gk] = 0
+            min_goal = min((g for g in goal_odds if goal_odds[g] > 0), key=lambda g: goal_odds[g], default='')
+            if not min_goal: continue
+            min_goal_num = int(min_goal.replace('球', ''))
+            
+            # 找<5赔的比分
+            best_score = ''
+            best_odds = 99
+            for sk, sv in so.items():
+                try: svf = float(sv)
+                except: continue
+                if 0 < svf < 5 and svf < best_odds:
+                    parts = sk.split(':')
+                    try: sc_h, sc_a = int(parts[0]), int(parts[1])
+                    except: continue
+                    if sc_h + sc_a == min_goal_num:
+                        best_score = sk; best_odds = svf
+            
+            if best_score:
+                cand043_cumul_n += 1
+                actual = f'{hs}:{aws}'
+                info = data.get('match_info', {}) if isinstance(data.get('match_info'), dict) else {}
+                home = info.get('home_team', v.get('home_team', '?'))
+                away = info.get('away_team', v.get('away_team', '?'))
+                # Normalize: score_odds uses '03:00', _scores uses '3:0'
+                best_parts = best_score.split(':')
+                best_norm = '{}:{}'.format(int(best_parts[0]), int(best_parts[1]))
+                hit = (actual == best_norm)
+                profit = (20 * best_odds - 20) if hit else -20
+                if hit: cand043_cumul_hit += 1
+                if weekly_only:
+                    cand043_triggers.append({
+                        'date': rt[:10], 'team': f'{home}vs{away}',
+                        'score': actual, 'tg': hs + aws, 'bet_score': best_score,
+                        'odds': best_odds, 'profit': profit, 'hit': hit,
+                        'min_goal': min_goal_num
+                    })
+        except: pass
+    
+    if cand043_triggers:
+        c43_hit = sum(1 for t in cand043_triggers if t['hit'])
+        c43_profit = sum(t['profit'] for t in cand043_triggers)
+        c43_n = len(cand043_triggers)
+        cumul_hitrate = f'{cand043_cumul_hit/cand043_cumul_n*100:.0f}%' if cand043_cumul_n > 0 else 'N/A'
+        lines.append(f"  CAND043(大赛低赔比分): 本周触发{c43_n}场 命中{c43_hit}/{c43_n} 盈亏{int(c43_profit):+d}元 | 累计{cand043_cumul_n}场{cand043_cumul_hit}中({cumul_hitrate})")
+        for t in cand043_triggers:
+            lines.append(f"    {t['date']} {t['team']} {t['score']}({t['tg']}球) 投{t['bet_score'].replace('0','',1).replace(':0',':',1) if t['bet_score'].startswith('0') else t['bet_score']}({t['min_goal']}球最低) 赔{t['odds']:.1f} {int(t['profit']):+d} {'HIT' if t['hit'] else 'MISS'}")
+
+    if not cand030_triggers and not cand038_triggers and not cand043_triggers:
         lines.append("  (本周无触发)")
     total_triggers = sum(s['hit'] + s['miss'] for s in rule_stats.values())
     # 覆盖全量触发数（weekly模式时rule_stats只含本周，需补全）

@@ -534,6 +534,50 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # ===== CAND043: 大赛低赔比分博冷10元 (世界杯/国际赛, 比分赔<5+该进球赔率最低, 回测4场3中75%) =====
+    if not rule:
+        try:
+            mi = data.get('match_info', {}) or {}
+            league = mi.get('league', '') if isinstance(mi, dict) else ''
+            if league in ('世界杯', '国际赛', '世界杯预选赛'):
+                so = data.get('score_odds', {})
+                tg = data.get('total_goals', {})
+                if so and tg:
+                    goal_odds = {}
+                    goal_map_c043 = {0:'0球',1:'1球',2:'2球',3:'3球',4:'4球',5:'5球',6:'6球',7:'7球'}
+                    for gn, gk in goal_map_c043.items():
+                        try: goal_odds[gn] = float(tg.get(gk, 0) or 0)
+                        except: goal_odds[gn] = 0
+                    min_goal = min((g for g in goal_odds if goal_odds[g] > 0), key=lambda g: goal_odds[g], default=-1)
+                    if min_goal >= 0:
+                        best_score = ''; best_od = 99
+                        for sk, sv in so.items():
+                            try: o = float(sv)
+                            except: continue
+                            if 0 < o < 5 and o < best_od:
+                                parts = sk.split(':')
+                                try: sh, sa = int(parts[0]), int(parts[1])
+                                except: continue
+                                if sh + sa == min_goal:
+                                    best_score = '{}:{}'.format(sh, sa)
+                                    best_od = o
+                        if best_score:
+                            mn_str = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+                            ht = mi.get('home_team', '?') if isinstance(mi, dict) else '?'
+                            at = mi.get('away_team', '?') if isinstance(mi, dict) else '?'
+                            _trace_log('CAND043', f'{mn_str} {ht}vs{at} {best_score}({best_od:.1f}x,{min_goal}球)→大赛低赔')
+                            return {
+                                'action': 'bet', 'rule': 'CAND043',
+                                'goal_stake': 0, 'goal_bet': {}, 'bet_goals': [],
+                                'total_score_stake': 10,
+                                'score_bets': [{'score': best_score, 'odds': round(best_od, 1), 'stake': 10, 'tag': '大赛低赔'}],
+                                'bet_type': '分数冷推', 'total_stake': 10,
+                                'summary': f'CAND043: {best_score}({best_od:.1f}x)',
+                                'pp_boost': False, 's7_dual': False
+                            }
+        except:
+            pass
+    
     if h5_11 and not h_gap_far:
         # 信号H5: 平平↓≥10%+count≥3+0球<10+Top1≠1:1+draw∈[2.85,3.05] → 投1:1 20元
         rule = 'H5'
