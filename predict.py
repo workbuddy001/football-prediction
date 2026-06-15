@@ -56,6 +56,16 @@ def predict_match(mid, force_fetch=False):
         except:
             if not os.path.exists(fp):
                 return None
+    elif os.path.exists(fp):
+        # 检查是否缺少score_change字段，有则重抓
+        try:
+            with open(fp, 'r', encoding='utf-8') as f:
+                existing = json.load(f)
+            if 'score_change' not in existing:
+                api = SportteryAPI()
+                api.fetch_and_save(mid)
+        except:
+            pass
     
     if not os.path.exists(fp):
         return None
