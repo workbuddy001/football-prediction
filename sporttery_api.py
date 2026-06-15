@@ -232,6 +232,7 @@ class SportteryAPI:
         hafu_change_stats = self._calc_hafu_change_stats(odds_data)
         had_change_stats = self._calc_had_change_stats(odds_data)
         hhad_change_stats = self._calc_hhad_change_stats(odds_data)
+        score_change_stats = self._calc_score_change_stats(odds_data)
 
         # 计算进球数-比分联动排除列表
         exclusion_list = self._calc_exclusion_list(score_odds, total_goals)
@@ -251,6 +252,7 @@ class SportteryAPI:
             'hafu_change': hafu_change_stats,
             'had_change': had_change_stats,
             'hhad_change': hhad_change_stats,
+            'score_change': score_change_stats,
             'exclusion_list': exclusion_list
         }
         
@@ -542,6 +544,66 @@ class SportteryAPI:
                 'count': changes,
                 'change_pct': round(change_pct, 1)
             }
+
+        return stats
+
+    def _calc_score_change_stats(self, data):
+        """计算比分赔率变化统计
+        crsList格式: [{"s02s01":"10.50","s03s00":"7.00",...}, ...]
+        返回格式: {"1:0":{"count":变化次数,"change_pct":变化百分比}, ...}
+        """
+        crs_list = data.get('crsList', [])
+        if len(crs_list) < 2:
+            return {}
+
+        # 提取所有可能的比分键 (s02s01, s03s00, ...)
+        all_keys = set()
+        for item in crs_list:
+            if isinstance(item, dict):
+                for key in item.keys():
+                    if key.startswith('s') and 's' in key[1:]:
+                        all_keys.add(key)
+
+        stats = {}
+        for key in all_keys:
+            values = []
+            for item in crs_list:
+                if isinstance(item, dict) and key in item:
+                    try:
+                        v = float(item[key])
+                        if v > 0:
+                            values.append(v)
+                    except (ValueError, TypeError):
+                        pass
+
+            if len(values) < 2:
+                continue
+
+            # 计算变化次数
+            changes = 0
+            for i in range(1, len(values)):
+                if abs(values[i] - values[i-1]) > 0.001:
+                    changes += 1
+
+            # 计算变化幅度
+            first_val = values[0]
+            last_val = values[-1]
+            if first_val > 0:
+                change_pct = ((last_val - first_val) / first_val) * 100
+            else:
+                change_pct = 0
+
+            # 转换键: s02s01 → "2:1"
+            import re
+            m = re.match(r'^s(\d+)s(\d+)$', key)
+            if m:
+                display = f"{int(m.group(1))}:{int(m.group(2))}"
+                stats[display] = {
+                    'count': changes,
+                    'change_pct': round(change_pct, 1),
+                    'initial': round(first_val, 2),
+                    'realtime': round(last_val, 2)
+                }
 
         return stats
 
