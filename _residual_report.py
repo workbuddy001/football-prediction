@@ -489,6 +489,13 @@ def run(weekly_only=True):
                     })
         except: pass
     
+    # 提前初始化所有cand变量, 避免UnboundLocalError
+    cand043_triggers = []
+    cand030_triggers = []
+    cand038_triggers = []
+    cand031_triggers = []
+    cand032_triggers = []
+
     if cand030_triggers or cand038_triggers or cand042_triggers or cand031_triggers or cand032_triggers or cand043_triggers:
         lines.append("")
         lines.append("=" * 60)

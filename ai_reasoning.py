@@ -35,6 +35,58 @@ def _trace_log(level, msg):
     import sys
     print(f'[{level}][{ts}] {msg}', file=sys.stderr, flush=True)
 
+def _check_d1(analysis, data, v36_dir, g0, so):
+    """D1条件检查: 方向冲突1:1信号"""
+    try:
+        fgp = analysis.get('final_goal_pick', {})
+        d1_conflict = fgp.get('conflict', False)
+        if not (v36_dir == '大球' and d1_conflict):
+            return False
+        exc_dict = analysis.get('exclusion', {})
+        d1_excl = exc_dict.get('excluded', [])
+        d1_excl_goals = [int(e['goal'].replace('球', '')) for e in d1_excl] if d1_excl else []
+        if not (5 in d1_excl_goals and 6 in d1_excl_goals and 7 in d1_excl_goals):
+            return False
+        if g0 is None or g0 > 23:
+            return False
+        d1_form = analysis.get('step0', {}).get('combined_avg', 0)
+        if not (2.5 <= d1_form <= 3.6):
+            return False
+        # 历史高命中率比分第一位是否为1:1
+        # 优先用前端显示源(get_score_recommendations_for_match), v36内部作fallback
+        display_ok = False
+        try:
+            from sporttery_web import get_score_recommendations_for_match
+            recs = get_score_recommendations_for_match(so)
+            display_top = recs[0]['score'] if recs else '?'
+            display_ok = (display_top in ('1:1', '1-1'))
+        except:
+            pass
+        if not display_ok:
+            # fallback: v36内部score_candidates
+            sc_list_fb = analysis.get('score_candidates', [])
+            d1_top_fb = sc_list_fb[0]['scores'][0].get('score', '?') if sc_list_fb and sc_list_fb[0].get('scores') else '?'
+            if d1_top_fb not in ('1-1', '1:1'):
+                return False
+        return True
+    except:
+        return False
+
+def _build_d1_bet(so):
+    """构建D1比分投注: 1:1 @ 10元"""
+    import re as _re
+    s11_odds = 7.0  # fallback
+    if so:
+        for sk, sv in so.items():
+            try:
+                p = _re.split('[:-]', sk)
+                if int(p[0]) == 1 and int(p[1]) == 1:
+                    s11_odds = float(sv)
+                    break
+            except:
+                pass
+    return {'score': '1:1', 'odds': round(s11_odds, 1), 'stake': 10, 'tag': 'D1方向冲突1:1'}
+
 def compute_betting(data, analysis):
     """
     投注策略决策：
@@ -1054,6 +1106,16 @@ def compute_betting(data, analysis):
             goal_stake = 0
             score_bets = [cold_sb]
             total_score_stake = cold_sb['stake']
+        # D1: 方向冲突1:1信号 (2026-06-16新增, 3/3=100%)
+        # 因果链: Step0方向大球 → 5/6/7球全排除 → 只剩2球 → top_sc=1:1
+        elif _check_d1(analysis, data, v36_dir, g0, so):
+            d1_sb = _build_d1_bet(so)
+            rule = 'D1'
+            bet_goals = []
+            bet_type = 'single'
+            goal_stake = 0
+            score_bets = [d1_sb]
+            total_score_stake = d1_sb['stake']
         else:
             return {'action': 'skip', 'reason': '无匹配投注规则'}
     
@@ -1202,9 +1264,11 @@ def compute_betting(data, analysis):
         summary_text = '1:1比分10元'
     elif rule == 'H3':
         summary_text = '1:1比分30元'
+    elif rule == 'D1':
+        summary_text = '1:1比分10元'
     elif bet_goals:
         summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
-    if score_bets and rule not in ('G4', 'H1', 'H2', 'H3'):
+    if score_bets and rule not in ('G4', 'H1', 'H2', 'H3', 'D1'):
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
@@ -1336,6 +1400,13 @@ def compute_betting(data, analysis):
         score_bets.append(cold_sb)
         total_score_stake += cold_sb['stake']
         rule = f'{rule}+C1'
+    
+    # D1: 方向冲突1:1信号 — 与现有规则共存时追加1:1比分 (2026-06-16新增)
+    if rule and 'D1' not in rule and _check_d1(analysis, data, v36_dir, g0, so):
+        d1_sb = _build_d1_bet(so)
+        score_bets.append(d1_sb)
+        total_score_stake += d1_sb['stake']
+        rule = f'{rule}+D1'
     
     # 重建summary
     if bet_goals:
