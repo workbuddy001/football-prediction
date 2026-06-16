@@ -87,6 +87,111 @@ def _build_d1_bet(so):
                 pass
     return {'score': '1:1', 'odds': round(s11_odds, 1), 'stake': 10, 'tag': 'D1方向冲突1:1'}
 
+def _check_t_series(data):
+    """T系列前置检查: 让胜降>10% + display=1:1 + rs/hw<1.6
+    返回 (hw, rs, is_handicap_home_give, display_ok) 或 None"""
+    try:
+        hhad = data.get('hhad', {})
+        rs = float(hhad.get('让胜', 0) or 0)
+        rl = float(hhad.get('让负', 0) or 0)
+        if rs <= 0 or rs >= 10:
+            return None
+        had = data.get('had', {})
+        hw = float(had.get('胜', 0) or 0)
+        if hw <= 0:
+            return None
+        if rs / hw >= 1.6:
+            return None
+        hhad_chg = data.get('hhad_change', {})
+        rs_chg = hhad_chg.get('让胜', {})
+        rs_pct = float(rs_chg.get('change_pct', 0)) if isinstance(rs_chg, dict) else 0
+        if rs_pct > -10:
+            return None
+        so = data.get('score_odds', {})
+        if not so:
+            return None
+        from sporttery_web import get_score_recommendations_for_match
+        recs = get_score_recommendations_for_match(so)
+        if not recs or recs[0]['score'] != '1:1':
+            return None
+        # 让球方向: rl < rs → 主让-1
+        is_give = (rl < rs)
+        return (hw, rs, is_give)
+    except:
+        return None
+
+def _build_t_bet(t_rule, so):
+    """构建T系列比分投注"""
+    import re as _re2
+    if t_rule == 'T1':
+        odds = 7.0
+        if so:
+            for sk, sv in so.items():
+                try:
+                    p = _re2.split('[:-]', sk)
+                    if int(p[0]) == 1 and int(p[1]) == 1:
+                        odds = float(sv); break
+                except: pass
+        return {'score': '1:1', 'odds': round(odds, 1), 'stake': 10, 'tag': 'T1让胜陷阱1:1'}
+    elif t_rule == 'T2':
+        odds = 10.0
+        if so:
+            for sk, sv in so.items():
+                try:
+                    p = _re2.split('[:-]', sk)
+                    if int(p[0]) == 0 and int(p[1]) == 2:
+                        odds = float(sv); break
+                except: pass
+        return {'score': '0:2', 'odds': round(odds, 1), 'stake': 10, 'tag': 'T2让胜陷阱0:2'}
+    elif t_rule == 'T3':
+        odds00 = 10.0; odds22 = 15.0
+        if so:
+            for sk, sv in so.items():
+                try:
+                    p = _re2.split('[:-]', sk)
+                    if int(p[0]) == 0 and int(p[1]) == 0:
+                        odds00 = float(sv)
+                    if int(p[0]) == 2 and int(p[1]) == 2:
+                        odds22 = float(sv)
+                except: pass
+        return [
+            {'score': '0:0', 'odds': round(odds00, 1), 'stake': 10, 'tag': 'T3让胜陷阱平局'},
+            {'score': '2:2', 'odds': round(odds22, 1), 'stake': 10, 'tag': 'T3让胜陷阱平局'},
+        ]
+    return None
+
+def _build_t_summary(t_rule):
+    """T系列summary文本"""
+    if t_rule == 'T1': return '1:1比分10元'
+    elif t_rule == 'T2': return '0:2比分10元'
+    elif t_rule == 'T3': return '0:0+2:2各10元 [T3覆盖: 让胜陷阱因果链更强(2/2)]'
+    return ''
+
+def _t_override_r0(data, reason):
+    """R0拦截前检查T系列是否应覆盖"""
+    t_info = _check_t_series(data)
+    if t_info:
+        hw_t, rs_t, is_give = t_info
+        t_rule = None
+        if hw_t < 3.0 and not is_give: t_rule = 'T1'
+        elif hw_t >= 4.0 and not is_give: t_rule = 'T2'
+        elif hw_t > 5.0 and is_give: t_rule = 'T3'
+        if t_rule:
+            t_sb = _build_t_bet(t_rule, data.get('score_odds', {}))
+            t_list = t_sb if isinstance(t_sb, list) else [t_sb]
+            return {
+                'action': 'bet',
+                'rule': t_rule,
+                'bet_type': 'single',
+                'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
+                'score_bets': t_list,
+                'score_stake': sum(s['stake'] for s in t_list),
+                'total_stake': sum(s['stake'] for s in t_list),
+                'summary': _build_t_summary(t_rule),
+                'pp_boost': False, 's7_dual': False
+            }
+    return None
+
 def compute_betting(data, analysis):
     """
     投注策略决策：
@@ -686,6 +791,8 @@ def compute_betting(data, analysis):
         except:
             pass
         if h_att is not None and h_att >= 2.0:
+            t_ov1 = _t_override_r0(data, f'R0: 主攻{h_att:.1f}≥2.0')
+            if t_ov1: return t_ov1
             return {'action': 'skip', 'reason': f'R0跳过: 主攻{h_att:.1f}≥2.0(强攻队不出0:0)'}
         
         # R0: 0球赔率命中率<10%过滤
@@ -701,6 +808,8 @@ def compute_betting(data, analysis):
                     g0_rate = g0_stat.get('rate', 0)
                     if g0_rate < 10:
                         g0_n = g0_stat['total']
+                        t_ov2 = _t_override_r0(data, f'R0: 0球赔{g0}命中率低')
+                        if t_ov2: return t_ov2
                         return {'action': 'skip', 'reason': f'R0跳过: 0球赔{g0}命中率{g0_rate:.0f}%<10%(n={g0_n})'}
             except:
                 pass
@@ -716,6 +825,8 @@ def compute_betting(data, analysis):
         
         # R0: g0≥10.5 + 平平下降 → 陷阱信号，排除
         if g0 and g0 >= 10.5 and pp_change < -0.5:
+            t_ov3 = _t_override_r0(data, f'R0: g0≥10.5+平平降')
+            if t_ov3: return t_ov3
             return {'action': 'skip', 'reason': f'R0跳过: g0={g0}≥10.5+平平降{pp_change:.0f}%(陷阱信号,回测0/6)'}
         
         # R0: 联赛过滤（大球联赛天然不适合R0闷平）
@@ -727,6 +838,8 @@ def compute_betting(data, analysis):
             info = data.get('match_info', {})
             league = info.get('league', '') if isinstance(info, dict) else ''
             if league in SKIP_LEAGUES:
+                t_ov4 = _t_override_r0(data, f'R0: {league}联赛过滤')
+                if t_ov4: return t_ov4
                 return {'action': 'skip', 'reason': f'R0跳过: {league}(联赛0球率低,回测仅10%)'}
         except:
             pass
@@ -755,10 +868,14 @@ def compute_betting(data, analysis):
         
         # R0: 0球甜区[9.5,10.5]过滤 (2026-05-19) — 甜区内10场7中70%, 甜区外12场1中8%
         if not (9.5 <= g0 <= 10.5):
+            t_ov5 = _t_override_r0(data, 'R0: 0球甜区')
+            if t_ov5: return t_ov5
             return {'action': 'skip', 'reason': f'R0跳过: 0球={g0}不在甜区[9.5-10.5](命中70%)'}
         
         # R0: 平赔≤3.0 (5月验证: ≤3.0=2/2红, >3.0=0/4全黑)
         if draw is not None and draw > 3.0:
+            t_ov6 = _t_override_r0(data, f'R0: 平赔{draw:.2f}')
+            if t_ov6: return t_ov6
             return {'action': 'skip', 'reason': f'R0跳过: 平赔{draw:.2f}>3.0(0/4全黑)'}
         
         # R0: 纯0球20元
@@ -1108,6 +1225,31 @@ def compute_betting(data, analysis):
             total_score_stake = cold_sb['stake']
         # D1: 方向冲突1:1信号 (2026-06-16新增, 3/3=100%)
         # 因果链: Step0方向大球 → 5/6/7球全排除 → 只剩2球 → top_sc=1:1
+        # T系列: 让胜陷阱 (2026-06-17新增, 前置: 让胜降>10%+display=1:1+rs/hw<1.6)
+        elif (t_info := _check_t_series(data)) is not None:
+            hw_t, rs_t, is_give = t_info
+            if hw_t < 3.0 and not is_give:
+                rule = 'T1'
+                t_sb = _build_t_bet('T1', so)
+            elif hw_t >= 4.0 and not is_give:
+                rule = 'T2'
+                t_sb = _build_t_bet('T2', so)
+            elif hw_t > 5.0 and is_give:
+                rule = 'T3'
+                t_sb = _build_t_bet('T3', so)
+            else:
+                rule = None
+            if rule:
+                bet_goals = []
+                bet_type = 'single'
+                goal_stake = 0
+                if isinstance(t_sb, list):
+                    score_bets = t_sb
+                    total_score_stake = sum(s['stake'] for s in t_sb)
+                else:
+                    score_bets = [t_sb]
+                    total_score_stake = t_sb['stake']
+        # D1: 方向冲突1:1信号 (2026-06-16新增, 3/3=100%)
         elif _check_d1(analysis, data, v36_dir, g0, so):
             d1_sb = _build_d1_bet(so)
             rule = 'D1'
@@ -1266,9 +1408,15 @@ def compute_betting(data, analysis):
         summary_text = '1:1比分30元'
     elif rule == 'D1':
         summary_text = '1:1比分10元'
+    elif rule == 'T1':
+        summary_text = '1:1比分10元'
+    elif rule == 'T2':
+        summary_text = '0:2比分10元'
+    elif rule == 'T3':
+        summary_text = '0:0+2:2各10元 [T3覆盖大球规则: 让胜陷阱因果链更强(2/2)]'
     elif bet_goals:
         summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
-    if score_bets and rule not in ('G4', 'H1', 'H2', 'H3', 'D1'):
+    if score_bets and rule not in ('G4', 'H1', 'H2', 'H3', 'D1', 'T1', 'T2', 'T3'):
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
@@ -1407,6 +1555,37 @@ def compute_betting(data, analysis):
         score_bets.append(d1_sb)
         total_score_stake += d1_sb['stake']
         rule = f'{rule}+D1'
+    
+    # T系列: 让胜陷阱 — 与现有规则共存时追加比分 (2026-06-17新增)
+    # ⚠️ T3优先: 当主规则推大球(>=3球)时, T3覆盖替代(因果链更强)
+    t_info = _check_t_series(data)
+    has_big_goal = bool(bet_goals) and any(g >= 3 for g in bet_goals)
+    if rule and 'T1' not in rule and 'T2' not in rule and 'T3' not in rule and t_info is not None:
+        hw_t, rs_t, is_give = t_info
+        t_rule = None
+        if hw_t < 3.0 and not is_give: t_rule = 'T1'
+        elif hw_t >= 4.0 and not is_give: t_rule = 'T2'
+        elif hw_t > 5.0 and is_give: t_rule = 'T3'
+        if t_rule:
+            if has_big_goal and t_rule == 'T3':
+                # T3覆盖: 让胜陷阱因果链强于大球规则, 完全替代
+                t_sb = _build_t_bet('T3', so)
+                t_list = t_sb if isinstance(t_sb, list) else [t_sb]
+                overridden = rule  # 记录被覆盖的规则
+                bet_goals = []
+                goal_stake = 0
+                score_bets = t_list
+                total_score_stake = sum(s['stake'] for s in t_list)
+                rule = 'T3'
+                # 在第一个bet的tag里记录覆盖决策
+                if t_list:
+                    t_list[0]['tag'] = f'T3覆盖{overridden}: 让胜陷阱因果链更强(2/2)'
+            elif not has_big_goal:
+                t_sb = _build_t_bet(t_rule, so)
+                t_list = t_sb if isinstance(t_sb, list) else [t_sb]
+                score_bets.extend(t_list)
+                total_score_stake += sum(s['stake'] for s in t_list)
+                rule = f'{rule}+{t_rule}'
     
     # 重建summary
     if bet_goals:
