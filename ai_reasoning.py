@@ -160,6 +160,47 @@ def _build_t_bet(t_rule, so):
         ]
     return None
 
+def _check_b1(data):
+    """B1前置检查: 让胜降>10% + display=3:0 + rs/hw<1.6 + hw<1.5
+    返回 hw 或 None"""
+    try:
+        hhad = data.get('hhad', {})
+        rs = float(hhad.get('让胜', 0) or 0)
+        if rs <= 0 or rs >= 10: return None
+        had = data.get('had', {})
+        hw = float(had.get('胜', 0) or 0)
+        if hw <= 0 or hw >= 1.5: return None
+        if rs / hw >= 1.6: return None
+        hhad_chg = data.get('hhad_change', {})
+        rs_chg = hhad_chg.get('让胜', {})
+        rs_pct = float(rs_chg.get('change_pct', 0)) if isinstance(rs_chg, dict) else 0
+        if rs_pct > -10: return None
+        so = data.get('score_odds', {})
+        if not so: return None
+        from sporttery_web import get_score_recommendations_for_match
+        recs = get_score_recommendations_for_match(so)
+        if not recs or recs[0]['score'] != '3:0': return None
+        return hw
+    except:
+        return None
+
+def _build_b1_bet(so):
+    """B1双选: 3:1+4:1 各10元"""
+    import re as _re3
+    odds31 = 10.0; odds41 = 20.0
+    if so:
+        for sk, sv in so.items():
+            try:
+                p = _re3.split('[:-]', sk)
+                a, b = int(p[0]), int(p[1])
+                if a == 3 and b == 1: odds31 = float(sv)
+                if a == 4 and b == 1: odds41 = float(sv)
+            except: pass
+    return [
+        {'score': '3:1', 'odds': round(odds31, 1), 'stake': 10, 'tag': 'B1让胜真信'},
+        {'score': '4:1', 'odds': round(odds41, 1), 'stake': 10, 'tag': 'B1让胜真信'},
+    ]
+
 def _build_t_summary(t_rule):
     """T系列summary文本"""
     if t_rule == 'T1': return '1:1比分10元'
@@ -1258,6 +1299,15 @@ def compute_betting(data, analysis):
             goal_stake = 0
             score_bets = [d1_sb]
             total_score_stake = d1_sb['stake']
+        # B1: 让胜真信穿盘 (2026-06-17新增, 3/3 穿盘, 前置: 让胜降>10%+display=3:0+rs/hw<1.6+hw<1.5)
+        elif _check_b1(data) is not None:
+            rule = 'B1'
+            b1_sb = _build_b1_bet(so)
+            bet_goals = []
+            bet_type = 'single'
+            goal_stake = 0
+            score_bets = b1_sb
+            total_score_stake = sum(s['stake'] for s in b1_sb)
         else:
             return {'action': 'skip', 'reason': '无匹配投注规则'}
     
@@ -1300,7 +1350,7 @@ def compute_betting(data, analysis):
         score_key = '3:0'
         ho = _get_score_odds(score_key)
         if ho > 0:
-            score_bets.append({'score': score_key, 'odds': round(ho, 1), 'stake': 20})
+            score_bets.append({'score': score_key, 'odds': round(ho, 1), 'stake': 20, 'tag': 'R1'})
         conf_tag = ''
     elif rule == 'G4':
         # G4: 4球警惕造热+平<3.5+双方防守>1.0 → 纯买2:2比分 10元 (ROI+122%)
@@ -1414,9 +1464,15 @@ def compute_betting(data, analysis):
         summary_text = '0:2比分10元'
     elif rule == 'T3':
         summary_text = '0:0+2:2各10元 [T3覆盖大球规则: 让胜陷阱因果链更强(2/2)]'
+    elif rule == 'B1':
+        summary_text = '3:1+4:1各10元'
+    elif rule and 'B1' in rule:
+        # R1+B1等共存: B1覆盖R1的3:0
+        summary_text = '3:1+4:1各10元 [B1覆盖R1: 让胜真信因果链更强(2/2)]'
     elif bet_goals:
         summary_text = f"{'单选' if bet_type=='single' else '双选'}{'+'.join(str(g) for g in bet_goals)}球 {goal_stake}元"
-    if score_bets and rule not in ('G4', 'H1', 'H2', 'H3', 'D1', 'T1', 'T2', 'T3'):
+    SKIP_SCORE_SUMMARY = {'G4', 'H1', 'H2', 'H3', 'D1', 'T1', 'T2', 'T3', 'B1'}
+    if score_bets and not any(x in str(rule) for x in SKIP_SCORE_SUMMARY):
         if summary_text: summary_text += ' + '
         summary_text += f"{len(score_bets)}个比分{'保底' if rule=='R0' else '投注'}{total_score_stake}元"
     summary_text += conf_tag
@@ -1586,6 +1642,20 @@ def compute_betting(data, analysis):
                 score_bets.extend(t_list)
                 total_score_stake += sum(s['stake'] for s in t_list)
                 rule = f'{rule}+{t_rule}'
+    
+    # B1: 让胜真信穿盘 — 与现有规则共存时追加3:1+4:1 (2026-06-17新增)
+    # ⚠️ B1覆盖R1: R1推3:0但B1因果链说3:0不出, 移除3:0保留3:1+4:1
+    if rule and 'B1' not in rule and _check_b1(data) is not None:
+        b1_sb = _build_b1_bet(so)
+        # 过滤掉R1的3:0比分投注(B1的因果链明确说3:0不会出)
+        score_bets = [s for s in score_bets if not (s.get('score') == '3:0' and s.get('tag', '') == 'R1')]
+        total_score_stake = sum(s['stake'] for s in score_bets)
+        score_bets.extend(b1_sb)
+        total_score_stake += sum(s['stake'] for s in b1_sb)
+        rule = f'{rule}+B1'
+        # B1覆盖R1: 重建summary
+        if not bet_goals:
+            summary_text = '3:1+4:1各10元 [B1覆盖R1: 让胜真信因果链更强(2/2)]'
     
     # 重建summary
     if bet_goals:
