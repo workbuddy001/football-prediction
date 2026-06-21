@@ -2737,18 +2737,6 @@ HTML_TEMPLATE = '''
                             h += '</div>';
                         }
                         
-                        // 进球数推荐（从推理过程获取，作为参考显示）
-                        const fgp = a.final_goal_pick;
-                        if (fgp && fgp.single) {
-                            h += '<div style="margin:6px 0;padding:6px;background:#1a2a1a;border-radius:4px;border-left:3px solid #4caf50">';
-                            h += '<span style="color:#4caf50;font-weight:bold">🎯 进球数推荐:</span> ';
-                            h += '<span style="color:#fff;font-size:16px;font-weight:bold">' + fgp.single + '球</span>';
-                            if (fgp.double && fgp.double.length >= 2) {
-                                h += ' <span style="color:#ffb74d;font-size:14px">双选: ' + fgp.double.join('球+') + '球</span>';
-                            }
-                            h += '</div>';
-                        }
-                        
                         // Score bets
                         if (bt.score_bets && bt.score_bets.length > 0) {
                             h += '<div style=\"margin:4px 0;padding:6px;background:#1a1a2e;border-radius:4px\">';
