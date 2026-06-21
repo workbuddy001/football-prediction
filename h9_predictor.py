@@ -274,14 +274,15 @@ def predict_h9(data, handicap):
         return None
 
 def _get_scenario_accuracy(situation):
-    """获取某场景的准确率（从JSON文件中查找）"""
+    """获取某场景的准确率（从JSON文件中查找，返回百分比0-100）"""
     try:
         with open(HIGH_CONF_FILE, 'r', encoding='utf-8') as f:
             scenarios = json.load(f)
         
         for s in scenarios:
             if s['situation'] == situation:
-                return s['accuracy']
+                # accuracy存储为小数(0-1)，需要转换为百分比(0-100)
+                return s['accuracy'] * 100.0
         
         return 0.0
     except:
