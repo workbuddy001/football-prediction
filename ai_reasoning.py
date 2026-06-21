@@ -21,7 +21,7 @@ DATA_DIR = 'sporttery_data'
 
 def _get_stake_by_tier(rule_name):
     """凯利公式的硬编码平替：基于历史ROI甜区进行资金分级（2026-05-22）"""
-    tier_1_heavy = ['R0', 'S7', 'S3', 'S2', 'X6']
+    tier_1_heavy = ['R0', 'S7', 'S3', 'S2', 'X6', 'S9', 'H9']
     tier_2_medium = ['X3', 'X5', 'X4', 'X2', 'G6', 'H5', 'H3', 'H2']
     tier_3_light = ['G7', 'G5', 'F', 'H1', 'R1']
     if rule_name in tier_1_heavy: return 40
@@ -86,6 +86,64 @@ def _build_d1_bet(so):
             except:
                 pass
     return {'score': '1:1', 'odds': round(s11_odds, 1), 'stake': 10, 'tag': 'D1方向冲突1:1'}
+
+def _check_s9(data):
+    """S9: 0球13-16+3球3.2-3.4+近况<2.5+主让1球 → 大球双投40元
+    回测32场: 3球41%+4球16%+5球16% ROI+35.5% (2026-06-19)"""
+    try:
+        tg = data.get('total_goals', {})
+        o0 = float(tg.get('0球', 0))
+        o3 = float(tg.get('3球', 0))
+        if not (13 <= o0 <= 16): return None
+        if not (3.2 <= o3 <= 3.4): return None
+        
+        # 近况 < 2.5 (双方近5场场均总进球)
+        preview = data.get('preview', {})
+        recent = preview.get('recent', {})
+        home_ml = recent.get('home', {}).get('matchList', []) or []
+        away_ml = recent.get('away', {}).get('matchList', []) or []
+        
+        def _avg_goals(ml):
+            gs = []
+            for m in ml[:5]:
+                try:
+                    gs.append(float(str(m.get('homeTeamFullCourtGoalCnt', 0))) + float(str(m.get('awayTeamFullCourtGoalCnt', 0))))
+                except: pass
+            return sum(gs) / len(gs) if gs else 2.0  # 缺失数据用默认2.0
+        
+        ha = _avg_goals(home_ml)
+        aa = _avg_goals(away_ml)
+        if (ha + aa) / 2 >= 2.5: return None
+        
+        # 主让1球
+        hhad = data.get('hhad', {})
+        if float(hhad.get('让球', '0') or '0') != -1: return None
+        
+        o4 = float(tg.get('4球', 0))
+        o5 = float(tg.get('5球', 0))
+        
+        if o5 < 8.5:
+            second_goal = 5
+            second_odds = o5
+            pick_explain = 'o5<8.5→5球'
+        else:
+            second_goal = 4
+            second_odds = o4
+            pick_explain = 'o5>=8.5→4球'
+        
+        mi = data.get('match_info', {}) or {}
+        mn = mi.get('match_num_str', '') if isinstance(mi, dict) else ''
+        ht = mi.get('home_team', '?') if isinstance(mi, dict) else '?'
+        at = mi.get('away_team', '?') if isinstance(mi, dict) else '?'
+        _trace_log('S9', f'{mn} {ht}vs{at} o0={o0:.1f} o3={o3:.1f} form={((ha+aa)/2):.1f} {pick_explain}')
+        
+        return {
+            'goals': [3, second_goal],
+            'odds': {3: o3, second_goal: second_odds},
+            'pick_explain': pick_explain,
+        }
+    except:
+        return None
 
 def _check_t_series(data):
     """T系列前置检查: 让胜降>10% + display=1:1 + rs/hw<1.6
@@ -304,8 +362,6 @@ def compute_betting(data, analysis):
     goal_stake = 0
     score_bets = []
     s7_dual = False
-    
-    # 预计算信号F条件（避免elif阻断后续规则）
     f_eligible = False
     if g0 and 25 <= g0 < 35:
         try:
@@ -521,6 +577,27 @@ def compute_betting(data, analysis):
     except:
         pass
     
+    # 预计算D2信号：让负1.50-1.70 + 3球3.3-3.5 + 变化次数=1 且 -5%≤变化幅度≤-2% → 69.2%命中率
+    d2_signal = False
+    try:
+        hhad = data.get('hhad', {})
+        rq = hhad.get('让球', '0')
+        hh_l = float(hhad.get('让负', 0) or 0)
+        tg = data.get('total_goals', {})
+        g3 = float(tg.get('3球', 0) or 0)
+        ttg_change = data.get('ttg_change', {})
+        g3_change = ttg_change.get('3球', {})
+        change_count = int(g3_change.get('count', 0)) if isinstance(g3_change, dict) else 0
+        change_pct = float(g3_change.get('change_pct', 0)) if isinstance(g3_change, dict) else 0
+        
+        if (rq == '-1' and 1.50 <= hh_l < 1.70
+            and 3.3 <= g3 < 3.5
+            and change_count == 1
+            and -5 <= change_pct <= -2):
+            d2_signal = True
+    except:
+        pass
+    
     # 预计算S2/S3/S4信号（近况<2.5 + 大球反常保留→反向投注）
     s2_5ball = False; s3_6ball = False; s4_7ball = False; s5_22 = False; s6_2ball = False
     try:
@@ -731,6 +808,103 @@ def compute_betting(data, analysis):
             return {'action': 'skip', 'reason': f'HAD陷阱: 主胜{hw_chk:.2f}<1.45+让胜{rs_chk:.2f}>2.30(深盘无力,无冷推比分)'}
     except:
         pass
+
+    # ===== H9: 最高历史比分矛盾法 → 让球方向投注 (回测123场79.7%, 2026-06-21) =====
+    if not rule:
+        try:
+            from h9_predictor import predict_h9
+            hhad = data.get('hhad', {})
+            handicap_str = hhad.get('让球', '')
+            if handicap_str:
+                handicap = float(handicap_str)
+                h9_result = predict_h9(data, handicap)
+                if h9_result and h9_result.get('prediction'):
+                    # 存储H9分析结果，供前端显示
+                    data['_h9_analysis'] = h9_result
+                    
+                    # 只在高置信度时触发投注
+                    if h9_result.get('is_high_conf'):
+                        prediction = h9_result['prediction']
+                        confidence = h9_result['confidence']
+                        explanation = h9_result['explanation']
+                        
+                        # 获取让球赔率
+                        hhad_odds = hhad
+                        bet_odds = float(hhad_odds.get(prediction, 0))
+                        
+                        if bet_odds > 0:
+                            return {
+                                'action': 'bet',
+                                'rule': 'H9',
+                                'bet_type': 'handicap',
+                                'handicap_bet': {
+                                    'direction': prediction,
+                                    'odds': round(bet_odds, 2),
+                                    'stake': _get_stake_by_tier('H9'),
+                                    'confidence': confidence,
+                                    'explanation': explanation,
+                                    'situation': h9_result['situation'],
+                                    'is_high_conf': True
+                                },
+                                'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
+                                'score_bets': [],
+                                'total_stake': _get_stake_by_tier('H9'),
+                                'summary': f"H9: {prediction}{round(bet_odds, 2)}元 [{explanation}]",
+                                'pp_boost': False,
+                                's7_dual': False
+                            }
+                    # 非高置信度：只显示分析结果，不触发投注
+        except Exception as e:
+            import sys
+            print(f'[H9] ❌ 规则检查失败: {e}', file=sys.stderr, flush=True)
+    
+    # ===== S9: 0球13-16+3球3.2-3.4+近况<2.5+主让1球 → 大球双投40元 (32场ROI+35.5%, 2026-06-19) =====
+    if not rule:
+        s9 = _check_s9(data)
+        if s9:
+            rule = 'S9'
+            bet_goals = s9['goals']
+            bet_type = 'double'
+            goal_stake = 40
+            goal_odds = s9['odds']
+            
+            # 运行H9调整置信度 (2026-06-21)
+            h9_note = ''
+            try:
+                from h9_predictor import predict_h9
+                hhad = data.get('hhad', {})
+                handicap_str = hhad.get('让球', '')
+                if handicap_str:
+                    handicap = float(handicap_str)
+                    h9_result = predict_h9(data, handicap)
+                    if h9_result and isinstance(h9_result, dict):
+                        # 存储H9分析结果，供前端显示
+                        data['_h9_analysis'] = h9_result
+                        
+                        h9_pred = h9_result.get('prediction', '')
+                        h9_conf = h9_result.get('confidence', 0)
+                        
+                        if h9_pred == '让胜':
+                            goal_stake = 50  # 提升投注额
+                            h9_note = f' [H9✅让胜{h9_conf:.0f}%→提置信]'
+                        elif h9_pred == '让负':
+                            goal_stake = 30  # 降低投注额
+                            h9_note = f' [H9⚠️让负{h9_conf:.0f}%→降置信]'
+                        else:
+                            h9_note = f' [H9➖{h9_pred}{h9_conf:.0f}%]'
+            except Exception as e:
+                import sys
+                print(f'[H9] ⚠️ 调整投注额失败: {e}', file=sys.stderr, flush=True)
+            
+            summary_text = f"S9: 3球+{s9['goals'][1]}球各{goal_stake//2}元 [{s9['pick_explain']}]{h9_note}"
+            return {
+                'action': 'bet', 'rule': rule,
+                'bet_type': bet_type,
+                'goal_bet': {'goals': bet_goals, 'stake': goal_stake, 'odds': {str(g): round(o, 1) for g, o in goal_odds.items()}},
+                'score_bets': [], 'score_stake': 0,
+                'total_stake': goal_stake, 'summary': summary_text,
+                'pp_boost': False, 's7_dual': False
+            }
     
     # ===== CAND043: 大赛低赔比分博冷10元 (世界杯/国际赛, 比分赔<5+该进球赔率最低, 回测4场3中75%) =====
     if not rule:
@@ -795,6 +969,14 @@ def compute_betting(data, analysis):
         bet_goals = [3]
         bet_type = 'single'
         goal_stake = 20
+
+    elif d2_signal:
+        # 信号D2: 让负1.50-1.70 + 3球3.3-3.5 + 变化次数=1 且 -5%≤变化幅度≤-2% → 69.2%命中率 (2026-06-18新增)
+        rule = 'D2'
+        bet_goals = [3]
+        bet_type = 'single'
+        goal_stake = 40
+
     elif g0 == 10 and go.get(2) and 2.9 <= go[2] <= 3.1:
         # G2: g0=10+g2≈3.0 → 0或2球必选一 → 0球20元+2球10元=30元 (5场5中100%, 优化后ROI+240%)
         # ⚠️ 优先于R0: 此信号独立于R0的draw/联赛过滤, 0/2球二选一全覆盖
@@ -925,6 +1107,32 @@ def compute_betting(data, analysis):
         bet_type = 'single'
         goal_stake = 20
     elif top_score_rec == '3:0':
+        # B1: 让胜真信穿盘 (2026-06-17新增, 3/3 穿盘, 前置: 让胜降>10%+display=3:0+rs/hw<1.6+hw<1.5)
+        # ⚠️ B1优先于R1: B1因果链说3:0不出, 直接触发, 不再走R1
+        if _check_b1(data) is not None:
+            rule = 'B1'
+            b1_sb = _build_b1_bet(so)
+            bet_goals = []
+            bet_type = 'single'
+            goal_stake = 0
+            score_bets = b1_sb
+            total_score_stake = sum(s['stake'] for s in b1_sb)
+            rule = 'B1'
+            # 直接返回, 不再走R1
+            summary_text = '3:1+4:1各10元'
+            return {
+                'action': 'bet',
+                'rule': rule,
+                'bet_type': bet_type,
+                'goal_bet': {'goals': bet_goals, 'stake': goal_stake, 'odds': {}},
+                'score_bets': score_bets,
+                'score_stake': total_score_stake,
+                'total_stake': total_score_stake,
+                'summary': summary_text,
+                'pp_boost': False,
+                's7_dual': False
+            }
+        
         # R1: Top1=3:0 + 让胜<1.80(当前或初盘) + sim3球<1 → 3:0比分20元 (7场4中 ROI+343%)
         # 2026-05-27: 移除agree_count==2和g0≤20, 新增sim3球过滤, 初盘让胜兼容
         try:
@@ -1568,9 +1776,9 @@ def compute_betting(data, analysis):
             pass
     
     # ⚠️ 相似温区跳过 (2026-05-26)
-    # 投注目标在相似中出现≥2次(≥25%)=过热 → 跳过(除S7免疫)
+    # 投注目标在相似中出现≥2次(≥25%)=过热 → 跳过(除S7/S8/G2/P1/D2免疫)
     # 5月回测: 3场全黑零误伤, 命中68%→81%
-    if rule not in ('S7','S8','G2','P1') and bet_goals and goal_stake > 0:
+    if rule not in ('S7','S8','G2','P1','D2') and bet_goals and goal_stake > 0:
         try:
             cache_key = '_sim_sweet_cache'
             sweet_map = data.get(cache_key, {})
@@ -2046,7 +2254,10 @@ def v36_analyze(match_id):
         # ===== 投注策略 =====
         result['betting'] = compute_betting(data, result)
         
-        return jsonify({'success': True, 'analysis': result})
+        # 包含H9预检测结果 (2026-06-21)
+        h9_analysis = data.get('_h9_analysis')
+        
+        return jsonify({'success': True, 'analysis': result, 'h9_analysis': h9_analysis})
     except Exception as e:
         import traceback
         return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
@@ -2287,3 +2498,109 @@ def v36_bet_status():
     except Exception as e:
         import traceback
         return jsonify({'success': False, 'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+# ===== 回测接口函数（不依赖Flask上下文）=====
+def get_recommendation_for_backtest(data):
+    """
+    获取比分推荐（用于回测，不依赖Flask上下文）
+    
+    Args:
+        data: 比赛数据字典
+    
+    Returns:
+        {
+            'rule': str,           # 触发规则名
+            'goals': list,          # 推荐总进球数列表
+            'explanation': str     # 推荐解释
+        }
+        或 None（如果没有推荐）
+    """
+    try:
+        # 加载命中率数据（如果不存在）
+        if '_odds_hitrate' not in data:
+            from sporttery_web import _build_odds_hitrate
+            data['_odds_hitrate'] = _build_odds_hitrate()
+        
+        if '_change_hitrate' not in data:
+            from sporttery_web import _build_change_hitrate
+            data['_change_hitrate'] = _build_change_hitrate()
+        
+        # 调用分析函数
+        from v36_analyzer import analyze_match
+        analysis = analyze_match(data)
+        
+        if not analysis:
+            return None
+        
+        # 直接从分析结果中提取推荐（不调用compute_betting）
+        rule = analysis.get('rule')
+        goals = analysis.get('goals', [])
+        explanation = analysis.get('explanation', '')
+        
+        if not goals:
+            return None
+        
+        return {
+            'rule': rule if rule else '',
+            'goals': goals,
+            'explanation': explanation
+        }
+    
+    except Exception as e:
+        print(f'[回测接口] ❌ 获取推荐失败: {e}')
+        import traceback
+        traceback.print_exc()
+        return None
+
+# ===== 回测接口函数简易版（带调试）=====
+def get_recommendation_simple(data, match_id=''):
+    """
+    简易版：只调用analyze_match，打印完整结果，用于调试
+    """
+    try:
+        if '_odds_hitrate' not in data:
+            from sporttery_web import _build_odds_hitrate
+            data['_odds_hitrate'] = _build_odds_hitrate()
+        if '_change_hitrate' not in data:
+            from sporttery_web import _build_change_hitrate
+            data['_change_hitrate'] = _build_change_hitrate()
+
+        from v36_analyzer import analyze_match
+        analysis = analyze_match(data)
+
+        print(f'[回测-{match_id}] analysis类型={type(analysis)}, 内容={analysis}')
+        
+        if not analysis:
+            return None
+        
+        # 尝试多种可能的字段名
+        # 优先: recommended.goals (V3.6格式)
+        recommended = analysis.get('recommended', {})
+        if isinstance(recommended, dict):
+            goals = recommended.get('goals')
+        
+        # 备选1: final_goal_pick.double
+        if not goals:
+            final_pick = analysis.get('final_goal_pick', {})
+            if isinstance(final_pick, dict):
+                goals = final_pick.get('double') or final_pick.get('single')
+        
+        # 备选2: 直接字段
+        if not goals:
+            goals = analysis.get('goals') or analysis.get('goal_list')
+        
+        if not goals:
+            print(f'[回测-{match_id}] ⚠️ 无法从analysis提取goals, recommended={recommended}, final_pick={analysis.get("final_goal_pick")}')
+            return None
+        
+        return {
+            'rule': analysis.get('rule', ''),
+            'goals': goals if isinstance(goals, list) else [],
+            'explanation': analysis.get('explanation', '')
+        }
+    except Exception as e:
+        print(f'[回测-{match_id}] ❌ 异常: {e}')
+        import traceback
+        traceback.print_exc()
+        return None

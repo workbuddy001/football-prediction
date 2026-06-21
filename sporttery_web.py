@@ -2531,7 +2531,8 @@ HTML_TEMPLATE = '''
                         : '')
                     + vetoHtml
                     + '</div>'
-                    + '<div class="v36-section">'
+                    + (data.h9_analysis && data.h9_analysis.prediction ? '<div class="v36-section" style="border:1px solid ' + (data.h9_analysis.is_high_conf ? '#4caf50' : '#ff9800') + ';border-radius:6px;background:' + (data.h9_analysis.is_high_conf ? '#1a2e1a' : '#2e1a1a') + ';">' + '<h4>🤖 H9 最高历史比分矛盾法' + (data.h9_analysis.is_high_conf ? '' : ' <span style="color:#ff9800;font-size:12px;">[⚠️非高置信度]</span>') + '</h4>' + '<div style="font-size:13px;line-height:1.8">' + '预测方向: <strong style="color:' + (data.h9_analysis.is_high_conf ? '#4caf50' : '#ff9800') + '">' + data.h9_analysis.prediction + '</strong><br>' + '置信度: <strong>' + (parseFloat(data.h9_analysis.confidence) || 0).toFixed(1) + '%</strong><br>' + '<div style="color:#b0b0b0;font-size:12px;line-height:1.6;word-break:break-all;margin-top:4px;">' + (data.h9_analysis.explanation || '') + '</div>' + '</div>' + '</div>' : '')
++ '<div class="v36-section">'
                     + '<h4>Step4 三维排除</h4>'
                     + '<table class="v36-table"><tr><th>进球</th><th>状态</th><th>命中率/原因</th></tr>' + exclRows + '</table>'
                     + heatHtml
@@ -2716,6 +2717,22 @@ HTML_TEMPLATE = '''
                             if (gb.odds && Object.keys(gb.odds).length > 0) {
                                 let oStr = Object.entries(gb.odds).map(([g,o]) => g+'球赔'+o).join(' / ');
                                 h += '<br><span style=\"color:#888;font-size:11px\">赔率: ' + oStr + '</span>';
+                            }
+                            h += '</div>';
+                        }
+                        
+                        // Handicap bet (H9 rule)
+                        const hb = bt.handicap_bet;
+                        if (hb && hb.direction) {
+                            h += '<div style="margin:6px 0;padding:6px;background:#1a1a2e;border-radius:4px;border-left:3px solid #00d4ff">';
+                            h += '<span style="color:#00d4ff;font-weight:bold">🎯 让球投注:</span> ';
+                            h += '<span style="color:#fff;font-size:16px;font-weight:bold">' + hb.direction + '</span> ';
+                            h += '<span style="color:#4caf50;font-weight:bold">投' + hb.stake + '元</span>';
+                            if (hb.odds) {
+                                h += '<br><span style="color:#888;font-size:11px">赔率: ' + hb.odds.toFixed(2) + '</span>';
+                            }
+                            if (hb.situation) {
+                                h += '<br><span style="color:#888;font-size:10px">场景: ' + hb.situation + '</span>';
                             }
                             h += '</div>';
                         }

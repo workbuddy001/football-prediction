@@ -1,0 +1,379 @@
+[
+  {
+    "situation": "handicap_-1_let_neg_A_让负_60%_一致",
+    "total": 5,
+    "correct": 5,
+    "accuracy": 100.0,
+    "examples": [
+      {
+        "match_id": "2039031",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039138",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039290",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_1_let_neg_D_让胜_60%_一致",
+    "total": 15,
+    "correct": 13,
+    "accuracy": 86.66666666666667,
+    "examples": [
+      {
+        "match_id": "2038782",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038785",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038833",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_1_let_neg_D_让胜_64%_一致",
+    "total": 7,
+    "correct": 6,
+    "accuracy": 85.71428571428571,
+    "examples": [
+      {
+        "match_id": "2038734",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038876",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039199",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让平",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "situation": "handicap_1_let_neg_D_让胜_40%_一致",
+    "total": 6,
+    "correct": 5,
+    "accuracy": 83.33333333333334,
+    "examples": [
+      {
+        "match_id": "2039310",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让负",
+        "is_correct": false
+      },
+      {
+        "match_id": "2039330",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039356",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_1_let_neg_D_让胜_63%_一致",
+    "total": 17,
+    "correct": 14,
+    "accuracy": 82.35294117647058,
+    "examples": [
+      {
+        "match_id": "2038726",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038968",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039015",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_-1_let_neg_A_让负_53%_一致",
+    "total": 5,
+    "correct": 4,
+    "accuracy": 80.0,
+    "examples": [
+      {
+        "match_id": "2038822",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039202",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039209",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_1_let_neg_D_让胜_68%_一致",
+    "total": 5,
+    "correct": 4,
+    "accuracy": 80.0,
+    "examples": [
+      {
+        "match_id": "2039144",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039313",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039926",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让平",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "situation": "handicap_-1_let_neg_A_让负_63%_一致",
+    "total": 5,
+    "correct": 4,
+    "accuracy": 80.0,
+    "examples": [
+      {
+        "match_id": "2039183",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039574",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让平",
+        "is_correct": false
+      },
+      {
+        "match_id": "2039630",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_-1_let_neg_A_让负_67%_一致",
+    "total": 14,
+    "correct": 11,
+    "accuracy": 78.57142857142857,
+    "examples": [
+      {
+        "match_id": "2038723",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038743",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038921",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_-1_let_neg_B_让负_51%_一致",
+    "total": 9,
+    "correct": 7,
+    "accuracy": 77.77777777777779,
+    "examples": [
+      {
+        "match_id": "2039019",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039039",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039040",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_-1_let_neg_A_让负_58%_一致",
+    "total": 18,
+    "correct": 13,
+    "accuracy": 72.22222222222221,
+    "examples": [
+      {
+        "match_id": "2038807",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2038933",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让胜",
+        "is_correct": false
+      },
+      {
+        "match_id": "2039020",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让平",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "situation": "handicap_1_let_neg_D_让胜_58%_一致",
+    "total": 7,
+    "correct": 5,
+    "accuracy": 71.42857142857143,
+    "examples": [
+      {
+        "match_id": "2038867",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让平",
+        "is_correct": false
+      },
+      {
+        "match_id": "2038976",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039065",
+        "handicap": 1.0,
+        "prediction": "让胜",
+        "actual": "让胜",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "situation": "handicap_-1_let_neg_D_让负_48%_一致",
+    "total": 10,
+    "correct": 7,
+    "accuracy": 70.0,
+    "examples": [
+      {
+        "match_id": "2038821",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      },
+      {
+        "match_id": "2039193",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让平",
+        "is_correct": false
+      },
+      {
+        "match_id": "2039272",
+        "handicap": -1.0,
+        "prediction": "让负",
+        "actual": "让负",
+        "is_correct": true
+      }
+    ]
+  }
+]
