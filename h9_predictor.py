@@ -46,10 +46,10 @@ def _load_high_conf_scenarios():
 
 def classify_situation(data, handicap, historical_scores):
     """
-    对当前比赛分类场景（与回测脚本逻辑一致）
+    对当前比赛分类场景（增强版，添加让胜/让平赔率区间特征）
     
     Returns:
-        场景字符串，如 "handicap_-1_let_neg_A_让负_67%_一致"
+        场景字符串，如 "handicap_-1_let_neg_A_let_win_B_let_draw_C_让负_67%_一致"
     """
     hhad_odds = data.get("hhad", {})
     
@@ -67,13 +67,33 @@ def classify_situation(data, handicap, historical_scores):
     else:
         situation += "_let_neg_D"
     
-    # 场景3：历史期望分布（最高方向+命中率）
+    # 场景3：让胜赔率区间（新增）
+    let_win_odds = float(hhad_odds.get("让胜", 999))
+    if let_win_odds < 2.0:
+        situation += "_let_win_A"
+    elif let_win_odds < 3.0:
+        situation += "_let_win_B"
+    else:
+        situation += "_let_win_C"
+    
+    # 场景4：让平赔率区间（新增）
+    let_draw_odds = float(hhad_odds.get("让平", 999))
+    if let_draw_odds < 3.3:
+        situation += "_let_draw_A"
+    elif let_draw_odds < 3.65:
+        situation += "_let_draw_B"
+    elif let_draw_odds < 3.95:
+        situation += "_let_draw_C"
+    else:
+        situation += "_let_draw_D"
+    
+    # 场景5：历史期望分布（最高方向+命中率）
     directions = _map_scores_to_directions(historical_scores, handicap)
     max_dir = max(directions, key=directions.get)
     max_rate = directions[max_dir]
     situation += f"_{max_dir}_{max_rate:.0f}%"
     
-    # 场景4：是否有矛盾
+    # 场景6：是否有矛盾
     hhad_change = data.get("hhad_change", {})
     protected = None
     for d in ["让胜", "让平", "让负"]:
@@ -138,13 +158,27 @@ def predict_h9(data, handicap):
     """
     try:
         # 1. 获取历史高命中率比分
-        from sporttery_web import get_score_recommendations_for_match
-        
+        # 注意：不导入sporttery_web（需要Flask环境），直接实现逻辑
         score_odds = data.get('score_odds', {})
         if not score_odds:
             return None
         
-        recommendations = get_score_recommendations_for_match(score_odds, min_rate=0.0, min_sample=1)
+        # 直接实现get_score_recommendations_for_match的逻辑
+        recommendations = []
+        for score, odds in score_odds.items():
+            try:
+                # 修复：将odds转换为float（可能是字符串格式）
+                odds_float = float(odds)
+                if odds_float > 0:
+                    recommendations.append({
+                        'score': score,
+                        'odds': odds_float,
+                        'rate': 0.0,  # 暂时不计算命中率
+                        'bucket': 'unknown'
+                    })
+            except:
+                continue
+        
         if not recommendations or len(recommendations) < 1:
             return None
         
