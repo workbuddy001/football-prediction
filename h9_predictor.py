@@ -180,7 +180,44 @@ def predict_h9(data, handicap):
             prediction = max_dir  # 一致信号，跟随历史期望
             explanation = f"一致信号：历史期望{max_dir}({max_rate:.0f}%) = 庄家保护方向 → 跟随历史"
         
-        # 5. 根据是否高置信度，设置置信度
+        # 5. 低置信度 + 预测为"让平" → 反向推荐，根据HAD赔率判断方向
+        if not is_high_conf and prediction == "让平":
+            had = data.get("had", {})
+            if had:
+                # 兼容两种字段名："主胜"/"平局"/"客胜" 或 "胜"/"平"/"负"
+                home_odds = float(had.get("主胜") or had.get("胜", 999))
+                draw_odds = float(had.get("平局") or had.get("平", 999))
+                away_odds = float(had.get("客胜") or had.get("负", 999))
+                
+                if home_odds < 999 and draw_odds < 999 and away_odds < 999:
+                    # 找出最低赔率（市场期望方向）
+                    min_odds = min(home_odds, draw_odds, away_odds)
+                    
+                    if min_odds == home_odds:
+                        # 市场期望主队获胜 → 反向到"让胜"
+                        reversed_prediction = "让胜"
+                        reason = f"HAD主胜{home_odds:.2f}最低"
+                    elif min_odds == away_odds:
+                        # 市场期望客队获胜 → 反向到"让负"
+                        reversed_prediction = "让负"
+                        reason = f"HAD客胜{away_odds:.2f}最低"
+                    else:
+                        # 市场期望平局 → 反向到"让负"（平局=主队不赢盘）
+                        reversed_prediction = "让负"
+                        reason = f"HAD平局{draw_odds:.2f}最低"
+                    
+                    prediction = reversed_prediction
+                    explanation = f"⚠️低置信度+让平预测命中率低 → 反向到{prediction}（{reason}）"
+                else:
+                    # HAD赔率不完整，默认反向到"让负"
+                    prediction = "让负"
+                    explanation = f"⚠️低置信度+让平预测命中率低 → 反向到{prediction}（HAD赔率不完整）"
+            else:
+                # 无HAD赔率，默认反向到"让负"
+                prediction = "让负"
+                explanation = f"⚠️低置信度+让平预测命中率低 → 反向到{prediction}（无HAD赔率）"
+        
+        # 6. 根据是否高置信度，设置置信度
         if is_high_conf:
             confidence = _get_scenario_accuracy(situation)
         else:
@@ -192,7 +229,8 @@ def predict_h9(data, handicap):
             'situation': situation,
             'prediction': prediction,
             'confidence': confidence,
-            'explanation': explanation
+            'explanation': explanation,
+            'is_reverse': not is_high_conf and '反向' in explanation  # 是否反向推荐
         }
     
     except Exception as e:

@@ -822,38 +822,51 @@ def compute_betting(data, analysis):
                     # 存储H9分析结果，供前端显示
                     data['_h9_analysis'] = h9_result
                     
-                    # 只在高置信度时触发投注
-                    if h9_result.get('is_high_conf'):
-                        prediction = h9_result['prediction']
-                        confidence = h9_result['confidence']
-                        explanation = h9_result['explanation']
+                    prediction = h9_result['prediction']
+                    confidence = h9_result.get('confidence', 0.0)
+                    explanation = h9_result.get('explanation', '')
+                    is_high_conf = h9_result.get('is_high_conf', False)
+                    is_reverse = '反向' in explanation  # 判断是否反向推荐
+                    
+                    # 获取让球赔率
+                    hhad_odds = hhad
+                    bet_odds = float(hhad_odds.get(prediction, 0))
+                    
+                    if bet_odds > 0:
+                        # 根据置信度和是否反向，调整投注额
+                        if is_high_conf:
+                            stake = _get_stake_by_tier('H9')
+                            rule_name = 'H9'
+                        elif is_reverse:
+                            stake = 10  # 低置信度反向推荐，降低投注额
+                            rule_name = 'H9(反向)'
+                        else:
+                            stake = 10  # 低置信度但非反向，也降低投注额
+                            rule_name = 'H9(低置信)'
                         
-                        # 获取让球赔率
-                        hhad_odds = hhad
-                        bet_odds = float(hhad_odds.get(prediction, 0))
+                        summary_prefix = f"H9({'反向' if is_reverse else '高置信' if is_high_conf else '低置信'}): "
                         
-                        if bet_odds > 0:
-                            return {
-                                'action': 'bet',
-                                'rule': 'H9',
-                                'bet_type': 'handicap',
-                                'handicap_bet': {
-                                    'direction': prediction,
-                                    'odds': round(bet_odds, 2),
-                                    'stake': _get_stake_by_tier('H9'),
-                                    'confidence': confidence,
-                                    'explanation': explanation,
-                                    'situation': h9_result['situation'],
-                                    'is_high_conf': True
-                                },
-                                'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
-                                'score_bets': [],
-                                'total_stake': _get_stake_by_tier('H9'),
-                                'summary': f"H9: {prediction}{round(bet_odds, 2)}元 [{explanation}]",
-                                'pp_boost': False,
-                                's7_dual': False
-                            }
-                    # 非高置信度：只显示分析结果，不触发投注
+                        return {
+                            'action': 'bet',
+                            'rule': rule_name,
+                            'bet_type': 'handicap',
+                            'handicap_bet': {
+                                'direction': prediction,
+                                'odds': round(bet_odds, 2),
+                                'stake': stake,
+                                'confidence': confidence,
+                                'explanation': explanation,
+                                'situation': h9_result.get('situation', ''),
+                                'is_high_conf': is_high_conf,
+                                'is_reverse': is_reverse
+                            },
+                            'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
+                            'score_bets': [],
+                            'total_stake': stake,
+                            'summary': f"{summary_prefix}{prediction}{round(bet_odds, 2)}元 [{explanation}]",
+                            'pp_boost': False,
+                            's7_dual': False
+                        }
         except Exception as e:
             import sys
             print(f'[H9] ❌ 规则检查失败: {e}', file=sys.stderr, flush=True)
