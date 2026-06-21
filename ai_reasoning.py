@@ -809,67 +809,22 @@ def compute_betting(data, analysis):
     except:
         pass
 
-    # ===== H9: 最高历史比分矛盾法 → 让球方向投注 (回测123场79.7%, 2026-06-21) =====
-    if not rule:
-        try:
-            from h9_predictor import predict_h9
-            hhad = data.get('hhad', {})
-            handicap_str = hhad.get('让球', '')
-            if handicap_str:
-                handicap = float(handicap_str)
-                h9_result = predict_h9(data, handicap)
-                if h9_result and h9_result.get('prediction'):
-                    # 存储H9分析结果，供前端显示
-                    data['_h9_analysis'] = h9_result
-                    
-                    prediction = h9_result['prediction']
-                    confidence = h9_result.get('confidence', 0.0)
-                    explanation = h9_result.get('explanation', '')
-                    is_high_conf = h9_result.get('is_high_conf', False)
-                    is_reverse = '反向' in explanation  # 判断是否反向推荐
-                    
-                    # 获取让球赔率
-                    hhad_odds = hhad
-                    bet_odds = float(hhad_odds.get(prediction, 0))
-                    
-                    if bet_odds > 0:
-                        # 根据置信度和是否反向，调整投注额
-                        if is_high_conf:
-                            stake = _get_stake_by_tier('H9')
-                            rule_name = 'H9'
-                        elif is_reverse:
-                            stake = 10  # 低置信度反向推荐，降低投注额
-                            rule_name = 'H9(反向)'
-                        else:
-                            stake = 10  # 低置信度但非反向，也降低投注额
-                            rule_name = 'H9(低置信)'
-                        
-                        summary_prefix = f"H9({'反向' if is_reverse else '高置信' if is_high_conf else '低置信'}): "
-                        
-                        return {
-                            'action': 'bet',
-                            'rule': rule_name,
-                            'bet_type': 'handicap',
-                            'handicap_bet': {
-                                'direction': prediction,
-                                'odds': round(bet_odds, 2),
-                                'stake': stake,
-                                'confidence': confidence,
-                                'explanation': explanation,
-                                'situation': h9_result.get('situation', ''),
-                                'is_high_conf': is_high_conf,
-                                'is_reverse': is_reverse
-                            },
-                            'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
-                            'score_bets': [],
-                            'total_stake': stake,
-                            'summary': f"{summary_prefix}{prediction}{round(bet_odds, 2)}元 [{explanation}]",
-                            'pp_boost': False,
-                            's7_dual': False
-                        }
-        except Exception as e:
-            import sys
-            print(f'[H9] ❌ 规则检查失败: {e}', file=sys.stderr, flush=True)
+    # ===== H9: 最高历史比分矛盾法 → 让球方向参考 (回测123场79.7%, 2026-06-21) =====
+    # ⚠️ H9只做参考，不触发投注，让后续规则（S9、R1等）正常执行
+    try:
+        from h9_predictor import predict_h9
+        hhad = data.get('hhad', {})
+        handicap_str = hhad.get('让球', '')
+        if handicap_str:
+            handicap = float(handicap_str)
+            h9_result = predict_h9(data, handicap)
+            if h9_result and h9_result.get('prediction'):
+                # 存储H9分析结果，供前端显示（只做参考）
+                data['_h9_analysis'] = h9_result
+                print(f'[H9] 🤖 参考分析: {h9_result["prediction"]} ({h9_result.get("explanation", "")})')
+    except Exception as e:
+        import sys
+        print(f'[H9] ❌ 分析失败: {e}', file=sys.stderr, flush=True)
     
     # ===== S9: 0球13-16+3球3.2-3.4+近况<2.5+主让1球 → 大球双投40元 (32场ROI+35.5%, 2026-06-19) =====
     if not rule:

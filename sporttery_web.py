@@ -2721,9 +2721,9 @@ HTML_TEMPLATE = '''
                             h += '</div>';
                         }
                         
-                        // Handicap bet (H9 rule)
+                        // Handicap bet (只在非H9规则时显示)
                         const hb = bt.handicap_bet;
-                        if (hb && hb.direction) {
+                        if (hb && hb.direction && bt.rule && !bt.rule.startsWith('H9')) {
                             h += '<div style="margin:6px 0;padding:6px;background:#1a1a2e;border-radius:4px;border-left:3px solid #00d4ff">';
                             h += '<span style="color:#00d4ff;font-weight:bold">🎯 让球投注:</span> ';
                             h += '<span style="color:#fff;font-size:16px;font-weight:bold">' + hb.direction + '</span> ';
@@ -2737,7 +2737,7 @@ HTML_TEMPLATE = '''
                             h += '</div>';
                         }
                         
-                        // 进球数推荐（从推理过程获取）
+                        // 进球数推荐（从推理过程获取，作为参考显示）
                         const fgp = a.final_goal_pick;
                         if (fgp && fgp.single) {
                             h += '<div style="margin:6px 0;padding:6px;background:#1a2a1a;border-radius:4px;border-left:3px solid #4caf50">';
