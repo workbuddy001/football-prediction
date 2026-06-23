@@ -107,7 +107,8 @@ def _map_scores_to_directions(historical_scores, handicap):
             continue
         
         # 判断该比分属于哪个让球方向
-        adjusted_home = home + handicap
+        handicap_val = float(handicap)  # ✅ 修复：转换为浮点数
+        adjusted_home = home + handicap_val
         diff = adjusted_home - away
         
         if diff > 0:

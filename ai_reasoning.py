@@ -321,6 +321,41 @@ def compute_betting(data, analysis):
     step0 = analysis.get('step0', {})
     v36_dir = step0.get('direction', '')
     
+    # ===== +1让球比分投注（最高优先级，2026-06-23新增，4-6月回测ROI+11.9%）=====
+    hhad = data.get('hhad', {})
+    if hhad.get('让球', '') == '+1':
+        try:
+            from verify_handicap_method_v5 import apply_7step_method, round_stake
+            pred, pred_score, top3, reasons = apply_7step_method(data)
+            if pred and top3 and len(top3) >= 3:
+                odds = [o for _,_,o in top3[:3]]
+                if odds[2]/odds[0] >= 1.2:
+                    inv = [1.0/max(o,1.1) for o in odds]
+                    tw = sum(inv)
+                    raw = [(inv[i]/tw)*30 for i in range(3)]
+                    stakes = [round_stake(s) for s in raw]
+                    if sum(stakes) % 2 != 0:
+                        idx = stakes.index(max(stakes))
+                        stakes[idx] += 1
+                    score_bets = [
+                        {'score': f'{h}:{a}', 'odds': o,
+                         'stake': stakes[i], 'tag': '+1比分'}
+                        for i, (h, a, o) in enumerate(top3[:3])
+                    ]
+                    actual_total = sum(stakes)
+                    return {
+                        'action': 'bet', 'rule': '+1SCORE',
+                        'bet_type': '分数推',
+                        'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
+                        'handicap_bet': None,
+                        'score_bets': score_bets,
+                        'score_stake': actual_total, 'total_stake': actual_total,
+                        'summary': f'+1让球比分投注(密度{odds[2]/odds[0]:.1f})',
+                        'pp_boost': False, 's7_dual': False
+                    }
+        except:
+            pass
+    
     # 获取系统比分推荐 (从score_odds + hitrate计算)
     from sporttery_web import _build_score_hitrate_stats, get_score_recommendations_for_match
     so = data.get('score_odds', {})
