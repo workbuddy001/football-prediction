@@ -822,6 +822,35 @@ def compute_betting(data, analysis):
                 # 存储H9分析结果，供前端显示（只做参考）
                 data['_h9_analysis'] = h9_result
                 print(f'[H9] 🤖 参考分析: {h9_result["prediction"]} ({h9_result.get("explanation", "")})')
+                
+                # ===== H9高置信度让球投注 (方案C: 独立让球投注规则, 2026-06-21) =====
+                if h9_result.get('is_high_conf') and h9_result.get('prediction'):
+                    h9_pred = h9_result['prediction']  # '让胜'/'让平'/'让负'
+                    h9_conf = h9_result.get('confidence', 0)
+                    
+                    # 获取让球赔率
+                    hhad_odds = data.get('hhad', {})
+                    bet_odds = float(hhad_odds.get(h9_pred, 0))
+                    
+                    if bet_odds > 0:
+                        # 根据置信度设置投注额
+                        if h9_conf >= 80:
+                            hhad_stake = 30  # 高置信度，加大投注
+                        elif h9_conf >= 70:
+                            hhad_stake = 20  # 中高置信度
+                        else:
+                            hhad_stake = 10  # 低置信度（理论上不会到这里）
+                        
+                        # 存储让球投注信息（供前端显示）
+                        data['_h9_bet'] = {
+                            'direction': h9_pred,
+                            'odds': bet_odds,
+                            'stake': hhad_stake,
+                            'confidence': h9_conf,
+                            'handicap': handicap,
+                            'rule': 'H9'
+                        }
+                        print(f'[H9] 🎯 高置信度让球投注: {h9_pred} @ {bet_odds:.2f} (置信度{h9_conf:.0f}%, 投注{hhad_stake}元)')
     except Exception as e:
         import sys
         print(f'[H9] ❌ 分析失败: {e}', file=sys.stderr, flush=True)
@@ -1484,8 +1513,43 @@ def compute_betting(data, analysis):
             goal_stake = 0
             score_bets = b1_sb
             total_score_stake = sum(s['stake'] for s in b1_sb)
+        # ===== H9高置信度让球投注触发 (选项B: 与其他规则同时触发, 2026-06-21) =====
         else:
-            return {'action': 'skip', 'reason': '无匹配投注规则'}
+            # 检查H9高置信度让球投注
+            h9_bet = data.get('_h9_bet')
+            if h9_bet and h9_bet.get('direction') and h9_bet.get('confidence', 0) >= 70:
+                rule = 'H9'
+                bet_type = 'handicap'
+                goal_stake = 0
+                total_score_stake = 0
+                bet_goals = []
+                score_bets = []
+                print(f'[H9] 🎯 触发让球投注: {h9_bet["direction"]} @ {h9_bet["odds"]:.2f} (置信度{h9_bet["confidence"]:.0f}%)')
+            else:
+                return {'action': 'skip', 'reason': '无匹配投注规则'}
+        
+        # 如果H9触发了，直接返回让球投注
+        if rule == 'H9':
+            h9_bet = data.get('_h9_bet')
+            return {
+                'action': 'bet',
+                'rule': 'H9',
+                'bet_type': 'handicap',
+                'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
+                'handicap_bet': {
+                    'direction': h9_bet['direction'],
+                    'odds': h9_bet['odds'],
+                    'stake': h9_bet['stake'],
+                    'confidence': h9_bet['confidence'],
+                    'handicap': h9_bet['handicap']
+                },
+                'score_bets': [],
+                'score_stake': 0,
+                'total_stake': h9_bet['stake'],
+                'summary': f"H9: {h9_bet['direction']} @ {h9_bet['odds']:.2f} (置信度{h9_bet['confidence']:.0f}%)",
+                'pp_boost': False,
+                's7_dual': False
+            }
     
     # 进球数投注
     goal_odds = {g: go.get(g) for g in bet_goals if go.get(g)}
@@ -1843,6 +1907,32 @@ def compute_betting(data, analysis):
             base_summary += ' 🔥双确认(S6+S7)'
         summary_text = base_summary
     
+    # ===== 检查H9高置信度让球投注 (选项B: 与其他规则同时触发, 2026-06-21) =====
+    handicap_bet = None
+    try:
+        h9_bet = data.get('_h9_bet')
+        if h9_bet and h9_bet.get('direction') and h9_bet.get('confidence', 0) >= 70:
+            handicap_bet = {
+                'direction': h9_bet['direction'],
+                'odds': h9_bet['odds'],
+                'stake': h9_bet['stake'],
+                'confidence': h9_bet['confidence'],
+                'handicap': h9_bet['handicap']
+            }
+            print(f'[H9] 🎯 添加让球投注到返回结果: {h9_bet["direction"]} @ {h9_bet["odds"]:.2f} (置信度{h9_bet["confidence"]:.0f}%)')
+    except Exception as e:
+        import sys
+        print(f'[H9] ⚠️ 添加让球投注失败: {e}', file=sys.stderr, flush=True)
+    
+    # 计算总投注额（进球数 + 比分 + 让球）
+    total_stake = goal_stake + total_score_stake
+    if handicap_bet:
+        total_stake += handicap_bet['stake']
+    
+    # 添加H9让球投注到摘要
+    if handicap_bet:
+        summary_text += f" + H9让球{handicap_bet['direction']}({handicap_bet['confidence']:.0f}%)"
+    
     return {
         'action': 'bet',
         'rule': rule,
@@ -1853,9 +1943,10 @@ def compute_betting(data, analysis):
             'odds': {str(g): round(o, 1) for g, o in goal_odds.items()},
             **({'stake_split': {0: 20, 2: 10}} if rule == 'G2' else {}),
         },
+        'handicap_bet': handicap_bet,  # 新增：让球投注（可能是None）
         'score_bets': score_bets,
         'score_stake': total_score_stake,
-        'total_stake': goal_stake + total_score_stake,
+        'total_stake': total_stake,
         'summary': summary_text,
         'pp_boost': pp_boost if rule == 'R0' else False,
         's7_dual': s7_dual,

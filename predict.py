@@ -9,6 +9,22 @@
 """
 import json, os, sys, glob
 
+# ════════════════════════════════════════════════════
+#  回测模式开关（不污染战绩）
+# ════════════════════════════════════════════════════
+BACKTEST_MODE = os.environ.get('BACKTEST_MODE') == '1'
+if BACKTEST_MODE:
+    # Mock _meltdown
+    import types
+    _md = types.ModuleType('_meltdown')
+    _md.__dict__['last_check'] = {}
+    _md.__dict__['check_streak'] = lambda *a, **k: {'ok': True, 'msg': '', 'new': None}
+    _md.__dict__['auto_sync'] = lambda *a, **k: None
+    _md.__dict__['clear_streak'] = lambda *a, **k: None
+    _md.__dict__['auto_sync_from_scores'] = lambda *a, **k: None
+    sys.modules['_meltdown'] = _md
+    print('⚠️ 回测模式已启用（不污染战绩）', file=sys.stderr)
+
 # 清空所有缓存模块
 for m in list(sys.modules):
     if m in ('v36_analyzer', 'ai_reasoning', 'sporttery_web'):
@@ -20,8 +36,10 @@ _sw._odds_hitrate_cache = None
 _sw._change_hitrate_cache = None
 
 # 自动同步过去战绩（仅处理新增的比赛）
-from _meltdown import auto_sync_from_scores
-auto_sync_from_scores()
+# 回测模式下跳过，不污染战绩
+if not BACKTEST_MODE:
+    from _meltdown import auto_sync_from_scores
+    auto_sync_from_scores()
 _sw._score_hitrate_cache = None
 
 from v36_analyzer import analyze_match
@@ -79,8 +97,8 @@ def predict_match(mid, force_fetch=False):
     try:
         analysis = analyze_match(data)
         bet = compute_betting(data, analysis)
-        # 连黑熔断检查
-        if bet.get('action') == 'bet':
+        # 连黑熔断检查（回测模式下跳过）
+        if bet.get('action') == 'bet' and not BACKTEST_MODE:
             bet = check_streak(bet)
     except Exception as e:
         return {'error': str(e)}

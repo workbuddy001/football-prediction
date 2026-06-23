@@ -2721,18 +2721,21 @@ HTML_TEMPLATE = '''
                             h += '</div>';
                         }
                         
-                        // Handicap bet (只在非H9规则时显示)
+                        // Handicap bet (让球投注, 2026-06-21更新)
                         const hb = bt.handicap_bet;
-                        if (hb && hb.direction && bt.rule && !bt.rule.startsWith('H9')) {
+                        if (hb && hb.direction) {
                             h += '<div style="margin:6px 0;padding:6px;background:#1a1a2e;border-radius:4px;border-left:3px solid #00d4ff">';
                             h += '<span style="color:#00d4ff;font-weight:bold">🎯 让球投注:</span> ';
                             h += '<span style="color:#fff;font-size:16px;font-weight:bold">' + hb.direction + '</span> ';
                             h += '<span style="color:#4caf50;font-weight:bold">投' + hb.stake + '元</span>';
                             if (hb.odds) {
-                                h += '<br><span style="color:#888;font-size:11px">赔率: ' + hb.odds.toFixed(2) + '</span>';
+                                h += '<br><span style="color:#888;font-size:11px">赔率: ' + (typeof hb.odds === 'number' ? hb.odds.toFixed(2) : hb.odds) + '</span>';
                             }
-                            if (hb.situation) {
-                                h += '<br><span style="color:#888;font-size:10px">场景: ' + hb.situation + '</span>';
+                            if (hb.confidence) {
+                                h += '<br><span style="color:#888;font-size:10px">H9置信度: ' + (parseFloat(hb.confidence) || 0).toFixed(0) + '%</span>';
+                            }
+                            if (hb.handicap !== undefined) {
+                                h += '<br><span style="color:#888;font-size:10px">让球: ' + hb.handicap + '</span>';
                             }
                             h += '</div>';
                         }

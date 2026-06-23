@@ -46,10 +46,10 @@ def _load_high_conf_scenarios():
 
 def classify_situation(data, handicap, historical_scores):
     """
-    对当前比赛分类场景（增强版，添加让胜/让平赔率区间特征）
+    对当前比赛分类场景（旧版，粗粒度，确保高置信度场景有足够样本）
     
     Returns:
-        场景字符串，如 "handicap_-1_let_neg_A_let_win_B_let_draw_C_让负_67%_一致"
+        场景字符串，如 "handicap_-1_let_neg_A_让负_67%_一致"
     """
     hhad_odds = data.get("hhad", {})
     
@@ -67,33 +67,16 @@ def classify_situation(data, handicap, historical_scores):
     else:
         situation += "_let_neg_D"
     
-    # 场景3：让胜赔率区间（新增）
-    let_win_odds = float(hhad_odds.get("让胜", 999))
-    if let_win_odds < 2.0:
-        situation += "_let_win_A"
-    elif let_win_odds < 3.0:
-        situation += "_let_win_B"
-    else:
-        situation += "_let_win_C"
-    
-    # 场景4：让平赔率区间（新增）
-    let_draw_odds = float(hhad_odds.get("让平", 999))
-    if let_draw_odds < 3.3:
-        situation += "_let_draw_A"
-    elif let_draw_odds < 3.65:
-        situation += "_let_draw_B"
-    elif let_draw_odds < 3.95:
-        situation += "_let_draw_C"
-    else:
-        situation += "_let_draw_D"
-    
-    # 场景5：历史期望分布（最高方向+命中率）
+    # 场景3：历史期望分布（最高方向+命中率）
     directions = _map_scores_to_directions(historical_scores, handicap)
     max_dir = max(directions, key=directions.get)
     max_rate = directions[max_dir]
-    situation += f"_{max_dir}_{max_rate:.0f}%"
+    # ✅ 修复：将场次转换为百分比
+    total_games = len(historical_scores)
+    max_rate_pct = (max_rate / total_games * 100) if total_games > 0 else 0
+    situation += f"_{max_dir}_{max_rate_pct:.0f}%"
     
-    # 场景6：是否有矛盾
+    # 场景4：是否有矛盾
     hhad_change = data.get("hhad_change", {})
     protected = None
     for d in ["让胜", "让平", "让负"]:
@@ -116,7 +99,7 @@ def _map_scores_to_directions(historical_scores, handicap):
     
     for score_data in historical_scores:
         score = score_data.get("score", "")
-        rate = score_data.get("rate", 0.0)
+        rate = score_data.get("rate", 1.0)  # ✅ 修复：默认值改为1.0（每个历史比分权重相等）
         
         try:
             home, away = map(int, score.split(":"))
@@ -157,33 +140,88 @@ def predict_h9(data, handicap):
         or None（如果无法预测）
     """
     try:
-        # 1. 获取历史高命中率比分
-        # 注意：不导入sporttery_web（需要Flask环境），直接实现逻辑
-        score_odds = data.get('score_odds', {})
-        if not score_odds:
+        # 1. 获取历史交锋比分（优先级高）
+        history = data.get('preview', {}).get('history', {}).get('matchList', [])
+        
+        historical_scores = []
+        if history and len(history) > 0:
+            # 将历史交锋转换为标准格式
+            for match in history:
+                full_goal = match.get('fullCourtGoal', '') or match.get('fullCourtGoal', '')
+                if not full_goal or ':' not in full_goal:
+                    continue
+                
+                home_team = match.get('homeTeamShortName', '')
+                away_team = match.get('awayTeamShortName', '')
+                
+                data_home = data.get('match_info', {}).get('home_team', '')
+                data_away = data.get('match_info', {}).get('away_team', '')
+                
+                # 部分匹配
+                home_match = (home_team in data_home or data_home in home_team)
+                away_match = (away_team in data_away or data_away in away_team)
+                home_reverse = (home_team in data_away or data_away in home_team)
+                away_reverse = (away_team in data_home or data_home in away_team)
+                
+                if home_match and away_match:
+                    score = full_goal
+                elif home_reverse and away_reverse:
+                    parts = full_goal.split(':')
+                    score = f'{parts[1]}:{parts[0]}'
+                else:
+                    continue
+                
+                historical_scores.append({'score': score, 'rate': 1.0})
+        
+        # 2. 如果历史交锋不足3场，补充近期比赛数据
+        recent_scores = []
+        if not historical_scores or len(historical_scores) < 3:
+            recent = data.get('preview', {}).get('recent', {})
+            
+            # 主队近期比赛
+            home_recent = recent.get('home', {}).get('matchList', [])
+            data_home = data.get('match_info', {}).get('home_team', '')
+            
+            for match in home_recent[:5]:  # 最近5场
+                full_goal = match.get('fullCourtGoal', '')
+                if not full_goal or ':' not in full_goal:
+                    continue
+                
+                home_team = match.get('homeTeamShortName', '')
+                if home_team in data_home or data_home in home_team:
+                    # 主队主场比赛，比分格式正确
+                    recent_scores.append({'score': full_goal, 'rate': 0.5})
+            
+            # 客队近期比赛
+            away_recent = recent.get('away', {}).get('matchList', [])
+            data_away = data.get('match_info', {}).get('away_team', '')
+            
+            for match in away_recent[:5]:  # 最近5场
+                full_goal = match.get('fullCourtGoal', '')
+                if not full_goal or ':' not in full_goal:
+                    continue
+                
+                away_team = match.get('awayTeamShortName', '')
+                if away_team in data_away or data_away in away_team:
+                    # 客队客场比赛，比分格式正确（已经是"主队:客队"）
+                    recent_scores.append({'score': full_goal, 'rate': 0.5})
+        
+        # 3. 合并历史交锋和近期比赛
+        combined_scores = historical_scores.copy()
+        
+        if recent_scores:
+            # 补充近期比赛，直到总数达到5场
+            for score_data in recent_scores:
+                if len(combined_scores) >= 5:
+                    break
+                combined_scores.append(score_data)
+        
+        if not combined_scores or len(combined_scores) < 3:
+            # 合并后仍然不足3场，无法预测
             return None
         
-        # 直接实现get_score_recommendations_for_match的逻辑
-        recommendations = []
-        for score, odds in score_odds.items():
-            try:
-                # 修复：将odds转换为float（可能是字符串格式）
-                odds_float = float(odds)
-                if odds_float > 0:
-                    recommendations.append({
-                        'score': score,
-                        'odds': odds_float,
-                        'rate': 0.0,  # 暂时不计算命中率
-                        'bucket': 'unknown'
-                    })
-            except:
-                continue
-        
-        if not recommendations or len(recommendations) < 1:
-            return None
-        
-        # 2. 分类场景
-        situation = classify_situation(data, handicap, recommendations)
+        # 4. 分类场景（使用合并后的数据）
+        situation = classify_situation(data, handicap, combined_scores)
         
         # 3. 检查是否属于高置信度场景
         high_conf_set = _load_high_conf_scenarios()
@@ -193,7 +231,10 @@ def predict_h9(data, handicap):
         hhad_odds = data.get("hhad", {})
         hhad_change = data.get("hhad_change", {})
         
-        directions = _map_scores_to_directions(recommendations, handicap)
+        directions = _map_scores_to_directions(combined_scores, handicap)
+        if not directions or max(directions.values()) == 0:
+            return None
+        
         max_dir = max(directions, key=directions.get)
         max_rate = directions[max_dir]
         
@@ -206,12 +247,16 @@ def predict_h9(data, handicap):
                 protected = d
                 break
         
-        # 预测：如果没有矛盾，跟随历史期望最高方向；如果有矛盾，跟随庄家
+        # 预测：H9核心逻辑
+        # - 一致信号（历史期望=庄家保护）：庄家在防范 → 跟随历史期望
+        # - 矛盾信号（历史期望≠庄家保护）：庄家在诱导 → 反向庄家 = 跟随历史期望
         if protected and max_dir != protected:
-            prediction = protected  # 矛盾=真相，跟随庄家
-            explanation = f"矛盾信号：历史期望{max_dir}({max_rate:.0f}%) ≠ 庄家保护{protected} → 跟随庄家"
+            # 矛盾 = 庄家诱导 = 反向庄家 = 跟随历史期望
+            prediction = max_dir
+            explanation = f"矛盾信号：历史期望{max_dir}({max_rate:.0f}%) ≠ 庄家保护{protected} → 庄家诱导 → 反向到{max_dir}"
         else:
-            prediction = max_dir  # 一致信号，跟随历史期望
+            # 一致 = 庄家防范 = 跟随历史期望
+            prediction = max_dir
             explanation = f"一致信号：历史期望{max_dir}({max_rate:.0f}%) = 庄家保护方向 → 跟随历史"
         
         # 5. 低置信度 + 预测为"让平" → 反向推荐，根据HAD赔率判断方向
@@ -251,11 +296,17 @@ def predict_h9(data, handicap):
                 prediction = "让负"
                 explanation = f"⚠️低置信度+让平预测命中率低 → 反向到{prediction}（无HAD赔率）"
         
-        # 6. 根据是否高置信度，设置置信度
+        # 6. 设置置信度
+        # 置信度 = 回测准确率（从高置信度列表读取），而不是历史期望占比
+        # 历史期望占比（max_rate）通常很低（0%），没有参考价值
+        # 回测准确率反映这个场景的历史命中率，更有意义
         if is_high_conf:
-            confidence = _get_scenario_accuracy(situation)
+            confidence = _get_scenario_accuracy(situation)  # 回测准确率（0-100%）
         else:
-            confidence = 0.0
+            confidence = 0.0  # 低置信度，显示0%
+        
+        # 低置信度提示（不影响置信度显示）
+        if not is_high_conf:
             explanation += f"（场景{situation}不在高置信度列表，置信度未知）"
         
         return {
