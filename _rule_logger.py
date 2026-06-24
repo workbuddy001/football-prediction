@@ -150,10 +150,17 @@ def backfill_scores(scores_data):
         action = entry.get('action')
         if action == 'bet':
             goals = entry.get('goal_bet', {}).get('goals', [])
-            if entry['actual_total'] in goals:
-                entry['hit'] = True
-            else:
-                entry['hit'] = False
+            is_hit = entry['actual_total'] in goals if goals else False
+            # 7球+特殊处理: 竞彩7球+=≥7球
+            if not is_hit and goals and 7 in goals and entry['actual_total'] >= 7:
+                is_hit = True
+            # 比分投注命中检查（修+1SCORE/B1/D1等纯比分规则）
+            if not is_hit:
+                for sb in entry.get('score_bets', []):
+                    if sb.get('score') == entry.get('actual_score'):
+                        is_hit = True
+                        break
+            entry['hit'] = is_hit
         elif action == 'skip':
             entry['hit'] = None  # 跳过的不计入
         

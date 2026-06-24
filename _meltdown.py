@@ -17,10 +17,21 @@ RULES_LOG = os.path.join(os.path.dirname(__file__), '分析模板', '_rule_trigg
 
 def _load_streak():
     """
-    加载连黑数据。优先从埋点日志读取（真实投注记录），
-    若不存在则回退到旧 _streak.json。
+    加载连黑数据。优先从 _streak.json 读取（auto_sync实时更新的战绩），
+    若不存在则回退到埋点日志。
     """
-    # 优先从埋点日志读取
+    # 优先从 _streak.json（auto_sync 同步的最新数据）
+    if os.path.exists(STREAK_FILE):
+        try:
+            with open(STREAK_FILE, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            results = data.get('results', [])
+            if results:
+                return results
+        except:
+            pass
+
+    # 回退到埋点日志（用户确认投注记录）
     if os.path.exists(RULES_LOG):
         try:
             with open(RULES_LOG, 'r', encoding='utf-8') as f:
@@ -71,12 +82,28 @@ def record_streak(rule, hit, match_info='', match_date=None):
     """
     results = _load_streak()
     date_str = match_date if match_date else datetime.datetime.now().strftime('%m-%d')
-    results.append({
+    
+    # 去重: 同rule+同match(前缀匹配) → 覆盖hit, 不追加(2026-06-17 D1比利时脏数据修复)
+    new_entry = {
         'date': date_str,
         'rule': rule,
         'hit': int(hit),
         'match': match_info,
-    })
+    }
+    # 提取match核心部分(去"周一014"前缀)用于匹配
+    import re as _re2
+    _core = _re2.sub(r'^周[一二三四五六日]\d{3}', '', match_info)
+    overwritten = False
+    for i, r in enumerate(results):
+        existing_core = _re2.sub(r'^周[一二三四五六日]\d{3}', '', r.get('match', ''))
+        if r.get('rule') == rule and existing_core == _core:
+            results[i] = new_entry
+            overwritten = True
+            break
+    
+    if not overwritten:
+        results.append(new_entry)
+    
     _save_streak(results)
     consecutive = 0
     for r in reversed(results):
@@ -116,8 +143,13 @@ def check_streak(bet_result):
     return bet_result
 
 def show_streak():
-    """显示当前连黑状态"""
-    results = _load_streak()
+    """显示当前连黑状态（从_streak.json读取，保持与auto_sync同步）"""
+    results = []
+    try:
+        with open(STREAK_FILE, 'r', encoding='utf-8') as f:
+            results = json.load(f).get('results', [])
+    except:
+        pass
     if not results:
         print('暂无战绩记录')
         return
