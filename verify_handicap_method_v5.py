@@ -167,12 +167,7 @@ def apply_7step_method(match_data):
     
     reasons = []
     
-    # 0球赔率判断：>20时扩容总进球范围（加入大比分候选）
     ttg = match_data.get('total_goals', {})
-    ttg0 = float(ttg.get('0球', 0))
-    is_high_goal = (ttg0 > 20)
-    if is_high_goal:
-        reasons.append(f"0球赔率{ttg0}>20，扩容总进球范围（加入大比分候选）")
     
     # Step 3：总进球分析（用总进球赔率排序）
     # 收集所有进球赔率
@@ -183,18 +178,22 @@ def apply_7step_method(match_data):
             tg_odds.append((goal_str, float(v)))
     tg_odds.sort(key=lambda x: x[1])  # 赔率最低的排前面
     
-    # 按0球赔率决定取前N个总进球（>20时扩容）
-    n_top = 3 if is_high_goal else 2
+    # 取前2个最可能的进球数范围（阈值20%合并）
     if tg_odds:
-        top_goals = [g for g in tg_odds[:n_top]]
-        g_nums = [int(g[0].replace('球', '')) for g in top_goals]
-        g_nums.sort()
-        if len(g_nums) >= 2 and abs(tg_odds[0][1] - tg_odds[1][1]) / tg_odds[0][1] < 0.2:
-            total_range = f'ttg_{g_nums[0]}-{g_nums[-1]}球'
-            reasons.append(f"总进球{'扩容' if is_high_goal else ''}：取{len(g_nums)}个={g_nums[0]}-{g_nums[-1]}球时")
+        best_goal_odds = tg_odds[0]
+        second_goal_odds = tg_odds[1] if len(tg_odds) > 1 else None
+        total_range = f'ttg_{best_goal_odds[0]}'  # 如 "ttg_2球"
+        if second_goal_odds and abs(best_goal_odds[1] - second_goal_odds[1]) / best_goal_odds[1] < 0.2:
+            # 前两名赔率接近（差距<20%），取合并范围
+            g1 = int(best_goal_odds[0].replace('球', ''))
+            g2 = int(second_goal_odds[0].replace('球', ''))
+            low, high = min(g1, g2), max(g1, g2)
+            total_range = f'ttg_{low}-{high}球'
+            reasons.append(f"总进球：赔率最低{best_goal_odds[1]}@{best_goal_odds[0]}，次低{second_goal_odds[1]}@{second_goal_odds[0]}，范围{low}-{high}球")
         else:
-            total_range = f'ttg_{g_nums[0]}球'
-            reasons.append(f"总进球{'扩容' if is_high_goal else ''}：{g_nums[0]}球")
+            g = int(best_goal_odds[0].replace('球', ''))
+            total_range = f'ttg_{g}球'
+            reasons.append(f"总进球：赔率最低{best_goal_odds[1]}@{best_goal_odds[0]}")
     else:
         total_range = 'ttg_不限'
         reasons.append("总进球：无赔率数据，不限")
@@ -233,25 +232,17 @@ def apply_7step_method(match_data):
         except:
             pass
     
-    # 6.2 按总进球赔率筛选（高0球时扩容到前3个）
+    # 6.2 按总进球赔率筛选（保留最佳2个总进球数）
     if tg_odds:
-        n_tg = 3 if is_high_goal else 2
-        top_tg = tg_odds[:n_tg]
-        allowed_totals = set(int(g[0].replace('球', '')) for g in top_tg)
-        reasons.append(f"总进球候选：{sorted(allowed_totals)}（{'扩容' if is_high_goal else '正常'}）")
+        best_tg = int(tg_odds[0][0].replace('球', ''))
+        second_tg = int(tg_odds[1][0].replace('球', '')) if len(tg_odds) > 1 and abs(tg_odds[0][1]-tg_odds[1][1])/tg_odds[0][1] < 0.2 else best_tg
+        allowed_totals = set([best_tg, second_tg])
+        reasons.append(f"总进球候选：{sorted(allowed_totals)}")
     else:
         allowed_totals = set(range(0, 6))
     
     # 6.3 在允许的总进球数内，按比分赔率排序
     filtered = [s for s in all_scores if (s[0]+s[1]) in allowed_totals]
-    
-    # ✅ 旧比分规则：进球期望过滤（estimate_goals）
-    if filtered:
-        home_exp = estimate_goals(havg, 0)
-        away_exp = estimate_goals(aavg, 0)
-        old_f = [(h,a,o) for h,a,o in filtered if home_exp[0]<=h<=home_exp[1] and away_exp[0]<=a<=away_exp[1]]
-        if old_f:
-            filtered = old_f
     
     # ✅ 6.3b score_change过滤：比分赔率变化数据处理
     score_change = match_data.get('score_change', {})
