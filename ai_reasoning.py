@@ -321,6 +321,86 @@ def compute_betting(data, analysis):
     step0 = analysis.get('step0', {})
     v36_dir = step0.get('direction', '')
     
+    # ===== 让平升赔>8%策略（最高优先级，2026-06-26，5-6月回测ROI+27.1%）=====
+    try:
+        hhad = data.get('hhad', {})
+        hc = hhad.get('让球', '')
+        hhad_ch = data.get('hhad_change', {})
+        dp = hhad_ch.get('让平', {}) if isinstance(hhad_ch, dict) else {}
+        if isinstance(dp, dict) and float(dp.get('change_pct', 0)) > 8:
+            # 跳过大赛（世界杯/欧洲杯）
+            league = data.get('match_info', {}).get('league', '')
+            if not any(kw in league for kw in ['世界杯', '欧洲杯']):
+                hw = float(hhad.get('让胜', 0))
+                hl = float(hhad.get('让负', 0))
+                hv = float(hc) if hc else 0
+                
+                # 近况数据
+                preview = data.get('preview', {})
+                recent = preview.get('recent', {})
+                home_list = recent.get('home', {}).get('matchList', [])[:5] if isinstance(recent.get('home'), dict) else []
+                away_list = recent.get('away', {}).get('matchList', [])[:5] if isinstance(recent.get('away'), dict) else []
+                hg = [int(m.get('homeTeamFullCourtGoalCnt',0) or 0) for m in home_list]
+                ag = [int(m.get('awayTeamFullCourtGoalCnt',0) or 0) for m in away_list]
+                havg = sum(hg)/len(hg) if hg else 0
+                aavg = sum(ag)/len(ag) if ag else 0
+                
+                # 排除让平，选方向
+                # 实际让平时不选方向（排除处理）
+                allow_dirs = ['让胜', '让负']
+                
+                # 收集符合条件的比分
+                so = data.get('score_odds', {})
+                cand = []
+                for sv_key, sv in so.items():
+                    try: sh, sa = int(sv_key.split(':')[0]), int(sv_key.split(':')[1])
+                    except: continue
+                    if sh > 5 or sa > 5: continue
+                    od = float(sv) if sv else 0
+                    if od <= 0: continue
+                    d = '让胜' if hv+sh > sa else ('让平' if hv+sh == sa else '让负')
+                    if d not in allow_dirs: continue
+                    cand.append((sh, sa, od))
+                
+                if cand:
+                    # 近况加权排序
+                    def _sort_key(x):
+                        h, a, o = x
+                        dev = ((h-havg)**2 + (a-aavg)**2)**0.5 if havg>0 and aavg>0 else 0
+                        return o * (1 + 0.3 * dev)
+                    cand.sort(key=_sort_key)
+                    top3 = cand[:3]
+                    
+                    # 权重分配
+                    from verify_handicap_method_v5 import round_stake
+                    inv = [1.0/max(o,1.1) for _,_,o in top3]
+                    tw = sum(inv)
+                    raw = [(inv[i]/tw)*30 for i in range(len(top3))]
+                    stakes = [round_stake(s) for s in raw]
+                    if sum(stakes) % 2 != 0 and stakes:
+                        stakes[stakes.index(max(stakes))] += 1
+                    
+                    score_bets = [
+                        {'score': f'{h}:{a}', 'odds': o,
+                         'stake': stakes[i], 'tag': '让平升赔'}
+                        for i, (h, a, o) in enumerate(top3)
+                    ]
+                    actual_total = sum(stakes)
+                    # 让平升赔幅度
+                    dp_cp = float(dp.get('change_pct', 0))
+                    return {
+                        'action': 'bet', 'rule': f'HAD-RISE({dp_cp:+.0f}%)',
+                        'bet_type': '分数推',
+                        'goal_bet': {'goals': [], 'stake': 0, 'odds': {}},
+                        'handicap_bet': None,
+                        'score_bets': score_bets,
+                        'score_stake': actual_total, 'total_stake': actual_total,
+                        'summary': f'让平升{dp_cp:+.0f}%→排除让平+选低赔(密度{top3[0][2]:.1f})' if len(cand)>=2 else f'让平升{dp_cp:+.0f}%→排除让平',
+                        'pp_boost': False, 's7_dual': False
+                    }
+    except:
+        pass
+    
     # 获取系统比分推荐 (从score_odds + hitrate计算)
     from sporttery_web import _build_score_hitrate_stats, get_score_recommendations_for_match
     so = data.get('score_odds', {})
